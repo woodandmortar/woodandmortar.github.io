@@ -95,7 +95,7 @@ var toggleVisibility = function(element) {
       <label for="rb1">Start your Bid</label>
       <input onclick="buttonclick2()" type="radio" name="rb" id="rb2" />
       <label for="rb2">Contact Us</label>
-      <input onclick="buttonclick3()" type="radio" name="rb" id="rb3" />
+      <input onclick="toggleVisibility(document.getElementById('foo2'))" type="radio" name="rb" id="rb3" />
       <label for="rb3">About Us</label>
 
       <br/><br/><hr/><br/><br/>
@@ -103,13 +103,28 @@ var toggleVisibility = function(element) {
 
 <div id="foo" style="display:none">
 
-  <h2>Checkbox</h2>
+  <h2>Bid Construction</h2>
   <input type="checkbox" name="cb" id="cb1" />
-  <label for="cb1">Check this</label>
+  <label for="cb1">Drywall Repair</label>
   <input type="checkbox" name="cb" id="cb2" />
-  <label for="cb2">... and this...</label>
+  <label for="cb2">Painting</label>
   <input type="checkbox" name="cb" id="cb3" />
-  <label for="cb3">and maybe this</label>
+  <label for="cb3">Tile and Mortar</label>
+  <br/>
+  <input type="checkbox" name="cb" id="cb4" />
+  <label for="cb4">Siding</label>
+  <input type="checkbox" name="cb" id="cb5" />
+  <label for="cb5">Texture</label>
+  <input type="checkbox" name="cb" id="cb6" />
+  <label for="cb6">Woodworking</label>
+
+</div>
+
+<div id="foo2" style="display:none">
+
+  <br/><br/><hr/><br/><br/>
+
+  Add things about us, and a comprehensive description of everything we do.
 
 </div>
 

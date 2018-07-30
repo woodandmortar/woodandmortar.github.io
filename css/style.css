@@ -65,7 +65,7 @@ body {
   order: 1;
   left: 0;
   margin: auto;
-  padding: 0 40px;
+  padding: 0 20px;
   width: 40%;
 
 }
@@ -75,11 +75,11 @@ body {
     height: 100%;
     order: 2;
     align-self: flex-end;
-    flex-basis: 60%;
+    flex-basis: 40%;
 
       -webkit-order: 2;
     -webkit-align-self: flex-end;
-    -webkit-flex-basis: 60%;
+    -webkit-flex-basis: 40%;
 
     background-position: center;
     background-repeat: no-repeat;

@@ -6,6 +6,23 @@
   <title>WoodandMortar.com</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <html lang="en" class="no-js"><head>
+    		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+        <html class="no-js" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+        <META NAME="KEYWORDS" CONTENT="Micheal, Micheal Salmon, Matt, Matthew, Matthew Robbins, paint, Painters, Painting, Carpender, tile, bathrooms, Contractors, Home, Home Renovations, Wood, Wood and Mortar, WoodandMortar, Mortar, Kansas, Kansas City, KC, KCMO, Lenexa, Overland Park, Olathe, Prairie Village, Blue Valley, Missouri">
+        <META NAME="ROBOTS" CONTENT="ALL,FOLLOW">
+
+            <meta name="description" content="Kansas City Contractors">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="apple-touch-icon" sizes="180x180" href="pics/wandm.png">
+                <link rel="icon" type="image/png" href="pics/wandm.png" sizes="32x32">
+                <link rel="icon" type="image/png" href="pics/wandm.png" sizes="16x16">
+                <link rel="mask-icon" href="pics/wandm.png" color="#fff">
+                <link rel="shortcut icon" href="pics/wandm.png">
 
 
       <link rel="stylesheet" href="css/style.css">
@@ -31,16 +48,39 @@
 
   </style>
 
+  <script>
+function buttonclick(){
+  document.getElementById('vresp').innerHTML = 'Button click 1 activated';
+}
+function buttonclick2(){
+  document.getElementById('vresp').innerHTML = 'Button click 2 activated';
+}
+function buttonclick3(){
+  document.getElementById('vresp').innerHTML = 'Button click 3 activated';
+}
+
+
+var toggleVisibility = function(element) {
+    if(element.style.display=='block'){
+        element.style.display='none';
+    } else {
+        element.style.display='block';
+    }
+}
+
+
+  </script>
+
     <!-- Hero -->
   <section class="et-hero-tabs">
     <h1>Wood and Mortar</h1>
-    <h3><i>"Home renovations reimagined"</i></h3>
+    <h3><i>"Invest in yourself by building your dream home."</i></h3>
     <div class="et-hero-tabs-container">
-      <a class="et-hero-tab" href="#tab-es6">About</a>
+      <a class="et-hero-tab" href="#tab-es6">Start</a>
       <a class="et-hero-tab" href="#tab-flexbox">Wood</a>
       <a class="et-hero-tab" href="#tab-react">Mortar</a>
       <a class="et-hero-tab" href="#tab-angular">Paint</a>
-      <a class="et-hero-tab" href="#tab-other">Drywall</a>
+      <a class="et-hero-tab" href="#tab-other">Walls</a>
       <span class="et-hero-tab-slider"></span>
     </div>
   </section>
@@ -48,17 +88,41 @@
   <!-- Main -->
   <main class="et-main">
     <section class="et-slide" id="tab-es6">
-      <h1>About</h1> <br/>
+      <div class="center-on-page">
 
-      <h3>Micheal Salmon</h3>
-      <p> enter some things about Micheal here
-      </p> <br/>
+      <h2>Getting Started</h2>
+      <input onclick="toggleVisibility(document.getElementById('foo'))" type="radio" name="rb" id="rb1" />
+      <label for="rb1">Start your Bid</label>
+      <input onclick="buttonclick2()" type="radio" name="rb" id="rb2" />
+      <label for="rb2">Contact Us</label>
+      <input onclick="buttonclick3()" type="radio" name="rb" id="rb3" />
+      <label for="rb3">About Us</label>
 
-      <h3>Matt Robbins</h3>
-      <p> enter some things about Matt here
-      </p>
+      <br/><br/><hr/><br/><br/>
+
+
+<div id="foo" style="display:none">
+
+  <h2>Checkbox</h2>
+  <input type="checkbox" name="cb" id="cb1" />
+  <label for="cb1">Check this</label>
+  <input type="checkbox" name="cb" id="cb2" />
+  <label for="cb2">... and this...</label>
+  <input type="checkbox" name="cb" id="cb3" />
+  <label for="cb3">and maybe this</label>
+
+</div>
+
+
+      <p id="vresp" class="vresponse"></p>
+
+
+
+    </div>
 
     </section>
+
+
     <section class="et-slide" id="tab-flexbox">
       <h1>Wood</h1>
       <h3>something about flexbox</h3>

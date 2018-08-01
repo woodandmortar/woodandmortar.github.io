@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Wood&Mortar</title>
+  <html lang="en" class="no-js"><head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+      <html class="no-js" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+      <META NAME="KEYWORDS" CONTENT="Micheal, Micheal Salmon, Matt, Matthew, Matthew Robbins, paint, Painters, Painting, Carpender, tile, bathrooms, Contractors, Home, Home Renovations, Wood, Wood and Mortar, WoodandMortar, Mortar, Kansas, Kansas City, KC, KCMO, Lenexa, Overland Park, Olathe, Prairie Village, Blue Valley, Missouri">
+      <META NAME="ROBOTS" CONTENT="ALL,FOLLOW">
+
+          <meta name="description" content="Kansas City Contractors">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="apple-touch-icon" sizes="180x180" href="pics/wm.png">
+              <link rel="icon" type="image/png" href="pics/wm.png" sizes="32x32">
+              <link rel="icon" type="image/png" href="pics/wm.png" sizes="16x16">
+              <link rel="mask-icon" href="pics/wm.png" color="#fff">
+              <link rel="shortcut icon" href="pics/wm.png">
+
+      <link rel="stylesheet" href="css/calc.css">
+
+
+</head>
+
+<body>
+
+  <head>
+  <title>Wood&Mortar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+  <script>
+var roomSize = 0;
+var total = 100;
+
+function small(){
+  roomsize += 1;}
+function medium(){
+  roomsize += 1.5;}
+function large(){
+  roomsize += 2;}
+
+function bathroom(){
+  total += 350;
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
+function painting(){
+  document.getElementById('vresp').innerHTML = 'Small';
+}
+function flooring(){
+  document.getElementById('vresp').innerHTML = 'Small';
+}
+
+var toggleVisibility = function(element) {
+    if(element.style.display=='block'){
+        element.style.display='none';
+    } else {
+        element.style.display='block';
+    }
+}
+</script>
+
+
+<div class="carousel">
+
+  <div class="carousel-item carousel-item--1">
+    <div class="carousel-item__image"></div>
+    <div class="carousel-item__info">
+      <div class="carousel-item__container">
+      <h2 class="carousel-item__subtitle">Bid Calculator</h2>
+      <p class="carousel-item__description">
+
+        <input onclick="toggleVisibility(document.getElementById('foo'))" type="radio" name="rb" id="rb1" />
+        <label for="rb1">Interior</label>
+
+        <input onclick="toggleVisibility(document.getElementById('foo2'))" type="radio" name="rb" id="rb3" />
+        <label for="rb3">Exterior</label>
+
+
+        <div id="foo" style="display:none">
+
+          <h2>What do you need worked on?</h2>
+          <input onclick="bathroom()" type="checkbox" name="cb" id="cb1" class="addon" value="120"/>
+          <label for="cb1">Bathroom</label>
+          <div id="sizes" style="display:none">
+
+            <input onclick="small()" type="radio" name="rb" id="small1" />
+            <label for="small1">Small</label>
+            <input onclick="medium()" type="radio" name="rb" id="medium1" />
+            <label for="medium1">Medium</label>
+            <input onclick="large()" type="radio" name="rb" id="large1" />
+            <label for="large1">Large</label>
+
+
+          </div>
+          <input onclick="toggleVisibility(document.getElementById('sizes'))" type="checkbox" name="cb" id="cb2" class="addon" value="120"/>
+          <label for="cb2">Painting</label>
+          <input type="checkbox" name="cb" id="cb3" class="addon" value="120"/>
+          <label for="cb3">Flooring</label>
+          <br/>
+          <input type="checkbox" name="cb" id="cb4" class="addon" value="120"/>
+          <label for="cb4">Walls</label>
+          <input type="checkbox" name="cb" id="cb5" class="addon" value="120"/>
+          <label for="cb5">Texture</label>
+          <input type="checkbox" name="cb" id="cb6" class="addon" value="120"/>
+          <label for="cb6">Woodworking</label>
+
+        </div>
+
+        <div id="foo2" style="display:none">
+
+          <h2>What do you need worked on?</h2>
+          <input onclick="buttonclick2()" type="checkbox" name="cb" id="cb7" class="addon" value="120"/>
+          <label for="cb7">Painting</label>
+          <input type="checkbox" name="cb" id="cb8" class="addon" value="120"/>
+          <label for="cb8">Siding</label>
+          <input type="checkbox" name="cb" id="cb9" class="addon" value="120"/>
+          <label for="cb9">Fencing</label>
+          <br/>
+          <input type="checkbox" name="cb" id="cb10" class="addon" value="120"/>
+          <label for="cb10">Trim</label>
+          <input type="checkbox" name="cb" id="cb11" class="addon" value="120"/>
+          <label for="cb11">Stucco</label>
+          <input type="checkbox" name="cb" id="cb12" class="addon" value="120"/>
+          <label for="cb12">Brick</label>
+
+
+        </div>
+
+
+
+
+      <p id="vresp" class="vresponse">$0</p>
+
+  </p>
+
+
+
+
+
+
+
+
+      <a href="index.html" class="carousel-item__btn">Home</a>
+        </div>
+    </div>
+  </div>
+
+
+</div>
+</body>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

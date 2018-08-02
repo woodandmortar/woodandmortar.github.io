@@ -37,18 +37,18 @@
 <body>
 
   <script>
-var roomSize = 0;
 var total = 100;
 
-function small(){
-  roomsize += 1;}
-function medium(){
-  roomsize += 1.5;}
-function large(){
-  roomsize += 2;}
-
-function bathroom(){
+function bathroomSmall(){
   total += 350;
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
+function bathroomMedium(){
+  total += 550;
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
+function bathroomLarge(){
+  total += 750;
   document.getElementById('vresp').innerHTML = '$' + total;
 }
 function painting(){
@@ -66,6 +66,10 @@ var toggleVisibility = function(element) {
     }
 }
 </script>
+
+<div>
+  <span class='pulse-button' id="vresp">$0</span>
+</div>
 
 
 <div class="carousel">
@@ -87,15 +91,15 @@ var toggleVisibility = function(element) {
         <div id="foo" style="display:none">
 
           <h2>What do you need worked on?</h2>
-          <input onclick="bathroom()" type="checkbox" name="cb" id="cb1" class="addon" value="120"/>
+          <input onclick="toggleVisibility(document.getElementById('bathroom'))" type="checkbox" name="cb" id="cb1" class="addon" value="120"/>
           <label for="cb1">Bathroom</label>
-          <div id="sizes" style="display:none">
+          <div id="bathroom" style="display:none">
 
-            <input onclick="small()" type="radio" name="rb" id="small1" />
+            <input onclick="bathroomSmall(); toggleVisibility(document.getElementById('bathroom'))" type="radio" name="rb" id="small1" />
             <label for="small1">Small</label>
-            <input onclick="medium()" type="radio" name="rb" id="medium1" />
+            <input onclick="bathroomMedium(); toggleVisibility(document.getElementById('bathroom'))" type="radio" name="rb" id="medium1" />
             <label for="medium1">Medium</label>
-            <input onclick="large()" type="radio" name="rb" id="large1" />
+            <input onclick="bathroomLarge(); toggleVisibility(document.getElementById('bathroom'))" type="radio" name="rb" id="large1" />
             <label for="large1">Large</label>
 
 
@@ -133,11 +137,6 @@ var toggleVisibility = function(element) {
 
 
         </div>
-
-
-
-
-      <p id="vresp" class="vresponse">$0</p>
 
   </p>
 

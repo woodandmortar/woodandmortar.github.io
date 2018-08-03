@@ -95,8 +95,26 @@ total = rooms + total;
 document.getElementById('vresp').innerHTML = '$' + total;
 }
 function wood(){
-rooms = parseFloat(document.getElementById('id1').value);
-rooms *= 445;
+rooms = parseFloat(document.getElementById('wrm').value);
+rooms = rooms * 445;
+total = rooms + total;
+document.getElementById('vresp').innerHTML = '$' + total;
+}
+function carpet(){
+rooms = parseFloat(document.getElementById('crm').value);
+rooms *= 245;
+total = rooms + total;
+document.getElementById('vresp').innerHTML = '$' + total;
+}
+function tile(){
+rooms = parseFloat(document.getElementById('trm').value);
+rooms *= 415;
+total = rooms + total;
+document.getElementById('vresp').innerHTML = '$' + total;
+}
+function lino(){
+rooms = parseFloat(document.getElementById('lrm').value);
+rooms *= 325;
 total = rooms + total;
 document.getElementById('vresp').innerHTML = '$' + total;
 }
@@ -150,6 +168,15 @@ var toggleVisibility = function(element) {
             <label for="large1">Large</label>
           </div>
 
+          <div id="paintRooms" style="display:none">
+              <div>
+                <input placeholder="How many rooms?" id='id1' type="text">
+              </div>
+              <div>
+                <button onclick="countRooms(); toggleVisibility(document.getElementById('paintRooms'))">Add</button>
+              </div>
+          </div>
+
           <input onclick="toggleVisibility(document.getElementById('paintRooms'))" type="checkbox" name="cb" id="cb2" class="addon" value="120"/>
           <label for="cb2">Painting</label>
 
@@ -161,18 +188,42 @@ var toggleVisibility = function(element) {
                 <button onclick="wood(); toggleVisibility(document.getElementById('woodRooms'))">Add</button>
               </div>
           </div>
+          <div id="carpetRooms" style="display:none">
+              <div>
+                <input placeholder="How many rooms?" id='crm' type="text">
+              </div>
+              <div>
+                <button onclick="carpet(); toggleVisibility(document.getElementById('carpetRooms'))">Add</button>
+              </div>
+          </div>
+          <div id="tileRooms" style="display:none">
+              <div>
+                <input placeholder="How many rooms?" id='trm' type="text">
+              </div>
+              <div>
+                <button onclick="tile(); toggleVisibility(document.getElementById('tileRooms'))">Add</button>
+              </div>
+          </div>
+          <div id="linoRooms" style="display:none">
+              <div>
+                <input placeholder="How many rooms?" id='lrm' type="text">
+              </div>
+              <div>
+                <button onclick="lino(); toggleVisibility(document.getElementById('linoRooms'))">Add</button>
+              </div>
+          </div>
 
           <input onclick="toggleVisibility(document.getElementById('flooring'))" type="checkbox" name="cb" id="cb3" class="addon" value="120"/>
           <label for="cb3">Flooring</label>
 
           <div id="flooring" style="display:none">
-            <input onclick="bathroomSmall(); toggleVisibility(document.getElementById('woodRooms'))" type="radio" name="rb" id="wood" />
+            <input onclick="toggleVisibility(document.getElementById('woodRooms'))" type="radio" name="rb" id="wood" />
             <label for="wood">Wood</label>
-            <input onclick="bathroomMedium(); toggleVisibility(document.getElementById('flooring'))" type="radio" name="rb" id="carpet" />
+            <input onclick="toggleVisibility(document.getElementById('carpetRooms'))" type="radio" name="rb" id="carpet" />
             <label for="carpet">Carpet</label>
-            <input onclick="bathroomLarge(); toggleVisibility(document.getElementById('flooring'))" type="radio" name="rb" id="tile" />
+            <input onclick="toggleVisibility(document.getElementById('tileRooms'))" type="radio" name="rb" id="tile" />
             <label for="tile">Tile</label>
-            <input onclick="bathroomLarge(); toggleVisibility(document.getElementById('flooring'))" type="radio" name="rb" id="lino" />
+            <input onclick="toggleVisibility(document.getElementById('linoRooms'))" type="radio" name="rb" id="lino" />
             <label for="lino">Linoleum</label>
           </div>
 
@@ -181,16 +232,6 @@ var toggleVisibility = function(element) {
           <input type="checkbox" name="cb" id="cb5" class="addon" value="120"/>
           <label for="cb5">Ceiling</label>
 
-        </div>
-
-
-        <div id="paintRooms" style="display:none">
-            <div>
-              <input placeholder="How many rooms?" id='id1' type="text">
-            </div>
-            <div>
-              <button onclick="countRooms(); toggleVisibility(document.getElementById('paintRooms'))">Add</button>
-            </div>
         </div>
 
 

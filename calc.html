@@ -142,6 +142,91 @@ if (rooms >= 1){
   document.getElementById('vresp').innerHTML = '$' + total;
 }
 }
+
+function dry(){
+rooms = parseFloat(document.getElementById('dryrm').value);
+if (rooms >= 1){
+  rooms *= 725;
+  total = rooms + total;
+  document.getElementById('vresp').innerHTML = '$' + total;
+} else {
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
+}
+function insu(){
+rooms = parseFloat(document.getElementById('insurm').value);
+if (rooms >= 1){
+  rooms *= 625;
+  total = rooms + total;
+  document.getElementById('vresp').innerHTML = '$' + total;
+} else {
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
+}
+function texture(){
+rooms = parseFloat(document.getElementById('texturerm').value);
+if (rooms >= 1){
+  rooms *= 415;
+  total = rooms + total;
+  document.getElementById('vresp').innerHTML = '$' + total;
+} else {
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
+}
+function trim(){
+rooms = parseFloat(document.getElementById('trimrm').value);
+if (rooms >= 1){
+  rooms *= 275;
+  total = rooms + total;
+  document.getElementById('vresp').innerHTML = '$' + total;
+} else {
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
+}
+
+function dry2(){
+rooms = parseFloat(document.getElementById('dry2rm').value);
+if (rooms >= 1){
+  rooms *= 475;
+  total = rooms + total;
+  document.getElementById('vresp').innerHTML = '$' + total;
+} else {
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
+}
+function knock(){
+rooms = parseFloat(document.getElementById('knockrm').value);
+if (rooms >= 1){
+  rooms *= 425;
+  total = rooms + total;
+  document.getElementById('vresp').innerHTML = '$' + total;
+} else {
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
+}
+function pop(){
+rooms = parseFloat(document.getElementById('poprm').value);
+if (rooms >= 1){
+  rooms *= 315;
+  total = rooms + total;
+  document.getElementById('vresp').innerHTML = '$' + total;
+} else {
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
+}
+function flat(){
+rooms = parseFloat(document.getElementById('flatrm').value);
+if (rooms >= 1){
+  rooms *= 575;
+  total = rooms + total;
+  document.getElementById('vresp').innerHTML = '$' + total;
+} else {
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
+}
+
+
+
 function flooring(){
   document.getElementById('vresp').innerHTML = 'Small';
 }
@@ -251,10 +336,99 @@ var toggleVisibility = function(element) {
             <label for="lino">Linoleum</label>
           </div>
 
-          <input type="checkbox" name="cb" id="cb4" class="addon" />
+          <div id="dryRooms" style="display:none">
+              <div>
+                <input placeholder="How many rooms?" id='dryrm' type="text">
+              </div>
+              <div>
+                <button onclick="dry(); toggleVisibility(document.getElementById('dryRooms'))">Add</button>
+              </div>
+          </div>
+          <div id="insuRooms" style="display:none">
+              <div>
+                <input placeholder="How many rooms?" id='insurm' type="text">
+              </div>
+              <div>
+                <button onclick="insu(); toggleVisibility(document.getElementById('insuRooms'))">Add</button>
+              </div>
+          </div>
+          <div id="textureRooms" style="display:none">
+              <div>
+                <input placeholder="How many rooms?" id='texturerm' type="text">
+              </div>
+              <div>
+                <button onclick="texture(); toggleVisibility(document.getElementById('textureRooms'))">Add</button>
+              </div>
+          </div>
+          <div id="trimRooms" style="display:none">
+              <div>
+                <input placeholder="How many rooms?" id='trimrm' type="text">
+              </div>
+              <div>
+                <button onclick="trim(); toggleVisibility(document.getElementById('trimRooms'))">Add</button>
+              </div>
+          </div>
+
+          <input onclick="toggleVisibility(document.getElementById('walls'))" type="checkbox" name="cb" id="cb4" class="addon" />
           <label for="cb4">Walls</label>
-          <input type="checkbox" name="cb" id="cb5" class="addon" />
+
+          <div id="walls" style="display:none">
+            <input onclick="toggleVisibility(document.getElementById('dryRooms'))" type="radio" name="rb" id="dry" />
+            <label for="dry">Drywall & Repair</label>
+            <input onclick="toggleVisibility(document.getElementById('carpetRooms'))" type="radio" name="rb" id="texture" />
+            <label for="texture">Texture</label>
+            <input onclick="toggleVisibility(document.getElementById('insuRooms'))" type="radio" name="rb" id="insu" />
+            <label for="insu">Insulation</label>
+            <input onclick="toggleVisibility(document.getElementById('trimRooms'))" type="radio" name="rb" id="trim" />
+            <label for="trim">Trim / Molding</label>
+          </div>
+
+          <div id="dry2Rooms" style="display:none">
+              <div>
+                <input placeholder="How many rooms?" id='dry2rm' type="text">
+              </div>
+              <div>
+                <button onclick="dry2(); toggleVisibility(document.getElementById('dry2Rooms'))">Add</button>
+              </div>
+          </div>
+          <div id="popRooms" style="display:none">
+              <div>
+                <input placeholder="How many rooms?" id='poprm' type="text">
+              </div>
+              <div>
+                <button onclick="pop(); toggleVisibility(document.getElementById('popRooms'))">Add</button>
+              </div>
+          </div>
+          <div id="knockRooms" style="display:none">
+              <div>
+                <input placeholder="How many rooms?" id='knockrm' type="text">
+              </div>
+              <div>
+                <button onclick="knock(); toggleVisibility(document.getElementById('knockRooms'))">Add</button>
+              </div>
+          </div>
+          <div id="flatRooms" style="display:none">
+              <div>
+                <input placeholder="How many rooms?" id='flatrm' type="text">
+              </div>
+              <div>
+                <button onclick="flat(); toggleVisibility(document.getElementById('flatRooms'))">Add</button>
+              </div>
+          </div>
+
+          <input onclick="toggleVisibility(document.getElementById('ceiling'))" type="checkbox" name="cb" id="cb5" class="addon" />
           <label for="cb5">Ceiling</label>
+
+          <div id="ceiling" style="display:none">
+            <input onclick="toggleVisibility(document.getElementById('dry2Rooms'))" type="radio" name="rb" id="dry2" />
+            <label for="dry2">Drywall & Repair</label>
+            <input onclick="toggleVisibility(document.getElementById('popRooms'))" type="radio" name="rb" id="pop" />
+            <label for="pop">Popcorn</label>
+            <input onclick="toggleVisibility(document.getElementById('knockRooms'))" type="radio" name="rb" id="knock" />
+            <label for="knock">Knockdown</label>
+            <input onclick="toggleVisibility(document.getElementById('flatRooms'))" type="radio" name="rb" id="flat" />
+            <label for="flat">Flat</label>
+          </div>
 
         </div>
 

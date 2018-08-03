@@ -27,6 +27,42 @@
 
 </head>
 
+<style>
+.diamond {
+  position: absolute;
+  bottom: 60px;
+  right: 40px;
+  height: 60px;
+  z-index: 30;
+  width: 60px;
+  line-height: 50px;
+  text-align: center;
+5}
+.diamond:before {
+  position: absolute;
+  content: '';
+  bottom: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  transform: rotateX(45deg) rotateZ(45deg);
+  background-color: #f7bb54;
+  z-index: -1;
+}
+.diamond:after {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  content: '';
+  height: calc(100% - 22px);  /* -22px is 2 * 10px gap on either side - 2px border on either side */
+  width: calc(100% - 22px);  /* -22px is 2 * 10px gap on either side - 2px border on either side */
+  border: 1px solid white;
+  transform: rotateX(45deg) rotateZ(45deg);
+}
+
+</style>
+
+
 <body>
 
   <head>
@@ -38,21 +74,31 @@
 
   <script>
 var total = 100;
+var rooms = 1;
 
 function bathroomSmall(){
-  total += 350;
+  total += 950;
   document.getElementById('vresp').innerHTML = '$' + total;
 }
 function bathroomMedium(){
-  total += 550;
+  total += 1150;
   document.getElementById('vresp').innerHTML = '$' + total;
 }
 function bathroomLarge(){
-  total += 750;
+  total += 1750;
   document.getElementById('vresp').innerHTML = '$' + total;
 }
-function painting(){
-  document.getElementById('vresp').innerHTML = 'Small';
+function countRooms(){
+rooms = parseFloat(document.getElementById('id1').value);
+rooms *= 145;
+total = rooms + total;
+document.getElementById('vresp').innerHTML = '$' + total;
+}
+function wood(){
+rooms = parseFloat(document.getElementById('id1').value);
+rooms *= 445;
+total = rooms + total;
+document.getElementById('vresp').innerHTML = '$' + total;
 }
 function flooring(){
   document.getElementById('vresp').innerHTML = 'Small';
@@ -68,7 +114,7 @@ var toggleVisibility = function(element) {
 </script>
 
 <div>
-  <span class='pulse-button' id="vresp">$0</span>
+  <span class='diamond' id="vresp">$0</span>
 </div>
 
 
@@ -78,7 +124,7 @@ var toggleVisibility = function(element) {
     <div class="carousel-item__image"></div>
     <div class="carousel-item__info">
       <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Bid Calculator</h2>
+      <h2 class="carousel-item__subtitle">Project Estimator</h2>
       <p class="carousel-item__description">
 
         <input onclick="toggleVisibility(document.getElementById('foo'))" type="radio" name="rb" id="rb1" />
@@ -91,32 +137,62 @@ var toggleVisibility = function(element) {
         <div id="foo" style="display:none">
 
           <h2>What do you need worked on?</h2>
-          <input onclick="toggleVisibility(document.getElementById('bathroom'))" type="checkbox" name="cb" id="cb1" class="addon" value="120"/>
-          <label for="cb1">Bathroom</label>
-          <div id="bathroom" style="display:none">
 
+          <input onclick="toggleVisibility(document.getElementById('bathroom'))" type="checkbox" name="cb" id="cb1" class="addon" value="120"/>
+          <label for="cb1">Bath Remodel</label>
+
+          <div id="bathroom" style="display:none">
             <input onclick="bathroomSmall(); toggleVisibility(document.getElementById('bathroom'))" type="radio" name="rb" id="small1" />
             <label for="small1">Small</label>
             <input onclick="bathroomMedium(); toggleVisibility(document.getElementById('bathroom'))" type="radio" name="rb" id="medium1" />
             <label for="medium1">Medium</label>
             <input onclick="bathroomLarge(); toggleVisibility(document.getElementById('bathroom'))" type="radio" name="rb" id="large1" />
             <label for="large1">Large</label>
-
-
           </div>
-          <input onclick="toggleVisibility(document.getElementById('sizes'))" type="checkbox" name="cb" id="cb2" class="addon" value="120"/>
+
+          <input onclick="toggleVisibility(document.getElementById('paintRooms'))" type="checkbox" name="cb" id="cb2" class="addon" value="120"/>
           <label for="cb2">Painting</label>
-          <input type="checkbox" name="cb" id="cb3" class="addon" value="120"/>
+
+          <div id="woodRooms" style="display:none">
+              <div>
+                <input placeholder="How many rooms?" id='wrm' type="text">
+              </div>
+              <div>
+                <button onclick="wood(); toggleVisibility(document.getElementById('woodRooms'))">Add</button>
+              </div>
+          </div>
+
+          <input onclick="toggleVisibility(document.getElementById('flooring'))" type="checkbox" name="cb" id="cb3" class="addon" value="120"/>
           <label for="cb3">Flooring</label>
-          <br/>
+
+          <div id="flooring" style="display:none">
+            <input onclick="bathroomSmall(); toggleVisibility(document.getElementById('woodRooms'))" type="radio" name="rb" id="wood" />
+            <label for="wood">Wood</label>
+            <input onclick="bathroomMedium(); toggleVisibility(document.getElementById('flooring'))" type="radio" name="rb" id="carpet" />
+            <label for="carpet">Carpet</label>
+            <input onclick="bathroomLarge(); toggleVisibility(document.getElementById('flooring'))" type="radio" name="rb" id="tile" />
+            <label for="tile">Tile</label>
+            <input onclick="bathroomLarge(); toggleVisibility(document.getElementById('flooring'))" type="radio" name="rb" id="lino" />
+            <label for="lino">Linoleum</label>
+          </div>
+
           <input type="checkbox" name="cb" id="cb4" class="addon" value="120"/>
           <label for="cb4">Walls</label>
           <input type="checkbox" name="cb" id="cb5" class="addon" value="120"/>
-          <label for="cb5">Texture</label>
-          <input type="checkbox" name="cb" id="cb6" class="addon" value="120"/>
-          <label for="cb6">Woodworking</label>
+          <label for="cb5">Ceiling</label>
 
         </div>
+
+
+        <div id="paintRooms" style="display:none">
+            <div>
+              <input placeholder="How many rooms?" id='id1' type="text">
+            </div>
+            <div>
+              <button onclick="countRooms(); toggleVisibility(document.getElementById('paintRooms'))">Add</button>
+            </div>
+        </div>
+
 
         <div id="foo2" style="display:none">
 
@@ -161,7 +237,11 @@ var toggleVisibility = function(element) {
 
     <script  src="js/index.js"></script>
 
+<script>
 
+
+
+</script>
 
 
 </body>

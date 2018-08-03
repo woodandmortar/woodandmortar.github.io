@@ -73,9 +73,13 @@
 <body>
 
   <script>
-var total = 100;
+var total = 0;
 var rooms = 1;
 
+function reset(){
+  total = 0;
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
 function bathroomSmall(){
   total += 950;
   document.getElementById('vresp').innerHTML = '$' + total;
@@ -89,34 +93,54 @@ function bathroomLarge(){
   document.getElementById('vresp').innerHTML = '$' + total;
 }
 function countRooms(){
-rooms = parseFloat(document.getElementById('id1').value);
-rooms *= 145;
-total = rooms + total;
-document.getElementById('vresp').innerHTML = '$' + total;
-}
+  rooms = parseFloat(document.getElementById('id1').value);
+  if (rooms >= 1){
+    rooms *= 145;
+    total = rooms + total;
+    document.getElementById('vresp').innerHTML = '$' + total;
+  } else {
+    document.getElementById('vresp').innerHTML = '$' + total;
+  }
+  }
 function wood(){
-rooms = parseFloat(document.getElementById('wrm').value);
-rooms = rooms * 445;
-total = rooms + total;
-document.getElementById('vresp').innerHTML = '$' + total;
+rrooms = parseFloat(document.getElementById('wrm').value);
+if (rooms >= 1){
+  rooms *= 445;
+  total = rooms + total;
+  document.getElementById('vresp').innerHTML = '$' + total;
+} else {
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
 }
 function carpet(){
-rooms = parseFloat(document.getElementById('crm').value);
-rooms *= 245;
-total = rooms + total;
-document.getElementById('vresp').innerHTML = '$' + total;
-}
+  rooms = parseFloat(document.getElementById('crm').value);
+  if (rooms >= 1){
+    rooms *= 245;
+    total = rooms + total;
+    document.getElementById('vresp').innerHTML = '$' + total;
+  } else {
+    document.getElementById('vresp').innerHTML = '$' + total;
+  }
+  }
 function tile(){
-rooms = parseFloat(document.getElementById('trm').value);
-rooms *= 415;
-total = rooms + total;
-document.getElementById('vresp').innerHTML = '$' + total;
-}
+  rooms = parseFloat(document.getElementById('trm').value);
+  if (rooms >= 1){
+    rooms *= 415;
+    total = rooms + total;
+    document.getElementById('vresp').innerHTML = '$' + total;
+  } else {
+    document.getElementById('vresp').innerHTML = '$' + total;
+  }
+  }
 function lino(){
 rooms = parseFloat(document.getElementById('lrm').value);
-rooms *= 325;
-total = rooms + total;
-document.getElementById('vresp').innerHTML = '$' + total;
+if (rooms >= 1){
+  rooms *= 325;
+  total = rooms + total;
+  document.getElementById('vresp').innerHTML = '$' + total;
+} else {
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
 }
 function flooring(){
   document.getElementById('vresp').innerHTML = 'Small';
@@ -156,7 +180,7 @@ var toggleVisibility = function(element) {
 
           <h2>What do you need worked on?</h2>
 
-          <input onclick="toggleVisibility(document.getElementById('bathroom'))" type="checkbox" name="cb" id="cb1" class="addon" value="120"/>
+          <input onclick="toggleVisibility(document.getElementById('bathroom'))" type="checkbox" name="cb" id="cb1" class="addon" />
           <label for="cb1">Bath Remodel</label>
 
           <div id="bathroom" style="display:none">
@@ -177,7 +201,7 @@ var toggleVisibility = function(element) {
               </div>
           </div>
 
-          <input onclick="toggleVisibility(document.getElementById('paintRooms'))" type="checkbox" name="cb" id="cb2" class="addon" value="120"/>
+          <input onclick="toggleVisibility(document.getElementById('paintRooms'))" type="checkbox" name="cb" id="cb2" class="addon" />
           <label for="cb2">Painting</label>
 
           <div id="woodRooms" style="display:none">
@@ -213,7 +237,7 @@ var toggleVisibility = function(element) {
               </div>
           </div>
 
-          <input onclick="toggleVisibility(document.getElementById('flooring'))" type="checkbox" name="cb" id="cb3" class="addon" value="120"/>
+          <input onclick="toggleVisibility(document.getElementById('flooring'))" type="checkbox" name="cb" id="cb3" class="addon" />
           <label for="cb3">Flooring</label>
 
           <div id="flooring" style="display:none">
@@ -227,9 +251,9 @@ var toggleVisibility = function(element) {
             <label for="lino">Linoleum</label>
           </div>
 
-          <input type="checkbox" name="cb" id="cb4" class="addon" value="120"/>
+          <input type="checkbox" name="cb" id="cb4" class="addon" />
           <label for="cb4">Walls</label>
-          <input type="checkbox" name="cb" id="cb5" class="addon" value="120"/>
+          <input type="checkbox" name="cb" id="cb5" class="addon" />
           <label for="cb5">Ceiling</label>
 
         </div>
@@ -238,18 +262,18 @@ var toggleVisibility = function(element) {
         <div id="foo2" style="display:none">
 
           <h2>What do you need worked on?</h2>
-          <input onclick="buttonclick2()" type="checkbox" name="cb" id="cb7" class="addon" value="120"/>
+          <input onclick="buttonclick2()" type="checkbox" name="cb" id="cb7" class="addon" />
           <label for="cb7">Painting</label>
-          <input type="checkbox" name="cb" id="cb8" class="addon" value="120"/>
+          <input type="checkbox" name="cb" id="cb8" class="addon" />
           <label for="cb8">Siding</label>
-          <input type="checkbox" name="cb" id="cb9" class="addon" value="120"/>
+          <input type="checkbox" name="cb" id="cb9" class="addon" />
           <label for="cb9">Fencing</label>
           <br/>
-          <input type="checkbox" name="cb" id="cb10" class="addon" value="120"/>
+          <input type="checkbox" name="cb" id="cb10" class="addon" />
           <label for="cb10">Trim</label>
-          <input type="checkbox" name="cb" id="cb11" class="addon" value="120"/>
+          <input type="checkbox" name="cb" id="cb11" class="addon" />
           <label for="cb11">Stucco</label>
-          <input type="checkbox" name="cb" id="cb12" class="addon" value="120"/>
+          <input type="checkbox" name="cb" id="cb12" class="addon" />
           <label for="cb12">Brick</label>
 
 
@@ -264,7 +288,7 @@ var toggleVisibility = function(element) {
 
 
 
-      <a href="index.html" class="carousel-item__btn">Home</a>
+      <a href="index.html" class="carousel-item__btn">Home</a><a onclick="reset()" class="carousel-item__btn">  | Reset</a>
         </div>
     </div>
   </div>

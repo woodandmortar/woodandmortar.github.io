@@ -76,7 +76,8 @@
 var total = 0;
 var rooms = 0;
 var sqft = 0;
-
+var receipt = ["Free Estimate"];
+var addR = '%0D%0A'+ 0;
 
 function reset(){
   total = 0;
@@ -85,217 +86,282 @@ function reset(){
 function bathroomSmall(){
   total += 950;
   document.getElementById('vresp').innerHTML = '$' + total;
+  addR = '%0D%0A'+' Small Room Design at $' + 950;
+  receipt.push(addR);
+
 }
 function bathroomMedium(){
   total += 1150;
   document.getElementById('vresp').innerHTML = '$' + total;
+  addR = '%0D%0A'+ ' Medium Room Design at $' + 1150;
+  receipt.push(addR);
+
 }
 function bathroomLarge(){
   total += 1750;
   document.getElementById('vresp').innerHTML = '$' + total;
+  addR = '%0D%0A'+ ' Large Room Design at $' + 1750;
+  receipt.push(addR);
+
 }
 function countRooms(){
   rooms = parseFloat(document.getElementById('id1').value);
   if (rooms >= 1){
-    rooms *= 145;
-    total = rooms + total;
+    var roomsPrice = rooms * 145;
+    total = roomsPrice + total;
     document.getElementById('vresp').innerHTML = '$' + total;
   } else {
     document.getElementById('vresp').innerHTML = '$' + total;
   }
+
+  addR = '%0D%0A'+ ' ' + rooms + ' Rooms painted at $' + roomsPrice;
+  receipt.push(addR);
+
+
   }
 function wood(){
-rrooms = parseFloat(document.getElementById('wrm').value);
+rooms = parseFloat(document.getElementById('wrm').value);
 if (rooms >= 1){
-  rooms *= 445;
-  total = rooms + total;
+  var woodPrice = rooms * 445;
+  total = woodPrice + total;
   document.getElementById('vresp').innerHTML = '$' + total;
 } else {
   document.getElementById('vresp').innerHTML = '$' + total;
 }
+
+addR = '%0D%0A'+ ' ' + rooms + ' Rooms with wooden flooring at $' + woodPrice;
+receipt.push(addR);
+
+
 }
 function carpet(){
   rooms = parseFloat(document.getElementById('crm').value);
   if (rooms >= 1){
-    rooms *= 245;
-    total = rooms + total;
+    var carpetPrice = rooms * 245;
+    total = carpetPrice + total;
     document.getElementById('vresp').innerHTML = '$' + total;
   } else {
     document.getElementById('vresp').innerHTML = '$' + total;
   }
+  addR = '%0D%0A'+ ' ' + rooms + ' Rooms with carpet flooring at $' + carpetPrice;
+  receipt.push(addR);
+
   }
 function tile(){
   rooms = parseFloat(document.getElementById('trm').value);
   if (rooms >= 1){
-    rooms *= 415;
-    total = rooms + total;
+    var tilePrice = rooms * 415;
+    total = tilePrice + total;
     document.getElementById('vresp').innerHTML = '$' + total;
   } else {
     document.getElementById('vresp').innerHTML = '$' + total;
   }
+  addR = '%0D%0A'+ ' ' + rooms + ' Rooms with tile flooring at $' + tilePrice;
+  receipt.push(addR);
+
   }
 function lino(){
 rooms = parseFloat(document.getElementById('lrm').value);
 if (rooms >= 1){
-  rooms *= 325;
-  total = rooms + total;
+  var linoPrice = rooms * 325;
+  total = linoPrice + total;
   document.getElementById('vresp').innerHTML = '$' + total;
 } else {
   document.getElementById('vresp').innerHTML = '$' + total;
 }
+addR = '%0D%0A'+ ' ' + rooms + ' Rooms with linoleum flooring at $' + linoPrice;
+receipt.push(addR);
+
 }
 
 function dry(){
 rooms = parseFloat(document.getElementById('dryrm').value);
 if (rooms >= 1){
-  rooms *= 725;
-  total = rooms + total;
+  var dryPrice = rooms * 725;
+  total = dryPrice + total;
   document.getElementById('vresp').innerHTML = '$' + total;
 } else {
   document.getElementById('vresp').innerHTML = '$' + total;
 }
+addR = '%0D%0A'+ ' ' + rooms + ' Rooms with Drywall repair at $' + dryPrice;
+receipt.push(addR);
+
 }
 function insu(){
 rooms = parseFloat(document.getElementById('insurm').value);
 if (rooms >= 1){
-  rooms *= 625;
-  total = rooms + total;
+  var insuPrice = rooms * 625;
+  total = insuPrice + total;
   document.getElementById('vresp').innerHTML = '$' + total;
 } else {
   document.getElementById('vresp').innerHTML = '$' + total;
 }
+addR = '%0D%0A'+ ' ' + rooms + ' Rooms with insulation install at $' + insuPrice;
+receipt.push(addR);
+
 }
 function texture(){
 rooms = parseFloat(document.getElementById('texturerm').value);
 if (rooms >= 1){
-  rooms *= 415;
-  total = rooms + total;
+  var texturePrice = rooms * 415;
+  total = texturePrice + total;
   document.getElementById('vresp').innerHTML = '$' + total;
 } else {
   document.getElementById('vresp').innerHTML = '$' + total;
 }
+addR = '%0D%0A'+ ' ' + rooms + ' Rooms with texture at $' + texturePrice;
+receipt.push(addR);
+
 }
 function trim(){
 rooms = parseFloat(document.getElementById('trimrm').value);
 if (rooms >= 1){
-  rooms *= 275;
-  total = rooms + total;
+  var trimPrice = rooms * 415;
+  total = trimPrice + total;
   document.getElementById('vresp').innerHTML = '$' + total;
 } else {
   document.getElementById('vresp').innerHTML = '$' + total;
 }
+addR = '%0D%0A'+ ' ' + rooms + ' Rooms with trim install at $' + trimPrice;
+receipt.push(addR);
+
 }
 
 function dry2(){
 rooms = parseFloat(document.getElementById('dry2rm').value);
 if (rooms >= 1){
-  rooms *= 475;
-  total = rooms + total;
+  var dry2Price = rooms * 415;
+  total = dry2Price + total;
   document.getElementById('vresp').innerHTML = '$' + total;
 } else {
   document.getElementById('vresp').innerHTML = '$' + total;
 }
+addR = '%0D%0A'+ ' ' + rooms + ' Rooms with ceiling repair at $' + dry2Price;
+receipt.push(addR);
+
 }
 function knock(){
 rooms = parseFloat(document.getElementById('knockrm').value);
 if (rooms >= 1){
-  rooms *= 425;
-  total = rooms + total;
+  var knockPrice = rooms * 425;
+  total = knockPrice + total;
   document.getElementById('vresp').innerHTML = '$' + total;
 } else {
   document.getElementById('vresp').innerHTML = '$' + total;
 }
+addR = '%0D%0A'+ ' ' + rooms + ' Rooms with knockdown at $' + knockPrice;
+receipt.push(addR);
+
 }
 function pop(){
 rooms = parseFloat(document.getElementById('poprm').value);
 if (rooms >= 1){
-  rooms *= 315;
-  total = rooms + total;
+  var popPrice = rooms * 425;
+  total = popPrice + total;
   document.getElementById('vresp').innerHTML = '$' + total;
 } else {
   document.getElementById('vresp').innerHTML = '$' + total;
 }
+addR = '%0D%0A'+ ' ' + rooms + ' Rooms with popcorn at $' + popPrice;
+receipt.push(addR);
+
 }
 function flat(){
 rooms = parseFloat(document.getElementById('flatrm').value);
 if (rooms >= 1){
-  rooms *= 575;
-  total = rooms + total;
+  var flatPrice = rooms * 425;
+  total = flatPrice + total;
   document.getElementById('vresp').innerHTML = '$' + total;
 } else {
   document.getElementById('vresp').innerHTML = '$' + total;
 }
+addR = '%0D%0A'+ ' ' + rooms + ' Rooms with flat ceilings at $' + flatPrice;
+receipt.push(addR);
+
 }
 
 function extpaint1(){
 sqft = parseFloat(document.getElementById('extpaint').value);
 if (sqft >= 1){
-  sqft *= 7;
-  total = sqft + total;
+  var extpaint1Price = sqft * 6;
+  total = extpaint1Price + total;
   document.getElementById('vresp').innerHTML = '$' + total;
 } else {
   document.getElementById('vresp').innerHTML = '$' + total;
 }
+addR = '%0D%0A'+ ' ' + sqft + 'sqft of Ext. Painting priced at $' + extpaint1Price;
+receipt.push(addR);
+
 }
 
 function siding(){
 sqft = parseFloat(document.getElementById('siding').value);
 if (sqft >= 1){
-  sqft *= 9;
-  total = sqft + total;
+  var sidingPrice = sqft * 9;
+  total = sidingPrice + total;
   document.getElementById('vresp').innerHTML = '$' + total;
 } else {
   document.getElementById('vresp').innerHTML = '$' + total;
 }
+addR = '%0D%0A'+ ' ' + sqft + 'sqft of Siding priced at $' + sidingPrice;
+receipt.push(addR);
+
 }
 
 function fence(){
 sqft = parseFloat(document.getElementById('fence').value);
 if (sqft >= 1){
-  sqft *= 5;
-  total = sqft + total;
+  var fencePrice = sqft * 5;
+  total = fencePrice + total;
   document.getElementById('vresp').innerHTML = '$' + total;
 } else {
   document.getElementById('vresp').innerHTML = '$' + total;
 }
+addR = '%0D%0A'+ ' ' + sqft + 'sqft of wooden fencing priced at $' + fencePrice;
+receipt.push(addR);
+
 }
 
 function trim1(){
 sqft = parseFloat(document.getElementById('trim1').value);
 if (sqft >= 1){
-  sqft *= 3;
-  total = sqft + total;
+  var trim1Price = sqft * 5;
+  total = trim1Price + total;
   document.getElementById('vresp').innerHTML = '$' + total;
 } else {
   document.getElementById('vresp').innerHTML = '$' + total;
 }
+addR = '%0D%0A'+ ' ' + sqft + 'sqft of Ext. Trim priced at $' + trim1Price;
+receipt.push(addR);
+
 }
 
 function brick(){
 sqft = parseFloat(document.getElementById('brick').value);
 if (sqft >= 1){
-  sqft *= 6;
-  total = sqft + total;
+  var brickPrice = sqft * 7;
+  total = brickPrice + total;
   document.getElementById('vresp').innerHTML = '$' + total;
 } else {
   document.getElementById('vresp').innerHTML = '$' + total;
 }
+addR = '%0D%0A'+ ' ' + sqft + 'sqft of brick priced at $' + brickPrice;
+receipt.push(addR);
+
 }
 
 function stucco(){
 sqft = parseFloat(document.getElementById('stucco').value);
 if (sqft >= 1){
-  sqft *= 9;
-  total = sqft + total;
+  var stuccoPrice = sqft * 9;
+  total = stuccoPrice + total;
   document.getElementById('vresp').innerHTML = '$' + total;
 } else {
   document.getElementById('vresp').innerHTML = '$' + total;
 }
-}
+addR = '%0D%0A'+ ' ' + sqft + 'sqft of Stucco priced at $' + stuccoPrice;
+receipt.push(addR);
 
-
-function flooring(){
-  document.getElementById('vresp').innerHTML = 'Small';
 }
 
 var toggleVisibility = function(element) {
@@ -305,6 +371,32 @@ var toggleVisibility = function(element) {
         element.style.display='block';
     }
 }
+
+function toggleSelected() {
+  toggleVisibility(document.getElementById('foo'));
+  var x = document.getElementById("foo2");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "none";
+    }
+}
+function toggleSelected1() {
+  toggleVisibility(document.getElementById('foo2'));
+  var x = document.getElementById("foo");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function doMail() {
+
+    var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
+    location.href = "mailto:"+email+receipt+"%0D%0A"+"%0D%0A"+"Total: $"+total+"%0D%0A"+"%0D%0A"+"I'm ready for you to contact me, my number is (Enter your Phone number here)";
+}
+
 </script>
 
 <div>
@@ -321,16 +413,16 @@ var toggleVisibility = function(element) {
       <h2 class="carousel-item__subtitle">Project Estimator</h2>
       <p class="carousel-item__description">
 
-        <input onclick="toggleVisibility(document.getElementById('foo'))" type="radio" name="rb" id="rb1" />
+        <input onclick="toggleSelected()" type="radio" name="rb" id="rb1" />
         <label for="rb1">Interior</label>
 
-        <input onclick="toggleVisibility(document.getElementById('foo2'))" type="radio" name="rb" id="rb3" />
+        <input onclick="toggleSelected1()" type="radio" name="rb" id="rb3" />
         <label for="rb3">Exterior</label>
 
 
         <div id="foo" style="display:none">
 
-          <h2>Pick an Area of Focus:</h2>
+          <h2>Choose an Area of Focus:</h2>
 
           <input onclick="toggleVisibility(document.getElementById('bathroom'))" type="checkbox" name="cb" id="cb1" class="addon" />
           <label for="cb1">Room Design</label>
@@ -442,7 +534,7 @@ var toggleVisibility = function(element) {
           <div id="walls" style="display:none">
             <input onclick="toggleVisibility(document.getElementById('dryRooms'))" type="radio" name="rb" id="dry" />
             <label for="dry">Drywall & Repair</label>
-            <input onclick="toggleVisibility(document.getElementById('carpetRooms'))" type="radio" name="rb" id="texture" />
+            <input onclick="toggleVisibility(document.getElementById('textureRooms'))" type="radio" name="rb" id="texture" />
             <label for="texture">Texture</label>
             <input onclick="toggleVisibility(document.getElementById('insuRooms'))" type="radio" name="rb" id="insu" />
             <label for="insu">Insulation</label>
@@ -585,7 +677,7 @@ var toggleVisibility = function(element) {
 
 
 
-      <a href="index.html" class="carousel-item__btn">Home</a><a onclick="reset()" class="carousel-item__btn">  | Reset</a>
+      <a href="index.html" class="carousel-item__btn">Home</a><a onclick="reset()" class="carousel-item__btn">  | Reset</a><a onclick="doMail();" class="carousel-item__btn">  |  Receipt</a>
         </div>
     </div>
   </div>

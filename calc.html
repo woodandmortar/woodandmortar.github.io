@@ -74,7 +74,9 @@
 
   <script>
 var total = 0;
-var rooms = 1;
+var rooms = 0;
+var sqft = 0;
+
 
 function reset(){
   total = 0;
@@ -225,6 +227,71 @@ if (rooms >= 1){
 }
 }
 
+function extpaint1(){
+sqft = parseFloat(document.getElementById('extpaint').value);
+if (sqft >= 1){
+  sqft *= 7;
+  total = sqft + total;
+  document.getElementById('vresp').innerHTML = '$' + total;
+} else {
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
+}
+
+function siding(){
+sqft = parseFloat(document.getElementById('siding').value);
+if (sqft >= 1){
+  sqft *= 9;
+  total = sqft + total;
+  document.getElementById('vresp').innerHTML = '$' + total;
+} else {
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
+}
+
+function fence(){
+sqft = parseFloat(document.getElementById('fence').value);
+if (sqft >= 1){
+  sqft *= 5;
+  total = sqft + total;
+  document.getElementById('vresp').innerHTML = '$' + total;
+} else {
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
+}
+
+function trim1(){
+sqft = parseFloat(document.getElementById('trim1').value);
+if (sqft >= 1){
+  sqft *= 3;
+  total = sqft + total;
+  document.getElementById('vresp').innerHTML = '$' + total;
+} else {
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
+}
+
+function brick(){
+sqft = parseFloat(document.getElementById('brick').value);
+if (sqft >= 1){
+  sqft *= 6;
+  total = sqft + total;
+  document.getElementById('vresp').innerHTML = '$' + total;
+} else {
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
+}
+
+function stucco(){
+sqft = parseFloat(document.getElementById('stucco').value);
+if (sqft >= 1){
+  sqft *= 9;
+  total = sqft + total;
+  document.getElementById('vresp').innerHTML = '$' + total;
+} else {
+  document.getElementById('vresp').innerHTML = '$' + total;
+}
+}
 
 
 function flooring(){
@@ -263,10 +330,10 @@ var toggleVisibility = function(element) {
 
         <div id="foo" style="display:none">
 
-          <h2>What do you need worked on?</h2>
+          <h2>Pick an Area of Focus:</h2>
 
           <input onclick="toggleVisibility(document.getElementById('bathroom'))" type="checkbox" name="cb" id="cb1" class="addon" />
-          <label for="cb1">Bath Remodel</label>
+          <label for="cb1">Room Design</label>
 
           <div id="bathroom" style="display:none">
             <input onclick="bathroomSmall(); toggleVisibility(document.getElementById('bathroom'))" type="radio" name="rb" id="small1" />
@@ -433,21 +500,77 @@ var toggleVisibility = function(element) {
         </div>
 
 
+
+
         <div id="foo2" style="display:none">
 
-          <h2>What do you need worked on?</h2>
-          <input onclick="buttonclick2()" type="checkbox" name="cb" id="cb7" class="addon" />
+          <h2>Choose an Area of Focus:</h2>
+
+
+          <div id="extpaint1" style="display:none">
+              <div>
+                <input placeholder="How many Squarefeet?" id='extpaint' type="text">
+              </div>
+              <div>
+                <button onclick="extpaint1(); toggleVisibility(document.getElementById('extpaint1'))">Add</button>
+              </div>
+          </div>
+          <input onclick="toggleVisibility(document.getElementById('extpaint1'))" type="checkbox" name="cb" id="cb7" class="addon" />
           <label for="cb7">Painting</label>
-          <input type="checkbox" name="cb" id="cb8" class="addon" />
+
+          <div id="extsiding" style="display:none">
+              <div>
+                <input placeholder="How many Squarefeet?" id='siding' type="text">
+              </div>
+              <div>
+                <button onclick="siding(); toggleVisibility(document.getElementById('extsiding'))">Add</button>
+              </div>
+          </div>
+          <input onclick="toggleVisibility(document.getElementById('extsiding'))" type="checkbox" name="cb" id="cb8" class="addon" />
           <label for="cb8">Siding</label>
-          <input type="checkbox" name="cb" id="cb9" class="addon" />
+
+          <div id="extfence" style="display:none">
+              <div>
+                <input placeholder="How many Squarefeet?" id='fence' type="text">
+              </div>
+              <div>
+                <button onclick="fence(); toggleVisibility(document.getElementById('extfence'))">Add</button>
+              </div>
+          </div>
+          <input onclick="toggleVisibility(document.getElementById('extfence'))" type="checkbox" name="cb" id="cb9" class="addon" />
           <label for="cb9">Fencing</label>
-          <br/>
-          <input type="checkbox" name="cb" id="cb10" class="addon" />
+
+          <div id="exttrim" style="display:none">
+              <div>
+                <input placeholder="How many Squarefeet?" id='trim1' type="text">
+              </div>
+              <div>
+                <button onclick="trim1(); toggleVisibility(document.getElementById('exttrim'))">Add</button>
+              </div>
+          </div>
+          <input onclick="toggleVisibility(document.getElementById('exttrim'))" type="checkbox" name="cb" id="cb10" class="addon" />
           <label for="cb10">Trim</label>
-          <input type="checkbox" name="cb" id="cb11" class="addon" />
+
+          <div id="extstucco" style="display:none">
+              <div>
+                <input placeholder="How many Squarefeet?" id='stucco' type="text">
+              </div>
+              <div>
+                <button onclick="stucco(); toggleVisibility(document.getElementById('extstucco'))">Add</button>
+              </div>
+          </div>
+          <input onclick="toggleVisibility(document.getElementById('extstucco'))" type="checkbox" name="cb" id="cb11" class="addon" />
           <label for="cb11">Stucco</label>
-          <input type="checkbox" name="cb" id="cb12" class="addon" />
+
+          <div id="extbrick" style="display:none">
+              <div>
+                <input placeholder="How many Squarefeet?" id='brick' type="text">
+              </div>
+              <div>
+                <button onclick="brick(); toggleVisibility(document.getElementById('extbrick'))">Add</button>
+              </div>
+          </div>
+          <input onclick="toggleVisibility(document.getElementById('extbrick'))" type="checkbox" name="cb" id="cb12" class="addon" />
           <label for="cb12">Brick</label>
 
 

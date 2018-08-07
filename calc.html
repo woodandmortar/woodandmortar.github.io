@@ -414,7 +414,7 @@ function doMail() {
       <p class="carousel-item__description">
 
         <input onclick="toggleSelected()" type="radio" name="rb" id="rb1" />
-        <label for="rb1">Interior</label>
+        <label for="rb1">Create a room</label>
 
         <input onclick="toggleSelected1()" type="radio" name="rb" id="rb3" />
         <label for="rb3">Exterior</label>
@@ -425,7 +425,7 @@ function doMail() {
           <h2>Choose an Area of Focus:</h2>
 
           <input onclick="toggleVisibility(document.getElementById('bathroom'))" type="checkbox" name="cb" id="cb1" class="addon" />
-          <label for="cb1">Room Design</label>
+          <label for="cb1">Room Size</label>
 
           <div id="bathroom" style="display:none">
             <input onclick="bathroomSmall(); toggleVisibility(document.getElementById('bathroom'))" type="radio" name="rb" id="small1" />
@@ -434,6 +434,8 @@ function doMail() {
             <label for="medium1">Medium</label>
             <input onclick="bathroomLarge(); toggleVisibility(document.getElementById('bathroom'))" type="radio" name="rb" id="large1" />
             <label for="large1">Large</label>
+            <input onclick="bathroomLarge(); toggleVisibility(document.getElementById('bathroom'))" type="radio" name="rb" id="xlarge1" />
+            <label for="xlarge1">X-Large</label>
           </div>
 
           <div id="paintRooms" style="display:none">

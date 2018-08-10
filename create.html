@@ -162,6 +162,8 @@ h2 {
 }
 
 .carousel-item--1 .carousel-item__image{
+   max-width: 800px;
+   max-height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url('pics/3.jpg');
@@ -447,6 +449,8 @@ function doMail() {
         <input type="file" id="files" name="files[]" multiple />
 
 <script>
+
+
   function handleFileSelect(evt) {
     var files = evt.target.files; // FileList object
 
@@ -468,7 +472,14 @@ function doMail() {
           span.innerHTML = ['<img class="thumb" src="', e.target.result,
                             '" title="', escape(theFile.name), '"/>'].join('');
           document.getElementById('list').insertBefore(span, null);
-          document.getElementById('changeBackground').style.background = ['url("', e.target.result, '")'].join('');
+          var xstyle = document.getElementById("changeBackground");
+
+          xstyle.style.background = ['url("', e.target.result, '") no-repeat'].join('');
+          xstyle.style.setProperty('object-fit', 'contain');
+          xstyle.style.setProperty('max-width', '800px');
+          xstyle.style.setProperty('height', '70%');
+          xstyle.style.setProperty('display', '-webkit-flex');
+
         };
       })(f);
 

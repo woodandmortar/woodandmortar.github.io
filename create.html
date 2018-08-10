@@ -73,7 +73,6 @@ h2 {
 .carousel {
     width: 100%;
     height: 100%;
-    display: flex;
     font-family: 'Playfair Display', serif;
     max-width: 900px;
     max-height: 100%;
@@ -83,50 +82,42 @@ h2 {
 
 .carousel-item {
   visibility:visible;
-    display: flex;
     width: 100%;
     height: 100%;
-    align-items: center;
-    justify-content: flex-end;
-      -webkit-align-items: center;
-    -webkit-justify-content: flex-end;
-    position: relative;
     background-color: #fff;
     flex-shrink: 0;
    -webkit-flex-shrink: 0;
     position: absolute;
     z-index: 0;
   transition: 0.6s all linear;
+  justify-content: center;
+
 }
 
 .carousel-item__info {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-    display: -webkit-flex;
-  -webkit-justify-content: center;
-  -webkit-flex-direction: column;
-
-  order: 1;
-  left: 0;
+  width:100%;
+  height: 30%;
+  top: 0;
   margin: auto;
   padding: 0 5px;
-  width: 60%;
-
+  justify-content: center;
+  position:absolute;
+  display: -webkit-flex;
+-webkit-justify-content: center;
 }
 
 .carousel-item__image {
-  display: flex;
     width: 100%;
-    height: 30%;
-    top:0 ;
+    height: 70%;
+    bottom:0;
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
    position:absolute;
-
+  transform: translateX(100%);
   transition: 0.6s all ease-in-out;
+  display: -webkit-flex;
+-webkit-justify-content: center;
 }
 
 .carousel-item__subtitle {
@@ -162,12 +153,12 @@ h2 {
     opacity: 0;
     visibility: hidden;
     transition: 0.6s all ease-in-out;
-    margin-top: 35px;
+    margin-top: 5px;
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
     color: #7e7e7e;
     line-height: 22px;
-    margin-bottom: 35px;
+    margin-bottom: 5px;
 }
 
 .carousel-item--1 .carousel-item__image{
@@ -330,11 +321,6 @@ label::before {
   transition: .25s all ease;
 }
 
-.thumb {
-    height: 75px;
-    border: 1px solid #000;
-    margin: 10px 5px 0 0;
-  }
 
 </style>
 
@@ -345,6 +331,7 @@ label::before {
   <title>Wood&Mortar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<output id="list" style="display:none"></output>
 
 <body>
 
@@ -358,7 +345,7 @@ var addR = '%0D%0A'+ 0;
 
 function createRoom()
 {
-    document.getElementById('changeBackground').style.background = file;
+    document.getElementById('changeBackground').style.background = 'url("pics/5.jpg")';
 }
 function createRoom1()
 {
@@ -439,24 +426,8 @@ function doMail() {
     location.href = "mailto:"+email+receipt+"%0D%0A"+"%0D%0A"+"Total: $"+total+"%0D%0A"+"%0D%0A"+"I'm ready for you to contact me, my number is (Enter your Phone number here)";
 }
 
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#blah').attr('src', e.target.result);
-        }
-
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
-$("#imgInp").change(function(){
-    readURL(this);
-});
 
 </script>
-
 
 
 <div class="carousel">
@@ -467,7 +438,6 @@ $("#imgInp").change(function(){
       <div class="carousel-item__container">
       <p class="carousel-item__description">
 
-
         <input onclick="toggleSelected1(); createRoom()" type="radio" name="rb" id="rb1" />
         <label for="rb1">Create</label>
 
@@ -475,7 +445,6 @@ $("#imgInp").change(function(){
         <label for="rb3">Repair</label>
 
         <input type="file" id="files" name="files[]" multiple />
-<output id="list"></output>
 
 <script>
   function handleFileSelect(evt) {
@@ -499,6 +468,7 @@ $("#imgInp").change(function(){
           span.innerHTML = ['<img class="thumb" src="', e.target.result,
                             '" title="', escape(theFile.name), '"/>'].join('');
           document.getElementById('list').insertBefore(span, null);
+          document.getElementById('changeBackground').style.background = ['url("', e.target.result, '")'].join('');
         };
       })(f);
 
@@ -506,7 +476,6 @@ $("#imgInp").change(function(){
       reader.readAsDataURL(f);
     }
   }
-
   document.getElementById('files').addEventListener('change', handleFileSelect, false);
 </script>
 

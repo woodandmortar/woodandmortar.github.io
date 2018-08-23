@@ -140,9 +140,28 @@ body {
 }
 
 .carousel-item--3 .carousel-item__image{
-  background-image: url('../pics/calcc.jpg');
+  background-image: url('../pics/remodel.jpg');
 }
 
+.carousel-item--4 .carousel-item__image{
+  background-image: url('../pics/k5.jpg');
+}
+
+.carousel-item--5 .carousel-item__image{
+  background-image: url('../pics/k1.jpg');
+}
+
+.carousel-item--6 .carousel-item__image{
+  background-image: url('../pics/k3.jpg');
+}
+
+.carousel-item--7 .carousel-item__image{
+  background-image: url('../pics/k2.jpg');
+}
+
+.carousel-item--8 .carousel-item__image{
+  background-image: url('../pics/k4.jpg');
+}
 
 
 

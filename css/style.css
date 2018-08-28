@@ -136,7 +136,7 @@ body {
 
 
 .carousel-item--2 .carousel-item__image{
-  background-image: url('https://images.pexels.com/photos/921294/pexels-photo-921294.png?auto=compress&cs=tinysrgb&h=750&w=1260');
+  background-image: url('../pics/fall.jpg');
 }
 
 .carousel-item--3 .carousel-item__image{
@@ -148,7 +148,7 @@ body {
 }
 
 .carousel-item--5 .carousel-item__image{
-  background-image: url('../pics/homelaugh.gif');
+  background-image: url('../pics/cut1.gif');
 }
 
 

@@ -140,7 +140,7 @@ body {
 }
 
 .carousel-item--3 .carousel-item__image{
-  background-image: url('../pics/bathroom.jpg');
+  background-image: url('../pics/bathremodel2.jpg');
 }
 
 .carousel-item--4 .carousel-item__image{
@@ -163,7 +163,7 @@ body {
     color: #2C2C2C;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 3px;
-    font-size: 11px;
+    font-size: 15px;
     text-transform: uppercase;
     margin: 0;
     width: 35%;

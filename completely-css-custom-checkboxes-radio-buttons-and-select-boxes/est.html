@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Wood & Mortar</title>
+  <html lang="en" class="no-js"><head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+      <html class="no-js" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+      <META NAME="KEYWORDS" CONTENT="home improvement, home repair, house repair, house improvement, design, home design, designers, kitchen remodel, bathroom remodel, kitchen design, kitchen makeover, improvement, kitchen, bathroom, small kitchen remodel, Painters, Painting, woodworking, tile, home repair, Contractors, Home, Home Renovations, Wood, wood&mortar, wood & mortar, brick, stucco, Wood and Mortar, WoodandMortar">
+      <META NAME="ROBOTS" CONTENT="ALL,FOLLOW">
+
+          <meta name="description" content="Property Management">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="apple-touch-icon" sizes="180x180" href="pics/wm.png">
+              <link rel="icon" type="image/png" href="pics/wm.png" sizes="32x32">
+              <link rel="icon" type="image/png" href="pics/wm.png" sizes="16x16">
+              <link rel="mask-icon" href="pics/wm.png" color="#fff">
+              <link rel="shortcut icon" href="pics/wm.png">
+  <link rel="stylesheet" href="css/est.css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123535120-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-123535120-1');
+  </script>
+
+
+</head>
+
+
+
+<style>
+.diamond {
+  position: absolute;
+  height: 60px;
+  z-index: 30;
+  width: 200px;
+  line-height: 50px;
+  text-align: center;
+}
+.diamond:before {
+  position: absolute;
+  content: '';
+  bottom: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  z-index: -1;
+}
+
+.container2 {
+  width: 50%;
+  height: 18%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
+}
+.container3 {
+  width: 20%;
+  top: 18%;
+  position: absolute;
+  left: 1px;
+  z-index: 40;
+}
+</style>
+
+
+
+
+<body>
+<div class="container2">
+  <div>
+    <span class='diamond' id="vresp">$0</span>
+  </div>
+  <div class="container3">
+    <input type="button" value="Reset" onClick="window.location.href=window.location.href">
+    <input type="button" value="Request" onclick="doMail();">
+    <input type="button" value="Home" onClick="window.location.href='https://woodandmortar.github.io/'">
+  </div>
+</div>
+
+
+  <div class="container">
+  <div class="control-group" id="fo" >
+    <h1>Estimator</h1>
+    <label class="control control--checkbox">Interior
+      <input onclick="toggleVisibility(document.getElementById('foo'))" id="rb1" type="checkbox" />
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--checkbox">Exterior
+      <input onclick="toggleVisibility(document.getElementById('foo2'))" id="rb2" type="checkbox"/>
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--checkbox">Seasonal Discount
+      <input type="checkbox" disabled="disabled"/>
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--checkbox">Free In-Person Estimate
+      <input type="checkbox" disabled="disabled" checked="checked"/>
+      <div class="control__indicator"></div>
+    </label>
+  </div>
+
+
+  <div class="control-group" id="foo" style="display:none">
+    <h1>Interiors</h1>
+    <label class="control control--checkbox">Basic Room
+      <input onclick="toggleVisibility(document.getElementById('foo3'));toggleVisibility(document.getElementById('fo'));toggleVisibility(document.getElementById('fo'));toggleVisibility(document.getElementById('foo'));" id="rb3" type="checkbox" />
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--checkbox">Kitchen
+      <input onclick="toggleVisibility(document.getElementById('foo4'));toggleVisibility(document.getElementById('fo'));toggleVisibility(document.getElementById('fo'));toggleVisibility(document.getElementById('foo'));" id="rb3"  type="checkbox" />
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--checkbox">Washroom
+      <input type="checkbox"/>
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--checkbox">Basements
+      <input type="checkbox"/>
+      <div class="control__indicator"></div>
+    </label>
+  </div>
+
+
+  <div class="control-group" id="foo2" style="display:none">
+    <h1>Exteriors</h1>
+    <div class="select">
+      <select>
+        <option>First select</option>
+        <option>Option</option>
+        <option>Option</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+    <div class="select">
+      <select>
+        <option>Second select</option>
+        <option>Option</option>
+        <option>Option</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+    <div class="select">
+      <select disabled="disabled">
+        <option>Disabled</option>
+        <option>Option</option>
+        <option>Option</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+  </div>
+
+
+  <div class="control-group" id="foo3" style="display:none">
+    <div class="select">
+      <select id="room-count" name="room-count">
+        <option value="">Select one</option>
+        <option value="1">One room</option>
+        <option value="2">Two rooms</option>
+        <option value="3">Three rooms</option>
+        <option value="4">Four rooms</option>
+        <option value="5">Five rooms</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+    <label class="control control--checkbox">Painting
+      <input id="myCheck0" onclick="paint();" type="checkbox" />
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--checkbox">Trim
+      <input id="myCheck" onclick="trim();" type="checkbox" />
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--checkbox">Drywall
+      <input id="myCheck2" onclick="drywall();" type="checkbox"/>
+      <div class="control__indicator"></div>
+    </label>
+  </div>
+
+  <div class="control-group" id="foo4" style="display:none">
+    <div class="select">
+      <select id="countertop" name="countertop">
+        <option value="">Countertop</option>
+        <option value="40">Granite</option>
+        <option value="30">Tile</option>
+        <option value="25">Linoleum</option>
+        <option value="35">Butcherblock</option>
+        <option value="70">Marble</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+    <label class="control control--checkbox">Cabinets
+      <input id="myCheck0" onclick="paint();" type="checkbox" />
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--checkbox">Countertops
+      <input id="myCheck" onclick="trim();" type="checkbox" />
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--checkbox">Backsplash
+      <input id="myCheck2" onclick="drywall();" type="checkbox"/>
+      <div class="control__indicator"></div>
+    </label>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+</body>
+
+<script>
+
+var total = 0;
+var paintTotal = 0;
+var sqft = 0;
+var receipt = ["Free Estimate"];
+var addR = '%0D%0A'+ 0;
+var roomCount = 0;
+var countertop = 0;
+
+
+function reset(){
+total = 0;
+document.getElementById('vresp').innerHTML = '$' + total;
+}
+
+
+  document.addEventListener('DOMContentLoaded',function() {
+    document.querySelector('select[name="room-count"]').onchange=changeEventHandler;
+    document.querySelector('select[name="countertop"]').onchange=changeEventHandler1;
+},false);
+
+function changeEventHandler(event) {
+    // You can use “this” to refer to the selected element.
+    if(!event.target.value)
+      {
+        document.getElementById('vresp').innerHTML = '$ ' + 0;
+      }
+    else {
+      roomCount = parseFloat(event.target.value);
+      paintTotal = roomCount * 400;
+    }
+}
+
+function paint()
+{
+  var checkBox = document.getElementById("myCheck0");
+  if(checkBox.checked == true)
+    {
+    total += parseFloat(paintTotal);
+    document.getElementById('vresp').innerHTML = '$ ' + total;
+    addR = '%0D%0A'+ ' ' + roomCount + ' Rooms to paint at $' + paintTotal;
+    receipt.push(addR);
+    }
+  else
+      {
+        text.style.display = "none"
+      }
+
+}
+
+function trim()
+{
+
+  var trimTotal = 0;
+  trimCount = roomCount * 80;
+  trimTotal = (trimCount * .9) + (roomCount * 100);
+
+  // Get the checkbox
+  var checkBox = document.getElementById("myCheck");
+  // Get the output text
+  var text = document.getElementById("text");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    total += parseFloat(trimTotal);
+    document.getElementById('vresp').innerHTML = '$ ' + total;
+    addR = '%0D%0A'+ ' ' + trimCount + ' linear ft to trim at $' + trimTotal;
+    receipt.push(addR);  } else {
+    text.style.display = "none";
+  }
+
+}
+
+function drywall()
+{
+
+  var drywallTotal = 0;
+  drywallCount = roomCount * 28;
+  drywallTotal = (drywallCount * 7.96) + (roomCount * 800);
+
+  // Get the checkbox
+  var checkBox = document.getElementById("myCheck2");
+  // Get the output text
+  var text = document.getElementById("text");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    total += parseFloat(drywallTotal);
+    document.getElementById('vresp').innerHTML = '$ ' + total;
+    addR = '%0D%0A'+ ' ' + drywallCount + ' rooms to drywall at $' + drywallTotal;
+    receipt.push(addR);  } else {
+    text.style.display = "none";
+  }
+
+}
+
+
+var toggleVisibility = function(element) {
+  if(element.style.display=='block'){
+      element.style.display='none';
+  } else {
+      element.style.display='block';
+  }
+}
+
+function doMail() {
+  var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
+  location.href = "mailto:"+email+receipt+"%0D%0A"+"%0D%0A"+"Total: $"+total+"%0D%0A"+"%0D%0A"+"I'm ready for you to contact me, my number is (Enter your Phone number here)";
+}
+
+
+
+function changeEventHandler1(event) {
+    // You can use “this” to refer to the selected element.
+    if(!event.target.value)
+      {
+        document.getElementById('vresp').innerHTML = '$ ' + 0;
+      }
+    else {
+      var countertop = parseFloat(event.target.value);
+      kitchenTotal = countertop * 90;
+      total += parseFloat(kitchenTotal);
+      document.getElementById('vresp').innerHTML = '$ ' + total;
+      addR = '%0D%0A'+ ' ' + event.target + ' Rooms to paint at $' + kitchenTotal;
+      receipt.push(addR);
+    }
+}
+
+</script>
+
+</script>
+
+
+
+</html>

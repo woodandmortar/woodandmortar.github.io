@@ -65,20 +65,20 @@ body {
   order: 2;
   left: 0;
   margin: auto;
-  width: 10%;
+  width: 15%;
 
 }
 
 .carousel-item__image {
-    width: 90%;
+    width: 85%;
     height: 100%;
     order: 1;
     align-self: flex-end;
-    flex-basis: 90%;
+    flex-basis: 85%;
 
       -webkit-order: 1;
     -webkit-align-self: flex-end;
-    -webkit-flex-basis: 90%;
+    -webkit-flex-basis: 85%;
 
     background-position: center;
     background-repeat: no-repeat;
@@ -90,7 +90,7 @@ body {
 
 
 .carousel-item--1 .carousel-item__image{
-  background-image: url('../pics/15.jpg');
+  background-image: url('../pics/Transparent_leaves.gif');
 }
 
 
@@ -102,7 +102,7 @@ body {
     color: #2C2C2C;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 3px;
-    font-size: 11px;
+    font-size: 10px;
     text-transform: uppercase;
     margin: 0;
     width: 35%;

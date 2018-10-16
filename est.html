@@ -36,7 +36,7 @@
   position: absolute;
   height: 60px;
   z-index: 30;
-  width: 200px;
+  width: 260px;
   line-height: 50px;
   text-align: center;
   font-size: 24px;
@@ -89,11 +89,11 @@
   <div class="control-group" id="fo" >
     <h1>Estimator</h1>
     <label class="control control--checkbox">Interior
-      <input onclick="toggleVisibility(document.getElementById('foo'))" id="rb1" type="checkbox" />
+      <input onclick="toggleVisibility(document.getElementById('foo'));toggleVisibility(document.getElementById('fo'));toggleVisibility(document.getElementById('fo'));" id="rb1" type="checkbox" />
       <div class="control__indicator"></div>
     </label>
     <label class="control control--checkbox">Exterior
-      <input onclick="toggleVisibility(document.getElementById('foo2'))" id="rb2" type="checkbox"/>
+      <input onclick="toggleVisibility(document.getElementById('foo2'));toggleVisibility(document.getElementById('fo'));toggleVisibility(document.getElementById('fo'));" id="rb2" type="checkbox"/>
       <div class="control__indicator"></div>
     </label>
     <label class="control control--checkbox">Seasonal Discount
@@ -110,11 +110,11 @@
   <div class="control-group" id="foo" style="display:none">
     <h1>Interiors</h1>
     <label class="control control--checkbox">Basic Room
-      <input onclick="toggleVisibility(document.getElementById('foo3'));toggleVisibility(document.getElementById('fo'));toggleVisibility(document.getElementById('fo'));toggleVisibility(document.getElementById('foo'));" id="rb3" type="checkbox" />
+      <input onclick="toggleVisibility(document.getElementById('foo3'));toggleVisibility(document.getElementById('foo'));" id="rb3" type="checkbox" />
       <div class="control__indicator"></div>
     </label>
     <label class="control control--checkbox">Kitchen
-      <input onclick="toggleVisibility(document.getElementById('foo4'));toggleVisibility(document.getElementById('fo'));toggleVisibility(document.getElementById('fo'));toggleVisibility(document.getElementById('foo'));" id="rb3"  type="checkbox" />
+      <input onclick="toggleVisibility(document.getElementById('foo4'));toggleVisibility(document.getElementById('foo'));" id="rb3"  type="checkbox" />
       <div class="control__indicator"></div>
     </label>
     <label class="control control--checkbox">Washroom
@@ -158,9 +158,10 @@
 
 
   <div class="control-group" id="foo3" style="display:none">
+    <h1>How many rooms?</h1>
     <div class="select">
       <select id="room-count" name="room-count">
-        <option value="">Select one</option>
+        <option value="">None</option>
         <option value="1">One room</option>
         <option value="2">Two rooms</option>
         <option value="3">Three rooms</option>
@@ -184,9 +185,10 @@
   </div>
 
   <div class="control-group" id="foo4" style="display:none">
+    <h1>Countertop type?</h1>
     <div class="select">
       <select id="countertop" name="countertop">
-        <option value="">Countertop</option>
+        <option value="">Choose one</option>
         <option value="40">Granite</option>
         <option value="30">Tile</option>
         <option value="25">Linoleum</option>
@@ -195,16 +197,19 @@
       </select>
       <div class="select__arrow"></div>
     </div>
-    <label class="control control--checkbox">Cabinets
-      <input id="myCheck0" onclick="paint();" type="checkbox" />
-      <div class="control__indicator"></div>
-    </label>
-    <label class="control control--checkbox">Countertops
-      <input id="myCheck" onclick="trim();" type="checkbox" />
-      <div class="control__indicator"></div>
-    </label>
+    <h1>Cabinets?</h1>
+    <div class="select">
+      <select id="cabinets" name="cabinets">
+        <option value="">Choose one</option>
+        <option value="28">Install</option>
+        <option value="42">Build</option>
+        <option value="14">Repair</option>
+        <option value="42">Paint & Finish</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
     <label class="control control--checkbox">Backsplash
-      <input id="myCheck2" onclick="drywall();" type="checkbox"/>
+      <input id="myCheck3" onclick="backsplash();" type="checkbox"/>
       <div class="control__indicator"></div>
     </label>
   </div>
@@ -241,6 +246,9 @@ var receipt = ["Free Estimate"];
 var addR = '%0D%0A'+ 0;
 var roomCount = 0;
 var countertop = 0;
+var cabinetTotal = 0;
+var backsplashTotal = 0;
+var backsplashCount = 0;
 
 
 function reset(){
@@ -252,6 +260,7 @@ document.getElementById('vresp').innerHTML = '$' + total;
   document.addEventListener('DOMContentLoaded',function() {
     document.querySelector('select[name="room-count"]').onchange=changeEventHandler;
     document.querySelector('select[name="countertop"]').onchange=changeEventHandler1;
+    document.querySelector('select[name="cabinets"]').onchange=changeEventHandler2;
 },false);
 
 function changeEventHandler(event) {
@@ -315,12 +324,10 @@ function drywall()
 
   // Get the checkbox
   var checkBox = document.getElementById("myCheck2");
-  // Get the output text
-  var text = document.getElementById("text");
 
   // If the checkbox is checked, display the output text
   if (checkBox.checked == true){
-    total += parseFloat(drywallTotal);
+    total += parseInt(drywallTotal);
     document.getElementById('vresp').innerHTML = '$ ' + total;
     addR = '%0D%0A'+ ' ' + drywallCount + ' rooms to drywall at $' + drywallTotal;
     receipt.push(addR);  } else {
@@ -328,6 +335,30 @@ function drywall()
   }
 
 }
+
+function backsplash()
+{
+
+  var backsplashTotal = 0;
+  backsplashCount = 20;
+  backsplashTotal = backsplashCount * 40;
+
+  // Get the checkbox
+  var checkBox = document.getElementById("myCheck3");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    total += parseFloat(backsplashTotal);
+    document.getElementById('vresp').innerHTML = '$ ' + total;
+    addR = '%0D%0A'+ ' ' + backsplashCount + ' hours to backsplash at $' + backsplashTotal;
+    receipt.push(addR);  } else {
+    text.style.display = "none";
+  }
+
+}
+
+
+
 
 
 var toggleVisibility = function(element) {
@@ -356,7 +387,22 @@ function changeEventHandler1(event) {
       kitchenTotal = countertop * 90;
       total += parseFloat(kitchenTotal);
       document.getElementById('vresp').innerHTML = '$ ' + total;
-      addR = '%0D%0A'+ ' ' + event.target + ' Rooms to paint at $' + kitchenTotal;
+      addR = '%0D%0A'+ ' at $' + parseFloat(event.target.value) + ' per sqft of material plus install at $' + kitchenTotal;
+      receipt.push(addR);
+    }
+}
+function changeEventHandler2(event) {
+    // You can use “this” to refer to the selected element.
+    if(!event.target.value)
+      {
+        document.getElementById('vresp').innerHTML = '$ ' + 0;
+      }
+    else {
+      var cabinets = parseFloat(event.target.value);
+      cabinetTotal = cabinets * 40;
+      total += parseFloat(cabinetTotal);
+      document.getElementById('vresp').innerHTML = '$ ' + total;
+      addR = '%0D%0A'+ ' ' + parseFloat(event.target.value) + ' hours to finish at $' + cabinetTotal;
       receipt.push(addR);
     }
 }

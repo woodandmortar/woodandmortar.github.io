@@ -103,7 +103,7 @@
 
       <a class="carousel-item__btn" onclick="window.location.href=window.location.href">Reset</a>
       <br/><br/>
-      <a class="carousel-item__btn" onclick="doMail();">Submit</a>
+      <a class="carousel-item__btn" onclick="doMail();">Email</a>
       <br/><br/>
       <a href="index.html" class="carousel-item__btn">Home</a>
 
@@ -115,7 +115,7 @@
   </div>
   <div class="container">
   <div class="control-group" id="fo" >
-    <h3>Estimator</h3>
+    <h3>Project Estimator</h3>
     <label class="control control--checkbox">Interior
       <input onclick="toggleVisibility(document.getElementById('foo'));toggleVisibility(document.getElementById('fo'));toggleVisibility(document.getElementById('fo'));" id="rb1" type="checkbox" />
       <div class="control__indicator"></div>
@@ -125,10 +125,6 @@
       <div class="control__indicator"></div>
     </label>
     <label class="control control--checkbox">Seasonal Discount
-      <input type="checkbox" disabled="disabled"/>
-      <div class="control__indicator"></div>
-    </label>
-    <label class="control control--checkbox">Free In-Person Estimate
       <input type="checkbox" disabled="disabled" checked="checked"/>
       <div class="control__indicator"></div>
     </label>
@@ -142,43 +138,58 @@
       <div class="control__indicator"></div>
     </label>
     <label class="control control--checkbox">Kitchen
-      <input onclick="toggleVisibility(document.getElementById('foo4'));toggleVisibility(document.getElementById('foo'));" id="rb3"  type="checkbox" />
+      <input onclick="toggleVisibility(document.getElementById('foo4'));toggleVisibility(document.getElementById('foo'));" id="rb3" type="checkbox" />
       <div class="control__indicator"></div>
     </label>
     <label class="control control--checkbox">Washroom
-      <input type="checkbox"/>
-      <div class="control__indicator"></div>
-    </label>
-    <label class="control control--checkbox">Basements
-      <input type="checkbox"/>
+      <input onclick="toggleVisibility(document.getElementById('foo5'));toggleVisibility(document.getElementById('foo'));" id="rb3"  type="checkbox"/>
       <div class="control__indicator"></div>
     </label>
   </div>
 
 
   <div class="control-group" id="foo2" style="display:none">
-    <h1>Exteriors</h3>
     <div class="select">
-      <select>
-        <option>First select</option>
-        <option>Option</option>
-        <option>Option</option>
+      <select id="windows" name="windows">
+        <option value="">Windows</option>
+        <option value="28">Replacement</option>
+        <option value="28">Upgrade</option>
+        <option value="14">Weatherseal</option>
       </select>
       <div class="select__arrow"></div>
     </div>
     <div class="select">
-      <select>
-        <option>Second select</option>
-        <option>Option</option>
-        <option>Option</option>
+      <select id="decks" name="decks">
+        <option value="">Decks</option>
+        <option value="70">Install</option>
+        <option value="28">Repair</option>
+        <option value="42">Pergola</option>
+        <option value="28">Stain</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+    <div class="select">
+      <select id="siding" name="siding">
+        <option value="">Siding</option>
+        <option value="84">Install</option>
+        <option value="14">Repair</option>
+        <option value="98">Upgrade</option>
+        <option value="14">Masonry</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+    <div class="select">
+      <select id="insulation" name="insulation">
+        <option value="">Insulation</option>
+        <option value="14">Weatherseal</option>
+        <option value="28">Install</option>
+        <option value="28">Repair</option>
       </select>
       <div class="select__arrow"></div>
     </div>
     <div class="select">
       <select disabled="disabled">
-        <option>Disabled</option>
-        <option>Option</option>
-        <option>Option</option>
+        <option>Painting</option>
       </select>
       <div class="select__arrow"></div>
     </div>
@@ -242,6 +253,35 @@
     </label>
   </div>
 
+  <div class="control-group" id="foo5" style="display:none">
+    <h3>Shower type?</h3>
+    <div class="select">
+      <select id="shower" name="shower">
+        <option value="">Choose one</option>
+        <option value="28">Porcelain</option>
+        <option value="28">Custom</option>
+        <option value="14">Surround</option>
+        <option value="14">Repair</option>
+        <option value="42">Marble</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+    <h3>Plumbing?</h3>
+    <div class="select">
+      <select id="plumbing" name="plumbing">
+        <option value="">Choose one</option>
+        <option value="28">Install</option>
+        <option value="36">Upgrade</option>
+        <option value="14">Repair</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+    <label class="control control--checkbox">Backsplash
+      <input id="myCheck4" onclick="backsplash2();" type="checkbox"/>
+      <div class="control__indicator"></div>
+    </label>
+  </div>
+
 </div>
 </body>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
@@ -261,7 +301,11 @@
     var countertop = 0;
     var cabinetTotal = 0;
     var backsplashTotal = 0;
-    var backsplashCount = 0;
+    var showerTotal = 0;
+    var windowsTotal = 0;
+    var decksTotal = 0;
+    var sidingTotal = 0;
+    var insulationTotal = 0;
 
 
     function reset(){
@@ -274,6 +318,12 @@
         document.querySelector('select[name="room-count"]').onchange=changeEventHandler;
         document.querySelector('select[name="countertop"]').onchange=changeEventHandler1;
         document.querySelector('select[name="cabinets"]').onchange=changeEventHandler2;
+        document.querySelector('select[name="shower"]').onchange=changeEventHandler3;
+        document.querySelector('select[name="plumbing"]').onchange=changeEventHandler4;
+        document.querySelector('select[name="windows"]').onchange=changeEventHandler5;
+        document.querySelector('select[name="decks"]').onchange=changeEventHandler6;
+        document.querySelector('select[name="siding"]').onchange=changeEventHandler7;
+        document.querySelector('select[name="insulation"]').onchange=changeEventHandler8;
     },false);
 
     function changeEventHandler(event) {
@@ -370,6 +420,29 @@
 
     }
 
+    function backsplash2()
+    {
+
+      var backsplashTotal = 0;
+      backsplashCount = 32;
+      backsplashTotal = backsplashCount * 40;
+
+      // Get the checkbox
+      var checkBox = document.getElementById("myCheck4");
+
+      // If the checkbox is checked, display the output text
+      if (checkBox.checked == true){
+        total += parseFloat(backsplashTotal);
+        document.getElementById('vresp').innerHTML = '$ ' + total;
+        addR = '%0D%0A'+ ' ' + backsplashCount + ' hours to backsplash washroom at $' + backsplashTotal;
+        receipt.push(addR);  } else {
+        text.style.display = "none";
+      }
+
+    }
+
+
+
 
 
 
@@ -386,6 +459,9 @@
       var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
       location.href = "mailto:"+email+receipt+"%0D%0A"+"%0D%0A"+"Total: $"+total+"%0D%0A"+"%0D%0A"+"I'm ready for you to contact me, my number is (Enter your Phone number here)";
     }
+
+
+
 
 
 
@@ -416,6 +492,97 @@
           total += parseFloat(cabinetTotal);
           document.getElementById('vresp').innerHTML = '$ ' + total;
           addR = '%0D%0A'+ ' ' + parseFloat(event.target.value) + ' hours to finish at $' + cabinetTotal;
+          receipt.push(addR);
+        }
+    }
+    function changeEventHandler3(event) {
+        // You can use “this” to refer to the selected element.
+        if(!event.target.value)
+          {
+            document.getElementById('vresp').innerHTML = '$ ' + 0;
+          }
+        else {
+          var shower = parseFloat(event.target.value);
+          showerTotal = shower * 40;
+          total += parseFloat(showerTotal);
+          document.getElementById('vresp').innerHTML = '$ ' + total;
+          addR = '%0D%0A'+ ' ' + parseFloat(event.target.value) + ' hours to finish at $' + showerTotal;
+          receipt.push(addR);
+        }
+    }
+    function changeEventHandler4(event) {
+        // You can use “this” to refer to the selected element.
+        if(!event.target.value)
+          {
+            document.getElementById('vresp').innerHTML = '$ ' + 0;
+          }
+        else {
+          var plumbing = parseFloat(event.target.value);
+          plumbingTotal = plumbing * 40;
+          total += parseFloat(plumbingTotal);
+          document.getElementById('vresp').innerHTML = '$ ' + total;
+          addR = '%0D%0A'+ ' ' + parseFloat(event.target.value) + ' hours to finish plumbing at $' + plumbingTotal;
+          receipt.push(addR);
+        }
+    }
+
+    function changeEventHandler5(event) {
+        // You can use “this” to refer to the selected element.
+        if(!event.target.value)
+          {
+            document.getElementById('vresp').innerHTML = '$ ' + 0;
+          }
+        else {
+          var windows = parseFloat(event.target.value);
+          windowsTotal = windows * 40;
+          total += parseFloat(windowsTotal);
+          document.getElementById('vresp').innerHTML = '$ ' + total;
+          addR = '%0D%0A'+ ' ' + parseFloat(event.target.value) + ' hours to finish windows at $' + windowsTotal;
+          receipt.push(addR);
+        }
+    }
+    function changeEventHandler6(event) {
+        // You can use “this” to refer to the selected element.
+        if(!event.target.value)
+          {
+            document.getElementById('vresp').innerHTML = '$ ' + 0;
+          }
+        else {
+          var decks = parseFloat(event.target.value);
+          decksTotal = decks * 40;
+          total += parseFloat(decksTotal);
+          document.getElementById('vresp').innerHTML = '$ ' + total;
+          addR = '%0D%0A'+ ' ' + parseFloat(event.target.value) + ' hours to finish deck at $' + decksTotal;
+          receipt.push(addR);
+        }
+    }
+    function changeEventHandler7(event) {
+        // You can use “this” to refer to the selected element.
+        if(!event.target.value)
+          {
+            document.getElementById('vresp').innerHTML = '$ ' + 0;
+          }
+        else {
+          var siding = parseFloat(event.target.value);
+          sidingTotal = siding * 40;
+          total += parseFloat(sidingTotal);
+          document.getElementById('vresp').innerHTML = '$ ' + total;
+          addR = '%0D%0A'+ ' ' + parseFloat(event.target.value) + ' hours to finish siding at $' + sidingTotal;
+          receipt.push(addR);
+        }
+    }
+    function changeEventHandler8(event) {
+        // You can use “this” to refer to the selected element.
+        if(!event.target.value)
+          {
+            document.getElementById('vresp').innerHTML = '$ ' + 0;
+          }
+        else {
+          var insulation = parseFloat(event.target.value);
+          insulationTotal = insulation * 40;
+          total += parseFloat(insulationTotal);
+          document.getElementById('vresp').innerHTML = '$ ' + total;
+          addR = '%0D%0A'+ ' ' + parseFloat(event.target.value) + ' hours to finish insulation at $' + insulationTotal;
           receipt.push(addR);
         }
     }

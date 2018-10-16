@@ -98,156 +98,149 @@
   </div>
   <div class="carousel-item carousel-item--1">
     <div class="carousel-item__image">
-
-
-      <div class="container">
-      <div class="control-group" id="fo" >
-        <h3>Estimator</h3>
-        <label class="control control--checkbox">Interior
-          <input onclick="toggleVisibility(document.getElementById('foo'));toggleVisibility(document.getElementById('fo'));toggleVisibility(document.getElementById('fo'));" id="rb1" type="checkbox" />
-          <div class="control__indicator"></div>
-        </label>
-        <label class="control control--checkbox">Exterior
-          <input onclick="toggleVisibility(document.getElementById('foo2'));toggleVisibility(document.getElementById('fo'));toggleVisibility(document.getElementById('fo'));" id="rb2" type="checkbox"/>
-          <div class="control__indicator"></div>
-        </label>
-        <label class="control control--checkbox">Seasonal Discount
-          <input type="checkbox" disabled="disabled"/>
-          <div class="control__indicator"></div>
-        </label>
-        <label class="control control--checkbox">Free In-Person Estimate
-          <input type="checkbox" disabled="disabled" checked="checked"/>
-          <div class="control__indicator"></div>
-        </label>
-      </div>
-
-
-      <div class="control-group" id="foo" style="display:none">
-        <h3>Interiors</h3>
-        <label class="control control--checkbox">Basic Room
-          <input onclick="toggleVisibility(document.getElementById('foo3'));toggleVisibility(document.getElementById('foo'));" id="rb3" type="checkbox" />
-          <div class="control__indicator"></div>
-        </label>
-        <label class="control control--checkbox">Kitchen
-          <input onclick="toggleVisibility(document.getElementById('foo4'));toggleVisibility(document.getElementById('foo'));" id="rb3"  type="checkbox" />
-          <div class="control__indicator"></div>
-        </label>
-        <label class="control control--checkbox">Washroom
-          <input type="checkbox"/>
-          <div class="control__indicator"></div>
-        </label>
-        <label class="control control--checkbox">Basements
-          <input type="checkbox"/>
-          <div class="control__indicator"></div>
-        </label>
-      </div>
-
-
-      <div class="control-group" id="foo2" style="display:none">
-        <h1>Exteriors</h3>
-        <div class="select">
-          <select>
-            <option>First select</option>
-            <option>Option</option>
-            <option>Option</option>
-          </select>
-          <div class="select__arrow"></div>
-        </div>
-        <div class="select">
-          <select>
-            <option>Second select</option>
-            <option>Option</option>
-            <option>Option</option>
-          </select>
-          <div class="select__arrow"></div>
-        </div>
-        <div class="select">
-          <select disabled="disabled">
-            <option>Disabled</option>
-            <option>Option</option>
-            <option>Option</option>
-          </select>
-          <div class="select__arrow"></div>
-        </div>
-      </div>
-
-
-      <div class="control-group" id="foo3" style="display:none">
-        <h3>How many rooms?</h3>
-        <div class="select">
-          <select id="room-count" name="room-count">
-            <option value="">None</option>
-            <option value="1">One room</option>
-            <option value="2">Two rooms</option>
-            <option value="3">Three rooms</option>
-            <option value="4">Four rooms</option>
-            <option value="5">Five rooms</option>
-          </select>
-          <div class="select__arrow"></div>
-        </div>
-        <label class="control control--checkbox">Painting
-          <input id="myCheck0" onclick="paint();" type="checkbox" />
-          <div class="control__indicator"></div>
-        </label>
-        <label class="control control--checkbox">Trim
-          <input id="myCheck" onclick="trim();" type="checkbox" />
-          <div class="control__indicator"></div>
-        </label>
-        <label class="control control--checkbox">Drywall
-          <input id="myCheck2" onclick="drywall();" type="checkbox"/>
-          <div class="control__indicator"></div>
-        </label>
-      </div>
-
-      <div class="control-group" id="foo4" style="display:none">
-        <h3>Countertop type?</h3>
-        <div class="select">
-          <select id="countertop" name="countertop">
-            <option value="">Choose one</option>
-            <option value="40">Granite</option>
-            <option value="30">Tile</option>
-            <option value="25">Linoleum</option>
-            <option value="35">Butcherblock</option>
-            <option value="70">Marble</option>
-          </select>
-          <div class="select__arrow"></div>
-        </div>
-        <h3>Cabinets?</h3>
-        <div class="select">
-          <select id="cabinets" name="cabinets">
-            <option value="">Choose one</option>
-            <option value="28">Install</option>
-            <option value="42">Build</option>
-            <option value="14">Repair</option>
-            <option value="42">Paint & Finish</option>
-          </select>
-          <div class="select__arrow"></div>
-        </div>
-        <label class="control control--checkbox">Backsplash
-          <input id="myCheck3" onclick="backsplash();" type="checkbox"/>
-          <div class="control__indicator"></div>
-        </label>
-      </div>
-
-
-
-
-
-
-
     <div class="carousel-item__info">
       <div class="carousel-item__container">
-      <a href="index.html" class="carousel-item__btn">Home</a>
-      <br/><br/>
-      <a class="carousel-item__btn" onclick="doMail();">Request</a>
-      <br/><br/>
+
       <a class="carousel-item__btn" onclick="window.location.href=window.location.href">Reset</a>
+      <br/><br/>
+      <a class="carousel-item__btn" onclick="doMail();">Submit</a>
+      <br/><br/>
+      <a href="index.html" class="carousel-item__btn">Home</a>
+
       <br/><br/><br/><br/>
-      <a class="carousel-item__btn"> Total: <span id="vresp">$0</span></a>
+      <a class="carousel-item__btn"> Total: <br/><span id="vresp">$0</span></a>
         </div>
+    </div>
+
+  </div>
+  <div class="container">
+  <div class="control-group" id="fo" >
+    <h3>Estimator</h3>
+    <label class="control control--checkbox">Interior
+      <input onclick="toggleVisibility(document.getElementById('foo'));toggleVisibility(document.getElementById('fo'));toggleVisibility(document.getElementById('fo'));" id="rb1" type="checkbox" />
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--checkbox">Exterior
+      <input onclick="toggleVisibility(document.getElementById('foo2'));toggleVisibility(document.getElementById('fo'));toggleVisibility(document.getElementById('fo'));" id="rb2" type="checkbox"/>
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--checkbox">Seasonal Discount
+      <input type="checkbox" disabled="disabled"/>
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--checkbox">Free In-Person Estimate
+      <input type="checkbox" disabled="disabled" checked="checked"/>
+      <div class="control__indicator"></div>
+    </label>
+  </div>
+
+
+  <div class="control-group" id="foo" style="display:none">
+    <h3>Interiors</h3>
+    <label class="control control--checkbox">Basic Room
+      <input onclick="toggleVisibility(document.getElementById('foo3'));toggleVisibility(document.getElementById('foo'));" id="rb3" type="checkbox" />
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--checkbox">Kitchen
+      <input onclick="toggleVisibility(document.getElementById('foo4'));toggleVisibility(document.getElementById('foo'));" id="rb3"  type="checkbox" />
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--checkbox">Washroom
+      <input type="checkbox"/>
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--checkbox">Basements
+      <input type="checkbox"/>
+      <div class="control__indicator"></div>
+    </label>
+  </div>
+
+
+  <div class="control-group" id="foo2" style="display:none">
+    <h1>Exteriors</h3>
+    <div class="select">
+      <select>
+        <option>First select</option>
+        <option>Option</option>
+        <option>Option</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+    <div class="select">
+      <select>
+        <option>Second select</option>
+        <option>Option</option>
+        <option>Option</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+    <div class="select">
+      <select disabled="disabled">
+        <option>Disabled</option>
+        <option>Option</option>
+        <option>Option</option>
+      </select>
+      <div class="select__arrow"></div>
     </div>
   </div>
 
+
+  <div class="control-group" id="foo3" style="display:none">
+    <h3>How many rooms?</h3>
+    <div class="select">
+      <select id="room-count" name="room-count">
+        <option value="">None</option>
+        <option value="1">One room</option>
+        <option value="2">Two rooms</option>
+        <option value="3">Three rooms</option>
+        <option value="4">Four rooms</option>
+        <option value="5">Five rooms</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+    <label class="control control--checkbox">Painting
+      <input id="myCheck0" onclick="paint();" type="checkbox" />
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--checkbox">Trim
+      <input id="myCheck" onclick="trim();" type="checkbox" />
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--checkbox">Drywall
+      <input id="myCheck2" onclick="drywall();" type="checkbox"/>
+      <div class="control__indicator"></div>
+    </label>
+  </div>
+
+  <div class="control-group" id="foo4" style="display:none">
+    <h3>Countertop type?</h3>
+    <div class="select">
+      <select id="countertop" name="countertop">
+        <option value="">Choose one</option>
+        <option value="40">Granite</option>
+        <option value="30">Tile</option>
+        <option value="25">Linoleum</option>
+        <option value="35">Butcherblock</option>
+        <option value="70">Marble</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+    <h3>Cabinets?</h3>
+    <div class="select">
+      <select id="cabinets" name="cabinets">
+        <option value="">Choose one</option>
+        <option value="28">Install</option>
+        <option value="42">Build</option>
+        <option value="14">Repair</option>
+        <option value="42">Paint & Finish</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+    <label class="control control--checkbox">Backsplash
+      <input id="myCheck3" onclick="backsplash();" type="checkbox"/>
+      <div class="control__indicator"></div>
+    </label>
+  </div>
 
 </div>
 </body>

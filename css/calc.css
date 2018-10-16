@@ -62,23 +62,24 @@ body {
   -webkit-justify-content: center;
   -webkit-flex-direction: column;
 
-  order: 2;
+  order: 1;
   left: 0;
   margin: auto;
-  width: 15%;
+  padding: 0 5px;
+  width: 20%;
 
 }
 
 .carousel-item__image {
-    width: 85%;
+    width: 80%;
     height: 100%;
-    order: 1;
+    order: 2;
     align-self: flex-end;
-    flex-basis: 85%;
+    flex-basis: 80%;
 
-      -webkit-order: 1;
+      -webkit-order: 2;
     -webkit-align-self: flex-end;
-    -webkit-flex-basis: 85%;
+    -webkit-flex-basis: 80%;
 
     background-position: center;
     background-repeat: no-repeat;
@@ -86,6 +87,47 @@ body {
    position:relative;
   transform: translateX(100%);
   transition: 0.6s all ease-in-out;
+}
+
+.carousel-item__subtitle {
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 3px;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin: 0;
+    color: #7E7E7E;
+    font-weight: 700;
+    transform: translateY(25%);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s all ease-in-out;
+}
+
+.carousel-item__title {
+    margin: 15px 0 0 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    line-height: 45px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #2C2C2C;
+    transform: translateY(25%);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.6s all ease-in-out;
+}
+
+.carousel-item__description {
+    transform: translateY(25%);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.6s all ease-in-out;
+    margin-top: 35px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    color: #7e7e7e;
+    line-height: 22px;
+    margin-bottom: 35px;
 }
 
 
@@ -98,11 +140,11 @@ body {
 
 
 .carousel-item__btn {
-    width: 15%;
+    width: 35%;
     color: #2C2C2C;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 3px;
-    font-size: 10px;
+    font-size: 11px;
     text-transform: uppercase;
     margin: 0;
     width: 35%;
@@ -114,7 +156,27 @@ body {
     transition: 0.6s all ease-in-out;
 }
 
+.carousel__nav {
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    background-color: #fff;
+  bottom: 0;
+}
 
+.carousel__icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+  fill: #5d5d5d;
+}
+
+.carousel__arrow {
+    cursor: pointer;
+    display: inline-block;
+    padding: 11px 15px;
+    position: relative;
+}
 
 .carousel__arrow:nth-child(1):after {
     content:'';

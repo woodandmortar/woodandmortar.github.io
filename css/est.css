@@ -30,17 +30,17 @@ h1 {
   text-align: left;
   box-shadow: 0 1px 2px rgba(0,0,0,0.1);
   padding: 30px;
-  width: 400px;
-  height: 230px;
+  width: 300px;
+  height: 300px;
   margin: 10px;
 }
 .control {
   display: block;
   position: relative;
-  padding-left: 30px;
+  padding-left: 15px;
   margin-bottom: 15px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 16px;
 }
 .control input {
   position: absolute;
@@ -51,8 +51,8 @@ h1 {
   position: absolute;
   top: 5px;
   left: -5px;
-  height: 30px;
-  width: 30px;
+  height: 15px;
+  width: 15px;
   background: #e6e6e6;
 }
 .control--radio .control__indicator {

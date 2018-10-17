@@ -145,6 +145,10 @@
       <input onclick="toggleVisibility(document.getElementById('foo5'));toggleVisibility(document.getElementById('foo'));" id="rb3"  type="checkbox"/>
       <div class="control__indicator"></div>
     </label>
+    <label class="control control--checkbox">Flooring
+      <input onclick="toggleVisibility(document.getElementById('foo6'));toggleVisibility(document.getElementById('foo'));" id="rb3"  type="checkbox"/>
+      <div class="control__indicator"></div>
+    </label>
   </div>
 
 
@@ -282,6 +286,27 @@
     </label>
   </div>
 
+  <div class="control-group" id="foo6" style="display:none">
+    <h3>Choose material:</h3>
+    <div class="select">
+      <select id="flooring" name="flooring">
+        <option value="">None</option>
+        <option value="1.32">Carpet</option>
+        <option value="1.65">Linoleum</option>
+        <option value="2.5">Tile</option>
+        <option value="4.3">Wood</option>
+        <option value="8.4">Marble</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+    <label class="control control--checkbox">Trim + 1/4 round
+      <input id="myCheck02" onclick="trim2();" type="checkbox" />
+      <div class="control__indicator"></div>
+    </label>
+  </div>
+
+
+
 </div>
 </body>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
@@ -306,6 +331,7 @@
     var decksTotal = 0;
     var sidingTotal = 0;
     var insulationTotal = 0;
+    var flooringTotal = 0;
 
 
     function reset(){
@@ -324,6 +350,7 @@
         document.querySelector('select[name="decks"]').onchange=changeEventHandler6;
         document.querySelector('select[name="siding"]').onchange=changeEventHandler7;
         document.querySelector('select[name="insulation"]').onchange=changeEventHandler8;
+        document.querySelector('select[name="flooring"]').onchange=changeEventHandler9;
     },false);
 
     function changeEventHandler(event) {
@@ -350,14 +377,12 @@
         }
       else
           {
-            text.style.display = "none"
+            window.location.reload(true)
           }
 
     }
 
-    function trim()
-    {
-
+    function trim(){
       var trimTotal = 0;
       trimCount = roomCount * 80;
       trimTotal = (trimCount * .9) + (roomCount * 100);
@@ -373,10 +398,30 @@
         document.getElementById('vresp').innerHTML = '$ ' + total;
         addR = '%0D%0A'+ ' ' + trimCount + ' linear ft to trim at $' + trimTotal;
         receipt.push(addR);  } else {
-        text.style.display = "none";
+        window.location.reload(true);
       }
+}
 
-    }
+function trim2(){
+  var trimTotal = 0;
+  trimCount = 80;
+  trimTotal = ((trimCount * 2.4) + 100);
+
+  // Get the checkbox
+  var checkBox = document.getElementById("myCheck02");
+  // Get the output text
+  var text = document.getElementById("text");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    total += parseFloat(trimTotal);
+    document.getElementById('vresp').innerHTML = '$ ' + total;
+    addR = '%0D%0A'+ ' ' + trimCount + ' linear ft to trim and 1/4 round at $' + trimTotal;
+    receipt.push(addR);  } else {
+    window.location.reload(true);
+  }
+}
+
 
     function drywall()
     {
@@ -394,7 +439,7 @@
         document.getElementById('vresp').innerHTML = '$ ' + total;
         addR = '%0D%0A'+ ' ' + drywallCount + ' rooms to drywall at $' + drywallTotal;
         receipt.push(addR);  } else {
-        text.style.display = "none";
+        window.location.reload(true);
       }
 
     }
@@ -415,7 +460,7 @@
         document.getElementById('vresp').innerHTML = '$ ' + total;
         addR = '%0D%0A'+ ' ' + backsplashCount + ' hours to backsplash at $' + backsplashTotal;
         receipt.push(addR);  } else {
-        text.style.display = "none";
+        window.location.reload(true);
       }
 
     }
@@ -436,7 +481,7 @@
         document.getElementById('vresp').innerHTML = '$ ' + total;
         addR = '%0D%0A'+ ' ' + backsplashCount + ' hours to backsplash washroom at $' + backsplashTotal;
         receipt.push(addR);  } else {
-        text.style.display = "none";
+        window.location.reload(true);
       }
 
     }
@@ -586,6 +631,23 @@
           receipt.push(addR);
         }
     }
+
+    function changeEventHandler9(event) {
+        // You can use “this” to refer to the selected element.
+        if(!event.target.value)
+          {
+            document.getElementById('vresp').innerHTML = '$ ' + 0;
+          }
+        else {
+          var flooring = parseFloat(event.target.value);
+          flooringTotal = ((flooring * 200)+860);
+          total += parseFloat(flooringTotal);
+          document.getElementById('vresp').innerHTML = '$ ' + total;
+          addR = '%0D%0A'+ ' ' + parseFloat(event.target.value) + ' sqft of material to floor at $' + flooringTotal;
+          receipt.push(addR);
+        }
+    }
+
 
     </script>
 

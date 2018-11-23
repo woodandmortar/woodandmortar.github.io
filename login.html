@@ -172,9 +172,10 @@ var toggleVisibility = function(element) {
 
 <script>
 
+var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
+
 function assistance()
 {
-  var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
   location.href = "mailto:"+email+ "I'm " + fName + "and I'd like you to contact me.";
 }
 
@@ -275,7 +276,7 @@ function changeEventHandler2(event) {
       document.getElementById('vresp').innerHTML = 'How can we help';
     }
   else {
-    var fEmail = event.target.value;
+    location.href = "mailto:"+email+ "I'm " + fName + "and I'd like you to contact me reguarding" + document.getElementById('vresp').innerHTML;
       }
 }
 

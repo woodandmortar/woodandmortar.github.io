@@ -279,7 +279,8 @@ function changeEventHandler2(event) {
       document.getElementById('vresp').innerHTML = 'How can we help';
     }
   else {
-    location.href = "mailto:"+email+ "I'm " + fName + "and I'd like you to contact me reguarding" + document.getElementById('vresp').innerHTML;
+    var curtext = document.getElementById('vresp').innerHTML;
+    location.href = "mailto:"+email+ "I'm " + fName + "and I'd like you to contact me reguarding" + curtext;
       }
 }
 

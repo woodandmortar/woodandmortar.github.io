@@ -141,8 +141,15 @@ var toggleVisibility = function(element) {
 </div>
 
       <div class="form-group" id="foo2" style="display:none">
-          Phone Number: <input type="text" id="fEmail">
-          <br/><br/>
+        <div class="select">
+          <select id="fEmail" name="project" required="required">
+            <option value="">How can we help</option>
+            <option value="Contact me">Contact me</option>
+            <option value="Create account">Create account</option>
+          </select>
+          <div class="select__arrow"></div>
+        </div>
+        <br/><br/>
           <a href="https://docs.google.com/document/d/125rrhZdcwSK2zMYu3N91_Z0tWapQEcJzcDbly1Gwmhk/edit?usp=sharing" class="carousel-item__btn">Create Invoice</a>
           </div>
 
@@ -177,11 +184,10 @@ var toggleVisibility = function(element) {
 
 <script>
 
-function assistance ()
+function assistance()
 {
-  var fnumber = 0;
   var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
-  location.href = "mailto:"+email+ "I'm ready for you to contact me, my number is " + fEmail;
+  location.href = "mailto:"+email+ "I'm " + fName + "and I'd like you to contact me.";
 }
 
 function onSignIn(googleUser) {

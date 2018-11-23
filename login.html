@@ -142,7 +142,7 @@ var toggleVisibility = function(element) {
       <a href="https://docs.google.com/document/d/125rrhZdcwSK2zMYu3N91_Z0tWapQEcJzcDbly1Gwmhk/edit?usp=sharing" class="carousel-item__btn">Create Invoice</a>
 </div>
 
-      <div class="form-group" id="foo2">
+      <div class="form-group" id="foo2" style="display:none">
         <div class="select">
           <select id="fEmail" name="project2" required="required">
             <option value="">How can we help</option>
@@ -184,6 +184,7 @@ function onSignIn(googleUser) {
   console.log('Image URL: ' + profile.getImageUrl());
   document.getElementById('vresp2').innerHTML = profile.getName();
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  toggleVisibility(document.getElementById('foo2'));
 
   switch(profile.getEmail()){
  case 'woodmortar@gmail.com':

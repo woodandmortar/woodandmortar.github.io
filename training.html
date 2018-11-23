@@ -145,7 +145,7 @@ function onSignIn(googleUser) {
   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
   var fName = profile.getName();
   console.log('Image URL: ' + profile.getImageUrl());
-  document.getElementById('vresp2').innerHTML = 'Using email: '+ profile.getEmail();
+  document.getElementById('vresp2').innerHTML = 'Hello '+ profile.getName();
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 }
 
@@ -211,7 +211,7 @@ function changeEventHandler1(event) {
 
 function postContactToGoogle()  {
 
-  var fName = profile.getName();
+  var fName = document.getElementById('vresp2').innerHTML;
 	var fEmail = $('#fEmail').val();
   var tOLevel = document.getElementById('vresp').innerHTML;
 

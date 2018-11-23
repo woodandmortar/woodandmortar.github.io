@@ -279,6 +279,7 @@ function changeEventHandler2(event) {
       document.getElementById('vresp').innerHTML = 'How can we help';
     }
   else {
+    var fEmail = event.target.value;
     var curtext = document.getElementById('vresp').innerHTML;
     location.href = "mailto:"+email+ "I'm " + fName + "and I'd like you to contact me reguarding" + curtext;
       }

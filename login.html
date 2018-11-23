@@ -171,15 +171,11 @@ function onSignIn(googleUser) {
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
   if (profile.getEmail() == ('woodmortar@gmail.com')||('matthewpaul389@gmail.com'))
   {
-    toggleVisibility(document.getElementById('fo'));
+    toggleVisibility(document.getElementById('foo2'));
   }
   else if (profile.getEmail() == ('crycellaf@gmail.com')||('seanoack@gmail.com')||('micheal.mfg@gmail.com'))
   {
     toggleVisibility(document.getElementById('foo'));
-  }
-  else
-  {
-    toggleVisibility(document.getElementById('foo2'));
   }
 }
 

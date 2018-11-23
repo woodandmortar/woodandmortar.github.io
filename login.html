@@ -95,7 +95,7 @@
         <br/><br/><br/><br/>
         <a href="index.html" class="carousel-item__btn">Home</a>
         <br/><br/><br/><br/>
-        <a class="carousel-item__btn" onclick="startGeoLookup()"><br/><span id="vresp">Location Check</span></a>
+        <a class="carousel-item__btn" onclick="assistance()"><br/><span id="vresp">Assistance</span></a>
         </div>
     </div>
 
@@ -112,7 +112,7 @@
 
 <span id="vresp2">Please login</span>
 
-    <div class="form-group">
+    <div class="form-group" id="foo" style="display:none">
       <div class="select">
         <select id="fEmail" name="project" required="required">
           <option value="">Select Project</option>
@@ -120,9 +120,14 @@
           <option value="608 Hardesty Ave">608 Hardesty Ave</option>
         </select>
         <div class="select__arrow"></div>
-      </div></div>
-    <div class="form-group">
-      <button id="ButtonSubmit" onclick="postContactToGoogle();" class="btn-submit" >Clock In/Out</button></div>
+      </div>
+      <button id="ButtonSubmit" onclick="postContactToGoogle();" class="btn-submit" >Clock In/Out</button>
+</div>
+
+      <div class="form-group" id="foo2" style="display:none">
+          Phone Number: <input type="text" id="fEmail" onsubmit="postContactToGoogle();">
+          </div>
+
     </form>
 
 
@@ -140,6 +145,21 @@
 
 <script>
 
+var toggleVisibility = function(element) {
+  if(element.style.display=='block'){
+      element.style.display='none';
+  } else {
+      element.style.display='block';
+  }
+}
+
+function assistance ()
+{
+  var fnumber = 0;
+  var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
+  location.href = "mailto:"+email+ "I'm ready for you to contact me, my number is " + fEmail;
+}
+
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
@@ -147,9 +167,17 @@ function onSignIn(googleUser) {
   console.log('Image URL: ' + profile.getImageUrl());
   document.getElementById('vresp2').innerHTML = 'Hello '+ profile.getName();
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  if (profile.getEmail()== ('micheal.mfg@gmail.com')||('matthewpaul389@gmail.com'))
+  if (profile.getEmail()== ('woodmortar@gmail.com')||('matthewpaul389@gmail.com'))
   {
     self.location = 'https://docs.google.com/document/d/125rrhZdcwSK2zMYu3N91_Z0tWapQEcJzcDbly1Gwmhk/edit?usp=sharing'
+  }
+  else if (profile.getEmail()== ('crycellaf@gmail.com')||('seanoack@gmail.com')||('micheal.mfg@gmail.com'))
+  {
+    toggleVisibility(document.getElementById('foo'));
+  }
+  else
+  {
+    toggleVisibility(document.getElementById('foo2'));
   }
 }
 

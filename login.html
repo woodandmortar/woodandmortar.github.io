@@ -191,7 +191,7 @@ function onSignIn(googleUser) {
   console.log('Image URL: ' + profile.getImageUrl());
   document.getElementById('vresp2').innerHTML = profile.getName();
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  if (profile.getEmail() == ('woodmortar@gmail.com')||('matthewpaul389@gmail.com'))
+  if (profile.getEmail() == ('moreforblack@gmail.com'))
   {
     toggleVisibility(document.getElementById('foo2'));
   }
@@ -199,7 +199,7 @@ function onSignIn(googleUser) {
   {
     toggleVisibility(document.getElementById('foo'));
   }
-  else if (profile.getEmail()  == ('moreforblack@gmail.com'))
+  else if (profile.getEmail()  == ('matthewpaul389@gmail.com')||('woodmortar@gmail.com'))
   {
     toggleVisibility(document.getElementById('fo'));
   }

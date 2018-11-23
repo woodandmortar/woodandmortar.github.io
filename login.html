@@ -169,7 +169,7 @@ function onSignIn(googleUser) {
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
   if (profile.getEmail()== ('woodmortar@gmail.com')||('matthewpaul389@gmail.com'))
   {
-    self.location = 'https://docs.google.com/document/d/125rrhZdcwSK2zMYu3N91_Z0tWapQEcJzcDbly1Gwmhk/edit?usp=sharing'
+    toggleVisibility(document.getElementById('fo'));
   }
   else if (profile.getEmail()== ('crycellaf@gmail.com')||('seanoack@gmail.com')||('micheal.mfg@gmail.com'))
   {

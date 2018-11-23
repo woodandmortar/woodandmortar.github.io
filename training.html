@@ -147,6 +147,10 @@ function onSignIn(googleUser) {
   console.log('Image URL: ' + profile.getImageUrl());
   document.getElementById('vresp2').innerHTML = 'Hello '+ profile.getName();
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  if (profile.getEmail()=='micheal.mfg@gmail.com')
+  {
+    document.getElementById('vresp').innerHTML = 'Jump to webpage';
+  }
 }
 
 	var fEmail = $('#fEmail').val();

@@ -144,7 +144,7 @@ var toggleVisibility = function(element) {
 
       <div class="form-group" id="fo" style="display:none">
         <div class="select">
-          <select id="fEmail" name="project2" required="required">
+          <select id="fEmail2" name="project2" required="required">
             <option value="">How can we help</option>
             <option value="Contact me">Contact me</option>
             <option value="Create account">Create account</option>
@@ -212,6 +212,7 @@ function onSignIn(googleUser) {
 }
 
 	var fEmail = $('#fEmail').val();
+  var fEmail2 = $('#fEmail2').val();
 
     document.addEventListener('DOMContentLoaded',
     function() {
@@ -279,7 +280,7 @@ function changeEventHandler2(event) {
       document.getElementById('vresp').innerHTML = 'How can we help';
     }
   else {
-    var fEmail = event.target.value;
+    var fEmail2 = event.target.value;
     var curtext = document.getElementById('vresp').innerHTML;
     location.href = "mailto:"+email+ "I'm " + fName + "and I'd like you to contact me reguarding" + curtext;
       }

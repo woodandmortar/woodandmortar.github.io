@@ -142,7 +142,7 @@ var toggleVisibility = function(element) {
 
       <div class="form-group" id="foo2" style="display:none">
         <div class="select">
-          <select id="fEmail" name="project" required="required">
+          <select id="fEmail" name="project2" required="required">
             <option value="">How can we help</option>
             <option value="Contact me">Contact me</option>
             <option value="Create account">Create account</option>
@@ -215,6 +215,8 @@ function onSignIn(googleUser) {
     function() {
     document.querySelector('select[name="project"]').onchange=changeEventHandler1;
                 },false);
+    document.querySelector('select[name="project2"]').onchange=changeEventHandler2;
+                },false);
 
 function changeEventHandler1(event) {
   // You can use “this” to refer to the selected element.
@@ -268,6 +270,17 @@ function changeEventHandler1(event) {
     }
   }
 }
+
+function changeEventHandler2(event) {
+  // You can use “this” to refer to the selected element.
+  if(!event.target.value)
+    {
+      document.getElementById('vresp').innerHTML = 'How can we help';
+    }
+  else {
+    var fEmail = event.target.value;
+
+    }
 
 function postContactToGoogle()  {
 

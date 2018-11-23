@@ -183,7 +183,6 @@ var toggleVisibility = function(element) {
   <script  src="js/index.js"></script>
 
 <script>
-String grabEmail = 'nothing';
 
 function assistance()
 {
@@ -193,24 +192,23 @@ function assistance()
 
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
   var fName = profile.getName();
-  grabEmail = profile.getEmail();
   console.log('Image URL: ' + profile.getImageUrl());
   document.getElementById('vresp2').innerHTML = profile.getName();
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  if (grabEmail()  == ('matthewpaul389@gmail.com')||('woodmortar@gmail.com'))
-  {
-    toggleVisibility(document.getElementById('fo'));
-  }
-  else if (grabEmail() == ('crycellaf@gmail.com')||('seanoack@gmail.com')||('micheal.mfg@gmail.com'))
-  {
-    toggleVisibility(document.getElementById('foo'));
-  }
-  else
-  {
-    toggleVisibility(document.getElementById('foo2'));
-  }
+
+  switch(profile.getEmail()){
+ case 'woodmortar@gmail.com':
+       toggleVisibility(document.getElementById('fo'));
+       break;
+ case 'micheal.mfg@gmail.com':
+       toggleVisibility(document.getElementById('foo'));
+       break;
+ case 'moreforblack@gmail.com':
+       toggleVisibility(document.getElementById('foo2'));
+       break;
+ }
+ 
 }
 
 	var fEmail = $('#fEmail').val();

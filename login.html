@@ -208,13 +208,13 @@ function onSignIn(googleUser) {
        toggleVisibility(document.getElementById('foo2'));
        break;
  }
+}
 
 	var fEmail = $('#fEmail').val();
 
     document.addEventListener('DOMContentLoaded',
     function() {
     document.querySelector('select[name="project"]').onchange=changeEventHandler1;
-                },false);
     document.querySelector('select[name="project2"]').onchange=changeEventHandler2;
                 },false);
 
@@ -279,8 +279,8 @@ function changeEventHandler2(event) {
     }
   else {
     var fEmail = event.target.value;
-
-    }
+      }
+}
 
 function postContactToGoogle()  {
 

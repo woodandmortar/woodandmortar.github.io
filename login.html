@@ -138,27 +138,15 @@ var toggleVisibility = function(element) {
       <a href="https://docs.google.com/spreadsheets/d/1VQZBdM2gF3dhZcJaLkGfIVHLFhoTpRbo3pTH-5Gm9Zo/edit?usp=sharing" class="carousel-item__btn">Inventory</a>
       <br/><br/>
       <a href="https://docs.google.com/spreadsheets/d/1fpyJV54JqJC9ysZuK-PUjvPd73N-JMh__vCQ3AWC86s/edit?usp=sharing" class="carousel-item__btn">Lost Inventory</a>
+      <br/><br/>
+      <a href="https://docs.google.com/document/d/125rrhZdcwSK2zMYu3N91_Z0tWapQEcJzcDbly1Gwmhk/edit?usp=sharing" class="carousel-item__btn">Create Invoice</a>
 </div>
 
-      <div class="form-group" id="foo2" style="display:none">
+      <div class="form-group" id="foo" style="display:none">
           Phone Number: <input type="text" id="fEmail">
           <br/><br/>
           <a href="https://docs.google.com/document/d/125rrhZdcwSK2zMYu3N91_Z0tWapQEcJzcDbly1Gwmhk/edit?usp=sharing" class="carousel-item__btn">Create Invoice</a>
           </div>
-
-      <div id="fo" style="display:none">
-
-<br/><br/>
-
-<a href="https://docs.google.com/spreadsheets/d/1R_M0VQZFXZVp2-p0lphYz17KfA8KNIwq-0i0kSkgTDk/edit?usp=sharing" class="carousel-item__btn">Time Sheets</a>
-<br/><br/>
-<a href="https://docs.google.com/spreadsheets/d/1VQZBdM2gF3dhZcJaLkGfIVHLFhoTpRbo3pTH-5Gm9Zo/edit?usp=sharing" class="carousel-item__btn">Inventory</a>
-<br/><br/>
-<a href="https://docs.google.com/spreadsheets/d/1fpyJV54JqJC9ysZuK-PUjvPd73N-JMh__vCQ3AWC86s/edit?usp=sharing" class="carousel-item__btn">Lost Inventory</a>
-<br/><br/>
-<a href="https://docs.google.com/document/d/125rrhZdcwSK2zMYu3N91_Z0tWapQEcJzcDbly1Gwmhk/edit?usp=sharing" class="carousel-item__btn">Create Invoice</a>
-
-      </div>
 
     </form>
 
@@ -191,17 +179,13 @@ function onSignIn(googleUser) {
   console.log('Image URL: ' + profile.getImageUrl());
   document.getElementById('vresp2').innerHTML = profile.getName();
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  if (profile.getEmail() == ('woodmortar@gmail.com')||('matthewpaul389@gmail.com'))
+  if (profile.getEmail() == ('woodmortar@gmail.com')||('matthewpaul389@gmail.com'||('crycellaf@gmail.com')||('seanoack@gmail.com')||('micheal.mfg@gmail.com')
   {
     toggleVisibility(document.getElementById('fo'));
   }
-  else if (profile.getEmail() == ('crycellaf@gmail.com')||('seanoack@gmail.com')||('micheal.mfg@gmail.com'))
+  else
   {
     toggleVisibility(document.getElementById('foo'));
-  }
-  else if (!profile.getEmail())
-  {
-    toggleVisibility(document.getElementById('foo2'));
   }
 }
 

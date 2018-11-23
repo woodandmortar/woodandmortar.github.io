@@ -143,14 +143,9 @@ var toggleVisibility = function(element) {
 </div>
 
       <div class="form-group" id="fo" style="display:none">
-        <div class="select">
-          <select id="fEmail2" name="project2" required="required">
-            <option value="">How can we help</option>
-            <option value="Contact me">Contact me</option>
-            <option value="Create account">Create account</option>
-          </select>
-          <div class="select__arrow"></div>
-        </div>
+        <a href="assistance()" class="carousel-item__btn">Contact us</a>
+        <br/><br/>
+        <a href="signup()" class="carousel-item__btn">Request a Login</a>
         <br/><br/>
           <a href="https://docs.google.com/document/d/125rrhZdcwSK2zMYu3N91_Z0tWapQEcJzcDbly1Gwmhk/edit?usp=sharing" class="carousel-item__btn">Create Invoice</a>
           </div>
@@ -177,6 +172,11 @@ var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
 function assistance()
 {
   location.href = "mailto:"+email+ "I'm " + fName + "and I'd like you to contact me.";
+}
+
+function signup()
+{
+  location.href = "mailto:"+email+ "I'm " + fName + "and I'd like to request a login.";
 }
 
 function onSignIn(googleUser) {
@@ -212,12 +212,10 @@ function onSignIn(googleUser) {
 }
 
 	var fEmail = $('#fEmail').val();
-  var fEmail2 = $('#fEmail2').val();
 
     document.addEventListener('DOMContentLoaded',
     function() {
     document.querySelector('select[name="project"]').onchange=changeEventHandler1;
-    document.querySelector('select[name="project2"]').onchange=changeEventHandler2;
                 },false);
 
 function changeEventHandler1(event) {
@@ -273,18 +271,6 @@ function changeEventHandler1(event) {
   }
 }
 
-function changeEventHandler2(event) {
-  // You can use “this” to refer to the selected element.
-  if(!event.target.value)
-    {
-      document.getElementById('vresp').innerHTML = 'How can we help';
-    }
-  else {
-    var fEmail2 = event.target.value;
-    var curtext = document.getElementById('vresp').innerHTML;
-    location.href = "mailto:"+email+ "I'm " + fName + "and I'd like you to contact me reguarding" + curtext;
-      }
-}
 
 function postContactToGoogle()  {
 

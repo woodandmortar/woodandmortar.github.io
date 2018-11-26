@@ -215,11 +215,13 @@ function onSignIn(googleUser) {
         break;
         case 'micheal.mfg@gmail.com':
               toggleVisibility(document.getElementById('foo'));
-              document.getElementById('myImage').src=profile.getImageUrl();
+              var userImage = profile.getImageUrl();
+              document.getElementById('myImage').src = userImage;
               break;
         case 'woodmortar@gmail.com':
               toggleVisibility(document.getElementById('foo'));
-              document.getElementById('myImage').src=profile.getImageUrl();
+              var userImage = profile.getImageUrl();
+              document.getElementById('myImage').src = userImage;
               break;
         case 'crycellaf@gmail.com':
               toggleVisibility(document.getElementById('foo'));

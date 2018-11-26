@@ -219,7 +219,11 @@ function onSignIn(googleUser) {
               var nameEntry = "entry.569412235";
               var projectEntry = "entry.320157692";
               var tagEntry = "entry.1143322173";
-              var formMain = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
+              function formChange()
+              {
+                var formMain2 = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
+                location.href = formMain2;
+              }
               document.getElementById('profilePic').src = userImage;
               break;
         case 'woodmortar@gmail.com':
@@ -227,7 +231,11 @@ function onSignIn(googleUser) {
               var nameEntry = "entry.569412235";
               var projectEntry = "entry.320157692";
               var tagEntry = "entry.1143322173";
-              var formMain = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
+              function formChange()
+              {
+                var formMain2 = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
+                location.href = formMain2;
+              }
               document.getElementById('profilePic').src = userImage;
               break;
         case 'crycellaf@gmail.com':
@@ -307,12 +315,6 @@ function postContactToGoogle()  {
   var fName = document.getElementById('vresp2').innerHTML;
 	var fEmail = $('#fEmail').val();
   var tOLevel = document.getElementById('vresp').innerHTML;
-  var formMain2 = formMain;
-
-  function formChange()
-  {
-    location.href = formMain2;
-  }
 
 		$.ajax({
 			url: formMain2,

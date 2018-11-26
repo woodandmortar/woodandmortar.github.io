@@ -138,7 +138,6 @@ var toggleVisibility = function(element) {
         </select>
         <div class="select__arrow"></div>
       </div>
-      <button id="ButtonSubmit" onclick="postContactToGoogle();" class="btn-submit" >Clock In/Out</button>
       <br/><br/>
       <a href="https://docs.google.com/spreadsheets/d/1R_M0VQZFXZVp2-p0lphYz17KfA8KNIwq-0i0kSkgTDk/edit?usp=sharing" class="carousel-item__btn">Time Sheets</a>
       <br/><br/>
@@ -222,6 +221,29 @@ function onSignIn(googleUser) {
               var formMain = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
               document.getElementById('profilePic').src = userImage;
+              function postContactToGoogle()  {
+                var fName = document.getElementById('vresp2').innerHTML;
+              	var fEmail = $('#fEmail').val();
+                var tOLevel = document.getElementById('vresp').innerHTML;
+
+              		$.ajax({
+              			url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
+              			data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+              			type: "POST",
+              			dataType: "xml",
+              			statusCode: {
+              				0: function () {
+              //					alert("Click -OK- to submit message");
+              				},
+              				200: function () {
+              //					alert("Click -OK- to submit message");
+              				}
+              				    }
+              		});
+                      setTimeout(function(){
+                        window.location.href = 'https://woodandmortar.github.io/';
+                      }, 3500);
+              				}
               break;
         case 'woodmortar@gmail.com':
               toggleVisibility(document.getElementById('foo'));
@@ -303,33 +325,7 @@ function changeEventHandler1(event) {
     }
   }
 }
-function postContactToGoogle()  {
-  var fName = document.getElementById('vresp2').innerHTML;
-	var fEmail = $('#fEmail').val();
-  var tOLevel = document.getElementById('vresp').innerHTML;
-  var nameEntry = "entry.569412235";
-  var projectEntry = "entry.320157692";
-  var tagEntry = "entry.1143322173";
-  var formMain = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
 
-		$.ajax({
-			url: formMain,
-			data:  { nameEntry : fName , projectEntry : fEmail , tagEntry : tOLevel },
-			type: "POST",
-			dataType: "xml",
-			statusCode: {
-				0: function () {
-//					alert("Click -OK- to submit message");
-				},
-				200: function () {
-//					alert("Click -OK- to submit message");
-				}
-				    }
-		});
-        setTimeout(function(){
-          window.location.href = 'https://woodandmortar.github.io/';
-        }, 2500);
-				}
 </script>
 
 </body>

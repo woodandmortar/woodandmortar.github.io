@@ -203,6 +203,11 @@ function viewDocs()
   window.location.href = 'https://drive.google.com/open?id=1TH61mYAHBB3EjCmipgwj2a-cSabHWWBO';
 }
 
+function formChange()
+{
+  location.href = formMain;
+}
+
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   var fName = profile.getName();
@@ -219,10 +224,7 @@ function onSignIn(googleUser) {
               var nameEntry = "entry.569412235";
               var projectEntry = "entry.320157692";
               var tagEntry = "entry.1143322173";
-              function formChange()
-              {
-                location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
-              }
+              var formMain = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
               document.getElementById('profilePic').src = userImage;
               break;
         case 'woodmortar@gmail.com':
@@ -230,10 +232,7 @@ function onSignIn(googleUser) {
               var nameEntry = "entry.569412235";
               var projectEntry = "entry.320157692";
               var tagEntry = "entry.1143322173";
-              function formChange()
-              {
-                location.href = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
-              }
+              var formMain = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
               document.getElementById('profilePic').src = userImage;
               break;
         case 'crycellaf@gmail.com':

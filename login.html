@@ -122,7 +122,7 @@ var toggleVisibility = function(element) {
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='#';}"></iframe>
 
 
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse" id="main-contact-form" target="hidden_iframe"
+    <form action="formChange()" id="main-contact-form" target="hidden_iframe"
     onsubmit="submitted=true;" >
 
  <img class="pic1" id="profilePic" src="pics/locked.png" style="width:100px">
@@ -182,23 +182,32 @@ var toggleVisibility = function(element) {
 
 <script>
 
+var formMain = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
 var nameEntry = "entry.569412235";
 var projectEntry = "entry.320157692";
 var tagEntry = "entry.1143322173";
-
 var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
+
+function formChange()
+{
+  location.href = formMain;
+}
+
 function assistance()
 {
   location.href = "mailto:"+email+ "I'm " + fName + "and I'd like you to contact me.";
 }
+
 function signup()
 {
   location.href = "mailto:"+email+ "I'm " + fName + "and I'd like to request a login.";
 }
+
 function viewDocs()
 {
   window.location.href = 'https://drive.google.com/open?id=1TH61mYAHBB3EjCmipgwj2a-cSabHWWBO';
 }
+
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   var fName = profile.getName();
@@ -215,8 +224,8 @@ function onSignIn(googleUser) {
               var nameEntry = "entry.569412235";
               var projectEntry = "entry.320157692";
               var tagEntry = "entry.1143322173";
+              var formMain = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
               document.getElementById('profilePic').src = userImage;
-              document.getElementById('main-contact-form').action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
               break;
         case 'woodmortar@gmail.com':
               toggleVisibility(document.getElementById('foo'));

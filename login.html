@@ -122,7 +122,7 @@ var toggleVisibility = function(element) {
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='#';}"></iframe>
 
 
-    <form action="formChange()" id="main-contact-form" target="hidden_iframe"
+    <form action="javascript:location.href=formMain;" id="main-contact-form" target="hidden_iframe"
     onsubmit="submitted=true;" >
 
  <img class="pic1" id="profilePic" src="pics/locked.png" style="width:100px">
@@ -201,11 +201,6 @@ function signup()
 function viewDocs()
 {
   window.location.href = 'https://drive.google.com/open?id=1TH61mYAHBB3EjCmipgwj2a-cSabHWWBO';
-}
-
-function formChange()
-{
-  location.href = formMain;
 }
 
 function onSignIn(googleUser) {

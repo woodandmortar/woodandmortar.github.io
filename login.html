@@ -75,6 +75,14 @@
   left: 1px;
   z-index: 40;
 }
+.pic1 {
+  width: 100px;
+  top: 22%;
+  position: absolute;
+  left: 23%;
+  z-index: 90;
+}
+
 </style>
 
 <script>
@@ -119,6 +127,8 @@ var toggleVisibility = function(element) {
 
     <form action="https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse" id="main-contact-form" target="hidden_iframe"
     onsubmit="submitted=true;" >
+
+    <img class="pic1" id="profilePic" src="pics/locked.png" style="width:100px"><br/><br/>
 
 <span id="vresp2">Please login</span>
 
@@ -176,6 +186,7 @@ var toggleVisibility = function(element) {
 <script>
 
 var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
+var mainUser;
 
 function assistance()
 {
@@ -205,24 +216,33 @@ function onSignIn(googleUser) {
         break;
         case 'micheal.mfg@gmail.com':
               toggleVisibility(document.getElementById('foo'));
+              var mainUser = 'micheal.mfg@gmail.com';
+              document.getElementById('myImage').src=profile.getImageUrl();
               break;
         case 'woodmortar@gmail.com':
               toggleVisibility(document.getElementById('foo'));
+              var mainUser = 'woodmortar@gmail.com':;
+              document.getElementById('myImage').src=profile.getImageUrl();
               break;
         case 'crycellaf@gmail.com':
               toggleVisibility(document.getElementById('foo'));
+              var mainUser = 'crycellaf@gmail.com':;
               break;
         case 'seanoack@gmail.com':
               toggleVisibility(document.getElementById('foo'));
+              var mainUser = 'seanoack@gmail.com';
               break;
         case 'matthewpaul389@gmail.com':
               toggleVisibility(document.getElementById('foo'));
+              var mainUser = 'matthewpaul389@gmail.com';
               break;
         case 'deepoppy@gmail.com':
               toggleVisibility(document.getElementById('foo2'));
+              var mainUser = 'deepoppy@gmail.com';
               break;
         case 'matt@woodandmortar.com':
               toggleVisibility(document.getElementById('foo'));
+              var mainUser = 'matt@woodandmortar.com';
               break;
  }
 }

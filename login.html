@@ -185,10 +185,6 @@ var toggleVisibility = function(element) {
 
 <script>
 
-var formMain;
-var nameEntry = "entry.569412235";
-var projectEntry = "entry.320157692";
-var tagEntry = "entry.1143322173";
 var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
 
 function assistance()
@@ -219,18 +215,12 @@ function onSignIn(googleUser) {
         break;
         case 'micheal.mfg@gmail.com':
               toggleVisibility(document.getElementById('foo'));
-              var nameEntry = "entry.569412235";
-              var projectEntry = "entry.320157692";
-              var tagEntry = "entry.1143322173";
-              var formMain = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
-              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
+              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse";
               document.getElementById('profilePic').src = userImage;
               break;
         case 'woodmortar@gmail.com':
               toggleVisibility(document.getElementById('foo'));
-              var nameEntry = "entry.569412235";
-              var projectEntry = "entry.320157692";
-              var tagEntry = "entry.1143322173";
+              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
               document.getElementById('profilePic').src = userImage;
               break;
         case 'crycellaf@gmail.com':
@@ -270,7 +260,7 @@ function changeEventHandler1(event) {
   else {
     setTimeout(function(){
       toggleVisibility(document.getElementById('ButtonSubmit'));
-    }, 2500);
+    }, 3500);
 
     var fEmail = event.target.value;
     var options = {
@@ -333,7 +323,7 @@ function postContactToGoogle()  {
     });
         setTimeout(function(){
           window.location.href = 'https://woodandmortar.github.io/';
-        }, 3500);
+        }, 1500);
         }
 
         function postContactToGoogle2()  {
@@ -342,7 +332,7 @@ function postContactToGoogle()  {
           var tOLevel = document.getElementById('vresp').innerHTML;
 
             $.ajax({
-              url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
+              url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse",
               data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
               type: "POST",
               dataType: "xml",
@@ -357,7 +347,7 @@ function postContactToGoogle()  {
             });
                 setTimeout(function(){
                   window.location.href = 'https://woodandmortar.github.io/';
-                }, 3500);
+                }, 1500);
                 }
 
 </script>

@@ -73,6 +73,13 @@
   left: 1px;
   z-index: 40;
 }
+.pic1 {
+   width: 100px;
+   top: 22%;
+   position: absolute;
+   left: 23%;
+   z-index: 90;
+ }
 </style>
 
 <script>
@@ -117,6 +124,8 @@ var toggleVisibility = function(element) {
 
     <form action="https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse" id="main-contact-form" target="hidden_iframe"
     onsubmit="submitted=true;" >
+
+ <img class="pic1" id="profilePic" src="pics/locked.png" style="width:100px">
 
 <span id="vresp2">Please login</span>
 
@@ -188,7 +197,7 @@ function viewDocs()
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   var fName = profile.getName();
-  console.log('Image URL: ' + profile.getImageUrl());
+  var userImage = profile.getImageUrl();
   document.getElementById('vresp2').innerHTML = profile.getName();
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
   switch(profile.getEmail()){
@@ -197,9 +206,11 @@ function onSignIn(googleUser) {
         break;
         case 'micheal.mfg@gmail.com':
               toggleVisibility(document.getElementById('foo'));
+              document.getElementById('myImage').src = userImage;
               break;
         case 'woodmortar@gmail.com':
               toggleVisibility(document.getElementById('foo'));
+              document.getElementById('myImage').src = userImage;
               break;
         case 'crycellaf@gmail.com':
               toggleVisibility(document.getElementById('foo'));

@@ -182,7 +182,7 @@ var toggleVisibility = function(element) {
 
 <script>
 
-var formMain = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
+var formMain;
 var nameEntry = "entry.569412235";
 var projectEntry = "entry.320157692";
 var tagEntry = "entry.1143322173";
@@ -224,6 +224,10 @@ function onSignIn(googleUser) {
               break;
         case 'woodmortar@gmail.com':
               toggleVisibility(document.getElementById('foo'));
+              var nameEntry = "entry.569412235";
+              var projectEntry = "entry.320157692";
+              var tagEntry = "entry.1143322173";
+              var formMain = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
               document.getElementById('profilePic').src = userImage;
               break;
         case 'crycellaf@gmail.com':

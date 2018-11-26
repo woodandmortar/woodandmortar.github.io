@@ -303,14 +303,15 @@ function postContactToGoogle()  {
   var fName = document.getElementById('vresp2').innerHTML;
 	var fEmail = $('#fEmail').val();
   var tOLevel = document.getElementById('vresp').innerHTML;
+  var formMain2 = formMain;
 
   function formChange()
   {
-    location.href = formMain;
+    location.href = formMain2;
   }
 
 		$.ajax({
-			url: formMain,
+			url: formMain2,
 			data:  { nameEntry : fName , projectEntry : fEmail , tagEntry : tOLevel },
 			type: "POST",
 			dataType: "xml",

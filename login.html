@@ -183,7 +183,6 @@ var toggleVisibility = function(element) {
 <script>
 
 var formMain;
-var formMain2;
 var nameEntry = "entry.569412235";
 var projectEntry = "entry.320157692";
 var tagEntry = "entry.1143322173";
@@ -222,8 +221,7 @@ function onSignIn(googleUser) {
               var tagEntry = "entry.1143322173";
               function formChange()
               {
-                var formMain2 = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
-                location.href = formMain2;
+                location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
               }
               document.getElementById('profilePic').src = userImage;
               break;
@@ -234,8 +232,7 @@ function onSignIn(googleUser) {
               var tagEntry = "entry.1143322173";
               function formChange()
               {
-                var formMain2 = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
-                location.href = formMain2;
+                location.href = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
               }
               document.getElementById('profilePic').src = userImage;
               break;
@@ -318,7 +315,7 @@ function postContactToGoogle()  {
   var tOLevel = document.getElementById('vresp').innerHTML;
 
 		$.ajax({
-			url: formMain2,
+			url: formMain,
 			data:  { nameEntry : fName , projectEntry : fEmail , tagEntry : tOLevel },
 			type: "POST",
 			dataType: "xml",

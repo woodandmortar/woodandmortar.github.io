@@ -33,7 +33,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'UA-123535120-1');
       </script>
 
@@ -59,7 +58,6 @@
   background-color: #fff;
   z-index: -1;
 }
-
 .container2 {
   width: 90%;
   height: 18%;
@@ -75,14 +73,6 @@
   left: 1px;
   z-index: 40;
 }
-.pic1 {
-  width: 100px;
-  top: 22%;
-  position: absolute;
-  left: 23%;
-  z-index: 90;
-}
-
 </style>
 
 <script>
@@ -127,8 +117,6 @@ var toggleVisibility = function(element) {
 
     <form action="https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse" id="main-contact-form" target="hidden_iframe"
     onsubmit="submitted=true;" >
-
-    <img class="pic1" id="myImage" src="pics/locked.png" style="width:100px"><br/><br/>
 
 <span id="vresp2">Please login</span>
 
@@ -184,73 +172,57 @@ var toggleVisibility = function(element) {
   <script  src="js/index.js"></script>
 
 <script>
-
 var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
-
 function assistance()
 {
   location.href = "mailto:"+email+ "I'm " + fName + "and I'd like you to contact me.";
 }
-
 function signup()
 {
   location.href = "mailto:"+email+ "I'm " + fName + "and I'd like to request a login.";
 }
-
 function viewDocs()
 {
   window.location.href = 'https://drive.google.com/open?id=1TH61mYAHBB3EjCmipgwj2a-cSabHWWBO';
 }
-
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   var fName = profile.getName();
-  var userImage = profile.getImageUrl();
+  console.log('Image URL: ' + profile.getImageUrl());
   document.getElementById('vresp2').innerHTML = profile.getName();
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-
   switch(profile.getEmail()){
     default:
         toggleVisibility(document.getElementById('fo'));
         break;
         case 'micheal.mfg@gmail.com':
               toggleVisibility(document.getElementById('foo'));
-              document.getElementById('myImage').src = userImage;
               break;
         case 'woodmortar@gmail.com':
               toggleVisibility(document.getElementById('foo'));
-              document.getElementById('myImage').src = userImage;
               break;
         case 'crycellaf@gmail.com':
               toggleVisibility(document.getElementById('foo'));
-              var mainUser = 'crycellaf@gmail.com':;
               break;
         case 'seanoack@gmail.com':
               toggleVisibility(document.getElementById('foo'));
-              var mainUser = 'seanoack@gmail.com';
               break;
         case 'matthewpaul389@gmail.com':
               toggleVisibility(document.getElementById('foo'));
-              var mainUser = 'matthewpaul389@gmail.com';
               break;
         case 'deepoppy@gmail.com':
               toggleVisibility(document.getElementById('foo2'));
-              var mainUser = 'deepoppy@gmail.com';
               break;
         case 'matt@woodandmortar.com':
               toggleVisibility(document.getElementById('foo'));
-              var mainUser = 'matt@woodandmortar.com';
               break;
  }
 }
-
 	var fEmail = $('#fEmail').val();
-
     document.addEventListener('DOMContentLoaded',
     function() {
     document.querySelector('select[name="project"]').onchange=changeEventHandler1;
                 },false);
-
 function changeEventHandler1(event) {
   // You can use “this” to refer to the selected element.
   if(!event.target.value)
@@ -267,34 +239,28 @@ function changeEventHandler1(event) {
       // Maximum age in milliseconds of a possible cached position that is acceptable
       maximumAge: 1000 * 5 * 3
     };
-
     function startGeoLookup() {
       navigator.geolocation.getCurrentPosition(success, error, options);
        $('.overlay, .loader').fadeIn('fast');
     }
     startGeoLookup();
-
     function success(pos) {
       $('.overlay, .loader').fadeOut('fast');
       var crd = pos.coords;
       var tme = pos.timestamp;
       var d = new Date(tme);
       var t = new Date(tme);
-
       // alert("Altitude: " + crd.altitude + " \nAltitudeAccuracy: " + crd.altitudeAccuracy);
       var roundAcc = Math.floor(crd.accuracy);
       document.getElementById('vresp').innerHTML = crd.latitude + ' ' + crd.longitude;
-
       if(!crd.altitude) {
         document.getElementById('altitude').innerHTML = "Not available on this device."
       }
       else {document.getElementById('altitude').innerHTML = crd.altitude;}
-
       document.getElementById('accuracy').innerHTML = roundAcc + " Meters";
       document.getElementById('dateCode').innerHTML = d.toLocaleString().slice(0, 10);
       document.getElementById('timeCode').innerHTML = t.toLocaleString().slice(10, 25);
     }
-
     /* Error Codes: 1 PERMISSION_DENIED, 2 POSITION_UNAVAILABLE, 3 TIMEOUT */
     function error(err) {
       var geoerror = (err.code == (1, 2, 3) ? "Error loading" : err.message);
@@ -303,14 +269,10 @@ function changeEventHandler1(event) {
     }
   }
 }
-
-
 function postContactToGoogle()  {
-
   var fName = document.getElementById('vresp2').innerHTML;
 	var fEmail = $('#fEmail').val();
   var tOLevel = document.getElementById('vresp').innerHTML;
-
 		$.ajax({
 			url: "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse",
 			data:  {"entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
@@ -325,22 +287,10 @@ function postContactToGoogle()  {
 				}
 				    }
 		});
-
-
         setTimeout(function(){
-
           window.location.href = 'https://woodandmortar.github.io/';
-
         }, 2500);
-
 				}
-
-
-
-
-
-
-
 </script>
 
 </body>

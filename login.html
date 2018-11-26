@@ -188,11 +188,6 @@ var projectEntry = "entry.320157692";
 var tagEntry = "entry.1143322173";
 var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
 
-function formChange()
-{
-  location.href = formMain;
-}
-
 function assistance()
 {
   location.href = "mailto:"+email+ "I'm " + fName + "and I'd like you to contact me.";
@@ -309,8 +304,13 @@ function postContactToGoogle()  {
 	var fEmail = $('#fEmail').val();
   var tOLevel = document.getElementById('vresp').innerHTML;
 
+  function formChange()
+  {
+    location.href = formMain;
+  }
+
 		$.ajax({
-			url: "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse",
+			url: formMain,
 			data:  { nameEntry : fName , projectEntry : fEmail , tagEntry : tOLevel },
 			type: "POST",
 			dataType: "xml",

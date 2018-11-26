@@ -75,9 +75,9 @@
 }
 .pic1 {
    width: 100px;
-   top: 22%;
+   bottom: 10px;
    position: absolute;
-   left: 23%;
+   left: 10px;
    z-index: 90;
  }
 </style>
@@ -181,6 +181,11 @@ var toggleVisibility = function(element) {
   <script  src="js/index.js"></script>
 
 <script>
+
+var nameEntry = "entry.569412235";
+var projectEntry = "entry.320157692";
+var tagEntry = "entry.1143322173";
+
 var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
 function assistance()
 {
@@ -203,10 +208,15 @@ function onSignIn(googleUser) {
   switch(profile.getEmail()){
     default:
         toggleVisibility(document.getElementById('fo'));
+        document.getElementById('profilePic').src = userImage;
         break;
         case 'micheal.mfg@gmail.com':
               toggleVisibility(document.getElementById('foo'));
+              var nameEntry = "entry.569412235";
+              var projectEntry = "entry.320157692";
+              var tagEntry = "entry.1143322173";
               document.getElementById('profilePic').src = userImage;
+              document.getElementById('main-contact-form').action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
               break;
         case 'woodmortar@gmail.com':
               toggleVisibility(document.getElementById('foo'));
@@ -214,18 +224,23 @@ function onSignIn(googleUser) {
               break;
         case 'crycellaf@gmail.com':
               toggleVisibility(document.getElementById('foo'));
+              document.getElementById('profilePic').src = userImage;
               break;
         case 'seanoack@gmail.com':
               toggleVisibility(document.getElementById('foo'));
+              document.getElementById('profilePic').src = userImage;
               break;
         case 'matthewpaul389@gmail.com':
               toggleVisibility(document.getElementById('foo'));
+              document.getElementById('profilePic').src = userImage;
               break;
         case 'deepoppy@gmail.com':
               toggleVisibility(document.getElementById('foo2'));
+              document.getElementById('profilePic').src = userImage;
               break;
         case 'matt@woodandmortar.com':
               toggleVisibility(document.getElementById('foo'));
+              document.getElementById('profilePic').src = userImage;
               break;
  }
 }
@@ -284,9 +299,10 @@ function postContactToGoogle()  {
   var fName = document.getElementById('vresp2').innerHTML;
 	var fEmail = $('#fEmail').val();
   var tOLevel = document.getElementById('vresp').innerHTML;
+
 		$.ajax({
 			url: "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse",
-			data:  {"entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+			data:  { nameEntry : fName , projectEntry : fEmail , tagEntry : tOLevel },
 			type: "POST",
 			dataType: "xml",
 			statusCode: {

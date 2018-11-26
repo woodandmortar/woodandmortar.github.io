@@ -205,7 +205,7 @@ function viewDocs()
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   var fName = profile.getName();
-  console.log('Image URL: ' + profile.getImageUrl());
+  var userImage = profile.getImageUrl();
   document.getElementById('vresp2').innerHTML = profile.getName();
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 
@@ -215,12 +215,10 @@ function onSignIn(googleUser) {
         break;
         case 'micheal.mfg@gmail.com':
               toggleVisibility(document.getElementById('foo'));
-              var userImage = profile.getImageUrl();
               document.getElementById('myImage').src = userImage;
               break;
         case 'woodmortar@gmail.com':
               toggleVisibility(document.getElementById('foo'));
-              var userImage = profile.getImageUrl();
               document.getElementById('myImage').src = userImage;
               break;
         case 'crycellaf@gmail.com':

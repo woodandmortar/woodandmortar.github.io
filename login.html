@@ -108,7 +108,7 @@ var toggleVisibility = function(element) {
 
         <span id="vresp2" class="carousel-item__btn">Please login</span>
         <br/><br/><br/><br/>
-        <a href="postContactToGoogle()" class="carousel-item__btn">Home</a>
+        <a href="postContactToGoogle()" class="carousel-item__btn">Test</a>
         <br/><br/><br/><br/>
         <a class="carousel-item__btn" onclick="assistance()"><br/><span id="vresp">Assistance</span></a>
         </div>
@@ -122,7 +122,7 @@ var toggleVisibility = function(element) {
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='#';}"></iframe>
 
 
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse" id="main-contact-form" target="hidden_iframe"
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse" id="main-contact-form" target="hidden_iframe"
     onsubmit="submitted=true;" >
 
  <img class="pic1" id="profilePic" src="pics/locked.png" style="width:100px">
@@ -138,7 +138,9 @@ var toggleVisibility = function(element) {
         </select>
         <div class="select__arrow"></div>
       </div>
-
+<button id="ButtonSubmit" onclick="postContactToGoogle();" class="btn-submit" >Micheal</button>
+<button id="ButtonSubmit" onclick="postContactToGoogle3();" class="btn-submit" >Crycella</button>
+<button id="ButtonSubmit" onclick="postContactToGoogle7();" class="btn-submit" >Mike</button>
       <a href="https://docs.google.com/spreadsheets/d/1R_M0VQZFXZVp2-p0lphYz17KfA8KNIwq-0i0kSkgTDk/edit?usp=sharing" class="carousel-item__btn">Time Sheets</a>
       <br/><br/>
       <a href="https://docs.google.com/spreadsheets/d/1VQZBdM2gF3dhZcJaLkGfIVHLFhoTpRbo3pTH-5Gm9Zo/edit?usp=sharing" class="carousel-item__btn">Inventory</a>
@@ -300,37 +302,6 @@ function changeEventHandler1(event) {
       document.getElementById('accuracy').innerHTML = roundAcc + " Meters";
       document.getElementById('dateCode').innerHTML = d.toLocaleString().slice(0, 10);
       document.getElementById('timeCode').innerHTML = t.toLocaleString().slice(10, 25);
-
-
-      function postContactToGoogle()  {
-        var fName = document.getElementById('vresp2').innerHTML;
-        var fEmail = $('#fEmail').val();
-        var tOLevel = document.getElementById('vresp').innerHTML;
-
-          $.ajax({
-            url: "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse",
-            data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
-            type: "POST",
-            dataType: "xml",
-            statusCode: {
-              0: function () {
-      //					alert("Click -OK- to submit message");
-              },
-              200: function () {
-      //					alert("Click -OK- to submit message");
-              }
-                  }
-          });
-              setTimeout(function(){
-                window.location.href = 'https://woodandmortar.github.io/';
-              }, 1500);
-              }
-
-
-
-
-
-
     }
 
     /* Error Codes: 1 PERMISSION_DENIED, 2 POSITION_UNAVAILABLE, 3 TIMEOUT */
@@ -345,7 +316,29 @@ function changeEventHandler1(event) {
 }
 
 
+function postContactToGoogle()  {
+  var fName = document.getElementById('vresp2').innerHTML;
+  var fEmail = $('#fEmail').val();
+  var tOLevel = document.getElementById('vresp').innerHTML;
 
+    $.ajax({
+      url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
+      data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+      type: "POST",
+      dataType: "xml",
+      statusCode: {
+        0: function () {
+//					alert("Click -OK- to submit message");
+        },
+        200: function () {
+//					alert("Click -OK- to submit message");
+        }
+            }
+    });
+        setTimeout(function(){
+          window.location.href = 'https://woodandmortar.github.io/';
+        }, 1500);
+        }
 
   function postContactToGoogle2()  {
           var fName = document.getElementById('vresp2').innerHTML;

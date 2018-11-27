@@ -323,29 +323,9 @@ function changeEventHandler1(event) {
         toggleVisibility(document.getElementById('ButtonSubmit'));
           break;
           case 'micheal.mfg@gmail.com':
-          function postContactToGoogle(ButtonSubmit)  {
-            var fName = document.getElementById('vresp2').innerHTML;
-            var fEmail = $('#fEmail').val();
-            var tOLevel = document.getElementById('vresp').innerHTML;
-
-              $.ajax({
-                url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
-                data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
-                type: "POST",
-                dataType: "xml",
-                statusCode: {
-                  0: function () {
-          //					alert("Click -OK- to submit message");
-                  },
-                  200: function () {
-          //					alert("Click -OK- to submit message");
-                  }
-                      }
-              });
-                  setTimeout(function(){
-                    window.location.href = 'https://woodandmortar.github.io/';
-                  }, 1500);
-                  }
+          setTimeout(function(){
+            toggleVisibility(document.getElementById('ButtonSubmit'));
+          }, 3500);
                 break;
           case 'woodmortar@gmail.com':
           setTimeout(function(){

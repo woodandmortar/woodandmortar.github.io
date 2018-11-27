@@ -200,7 +200,7 @@ function viewDocs()
 }
 
 function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
+  public var profile = googleUser.getBasicProfile();
   var fName = profile.getName();
   var userImage = profile.getImageUrl();
   document.getElementById('vresp2').innerHTML = profile.getName();
@@ -317,8 +317,23 @@ function changeEventHandler1(event) {
 
 
 
+    switch(profile.getEmail()){
+          case 'micheal.mfg@gmail.com':
+                toggleVisibility(document.getElementById('foo'));
+                document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
+                document.getElementById('profilePic').src = userImage;
+                var accountName = 'micheal.mfg@gmail.com';
+                document.getElementById('vresp2').innerHTML = "Got It";
+                break;
 
-    document.getElementById('vresp2').innerHTML = "Got It";
+          case 'woodmortar@gmail.com':
+                toggleVisibility(document.getElementById('foo'));
+                document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
+                document.getElementById('profilePic').src = userImage;
+                var accountName = 'micheal.mfg@gmail.com';
+                document.getElementById('vresp2').innerHTML = "Got It"; 
+                break;
+                              }
 
 
 

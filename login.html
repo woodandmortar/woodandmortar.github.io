@@ -138,7 +138,7 @@ var toggleVisibility = function(element) {
         </select>
         <div class="select__arrow"></div>
       </div>
-      <button id="ButtonSubmit" onclick="postContactToGoogle();" class="btn-submit" style="display:none">Clock In/Out</button>
+      <button id="ButtonSubmit" onclick="postContactToGoogle();" class="btn-submit" style="display:none">Button One</button>
       <button id="ButtonSubmit2" onclick="postContactToGoogle2();" class="btn-submit" style="display:none">Button Two</button>
       <button id="ButtonSubmit3" onclick="postContactToGoogle3();" class="btn-submit" style="display:none">Clock In/Out</button>
       <button id="ButtonSubmit4" onclick="postContactToGoogle4();" class="btn-submit" style="display:none">Clock In/Out</button>
@@ -227,7 +227,7 @@ function onSignIn(googleUser) {
               toggleVisibility(document.getElementById('foo'));
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
               document.getElementById('profilePic').src = userImage;
-              var accountName = 'woodmortar@gmail.com';
+              var accountName = 'micheal.mfg@gmail.com';
               break;
         case 'crycellaf@gmail.com':
               toggleVisibility(document.getElementById('foo'));
@@ -325,8 +325,7 @@ function changeEventHandler1(event) {
           case 'micheal.mfg@gmail.com':
           setTimeout(function(){
             toggleVisibility(document.getElementById('ButtonSubmit'));
-          }, 3500);
-                break;
+          }, 3500);                break;
           case 'woodmortar@gmail.com':
           setTimeout(function(){
             toggleVisibility(document.getElementById('ButtonSubmit2'));

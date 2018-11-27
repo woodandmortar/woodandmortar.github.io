@@ -270,7 +270,6 @@ function changeEventHandler1(event) {
       document.getElementById('vresp').innerHTML = 'Select Project';
     }
   else {
-    var profile = googleUser.getBasicProfile();
     var fEmail = event.target.value;
     var options = {
       // enableHighAccuracy can slower response times or increase power consumption
@@ -312,7 +311,7 @@ function changeEventHandler1(event) {
       $('.overlay, .loader').fadeOut('fast');
     }
 
-
+    var profile = googleUser.getBasicProfile();
 
     switch(profile.getEmail()){
           case 'micheal.mfg@gmail.com':

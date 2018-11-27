@@ -301,6 +301,34 @@ function changeEventHandler1(event) {
       document.getElementById('accuracy').innerHTML = roundAcc + " Meters";
       document.getElementById('dateCode').innerHTML = d.toLocaleString().slice(0, 10);
       document.getElementById('timeCode').innerHTML = t.toLocaleString().slice(10, 25);
+
+      switch(profile.getEmail()){
+        default:
+          toggleVisibility(document.getElementById('ButtonSubmit'));
+            break;
+            case 'micheal.mfg@gmail.com':
+            toggleVisibility(document.getElementById('ButtonSubmit'));
+                  break;
+            case 'woodmortar@gmail.com':
+            toggleVisibility(document.getElementById('ButtonSubmit2'));
+                  break;
+            case 'crycellaf@gmail.com':
+            toggleVisibility(document.getElementById('ButtonSubmit3'));
+                  break;
+            case 'seanoack@gmail.com':
+            toggleVisibility(document.getElementById('ButtonSubmit4'));
+                  break;
+            case 'matthewpaul389@gmail.com':
+            toggleVisibility(document.getElementById('ButtonSubmit5'));
+                  break;
+            case 'deepoppy@gmail.com':
+            toggleVisibility(document.getElementById('ButtonSubmit6'));
+                  break;
+            case 'matt@woodandmortar.com':
+            toggleVisibility(document.getElementById('ButtonSubmit7'));
+                  break;
+     }
+
     }
 
     /* Error Codes: 1 PERMISSION_DENIED, 2 POSITION_UNAVAILABLE, 3 TIMEOUT */
@@ -309,34 +337,6 @@ function changeEventHandler1(event) {
       document.getElementById('errMsg').innerHTML = geoerror;
       $('.overlay, .loader').fadeOut('fast');
     }
-
-    switch(profile.getEmail()){
-      default:
-        toggleVisibility(document.getElementById('ButtonSubmit'));
-          break;
-          case 'micheal.mfg@gmail.com':
-          toggleVisibility(document.getElementById('ButtonSubmit'));
-                break;
-          case 'woodmortar@gmail.com':
-          toggleVisibility(document.getElementById('ButtonSubmit2'));
-                break;
-          case 'crycellaf@gmail.com':
-          toggleVisibility(document.getElementById('ButtonSubmit3'));
-                break;
-          case 'seanoack@gmail.com':
-          toggleVisibility(document.getElementById('ButtonSubmit4'));
-                break;
-          case 'matthewpaul389@gmail.com':
-          toggleVisibility(document.getElementById('ButtonSubmit5'));
-                break;
-          case 'deepoppy@gmail.com':
-          toggleVisibility(document.getElementById('ButtonSubmit6'));
-                break;
-          case 'matt@woodandmortar.com':
-          toggleVisibility(document.getElementById('ButtonSubmit7'));
-                break;
-   }
-
 
   }
 }

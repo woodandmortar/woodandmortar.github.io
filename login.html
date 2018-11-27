@@ -181,7 +181,6 @@ var toggleVisibility = function(element) {
 
 <script>
 var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
-var accountName = 'micheal.mfg@gmail.com';
 
 function assistance()
 {
@@ -200,7 +199,6 @@ function viewDocs()
 
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
-  var mainProfile = googleUser.getBasicProfile();
   var fName = profile.getName();
   var userImage = profile.getImageUrl();
   document.getElementById('vresp2').innerHTML = profile.getName();
@@ -323,59 +321,8 @@ function changeEventHandler1(event) {
 
     function onSignIn2(googleUser) {
       var profile = googleUser.getBasicProfile();
-      var mainProfile = googleUser.getBasicProfile();
-      var fName = profile.getName();
-      var userImage = profile.getImageUrl();
       document.getElementById('vresp2').innerHTML = "Got It";
-      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-      switch(profile.getEmail()){
-        default:
-            toggleVisibility(document.getElementById('fo'));
-            document.getElementById('profilePic').src = userImage;
-            break;
-            case 'micheal.mfg@gmail.com':
-                  toggleVisibility(document.getElementById('foo'));
-                  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
-                  document.getElementById('profilePic').src = userImage;
-                  var accountName = 'micheal.mfg@gmail.com';
-                  break;
-            case 'woodmortar@gmail.com':
-                  toggleVisibility(document.getElementById('foo'));
-                  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
-                  document.getElementById('profilePic').src = userImage;
-                  var accountName = 'micheal.mfg@gmail.com';
-                  break;
-            case 'crycellaf@gmail.com':
-                  toggleVisibility(document.getElementById('foo'));
-                  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse";
-                  document.getElementById('profilePic').src = userImage;
-                  var accountName = 'crycellaf@gmail.com';
-                  break;
-            case 'seanoack@gmail.com':
-                  toggleVisibility(document.getElementById('foo'));
-                  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSc1EAFu0ahOV1gb4mVbLWBvyY0tYGbjE0UtE2hvJZ3PDBiowA/formResponse";
-                  document.getElementById('profilePic').src = userImage;
-                  var accountName = 'seanoack@gmail.com';
-                  break;
-            case 'matthewpaul389@gmail.com':
-                  toggleVisibility(document.getElementById('foo'));
-                  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
-                  document.getElementById('profilePic').src = userImage;
-                  var accountName = 'matthewpaul389@gmail.com';
-                  break;
-            case 'deepoppy@gmail.com':
-                  toggleVisibility(document.getElementById('foo2'));
-                  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
-                  document.getElementById('profilePic').src = userImage;
-                  var accountName = 'deepoppy@gmail.com';
-                  break;
-            case 'matt@woodandmortar.com':
-                  toggleVisibility(document.getElementById('foo'));
-                  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse";
-                  document.getElementById('profilePic').src = userImage;
-                  var accountName = 'matt@woodandmortar.com';
-                  break;
-     }
+
     }
 onSignIn2(googleUser);
 

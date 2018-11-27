@@ -138,14 +138,7 @@ var toggleVisibility = function(element) {
         </select>
         <div class="select__arrow"></div>
       </div>
-      <button id="ButtonSubmit" onclick="postContactToGoogle();" class="btn-submit" style="display:none">Button One</button>
-      <button id="ButtonSubmit2" onclick="postContactToGoogle2();" class="btn-submit" style="display:none">Button Two</button>
-      <button id="ButtonSubmit3" onclick="postContactToGoogle3();" class="btn-submit" style="display:none">Clock In/Out</button>
-      <button id="ButtonSubmit4" onclick="postContactToGoogle4();" class="btn-submit" style="display:none">Clock In/Out</button>
-      <button id="ButtonSubmit5" onclick="postContactToGoogle5();" class="btn-submit" style="display:none">Clock In/Out</button>
-      <button id="ButtonSubmit6" onclick="postContactToGoogle6();" class="btn-submit" style="display:none">Clock In/Out</button>
-      <button id="ButtonSubmit7" onclick="postContactToGoogle7();" class="btn-submit" style="display:none">Clock In/Out</button>
-      <br/><br/>
+
       <a href="https://docs.google.com/spreadsheets/d/1R_M0VQZFXZVp2-p0lphYz17KfA8KNIwq-0i0kSkgTDk/edit?usp=sharing" class="carousel-item__btn">Time Sheets</a>
       <br/><br/>
       <a href="https://docs.google.com/spreadsheets/d/1VQZBdM2gF3dhZcJaLkGfIVHLFhoTpRbo3pTH-5Gm9Zo/edit?usp=sharing" class="carousel-item__btn">Inventory</a>
@@ -222,6 +215,27 @@ function onSignIn(googleUser) {
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
               document.getElementById('profilePic').src = userImage;
               var accountName = 'micheal.mfg@gmail.com';
+              var fName = document.getElementById('vresp2').innerHTML;
+              var fEmail = $('#fEmail').val();
+              var tOLevel = document.getElementById('vresp').innerHTML;
+
+                $.ajax({
+                  url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
+                  data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                  type: "POST",
+                  dataType: "xml",
+                  statusCode: {
+                    0: function () {
+            //					alert("Click -OK- to submit message");
+                    },
+                    200: function () {
+            //					alert("Click -OK- to submit message");
+                    }
+                        }
+                });
+                    setTimeout(function(){
+                      window.location.href = 'https://woodandmortar.github.io/';
+                    }, 3500);
               break;
         case 'woodmortar@gmail.com':
               toggleVisibility(document.getElementById('foo'));
@@ -318,71 +332,8 @@ function changeEventHandler1(event) {
       $('.overlay, .loader').fadeOut('fast');
     }
 
-    switch(accountName){
-          case 'micheal.mfg@gmail.com':
-          setTimeout(function(){
-            toggleVisibility(document.getElementById('ButtonSubmit'));
-          }, 3500);
-                break;
-          case 'woodmortar@gmail.com':
-          setTimeout(function(){
-            toggleVisibility(document.getElementById('ButtonSubmit2'));
-          }, 3500);
-                break;
-          case 'crycellaf@gmail.com':
-          setTimeout(function(){
-            toggleVisibility(document.getElementById('ButtonSubmit3'));
-          }, 3500);
-                break;
-          case 'seanoack@gmail.com':
-          setTimeout(function(){
-            toggleVisibility(document.getElementById('ButtonSubmit4'));
-          }, 3500);
-                break;
-          case 'matthewpaul389@gmail.com':
-          setTimeout(function(){
-            toggleVisibility(document.getElementById('ButtonSubmit5'));
-          }, 3500);
-                break;
-          case 'deepoppy@gmail.com':
-          setTimeout(function(){
-            toggleVisibility(document.getElementById('ButtonSubmit6'));
-          }, 3500);
-                break;
-          case 'matt@woodandmortar.com':
-          setTimeout(function(){
-            toggleVisibility(document.getElementById('ButtonSubmit7'));
-          }, 3500);
-                break;
-   }
-
-
   }
 }
-
-function postContactToGoogle()  {
-  var fName = document.getElementById('vresp2').innerHTML;
-  var fEmail = $('#fEmail').val();
-  var tOLevel = document.getElementById('vresp').innerHTML;
-
-    $.ajax({
-      url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
-      data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
-      type: "POST",
-      dataType: "xml",
-      statusCode: {
-        0: function () {
-//					alert("Click -OK- to submit message");
-        },
-        200: function () {
-//					alert("Click -OK- to submit message");
-        }
-            }
-    });
-        setTimeout(function(){
-          window.location.href = 'https://woodandmortar.github.io/';
-        }, 1500);
-        }
 
   function postContactToGoogle2()  {
           var fName = document.getElementById('vresp2').innerHTML;

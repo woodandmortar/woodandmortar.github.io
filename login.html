@@ -311,14 +311,33 @@ function changeEventHandler1(event) {
       $('.overlay, .loader').fadeOut('fast');
     }
 
-    var profile = googleUser.getBasicProfile();
 
+
+
+
+
+
+    var profile = googleUser.getBasicProfile();
+    var fName = profile.getName();
+    var userImage = profile.getImageUrl();
+    document.getElementById('vresp2').innerHTML = "Got It";
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     switch(profile.getEmail()){
+      default:
+          toggleVisibility(document.getElementById('fo'));
+          document.getElementById('profilePic').src = userImage;
+          break;
           case 'micheal.mfg@gmail.com':
-                location.href = "mailto:"+email+ "I'm " + fName + "and I'd like to request a login.";
+                toggleVisibility(document.getElementById('foo'));
+                document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
+                document.getElementById('profilePic').src = userImage;
+                var accountName = 'micheal.mfg@gmail.com';
                 break;
           case 'woodmortar@gmail.com':
-                document.getElementById('vresp2').innerHTML = profile.getEmail();
+                toggleVisibility(document.getElementById('foo'));
+                document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
+                document.getElementById('profilePic').src = userImage;
+                var accountName = 'micheal.mfg@gmail.com';
                 break;
           case 'crycellaf@gmail.com':
                 toggleVisibility(document.getElementById('foo'));
@@ -351,6 +370,11 @@ function changeEventHandler1(event) {
                 var accountName = 'matt@woodandmortar.com';
                 break;
     }
+
+
+
+
+
 
 
 

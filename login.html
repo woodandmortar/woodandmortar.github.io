@@ -319,12 +319,39 @@ function changeEventHandler1(event) {
 
 
 
-    function onSignIn2(googleUser) {
-      var profile = googleUser.getBasicProfile();
-      document.getElementById('vresp2').innerHTML = "Got It";
 
+    function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      document.getElementById('vresp2').innerHTML = "got it";
+      switch(profile.getEmail()){
+        default:
+        document.getElementById('vresp2').innerHTML = "got it";
+            break;
+            case 'micheal.mfg@gmail.com':
+                  toggleVisibility(document.getElementById('foo'));
+                  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
+                  document.getElementById('profilePic').src = userImage;
+                  var accountName = 'micheal.mfg@gmail.com';
+                  break;
+            case 'woodmortar@gmail.com':
+                  toggleVisibility(document.getElementById('foo'));
+                  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
+                  document.getElementById('profilePic').src = userImage;
+                  var accountName = 'micheal.mfg@gmail.com';
+                  break;
+     }
     }
-onSignIn2(googleUser);
+onSignIn(googleUser);
+
+
+
+
+
+
+
+
+
+
 
 
 

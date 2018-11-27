@@ -139,7 +139,7 @@ var toggleVisibility = function(element) {
         <div class="select__arrow"></div>
       </div>
       <button id="ButtonSubmit" onclick="postContactToGoogle();" class="btn-submit" style="display:none">Clock In/Out</button>
-      <button id="ButtonSubmit2" onclick="postContactToGoogle2();" class="btn-submit" style="display:none">Clock In/Out</button>
+      <button id="ButtonSubmit2" onclick="postContactToGoogle2();" class="btn-submit" style="display:none">Button Two</button>
       <button id="ButtonSubmit3" onclick="postContactToGoogle3();" class="btn-submit" style="display:none">Clock In/Out</button>
       <button id="ButtonSubmit4" onclick="postContactToGoogle4();" class="btn-submit" style="display:none">Clock In/Out</button>
       <button id="ButtonSubmit5" onclick="postContactToGoogle5();" class="btn-submit" style="display:none">Clock In/Out</button>
@@ -222,29 +222,6 @@ function onSignIn(googleUser) {
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
               document.getElementById('profilePic').src = userImage;
               var accountName = 'micheal.mfg@gmail.com';
-              function postContactToGoogle()  {
-                var fName = document.getElementById('vresp2').innerHTML;
-                var fEmail = $('#fEmail').val();
-                var tOLevel = document.getElementById('vresp').innerHTML;
-
-                  $.ajax({
-                    url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
-                    data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
-                    type: "POST",
-                    dataType: "xml",
-                    statusCode: {
-                      0: function () {
-              //					alert("Click -OK- to submit message");
-                      },
-                      200: function () {
-              //					alert("Click -OK- to submit message");
-                      }
-                          }
-                  });
-                      setTimeout(function(){
-                        window.location.href = 'https://woodandmortar.github.io/';
-                      }, 1500);
-                      }
               break;
         case 'woodmortar@gmail.com':
               toggleVisibility(document.getElementById('foo'));
@@ -346,9 +323,29 @@ function changeEventHandler1(event) {
         toggleVisibility(document.getElementById('ButtonSubmit'));
           break;
           case 'micheal.mfg@gmail.com':
-          setTimeout(function(){
-            toggleVisibility(document.getElementById('ButtonSubmit'));
-          }, 3500);
+          function postContactToGoogle()  {
+            var fName = document.getElementById('vresp2').innerHTML;
+            var fEmail = $('#fEmail').val();
+            var tOLevel = document.getElementById('vresp').innerHTML;
+
+              $.ajax({
+                url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
+                data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                type: "POST",
+                dataType: "xml",
+                statusCode: {
+                  0: function () {
+          //					alert("Click -OK- to submit message");
+                  },
+                  200: function () {
+          //					alert("Click -OK- to submit message");
+                  }
+                      }
+              });
+                  setTimeout(function(){
+                    window.location.href = 'https://woodandmortar.github.io/';
+                  }, 1500);
+                  }
                 break;
           case 'woodmortar@gmail.com':
           setTimeout(function(){

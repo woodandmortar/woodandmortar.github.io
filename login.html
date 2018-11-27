@@ -189,6 +189,7 @@ var toggleVisibility = function(element) {
 <script>
 
 var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
+var accountName = 'micheal.mfg@gmail.com';
 
 function assistance()
 {
@@ -220,36 +221,43 @@ function onSignIn(googleUser) {
               toggleVisibility(document.getElementById('foo'));
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
               document.getElementById('profilePic').src = userImage;
+              var accountName = 'micheal.mfg@gmail.com';
               break;
         case 'woodmortar@gmail.com':
               toggleVisibility(document.getElementById('foo'));
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
               document.getElementById('profilePic').src = userImage;
+              var accountName = 'woodmortar@gmail.com';
               break;
         case 'crycellaf@gmail.com':
               toggleVisibility(document.getElementById('foo'));
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse";
               document.getElementById('profilePic').src = userImage;
+              var accountName = 'crycellaf@gmail.com';
               break;
         case 'seanoack@gmail.com':
               toggleVisibility(document.getElementById('foo'));
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSc1EAFu0ahOV1gb4mVbLWBvyY0tYGbjE0UtE2hvJZ3PDBiowA/formResponse";
               document.getElementById('profilePic').src = userImage;
+              var accountName = 'seanoack@gmail.com';
               break;
         case 'matthewpaul389@gmail.com':
               toggleVisibility(document.getElementById('foo'));
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
               document.getElementById('profilePic').src = userImage;
+              var accountName = 'matthewpaul389@gmail.com';
               break;
         case 'deepoppy@gmail.com':
               toggleVisibility(document.getElementById('foo2'));
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
               document.getElementById('profilePic').src = userImage;
+              var accountName = 'deepoppy@gmail.com';
               break;
         case 'matt@woodandmortar.com':
               toggleVisibility(document.getElementById('foo'));
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse";
               document.getElementById('profilePic').src = userImage;
+              var accountName = 'matt@woodandmortar.com';
               break;
  }
 }
@@ -301,34 +309,6 @@ function changeEventHandler1(event) {
       document.getElementById('accuracy').innerHTML = roundAcc + " Meters";
       document.getElementById('dateCode').innerHTML = d.toLocaleString().slice(0, 10);
       document.getElementById('timeCode').innerHTML = t.toLocaleString().slice(10, 25);
-
-      switch(profile.getEmail()){
-        default:
-          toggleVisibility(document.getElementById('ButtonSubmit'));
-            break;
-            case 'micheal.mfg@gmail.com':
-            toggleVisibility(document.getElementById('ButtonSubmit'));
-                  break;
-            case 'woodmortar@gmail.com':
-            toggleVisibility(document.getElementById('ButtonSubmit2'));
-                  break;
-            case 'crycellaf@gmail.com':
-            toggleVisibility(document.getElementById('ButtonSubmit3'));
-                  break;
-            case 'seanoack@gmail.com':
-            toggleVisibility(document.getElementById('ButtonSubmit4'));
-                  break;
-            case 'matthewpaul389@gmail.com':
-            toggleVisibility(document.getElementById('ButtonSubmit5'));
-                  break;
-            case 'deepoppy@gmail.com':
-            toggleVisibility(document.getElementById('ButtonSubmit6'));
-                  break;
-            case 'matt@woodandmortar.com':
-            toggleVisibility(document.getElementById('ButtonSubmit7'));
-                  break;
-     }
-
     }
 
     /* Error Codes: 1 PERMISSION_DENIED, 2 POSITION_UNAVAILABLE, 3 TIMEOUT */
@@ -337,6 +317,48 @@ function changeEventHandler1(event) {
       document.getElementById('errMsg').innerHTML = geoerror;
       $('.overlay, .loader').fadeOut('fast');
     }
+
+    switch(accountName){
+      default:
+        toggleVisibility(document.getElementById('ButtonSubmit'));
+          break;
+          case 'micheal.mfg@gmail.com':
+          setTimeout(function(){
+            toggleVisibility(document.getElementById('ButtonSubmit'));
+          }, 3500);
+                break;
+          case 'woodmortar@gmail.com':
+          setTimeout(function(){
+            toggleVisibility(document.getElementById('ButtonSubmit2'));
+          }, 3500);
+                break;
+          case 'crycellaf@gmail.com':
+          setTimeout(function(){
+            toggleVisibility(document.getElementById('ButtonSubmit3'));
+          }, 3500);
+                break;
+          case 'seanoack@gmail.com':
+          setTimeout(function(){
+            toggleVisibility(document.getElementById('ButtonSubmit4'));
+          }, 3500);
+                break;
+          case 'matthewpaul389@gmail.com':
+          setTimeout(function(){
+            toggleVisibility(document.getElementById('ButtonSubmit5'));
+          }, 3500);
+                break;
+          case 'deepoppy@gmail.com':
+          setTimeout(function(){
+            toggleVisibility(document.getElementById('ButtonSubmit6'));
+          }, 3500);
+                break;
+          case 'matt@woodandmortar.com':
+          setTimeout(function(){
+            toggleVisibility(document.getElementById('ButtonSubmit7'));
+          }, 3500);
+                break;
+   }
+
 
   }
 }

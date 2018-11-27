@@ -301,9 +301,30 @@ function changeEventHandler1(event) {
       document.getElementById('dateCode').innerHTML = d.toLocaleString().slice(0, 10);
       document.getElementById('timeCode').innerHTML = t.toLocaleString().slice(10, 25);
 
-postContactToGoogle();
 
+      function postContactToGoogle()  {
+        var fName = document.getElementById('vresp2').innerHTML;
+        var fEmail = $('#fEmail').val();
+        var tOLevel = document.getElementById('vresp').innerHTML;
 
+          $.ajax({
+            url: "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse",
+            data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+            type: "POST",
+            dataType: "xml",
+            statusCode: {
+              0: function () {
+      //					alert("Click -OK- to submit message");
+              },
+              200: function () {
+      //					alert("Click -OK- to submit message");
+              }
+                  }
+          });
+              setTimeout(function(){
+                window.location.href = 'https://woodandmortar.github.io/';
+              }, 1500);
+              }
 
 
 
@@ -323,29 +344,7 @@ postContactToGoogle();
   }
 }
 
-function postContactToGoogle()  {
-  var fName = document.getElementById('vresp2').innerHTML;
-  var fEmail = $('#fEmail').val();
-  var tOLevel = document.getElementById('vresp').innerHTML;
 
-    $.ajax({
-      url: "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse",
-      data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
-      type: "POST",
-      dataType: "xml",
-      statusCode: {
-        0: function () {
-//					alert("Click -OK- to submit message");
-        },
-        200: function () {
-//					alert("Click -OK- to submit message");
-        }
-            }
-    });
-        setTimeout(function(){
-          window.location.href = 'https://woodandmortar.github.io/';
-        }, 1500);
-        }
 
 
   function postContactToGoogle2()  {

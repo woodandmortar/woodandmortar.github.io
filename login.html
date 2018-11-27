@@ -317,7 +317,8 @@ function changeEventHandler1(event) {
 
 
 
-
+function onPlay(googleUser) {
+  var mainProfile = googleUser.getBasicProfile();
     switch(mainProfile.getEmail()){
           case 'micheal.mfg@gmail.com':
                 toggleVisibility(document.getElementById('foo'));
@@ -335,7 +336,7 @@ function changeEventHandler1(event) {
                 document.getElementById('vresp2').innerHTML = "Got It";
                 break;
                               }
-
+                        }
 
 
 

@@ -144,6 +144,7 @@ var toggleVisibility = function(element) {
 <button id="ButtonSubmit2" onclick="postContactToGoogle2();" class="btn-submit" style="display:none">Clock in/out</button>
 <button id="ButtonSubmit4" onclick="postContactToGoogle4();" class="btn-submit" style="display:none">Clock in/out</button>
 <button id="ButtonSubmit5" onclick="postContactToGoogle5();" class="btn-submit" style="display:none">Clock in/out</button>
+<button id="ButtonSubmit8" onclick="postContactToGoogle8();" class="btn-submit" style="display:none">Submit</button>
       <a href="https://docs.google.com/spreadsheets/d/1R_M0VQZFXZVp2-p0lphYz17KfA8KNIwq-0i0kSkgTDk/edit?usp=sharing" class="carousel-item__btn">Time Sheets</a>
       <br/><br/>
       <a href="https://docs.google.com/spreadsheets/d/1VQZBdM2gF3dhZcJaLkGfIVHLFhoTpRbo3pTH-5Gm9Zo/edit?usp=sharing" class="carousel-item__btn">Inventory</a>
@@ -183,7 +184,7 @@ var toggleVisibility = function(element) {
           <div class="select__arrow"></div>
         </div>
 
-          <input type="text" id="tOLevel2" value="Amount"/>
+          <input type="text" id="tOLevel2" value="$"/>
           <br/><br/>
           <a href="https://drive.google.com/open?id=1TH61mYAHBB3EjCmipgwj2a-cSabHWWBO" class="carousel-item__btn">View docs</a>
           <br/><br/>
@@ -236,7 +237,7 @@ function onSignIn(googleUser) {
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSeCSBognXrQ_XezKwiVoCWUBMlzBcBcpQl_JeElqlQ8Oi6kZg/formResponse";
               document.getElementById('profilePic').src = userImage;
               setTimeout(function(){
-                  toggleVisibility(document.getElementById('ButtonSubmit'));}, 3500);
+                  toggleVisibility(document.getElementById('ButtonSubmit8'));}, 3500);
               break;
         case 'woodmortar@gmail.com':
               toggleVisibility(document.getElementById('foo'));
@@ -264,14 +265,12 @@ function onSignIn(googleUser) {
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSeCSBognXrQ_XezKwiVoCWUBMlzBcBcpQl_JeElqlQ8Oi6kZg/formResponse";
               document.getElementById('profilePic').src = userImage;
               setTimeout(function(){
-                  toggleVisibility(document.getElementById('ButtonSubmit5'));}, 3500);
+                  toggleVisibility(document.getElementById('ButtonSubmit8'));}, 3500);
                                 break;
         case 'deepoppy@gmail.com':
               toggleVisibility(document.getElementById('foo2'));
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
               document.getElementById('profilePic').src = userImage;
-              setTimeout(function(){
-                  toggleVisibility(document.getElementById('ButtonSubmit6'));}, 3500);
                                 break;
         case 'duncanmichael626@gmail.com':
               toggleVisibility(document.getElementById('foo'));

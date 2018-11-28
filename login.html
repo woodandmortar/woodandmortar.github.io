@@ -173,7 +173,7 @@ var toggleVisibility = function(element) {
       <div class="form-group" id="foo3" style="display:none">
 
         <div class="select">
-          <select id="fEmail2" name="project" required="required">
+          <select id="fEmail2" name="descr" required="required">
             <option value="">Description</option>
             <option value="Materials">Materials</option>
             <option value="Gas">Gas</option>
@@ -282,11 +282,12 @@ function onSignIn(googleUser) {
  }
 }
 /* Rename matt@woodandmortar.com to Mike's email */
-
+  var fEmail2 = $('#fEmail2').val();
 	var fEmail = $('#fEmail').val();
     document.addEventListener('DOMContentLoaded',
     function() {
     document.querySelector('select[name="project"]').onchange=changeEventHandler1;
+    document.querySelector('select[name="descr"]').onchange=changeEventHandler2;
                 },false);
 
 
@@ -536,6 +537,18 @@ function postContactToGoogle8()  {
           window.location.href = 'https://drive.google.com/drive/folders/1_JfkZKBsZcN26jF_1mOPk2bvG0_EAXU_?usp=sharing';
         }, 1500);
         }
+
+        function changeEventHandler2(event) {
+          // You can use “this” to refer to the selected element.
+          if(!event.target.value)
+            {
+              document.getElementById('vresp').innerHTML = 'Select Description';
+            }
+          else {
+            var fEmail2 = event.target.value;
+          }
+        }
+
 
 
 

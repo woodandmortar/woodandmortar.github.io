@@ -169,6 +169,29 @@ var toggleVisibility = function(element) {
           <a href="https://docs.google.com/document/d/125rrhZdcwSK2zMYu3N91_Z0tWapQEcJzcDbly1Gwmhk/edit?usp=sharing" class="carousel-item__btn">Create Invoice</a>
       </div>
 
+      <div class="form-group" id="foo3" style="display:none">
+
+        <div class="select">
+          <select id="fEmail2" name="project" required="required">
+            <option value="">Description</option>
+            <option value="Materials">Materials</option>
+            <option value="Gas">Gas</option>
+            <option value="Food">Food</option>
+            <option value="Payroll">Payroll</option>
+            <option value="Expense">Expense</option>
+          </select>
+          <div class="select__arrow"></div>
+        </div>
+
+          <input type="text" id="tOLevel2" value="Amount"/>
+          <br/><br/>
+          <a href="https://drive.google.com/open?id=1TH61mYAHBB3EjCmipgwj2a-cSabHWWBO" class="carousel-item__btn">View docs</a>
+          <br/><br/>
+          <a href="https://drive.google.com/drive/folders/1_JfkZKBsZcN26jF_1mOPk2bvG0_EAXU_?usp=sharing" class="carousel-item__btn">Receipts</a>
+          <br/><br/>
+          <a href="https://docs.google.com/document/d/125rrhZdcwSK2zMYu3N91_Z0tWapQEcJzcDbly1Gwmhk/edit?usp=sharing" class="carousel-item__btn">Create Invoice</a>
+      </div>
+
     </form>
 
 
@@ -209,8 +232,8 @@ function onSignIn(googleUser) {
         document.getElementById('profilePic').src = userImage;
         break;
         case 'micheal.mfg@gmail.com':
-              toggleVisibility(document.getElementById('foo2'));
-              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
+              toggleVisibility(document.getElementById('foo3'));
+              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSeCSBognXrQ_XezKwiVoCWUBMlzBcBcpQl_JeElqlQ8Oi6kZg/formResponse";
               document.getElementById('profilePic').src = userImage;
               setTimeout(function(){
                   toggleVisibility(document.getElementById('ButtonSubmit'));}, 3500);
@@ -237,8 +260,8 @@ function onSignIn(googleUser) {
                   toggleVisibility(document.getElementById('ButtonSubmit4'));}, 3500);
                                 break;
         case 'matthewpaul389@gmail.com':
-              toggleVisibility(document.getElementById('foo'));
-              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
+              toggleVisibility(document.getElementById('foo3'));
+              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSeCSBognXrQ_XezKwiVoCWUBMlzBcBcpQl_JeElqlQ8Oi6kZg/formResponse";
               document.getElementById('profilePic').src = userImage;
               setTimeout(function(){
                   toggleVisibility(document.getElementById('ButtonSubmit5'));}, 3500);
@@ -490,6 +513,31 @@ function postContactToGoogle7()  {
           window.location.href = 'https://woodandmortar.github.io/';
         }, 1500);
         }
+
+function postContactToGoogle8()  {
+  var fName = document.getElementById('vresp2').innerHTML;
+  var fEmail2 = $('#fEmail2').val();
+  var tOLevel2 = $('#tOLevel2').val();
+
+    $.ajax({
+      url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSeCSBognXrQ_XezKwiVoCWUBMlzBcBcpQl_JeElqlQ8Oi6kZg/formResponse",
+      data:  { "entry.667443604" : fName , "entry.272325180" : fEmail2 , "entry.853774605" : tOLevel2 },
+      type: "POST",
+      dataType: "xml",
+      statusCode: {
+        0: function () {
+//					alert("Click -OK- to submit message");
+        },
+        200: function () {
+//					alert("Click -OK- to submit message");
+        }
+            }
+    });
+        setTimeout(function(){
+          window.location.href = 'https://drive.google.com/drive/folders/1_JfkZKBsZcN26jF_1mOPk2bvG0_EAXU_?usp=sharing';
+        }, 1500);
+        }
+
 
 
 

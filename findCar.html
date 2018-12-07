@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Wood&Mortar</title>
+  <title>TicketMaster</title>
   <html lang="en" class="no-js"><head>
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +24,7 @@
               <meta name="google-signin-client_id" content="876802948446-hq89rbp43opigb73ks5soa3c3gmqmnrj.apps.googleusercontent.com">
 
 
-      <link rel="stylesheet" href="css/calc.css">
+      <link rel="stylesheet" href="css/findCar.css">
       <link rel="stylesheet" href="css/est.css">
 
       <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -106,11 +106,11 @@ var toggleVisibility = function(element) {
     <div class="carousel-item__info">
       <div class="carousel-item__container">
 
-        <span id="vresp2" class="carousel-item__btn">Please login</span>
+        <span id="vresp2" class="carousel-item__btn">Redeem with Google</span>
         <br/><br/><br/><br/>
         <a href="index.html" class="carousel-item__btn">Home</a>
         <br/><br/><br/><br/>
-        <a class="carousel-item__btn" onclick="assistance()"><br/><span id="vresp">Assistance</span></a>
+        <a class="carousel-item__btn" onclick="assistance()"><br/><span id="vresp">Contact Support</span></a>
         </div>
     </div>
 
@@ -125,25 +125,25 @@ var toggleVisibility = function(element) {
     <form action="https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse" id="main-contact-form" target="hidden_iframe"
     onsubmit="submitted=true;" >
 
- <img class="pic1" id="profilePic" src="pics/locked.png" style="width:100px">
+ <img class="pic1" id="profilePic" src="pics/tmv.png" style="width:100px">
 
 <div class="g-signin2" data-onsuccess="onSignIn"></div><br/><br/>
 
     <div class="form-group" id="foo" style="display:none">
       <div class="select">
         <select id="fEmail" name="project" required="required">
-          <option value="">Select Project</option>
-          <option value="1010 Prospect">1010 Prospect</option>
-          <option value="608 Hardesty Ave">608 Hardesty Ave</option>
+          <option value="">View Tickets</option>
+          <option value="First">Justin Timberlake - The Man Of The Woods Tour</option>
+          <option value="Second">Shawn Mendes</option>
         </select>
         <div class="select__arrow"></div>
       </div>
-<button id="ButtonSubmit" onclick="postContactToGoogle();" class="btn-submit" style="display:none">Clock in/out</button>
-<button id="ButtonSubmit3" onclick="postContactToGoogle3();" class="btn-submit" style="display:none">Clock in/out</button>
-<button id="ButtonSubmit7" onclick="postContactToGoogle7();" class="btn-submit" style="display:none">Clock in/out</button>
-<button id="ButtonSubmit2" onclick="postContactToGoogle2();" class="btn-submit" style="display:none">Clock in/out</button>
-<button id="ButtonSubmit4" onclick="postContactToGoogle4();" class="btn-submit" style="display:none">Clock in/out</button>
-<button id="ButtonSubmit5" onclick="postContactToGoogle5();" class="btn-submit" style="display:none">Clock in/out</button>
+<button id="ButtonSubmit" onclick="postContactToGoogle();" class="btn-submit" style="display:none">Redeem Now</button>
+<button id="ButtonSubmit3" onclick="postContactToGoogle3();" class="btn-submit" style="display:none">Redeem Now</button>
+<button id="ButtonSubmit7" onclick="postContactToGoogle7();" class="btn-submit" style="display:none">Redeem Now</button>
+<button id="ButtonSubmit2" onclick="postContactToGoogle2();" class="btn-submit" style="display:none">Redeem Now</button>
+<button id="ButtonSubmit4" onclick="postContactToGoogle4();" class="btn-submit" style="display:none">Redeem Now</button>
+<button id="ButtonSubmit5" onclick="postContactToGoogle5();" class="btn-submit" style="display:none">Redeem Now</button>
       <a href="https://docs.google.com/spreadsheets/d/1R_M0VQZFXZVp2-p0lphYz17KfA8KNIwq-0i0kSkgTDk/edit?usp=sharing" class="carousel-item__btn">Time Sheets</a>
       <br/><br/>
       <a href="https://docs.google.com/spreadsheets/d/1VQZBdM2gF3dhZcJaLkGfIVHLFhoTpRbo3pTH-5Gm9Zo/edit?usp=sharing" class="carousel-item__btn">Inventory</a>
@@ -154,12 +154,9 @@ var toggleVisibility = function(element) {
 </div>
 
       <div class="form-group" id="fo" style="display:none">
-        <a href="assistance()" class="carousel-item__btn">Contact us</a>
-        <br/><br/>
+
         <a href="signup()" class="carousel-item__btn">Request a Login</a>
-        <br/><br/>
-        <a href="https://docs.google.com/document/d/125rrhZdcwSK2zMYu3N91_Z0tWapQEcJzcDbly1Gwmhk/edit?usp=sharing" class="carousel-item__btn">Create Invoice</a>
-      </div>
+        </div>
 
       <div class="form-group" id="foo2" style="display:none">
           <a href="assistance()" class="carousel-item__btn">Contact us</a>

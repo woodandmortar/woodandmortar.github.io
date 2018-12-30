@@ -283,6 +283,16 @@ function onSignIn(googleUser) {
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
               document.getElementById('profilePic').src = userImage;
                                 break;
+<<<<<<< HEAD
+=======
+        case 'rjbanerjea@gmail.com':
+              toggleVisibility(document.getElementById('foo'));
+              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse";
+              document.getElementById('profilePic').src = userImage;
+              setTimeout(function(){
+                  toggleVisibility(document.getElementById('ButtonSubmit7'));}, 3500);
+                                break;
+>>>>>>> 111ab6f8c8fb7e952ffb5e1ef116f0e844ee6d24
  }
 }
 

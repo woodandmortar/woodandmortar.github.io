@@ -144,6 +144,7 @@ var toggleVisibility = function(element) {
 <button id="ButtonSubmit2" onclick="postContactToGoogle2();" class="btn-submit" style="display:none">Clock in/out</button>
 <button id="ButtonSubmit4" onclick="postContactToGoogle4();" class="btn-submit" style="display:none">Clock in/out</button>
 <button id="ButtonSubmit5" onclick="postContactToGoogle5();" class="btn-submit" style="display:none">Clock in/out</button>
+<button id="ButtonSubmit6" onclick="postContactToGoogle6();" class="btn-submit" style="display:none">Clock in/out</button>
       <a href="https://docs.google.com/spreadsheets/d/1R_M0VQZFXZVp2-p0lphYz17KfA8KNIwq-0i0kSkgTDk/edit?usp=sharing" class="carousel-item__btn">Time Sheets</a>
       <br/><br/>
       <a href="https://docs.google.com/spreadsheets/d/1VQZBdM2gF3dhZcJaLkGfIVHLFhoTpRbo3pTH-5Gm9Zo/edit?usp=sharing" class="carousel-item__btn">Inventory</a>
@@ -178,6 +179,7 @@ var toggleVisibility = function(element) {
             <option value="Gas">Gas</option>
             <option value="Food">Food</option>
             <option value="Payroll">Payroll</option>
+            <option value="Labor">Labor</option>
             <option value="Expense">Expense</option>
           </select>
           <div class="select__arrow"></div>
@@ -250,12 +252,26 @@ function onSignIn(googleUser) {
               setTimeout(function(){
                   toggleVisibility(document.getElementById('ButtonSubmit3'));}, 3500);
                                 break;
-        case 'seanoack@gmail.com':
+        case 'angellaborin0411@gmail.com':
               toggleVisibility(document.getElementById('foo'));
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSc1EAFu0ahOV1gb4mVbLWBvyY0tYGbjE0UtE2hvJZ3PDBiowA/formResponse";
               document.getElementById('profilePic').src = userImage;
               setTimeout(function(){
                   toggleVisibility(document.getElementById('ButtonSubmit4'));}, 3500);
+                                break;
+        case 'drakofrd@gmail.com':
+              toggleVisibility(document.getElementById('foo'));
+              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSfa54ksd_dyPwl1SMkLxYdUCczIwo0D4Bcu50mX9dg-5bDVYg/formResponse";
+              document.getElementById('profilePic').src = userImage;
+              setTimeout(function(){
+                  toggleVisibility(document.getElementById('ButtonSubmit6'));}, 3500);
+                                break;
+        case 'rjbanerjea@gmail.com':
+              toggleVisibility(document.getElementById('foo'));
+              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse";
+              document.getElementById('profilePic').src = userImage;
+              setTimeout(function(){
+                  toggleVisibility(document.getElementById('ButtonSubmit7'));}, 3500);
                                 break;
         case 'matthewpaul389@gmail.com':
               toggleVisibility(document.getElementById('foo3'));
@@ -267,16 +283,9 @@ function onSignIn(googleUser) {
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
               document.getElementById('profilePic').src = userImage;
                                 break;
-        case 'duncanmichael626@gmail.com':
-              toggleVisibility(document.getElementById('foo'));
-              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse";
-              document.getElementById('profilePic').src = userImage;
-              setTimeout(function(){
-                  toggleVisibility(document.getElementById('ButtonSubmit7'));}, 3500);
-                                break;
  }
 }
-/* Rename matt@woodandmortar.com to Mike's email */
+
   var fEmail2 = $('#fEmail2').val();
 	var fEmail = $('#fEmail').val();
     document.addEventListener('DOMContentLoaded',
@@ -466,7 +475,7 @@ function postContactToGoogle6()  {
   var tOLevel = document.getElementById('vresp').innerHTML;
 
     $.ajax({
-      url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
+      url: "https://docs.google.com/forms/d/e/1FAIpQLSfa54ksd_dyPwl1SMkLxYdUCczIwo0D4Bcu50mX9dg-5bDVYg/formResponse",
       data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
       type: "POST",
       dataType: "xml",

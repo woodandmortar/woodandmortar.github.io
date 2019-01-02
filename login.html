@@ -110,11 +110,11 @@ var toggleVisibility = function(element) {
 <div class="carousel">
   <div class="carousel-item carousel-item--1">
     <div class="carousel-item__image">
-      <div class="carousel-item__info">
-        <div class="pic2">
-        <a href="chatbot.html" class="carousel-item__btn">Chat with <b>Mortan</b></a>
-          </div>
-      </div>
+      <div class="carousel-item__container">
+
+          <a href="chatbot.html"><span id="vresp2" class="carousel-item__btn">Please login</span></a>
+        <span id="vresp">Searching...</span>
+        </div>
 
   </div>
   <div class="container">
@@ -215,11 +215,6 @@ var toggleVisibility = function(element) {
 
 <script>
 var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
-
-function assistance()
-{
-  location.href = "mailto:"+email+ "I'm " + fName + "and I'd like you to contact me.";
-}
 
 function signup()
 {

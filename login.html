@@ -81,10 +81,10 @@
    z-index: 90;
  }
  .pic2 {
-    width: 100px;
-    bottom: 10px;
+    width: 200px;
+    bottom: 40px;
     position: absolute;
-    right: 10px;
+    right: 40px;
     z-index: 90;
   }
 </style>
@@ -110,10 +110,10 @@ var toggleVisibility = function(element) {
 <div class="carousel">
   <div class="carousel-item carousel-item--1">
     <div class="carousel-item__image">
-      <div class="carousel-item__container">
+      <div class="pic2">
 
           <a href="chatbot.html"><span id="vresp2" class="carousel-item__btn">Please login</span></a>
-        <span id="vresp">Searching...</span>
+        <span id="vresp">Verify</span>
         </div>
 
   </div>
@@ -298,7 +298,7 @@ function changeEventHandler1(event) {
   // You can use “this” to refer to the selected element.
   if(!event.target.value)
     {
-      document.getElementById('vresp').innerHTML = 'Select Project';
+      document.getElementById('vresp').innerHTML = 'Verify';
     }
   else {
     var fEmail = event.target.value;
@@ -545,7 +545,7 @@ function postContactToGoogle8()  {
           // You can use “this” to refer to the selected element.
           if(!event.target.value)
             {
-              document.getElementById('vresp').innerHTML = 'Select Description';
+              document.getElementById('vresp').innerHTML = 'Please Verify';
             }
           else {
             var fEmail2 = event.target.value;

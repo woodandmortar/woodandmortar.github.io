@@ -80,6 +80,13 @@
    left: 10px;
    z-index: 90;
  }
+ .pic2 {
+    width: 100px;
+    bottom: 10px;
+    position: absolute;
+    right: 10px;
+    z-index: 90;
+  }
 </style>
 
 <script>
@@ -103,16 +110,11 @@ var toggleVisibility = function(element) {
 <div class="carousel">
   <div class="carousel-item carousel-item--1">
     <div class="carousel-item__image">
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-
-        <span id="vresp2" class="carousel-item__btn">Please login</span>
-        <br/><br/><br/><br/>
-        <a href="index.html" class="carousel-item__btn">Home</a>
-        <br/><br/><br/><br/>
-        <a class="carousel-item__btn" onclick="assistance()"><br/><span id="vresp">Assistance</span></a>
-        </div>
-    </div>
+      <div class="carousel-item__info">
+        <div class="pic2">
+        <a href="chatbot.html" class="carousel-item__btn">Chat with <b>Mortan</b></a>
+          </div>
+      </div>
 
   </div>
   <div class="container">
@@ -125,7 +127,7 @@ var toggleVisibility = function(element) {
     <form action="https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse" id="main-contact-form" target="hidden_iframe"
     onsubmit="submitted=true;" >
 
- <img class="pic1" id="profilePic" src="pics/locked.png" style="width:100px">
+ <a href="chatbot.html"><img class="pic1" src="pics/locked.gif" style="width:100px"></a>
 
 <div class="g-signin2" data-onsuccess="onSignIn"></div><br/><br/>
 

@@ -129,7 +129,12 @@ var toggleVisibility = function(element) {
   <form action="https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse" id="main-contact-form" target="hidden_iframe" onsubmit="submitted=true;" >
   <div class="g-signin2" data-onsuccess="onSignIn"></div>
   <br/><br/>
-  <img class="pic1" id="profilePic" src="pics/wm.png" style="width:100px">
+
+<span id="vresp3" class="carousel-item__btn">Wood&Mortar</span>
+
+  <img class="pic1" id="profilePic" style="width:100px">
+
+
     <div class="form-group" id="foo" style="display:none">
       <div class="select">
         <select id="fEmail" name="project" required="required">
@@ -200,6 +205,7 @@ var toggleVisibility = function(element) {
 
 <script>
 var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
+var fName;
 
 function signup()
 {
@@ -396,29 +402,27 @@ function postContactToGoogle8()  {
         }
 
 
-var fName = 'blank';
-
         // first we make sure annyang started succesfully
         if (annyang) {
 
           // define the functions our commands will run.
           var hello = function() {
-            document.getElementById('vresp2').innerHTML = 'Hello ' + fName;
+            document.getElementById('vresp3').innerHTML = 'Hello ' + fName;
           };
           var getStarted = function() {
-            document.getElementById('vresp2').innerHTML = 'You are about to take your first steps, start with saying growth or culture.';
+            document.getElementById('vresp3').innerHTML = 'You are about to take your first steps, start with saying growth or culture.';
           };
           var growth = function() {
-            document.getElementById('vresp2').innerHTML = 'We all need a little education and guidance when it comes to technology, Micheal is building the support system now.';
+            document.getElementById('vresp3').innerHTML = 'We all need a little education and guidance when it comes to technology, Micheal is building the support system now.';
           };
           var mortan = function() {
-            document.getElementById('vresp2').innerHTML = 'Yes, I can hear you. How can I help?';
+            document.getElementById('vresp3').innerHTML = 'Yes, I can hear you. How can I help?';
           };
           var dashboard = function() {
             window.location.href = 'https://mfglife.tumblr.com/';
           };
           var help = function() {
-            document.getElementById('vresp2').innerHTML = 'Here is a basic list of commands to get you started, Hello, Get Started, Life, Mortan, Dashboard.';
+            document.getElementById('vresp3').innerHTML = 'Here is a basic list of commands to get you started, Hello, Get Started, Life, Mortan, Dashboard.';
           };
           var clock = function() {
 

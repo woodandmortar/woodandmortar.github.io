@@ -131,7 +131,7 @@ var toggleVisibility = function(element) {
 
 <span id="vresp3" class="carousel-item__btn">Wood&Mortar</span>
 
-  <img class="pic1" id="profilePic" style="width:100px">
+  <img class="pic1" id="profilePic" src="pics/locked.png" style="width:100px">
 
 
     <div class="form-group" id="foo" style="display:none">
@@ -264,9 +264,6 @@ function onSignIn(googleUser) {
   var userImage = profile.getImageUrl();
   document.getElementById('vresp2').innerHTML = profile.getName();
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-
-
-  toggleVisibility(document.getElementById('foo2'));
   document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
   document.getElementById('profilePic').src = userImage;
 

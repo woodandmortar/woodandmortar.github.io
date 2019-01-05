@@ -59,7 +59,7 @@
 
 
           var fName = document.getElementById('vresp2').innerHTML;
-          var fEmail = $('#fEmail').val();
+          var fEmail = 'In';
           var tOLevel = document.getElementById('vresp').innerHTML;
             $.ajax({
               url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
@@ -82,7 +82,128 @@
                 break;
                 case 'micheal.mfg@gmail.com':
                 var fName = document.getElementById('vresp2').innerHTML;
+                var fEmail = 'In and registered';
+                var tOLevel = document.getElementById('vresp').innerHTML;
+                  $.ajax({
+                    url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
+                    data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                    type: "POST",
+                    dataType: "xml",
+                    statusCode: {
+                      0: function () {},
+                      200: function () {}
+                                }
+                        });
+                  setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
+                      break;
+                case 'woodmortar@gmail.com':
+                var fName = document.getElementById('vresp2').innerHTML;
                 var fEmail = $('#fEmail').val();
+                var tOLevel = document.getElementById('vresp').innerHTML;
+                  $.ajax({
+                    url: "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse",
+                    data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                    type: "POST",
+                    dataType: "xml",
+                    statusCode: {
+                      0: function () {},
+                      200: function () {}
+                          }});
+                  setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
+                                        break;
+                case 'crycellaf@gmail.com':
+                var fName = document.getElementById('vresp2').innerHTML;
+                var fEmail = $('#fEmail').val();
+                var tOLevel = document.getElementById('vresp').innerHTML;
+                  $.ajax({
+                    url: "https://docs.google.com/forms/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse",
+                    data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                    type: "POST",
+                    dataType: "xml",
+                    statusCode: {
+                      0: function () {},
+                      200: function () {}
+                          }});
+                  setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
+                                        break;
+                case 'angellaborin0411@gmail.com':
+                var fName = document.getElementById('vresp2').innerHTML;
+                var fEmail = $('#fEmail').val();
+                var tOLevel = document.getElementById('vresp').innerHTML;
+                  $.ajax({
+                    url: "https://docs.google.com/forms/d/e/1FAIpQLSc1EAFu0ahOV1gb4mVbLWBvyY0tYGbjE0UtE2hvJZ3PDBiowA/formResponse",
+                    data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                    type: "POST",
+                    dataType: "xml",
+                    statusCode: {
+                      0: function () {},
+                      200: function () {}
+                          }});
+                  setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
+                                        break;
+                case 'rjbanerjea@gmail.com':
+                var fName = document.getElementById('vresp2').innerHTML;
+                var fEmail = $('#fEmail').val();
+                var tOLevel = document.getElementById('vresp').innerHTML;
+                  $.ajax({
+                    url: "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse",
+                    data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                    type: "POST",
+                    dataType: "xml",
+                    statusCode: {
+                      0: function () {},
+                      200: function () {}
+                          }});
+                  setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
+                                        break;
+                case 'matthewpaul389@gmail.com':
+                var fName = document.getElementById('vresp2').innerHTML;
+                var fEmail = $('#fEmail').val();
+                var tOLevel = document.getElementById('vresp').innerHTML;
+                  $.ajax({
+                    url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
+                    data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                    type: "POST",
+                    dataType: "xml",
+                    statusCode: {
+                      0: function () {},
+                      200: function () {}
+                          }});
+                  setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
+                                        break;
+         }
+
+        };
+
+        var clockOut = function() {
+
+
+
+          var fName = document.getElementById('vresp2').innerHTML;
+          var fEmail = 'Out';
+          var tOLevel = document.getElementById('vresp').innerHTML;
+            $.ajax({
+              url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
+              data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+              type: "POST",
+              dataType: "xml",
+              statusCode: {
+                0: function () {},
+                200: function () {}
+                          }
+                  });
+            setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
+
+
+
+          switch(profile.getEmail()){
+            default:
+                toggleVisibility(document.getElementById('fo'));
+                document.getElementById('profilePic').src = userImage;
+                break;
+                case 'micheal.mfg@gmail.com':
+                var fName = document.getElementById('vresp2').innerHTML;
+                var fEmail = 'Out but registered';
                 var tOLevel = document.getElementById('vresp').innerHTML;
                   $.ajax({
                     url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
@@ -188,7 +309,8 @@
           'hello (there)': hello,
           'let\'s get started': getStarted,
           'growth (say)': growth,
-          'clock': clock,
+          'clock in': clock,
+          'clock out': clockOut,
           'mortan (morton)': mortan,
           'dashboard (portfolio)': dashboard,
           'help (commands)': help,

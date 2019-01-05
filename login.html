@@ -188,7 +188,10 @@ var toggleVisibility = function(element) {
 
 annyang.start({ continuous: false });
 
+
+
 var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
+var fName;
 
 function signup()
 {
@@ -235,9 +238,6 @@ function onSignIn(googleUser) {
     $('.overlay, .loader').fadeOut('fast');
   }
 
-
-
-
   var profile = googleUser.getBasicProfile();
   var fName = profile.getName();
   var userImage = profile.getImageUrl();
@@ -245,119 +245,20 @@ function onSignIn(googleUser) {
   document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
   document.getElementById('profilePic').src = userImage;
 
-
-  switch(profile.getEmail()){
-    default:
-        document.getElementById('profilePic').src = userImage;
-        break;
-        case 'micheal.mfg@gmail.com':
-              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSeCSBognXrQ_XezKwiVoCWUBMlzBcBcpQl_JeElqlQ8Oi6kZg/formResponse";
-              document.getElementById('profilePic').src = userImage;
-              break;
-        case 'woodmortar@gmail.com':
-              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
-              document.getElementById('profilePic').src = userImage;
-                                break;
-        case 'crycellaf@gmail.com':
-              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse";
-              document.getElementById('profilePic').src = userImage;
-                                break;
-        case 'angellaborin0411@gmail.com':
-              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSc1EAFu0ahOV1gb4mVbLWBvyY0tYGbjE0UtE2hvJZ3PDBiowA/formResponse";
-              document.getElementById('profilePic').src = userImage;
-                                break;
-        case 'drakofrd@gmail.com':
-              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSfa54ksd_dyPwl1SMkLxYdUCczIwo0D4Bcu50mX9dg-5bDVYg/formResponse";
-              document.getElementById('profilePic').src = userImage;
-                                break;
-        case 'rjbanerjea@gmail.com':
-              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse";
-              document.getElementById('profilePic').src = userImage;
-                                break;
-        case 'matthewpaul389@gmail.com':
-              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSeCSBognXrQ_XezKwiVoCWUBMlzBcBcpQl_JeElqlQ8Oi6kZg/formResponse";
-              document.getElementById('profilePic').src = userImage;
-                                break;
-        case 'deepoppy@gmail.com':
-              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
-              document.getElementById('profilePic').src = userImage;
-                                break;
- }
 }
 
 
-function postContactToGoogle6()  {
-  var fName = document.getElementById('vresp2').innerHTML;
-  var fEmail = $('#fEmail').val();
-  var tOLevel = document.getElementById('vresp').innerHTML;
-
-    $.ajax({
-      url: "https://docs.google.com/forms/d/e/1FAIpQLSfa54ksd_dyPwl1SMkLxYdUCczIwo0D4Bcu50mX9dg-5bDVYg/formResponse",
-      data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
-      type: "POST",
-      dataType: "xml",
-      statusCode: {
-        0: function () {
-//					alert("Click -OK- to submit message");
-        },
-        200: function () {
-//					alert("Click -OK- to submit message");
-        }
-            }
-    });
-        setTimeout(function(){
-          window.location.href = 'https://woodandmortar.github.io/';
-        }, 1500);
+        function onSignInCallback(resp) {
+          gapi.client.load('plus', 'v1', apiClientLoaded);
         }
 
-
-function postContactToGoogle7()  {
-  var fName = document.getElementById('vresp2').innerHTML;
-  var fEmail = $('#fEmail').val();
-  var tOLevel = document.getElementById('vresp').innerHTML;
-
-    $.ajax({
-      url: "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse",
-      data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
-      type: "POST",
-      dataType: "xml",
-      statusCode: {
-        0: function () {
-//					alert("Click -OK- to submit message");
-        },
-        200: function () {
-//					alert("Click -OK- to submit message");
-        }
-            }
-    });
-        setTimeout(function(){
-          window.location.href = 'https://woodandmortar.github.io/';
-        }, 1500);
+        /**
+         * Sets up an API call after the Google API client loads.
+         */
+        function apiClientLoaded() {
+          gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
         }
 
-function postContactToGoogle8()  {
-  var fName = document.getElementById('vresp2').innerHTML;
-  var fEmail2 = $('#fEmail2').val();
-  var tOLevel2 = $('#tOLevel2').val();
-
-    $.ajax({
-      url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSeCSBognXrQ_XezKwiVoCWUBMlzBcBcpQl_JeElqlQ8Oi6kZg/formResponse",
-      data:  { "entry.667443604" : fName , "entry.272325180" : fEmail2 , "entry.853774605" : tOLevel2 },
-      type: "POST",
-      dataType: "xml",
-      statusCode: {
-        0: function () {
-//					alert("Click -OK- to submit message");
-        },
-        200: function () {
-//					alert("Click -OK- to submit message");
-        }
-            }
-    });
-        setTimeout(function(){
-          window.location.href = 'https://drive.google.com/drive/folders/1_JfkZKBsZcN26jF_1mOPk2bvG0_EAXU_?usp=sharing';
-        }, 1500);
-        }
 
 
         // first we make sure annyang started succesfully
@@ -369,14 +270,14 @@ function postContactToGoogle8()  {
             var time = new Date().getHours();
             var greeting;
             if (time < 10) {
-              greeting = "Good morning";
+              greeting = "Good morning ";
             } else if (time < 20) {
-              greeting = "Good day";
+              greeting = "Good day ";
             } else {
-              greeting = "Good evening";
+              greeting = "Good evening ";
             }
 
-            document.getElementById('vresp3').innerHTML = greeting;
+            document.getElementById('vresp3').innerHTML = greeting + fName;
           };
           var getStarted = function() {
             document.getElementById('vresp3').innerHTML = 'You are about to take your first steps, start with saying growth or culture.';
@@ -395,102 +296,95 @@ function postContactToGoogle8()  {
           };
           var clock = function() {
 
-            switch(profile.getEmail()){
-              default:
-                  document.getElementById('profilePic').src = userImage;
-                  break;
-                  case 'micheal.mfg@gmail.com':
-                  var fName = document.getElementById('vresp2').innerHTML;
-                  var fEmail = 'In and registered';
-                  var tOLevel = document.getElementById('vresp').innerHTML;
-                    $.ajax({
-                      url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
-                      data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
-                      type: "POST",
-                      dataType: "xml",
-                      statusCode: {
-                        0: function () {},
-                        200: function () {}
-                                  }
-                          });
-                    setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
-                        break;
-                  case 'woodmortar@gmail.com':
-                  var fName = document.getElementById('vresp2').innerHTML;
-                  var fEmail = 'In and registered';
-                  var tOLevel = document.getElementById('vresp').innerHTML;
-                    $.ajax({
-                      url: "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse",
-                      data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
-                      type: "POST",
-                      dataType: "xml",
-                      statusCode: {
-                        0: function () {},
-                        200: function () {}
-                            }});
-                    setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
-                                          break;
-                  case 'crycellaf@gmail.com':
-                  var fName = document.getElementById('vresp2').innerHTML;
-                  var fEmail = 'In and registered';
-                  var tOLevel = document.getElementById('vresp').innerHTML;
-                    $.ajax({
-                      url: "https://docs.google.com/forms/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse",
-                      data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
-                      type: "POST",
-                      dataType: "xml",
-                      statusCode: {
-                        0: function () {},
-                        200: function () {}
-                            }});
-                    setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
-                                          break;
-                  case 'angellaborin0411@gmail.com':
-                  var fName = document.getElementById('vresp2').innerHTML;
-                  var fEmail = 'In and registered';
-                  var tOLevel = document.getElementById('vresp').innerHTML;
-                    $.ajax({
-                      url: "https://docs.google.com/forms/d/e/1FAIpQLSc1EAFu0ahOV1gb4mVbLWBvyY0tYGbjE0UtE2hvJZ3PDBiowA/formResponse",
-                      data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
-                      type: "POST",
-                      dataType: "xml",
-                      statusCode: {
-                        0: function () {},
-                        200: function () {}
-                            }});
-                    setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
-                                          break;
-                  case 'rjbanerjea@gmail.com':
-                  var fName = document.getElementById('vresp2').innerHTML;
-                  var fEmail = 'In and registered';
-                  var tOLevel = document.getElementById('vresp').innerHTML;
-                    $.ajax({
-                      url: "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse",
-                      data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
-                      type: "POST",
-                      dataType: "xml",
-                      statusCode: {
-                        0: function () {},
-                        200: function () {}
-                            }});
-                    setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
-                                          break;
-                  case 'matthewpaul389@gmail.com':
-                  var fName = document.getElementById('vresp2').innerHTML;
-                  var fEmail = 'In and registered';
-                  var tOLevel = document.getElementById('vresp').innerHTML;
-                    $.ajax({
-                      url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
-                      data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
-                      type: "POST",
-                      dataType: "xml",
-                      statusCode: {
-                        0: function () {},
-                        200: function () {}
-                            }});
-                    setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
-                                          break;
-           }
+            var profile = googleUser.getBasicProfile();
+            var fName = profile.getName();
+            var tEmail = profile.getEmail();
+
+            if (tEmail = 'micheal.mfg@gmail.com')
+            {
+              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
+              var fName = document.getElementById('vresp2').innerHTML;
+              var fEmail = 'In and registered';
+              var tOLevel = document.getElementById('vresp').innerHTML;
+                $.ajax({
+                  url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
+                  data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                  type: "POST",
+                  dataType: "xml",
+                  statusCode: {
+                    0: function () {},
+                    200: function () {}
+                              }
+                      });
+                setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
+            }
+            else if (tEmail = 'woodmortar@gmail.com')
+            {
+              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
+              var fName = document.getElementById('vresp2').innerHTML;
+              var fEmail = 'In and registered';
+              var tOLevel = document.getElementById('vresp').innerHTML;
+                $.ajax({
+                  url: "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse",
+                  data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                  type: "POST",
+                  dataType: "xml",
+                  statusCode: {
+                    0: function () {},
+                    200: function () {}
+                        }});
+                setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
+            }
+            else if (tEmail = 'crycellaf@gmail.com')
+            {
+              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse";
+              var fName = document.getElementById('vresp2').innerHTML;
+              var fEmail = 'In and registered';
+              var tOLevel = document.getElementById('vresp').innerHTML;
+                $.ajax({
+                  url: "https://docs.google.com/forms/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse",
+                  data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                  type: "POST",
+                  dataType: "xml",
+                  statusCode: {
+                    0: function () {},
+                    200: function () {}
+                        }});
+                setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
+            }
+            else if (tEmail = 'angellaborin0411@gmail.com')
+            {
+              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSc1EAFu0ahOV1gb4mVbLWBvyY0tYGbjE0UtE2hvJZ3PDBiowA/formResponse";
+              var fName = document.getElementById('vresp2').innerHTML;
+              var fEmail = 'In and registered';
+              var tOLevel = document.getElementById('vresp').innerHTML;
+                $.ajax({
+                  url: "https://docs.google.com/forms/d/e/1FAIpQLSc1EAFu0ahOV1gb4mVbLWBvyY0tYGbjE0UtE2hvJZ3PDBiowA/formResponse",
+                  data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                  type: "POST",
+                  dataType: "xml",
+                  statusCode: {
+                    0: function () {},
+                    200: function () {}
+                        }});
+                setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
+            }else if (tEmail = 'rjbanerjea@gmail.com')
+            {
+              document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse";
+              var fName = document.getElementById('vresp2').innerHTML;
+              var fEmail = 'In and registered';
+              var tOLevel = document.getElementById('vresp').innerHTML;
+                $.ajax({
+                  url: "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse",
+                  data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                  type: "POST",
+                  dataType: "xml",
+                  statusCode: {
+                    0: function () {},
+                    200: function () {}
+                        }});
+                setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
+            }
 
           };
 
@@ -501,6 +395,7 @@ function postContactToGoogle8()  {
                   document.getElementById('profilePic').src = userImage;
                   break;
                   case 'micheal.mfg@gmail.com':
+                  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSeCSBognXrQ_XezKwiVoCWUBMlzBcBcpQl_JeElqlQ8Oi6kZg/formResponse";
                   var fName = document.getElementById('vresp2').innerHTML;
                   var fEmail = 'Out but registered';
                   var tOLevel = document.getElementById('vresp').innerHTML;
@@ -517,6 +412,7 @@ function postContactToGoogle8()  {
                     setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
                         break;
                   case 'woodmortar@gmail.com':
+                  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
                   var fName = document.getElementById('vresp2').innerHTML;
                   var fEmail = 'Out but registered';
                   var tOLevel = document.getElementById('vresp').innerHTML;
@@ -532,6 +428,7 @@ function postContactToGoogle8()  {
                     setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
                                           break;
                   case 'crycellaf@gmail.com':
+                  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse";
                   var fName = document.getElementById('vresp2').innerHTML;
                   var fEmail = 'Out but registered';
                   var tOLevel = document.getElementById('vresp').innerHTML;
@@ -547,6 +444,7 @@ function postContactToGoogle8()  {
                     setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
                                           break;
                   case 'angellaborin0411@gmail.com':
+                  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSc1EAFu0ahOV1gb4mVbLWBvyY0tYGbjE0UtE2hvJZ3PDBiowA/formResponse";
                   var fName = document.getElementById('vresp2').innerHTML;
                   var fEmail = 'Out but registered';
                   var tOLevel = document.getElementById('vresp').innerHTML;
@@ -562,6 +460,7 @@ function postContactToGoogle8()  {
                     setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
                                           break;
                   case 'rjbanerjea@gmail.com':
+                  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse";
                   var fName = document.getElementById('vresp2').innerHTML;
                   var fEmail = 'Out but registered';
                   var tOLevel = document.getElementById('vresp').innerHTML;
@@ -577,6 +476,7 @@ function postContactToGoogle8()  {
                     setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
                                           break;
                   case 'matthewpaul389@gmail.com':
+                  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSeCSBognXrQ_XezKwiVoCWUBMlzBcBcpQl_JeElqlQ8Oi6kZg/formResponse";
                   var fName = document.getElementById('vresp2').innerHTML;
                   var fEmail = 'Out but registered';
                   var tOLevel = document.getElementById('vresp').innerHTML;
@@ -631,6 +531,7 @@ function postContactToGoogle8()  {
             $('#unsupported').fadeIn('fast');
           });
         }
+
 
 
 

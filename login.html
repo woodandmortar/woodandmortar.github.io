@@ -131,7 +131,7 @@ var toggleVisibility = function(element) {
 
 <span id="vresp3" class="carousel-item__btn">Wood&Mortar</span>
 
-  <img class="pic1" id="profilePic" src="pics/locked.png" style="width:100px">
+  <img class="pic1" id="profilePic" src="pics/wm.png" style="width:100px">
 
 
     <div class="form-group" id="foo" style="display:none">
@@ -274,7 +274,6 @@ function onSignIn(googleUser) {
         document.getElementById('profilePic').src = userImage;
         break;
         case 'micheal.mfg@gmail.com':
-              toggleVisibility(document.getElementById('foo3'));
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSeCSBognXrQ_XezKwiVoCWUBMlzBcBcpQl_JeElqlQ8Oi6kZg/formResponse";
               document.getElementById('profilePic').src = userImage;
               break;
@@ -418,7 +417,14 @@ function postContactToGoogle8()  {
             document.getElementById('vresp3').innerHTML = 'Yes, I can hear you. How can I help?';
           };
           var dashboard = function() {
-            window.location.href = 'https://mfglife.tumblr.com/';
+
+            switch(profile.getEmail()){
+              default:
+                  toggleVisibility(document.getElementById('fo'));
+                  break;
+                  case 'micheal.mfg@gmail.com':
+            toggleVisibility(document.getElementById('foo3'));
+                  break;
           };
           var help = function() {
             document.getElementById('vresp3').innerHTML = 'Here is a basic list of commands to get you started, Hello, Get Started, Life, Mortan, Dashboard.';
@@ -446,7 +452,6 @@ function postContactToGoogle8()  {
 
             switch(profile.getEmail()){
               default:
-                  toggleVisibility(document.getElementById('fo'));
                   document.getElementById('profilePic').src = userImage;
                   break;
                   case 'micheal.mfg@gmail.com':

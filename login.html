@@ -185,7 +185,6 @@ var toggleVisibility = function(element) {
 <script>
 'use strict';
 // Start listening. You can call this here, or attach this call to an event, button, etc.
-annyang.debug(true);
 
 annyang.start({ continuous: false });
 
@@ -389,33 +388,12 @@ function postContactToGoogle8()  {
             document.getElementById('vresp3').innerHTML = 'Yes, I can hear you. How can I help?';
           };
           var dashboard = function() {
-
-            toggleVisibility(document.getElementById('fo'));
-
+            toggleVisibility(document.getElementById('foo'));
           };
           var help = function() {
             document.getElementById('vresp3').innerHTML = 'Here is a basic list of commands to get you started, Hello, Get Started, Life, Mortan, Dashboard.';
           };
           var clock = function() {
-
-
-
-            var fName = document.getElementById('vresp2').innerHTML;
-            var fEmail = 'In';
-            var tOLevel = document.getElementById('vresp').innerHTML;
-              $.ajax({
-                url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
-                data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
-                type: "POST",
-                dataType: "xml",
-                statusCode: {
-                  0: function () {},
-                  200: function () {}
-                            }
-                    });
-              setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
-
-
 
             switch(profile.getEmail()){
               default:
@@ -439,7 +417,7 @@ function postContactToGoogle8()  {
                         break;
                   case 'woodmortar@gmail.com':
                   var fName = document.getElementById('vresp2').innerHTML;
-                  var fEmail = $('#fEmail').val();
+                  var fEmail = 'In and registered';
                   var tOLevel = document.getElementById('vresp').innerHTML;
                     $.ajax({
                       url: "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse",
@@ -454,7 +432,7 @@ function postContactToGoogle8()  {
                                           break;
                   case 'crycellaf@gmail.com':
                   var fName = document.getElementById('vresp2').innerHTML;
-                  var fEmail = $('#fEmail').val();
+                  var fEmail = 'In and registered';
                   var tOLevel = document.getElementById('vresp').innerHTML;
                     $.ajax({
                       url: "https://docs.google.com/forms/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse",
@@ -469,7 +447,7 @@ function postContactToGoogle8()  {
                                           break;
                   case 'angellaborin0411@gmail.com':
                   var fName = document.getElementById('vresp2').innerHTML;
-                  var fEmail = $('#fEmail').val();
+                  var fEmail = 'In and registered';
                   var tOLevel = document.getElementById('vresp').innerHTML;
                     $.ajax({
                       url: "https://docs.google.com/forms/d/e/1FAIpQLSc1EAFu0ahOV1gb4mVbLWBvyY0tYGbjE0UtE2hvJZ3PDBiowA/formResponse",
@@ -484,7 +462,7 @@ function postContactToGoogle8()  {
                                           break;
                   case 'rjbanerjea@gmail.com':
                   var fName = document.getElementById('vresp2').innerHTML;
-                  var fEmail = $('#fEmail').val();
+                  var fEmail = 'In and registered';
                   var tOLevel = document.getElementById('vresp').innerHTML;
                     $.ajax({
                       url: "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse",
@@ -499,7 +477,7 @@ function postContactToGoogle8()  {
                                           break;
                   case 'matthewpaul389@gmail.com':
                   var fName = document.getElementById('vresp2').innerHTML;
-                  var fEmail = $('#fEmail').val();
+                  var fEmail = 'In and registered';
                   var tOLevel = document.getElementById('vresp').innerHTML;
                     $.ajax({
                       url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
@@ -518,28 +496,8 @@ function postContactToGoogle8()  {
 
           var clockOut = function() {
 
-
-
-            var fName = document.getElementById('vresp2').innerHTML;
-            var fEmail = 'Out';
-            var tOLevel = document.getElementById('vresp').innerHTML;
-              $.ajax({
-                url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
-                data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
-                type: "POST",
-                dataType: "xml",
-                statusCode: {
-                  0: function () {},
-                  200: function () {}
-                            }
-                    });
-              setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
-
-
-
             switch(profile.getEmail()){
               default:
-                  toggleVisibility(document.getElementById('fo'));
                   document.getElementById('profilePic').src = userImage;
                   break;
                   case 'micheal.mfg@gmail.com':
@@ -560,7 +518,7 @@ function postContactToGoogle8()  {
                         break;
                   case 'woodmortar@gmail.com':
                   var fName = document.getElementById('vresp2').innerHTML;
-                  var fEmail = $('#fEmail').val();
+                  var fEmail = 'Out but registered';
                   var tOLevel = document.getElementById('vresp').innerHTML;
                     $.ajax({
                       url: "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse",
@@ -575,7 +533,7 @@ function postContactToGoogle8()  {
                                           break;
                   case 'crycellaf@gmail.com':
                   var fName = document.getElementById('vresp2').innerHTML;
-                  var fEmail = $('#fEmail').val();
+                  var fEmail = 'Out but registered';
                   var tOLevel = document.getElementById('vresp').innerHTML;
                     $.ajax({
                       url: "https://docs.google.com/forms/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse",
@@ -590,7 +548,7 @@ function postContactToGoogle8()  {
                                           break;
                   case 'angellaborin0411@gmail.com':
                   var fName = document.getElementById('vresp2').innerHTML;
-                  var fEmail = $('#fEmail').val();
+                  var fEmail = 'Out but registered';
                   var tOLevel = document.getElementById('vresp').innerHTML;
                     $.ajax({
                       url: "https://docs.google.com/forms/d/e/1FAIpQLSc1EAFu0ahOV1gb4mVbLWBvyY0tYGbjE0UtE2hvJZ3PDBiowA/formResponse",
@@ -605,7 +563,7 @@ function postContactToGoogle8()  {
                                           break;
                   case 'rjbanerjea@gmail.com':
                   var fName = document.getElementById('vresp2').innerHTML;
-                  var fEmail = $('#fEmail').val();
+                  var fEmail = 'Out but registered';
                   var tOLevel = document.getElementById('vresp').innerHTML;
                     $.ajax({
                       url: "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse",
@@ -620,7 +578,7 @@ function postContactToGoogle8()  {
                                           break;
                   case 'matthewpaul389@gmail.com':
                   var fName = document.getElementById('vresp2').innerHTML;
-                  var fEmail = $('#fEmail').val();
+                  var fEmail = 'Out but registered';
                   var tOLevel = document.getElementById('vresp').innerHTML;
                     $.ajax({
                       url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",

@@ -183,8 +183,11 @@ var toggleVisibility = function(element) {
 
 
 <script>
+'use strict';
 // Start listening. You can call this here, or attach this call to an event, button, etc.
-annyang.start();
+annyang.debug(true);
+
+annyang.start({ continuous: false });
 
 var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
 
@@ -656,8 +659,6 @@ function postContactToGoogle8()  {
 
           };
 
-          // OPTIONAL: activate debug mode for detailed logging in the console
-          annyang.debug();
 
           // Add voice commands to respond to
           annyang.addCommands(commands);

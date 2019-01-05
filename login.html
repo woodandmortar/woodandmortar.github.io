@@ -103,7 +103,7 @@ var toggleVisibility = function(element) {
 
   </div>
 <div class="container">
-
+<span id="vresp4" class="carousel-item__btn"></span>
   <script type="text/javascript">var submitted=false;</script>
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='#';}"></iframe>
   <form action="https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse" id="main-contact-form" target="hidden_iframe" onsubmit="submitted=true;" >
@@ -242,6 +242,7 @@ function onSignIn(googleUser) {
   var fName = profile.getName();
   var userImage = profile.getImageUrl();
   document.getElementById('vresp2').innerHTML = profile.getName();
+  document.getElementById('vresp4').innerHTML = profile.getEmail();
   document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
   document.getElementById('profilePic').src = userImage;
 
@@ -295,9 +296,6 @@ function onSignIn(googleUser) {
             document.getElementById('vresp3').innerHTML = 'Here is a basic list of commands to get you started, Hello, Get Started, Life, Mortan, Dashboard.';
           };
           var clock = function() {
-
-            var profile = googleUser.getBasicProfile();
-            var fName = profile.getName();
 
             if (profile.getEmail() === 'micheal.mfg@gmail.com')
             {

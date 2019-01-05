@@ -385,7 +385,18 @@ function postContactToGoogle8()  {
 
           // define the functions our commands will run.
           var hello = function() {
-            document.getElementById('vresp3').innerHTML = 'Hello ' + fName;
+
+            var time = new Date().getHours();
+            var greeting;
+            if (time < 10) {
+              greeting = "Good morning";
+            } else if (time < 20) {
+              greeting = "Good day";
+            } else {
+              greeting = "Good evening";
+            }
+
+            document.getElementById('vresp3').innerHTML = greeting;
           };
           var getStarted = function() {
             document.getElementById('vresp3').innerHTML = 'You are about to take your first steps, start with saying growth or culture.';

@@ -9,23 +9,20 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
       <html class="no-js" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-          <META NAME="KEYWORDS" CONTENT="property maintenance, home improvement, home repair, house repair, house improvement, design, home design, designers, kitchen remodel, bathroom remodel, kitchen design, kitchen makeover, improvement, kitchen, bathroom, small kitchen remodel, Painters, Painting, woodworking, tile, home repair, Contractors, Home, Home Renovations, Wood, wood&mortar, wood & mortar, brick, stucco, Wood and Mortar, WoodandMortar">
-          <META NAME="ROBOTS" CONTENT="ALL,FOLLOW">
-          <meta name="mobile-web-app-capable" content="yes">
-          <meta name="description" content="Kansas City Contractors">
+        <script src="js/annyang.js"></script>
+        <script src="js/annyang.min.js"></script>
+      <META NAME="KEYWORDS" CONTENT="property maintenance, home improvement, home repair, house repair, house improvement, design, home design, designers, kitchen remodel, bathroom remodel, kitchen design, kitchen makeover, improvement, kitchen, bathroom, small kitchen remodel, Painters, Painting, woodworking, tile, home repair, Contractors, Home, Home Renovations, Wood, wood&mortar, wood & mortar, brick, stucco, Wood and Mortar, WoodandMortar">
+      <META NAME="ROBOTS" CONTENT="ALL,FOLLOW">
+
+          <meta name="description" content="Home improvement made easy">
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="apple-touch-icon" sizes="180x180" href="pics/wm.png">
               <link rel="icon" type="image/png" href="pics/wm.png" sizes="32x32">
               <link rel="icon" type="image/png" href="pics/wm.png" sizes="16x16">
               <link rel="mask-icon" href="pics/wm.png" color="#fff">
               <link rel="shortcut icon" href="pics/wm.png">
-              <link rel="manifest" href="manifest.json">
-              <script src="https://apis.google.com/js/platform.js" async defer></script>
-              <meta name="google-signin-client_id" content="876802948446-hq89rbp43opigb73ks5soa3c3gmqmnrj.apps.googleusercontent.com">
 
-
-      <link rel="stylesheet" href="css/calc.css">
-      <link rel="stylesheet" href="css/est.css">
+      <link rel="stylesheet" href="css/style.css">
 
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123535120-1"></script>
@@ -33,71 +30,105 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
+
         gtag('config', 'UA-123535120-1');
       </script>
 
+      <style>
+
+      .pic1 {
+         width: 100px;
+         bottom: 10px;
+         position: absolute;
+         left: 10px;
+         z-index: 1;
+       }
+
+      </style>
+
+
+
+
+
+
+
+
+      <script>
+      "use strict";
+
+      // first we make sure annyang started succesfully
+      if (annyang) {
+
+        // define the functions our commands will run.
+        var hello = function() {
+          document.getElementById('vresp').innerHTML = 'Hello';
+        };
+        var getStarted = function() {
+          document.getElementById('vresp').innerHTML = 'You are about to take your first steps, start with saying growth or culture.';
+        };
+        var growth = function() {
+          document.getElementById('vresp').innerHTML = 'We all need a little education and guidance when it comes to technology, Micheal is building the support system now.';
+        };
+        var mortan = function() {
+          document.getElementById('vresp').innerHTML = 'Yes, I can hear you. How can I help?';
+        };
+        var clock = function() {
+          window.location.href = 'http://michealsalmon.tumblr.com/';
+        };
+        var dashboard = function() {
+          window.location.href = 'https://mfglife.tumblr.com/';
+        };
+        var help = function() {
+          document.getElementById('vresp').innerHTML = 'Here is a basic list of commands to get you started, Hello, Get Started, Growth, Culture, Life, Mortan, Dashboard.';
+        };
+
+        // define our commands.
+        // * The key is the phrase you want your users to say.
+        // * The value is the action to do.
+        //   You can pass a function, a function name (as a string), or write your function as part of the commands object.
+        var commands = {
+          'hello (there)': hello,
+          'let\'s get started': getStarted,
+          'growth (say)': growth,
+          'clock': clock,
+          'mortan (morton)': mortan,
+          'dashboard (portfolio)': dashboard,
+          'help (commands)': help,
+
+
+        };
+
+        // OPTIONAL: activate debug mode for detailed logging in the console
+        annyang.debug();
+
+        // Add voice commands to respond to
+        annyang.addCommands(commands);
+
+        // OPTIONAL: Set a language for speech recognition (defaults to English)
+        // For a full list of language codes, see the documentation:
+        // https://github.com/TalAter/annyang/blob/master/docs/FAQ.md#what-languages-are-supported
+        annyang.setLanguage('en');
+
+        // Start listening. You can call this here, or attach this call to an event, button, etc.
+        annyang.start();
+      } else {
+        $(document).ready(function() {
+          $('#unsupported').fadeIn('fast');
+        });
+      }
+
+      </script>
+
+
+
+
+
+
+
+
+
+
 </head>
-
-<style>
-.diamond {
-  position: absolute;
-  height: 60px;
-  z-index: 30;
-  width: 260px;
-  line-height: 50px;
-  text-align: center;
-  font-size: 24px;
-}
-.diamond:before {
-  position: absolute;
-  content: '';
-  bottom: 0px;
-  left: 0px;
-  height: 100%;
-  width: 100%;
-  background-color: #fff;
-  z-index: -1;
-}
-.container2 {
-  width: 90%;
-  height: 18%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: right;
-  align-items: center;
-}
-.container3 {
-  width: 90%;
-  top: 18%;
-  position: absolute;
-  left: 1px;
-  z-index: 40;
-}
-.pic1 {
-   width: 100px;
-   bottom: 10px;
-   position: absolute;
-   left: 10px;
-   z-index: 90;
- }
- .pic2 {
-    width: 100px;
-    bottom: 40px;
-    position: absolute;
-    right: 40px;
-    z-index: 90;
-  }
-</style>
-
-<script>
-var toggleVisibility = function(element) {
-  if(element.style.display=='block'){
-      element.style.display='none';
-  } else {
-      element.style.display='block';
-  }
-}
-</script>
 
 <body>
 
@@ -108,6 +139,18 @@ var toggleVisibility = function(element) {
 
 <body>
 <div class="carousel">
+  <div class="carousel__nav">
+   <span id="moveLeft" class="carousel__arrow">
+        <svg class="carousel__icon" width="24" height="24" viewBox="0 0 24 24">
+    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path>
+</svg>
+    </span>
+    <span id="moveRight" class="carousel__arrow" >
+      <svg class="carousel__icon"  width="24" height="24" viewBox="0 0 24 24">
+  <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+</svg>
+    </span>
+  </div>
   <div class="carousel-item carousel-item--1">
     <div class="carousel-item__image">
       <div class="pic2">
@@ -213,6 +256,33 @@ var toggleVisibility = function(element) {
 
 
 </div>
+  </div>
+  <div class="carousel-item carousel-item--3">
+  <div class="carousel-item__image"></div>
+  <div class="carousel-item__info">
+    <div class="carousel-item__container">
+    <h2 class="carousel-item__subtitle">Clean & Fast</h2>
+    <h1 class="carousel-item__title">Property Maintenance</h1>
+    <p class="carousel-item__description">:to elevate property value using transparent project invoicing and team management.  </p>
+    <a href="gallery.html" class="carousel-item__btn">View our work</a>
+    <br/><br/>
+    <a href="calc.html" class="carousel-item__btn">Project Estimator</a>
+      </div>
+  </div>
+</div>
+
+  <div class="carousel-item carousel-item--2">
+    <div class="carousel-item__image"></div>
+    <div class="carousel-item__info">
+      <div class="carousel-item__container">
+      <h2 class="carousel-item__subtitle">Meet Mortan</h2>
+      <h1 class="carousel-item__title">Digital Assistant</h1>
+      <p class="carousel-item__description"> Say "Hello Mortan" to get his attention, and learn more about us. </p>
+        </div>
+    </div>
+  </div>
+
+</div>
 
 
 
@@ -220,9 +290,29 @@ var toggleVisibility = function(element) {
 
 </body>
 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src="js/index.js"></script>
+<script>
+// Prefer camera resolution nearest to 1280x720. add after true  , video: { width: 1280, height: 720 }
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-  <script  src="js/index.js"></script>
+function buttonclick(){
+
+var constraints = { audio: true};
+
+navigator.mediaDevices.getUserMedia(constraints)
+.then(function(mediaStream) {
+  var video = document.querySelector('video');
+  video.srcObject = mediaStream;
+  video.onloadedmetadata = function(e) {
+    video.play();
+  };
+})
+
+document.getElementById('vresp').innerHTML = 'Say LETS GET STARTED or HELP to begin.';
+
+}
+</script>
+
 
 <script>
 var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
@@ -570,6 +660,7 @@ function postContactToGoogle8()  {
 
 
 </script>
+
 
 </body>
 

@@ -116,7 +116,7 @@ var toggleVisibility = function(element) {
   <div class="carousel-item carousel-item--1">
     <div class="carousel-item__image">
       <div class="pic2">
-
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
           <a href="chatbot.html"><span id="vresp2" class="carousel-item__btn">Please login</span></a>
         <br/><span id="vresp" class="carousel-item__btn">Unverified</span>
         </div>
@@ -127,7 +127,6 @@ var toggleVisibility = function(element) {
   <script type="text/javascript">var submitted=false;</script>
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='#';}"></iframe>
   <form action="https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse" id="main-contact-form" target="hidden_iframe" onsubmit="submitted=true;" >
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
   <br/><br/>
 
 <span id="vresp3" class="carousel-item__btn">Wood&Mortar</span>
@@ -213,6 +212,9 @@ function signup()
 }
 
 function onSignIn(googleUser) {
+
+  // Start listening. You can call this here, or attach this call to an event, button, etc.
+  annyang.start();
 
   var options = {
     // enableHighAccuracy can slower response times or increase power consumption
@@ -699,8 +701,6 @@ function postContactToGoogle8()  {
           // https://github.com/TalAter/annyang/blob/master/docs/FAQ.md#what-languages-are-supported
           annyang.setLanguage('en');
 
-          // Start listening. You can call this here, or attach this call to an event, button, etc.
-          annyang.start();
         } else {
           $(document).ready(function() {
             $('#unsupported').fadeIn('fast');

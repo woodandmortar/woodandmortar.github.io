@@ -418,14 +418,8 @@ function postContactToGoogle8()  {
           };
           var dashboard = function() {
 
-            switch(profile.getEmail()){
-              default:
-                  toggleVisibility(document.getElementById('fo'));
-                  break;
-                  case 'micheal.mfg@gmail.com':
-            toggleVisibility(document.getElementById('foo3'));
-                  break;
-                }
+            toggleVisibility(document.getElementById('fo'));
+
           };
           var help = function() {
             document.getElementById('vresp3').innerHTML = 'Here is a basic list of commands to get you started, Hello, Get Started, Life, Mortan, Dashboard.';

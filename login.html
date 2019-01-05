@@ -331,17 +331,16 @@ function onSignIn(googleUser) {
                                 break;
  }
 
- "use strict";
 
  // first we make sure annyang started succesfully
  if (annyang) {
 
    // define the functions our commands will run.
    var hello = function() {
-     document.getElementById('vresp2').innerHTML = 'Hello ' + fName;
+     document.getElementById('vresp2').innerHTML = 'Hello';
    };
    var getStarted = function() {
-     document.getElementById('vresp2').innerHTML = 'You are about to take your first steps ' + fName + ', start with saying growth or culture.';
+     document.getElementById('vresp2').innerHTML = 'You are about to take your first steps, start with saying growth or culture.';
    };
    var growth = function() {
      document.getElementById('vresp2').innerHTML = 'We all need a little education and guidance when it comes to technology, Micheal is building the support system now.';

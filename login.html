@@ -4,10 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Wood&Mortar</title>
-  <head>
+
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <html class="no-js" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
           <META NAME="KEYWORDS" CONTENT="property maintenance, home improvement, home repair, house repair, house improvement, design, home design, designers, kitchen remodel, bathroom remodel, kitchen design, kitchen makeover, improvement, kitchen, bathroom, small kitchen remodel, Painters, Painting, woodworking, tile, home repair, Contractors, Home, Home Renovations, Wood, wood&mortar, wood & mortar, brick, stucco, Wood and Mortar, WoodandMortar">
           <META NAME="ROBOTS" CONTENT="ALL,FOLLOW">
           <meta name="mobile-web-app-capable" content="yes">
@@ -110,7 +109,7 @@ var toggleVisibility = function(element) {
   <form action="https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse" id="main-contact-form" target="hidden_iframe" onsubmit="submitted=true;" >
   <br/><br/>
 
-<span id="vresp3" class="carousel-item__btn">Wood&Mortar</span>
+<span id="vresp3" class="carousel-item__btn">Wood&Mortar</span><br/><hr><br/><br/>
 
   <img class="pic1" id="profilePic" src="pics/wm.png" style="width:100px">
 
@@ -184,6 +183,9 @@ var toggleVisibility = function(element) {
 
 
 <script>
+// Start listening. You can call this here, or attach this call to an event, button, etc.
+annyang.start();
+
 var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
 
 function signup()
@@ -193,14 +195,9 @@ function signup()
 
 function onSignIn(googleUser) {
 
-  // Start listening. You can call this here, or attach this call to an event, button, etc.
-  annyang.start();
-
   var options = {
-    // enableHighAccuracy can slower response times or increase power consumption
-    enableHighAccuracy: true,
     // Maximum length of time (in milliseconds) the device is allowed to return a position
-    timeout: 5000,
+    timeout: 9000,
     // Maximum age in milliseconds of a possible cached position that is acceptable
     maximumAge: 1000 * 5 * 3
   };
@@ -243,14 +240,12 @@ function onSignIn(googleUser) {
   var fName = profile.getName();
   var userImage = profile.getImageUrl();
   document.getElementById('vresp2').innerHTML = profile.getName();
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
   document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
   document.getElementById('profilePic').src = userImage;
 
 
   switch(profile.getEmail()){
     default:
-        toggleVisibility(document.getElementById('fo'));
         document.getElementById('profilePic').src = userImage;
         break;
         case 'micheal.mfg@gmail.com':
@@ -258,47 +253,30 @@ function onSignIn(googleUser) {
               document.getElementById('profilePic').src = userImage;
               break;
         case 'woodmortar@gmail.com':
-              toggleVisibility(document.getElementById('foo'));
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
               document.getElementById('profilePic').src = userImage;
-              setTimeout(function(){
-                  toggleVisibility(document.getElementById('ButtonSubmit2'));}, 3500);
                                 break;
         case 'crycellaf@gmail.com':
-              toggleVisibility(document.getElementById('foo'));
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse";
               document.getElementById('profilePic').src = userImage;
-              setTimeout(function(){
-                  toggleVisibility(document.getElementById('ButtonSubmit3'));}, 3500);
                                 break;
         case 'angellaborin0411@gmail.com':
-              toggleVisibility(document.getElementById('foo'));
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSc1EAFu0ahOV1gb4mVbLWBvyY0tYGbjE0UtE2hvJZ3PDBiowA/formResponse";
               document.getElementById('profilePic').src = userImage;
-              setTimeout(function(){
-                  toggleVisibility(document.getElementById('ButtonSubmit4'));}, 3500);
                                 break;
         case 'drakofrd@gmail.com':
-              toggleVisibility(document.getElementById('foo'));
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSfa54ksd_dyPwl1SMkLxYdUCczIwo0D4Bcu50mX9dg-5bDVYg/formResponse";
               document.getElementById('profilePic').src = userImage;
-              setTimeout(function(){
-                  toggleVisibility(document.getElementById('ButtonSubmit6'));}, 3500);
                                 break;
         case 'rjbanerjea@gmail.com':
-              toggleVisibility(document.getElementById('foo'));
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse";
               document.getElementById('profilePic').src = userImage;
-              setTimeout(function(){
-                  toggleVisibility(document.getElementById('ButtonSubmit7'));}, 3500);
                                 break;
         case 'matthewpaul389@gmail.com':
-              toggleVisibility(document.getElementById('foo3'));
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSeCSBognXrQ_XezKwiVoCWUBMlzBcBcpQl_JeElqlQ8Oi6kZg/formResponse";
               document.getElementById('profilePic').src = userImage;
                                 break;
         case 'deepoppy@gmail.com':
-              toggleVisibility(document.getElementById('foo2'));
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
               document.getElementById('profilePic').src = userImage;
                                 break;

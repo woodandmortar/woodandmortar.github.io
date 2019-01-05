@@ -298,9 +298,8 @@ function onSignIn(googleUser) {
 
             var profile = googleUser.getBasicProfile();
             var fName = profile.getName();
-            var tEmail = profile.getEmail();
 
-            if (tEmail = 'micheal.mfg@gmail.com')
+            if (profile.getEmail() === 'micheal.mfg@gmail.com')
             {
               document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
               var fName = document.getElementById('vresp2').innerHTML;

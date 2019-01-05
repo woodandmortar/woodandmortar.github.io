@@ -37,10 +37,10 @@
 
         // define the functions our commands will run.
         var hello = function() {
-          document.getElementById('vresp2').innerHTML = 'Hello';
+          document.getElementById('vresp2').innerHTML = 'Hello ' + fName;
         };
         var getStarted = function() {
-          document.getElementById('vresp2').innerHTML = 'You are about to take your first steps, start with saying growth or culture.';
+          document.getElementById('vresp2').innerHTML = 'You are about to take your first steps ' + fName + ', start with saying growth or culture.';
         };
         var growth = function() {
           document.getElementById('vresp2').innerHTML = 'We all need a little education and guidance when it comes to technology, Micheal is building the support system now.';
@@ -436,7 +436,7 @@ var toggleVisibility = function(element) {
   <form action="https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse" id="main-contact-form" target="hidden_iframe" onsubmit="submitted=true;" >
   <div class="g-signin2" data-onsuccess="onSignIn"></div>
   <br/><br/>
-
+  <img class="pic1" id="profilePic" src="pics/wm.png" style="width:100px">
     <div class="form-group" id="foo" style="display:none">
       <div class="select">
         <select id="fEmail" name="project" required="required">
@@ -574,11 +574,20 @@ function onSignIn(googleUser) {
   })
 
 
+
+
   var profile = googleUser.getBasicProfile();
   var fName = profile.getName();
   var userImage = profile.getImageUrl();
   document.getElementById('vresp2').innerHTML = profile.getName();
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
+
+  toggleVisibility(document.getElementById('foo2'));
+  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse";
+  document.getElementById('profilePic').src = userImage;
+
+
   switch(profile.getEmail()){
     default:
         toggleVisibility(document.getElementById('fo'));

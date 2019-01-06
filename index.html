@@ -131,6 +131,8 @@ button.loading {
 </head>
 
 <body>
+<div class="pic1"><span id="vresp2" class="carousel-item__btn">Please login</span><br/><img id="profilePic" src="pics/wm.png" style="width:100px"></div>
+
 <div class="carousel">
   <div class="carousel__nav">
    <span id="moveLeft" class="carousel__arrow">
@@ -148,7 +150,7 @@ button.loading {
     <div class="carousel-item__image"></div>
     <div class="carousel-item__info">
       <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Kansas City Founded</h2>
+      <h2 id="vresp" class="carousel-item__subtitle">Kansas City Founded</h2>
       <h1 class="carousel-item__title">Wood&<br/>Mortar</h1>
       <p class="carousel-item__description"><b><font size="4"><a style="text-decoration:none;color:black;" href="mailto:Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >816.419.5269</a></font></b><br/><br/>Fully insured, easy scheduling, text or call today</p>
 <br/><br/>
@@ -239,6 +241,94 @@ button.loading {
     var btns = document.querySelectorAll('button');
     for (var i=btns.length-1;i>=0;i--) {
       btns[i].addEventListener('click',loading);
+    }
+
+
+    function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      var fName = profile.getName();
+      var userImage = profile.getImageUrl();
+      document.getElementById('vresp2').innerHTML = profile.getName();
+      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+      switch(profile.getEmail()){
+        default:
+            document.getElementById('profilePic').src = userImage;
+            break;
+            case 'micheal.mfg@gmail.com':
+            setTimeout(function(){window.location.href = '/users/micheal.html';}, 3500);
+                  break;
+            case 'woodmortar@gmail.com':
+            setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 3500);
+                                    break;
+            case 'crycellaf@gmail.com':
+            setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 3500);
+                                    break;
+            case 'angellaborin0411@gmail.com':
+            setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 3500);
+                                    break;
+            case 'drakofrd@gmail.com':
+            setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 3500);
+                                    break;
+            case 'rjbanerjea@gmail.com':
+            setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 3500);
+                                    break;
+            case 'matthewpaul389@gmail.com':
+            setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 3500);
+                                    break;
+            case 'deepoppy@gmail.com':
+            setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 3500);
+                                    break;
+     }
+
+     if(!event.target.value)
+       {
+         document.getElementById('vresp').innerHTML = 'Kansas City Founded';
+       }
+     else {
+       var fEmail = event.target.value;
+       var options = {
+         // enableHighAccuracy can slower response times or increase power consumption
+         enableHighAccuracy: true,
+         // Maximum length of time (in milliseconds) the device is allowed to return a position
+         timeout: 5000,
+         // Maximum age in milliseconds of a possible cached position that is acceptable
+         maximumAge: 1000 * 5 * 3
+       };
+
+       function startGeoLookup() {
+         navigator.geolocation.getCurrentPosition(success, error, options);
+          $('.overlay, .loader').fadeIn('fast');
+       }
+       startGeoLookup();
+
+       function success(pos) {
+         $('.overlay, .loader').fadeOut('fast');
+         var crd = pos.coords;
+         var tme = pos.timestamp;
+         var d = new Date(tme);
+         var t = new Date(tme);
+         // alert("Altitude: " + crd.altitude + " \nAltitudeAccuracy: " + crd.altitudeAccuracy);
+         var roundAcc = Math.floor(crd.accuracy);
+         document.getElementById('vresp').innerHTML = crd.latitude + ' ' + crd.longitude;
+         if(!crd.altitude) {
+           document.getElementById('altitude').innerHTML = "Not available on this device."
+         }
+         else {document.getElementById('altitude').innerHTML = crd.altitude;}
+         document.getElementById('accuracy').innerHTML = roundAcc + " Meters";
+         document.getElementById('dateCode').innerHTML = d.toLocaleString().slice(0, 10);
+         document.getElementById('timeCode').innerHTML = t.toLocaleString().slice(10, 25);
+       }
+
+       /* Error Codes: 1 PERMISSION_DENIED, 2 POSITION_UNAVAILABLE, 3 TIMEOUT */
+       function error(err) {
+         var geoerror = (err.code == (1, 2, 3) ? "Error loading" : err.message);
+         document.getElementById('errMsg').innerHTML = geoerror;
+         $('.overlay, .loader').fadeOut('fast');
+       }
+
+
+     }
+
     }
 </script>
 

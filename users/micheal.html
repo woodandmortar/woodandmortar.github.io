@@ -62,7 +62,7 @@
    width: 100px;
    bottom: 10px;
    position: absolute;
-   left: 10px;
+   right: 30px;
    z-index: 999990;
  }
  .pic2 {
@@ -172,7 +172,7 @@ var toggleVisibility = function(element) {
 <div class="pic1">
 
   <div class="g-signin2" data-onsuccess="onSignIn"></div>
-  <span id="vresp3" class="carousel-item__btn">Verify Email</span><br/>
+  <span id="vresp3" class="carousel-item__btn">No Task Selected</span><br/>
   <img id="profilePic" src="pics/wm.png" style="width:100px"><br/>
   <span id="vresp2" class="carousel-item__btn">Please login</span><br/><br/>
   <span id="vresp" class="carousel-item__btn">Unverified</span>
@@ -188,7 +188,7 @@ var toggleVisibility = function(element) {
   <form action="https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse" id="main-contact-form" target="hidden_iframe" onsubmit="submitted=true;" >
   <br/><br/>
 
-<span class="carousel-item__btn">Micheal Salmon</span><br/><hr><br/><br/>
+<span class="carousel-item__btn">Dashboard</span><br/><br/><br/>
 
 
 
@@ -222,14 +222,9 @@ var toggleVisibility = function(element) {
             </select>
             <div class="select__arrow"></div>
           </div>
-          <label class="control control--checkbox">Break?
-            <input id="myCheck4" onclick="break();" type="checkbox"/>
-            <div class="control__indicator"></div>
-          </label>
 
 <br/><br/>
-<hr/>
-<button data-label="clock">Clock In</button>
+<button data-label="Clock In">Clock In</button>
 
         </div>
 

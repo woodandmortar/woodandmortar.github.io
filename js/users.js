@@ -72,17 +72,8 @@ for (var i=btns.length-1;i>=0;i--) {
 }
 
 
-  var options = {
-    // enableHighAccuracy can slower response times or increase power consumption
-    enableHighAccuracy: false,
-    // Maximum length of time (in milliseconds) the device is allowed to return a position
-    timeout: 3000,
-    // Maximum age in milliseconds of a possible cached position that is acceptable
-    maximumAge: 2000 * 5 * 3
-  };
-
   function startGeoLookup() {
-    navigator.geolocation.getCurrentPosition(success, error, options);
+    navigator.geolocation.getCurrentPosition(success, error);
      $('.overlay, .loader').fadeIn('fast');
   }
   startGeoLookup();
@@ -95,9 +86,6 @@ for (var i=btns.length-1;i>=0;i--) {
     var t = new Date(tme);
     // alert("Altitude: " + crd.altitude + " \nAltitudeAccuracy: " + crd.altitudeAccuracy);
     var roundAcc = Math.floor(crd.accuracy);
-    document.getElementById('vresp').innerHTML = crd.latitude + ' ' + crd.longitude;
-    if (!crd.altitude){document.getElementById('vresp').innerHTML = "Not available on this device.";}
-    else {document.getElementById('altitude').innerHTML = crd.altitude;}
     document.getElementById('vresp').innerHTML = crd.latitude + ' ' + crd.longitude;
   }
 

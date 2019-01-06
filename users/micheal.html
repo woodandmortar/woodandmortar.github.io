@@ -188,7 +188,7 @@ var toggleVisibility = function(element) {
   <form action="https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse" id="main-contact-form" target="hidden_iframe" onsubmit="submitted=true;" >
   <br/><br/>
 
-<span id="vresp3" class="carousel-item__btn">Micheal Salmon</span><br/><hr><br/><br/>
+<span class="carousel-item__btn">Micheal Salmon</span><br/><hr><br/><br/>
 
 
 
@@ -276,10 +276,10 @@ function changeEventHandler(event) {
     // You can use “this” to refer to the selected element.
     if(!event.target.value)
       {
-        document.getElementById('vresp').innerHTML = 'Please Refresh Page';
+        document.getElementById('vresp3').innerHTML = 'Please Refresh Page';
       }
     else {
-      var task = (event.target.value);
+      document.getElementById('vresp3').innerHTML = (event.target.value);
     }
 }
 
@@ -287,11 +287,11 @@ function changeEventHandler2(event) {
     // You can use “this” to refer to the selected element.
     if(!event.target.value)
       {
-        document.getElementById('vresp').innerHTML = 'Please Refresh Page';
+        document.getElementById('vresp2').innerHTML = 'Please Refresh Page';
       }
     else {
       toggleVisibility(document.getElementById('foo4'));
-      var project = (event.target.value);
+      document.getElementById('vresp2').innerHTML = (event.target.value);
     }
 }
 
@@ -309,6 +309,7 @@ var loading = function(e) {
     document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
     var project = document.getElementById('vresp2').innerHTML;
     var location = document.getElementById('vresp').innerHTML;
+    var task = document.getElementById('vresp3').innerHTML;
 
       $.ajax({
         url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
@@ -388,7 +389,6 @@ function onSignIn(googleUser) {
   var userImage = profile.getImageUrl();
   var email = profile.getEmail();
   document.getElementById('vresp2').innerHTML = profile.getName();
-  document.getElementById('vresp3').innerHTML = profile.getEmail();
   document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
   document.getElementById('profilePic').src = userImage;
   toggleVisibility(document.getElementById('foo'));

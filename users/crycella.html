@@ -321,55 +321,102 @@ function onSignIn(googleUser) {
           };
           var clock = function() {
 
-
-                 if(!event.target.value)
-                   {
-                     document.getElementById('vresp').innerHTML = 'Kansas City Founded';
-                   }
-                 else {
-                   var fEmail = event.target.value;
-                   var options = {
-                     // enableHighAccuracy can slower response times or increase power consumption
-                     enableHighAccuracy: true,
-                     // Maximum length of time (in milliseconds) the device is allowed to return a position
-                     timeout: 5000,
-                     // Maximum age in milliseconds of a possible cached position that is acceptable
-                     maximumAge: 1000 * 5 * 3
-                   };
-
-                   function startGeoLookup() {
-                     navigator.geolocation.getCurrentPosition(success, error, options);
-                      $('.overlay, .loader').fadeIn('fast');
-                   }
-                   startGeoLookup();
-
-                   function success(pos) {
-                     $('.overlay, .loader').fadeOut('fast');
-                     var crd = pos.coords;
-                     var tme = pos.timestamp;
-                     var d = new Date(tme);
-                     var t = new Date(tme);
-                     // alert("Altitude: " + crd.altitude + " \nAltitudeAccuracy: " + crd.altitudeAccuracy);
-                     var roundAcc = Math.floor(crd.accuracy);
-                     document.getElementById('vresp').innerHTML = crd.latitude + ' ' + crd.longitude;
-                     if(!crd.altitude) {
-                       document.getElementById('altitude').innerHTML = "Not available on this device."
-                     }
-                     else {document.getElementById('altitude').innerHTML = crd.altitude;}
-                     document.getElementById('accuracy').innerHTML = roundAcc + " Meters";
-                     document.getElementById('dateCode').innerHTML = d.toLocaleString().slice(0, 10);
-                     document.getElementById('timeCode').innerHTML = t.toLocaleString().slice(10, 25);
-                   }
-
-                   /* Error Codes: 1 PERMISSION_DENIED, 2 POSITION_UNAVAILABLE, 3 TIMEOUT */
-                   function error(err) {
-                     var geoerror = (err.code == (1, 2, 3) ? "Error loading" : err.message);
-                     document.getElementById('errMsg').innerHTML = geoerror;
-                     $('.overlay, .loader').fadeOut('fast');
-                   }
-
-
-                 }
+            switch(profile.getEmail()){
+              default:
+                  document.getElementById('profilePic').src = userImage;
+                  break;
+                  case 'micheal.mfg@gmail.com':
+                  var fName = document.getElementById('vresp2').innerHTML;
+                  var fEmail = 'In and registered';
+                  var tOLevel = document.getElementById('vresp').innerHTML;
+                    $.ajax({
+                      url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
+                      data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                      type: "POST",
+                      dataType: "xml",
+                      statusCode: {
+                        0: function () {},
+                        200: function () {}
+                                  }
+                          });
+                    setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
+                        break;
+                  case 'woodmortar@gmail.com':
+                  var fName = document.getElementById('vresp2').innerHTML;
+                  var fEmail = 'In and registered';
+                  var tOLevel = document.getElementById('vresp').innerHTML;
+                    $.ajax({
+                      url: "https://docs.google.com/forms/d/e/1FAIpQLSemS38z7oZ7-d1yEJZw12txsBMbonIfsL8QjP1pDPZg1IaAfg/formResponse",
+                      data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                      type: "POST",
+                      dataType: "xml",
+                      statusCode: {
+                        0: function () {},
+                        200: function () {}
+                            }});
+                    setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
+                                          break;
+                  case 'crycellaf@gmail.com':
+                  var fName = document.getElementById('vresp2').innerHTML;
+                  var fEmail = 'In and registered';
+                  var tOLevel = document.getElementById('vresp').innerHTML;
+                    $.ajax({
+                      url: "https://docs.google.com/forms/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse",
+                      data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                      type: "POST",
+                      dataType: "xml",
+                      statusCode: {
+                        0: function () {},
+                        200: function () {}
+                            }});
+                    setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
+                                          break;
+                  case 'angellaborin0411@gmail.com':
+                  var fName = document.getElementById('vresp2').innerHTML;
+                  var fEmail = 'In and registered';
+                  var tOLevel = document.getElementById('vresp').innerHTML;
+                    $.ajax({
+                      url: "https://docs.google.com/forms/d/e/1FAIpQLSc1EAFu0ahOV1gb4mVbLWBvyY0tYGbjE0UtE2hvJZ3PDBiowA/formResponse",
+                      data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                      type: "POST",
+                      dataType: "xml",
+                      statusCode: {
+                        0: function () {},
+                        200: function () {}
+                            }});
+                    setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
+                                          break;
+                  case 'rjbanerjea@gmail.com':
+                  var fName = document.getElementById('vresp2').innerHTML;
+                  var fEmail = 'In and registered';
+                  var tOLevel = document.getElementById('vresp').innerHTML;
+                    $.ajax({
+                      url: "https://docs.google.com/forms/d/e/1FAIpQLSe6AwTmffBizRphDG7N44mvQC6IrTd8aZ2hXqjRpJZpnbh2fw/formResponse",
+                      data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                      type: "POST",
+                      dataType: "xml",
+                      statusCode: {
+                        0: function () {},
+                        200: function () {}
+                            }});
+                    setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
+                                          break;
+                  case 'matthewpaul389@gmail.com':
+                  var fName = document.getElementById('vresp2').innerHTML;
+                  var fEmail = 'In and registered';
+                  var tOLevel = document.getElementById('vresp').innerHTML;
+                    $.ajax({
+                      url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
+                      data:  { "entry.569412235" : fName , "entry.320157692" : fEmail , "entry.1143322173" : tOLevel },
+                      type: "POST",
+                      dataType: "xml",
+                      statusCode: {
+                        0: function () {},
+                        200: function () {}
+                            }});
+                    setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 1500);
+                                          break;
+           }
 
           };
 

@@ -41,7 +41,7 @@
          bottom: 10px;
          position: absolute;
          left: 10px;
-         z-index: 1;
+         z-index: 9999;
        }
 
        button {
@@ -249,84 +249,30 @@ button.loading {
       var fName = profile.getName();
       var userImage = profile.getImageUrl();
       document.getElementById('vresp2').innerHTML = profile.getName();
+      document.getElementById('profilePic').src = userImage;
       console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
       switch(profile.getEmail()){
         default:
-            document.getElementById('profilePic').src = userImage;
+            setTimeout(function(){window.location.href = '/maintenance.html';}, 6500);
             break;
             case 'micheal.mfg@gmail.com':
             setTimeout(function(){window.location.href = '/users/micheal.html';}, 3500);
                   break;
             case 'woodmortar@gmail.com':
-            setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 3500);
+            setTimeout(function(){window.location.href = '/users/admin.html';}, 3500);
                                     break;
             case 'crycellaf@gmail.com':
-            setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 3500);
+            setTimeout(function(){window.location.href = '/users/crycella.html';}, 3500);
                                     break;
             case 'angellaborin0411@gmail.com':
-            setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 3500);
-                                    break;
-            case 'drakofrd@gmail.com':
-            setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 3500);
-                                    break;
-            case 'rjbanerjea@gmail.com':
-            setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 3500);
+            setTimeout(function(){window.location.href = '/users/angel.html';}, 3500);
                                     break;
             case 'matthewpaul389@gmail.com':
-            setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 3500);
+            setTimeout(function(){window.location.href = '/users/matthew.html';}, 3500);
                                     break;
-            case 'deepoppy@gmail.com':
-            setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/';}, 3500);
+            case 'robert@gmail.com':
+            setTimeout(function(){window.location.href = '/users/robert.html';}, 3500);
                                     break;
-     }
-
-     if(!event.target.value)
-       {
-         document.getElementById('vresp').innerHTML = 'Kansas City Founded';
-       }
-     else {
-       var fEmail = event.target.value;
-       var options = {
-         // enableHighAccuracy can slower response times or increase power consumption
-         enableHighAccuracy: true,
-         // Maximum length of time (in milliseconds) the device is allowed to return a position
-         timeout: 5000,
-         // Maximum age in milliseconds of a possible cached position that is acceptable
-         maximumAge: 1000 * 5 * 3
-       };
-
-       function startGeoLookup() {
-         navigator.geolocation.getCurrentPosition(success, error, options);
-          $('.overlay, .loader').fadeIn('fast');
-       }
-       startGeoLookup();
-
-       function success(pos) {
-         $('.overlay, .loader').fadeOut('fast');
-         var crd = pos.coords;
-         var tme = pos.timestamp;
-         var d = new Date(tme);
-         var t = new Date(tme);
-         // alert("Altitude: " + crd.altitude + " \nAltitudeAccuracy: " + crd.altitudeAccuracy);
-         var roundAcc = Math.floor(crd.accuracy);
-         document.getElementById('vresp').innerHTML = crd.latitude + ' ' + crd.longitude;
-         if(!crd.altitude) {
-           document.getElementById('altitude').innerHTML = "Not available on this device."
-         }
-         else {document.getElementById('altitude').innerHTML = crd.altitude;}
-         document.getElementById('accuracy').innerHTML = roundAcc + " Meters";
-         document.getElementById('dateCode').innerHTML = d.toLocaleString().slice(0, 10);
-         document.getElementById('timeCode').innerHTML = t.toLocaleString().slice(10, 25);
-       }
-
-       /* Error Codes: 1 PERMISSION_DENIED, 2 POSITION_UNAVAILABLE, 3 TIMEOUT */
-       function error(err) {
-         var geoerror = (err.code == (1, 2, 3) ? "Error loading" : err.message);
-         document.getElementById('errMsg').innerHTML = geoerror;
-         $('.overlay, .loader').fadeOut('fast');
-       }
-
-
      }
 
     }

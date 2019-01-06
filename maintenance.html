@@ -91,7 +91,7 @@
 
       <a class="carousel-item__btn" onclick="window.location.href=window.location.href">Reset</a>
       <br/><br/>
-      <a class="carousel-item__btn" onclick="doMail();">Email</a>
+      <a class="carousel-item__btn" onclick="doMail();">Maintenance Request</a>
       <br/><br/>
       <a href="index.html" class="carousel-item__btn">Home</a>
 
@@ -103,7 +103,7 @@
   </div>
   <div class="container">
   <div class="control-group" id="fo" >
-    <h3>Project Estimator</h3>
+    <h3>Genereal Maintenance</h3>
     <label class="control control--checkbox">Interior
       <input onclick="toggleVisibility(document.getElementById('foo'));toggleVisibility(document.getElementById('fo'));toggleVisibility(document.getElementById('fo'));" id="rb1" type="checkbox" />
       <div class="control__indicator"></div>
@@ -112,8 +112,8 @@
       <input onclick="toggleVisibility(document.getElementById('foo2'));toggleVisibility(document.getElementById('fo'));toggleVisibility(document.getElementById('fo'));" id="rb2" type="checkbox"/>
       <div class="control__indicator"></div>
     </label>
-    <label class="control control--checkbox">Seasonal Discount
-      <input type="checkbox" disabled="disabled" checked="checked"/>
+    <label class="control control--checkbox">Waste Removal
+      <input onclick="waste();" id="rb2" type="checkbox"/>
       <div class="control__indicator"></div>
     </label>
   </div>
@@ -308,7 +308,9 @@
     var total = 0;
     var paintTotal = 0;
     var sqft = 0;
-    var receipt = ["Free Estimate"];
+    var receipt = ["I'm in need of a maintenance technician reguarding unit: "];
+    var receipt2 = ["Here is a description of the issue: "];
+    var wasteR = ["I need the waste removed at location: "];
     var addR = '%0D%0A'+ 0;
     var roomCount = 0;
     var countertop = 0;
@@ -320,7 +322,6 @@
     var sidingTotal = 0;
     var insulationTotal = 0;
     var flooringTotal = 0;
-
 
     function reset(){
     total = 0;
@@ -360,7 +361,7 @@
         {
         total += parseFloat(paintTotal);
         document.getElementById('vresp').innerHTML = '$ ' + total;
-        addR = '%0D%0A'+ ' ' + roomCount + ' Rooms to paint at $' + paintTotal;
+        addR = '%0D%0A'+ ' ' + roomCount + ' Units to paint at $' + paintTotal;
         receipt.push(addR);
         }
       else
@@ -489,10 +490,14 @@ function trim2(){
     }
 
     function doMail() {
-      var email ="Matt@woodandmortar.com?&subject=Wood%20and%20Mortar&body=";
-      location.href = "mailto:"+email+receipt+"%0D%0A"+"%0D%0A"+"Total: $"+total+"%0D%0A"+"%0D%0A"+"I'm ready for you to contact me, my number is (Enter your Phone number here)";
+      var email ="Matt@woodandmortar.com?&subject=Maintenance%20Request&body=";
+      location.href = "mailto:"+email+receipt+"%0D%0A"+receipt2+"%0D%0A"+"%0D%0A"+"Total: $"+total+"%0D%0A"+"%0D%0A";
     }
 
+    function waste() {
+      var email ="Matt@woodandmortar.com?&subject=Waste%20Removal&body=";
+      location.href = "mailto:"+email+wasteR;
+    }
 
 
 

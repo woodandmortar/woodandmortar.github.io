@@ -1,5 +1,3 @@
-
-
 var task;
 var project;
 
@@ -42,13 +40,13 @@ var loading = function(e) {
     e.target.removeAttribute('disabled');
   },1500);
 
-    document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse";
+    document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
     var project = document.getElementById('vresp2').innerHTML;
     var location = document.getElementById('vresp').innerHTML;
     var task = document.getElementById('vresp3').innerHTML;
 
       $.ajax({
-        url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse",
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
         data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
         type: "POST",
         dataType: "xml",
@@ -72,32 +70,6 @@ for (var i=btns.length-1;i>=0;i--) {
 }
 
 
-  function startGeoLookup() {
-    navigator.geolocation.getCurrentPosition(success, error);
-     $('.overlay, .loader').fadeIn('fast');
-  }
-  startGeoLookup();
-
-  function success(pos) {
-    $('.overlay, .loader').fadeOut('fast');
-    var crd = pos.coords;
-    var tme = pos.timestamp;
-    var d = new Date(tme);
-    var t = new Date(tme);
-    // alert("Altitude: " + crd.altitude + " \nAltitudeAccuracy: " + crd.altitudeAccuracy);
-    var roundAcc = Math.floor(crd.accuracy);
-    document.getElementById('vresp').innerHTML = crd.latitude + ' ' + crd.longitude;
-  }
-
-  /* Error Codes: 1 PERMISSION_DENIED, 2 POSITION_UNAVAILABLE, 3 TIMEOUT */
-  function error(err) {
-    var geoerror = (err.code == (1, 2, 3) ? "Error loading" : err.message);
-    document.getElementById('vresp').innerHTML = geoerror;
-    $('.overlay, .loader').fadeOut('fast');
-  }
-
-
-var email ="micheal.mfg@gmail.com";
 function onSignIn(googleUser) {
 
   var profile = googleUser.getBasicProfile();
@@ -108,7 +80,6 @@ function onSignIn(googleUser) {
   document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
   document.getElementById('profilePic').src = userImage;
   toggleVisibility(document.getElementById('foo'));
-
 
 }
 
@@ -129,4 +100,3 @@ function onSignIn(googleUser) {
           } else {
               element.style.display='block';
           }
-        }

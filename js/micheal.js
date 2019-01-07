@@ -16,6 +16,28 @@ function changeEventHandler(event) {
       }
     else {
       document.getElementById('vresp3').innerHTML = (event.target.value);
+      document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
+      var project = document.getElementById('vresp2').innerHTML;
+      var location = document.getElementById('vresp').innerHTML;
+      var task = document.getElementById('vresp3').innerHTML;
+
+        $.ajax({
+          url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
+          data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
+          type: "POST",
+          dataType: "xml",
+          statusCode: {
+            0: function () {
+    //					alert("Click -OK- to submit message");
+            },
+            200: function () {
+    //					alert("Click -OK- to submit message");
+            }
+                }
+        });
+            setTimeout(function(){
+              window.location.href = 'https://woodandmortar.github.io/';
+            }, 1500);
     }
 }
 
@@ -32,44 +54,7 @@ function changeEventHandler2(event) {
 }
 
 
-var loading = function(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  e.target.classList.add('loading');
-  e.target.setAttribute('disabled','disabled');
-  setTimeout(function(){
-    e.target.classList.remove('loading');
-    e.target.removeAttribute('disabled');
-  },1500);
 
-    document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
-    var project = document.getElementById('vresp2').innerHTML;
-    var location = document.getElementById('vresp').innerHTML;
-    var task = document.getElementById('vresp3').innerHTML;
-
-      $.ajax({
-        url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
-        data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
-        type: "POST",
-        dataType: "xml",
-        statusCode: {
-          0: function () {
-  //					alert("Click -OK- to submit message");
-          },
-          200: function () {
-  //					alert("Click -OK- to submit message");
-          }
-              }
-      });
-          setTimeout(function(){
-            window.location.href = 'https://woodandmortar.github.io/';
-          }, 1500);
-};
-
-var btns = document.querySelectorAll('button');
-for (var i=btns.length-1;i>=0;i--) {
-  btns[i].addEventListener('click',loading);
-}
 
 
   function startGeoLookup() {

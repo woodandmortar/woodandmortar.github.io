@@ -16,13 +16,13 @@ function changeEventHandler(event) {
       }
     else {
       document.getElementById('vresp3').innerHTML = (event.target.value);
-      document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
+      document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse";
       var project = document.getElementById('vresp2').innerHTML;
       var location = document.getElementById('vresp').innerHTML;
       var task = document.getElementById('vresp3').innerHTML;
 
         $.ajax({
-          url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
+          url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse",
           data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
           type: "POST",
           dataType: "xml",
@@ -82,7 +82,7 @@ function changeEventHandler2(event) {
   }
 
 
-var email ="micheal.mfg@gmail.com";
+var email ="crycellaf@gmail.com";
 function onSignIn(googleUser) {
 
   var profile = googleUser.getBasicProfile();
@@ -90,7 +90,7 @@ function onSignIn(googleUser) {
   var userImage = profile.getImageUrl();
   var email = profile.getEmail();
   document.getElementById('vresp2').innerHTML = profile.getName();
-  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
+  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse";
   document.getElementById('profilePic').src = userImage;
   toggleVisibility(document.getElementById('foo'));
 

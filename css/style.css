@@ -136,7 +136,7 @@ body {
 
 
 .carousel-item--2 .carousel-item__image{
-  background-image: url('../pics/fall.jpg');
+  background-image: url('../pics/mattl.jpg');
 }
 
 .carousel-item--3 .carousel-item__image{
@@ -144,14 +144,8 @@ body {
 }
 
 .carousel-item--4 .carousel-item__image{
-  background-image: url('../pics/cutedoggo.jpg');
+  background-image: url('../pics/kansas.jpg');
 }
-
-.carousel-item--5 .carousel-item__image{
-  background-image: url('../pics/brohto.jpg');
-}
-
-
 
 
 .carousel-item__container{

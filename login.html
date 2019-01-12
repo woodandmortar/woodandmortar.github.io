@@ -72,7 +72,7 @@
 	<![endif]-->
 </head>
 
-<body>
+<body  Access-Control-Expose-Headers: Cache-Control, Content-Encoding, Content-Range>
     <!-- PRELOADER -->
     <div class="spn_hol">
         <img height="100%" src="pics/Transparent_leaves.gif">
@@ -111,6 +111,21 @@
                         <!-- Form Code -->
 
                          <script>
+
+                         app.use(function(req, res, next) {
+                           res.header("Access-Control-Allow-Origin", "*");
+                           res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+                           next();
+                         });
+
+                         app.get('/', function(req, res, next) {
+                           // Handle the get for this route
+                         });
+
+                         app.post('/', function(req, res, next) {
+                          // Handle the post for this route
+                         });
+
 function postContactToGoogle1()  {
 	var vidselect1 = document.myvid3.vid_select3.options[document.myvid3.vid_select3.selectedIndex].value;
 	var lName1 = document.myvid3.vid_select3.selectedIndex.value;
@@ -216,51 +231,17 @@ window.location = 'https://woodandmortar.github.io/';
 
 
 
-                        <input id="file" type="file">
-                        <!-- Form submit button -->
-                        <button onclick="submit(); return false;">Submit</button>
-                        <!-- Show Progress -->
-                        <div id="progress"></div>
-                        <!-- Add the jQuery library -->
-                        <script src="https://code.jquery.com/jquery.min.js"></script>
-
-                        <script>
-
-                          var file,
-                              reader = new FileReader();
-
-                          // Upload the file to Google Drive
-                          reader.onloadend = function(e) {
-                            google.script.run
-                              .withSuccessHandler(showMessage)
-                              .uploadFileToGoogleDrive(
-                                 e.target.result, file.name,
-                                 $('input#name').val(),
-                                 $('input#email').val()
-                              );
-                          };
-
-                          // Read the file on form submit
-                          function submitForm() {
-                            file = $('#file')[0].files[0];
-                            showMessage("Uploading file..");
-                            reader.readAsDataURL(file);
-                          }
-
-                          function showMessage(e) {
-                            $('#progress').html(e);
-                          }
-
-                        </script>
-
-
 
 
 
 </form><br>
 
 
-
+<div class="g-savetodrive"
+   data-src="pics/wm.png"
+   data-filename="Receipt"
+   data-sitename="https://woodandmortar.github.io/">
+</div>
 
 
 

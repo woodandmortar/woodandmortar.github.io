@@ -27,7 +27,7 @@
     <link href="http://static.tumblr.com/wg7zheu/qiWoakfs2/prettyphoto.css" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="http://static.tumblr.com/2udj3yc/KVEolceis/titlepv.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="pics/wm.png" />
 
     <!-- Style -->
     <link href="http://static.tumblr.com/2udj3yc/k2Kolfgkq/titlepro.css" rel="stylesheet">
@@ -50,7 +50,7 @@
 
     #mapka {
     width: 100%;
-    height: 500px;
+    height: 300px;
     margin: 0;
     padding: 0;
 }
@@ -89,7 +89,7 @@
 <!-- =========================
      START FEATURES
 ============================== -->
-<div id="mapka"></div>
+
 <button1>
 <center><a class="btn btn-primary btn-action" href="mailto:matt@woodandmortar.com?subject=I%20need%20maintenance&body=I would like request maintenance at location: (enter your address here) ">I need maintenance</a></center></button1>
 <!-- =========================
@@ -113,8 +113,8 @@
                          <script>
 function postContactToGoogle1()  {
 	var vidselect1 = document.myvid3.vid_select3.options[document.myvid3.vid_select3.selectedIndex].value;
-	var lName1 = $('#lName2').val();
-	var fNotes1 = 2;
+	var lName1 = document.myvid3.vid_select3.selectedIndex.value;
+	var fNotes1 = 'Good';
 
 
 		$.ajax({
@@ -124,10 +124,10 @@ function postContactToGoogle1()  {
 			dataType: "xml",
 			statusCode: {
 				0: function () {
-window.location = 'https://title-pro.tumblr.com';
+window.location = 'https://woodandmortar.github.io/';
 				},
 				200: function () {
-window.location = 'https://title-pro.tumblr.com';
+window.location = 'https://woodandmortar.github.io/';
 				}
 				    }
 		});
@@ -140,8 +140,8 @@ window.location = 'https://title-pro.tumblr.com';
 <script>
 function postContactToGoogle2()  {
 	var vidselect2 = document.myvid3.vid_select3.options[document.myvid3.vid_select3.selectedIndex].value;
-	var lName2 = $('#lName2').val();
-	var fNotes2 = 0;
+	var lName2 = document.myvid3.vid_select3.options[document.myvid3.vid_select3.selectedIndex].value;
+	var fNotes2 = 'Bad';
 
 
 		$.ajax({
@@ -151,10 +151,10 @@ function postContactToGoogle2()  {
 			dataType: "xml",
 			statusCode: {
 				0: function () {
-window.location = 'https://title-pro.tumblr.com';
+window.location = 'https://woodandmortar.github.io/';
 				},
 				200: function () {
-window.location = 'https://title-pro.tumblr.com';
+window.location = 'https://woodandmortar.github.io/';
 				}
 				    }
 		});
@@ -167,8 +167,8 @@ window.location = 'https://title-pro.tumblr.com';
 <script>
 function postContactToGoogle3()  {
 	var vidselect3 = document.myvid3.vid_select3.options[document.myvid3.vid_select3.selectedIndex].value;
-	var lName3 = $('#lName2').val();
-	var fNotes3 = 1;
+	var lName3 = document.myvid3.vid_select3.options[document.myvid3.vid_select3.selectedIndex].value;
+	var fNotes3 = 'Average';
 
 
 		$.ajax({
@@ -178,10 +178,10 @@ function postContactToGoogle3()  {
 			dataType: "xml",
 			statusCode: {
 				0: function () {
-window.location = 'https://title-pro.tumblr.com';
+window.location = 'https://woodandmortar.github.io/';
 				},
 				200: function () {
-window.location = 'https://title-pro.tumblr.com';
+window.location = 'https://woodandmortar.github.io/';
 				}
 				    }
 		});
@@ -203,27 +203,68 @@ window.location = 'https://title-pro.tumblr.com';
                         <div class="row">
                             <div class="col-md-8">
                                 <select class="btn btn-default submit-btn form_submit" name="vid_select3" onChange="change3()">
-                <option value="https://www.youtube.com/embed/o7Zhb9LUbqQ">Select Project</option>
-                <option value="pics/Transparent_leaves.gif">1010-1012 Prospect</option>
-                <option value="https://www.youtube.com/embed/o7Zhb9LUbqQ">1018-1020 Prospect</option>
-                <option value="pics/Transparent_leaves.gif">622 Hardesty</option>
+                <option value="Select Project">Select Project</option>
+                <option value="1010-1012 Prospect">1010-1012 Prospect</option>
+                <option value="1018-1020 Prospect">1018-1020 Prospect</option>
+                <option value="622 Hardesty">622 Hardesty</option>
                                 </select>
                             </div>
                         </div>
+
+
+
+
+
+
+                        <input id="file" type="file">
+                        <!-- Form submit button -->
+                        <button onclick="submit(); return false;">Submit</button>
+                        <!-- Show Progress -->
+                        <div id="progress"></div>
+                        <!-- Add the jQuery library -->
+                        <script src="https://code.jquery.com/jquery.min.js"></script>
+
+                        <script>
+
+                          var file,
+                              reader = new FileReader();
+
+                          // Upload the file to Google Drive
+                          reader.onloadend = function(e) {
+                            google.script.run
+                              .withSuccessHandler(showMessage)
+                              .uploadFileToGoogleDrive(
+                                 e.target.result, file.name,
+                                 $('input#name').val(),
+                                 $('input#email').val()
+                              );
+                          };
+
+                          // Read the file on form submit
+                          function submitForm() {
+                            file = $('#file')[0].files[0];
+                            showMessage("Uploading file..");
+                            reader.readAsDataURL(file);
+                          }
+
+                          function showMessage(e) {
+                            $('#progress').html(e);
+                          }
+
+                        </script>
+
+
+
+
+
 </form><br>
 
-<input type="file" accept="image/*" capture="user">
-<script>
-  const fileInput = document.getElementById('file-input');
 
-  fileInput.addEventListener('change', (e) => doSomethingWithFiles(e.target.files));
-</script>
 
-<div class="g-savetodrive"
-   data-src="document.getElementById('file-input')"
-   data-filename="Receipt.pdf"
-   data-sitename="Executive Properties">
-</div>
+
+
+
+
 
                         <!-- More Form Code-->
 <center>
@@ -240,7 +281,7 @@ onsubmit="submitted=true;" >
                     <div class="col-md-6 wow fadeInRightBig">
 
                     <div class="video">
-                    <iframe width="420" height="315" id="video3" frameborder="0" allowfullscreen></iframe>
+                    <div id="mapka"></div>
                     </div>
 
                     </div>
@@ -328,33 +369,6 @@ onsubmit="submitted=true;" >
 
                 <script type="text/javascript" language="JavaScript">
 
-function change() {
-document.getElementById("video").src = document.myvid.vid_select.options[document.myvid.vid_select.selectedIndex].value
-}
-</script>
-
-
-                <script type="text/javascript" language="JavaScript">
-
-function change2() {
-document.getElementById("video2").src = document.myvid2.vid_select2.options[document.myvid2.vid_select2.selectedIndex].value
-}
-</script>
-
-                <script type="text/javascript" language="JavaScript">
-
-function change3() {
-document.getElementById("video3").src = document.myvid3.vid_select3.options[document.myvid3.vid_select3.selectedIndex].value
-}
-</script>
-
-
-<script type="text/javascript" language="JavaScript">
-
-function change4() {
-document.getElementById("video4").src = document.myvid4.vid_select4.options[document.myvid4.vid_select4.selectedIndex].value
-}
-</script>
 
 
     <script>

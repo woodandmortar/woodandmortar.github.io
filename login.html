@@ -237,11 +237,181 @@ window.location = 'https://woodandmortar.github.io/';
 </form><br>
 
 
-<div class="g-savetodrive"
-   data-src="pics/wm.png"
-   data-filename="Receipt"
-   data-sitename="https://woodandmortar.github.io/">
-</div>
+<script type="text/javascript">
+
+  // The Browser API key obtained from the Google API Console.
+  // Replace with your own Browser API key, or your own key.
+  var developerKey = 'AIzaSyCJ9-KEKvKFcNXHlZ816Jka172nAPlwl00';
+
+  // The Client ID obtained from the Google API Console. Replace with your own Client ID.
+  var clientId = "584065616296-jr0gu4qt83r90sn3unjbnj8p7n5q5ija.apps.googleusercontent.com"
+
+  // Replace with your own project number from console.developers.google.com.
+  // See "Project number" under "IAM & Admin" > "Settings"
+  var appId = "4055489269489875651";
+
+  // Scope to use to access user's Drive items.
+  var scope = ['https://www.googleapis.com/auth/drive'];
+
+  var pickerApiLoaded = false;
+  var oauthToken;
+
+  // Use the Google API Loader script to load the google.picker script.
+  function loadPicker() {
+    gapi.load('auth', {'callback': onAuthApiLoad});
+    gapi.load('picker', {'callback': onPickerApiLoad});
+  }
+
+  function onAuthApiLoad() {
+    window.gapi.auth.authorize(
+        {
+          'client_id': clientId,
+          'scope': scope,
+          'immediate': false
+        },
+        handleAuthResult);
+  }
+
+  function onPickerApiLoad() {
+    pickerApiLoaded = true;
+    createPicker();
+  }
+
+  function handleAuthResult(authResult) {
+    if (authResult && !authResult.error) {
+      oauthToken = authResult.access_token;
+      createPicker();
+    }
+  }
+
+  // Create and render a Picker object for searching images.
+  function createPicker() {
+    if (pickerApiLoaded && oauthToken) {
+      var view = new google.picker.View(google.picker.ViewId.DOCS);
+      view.setMimeTypes("image/png,image/jpeg,image/jpg");
+      var picker = new google.picker.PickerBuilder()
+          .enableFeature(google.picker.Feature.NAV_HIDDEN)
+          .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
+          .setAppId(appId)
+          .setOAuthToken(oauthToken)
+          .addView(view)
+          .addView(new google.picker.DocsUploadView())
+          .setDeveloperKey(developerKey)
+          .setCallback(pickerCallback)
+          .build();
+       picker.setVisible(true);
+    }
+  }
+
+  // A simple callback implementation.
+  function pickerCallback(data) {
+    if (data.action == google.picker.Action.PICKED) {
+      var fileId = data.docs[0].id;
+      alert('The user selected: ' + fileId);
+    }
+  }
+  </script>
+
+  <form method="post" enctype="multipart/form-data">
+  <div>
+    <label for="image_uploads">Choose images to upload (PNG, JPG)</label>
+    <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" multiple>
+  </div>
+  <div class="preview">
+    <p>No files currently selected for upload</p>
+  </div>
+  <div>
+    <button>Submit</button>
+  </div>
+</form>
+
+
+  <script>
+  var input = document.querySelector('input');
+var preview = document.querySelector('.preview');
+
+input.style.opacity = 0;input.addEventListener('change', updateImageDisplay);function updateImageDisplay() {
+  while(preview.firstChild) {
+    preview.removeChild(preview.firstChild);
+  }
+
+  var curFiles = input.files;
+  if(curFiles.length === 0) {
+    var para = document.createElement('p');
+    para.textContent = 'No files currently selected for upload';
+    preview.appendChild(para);
+  } else {
+    var list = document.createElement('ol');
+    preview.appendChild(list);
+    for(var i = 0; i < curFiles.length; i++) {
+      var listItem = document.createElement('li');
+      var para = document.createElement('p');
+      if(validFileType(curFiles[i])) {
+        para.textContent = 'File name ' + curFiles[i].name + ', file size ' + returnFileSize(curFiles[i].size) + '.';
+        var image = document.createElement('img');
+        image.src = window.URL.createObjectURL(curFiles[i]);
+
+        listItem.appendChild(image);
+        listItem.appendChild(para);
+
+      } else {
+        para.textContent = 'File name ' + curFiles[i].name + ': Not a valid file type. Update your selection.';
+        listItem.appendChild(para);
+      }
+
+      list.appendChild(listItem);
+    }
+  }
+}var fileTypes = [
+  'image/jpeg',
+  'image/pjpeg',
+  'image/png'
+]
+
+function validFileType(file) {
+  for(var i = 0; i < fileTypes.length; i++) {
+    if(file.type === fileTypes[i]) {
+      return true;
+    }
+  }
+
+  return false;
+}function returnFileSize(number) {
+  if(number < 1024) {
+    return number + 'bytes';
+  } else if(number >= 1024 && number < 1048576) {
+    return (number/1024).toFixed(1) + 'KB';
+  } else if(number >= 1048576) {
+    return (number/1048576).toFixed(1) + 'MB';
+  }
+}
+
+blobUtil.imageSrcToBlob(image.src).then(function (blob) {
+  // ladies and gents, we have a blob
+}).catch(function (err) {
+  // image failed to load
+});
+
+var blobURL = blobUtil.createObjectURL(blob);
+
+
+
+
+  </script>
+
+
+
+
+
+
+
+  <div class="g-savetodrive"
+     data-src=blobURL
+     data-filename="Receipt 1"
+     data-sitename="WoodandMortar LLC">
+  </div>
+
+  <div id="result"></div>
 
 
 
@@ -595,6 +765,10 @@ function loadScript() {
   document.body.appendChild(script);
 }
 window.onload = loadScript;
+
+
+
+!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?n(exports):"function"==typeof define&&define.amd?define(["exports"],n):n(e.blobUtil={})}(this,function(e){"use strict";function n(e,n){return new Promise(function(r,t){var o=new Image;n&&(o.crossOrigin=n),o.onload=function(){r(o)},o.onerror=t,o.src=e})}function r(e){var n=document.createElement("canvas");return n.width=e.width,n.height=e.height,n.getContext("2d").drawImage(e,0,0,e.width,e.height,0,0,e.width,e.height),n}function t(e,n){e=e||[],"string"==typeof(n=n||{})&&(n={type:n});try{return new Blob(e,n)}catch(i){if("TypeError"!==i.name)throw i;for(var r="undefined"!=typeof BlobBuilder?BlobBuilder:"undefined"!=typeof MSBlobBuilder?MSBlobBuilder:"undefined"!=typeof MozBlobBuilder?MozBlobBuilder:WebKitBlobBuilder,t=new r,o=0;o<e.length;o+=1)t.append(e[o]);return t.getBlob(n.type)}}function o(e){return("undefined"!=typeof URL?URL:webkitURL).createObjectURL(e)}function i(e){return("undefined"!=typeof URL?URL:webkitURL).revokeObjectURL(e)}function u(e){return new Promise(function(n,r){var t=new FileReader,o="function"==typeof t.readAsBinaryString;t.onloadend=function(){var e=t.result||"";if(o)return n(e);n(h(e))},t.onerror=r,o?t.readAsBinaryString(e):t.readAsArrayBuffer(e)})}function a(e,n){var r=[p(atob(e))];return n?t(r,{type:n}):t(r)}function f(e,n){return a(btoa(e),n)}function c(e){return u(e).then(btoa)}function d(e){var n=e.match(/data:([^;]+)/)[1],r=e.replace(/^[^,]+,/,"");return t([p(atob(r))],{type:n})}function b(e){return c(e).then(function(n){return"data:"+e.type+";base64,"+n})}function l(e,t,o,i){return t=t||"image/png",n(e,o).then(r).then(function(e){return e.toDataURL(t,i)})}function B(e,n,r){return"function"==typeof e.toBlob?new Promise(function(t){e.toBlob(t,n,r)}):Promise.resolve(d(e.toDataURL(n,r)))}function y(e,t,o,i){return t=t||"image/png",n(e,o).then(r).then(function(e){return B(e,t,i)})}function g(e,n){return t([e],n)}function s(e){return new Promise(function(n,r){var t=new FileReader;t.onloadend=function(){var e=t.result||new ArrayBuffer(0);n(e)},t.onerror=r,t.readAsArrayBuffer(e)})}function h(e){for(var n="",r=new Uint8Array(e),t=r.byteLength,o=-1;++o<t;)n+=String.fromCharCode(r[o]);return n}function p(e){for(var n=e.length,r=new ArrayBuffer(n),t=new Uint8Array(r),o=-1;++o<n;)t[o]=e.charCodeAt(o);return r}e.createBlob=t,e.createObjectURL=o,e.revokeObjectURL=i,e.blobToBinaryString=u,e.base64StringToBlob=a,e.binaryStringToBlob=f,e.blobToBase64String=c,e.dataURLToBlob=d,e.blobToDataURL=b,e.imgSrcToDataURL=l,e.canvasToBlob=B,e.imgSrcToBlob=y,e.arrayBufferToBlob=g,e.blobToArrayBuffer=s,e.arrayBufferToBinaryString=h,e.binaryStringToArrayBuffer=p,Object.defineProperty(e,"__esModule",{value:!0})});
 
 </script>
 

@@ -33,17 +33,87 @@
 
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123535120-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-123535120-1');
-      </script>
+
 
 <style>
 .carousel-item--0 .carousel-item__image{
   background-image: url('./pics/Transparent_leaves.gif');
 }
+button {
+position:relative;
+border:0;
+margin:0;
+padding:0;
+cursor:pointer;
+font-size:1rem;
+font-weight:bold;
+color:rgba(0,0,0,0);
+background:transparent;
+border-radius:.25rem;
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+-webkit-touch-callout: none;
+}
+
+button,
+button:after,
+button:before {
+padding:.6875rem 2rem;
+-webkit-transition:-webkit-transform 0.75s,background-color .125s;
+-moz-transition:-moz-transform 0.75s,background-color .125s;
+-ms-transition:-ms-transform 0.75s,background-color .125s;
+transition:transform 0.75s,background-color .125s;
+-webkit-transform-style:preserve-3d;
+-moz-transform-style:preserve-3d;
+-ms-transform-style:preserve-3d;
+transform-style:preserve-3d;
+}
+
+button:after,
+button:before {
+position:absolute;
+top:0;
+bottom:0;
+left:0;
+right:0;
+border-radius:.25rem;
+-webkit-backface-visibility:hidden;
+-moz-backface-visibility:hidden;
+-ms-backface-visibility:hidden;
+backface-visibility:hidden;
+
+}
+
+button:before {
+z-index:2;
+color:#fff;
+background-color:#444444;
+content:attr(data-label);
+}
+
+button:after {
+z-index:1;
+background-color:#999;
+background-repeat:no-repeat;
+background-position:center center;
+background-image:url(data:image/gif;base64,R0lGODlhEAAQAPIAAJmZmf///7CwsOPj4////9fX18rKysPDwyH+GkNyZWF0ZWQgd2l0aCBhamF4bG9hZC5pbmZvACH5BAAKAAAAIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQACgABACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkEAAoAAgAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkEAAoAAwAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkEAAoABAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQACgAFACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQACgAGACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAAKAAcALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==);
+-webkit-transform:rotateX(180deg);
+-moz-transform:rotateX(180deg);
+-ms-transform:rotateX(180deg);
+transform:rotateX(180deg);
+content:'';
+}
+
+button:active:before {
+background-color:#3571c8;
+}
+
+button.loading {
+-webkit-transform:rotateX(180deg);
+-moz-transform:rotateX(180deg);
+-ms-transform:rotateX(180deg);
+transform:rotateX(180deg);
+}
+
 </style>
 
 </head>
@@ -57,6 +127,8 @@
 </head>
 
 <body>
+
+  <button data-label="Receipt">Receipt</button>
 
   <div class="gButton">
   <div class="g-signin2" data-onsuccess="onSignIn"></div>
@@ -117,108 +189,6 @@
 
 <br/><br/>
 
-
-  <form method="post" enctype="multipart/form-data">
-  <div>
-    <label for="image_uploads">Choose images to upload (PNG, JPG)</label>
-    <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" multiple>
-  </div>
-  <div class="preview">
-    <p>No files currently selected for upload</p>
-  </div>
-  <div>
-    <button>Submit</button>
-  </div>
-</form>
-
-
-  <script>
-  var input = document.querySelector('input');
-var preview = document.querySelector('.preview');
-
-input.style.opacity = 0;input.addEventListener('change', updateImageDisplay);function updateImageDisplay() {
-  while(preview.firstChild) {
-    preview.removeChild(preview.firstChild);
-  }
-
-  var curFiles = input.files;
-  if(curFiles.length === 0) {
-    var para = document.createElement('p');
-    para.textContent = 'No files currently selected for upload';
-    preview.appendChild(para);
-  } else {
-    var list = document.createElement('ol');
-    preview.appendChild(list);
-    for(var i = 0; i < curFiles.length; i++) {
-      var listItem = document.createElement('li');
-      var para = document.createElement('p');
-      if(validFileType(curFiles[i])) {
-        para.textContent = 'File name ' + curFiles[i].name + ', file size ' + returnFileSize(curFiles[i].size) + '.';
-        var image = document.createElement('img');
-        image.src = window.URL.createObjectURL(curFiles[i]);
-
-        listItem.appendChild(image);
-        listItem.appendChild(para);
-
-      } else {
-        para.textContent = 'File name ' + curFiles[i].name + ': Not a valid file type. Update your selection.';
-        listItem.appendChild(para);
-      }
-
-      list.appendChild(listItem);
-    }
-  }
-}var fileTypes = [
-  'image/jpeg',
-  'image/pjpeg',
-  'image/png'
-]
-
-function validFileType(file) {
-  for(var i = 0; i < fileTypes.length; i++) {
-    if(file.type === fileTypes[i]) {
-      return true;
-    }
-  }
-
-  return false;
-}function returnFileSize(number) {
-  if(number < 1024) {
-    return number + 'bytes';
-  } else if(number >= 1024 && number < 1048576) {
-    return (number/1024).toFixed(1) + 'KB';
-  } else if(number >= 1048576) {
-    return (number/1048576).toFixed(1) + 'MB';
-  }
-}
-
-blobUtil.imageSrcToBlob(image.src).then(function (blob) {
-  // ladies and gents, we have a blob
-}).catch(function (err) {
-  // image failed to load
-});
-
-var blobURL = blobUtil.createObjectURL(blob);
-
-
-
-
-  </script>
-
-
-
-
-
-
-
-  <div class="g-savetodrive"
-     data-src=blobURL
-     data-filename="Receipt 1"
-     data-sitename="WoodandMortar LLC">
-  </div>
-
-  <div id="result"></div>
-
         </div>
 
       </div>
@@ -233,6 +203,34 @@ var blobURL = blobUtil.createObjectURL(blob);
 
 
 </body>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-123535120-1');
+
+
+  var loading = function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    e.target.classList.add('loading');
+    e.target.setAttribute('disabled','disabled');
+    setTimeout(function(){
+      e.target.classList.remove('loading');
+      e.target.removeAttribute('disabled');
+      location.href = "https://goo.gl/forms/2ywmNP6x25QJbkzi2";
+    },1500);
+  };
+
+  var btns = document.querySelectorAll('button');
+  for (var i=btns.length-1;i>=0;i--) {
+    btns[i].addEventListener('click',loading);
+  }
+
+
+
+</script>
 
 </body>
 

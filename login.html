@@ -64,15 +64,9 @@
     </style>
 
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-	  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
 </head>
 
-<body  Access-Control-Expose-Headers: Cache-Control, Content-Encoding, Content-Range>
+<body>
     <!-- PRELOADER -->
     <div class="spn_hol">
         <img height="100%" src="pics/Transparent_leaves.gif">
@@ -91,7 +85,7 @@
 ============================== -->
 
 <button1>
-<center><a class="btn btn-primary btn-action" href="mailto:matt@woodandmortar.com?subject=I%20need%20maintenance&body=I would like request maintenance at location: (enter your address here) ">I need maintenance</a></center></button1>
+<center><a class="btn btn-primary btn-action" href="https://docs.google.com/forms/d/e/1FAIpQLSf7j7tfOSDwOR2U5UIarKxhRsUwIlBhoJkOtSq7kDAPmUl-3Q/viewform?usp=sf_link">Receipts</a></center></button1>
 <!-- =========================
            Start Block
 ============================== -->
@@ -108,105 +102,6 @@
                         </div>
 
 
-                        <!-- Form Code -->
-
-                         <script>
-
-                         app.use(function(req, res, next) {
-                           res.header("Access-Control-Allow-Origin", "*");
-                           res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-                           next();
-                         });
-
-                         app.get('/', function(req, res, next) {
-                           // Handle the get for this route
-                         });
-
-                         app.post('/', function(req, res, next) {
-                          // Handle the post for this route
-                         });
-
-function postContactToGoogle1()  {
-	var vidselect1 = document.myvid3.vid_select3.options[document.myvid3.vid_select3.selectedIndex].value;
-	var lName1 = document.myvid3.vid_select3.selectedIndex.value;
-	var fNotes1 = 'Good';
-
-
-		$.ajax({
-			url: "https://docs.google.com/forms/d/e/1FAIpQLSf7j7tfOSDwOR2U5UIarKxhRsUwIlBhoJkOtSq7kDAPmUl-3Q/formResponse",
-			data:  {"entry.1327012654" : vidselect1 , "entry.1996502513" : lName1 , "entry.1456972887" : fNotes1 },
-			type: "POST",
-			dataType: "xml",
-			statusCode: {
-				0: function () {
-window.location = 'https://woodandmortar.github.io/';
-				},
-				200: function () {
-window.location = 'https://woodandmortar.github.io/';
-				}
-				    }
-		});
-
-				}
-
-
-</script>
-
-<script>
-function postContactToGoogle2()  {
-	var vidselect2 = document.myvid3.vid_select3.options[document.myvid3.vid_select3.selectedIndex].value;
-	var lName2 = document.myvid3.vid_select3.options[document.myvid3.vid_select3.selectedIndex].value;
-	var fNotes2 = 'Bad';
-
-
-		$.ajax({
-			url: "https://docs.google.com/forms/d/e/1FAIpQLSf7j7tfOSDwOR2U5UIarKxhRsUwIlBhoJkOtSq7kDAPmUl-3Q/formResponse",
-			data:  {"entry.1327012654" : vidselect2 , "entry.1996502513" : lName2 , "entry.1456972887" : fNotes2 },
-			type: "POST",
-			dataType: "xml",
-			statusCode: {
-				0: function () {
-window.location = 'https://woodandmortar.github.io/';
-				},
-				200: function () {
-window.location = 'https://woodandmortar.github.io/';
-				}
-				    }
-		});
-
-				}
-
-
-</script>
-
-<script>
-function postContactToGoogle3()  {
-	var vidselect3 = document.myvid3.vid_select3.options[document.myvid3.vid_select3.selectedIndex].value;
-	var lName3 = document.myvid3.vid_select3.options[document.myvid3.vid_select3.selectedIndex].value;
-	var fNotes3 = 'Average';
-
-
-		$.ajax({
-			url: "https://docs.google.com/forms/d/e/1FAIpQLSf7j7tfOSDwOR2U5UIarKxhRsUwIlBhoJkOtSq7kDAPmUl-3Q/formResponse",
-			data:  {"entry.1327012654" : vidselect3 , "entry.1996502513" : lName3 , "entry.1456972887" : fNotes3 },
-			type: "POST",
-			dataType: "xml",
-			statusCode: {
-				0: function () {
-window.location = 'https://woodandmortar.github.io/';
-				},
-				200: function () {
-window.location = 'https://woodandmortar.github.io/';
-				}
-				    }
-		});
-
-				}
-
-
-</script>
-
-
 <script type="text/javascript">var submitted=false;</script>
 
 
@@ -217,7 +112,7 @@ window.location = 'https://woodandmortar.github.io/';
                     <form role="form" name="myvid3">
                         <div class="row">
                             <div class="col-md-8">
-                                <select class="btn btn-default submit-btn form_submit" name="vid_select3" onChange="change3()">
+                                <select class="btn btn-default submit-btn form_submit" name="reLocation" onChange="change3()">
                 <option value="Select Project">Select Project</option>
                 <option value="1010-1012 Prospect">1010-1012 Prospect</option>
                 <option value="1018-1020 Prospect">1018-1020 Prospect</option>
@@ -237,106 +132,6 @@ window.location = 'https://woodandmortar.github.io/';
 </form><br>
 
 
-  <form method="post" enctype="multipart/form-data">
-  <div>
-    <label for="image_uploads">Choose images to upload (PNG, JPG)</label>
-    <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" multiple>
-  </div>
-  <div class="preview">
-    <p>No files currently selected for upload</p>
-  </div>
-  <div>
-    <button>Submit</button>
-  </div>
-</form>
-
-
-  <script>
-  var input = document.querySelector('input');
-var preview = document.querySelector('.preview');
-
-input.style.opacity = 0;input.addEventListener('change', updateImageDisplay);function updateImageDisplay() {
-  while(preview.firstChild) {
-    preview.removeChild(preview.firstChild);
-  }
-
-  var curFiles = input.files;
-  if(curFiles.length === 0) {
-    var para = document.createElement('p');
-    para.textContent = 'No files currently selected for upload';
-    preview.appendChild(para);
-  } else {
-    var list = document.createElement('ol');
-    preview.appendChild(list);
-    for(var i = 0; i < curFiles.length; i++) {
-      var listItem = document.createElement('li');
-      var para = document.createElement('p');
-      if(validFileType(curFiles[i])) {
-        para.textContent = 'File name ' + curFiles[i].name + ', file size ' + returnFileSize(curFiles[i].size) + '.';
-        var image = document.createElement('img');
-        image.src = window.URL.createObjectURL(curFiles[i]);
-
-        listItem.appendChild(image);
-        listItem.appendChild(para);
-
-      } else {
-        para.textContent = 'File name ' + curFiles[i].name + ': Not a valid file type. Update your selection.';
-        listItem.appendChild(para);
-      }
-
-      list.appendChild(listItem);
-    }
-  }
-}var fileTypes = [
-  'image/jpeg',
-  'image/pjpeg',
-  'image/png'
-]
-
-function validFileType(file) {
-  for(var i = 0; i < fileTypes.length; i++) {
-    if(file.type === fileTypes[i]) {
-      return true;
-    }
-  }
-
-  return false;
-}function returnFileSize(number) {
-  if(number < 1024) {
-    return number + 'bytes';
-  } else if(number >= 1024 && number < 1048576) {
-    return (number/1024).toFixed(1) + 'KB';
-  } else if(number >= 1048576) {
-    return (number/1048576).toFixed(1) + 'MB';
-  }
-}
-
-blobUtil.imageSrcToBlob(image.src).then(function (blob) {
-  // ladies and gents, we have a blob
-}).catch(function (err) {
-  // image failed to load
-});
-
-var blobURL = blobUtil.createObjectURL(blob);
-
-
-
-
-  </script>
-
-
-
-
-
-
-
-  <div class="g-savetodrive"
-     data-src=blobURL
-     data-filename="Receipt 1"
-     data-sitename="WoodandMortar LLC">
-  </div>
-
-  <div id="result"></div>
 
 
 
@@ -381,7 +176,7 @@ onsubmit="submitted=true;" >
                 <!-- Video Links -->
                 <div class="col-md-6">
                     <div class="row">
-                        <a href="#" id="ButtonSubmit" onclick="postContactToGoogle1()">
+                        <a href="#" id="ButtonSubmit" onclick="postContactToGoogle()">
 
 
 
@@ -395,7 +190,7 @@ onsubmit="submitted=true;" >
                             </div>
                         </a>
                         <div class="col-md-4 no_padding">
-                            <a href="#" id="ButtonSubmit" onclick="postContactToGoogle2()">
+                            <a href="#" id="ButtonSubmit" onclick="postContactToGoogle()">
                                 <div class="single_store">
                                     <i class="fa fa-frown-o"></i>
                                     <div class="store_inner">
@@ -405,7 +200,7 @@ onsubmit="submitted=true;" >
                             </a>
                         </div>
                         <div class="col-md-4 no_padding">
-                            <a href="#" id="ButtonSubmit" onclick="postContactToGoogle3()">
+                            <a href="#" id="ButtonSubmit" onclick="postContactToGoogle()">
                                 <div class="single_store">
                                     <i class="fa fa-meh-o"></i>
                                     <div class="store_inner">
@@ -442,94 +237,8 @@ onsubmit="submitted=true;" >
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/owl.carousel.js"></script>
-
-                <script type="text/javascript" language="JavaScript">
-
-
-
-    <script>
-
-;(function( $ ){
-
-  'use strict';
-
-  $.fn.fitVids = function( options ) {
-    var settings = {
-      customSelector: null,
-      ignore: null
-    };
-
-    if(!document.getElementById('fit-vids-style')) {
-      // appendStyles: https://github.com/toddmotto/fluidvids/blob/master/dist/fluidvids.js
-      var head = document.head || document.getElementsByTagName('head')[0];
-      var css = '.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}';
-      var div = document.createElement("div");
-      div.innerHTML = '<p>x</p><style id="fit-vids-style">' + css + '</style>';
-      head.appendChild(div.childNodes[1]);
-    }
-
-    if ( options ) {
-      $.extend( settings, options );
-    }
-
-    return this.each(function(){
-      var selectors = [
-        'iframe[src*="player.vimeo.com"]',
-        'iframe[src*="youtube.com"]',
-        'iframe[src*="youtube-nocookie.com"]',
-        'iframe[src*="kickstarter.com"][src*="video.html"]',
-        'object',
-        'embed'
-      ];
-
-      if (settings.customSelector) {
-        selectors.push(settings.customSelector);
-      }
-
-      var ignoreList = '.fitvidsignore';
-
-      if(settings.ignore) {
-        ignoreList = ignoreList + ', ' + settings.ignore;
-      }
-
-      var $allVideos = $(this).find(selectors.join(','));
-      $allVideos = $allVideos.not('object object'); // SwfObj conflict patch
-      $allVideos = $allVideos.not(ignoreList); // Disable FitVids on this video.
-
-      $allVideos.each(function(){
-        var $this = $(this);
-        if($this.parents(ignoreList).length > 0) {
-          return; // Disable FitVids on this video.
-        }
-        if (this.tagName.toLowerCase() === 'embed' && $this.parent('object').length || $this.parent('.fluid-width-video-wrapper').length) { return; }
-        if ((!$this.css('height') && !$this.css('width')) && (isNaN($this.attr('height')) || isNaN($this.attr('width'))))
-        {
-          $this.attr('height', 9);
-          $this.attr('width', 16);
-        }
-        var height = ( this.tagName.toLowerCase() === 'object' || ($this.attr('height') && !isNaN(parseInt($this.attr('height'), 10))) ) ? parseInt($this.attr('height'), 10) : $this.height(),
-            width = !isNaN(parseInt($this.attr('width'), 10)) ? parseInt($this.attr('width'), 10) : $this.width(),
-            aspectRatio = height / width;
-        if(!$this.attr('id')){
-          var videoID = 'fitvid' + Math.floor(Math.random()*999999);
-          $this.attr('id', videoID);
-        }
-        $this.wrap('<div class="fluid-width-video-wrapper"></div>').parent('.fluid-width-video-wrapper').css('padding-top', (aspectRatio * 100)+'%');
-        $this.removeAttr('height').removeAttr('width');
-      });
-    });
-  };
-// Works with either jQuery or Zepto
-})( window.jQuery || window.Zepto );
-
-    </script>
-
-
     <script src="http://static.tumblr.com/wg7zheu/eI2oakfwb/smoothscroll.js"></script>
     <script src="http://static.tumblr.com/wg7zheu/gq6oakfwp/jquery.parallax-1.1.3.js"></script>
-    <script src="http://static.tumblr.com/wg7zheu/zEnoakfx1/jquery.prettyphoto.js"></script>
-    <script src="http://static.tumblr.com/wg7zheu/q5Ooakfva/jquery.ajaxchimp.min.js"></script>
-    <script src="http://static.tumblr.com/wg7zheu/d3qoakfxy/jquery.ajaxchimp.langs.js"></script>
     <script src="http://static.tumblr.com/wg7zheu/Kyzoakfyi/wow.min.js"></script>
     <script src="http://static.tumblr.com/wg7zheu/6Idoakfys/waypoints.min.js"></script>
     <script src="http://static.tumblr.com/wg7zheu/xZqoakfzb/jquery.counterup.min.js"></script>
@@ -537,14 +246,6 @@ onsubmit="submitted=true;" >
 
 
 
-<script>
-$('.btnShare').click(function(){
-elem = $(this);
-postToFeed(elem.data('title'), elem.data('desc'), elem.prop('href'), elem.data('image'));
-
-return false;
-});
-</script>
 
 
 
@@ -691,9 +392,6 @@ function loadScript() {
 }
 window.onload = loadScript;
 
-
-
-!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?n(exports):"function"==typeof define&&define.amd?define(["exports"],n):n(e.blobUtil={})}(this,function(e){"use strict";function n(e,n){return new Promise(function(r,t){var o=new Image;n&&(o.crossOrigin=n),o.onload=function(){r(o)},o.onerror=t,o.src=e})}function r(e){var n=document.createElement("canvas");return n.width=e.width,n.height=e.height,n.getContext("2d").drawImage(e,0,0,e.width,e.height,0,0,e.width,e.height),n}function t(e,n){e=e||[],"string"==typeof(n=n||{})&&(n={type:n});try{return new Blob(e,n)}catch(i){if("TypeError"!==i.name)throw i;for(var r="undefined"!=typeof BlobBuilder?BlobBuilder:"undefined"!=typeof MSBlobBuilder?MSBlobBuilder:"undefined"!=typeof MozBlobBuilder?MozBlobBuilder:WebKitBlobBuilder,t=new r,o=0;o<e.length;o+=1)t.append(e[o]);return t.getBlob(n.type)}}function o(e){return("undefined"!=typeof URL?URL:webkitURL).createObjectURL(e)}function i(e){return("undefined"!=typeof URL?URL:webkitURL).revokeObjectURL(e)}function u(e){return new Promise(function(n,r){var t=new FileReader,o="function"==typeof t.readAsBinaryString;t.onloadend=function(){var e=t.result||"";if(o)return n(e);n(h(e))},t.onerror=r,o?t.readAsBinaryString(e):t.readAsArrayBuffer(e)})}function a(e,n){var r=[p(atob(e))];return n?t(r,{type:n}):t(r)}function f(e,n){return a(btoa(e),n)}function c(e){return u(e).then(btoa)}function d(e){var n=e.match(/data:([^;]+)/)[1],r=e.replace(/^[^,]+,/,"");return t([p(atob(r))],{type:n})}function b(e){return c(e).then(function(n){return"data:"+e.type+";base64,"+n})}function l(e,t,o,i){return t=t||"image/png",n(e,o).then(r).then(function(e){return e.toDataURL(t,i)})}function B(e,n,r){return"function"==typeof e.toBlob?new Promise(function(t){e.toBlob(t,n,r)}):Promise.resolve(d(e.toDataURL(n,r)))}function y(e,t,o,i){return t=t||"image/png",n(e,o).then(r).then(function(e){return B(e,t,i)})}function g(e,n){return t([e],n)}function s(e){return new Promise(function(n,r){var t=new FileReader;t.onloadend=function(){var e=t.result||new ArrayBuffer(0);n(e)},t.onerror=r,t.readAsArrayBuffer(e)})}function h(e){for(var n="",r=new Uint8Array(e),t=r.byteLength,o=-1;++o<t;)n+=String.fromCharCode(r[o]);return n}function p(e){for(var n=e.length,r=new ArrayBuffer(n),t=new Uint8Array(r),o=-1;++o<n;)t[o]=e.charCodeAt(o);return r}e.createBlob=t,e.createObjectURL=o,e.revokeObjectURL=i,e.blobToBinaryString=u,e.base64StringToBlob=a,e.binaryStringToBlob=f,e.blobToBase64String=c,e.dataURLToBlob=d,e.blobToDataURL=b,e.imgSrcToDataURL=l,e.canvasToBlob=B,e.imgSrcToBlob=y,e.arrayBufferToBlob=g,e.blobToArrayBuffer=s,e.arrayBufferToBinaryString=h,e.binaryStringToArrayBuffer=p,Object.defineProperty(e,"__esModule",{value:!0})});
 
 </script>
 

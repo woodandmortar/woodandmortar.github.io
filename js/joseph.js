@@ -82,7 +82,7 @@ function changeEventHandler2(event) {
   }
 
 
-var email ="angellaborin0411@gmail.com";
+var email ="jhemp265@gmail.com";
 function onSignIn(googleUser) {
 
   var profile = googleUser.getBasicProfile();

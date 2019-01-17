@@ -16,14 +16,14 @@ function changeEventHandler(event) {
       }
     else {
       document.getElementById('vresp3').innerHTML = (event.target.value);
-      document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLScmZa2BvQb7_1VnfEQFjUyWnd17l2fQfQG-faTs9Ze44W83-A/formResponse";
+      document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfU9RdT72ZNliwC3DmcH3UPuLvY63Ql_ej3Rx80ffi1L-13Pw/formResponse";
       var project = document.getElementById('vresp2').innerHTML;
       var location = document.getElementById('vresp').innerHTML;
       var task = document.getElementById('vresp3').innerHTML;
 
         $.ajax({
-          url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLScmZa2BvQb7_1VnfEQFjUyWnd17l2fQfQG-faTs9Ze44W83-A/formResponse",
-          data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
+          url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfU9RdT72ZNliwC3DmcH3UPuLvY63Ql_ej3Rx80ffi1L-13Pw/formResponse",
+          data:  { "entry.503287404" : task , "entry.1478256137" : project , "entry.1017124235" : location },
           type: "POST",
           dataType: "xml",
           statusCode: {
@@ -90,7 +90,7 @@ function onSignIn(googleUser) {
   var userImage = profile.getImageUrl();
   var email = profile.getEmail();
   document.getElementById('vresp2').innerHTML = profile.getName();
-  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLScmZa2BvQb7_1VnfEQFjUyWnd17l2fQfQG-faTs9Ze44W83-A/formResponse";
+  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfU9RdT72ZNliwC3DmcH3UPuLvY63Ql_ej3Rx80ffi1L-13Pw/formResponse";
   document.getElementById('profilePic').src = userImage;
   toggleVisibility(document.getElementById('foo'));
 

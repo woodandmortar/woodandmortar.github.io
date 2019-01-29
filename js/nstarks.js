@@ -16,13 +16,13 @@ function changeEventHandler(event) {
       }
     else {
       document.getElementById('vresp3').innerHTML = (event.target.value);
-      document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSfxxM4bLgqd6FK4tqMotnol70azniGR9dd0LYbas1EhL2owiw/formResponse";
+      document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSeMCYgJIoZax0kxvISsPhl-xdRceqJ-bfO6tzdaJ7Spic2VHA/formResponse";
       var project = document.getElementById('vresp2').innerHTML;
       var location = document.getElementById('vresp').innerHTML;
       var task = document.getElementById('vresp3').innerHTML;
 
         $.ajax({
-          url: "https://docs.google.com/forms/d/e/1FAIpQLSfxxM4bLgqd6FK4tqMotnol70azniGR9dd0LYbas1EhL2owiw/formResponse",
+          url: "https://docs.google.com/forms/d/e/1FAIpQLSeMCYgJIoZax0kxvISsPhl-xdRceqJ-bfO6tzdaJ7Spic2VHA/formResponse",
           data:  { "entry.416551146" : task , "entry.707183520" : project , "entry.727581677" : location },
           type: "POST",
           dataType: "xml",

@@ -16,14 +16,14 @@ function changeEventHandler(event) {
       }
     else {
       document.getElementById('vresp3').innerHTML = (event.target.value);
-      document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSfyZRAA8SsDzAaWPak2JbNhvS7bZqdidShdCTFsIXTRa5Spbw/formResponse";
+      document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLScjefCflK5ziP9-p0O-1ajIXGikQTRuqInZCqQKLLs1HiTh1Q/formResponse";
       var project = document.getElementById('vresp2').innerHTML;
       var location = document.getElementById('vresp').innerHTML;
       var task = document.getElementById('vresp3').innerHTML;
 
         $.ajax({
-          url: "https://docs.google.com/forms/d/e/1FAIpQLSfyZRAA8SsDzAaWPak2JbNhvS7bZqdidShdCTFsIXTRa5Spbw/formResponse",
-          data:  { "entry.1991128837" : task , "entry.352895037" : project , "entry.1250338890" : location },
+          url: "https://docs.google.com/forms/d/e/1FAIpQLScjefCflK5ziP9-p0O-1ajIXGikQTRuqInZCqQKLLs1HiTh1Q/formResponse",
+          data:  { "entry.460028903" : task , "entry.711475450" : project , "entry.1419605389" : location },
           type: "POST",
           dataType: "xml",
           statusCode: {
@@ -82,7 +82,7 @@ function changeEventHandler2(event) {
   }
 
 
-var email ="josh34greenway@gmail.com";
+var email ="eric.mitchell.wm@gmail.com";
 function onSignIn(googleUser) {
 
   var profile = googleUser.getBasicProfile();
@@ -90,7 +90,7 @@ function onSignIn(googleUser) {
   var userImage = profile.getImageUrl();
   var email = profile.getEmail();
   document.getElementById('vresp2').innerHTML = profile.getName();
-  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSfyZRAA8SsDzAaWPak2JbNhvS7bZqdidShdCTFsIXTRa5Spbw/formResponse";
+  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLScjefCflK5ziP9-p0O-1ajIXGikQTRuqInZCqQKLLs1HiTh1Q/formResponse";
   document.getElementById('profilePic').src = userImage;
   toggleVisibility(document.getElementById('foo'));
 

@@ -16,13 +16,14 @@ function changeEventHandler(event) {
       }
     else {
       document.getElementById('vresp3').innerHTML = (event.target.value);
+      document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSfXd1tghcFlanVddUIGs_IbcQieTRxyBdsVfYfizougvtl9Tw/formResponse";
       var project = document.getElementById('vresp2').innerHTML;
       var location = document.getElementById('vresp').innerHTML;
       var task = document.getElementById('vresp3').innerHTML;
 
         $.ajax({
-          url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfU9RdT72ZNliwC3DmcH3UPuLvY63Ql_ej3Rx80ffi1L-13Pw/formResponse",
-          data:  { "entry.503287404" : task , "entry.1478256137" : project , "entry.1017124235" : location },
+          url: "https://docs.google.com/forms/d/e/1FAIpQLSfXd1tghcFlanVddUIGs_IbcQieTRxyBdsVfYfizougvtl9Tw/formResponse",
+          data:  { "entry.1911758555" : task , "entry.1154384407" : project , "entry.2120476047" : location },
           type: "POST",
           dataType: "xml",
           statusCode: {
@@ -81,7 +82,7 @@ function changeEventHandler2(event) {
   }
 
 
-var email ="ewoodandmortar@gmail.com";
+var email ="scott.randall.w@gmail.com";
 function onSignIn(googleUser) {
 
   var profile = googleUser.getBasicProfile();
@@ -89,6 +90,7 @@ function onSignIn(googleUser) {
   var userImage = profile.getImageUrl();
   var email = profile.getEmail();
   document.getElementById('vresp2').innerHTML = profile.getName();
+  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSfXd1tghcFlanVddUIGs_IbcQieTRxyBdsVfYfizougvtl9Tw/formResponse";
   document.getElementById('profilePic').src = userImage;
   toggleVisibility(document.getElementById('foo'));
 

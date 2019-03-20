@@ -36,7 +36,7 @@ function changeEventHandler(event) {
                 }
         });
             setTimeout(function(){
-              window.location.href = 'https://woodandmortar.github.io/';
+              window.location.href = 'https://woodandmortar.github.io/clockedin/';
             }, 2500);
     }
 }

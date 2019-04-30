@@ -66,20 +66,20 @@ body {
   left: 0;
   margin: auto;
   padding: 0 5px;
-  width: 40%;
+  width: 20%;
 
 }
 
 .carousel-item__image {
-    width: 60%;
+    width: 80%;
     height: 100%;
     order: 2;
     align-self: flex-end;
-    flex-basis: 40%;
+    flex-basis: 80%;
 
       -webkit-order: 2;
     -webkit-align-self: flex-end;
-    -webkit-flex-basis: 50%;
+    -webkit-flex-basis: 70%;
 
     background-position: center;
     background-repeat: no-repeat;
@@ -133,18 +133,62 @@ body {
 .carousel-item--1 .carousel-item__image{
   background-image: url('../pics/woodmortar.jpg');
 }
-
-
 .carousel-item--2 .carousel-item__image{
-  background-image: url('../pics/mattl.jpg');
+  background-image: url('../pics/kremodel.jpg');
 }
-
 .carousel-item--3 .carousel-item__image{
-  background-image: url('../pics/house1.jpg');
+  background-image: url('../pics/kremodel2.jpg');
 }
-
 .carousel-item--4 .carousel-item__image{
-  background-image: url('../pics/kansas.jpg');
+  background-image: url('../pics/kremodel3.jpg');
+}
+.carousel-item--5 .carousel-item__image{
+  background-image: url('../pics/baremodel.jpg');
+}
+.carousel-item--6 .carousel-item__image{
+  background-image: url('../pics/baremodel2.jpg');
+}
+.carousel-item--7 .carousel-item__image{
+  background-image: url('../pics/baremodel3.jpg');
+}
+.carousel-item--8 .carousel-item__image{
+  background-image: url('../pics/bremodel.jpg');
+}
+.carousel-item--9 .carousel-item__image{
+  background-image: url('../pics/bremodel2.jpg');
+}
+.carousel-item--10 .carousel-item__image{
+  background-image: url('../pics/bremodel3.jpg');
+}
+.carousel-item--11 .carousel-item__image{
+  background-image: url('../pics/bathremodel.jpg');
+}
+.carousel-item--12 .carousel-item__image{
+  background-image: url('../pics/bathremodel2.jpg');
+}
+.carousel-item--13 .carousel-item__image{
+  background-image: url('../pics/bathremodel3.jpg');
+}
+.carousel-item--14 .carousel-item__image{
+  background-image: url('../pics/bathremodel4.jpg');
+}
+.carousel-item--15 .carousel-item__image{
+  background-image: url('../pics/baseremodel.jpg');
+}
+.carousel-item--16 .carousel-item__image{
+  background-image: url('../pics/baseremodel2.jpg');
+}
+.carousel-item--17 .carousel-item__image{
+  background-image: url('../pics/baseremodel3.jpg');
+}
+.carousel-item--18 .carousel-item__image{
+  background-image: url('../pics/baseremodel4.jpg');
+}
+.carousel-item--19 .carousel-item__image{
+  background-image: url('../pics/11.jpg');
+}
+.carousel-item--20 .carousel-item__image{
+  background-image: url('../pics/10.jpg');
 }
 
 

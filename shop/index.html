@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>WoodandMortar LLC</title>
+  <html lang="en" class="no-js"><head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+      <html class="no-js" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta name="google-signin-client_id" content="876802948446-hq89rbp43opigb73ks5soa3c3gmqmnrj.apps.googleusercontent.com">
+      <META NAME="KEYWORDS" CONTENT="WoodandMortar LLC, WoodandMortar, Wood and Mortar, property maintenance, home improvement, home repair, house repair, house improvement, design, home design, designers, kitchen remodel, bathroom remodel, kitchen design, kitchen makeover, improvement, kitchen, bathroom, small kitchen remodel, Painters, Painting, woodworking, tile, home repair, Contractors, Home, Home Renovations, Wood, wood&mortar, wood & mortar, brick, stucco, Wood and Mortar, WoodandMortar">
+      <META NAME="ROBOTS" CONTENT="ALL,FOLLOW">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+          <meta name="description" content="Home improvement made easy">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="apple-touch-icon" sizes="180x180" href="pics/wm.png">
+              <link rel="icon" type="image/png" href="pics/wm.png" sizes="32x32">
+              <link rel="icon" type="image/png" href="pics/wm.png" sizes="16x16">
+              <link rel="mask-icon" href="pics/wm.png" color="#fff">
+              <link rel="shortcut icon" href="pics/wm.png">
+
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123535120-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-123535120-1');
+      </script>
+
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+
+
+</head>
+
+<body>
+
+
+<div id="app">
+  <div class="container mt-3 mt-sm-5">
+    <div class="row justify-content-between mb-3">
+      <div class="col-md-9">
+        <h1 class="display-1">Store</h1>
+      </div>
+      <div class="col-md-3 text-right">
+        <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#cart"><i class="fa fa-shopping-cart"></i> {{ cart.length }}</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3" v-for="item in selling">
+        <div class="card"><img class="card-img-top" :src="item.image" :alt="item.name"/>
+          <div class="card-block">
+            <h4 class="card-title">{{ item.name }}</h4>
+            <div class="card-text">${{ item.price / 100 }}</div>
+            <div class="row justify-content-end">
+              <button class="btn btn-primary" @click="addToCart" :data-id="item.id">Add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="cart">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Cart</h5>
+          <button class="close" type="button" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <tbody>
+              <tr v-for="item in cart">
+                <td>{{ item.name }}</td>
+                <td>${{ item.price / 100 }}</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><strong>${{ cartTotal / 100 }}</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal">Continue shopping</button>
+          <button class="btn btn-primary" onclick="checkout()">Check out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+
+
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

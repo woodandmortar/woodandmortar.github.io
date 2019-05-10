@@ -25,11 +25,7 @@
               <script  src="js/micheal.js"></script>
               <script  src="js/index.js"></script>
 
-      <link rel="stylesheet" href="css/style.css">
-      <link rel="stylesheet" href="css/est.css">
-
-
-
+      <link rel="stylesheet" href="css/code.css">
 
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123535120-1"></script>
@@ -38,80 +34,6 @@
 <style>
 .carousel-item--0 .carousel-item__image{
   background-image: url('./pics/Transparent_leaves.gif');
-}
-button {
-position:relative;
-border:0;
-margin:0;
-padding:0;
-cursor:pointer;
-font-size:1rem;
-font-weight:bold;
-color:rgba(0,0,0,0);
-background:transparent;
-border-radius:.25rem;
--webkit-tap-highlight-color: rgba(0,0,0,0);
--webkit-touch-callout: none;
-}
-
-button,
-button:after,
-button:before {
-padding:.6875rem 2rem;
--webkit-transition:-webkit-transform 0.75s,background-color .125s;
--moz-transition:-moz-transform 0.75s,background-color .125s;
--ms-transition:-ms-transform 0.75s,background-color .125s;
-transition:transform 0.75s,background-color .125s;
--webkit-transform-style:preserve-3d;
--moz-transform-style:preserve-3d;
--ms-transform-style:preserve-3d;
-transform-style:preserve-3d;
-}
-
-button:after,
-button:before {
-position:absolute;
-top:0;
-bottom:0;
-left:0;
-right:0;
-border-radius:.25rem;
--webkit-backface-visibility:hidden;
--moz-backface-visibility:hidden;
--ms-backface-visibility:hidden;
-backface-visibility:hidden;
-
-}
-
-button:before {
-z-index:2;
-color:#fff;
-background-color:#444444;
-content:attr(data-label);
-}
-
-button:after {
-z-index:1;
-background-color:#999;
-background-repeat:no-repeat;
-background-position:center center;
-background-image:url(data:image/gif;base64,R0lGODlhEAAQAPIAAJmZmf///7CwsOPj4////9fX18rKysPDwyH+GkNyZWF0ZWQgd2l0aCBhamF4bG9hZC5pbmZvACH5BAAKAAAAIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQACgABACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkEAAoAAgAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkEAAoAAwAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkEAAoABAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQACgAFACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQACgAGACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAAKAAcALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==);
--webkit-transform:rotateX(180deg);
--moz-transform:rotateX(180deg);
--ms-transform:rotateX(180deg);
-transform:rotateX(180deg);
-content:'';
-}
-
-button:active:before {
-background-color:#3571c8;
-}
-
-button.loading {
--webkit-transform:rotateX(180deg);
--moz-transform:rotateX(180deg);
--ms-transform:rotateX(180deg);
-transform:rotateX(180deg);
 }
 
 </style>
@@ -128,10 +50,6 @@ transform:rotateX(180deg);
 
 <body>
 
-  <div class="gButton">
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
-  </div>
-
 
 <div class="carousel">
   <div class="carousel-item carousel-item--0">
@@ -145,6 +63,9 @@ transform:rotateX(180deg);
     <img id="profilePic" src="pics/wm.png" style="width:100px"><br/>
     <span id="vresp2" class="carousel-item__btn">Please login</span><br/><br/>
     <span id="vresp" class="carousel-item__btn">Unverified</span>
+    <div class="gButton">
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    </div>
   </div>
 
   <script type="text/javascript">var submitted=false;</script>
@@ -153,12 +74,14 @@ transform:rotateX(180deg);
 
     <div class="form-group" id="foo" >
       <div class="select">
-        <select id="project" name="project" required="required">
+        <select font-size=25 id="project" name="project" required="required">
           <option value="">Select Project</option>
           <option value="3006 N Parkwood Blvd">3006 N Parkwood Blvd</option>
           <option value="1525 N 51st St">1525 N 51st St</option>
           <option value="2616 N 8th St">2616 N 8th St</option>
+          <option value="10316 Cody">10316 Cody</option>
           <option value="Logistics">Logistics</option>
+          <option value="Training">Training</option>
           <option value="8602 E 93rd">8602 E 93rd</option>
           <option value="10606 Wallace Ave">10606 Wallace Ave</option>
           <option value="8714 Lee Blvd">8714 Lee Blvd</option>
@@ -174,8 +97,8 @@ transform:rotateX(180deg);
           <div class="select">
             <select id="task" name="task">
               <option value="">Choose one</option>
+              <option value="Lunch">Lunch</option>
               <option value="Clock Out">Clock Out</option>
-              <option value="Lunch Purchase (-3)">Cafe Fee (-$3)</option>
               <option value="Clean">Clean</option>
               <option value="Demo">Demo</option>
               <option value="Drywall">Drywall</option>
@@ -186,6 +109,7 @@ transform:rotateX(180deg);
               <option value="Mortar">Mortar</option>
               <option value="Paint">Paint</option>
               <option value="Plumbing">Plumbing</option>
+              <option value="Tucked In">Tucked In</option>
               <option value="Wood">Wood</option>
             </select>
             <div class="select__arrow"></div>

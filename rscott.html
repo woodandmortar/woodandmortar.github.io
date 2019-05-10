@@ -25,8 +25,7 @@
               <script  src="js/rscott.js"></script>
               <script  src="js/rscott.js"></script>
 
-      <link rel="stylesheet" href="css/style.css">
-      <link rel="stylesheet" href="css/est.css">
+      <link rel="stylesheet" href="css/code.css">
 
 
 
@@ -58,10 +57,6 @@
 
 <body>
 
-  <div class="gButton">
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
-  </div>
-
 
 <div class="carousel">
   <div class="carousel-item carousel-item--0">
@@ -69,12 +64,16 @@
     <div class="carousel-item__info">
       <div class="carousel-item__container">
 
-  <div class="pic1">
-    <span id="vresp3" class="carousel-item__btn">No Task Selected</span><br/>
-    <img id="profilePic" src="pics/wm.png" style="width:100px"><br/>
-    <span id="vresp2" class="carousel-item__btn">Please login</span><br/><br/>
-    <span id="vresp" class="carousel-item__btn">Unverified</span>
-  </div>
+        <div class="pic1">
+          <div class="gButton">
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+          </div>
+          <span id="vresp3" class="carousel-item__btn">No Task Selected</span><br/>
+          <img id="profilePic" src="pics/wm.png" style="width:100px"><br/>
+          <span id="vresp2" class="carousel-item__btn">Please login</span><br/><br/>
+          <span id="vresp" class="carousel-item__btn">Unverified</span>
+
+        </div>
 
   <script type="text/javascript">var submitted=false;</script>
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='#';}"></iframe>

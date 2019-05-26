@@ -440,20 +440,13 @@ function onSignIn(googleUser) {
               },
 
               "clockin" : function(){
-              responseText("You are now clocked in");
 
-              function onSignIn(googleUser) {
-                var profile = googleUser.getBasicProfile();
-                var fName = profile.getName();
-                var userImage = profile.getImageUrl();
-                document.getElementById('vresp1').innerHTML = profile.getName();
-                document.getElementById('profilePic').src = userImage;
-                console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
                 switch(profile.getEmail()){
                   default:
                       setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/store/store.html';}, 6000);
                       break;
                       case 'micheal.mfg@gmail.com':
+                      responseText("You are now clocked in");
                       var project = document.getElementById('vresp7').innerHTML;
                       var task = document.getElementById('vresp8').innerHTML;
                       var location = document.getElementById('vresp9').innerHTML;
@@ -474,6 +467,7 @@ function onSignIn(googleUser) {
                         });
                           break;
                       case 'woodmortar@gmail.com':
+                      responseText("You are now clocked in");
                       var project = document.getElementById('vresp7').innerHTML;
                       var task = document.getElementById('vresp8').innerHTML;
                       var location = document.getElementById('vresp9').innerHTML;
@@ -494,6 +488,7 @@ function onSignIn(googleUser) {
                         });
                         break;
                       case 'crycellaf@gmail.com':
+                      responseText("You are now clocked in");
                       var project = document.getElementById('vresp7').innerHTML;
                       var task = document.getElementById('vresp8').innerHTML;
                       var location = document.getElementById('vresp9').innerHTML;
@@ -514,6 +509,7 @@ function onSignIn(googleUser) {
                         });
                           break;
                       case 'ci.lead.developer@gmail.com':
+                      responseText("You are now clocked in");
                       var project = document.getElementById('vresp7').innerHTML;
                       var task = document.getElementById('vresp8').innerHTML;
                       var location = document.getElementById('vresp9').innerHTML;
@@ -534,6 +530,7 @@ function onSignIn(googleUser) {
                         });
                         break;
                       case 'claporgetbang@gmail.com':
+                      responseText("You are now clocked in");
                       var project = document.getElementById('vresp7').innerHTML;
                       var task = document.getElementById('vresp8').innerHTML;
                       var location = document.getElementById('vresp9').innerHTML;
@@ -554,6 +551,7 @@ function onSignIn(googleUser) {
                         });
                         break;
                       case 'scott.randall.w@gmail.com':
+                      responseText("You are now clocked in");
                       var project = document.getElementById('vresp7').innerHTML;
                       var task = document.getElementById('vresp8').innerHTML;
                       var location = document.getElementById('vresp9').innerHTML;
@@ -575,7 +573,6 @@ function onSignIn(googleUser) {
                         break;
                }
 
-              }
 
               },
 

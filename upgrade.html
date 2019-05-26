@@ -43,12 +43,12 @@
       <div class="chatbot__overview">
         <ul class="chatlist">
           <li class="bot__output bot__output--standard"><img id="profilePic" src="pics/wm.png" style="width:100px"><br/><span id="vresp2"></span></li>
-          <li class="bot__output bot__output--standard">You're scheduled at: <span id="vresp3">Please Login</span></li>
+          <li class="bot__output bot__output--standard">Your scheduled: <span id="vresp3">Please Login</span></li>
           <li class="bot__output bot__output--standard">
             <span class="bot__output--second-sentence">What can I help you with?</span>
             <ul>
               <li class="input__nested-list">Something <span class="bot__command">about</span> Wood&Mortar</li>
-              <li class="input__nested-list"><span id="vresp2"></span><span class="bot__command">'s best work</span></li>
+              <li class="input__nested-list"><span id="vresp4"></span><span class="bot__command">'s best work</span></li>
               <li class="input__nested-list">Maybe I could <span class="bot__command">help</span> (for more instructions)</li>
               <li class="input__nested-list">Type <span class="bot__command">commands</span> for a list of every command</li>
             </ul>
@@ -74,6 +74,7 @@
     var fName = profile.getName();
     var userImage = profile.getImageUrl();
     document.getElementById('vresp2').innerHTML = profile.getName();
+    document.getElementById('vresp4').innerHTML = profile.getName();
     document.getElementById('profilePic').src = userImage;
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 

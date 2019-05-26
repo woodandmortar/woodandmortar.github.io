@@ -317,55 +317,7 @@ var project;
             return
           },
           "clockin" : function(){
-            // Verifies google account on location access and runs this code
 
-              switch(profile.getEmail()){
-                default:
-                    setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/store/store.html';}, 6000);
-                    break;
-                    case 'micheal.mfg@gmail.com':
-                    document.getElementById('vresp3').innerHTML = 'Meeting at 9am Martiny Bid, 1030am second meeting with Heather Stiller, 1200am Complete Drywall house';
-                    document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
-                    var project = document.getElementById('vresp2').innerHTML;
-                    var task = document.getElementById('vresp3').innerHTML;
-
-                      $.ajax({
-                        url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
-                        data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
-                        type: "POST",
-                        dataType: "xml",
-                        statusCode: {
-                          0: function () {
-                  //					alert("Click -OK- to submit message");
-                          },
-                          200: function () {
-                  //					alert("Click -OK- to submit message");
-                          }
-                              }
-                      });
-                          setTimeout(function(){
-                            window.location.href = 'https://woodandmortar.github.io/clockedin.html';
-                          }, 2500);
-                        }
-                          break;
-                    case 'woodmortar@gmail.com':
-                    setTimeout(function(){window.location.href = '/micheal.html';}, 3500);
-                                            break;
-                    case 'crycellaf@gmail.com':
-                    setTimeout(function(){window.location.href = '';}, 3500);
-                                            break;
-                    case 'ci.lead.developer@gmail.com':
-                    setTimeout(function(){window.location.href = '';}, 3500);
-                                            break;
-                    case 'claporgetbang@gmail.com':
-                    setTimeout(function(){window.location.href = '';}, 3500);
-                                            break;
-                    case 'scott.randall.w@gmail.com':
-                    setTimeout(function(){window.location.href = '';}, 3500);
-                                            break;
-              }
-
-            // End of switch statement
             },
           // work experience
         }

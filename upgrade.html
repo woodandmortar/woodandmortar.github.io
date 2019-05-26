@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Wood&Mortar</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <META NAME="KEYWORDS" CONTENT="property maintenance, home improvement, home repair, house repair, house improvement, design, home design, designers, kitchen remodel, bathroom remodel, kitchen design, kitchen makeover, improvement, kitchen, bathroom, small kitchen remodel, Painters, Painting, woodworking, tile, home repair, Contractors, Home, Home Renovations, Wood, wood&mortar, wood & mortar, brick, stucco, Wood and Mortar, WoodandMortar">
+        <META NAME="ROBOTS" CONTENT="ALL,FOLLOW">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="description" content="Kansas City Contractors">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" sizes="180x180" href="pics/wm.png">
+        <link rel="icon" type="image/png" href="pics/wm.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="pics/wm.png" sizes="16x16">
+        <link rel="mask-icon" href="pics/wm.png" color="#fff">
+        <link rel="shortcut icon" href="pics/wm.png">
+        <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script  src="js/crycella.js"></script>
+    <script  src="js/index.js"></script>
+    <script src="./scripts/chatbot.js"></script>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="876802948446-hq89rbp43opigb73ks5soa3c3gmqmnrj.apps.googleusercontent.com">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123535120-1"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-123535120-1');
+
+            var location = document.getElementById('vresp').innerHTML;
+            var location = document.getElementById('vresp1').innerHTML;
+            var location = document.getElementById('vresp2').innerHTML;
+          </script>
+
+  </head>
+  <body>
+  <main class="page__main">
+    <div class="block--background">
+      <div class="chatbot__overview">
+        <ul class="chatlist">
+          <li class="bot__output bot__output--standard"><img id="profilePic" src="pics/wm.png" style="width:100px"><br/><span id="vresp2"></span></li>
+          <li class="bot__output bot__output--standard">You're scheduled at: <span id="vresp1">Please Login</span></li>
+          <li class="bot__output bot__output--standard">
+            <span class="bot__output--second-sentence">What can I help you with?</span>
+            <ul>
+              <li class="input__nested-list">Something <span class="bot__command">about</span> Mees</li>
+              <li class="input__nested-list">Mees' <span class="bot__command">best work</span></li>
+              <li class="input__nested-list">Maybe I could <span class="bot__command">help</span> (for more instructions)</li>
+              <li class="input__nested-list">Type <span class="bot__command">commands</span> for a list of every command</li>
+            </ul>
+            Your current location is reading:<br/>
+            <span id="vresp">Need location permission</span>
+          </li>
+        </ul>
+      </div>
+      <div class="chatbox-area">
+        <form action="" id="chatform">
+            <textarea placeholder="Talk to me!" class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
+            <input class="submit-button" type="submit" value="send">
+        </form>
+      </div>
+    </div>
+
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+
+<script>
+  var loading = function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    e.target.classList.add('loading');
+    e.target.setAttribute('disabled','disabled');
+    setTimeout(function(){
+      e.target.classList.remove('loading');
+      e.target.removeAttribute('disabled');
+    },1500);
+    setTimeout(function(){
+    location.href = 'https://woodandmortar.github.io/store/store.html';
+  },2500);
+  };
+
+  var btns = document.querySelectorAll('button');
+  for (var i=btns.length-1;i>=0;i--) {
+    btns[i].addEventListener('click',loading);
+  }
+
+
+  function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    var fName = profile.getName();
+    var userImage = profile.getImageUrl();
+    document.getElementById('vresp2').innerHTML = profile.getName();
+    document.getElementById('profilePic').src = userImage;
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    switch(profile.getEmail()){
+      default:
+          setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/store/store.html';}, 6000);
+          break;
+          case 'micheal.mfg@gmail.com':
+          setTimeout(function(){window.location.href = '/micheal.html';}, 3500);
+                break;
+          case 'woodmortar@gmail.com':
+          setTimeout(function(){window.location.href = '/micheal.html';}, 3500);
+                                  break;
+          case 'crycellaf@gmail.com':
+          setTimeout(function(){window.location.href = '/crycella.html';}, 3500);
+                                  break;
+          case 'ci.lead.developer@gmail.com':
+          setTimeout(function(){window.location.href = '/ci.html';}, 3500);
+                                  break;
+          case 'claporgetbang@gmail.com':
+          setTimeout(function(){window.location.href = '/ewhite.html';}, 3500);
+                                  break;
+          case 'scott.randall.w@gmail.com':
+          setTimeout(function(){window.location.href = '/rscott.html';}, 3500);
+                                  break;
+   }
+
+  }
+</script>
+
+
+
+
+  </body>
+</html>

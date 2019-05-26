@@ -113,24 +113,29 @@ function onSignIn(googleUser) {
         setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/store/store.html';}, 6000);
         break;
         case 'micheal.mfg@gmail.com':
-            document.getElementById('vresp7').innerHTML = "Meeting at 9am Martiny Bid 1030am second meeting with Heather Stiller 1200am Complete Drywall house";
-            document.getElementById('vresp8').innerHTML = "Ipad tape compressor hose batteries Mud knife Mud pan tape sandpaper knife";
+            document.getElementById('vresp7').innerHTML = "9am - Martiny Bid, 1030am - Heather Stiller Meeting, 1200am - Complete 2635 N 22nd St";
+            document.getElementById('vresp8').innerHTML = "Ipad, tape, compressor, hose, batteries, Mud knife, Mud pan, tape, sandpaper, knife";
           break;
         case 'woodmortar@gmail.com':
-        setTimeout(function(){window.location.href = '/micheal.html';}, 3500);
-                                break;
+            document.getElementById('vresp7').innerHTML = "9am - Martiny Bid, 1030am - Heather Stiller Meeting, 1200am - Complete 2635 N 22nd St";
+            document.getElementById('vresp8').innerHTML = "Ipad, tape, compressor, hose, batteries, Mud knife, Mud pan, tape, sandpaper, knife";
+          break;
         case 'crycellaf@gmail.com':
-        setTimeout(function(){window.location.href = '/crycella.html';}, 3500);
-                                break;
+            document.getElementById('vresp7').innerHTML = "9am - Martiny Bid, 1030am - Heather Stiller Meeting, 1200am - Complete 2635 N 22nd St";
+            document.getElementById('vresp8').innerHTML = "Ipad, tape, compressor, hose, batteries, Mud knife, Mud pan, tape, sandpaper, knife";
+          break;
         case 'ci.lead.developer@gmail.com':
-        setTimeout(function(){window.location.href = '/ci.html';}, 3500);
-                                break;
+            document.getElementById('vresp7').innerHTML = "9am - Martiny Bid, 1030am - Heather Stiller Meeting, 1200am - Complete 2635 N 22nd St";
+            document.getElementById('vresp8').innerHTML = "Ipad, tape, compressor, hose, batteries, Mud knife, Mud pan, tape, sandpaper, knife";
+          break;
         case 'claporgetbang@gmail.com':
-        setTimeout(function(){window.location.href = '/ewhite.html';}, 3500);
-                                break;
+            document.getElementById('vresp7').innerHTML = "2635 N 22nd St : Complete all Drywall and begin Spraying Texture";
+            document.getElementById('vresp8').innerHTML = "Tape, compressor, air hose, Mud knife, Mud pan, sandpaper";
+          break;
         case 'scott.randall.w@gmail.com':
-        setTimeout(function(){window.location.href = '/rscott.html';}, 3500);
-                                break;
+            document.getElementById('vresp7').innerHTML = "Meet at 9am at 10316 Cody : Cris and Jay Martiny ";
+            document.getElementById('vresp8').innerHTML = "Notepad, General Tile tools, plumbing tools, and prep";
+          break;
  }
 
 }
@@ -436,24 +441,141 @@ function onSignIn(googleUser) {
 
               "clockin" : function(){
               responseText("You are now clocked in");
-              var project = document.getElementById('vresp7').innerHTML;
-              var task = document.getElementById('vresp8').innerHTML;
-              var location = document.getElementById('vresp9').innerHTML;
 
-                $.ajax({
-                  url: "https://docs.google.com/forms/d/e/1FAIpQLSfGrQPtd0BMak84g5t6pp5Qnpd5AoYmUPXj100I_4Rqg9-blA/formResponse",
-                  data:  { "entry.1391362619" : task , "entry.50381592" : project , "entry.1322961902" : location },
-                  type: "POST",
-                  dataType: "xml",
-                  statusCode: {
-                    0: function () {
-              //					alert("Click -OK- to submit message");
-                    },
-                    200: function () {
-              //					alert("Click -OK- to submit message");
-                    }
-                        }
-                });
+              function onSignIn(googleUser) {
+                var profile = googleUser.getBasicProfile();
+                var fName = profile.getName();
+                var userImage = profile.getImageUrl();
+                document.getElementById('vresp1').innerHTML = profile.getName();
+                document.getElementById('profilePic').src = userImage;
+                console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+                switch(profile.getEmail()){
+                  default:
+                      setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/store/store.html';}, 6000);
+                      break;
+                      case 'micheal.mfg@gmail.com':
+                      var project = document.getElementById('vresp7').innerHTML;
+                      var task = document.getElementById('vresp8').innerHTML;
+                      var location = document.getElementById('vresp9').innerHTML;
+
+                        $.ajax({
+                          url: "https://docs.google.com/forms/d/e/1FAIpQLSfGrQPtd0BMak84g5t6pp5Qnpd5AoYmUPXj100I_4Rqg9-blA/formResponse",
+                          data:  { "entry.1391362619" : task , "entry.50381592" : project , "entry.1322961902" : location },
+                          type: "POST",
+                          dataType: "xml",
+                          statusCode: {
+                            0: function () {
+                      //					alert("Click -OK- to submit message");
+                            },
+                            200: function () {
+                      //					alert("Click -OK- to submit message");
+                            }
+                                }
+                        });
+                          break;
+                      case 'woodmortar@gmail.com':
+                      var project = document.getElementById('vresp7').innerHTML;
+                      var task = document.getElementById('vresp8').innerHTML;
+                      var location = document.getElementById('vresp9').innerHTML;
+
+                        $.ajax({
+                          url: "https://docs.google.com/forms/d/e/1FAIpQLSfGrQPtd0BMak84g5t6pp5Qnpd5AoYmUPXj100I_4Rqg9-blA/formResponse",
+                          data:  { "entry.1391362619" : task , "entry.50381592" : project , "entry.1322961902" : location },
+                          type: "POST",
+                          dataType: "xml",
+                          statusCode: {
+                            0: function () {
+                      //					alert("Click -OK- to submit message");
+                            },
+                            200: function () {
+                      //					alert("Click -OK- to submit message");
+                            }
+                                }
+                        });
+                        break;
+                      case 'crycellaf@gmail.com':
+                      var project = document.getElementById('vresp7').innerHTML;
+                      var task = document.getElementById('vresp8').innerHTML;
+                      var location = document.getElementById('vresp9').innerHTML;
+
+                        $.ajax({
+                          url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse",
+                          data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
+                          type: "POST",
+                          dataType: "xml",
+                          statusCode: {
+                            0: function () {
+                      //					alert("Click -OK- to submit message");
+                            },
+                            200: function () {
+                      //					alert("Click -OK- to submit message");
+                            }
+                                }
+                        });
+                          break;
+                      case 'ci.lead.developer@gmail.com':
+                      var project = document.getElementById('vresp7').innerHTML;
+                      var task = document.getElementById('vresp8').innerHTML;
+                      var location = document.getElementById('vresp9').innerHTML;
+
+                        $.ajax({
+                          url: "https://docs.google.com/forms/d/e/1FAIpQLSfGrQPtd0BMak84g5t6pp5Qnpd5AoYmUPXj100I_4Rqg9-blA/formResponse",
+                          data:  { "entry.1391362619" : task , "entry.50381592" : project , "entry.1322961902" : location },
+                          type: "POST",
+                          dataType: "xml",
+                          statusCode: {
+                            0: function () {
+                      //					alert("Click -OK- to submit message");
+                            },
+                            200: function () {
+                      //					alert("Click -OK- to submit message");
+                            }
+                                }
+                        });
+                        break;
+                      case 'claporgetbang@gmail.com':
+                      var project = document.getElementById('vresp7').innerHTML;
+                      var task = document.getElementById('vresp8').innerHTML;
+                      var location = document.getElementById('vresp9').innerHTML;
+
+                        $.ajax({
+                          url: "https://docs.google.com/forms/d/e/1FAIpQLSeRQc8USwknbnE5cw3mndz2qaPBVpwl58kF6EpPshAH3Cc4YQ/formResponse",
+                          data:  { "entry.1799616567" : task , "entry.834843107" : project , "entry.407187055" : location },
+                          type: "POST",
+                          dataType: "xml",
+                          statusCode: {
+                            0: function () {
+                      //					alert("Click -OK- to submit message");
+                            },
+                            200: function () {
+                      //					alert("Click -OK- to submit message");
+                            }
+                                }
+                        });
+                        break;
+                      case 'scott.randall.w@gmail.com':
+                      var project = document.getElementById('vresp7').innerHTML;
+                      var task = document.getElementById('vresp8').innerHTML;
+                      var location = document.getElementById('vresp9').innerHTML;
+
+                        $.ajax({
+                          url: "https://docs.google.com/forms/d/e/1FAIpQLSfXd1tghcFlanVddUIGs_IbcQieTRxyBdsVfYfizougvtl9Tw/formResponse",
+                          data:  { "entry.1911758555" : task , "entry.1154384407" : project , "entry.2120476047" : location },
+                          type: "POST",
+                          dataType: "xml",
+                          statusCode: {
+                            0: function () {
+                      //					alert("Click -OK- to submit message");
+                            },
+                            200: function () {
+                      //					alert("Click -OK- to submit message");
+                            }
+                                }
+                        });
+                        break;
+               }
+
+              }
 
               },
 

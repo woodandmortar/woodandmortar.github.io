@@ -31,44 +31,6 @@ var project;
   }
 
 
-var email;
-function onSignIn(googleUser) {
-
-  var profile = googleUser.getBasicProfile();
-  var fName = profile.getName();
-  var userImage = profile.getImageUrl();
-  var email = profile.getEmail();
-  document.getElementById('vresp2').innerHTML = profile.getName();
-  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse";
-  document.getElementById('profilePic').src = userImage;
-  toggleVisibility(document.getElementById('foo'));
-  var location = document.getElementById('vresp').innerHTML;
-
-}
-
-        function onSignInCallback(resp) {
-          gapi.client.load('plus', 'v1', apiClientLoaded);
-        }
-
-        /**
-         * Sets up an API call after the Google API client loads.
-         */
-        function apiClientLoaded() {
-          gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
-        }
-
-        var toggleVisibility = function(element) {
-          if(element.style.display=='block'){
-              element.style.display='none';
-          } else {
-              element.style.display='block';
-          }
-        }
-
-
-
-
-
         var sendForm = document.querySelector('#chatform'),
             textInput = document.querySelector('.chatbox'),
             chatList = document.querySelector('.chatlist'),

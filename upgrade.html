@@ -38,7 +38,7 @@
   </head>
   <body>
   <main class="page__main">
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <div class="block--background">
       <div class="chatbot__overview">
         <ul class="chatlist">
@@ -64,5 +64,33 @@
         </form>
       </div>
     </div>
+
+
+
+
+<script>
+  function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    var fName = profile.getName();
+    var userImage = profile.getImageUrl();
+    document.getElementById('vresp2').innerHTML = profile.getName();
+    document.getElementById('profilePic').src = userImage;
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  }
+  function onSignInCallback(resp) {
+    gapi.client.load('plus', 'v1', apiClientLoaded);
+  }
+
+  /**
+   * Sets up an API call after the Google API client loads.
+   */
+  function apiClientLoaded() {
+    gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
+  }
+</script>
+
+
+
+
   </body>
 </html>

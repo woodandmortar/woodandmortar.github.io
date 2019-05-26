@@ -441,7 +441,7 @@ function onSignIn(googleUser) {
 
               "clockin" : function(){
 
-                      if (profile.getEmail() == 'micheal.mfg@gmail.com'){
+                      if (profile.getEmail() === "micheal.mfg@gmail.com"){
                         responseText("You are now clocked in");
                         var project = document.getElementById('vresp7').innerHTML;
                         var task = document.getElementById('vresp8').innerHTML;
@@ -461,6 +461,9 @@ function onSignIn(googleUser) {
                               }
                                   }
                           });
+                      }
+                      else {
+                        responseText("clockin error");
                       }
 
 

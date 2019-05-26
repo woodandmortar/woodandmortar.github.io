@@ -42,7 +42,7 @@ function onSignIn(googleUser) {
   document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse";
   document.getElementById('profilePic').src = userImage;
   toggleVisibility(document.getElementById('foo'));
-
+  var location = document.getElementById('vresp').innerHTML;
 
 }
 
@@ -362,8 +362,7 @@ function onSignIn(googleUser) {
                     setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/store/store.html';}, 6000);
                     break;
                     case 'micheal.mfg@gmail.com':
-                    var location = document.getElementById('vresp').innerHTML;
-                    document.getElementById('vresp3').innerHTML = "Meeting at 9am Martiny Bid, 1030am second meeting with Heather Stiller, 1200am Complete Drywall house";
+                    document.getElementById('vresp3').innerHTML = 'Meeting at 9am Martiny Bid, 1030am second meeting with Heather Stiller, 1200am Complete Drywall house';
                     document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
                     var project = document.getElementById('vresp2').innerHTML;
                     var task = document.getElementById('vresp3').innerHTML;

@@ -293,14 +293,10 @@
               var project = document.getElementById('vresp2').innerHTML;
               var location = document.getElementById('vresp').innerHTML;
               var task = document.getElementById('vresp3').innerHTML;
-              var mainForm = document.getElementById('vresp0').innerHTML;
-              var entryOne = document.getElementById('vresp01').innerHTML;
-              var entryTwo = document.getElementById('vresp02').innerHTML;
-              var entryThree = document.getElementById('vresp03').innerHTML;
 
                 $.ajax({
                   url: "mainForm",
-                  data:  { "entry.entryOne" : task , "entry.entryTwo" : project , "entry.entryThree" : location },
+                  data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
                   type: "POST",
                   dataType: "xml",
                   statusCode: {

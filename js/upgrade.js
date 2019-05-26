@@ -248,29 +248,29 @@ var project;
           // "hlep" : this.help(),
           "help" : function(){
             responseText("You can type a command in the chatbox")
-            responseText("Something like &quot;Navvy, please show me Mees&rsquo; best work&quot;")
+            responseText("Something like &quot;Morton, please show me Mees&rsquo; best work&quot;")
             responseText("Did you find a bug or problem? Tweet me @MeesRttn")
             commandReset(0);
             return
             },
           "best work" : function(){
-            responseText("I will show you Mees' best work!");
-            responseText("These are his <a href='#animation'>best animations</a>")
-            responseText("These are his <a href='#projects'>best projects</a>")
+            responseText("I will show you your best work!");
+            responseText("These are your <a href='#animation'>best animations</a>")
+            responseText("These are your <a href='#projects'>best projects</a>")
             responseText("Would you like to see how I was built? (Yes/No)")
             commandReset(1);
             return
             },
           "about" : function(){
-            responseText("This is me, Navvy's maker, Mees Rutten");
-            responseText("I'm a 22 year old Communication and Multimedia Design student");
-            responseText("My ambition is to become a great Creative Front-End Developer");
-            responseText("Would you like to know about Mees' vision? (Yes/No)");
+            responseText("I'm Morton, a Java based AI helper for WoodandMortar LLC");
+            responseText("I also help www.salmon.fund with token curation.");
+            responseText("If you have a google account, you're halfway there.");
+            responseText("Would you like to learn more about the salmon.fund (Yes/No)");
             commandReset(2);
             return
             },
           "experience" : function(){
-            responseText("Mees has previously worked at:");
+            responseText("Micheal has previously worked at:");
             responseText("Cobra Systems as web- developer / designer");
             responseText("BIT Students as web- developer / designer");
             responseText("MediaMonks as a junior Front-end Developer");
@@ -278,7 +278,7 @@ var project;
             return
           },
           "hobbies" : function(){
-            responseText("Mees loves:");
+            responseText("WoodandMortar Specialize in:");
             responseText("Coding complicated chatbots");
             responseText("Family time");
             responseText("Going out with friends");
@@ -287,7 +287,7 @@ var project;
             return
           },
           "interests" : function(){
-            responseText("Mees loves:");
+            responseText("Our 2019 aesthetic begin with:");
             responseText("Coding complicated chatbots");
             responseText("Family time");
             responseText("Going out with friends");
@@ -305,24 +305,30 @@ var project;
             return
           },
           "contact" : function(){
-            responseText("email: <a href='mailto:meesrutten@gmail.com?Subject=Hello%20Mees' target='_top'>send me a message</a>");
-            responseText("Twitter: <a href='https://twitter.com/meesrttn'>@MeesRttn</a>");
+            responseText("email: <a href='mailto:micheal.mfg@gmail.com?Subject=Hello%20Micheal' target='_top'>send me a message</a>");
             commandReset(7);
             return
           },
           "commands" : function(){
-            responseText("This is a list of commands Navvy knows:")
-            responseText("help, best work, about, vision, experience, hobbies / interests, contact, rick roll");
+            responseText("This is a list of commands Morton knows:")
+            responseText("help, best work, about, vision, experience, hobbies / interests, contact, schedule");
             commandReset(8);
             return
           },
+          "schedule" : function(){
+            responseText("<a href='https://calendar.google.com/calendar/embed?src=aip7u8uumvhsuh88auhnhhv3o0%40group.calendar.google.com&ctz=America%2FChicago'>View google calender</a>")
+            commandReset(9);
+            return
+          },
+
+
         }
 
         var reactionInput = {
           "best work" : function(){
             //Redirects you to a different page after 3 secs
-            responseText("On this GitHub page you'll find everything about Navvy");
-            responseText("<a href='https://github.com/meesrutten/chatbot'>Navvy on GitHub</a>")
+            responseText("On this GitHub page you'll find everything about Morton");
+            responseText("<a href='https://github.com/meesrutten/chatbot'>Morton on GitHub</a>")
             animationCounter = 1;
             return
           },

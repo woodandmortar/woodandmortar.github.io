@@ -85,8 +85,7 @@
     var t = new Date(tme);
     // alert("Altitude: " + crd.altitude + " \nAltitudeAccuracy: " + crd.altitudeAccuracy);
     var roundAcc = Math.floor(crd.accuracy);
-    location = crd.latitude + ' ' + crd.longitude;
-
+    var location = crd.latitude + ' ' + crd.longitude;
   }
 
   /* Error Codes: 1 PERMISSION_DENIED, 2 POSITION_UNAVAILABLE, 3 TIMEOUT */
@@ -103,14 +102,13 @@
     document.getElementById('vresp2').innerHTML = profile.getName();
     document.getElementById('vresp4').innerHTML = profile.getName();
     document.getElementById('profilePic').src = userImage;
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-
 
     // Verifies google account on location access and runs this code
 
       switch(profile.getEmail()){
         default:
-            setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/store/store.html';}, 6000);
+        document.getElementById('vresp3').innerHTML = 'Complete Drywall at 2635 N 22nd St';
+        document.getElementById('vresp5').innerHTML = 'Mud knife, Mud pan, tape, sandpaper/sponge, texture, texture hopper, knockdown knife.';
             break;
             case 'micheal.mfg@gmail.com':
             document.getElementById('vresp0').innerHTML = 'https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse';

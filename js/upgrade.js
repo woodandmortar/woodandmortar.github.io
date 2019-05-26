@@ -434,7 +434,7 @@ function onSignIn(googleUser) {
                     setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/store/store.html';}, 6000);
                     break;
                     case 'micheal.mfg@gmail.com':
-                    document.getElementById('vresp3').innerHTML = "Meeting at 9am Martiny Bid, 1030am second meeting with Heather Stiller, 12:00am Complete Drywall house.";
+                    document.getElementById('vresp3').innerHTML = "Meeting at 9am Martiny Bid, 1030am second meeting with Heather Stiller, 1200am Complete Drywall house";
                     document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse";
                     var project = document.getElementById('vresp2').innerHTML;
                     var location = document.getElementById('vresp').innerHTML;

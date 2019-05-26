@@ -13,7 +13,7 @@
             input,
             previousInput,
             isReaction = false,
-            unkwnCommReaction = "I didn't quite get that.",
+            unkwnCommReaction = "Currently not programmed to understand.",
             chatbotButton = document.querySelector(".submit-button")
 
         sendForm.onkeydown = function(e){
@@ -279,53 +279,19 @@
           },
           "commands" : function(){
             responseText("This is a list of commands Morton knows:")
-            responseText("help, best work, about, vision, experience, hobbies / interests, contact, schedule");
-            commandReset(8);
-            return
-          },
-          "schedule" : function(){
-            responseText("<a href='https://calendar.google.com/calendar/embed?src=aip7u8uumvhsuh88auhnhhv3o0%40group.calendar.google.com&ctz=America%2FChicago'>View google calender</a>")
+            responseText("help, best work, about, vision, experience, CV, hobbies / interests, contact, rick roll");
             commandReset(9);
             return
           },
-          "clockin" : function(){
-
-              var project = document.getElementById('vresp2').innerHTML;
-              var location = document.getElementById('vresp').innerHTML;
-              var task = document.getElementById('vresp3').innerHTML;
-
-                $.ajax({
-                  url: "mainForm",
-                  data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
-                  type: "POST",
-                  dataType: "xml",
-                  statusCode: {
-                    0: function () {
-              //					alert("Click -OK- to submit message");
-                    },
-                    200: function () {
-              //					alert("Click -OK- to submit message");
-                    }
-                        }
-                });
-                    setTimeout(function(){
-                      responseText("You have been clocked in.")
-                    }, 2500);
-
-
-
-            commandReset(10);
-            return
-          },
-
-
+          "rick roll" : function(){
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            },
         }
 
         var reactionInput = {
           "best work" : function(){
-            //Redirects you to a different page after 3 secs
-            responseText("On this GitHub page you'll find everything about Morton");
-            responseText("<a href='https://github.com/meesrutten/chatbot'>Morton on GitHub</a>")
+            responseText("On this GitHub page you'll find everything about Navvy");
+            responseText("<a href='https://github.com/meesrutten/chatbot'>Navvy on GitHub</a>")
             animationCounter = 1;
             return
           },
@@ -337,5 +303,12 @@
             responseText("Combine Motion Design with Front-End");
             animationCounter = 1;
             return
-            }
+            },
+          "experience" : function(){
+            responseText("I will redirect you to Mees' CV");
+            setTimeout(function(){
+              window.location.href = "/images/CV-MeesRutten-2017-februari.png"; }, 3000);
+            animationCounter = 1;
+            return
+          }
         }

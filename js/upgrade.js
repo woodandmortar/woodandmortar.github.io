@@ -346,6 +346,7 @@ var project;
                           setTimeout(function(){
                             window.location.href = 'https://woodandmortar.github.io/clockedin.html';
                           }, 2500);
+                        }
                           break;
                     case 'woodmortar@gmail.com':
                     setTimeout(function(){window.location.href = '/micheal.html';}, 3500);

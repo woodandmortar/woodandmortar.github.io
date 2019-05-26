@@ -40,19 +40,18 @@
     <div class="block--background">
       <div class="chatbot__overview">
         <ul class="chatlist">
-          <li class="bot__output bot__output--standard"><img id="profilePic" src="pics/wm.png" style="width:100px"><br/><span id="vresp1"></span></li>
-          <li class="bot__output bot__output--standard">Geolocation: <br/><span id="vresp9"></span></li>
-          <li class="bot__output bot__output--standard">Your schedule: <span id="vresp7"></span></li>
-          <li class="bot__output bot__output--standard">Materials Needed: <span id="vresp8"></span></li>
+          <li class="bot__output bot__output--standard"><img id="profilePic" src="pics/wm.png" style="width:100px"><br/><span id="vresp1">Please Login</span></li>
+
           <li class="bot__output bot__output--standard">
-            <span class="bot__output--second-sentence">You can ask me a bunch of things!</span>
+            <span class="bot__output--second-sentence">Geolocation: <br/><span id="vresp9">Requesting Access</span></span>
             <ul>
-              <li class="input__nested-list">Something <span class="bot__command">about</span> Mees</li>
-              <li class="input__nested-list"><span class="bot__command">best work</span></li>
+              <li class="input__nested-list">Tell me to <span class="bot__command">Clockin</span></li>
+              <li class="input__nested-list">Also I can <span class="bot__command">Clockout</span></li>
               <li class="input__nested-list">Maybe I could <span class="bot__command">help</span> (for more instructions)</li>
               <li class="input__nested-list">Type <span class="bot__command">commands</span> for a list of every command</li>
             </ul>
           </li>
+          <li class="bot__output bot__output--standard">Your schedule: <span id="vresp7">Pending</span><br/>Materials Needed: <span id="vresp8">Pending</span></li>
         </ul>
       </div>
       <div class="chatbox-area">
@@ -76,13 +75,6 @@ var project;
 var task;
 var fName;
 var userImage;
-
-document.getElementById('vresp1').innerHTML = " Please Login";
-document.getElementById('vresp7').innerHTML = " Locating";
-document.getElementById('vresp8').innerHTML = " Pending";
-document.getElementById('vresp9').innerHTML = " Requesting Access";
-
-
 
   function startGeoLookup() {
     navigator.geolocation.getCurrentPosition(success, error);
@@ -110,30 +102,36 @@ document.getElementById('vresp9').innerHTML = " Requesting Access";
 
 
 function onSignIn(googleUser) {
-
   var profile = googleUser.getBasicProfile();
   var fName = profile.getName();
   var userImage = profile.getImageUrl();
-  var email = profile.getEmail();
   document.getElementById('vresp1').innerHTML = profile.getName();
-  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse";
   document.getElementById('profilePic').src = userImage;
-
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
   switch(profile.getEmail()){
     default:
         setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/store/store.html';}, 6000);
         break;
         case 'micheal.mfg@gmail.com':
-        document.getElementById('vresp7').innerHTML = "Meeting at 9am Martiny Bid 1030am second meeting with Heather Stiller 1200am Complete Drywall house";
-        document.getElementById('vresp8').innerHTML = "Ipad tape compressor hose batteries Mud knife Mud pan tape sandpaper sponge texture texture hopper knockdown knife";
-              break;
+            document.getElementById('vresp7').innerHTML = "Meeting at 9am Martiny Bid 1030am second meeting with Heather Stiller 1200am Complete Drywall house";
+            document.getElementById('vresp8').innerHTML = "Ipad tape compressor hose batteries Mud knife Mud pan tape sandpaper knife";
+          break;
         case 'woodmortar@gmail.com':
         setTimeout(function(){window.location.href = '/micheal.html';}, 3500);
                                 break;
         case 'crycellaf@gmail.com':
         setTimeout(function(){window.location.href = '/crycella.html';}, 3500);
                                 break;
-  }
+        case 'ci.lead.developer@gmail.com':
+        setTimeout(function(){window.location.href = '/ci.html';}, 3500);
+                                break;
+        case 'claporgetbang@gmail.com':
+        setTimeout(function(){window.location.href = '/ewhite.html';}, 3500);
+                                break;
+        case 'scott.randall.w@gmail.com':
+        setTimeout(function(){window.location.href = '/rscott.html';}, 3500);
+                                break;
+ }
 
 }
 

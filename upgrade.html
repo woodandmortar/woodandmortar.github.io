@@ -115,9 +115,32 @@ function onSignIn(googleUser) {
         case 'micheal.mfg@gmail.com':
             document.getElementById('vresp7').innerHTML = "9am - Martiny Bid, 1030am - Heather Stiller Meeting, 1200am - Complete 2635 N 22nd St";
             document.getElementById('vresp8').innerHTML = "Ipad, tape, compressor, hose, batteries, Mud knife, Mud pan, tape, sandpaper, knife";
-            possibleInput.push("rick roll" : function(){
-              window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-              },);
+              function myFunction() {
+  if (confirm("Clock in/out")) {
+    document.getElementById("vresp1").innerHTML = "Clock in worked";
+    document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse";
+    var project = document.getElementById('vresp2').innerHTML;
+    var location = document.getElementById('vresp').innerHTML;
+    var task = document.getElementById('vresp3').innerHTML;
+
+      $.ajax({
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSfGrQPtd0BMak84g5t6pp5Qnpd5AoYmUPXj100I_4Rqg9-blA/formResponse",
+        data:  { "entry.1391362619" : task , "entry.50381592" : project , "entry.1322961902" : location },
+        type: "POST",
+        dataType: "xml",
+        statusCode: {
+          0: function () {
+  //					alert("Click -OK- to submit message");
+          },
+          200: function () {
+  //					alert("Click -OK- to submit message");
+          }
+              }
+      });
+  } else {
+    document.getElementById("vresp1").innerHTML = "Clock in failed";
+  }
+}
           break;
         case 'woodmortar@gmail.com':
             document.getElementById('vresp7').innerHTML = "9am - Martiny Bid, 1030am - Heather Stiller Meeting, 1200am - Complete 2635 N 22nd St";
@@ -438,6 +461,9 @@ function onSignIn(googleUser) {
               commandReset(9);
               return
             },
+            "rick roll" : function(){
+              window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              },
 
           }
 

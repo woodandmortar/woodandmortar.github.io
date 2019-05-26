@@ -290,23 +290,34 @@
           },
           "clockin" : function(){
 
-            $.ajax({
-              url: "https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse",
-              data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
-              type: "POST",
-              dataType: "xml",
-              statusCode: {
-                0: function () {
-        //					alert("Click -OK- to submit message");
-                },
-                200: function () {
-        //					alert("Click -OK- to submit message");
-                }
+              var project = document.getElementById('vresp2').innerHTML;
+              var location = document.getElementById('vresp').innerHTML;
+              var task = document.getElementById('vresp3').innerHTML;
+              var mainForm = document.getElementById('vresp0').innerHTML;
+              var entryOne = document.getElementById('vresp01').innerHTML;
+              var entryTwo = document.getElementById('vresp02').innerHTML;
+              var entryThree = document.getElementById('vresp03').innerHTML;
+
+                $.ajax({
+                  url: "mainForm",
+                  data:  { "entry.entryOne" : task , "entry.entryTwo" : project , "entry.entryThree" : location },
+                  type: "POST",
+                  dataType: "xml",
+                  statusCode: {
+                    0: function () {
+              //					alert("Click -OK- to submit message");
+                    },
+                    200: function () {
+              //					alert("Click -OK- to submit message");
                     }
-            });
-                setTimeout(function(){
-                  window.location.href = 'https://woodandmortar.github.io/clockedin.html';
-                }, 2500);
+                        }
+                });
+                    setTimeout(function(){
+                      responseText("You have been clocked in.")
+                    }, 2500);
+
+
+
             commandReset(10);
             return
           },

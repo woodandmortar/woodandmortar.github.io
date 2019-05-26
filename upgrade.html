@@ -441,137 +441,27 @@ function onSignIn(googleUser) {
 
               "clockin" : function(){
 
-                switch(profile.getEmail()){
-                  default:
-                      setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/store/store.html';}, 6000);
-                      break;
-                      case 'micheal.mfg@gmail.com':
-                      responseText("You are now clocked in");
-                      var project = document.getElementById('vresp7').innerHTML;
-                      var task = document.getElementById('vresp8').innerHTML;
-                      var location = document.getElementById('vresp9').innerHTML;
+                      if (profile.getEmail() == 'micheal.mfg@gmail.com'){
+                        responseText("You are now clocked in");
+                        var project = document.getElementById('vresp7').innerHTML;
+                        var task = document.getElementById('vresp8').innerHTML;
+                        var location = document.getElementById('vresp9').innerHTML;
 
-                        $.ajax({
-                          url: "https://docs.google.com/forms/d/e/1FAIpQLSfGrQPtd0BMak84g5t6pp5Qnpd5AoYmUPXj100I_4Rqg9-blA/formResponse",
-                          data:  { "entry.1391362619" : task , "entry.50381592" : project , "entry.1322961902" : location },
-                          type: "POST",
-                          dataType: "xml",
-                          statusCode: {
-                            0: function () {
-                      //					alert("Click -OK- to submit message");
-                            },
-                            200: function () {
-                      //					alert("Click -OK- to submit message");
-                            }
-                                }
-                        });
-                          break;
-                      case 'woodmortar@gmail.com':
-                      responseText("You are now clocked in");
-                      var project = document.getElementById('vresp7').innerHTML;
-                      var task = document.getElementById('vresp8').innerHTML;
-                      var location = document.getElementById('vresp9').innerHTML;
-
-                        $.ajax({
-                          url: "https://docs.google.com/forms/d/e/1FAIpQLSfGrQPtd0BMak84g5t6pp5Qnpd5AoYmUPXj100I_4Rqg9-blA/formResponse",
-                          data:  { "entry.1391362619" : task , "entry.50381592" : project , "entry.1322961902" : location },
-                          type: "POST",
-                          dataType: "xml",
-                          statusCode: {
-                            0: function () {
-                      //					alert("Click -OK- to submit message");
-                            },
-                            200: function () {
-                      //					alert("Click -OK- to submit message");
-                            }
-                                }
-                        });
-                        break;
-                      case 'crycellaf@gmail.com':
-                      responseText("You are now clocked in");
-                      var project = document.getElementById('vresp7').innerHTML;
-                      var task = document.getElementById('vresp8').innerHTML;
-                      var location = document.getElementById('vresp9').innerHTML;
-
-                        $.ajax({
-                          url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse",
-                          data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
-                          type: "POST",
-                          dataType: "xml",
-                          statusCode: {
-                            0: function () {
-                      //					alert("Click -OK- to submit message");
-                            },
-                            200: function () {
-                      //					alert("Click -OK- to submit message");
-                            }
-                                }
-                        });
-                          break;
-                      case 'ci.lead.developer@gmail.com':
-                      responseText("You are now clocked in");
-                      var project = document.getElementById('vresp7').innerHTML;
-                      var task = document.getElementById('vresp8').innerHTML;
-                      var location = document.getElementById('vresp9').innerHTML;
-
-                        $.ajax({
-                          url: "https://docs.google.com/forms/d/e/1FAIpQLSfGrQPtd0BMak84g5t6pp5Qnpd5AoYmUPXj100I_4Rqg9-blA/formResponse",
-                          data:  { "entry.1391362619" : task , "entry.50381592" : project , "entry.1322961902" : location },
-                          type: "POST",
-                          dataType: "xml",
-                          statusCode: {
-                            0: function () {
-                      //					alert("Click -OK- to submit message");
-                            },
-                            200: function () {
-                      //					alert("Click -OK- to submit message");
-                            }
-                                }
-                        });
-                        break;
-                      case 'claporgetbang@gmail.com':
-                      responseText("You are now clocked in");
-                      var project = document.getElementById('vresp7').innerHTML;
-                      var task = document.getElementById('vresp8').innerHTML;
-                      var location = document.getElementById('vresp9').innerHTML;
-
-                        $.ajax({
-                          url: "https://docs.google.com/forms/d/e/1FAIpQLSeRQc8USwknbnE5cw3mndz2qaPBVpwl58kF6EpPshAH3Cc4YQ/formResponse",
-                          data:  { "entry.1799616567" : task , "entry.834843107" : project , "entry.407187055" : location },
-                          type: "POST",
-                          dataType: "xml",
-                          statusCode: {
-                            0: function () {
-                      //					alert("Click -OK- to submit message");
-                            },
-                            200: function () {
-                      //					alert("Click -OK- to submit message");
-                            }
-                                }
-                        });
-                        break;
-                      case 'scott.randall.w@gmail.com':
-                      responseText("You are now clocked in");
-                      var project = document.getElementById('vresp7').innerHTML;
-                      var task = document.getElementById('vresp8').innerHTML;
-                      var location = document.getElementById('vresp9').innerHTML;
-
-                        $.ajax({
-                          url: "https://docs.google.com/forms/d/e/1FAIpQLSfXd1tghcFlanVddUIGs_IbcQieTRxyBdsVfYfizougvtl9Tw/formResponse",
-                          data:  { "entry.1911758555" : task , "entry.1154384407" : project , "entry.2120476047" : location },
-                          type: "POST",
-                          dataType: "xml",
-                          statusCode: {
-                            0: function () {
-                      //					alert("Click -OK- to submit message");
-                            },
-                            200: function () {
-                      //					alert("Click -OK- to submit message");
-                            }
-                                }
-                        });
-                        break;
-               }
+                          $.ajax({
+                            url: "https://docs.google.com/forms/d/e/1FAIpQLSfGrQPtd0BMak84g5t6pp5Qnpd5AoYmUPXj100I_4Rqg9-blA/formResponse",
+                            data:  { "entry.1391362619" : task , "entry.50381592" : project , "entry.1322961902" : location },
+                            type: "POST",
+                            dataType: "xml",
+                            statusCode: {
+                              0: function () {
+                        //					alert("Click -OK- to submit message");
+                              },
+                              200: function () {
+                        //					alert("Click -OK- to submit message");
+                              }
+                                  }
+                          });
+                      }
 
 
               },

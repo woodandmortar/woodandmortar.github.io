@@ -1,36 +1,4 @@
 
-var location;
-var task;
-var project;
-
-  function startGeoLookup() {
-    navigator.geolocation.getCurrentPosition(success, error);
-     $('.overlay, .loader').fadeIn('fast');
-  }
-  startGeoLookup();
-
-  // On Signin
-
-  function success(pos) {
-    $('.overlay, .loader').fadeOut('fast');
-    var crd = pos.coords;
-    var tme = pos.timestamp;
-    var d = new Date(tme);
-    var t = new Date(tme);
-    // alert("Altitude: " + crd.altitude + " \nAltitudeAccuracy: " + crd.altitudeAccuracy);
-    var roundAcc = Math.floor(crd.accuracy);
-    location = crd.latitude + ' ' + crd.longitude;
-
-  }
-
-  /* Error Codes: 1 PERMISSION_DENIED, 2 POSITION_UNAVAILABLE, 3 TIMEOUT */
-  function error(err) {
-    var geoerror = (err.code == (1, 2, 3) ? "Error loading" : err.message);
-    document.getElementById('vresp').innerHTML = geoerror;
-    $('.overlay, .loader').fadeOut('fast');
-  }
-
-
         var sendForm = document.querySelector('#chatform'),
             textInput = document.querySelector('.chatbox'),
             chatList = document.querySelector('.chatlist'),

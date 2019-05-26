@@ -3,78 +3,6 @@ var location;
 var task;
 var project;
 
-document.addEventListener('DOMContentLoaded',function() {
-  document.querySelector('select[name="task"]').onchange=changeEventHandler;
-  document.querySelector('select[name="project"]').onchange=changeEventHandler2;
-},false);
-
-function changeEventHandler(event) {
-    // You can use “this” to refer to the selected element.
-    if(!event.target.value)
-      {
-        document.getElementById('vresp3').innerHTML = 'Please Refresh Page';
-      }
-    else {
-      document.getElementById('vresp3').innerHTML = (event.target.value);
-      document.getElementById("main-contact-form").action = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse";
-      var project = document.getElementById('vresp2').innerHTML;
-      var location = document.getElementById('vresp').innerHTML;
-      var task = document.getElementById('vresp3').innerHTML;
-
-        $.ajax({
-          url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse",
-          data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
-          type: "POST",
-          dataType: "xml",
-          statusCode: {
-            0: function () {
-    //					alert("Click -OK- to submit message");
-            },
-            200: function () {
-    //					alert("Click -OK- to submit message");
-            }
-                }
-        });
-            setTimeout(function(){
-              window.location.href = 'https://woodandmortar.github.io/clockedin.html';
-            }, 2500);
-    }
-}
-
-function changeEventHandler2(event) {
-    // You can use “this” to refer to the selected element.
-    if(!event.target.value)
-      {
-        document.getElementById('vresp2').innerHTML = 'Please Refresh Page';
-      }
-    else {
-      if(document.getElementById('project').value == "2616 N 8th St")
-      {
-      toggleVisibility(document.getElementById('foo7'));
-      document.getElementById('vresp2').innerHTML = (event.target.value);
-      }
-      if(document.getElementById('project').value == "2635 N 22nd St")
-      {
-      toggleVisibility(document.getElementById('foo5'));
-      document.getElementById('vresp2').innerHTML = (event.target.value);
-      }
-      if(document.getElementById('project').value == "1525 N 51st St")
-      {
-      toggleVisibility(document.getElementById('foo6'));
-      document.getElementById('vresp2').innerHTML = (event.target.value);
-      }
-      if(document.getElementById('project').value == "10316 Cody")
-      {
-      toggleVisibility(document.getElementById('foo8'));
-      document.getElementById('vresp2').innerHTML = (event.target.value);
-      }
-         }
-                                    }
-
-
-
-
-
   function startGeoLookup() {
     navigator.geolocation.getCurrentPosition(success, error);
      $('.overlay, .loader').fadeIn('fast');
@@ -103,7 +31,7 @@ function changeEventHandler2(event) {
   }
 
 
-var email ="micheal.mfg@gmail.com";
+var email;
 function onSignIn(googleUser) {
 
   var profile = googleUser.getBasicProfile();

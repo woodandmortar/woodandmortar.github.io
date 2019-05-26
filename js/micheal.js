@@ -48,10 +48,28 @@ function changeEventHandler2(event) {
         document.getElementById('vresp2').innerHTML = 'Please Refresh Page';
       }
     else {
-      toggleVisibility(document.getElementById('foo4'));
+      if(document.getElementById('project').value == "2616 N 8th St")
+      {
+      toggleVisibility(document.getElementById('foo7'));
       document.getElementById('vresp2').innerHTML = (event.target.value);
-    }
-}
+      }
+      if(document.getElementById('project').value == "2635 N 22nd St")
+      {
+      toggleVisibility(document.getElementById('foo5'));
+      document.getElementById('vresp2').innerHTML = (event.target.value);
+      }
+      if(document.getElementById('project').value == "1525 N 51st St")
+      {
+      toggleVisibility(document.getElementById('foo6'));
+      document.getElementById('vresp2').innerHTML = (event.target.value);
+      }
+      if(document.getElementById('project').value == "10316 Cody")
+      {
+      toggleVisibility(document.getElementById('foo8'));
+      document.getElementById('vresp2').innerHTML = (event.target.value);
+      }
+         }
+                                    }
 
 
 

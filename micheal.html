@@ -72,94 +72,115 @@
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='#';}"></iframe>
   <form action="https://docs.google.com/forms/d/e/1FAIpQLSdvXT57YthGUIFqmd_4yFu8Wm1QkkVgFO7kf3DLTdTmdvRVVg/formResponse" id="main-contact-form" target="hidden_iframe" onsubmit="submitted=true;" >
 
-    <div class="form-group" id="foo" >
-      <div class="select">
-        <select font-size=25 id="project" name="project" required="required">
-          <option value="">Select Project</option>
-          <option value="3006 N Parkwood Blvd">3006 N Parkwood Blvd</option>
-          <option value="1525 N 51st St">1525 N 51st St</option>
-          <option value="2616 N 8th St">2616 N 8th St</option>
-          <option value="10316 Cody">10316 Cody</option>
-          <option value="Logistics">Logistics</option>
-          <option value="Training">Training</option>
-          <option value="8602 E 93rd">8602 E 93rd</option>
-          <option value="10606 Wallace Ave">10606 Wallace Ave</option>
-          <option value="8714 Lee Blvd">8714 Lee Blvd</option>
-          <option value="622 Hardesty Ave">622 Hardesty</option>
-        </select>
-        <div class="select__arrow"></div>
-      </div>
+    <!-- Main Select Menu -->
 
-
-
-        <div class="control-group" id="foo4" style="display:none">
-          <h2>Select Task</h2>
+        <div class="form-group" id="foo" >
           <div class="select">
-            <select id="task" name="task">
-              <option value="">Choose one</option>
-              <option value="Lunch">Lunch</option>
-              <option value="Clock Out">Clock Out</option>
-              <option value="Clean">Clean</option>
-              <option value="Demo">Demo</option>
-              <option value="Drywall">Drywall</option>
-              <option value="Electrical">Electrical</option>
-              <option value="Finish">Finish</option>
-              <option value="Flooring">Flooring</option>
-              <option value="Kitchens">Kitchens</option>
-              <option value="Mortar">Mortar</option>
-              <option value="Paint">Paint</option>
-              <option value="Plumbing">Plumbing</option>
-              <option value="Tucked In">Tucked In</option>
-              <option value="Wood">Wood</option>
+            <select id="project" name="project" required="required">
+              <option value="">Select Project</option>
+              <option value="1525 N 51st St">1525 N 51st St</option>
+              <option value="2635 N 22nd St">2635 N 22nd St</option>
+              <option value="2616 N 8th St">2616 N 8th St</option>
+              <option value="10316 Cody">10316 Cody</option>
+              <option value="Logistics">Logistics</option>
+              <option value="Training">Training</option>
             </select>
             <div class="select__arrow"></div>
           </div>
 
-<br/><br/>
 
-        </div>
-
-      </div>
-
-    </form>
+        <!-- 1525 N 51st Street -->
 
 
-</div></div></div></div>
+            <div class="control-group" id="foo5" style="display:none">
+              <h2>Select Task</h2>
+              <div class="select">
+                <select id="task" name="task">
+                  <option value="">Choose one</option>
+                  <option value="Clock Out">Clock Out</option>
+                  <option value="Drywall Installation">Drywall Installation</option>
+                  <option value="Drywall Finish">Drywall Finish</option>
+                  <option value="Texture">Texture</option>
+                </select>
+                <div class="select__arrow"></div>
+              </div><br/><br/>
+            </div>
 
 
+    <!-- 2635 N 22nd Street -->
+
+            <div class="control-group" id="foo6" style="display:none">
+              <h2>Select Task</h2>
+              <div class="select">
+                <select id="task" name="task">
+                  <option value="">Choose one</option>
+                  <option value="Clock Out">Clock Out</option>
+                  <option value="Trim Install">Trim Install</option>
+                  <option value="Cabinets">Cabinets</option>
+                  <option value="Countertop Install">Countertop Install</option>
+                  <option value="Cabinets">Cabinets</option>
+                  <option value="Light">Light</option>
+                  <option value="Shelves">Shelves</option>
+                  <option value="Plumbing">Plumbing</option>
+                  <option value="Paint">Paint</option>
+                  <option value="Backsplash">Backsplash</option>
+                </select>
+                <div class="select__arrow"></div>
+              </div><br/><br/>
+          </div>
+
+    <!-- 2616 N 8th Street -->
+
+    <div class="control-group" id="foo7" style="display:none">
+      <h2>Select Task</h2>
+      <div class="select">
+        <select id="task" name="task">
+          <option value="">Choose one</option>
+          <option value="Clock Out">Clock Out</option>
+          <option value="Logistics">Logistics</option>
+          <option value="Training">Training</option>
+        </select>
+        <div class="select__arrow"></div>
+      </div><br/><br/>
+    </div>
+
+    <!-- 10316 Cody -->
+
+    <div class="control-group" id="foo8" style="display:none">
+      <h2>Select Task</h2>
+      <div class="select">
+        <select id="task" name="task">
+          <option value="">Choose one</option>
+          <option value="Clock Out">Clock Out</option>
+          <option value="Trim Install">Trim Install</option>
+          <option value="Cabinets">Cabinets</option>
+          <option value="Countertop Install">Countertop Install</option>
+          <option value="Cabinets">Cabinets</option>
+          <option value="Light">Light</option>
+          <option value="Shelves">Shelves</option>
+          <option value="Plumbing">Plumbing</option>
+          <option value="Paint">Paint</option>
+          <option value="Backsplash">Backsplash</option>
+          <option value="Tucked in">Tucked in</option>
+          <option value="Logistics">Logistics</option>
+          <option value="Training">Training</option>
+        </select>
+        <div class="select__arrow"></div>
+      </div><br/><br/>
+    </div>
 
 
+    <!-- End -->
 
-</body>
+          </div>
+        </form>
 
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-123535120-1');
+    <!-- Outside Form -->
 
+    </div></div></div></div>
 
-  var loading = function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    e.target.classList.add('loading');
-    e.target.setAttribute('disabled','disabled');
-    setTimeout(function(){
-      e.target.classList.remove('loading');
-      e.target.removeAttribute('disabled');
-      location.href = "https://goo.gl/forms/2ywmNP6x25QJbkzi2";
-    },1500);
-  };
+    <!-- Outside CSS -->
 
-  var btns = document.querySelectorAll('button');
-  for (var i=btns.length-1;i>=0;i--) {
-    btns[i].addEventListener('click',loading);
-  }
-
-
-
-</script>
-
-</body>
-
-</html>
+    </body>
+    </body>
+    </html>

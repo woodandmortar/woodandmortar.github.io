@@ -14,31 +14,31 @@ function changeEventHandler(event) {
       {
         document.getElementById('vresp3').innerHTML = 'Please Refresh Page';
       }
-    else {
-      document.getElementById('vresp3').innerHTML = (event.target.value);
-      document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSeRQc8USwknbnE5cw3mndz2qaPBVpwl58kF6EpPshAH3Cc4YQ/formResponse";
-      var project = document.getElementById('vresp2').innerHTML;
-      var location = document.getElementById('vresp').innerHTML;
-      var task = document.getElementById('vresp3').innerHTML;
+      else {
+        document.getElementById('vresp3').innerHTML = (event.target.value);
+        document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSeRQc8USwknbnE5cw3mndz2qaPBVpwl58kF6EpPshAH3Cc4YQ/formResponse";
+        var project = document.getElementById('vresp2').innerHTML;
+        var location = document.getElementById('vresp').innerHTML;
+        var task = document.getElementById('vresp3').innerHTML;
 
-        $.ajax({
-          url: "https://docs.google.com/forms/d/e/1FAIpQLSeRQc8USwknbnE5cw3mndz2qaPBVpwl58kF6EpPshAH3Cc4YQ/formResponse",
-          data:  { "entry.1799616567" : task , "entry.834843107" : project , "entry.407187055" : location },
-          type: "POST",
-          dataType: "xml",
-          statusCode: {
-            0: function () {
-    //					alert("Click -OK- to submit message");
-            },
-            200: function () {
-    //					alert("Click -OK- to submit message");
-            }
-                }
-        });
-            setTimeout(function(){
-              window.location.href = 'https://woodandmortar.github.io/clockedin.html';
-            }, 2500);
-    }
+          $.ajax({
+            url: "https://docs.google.com/forms/d/e/1FAIpQLSeRQc8USwknbnE5cw3mndz2qaPBVpwl58kF6EpPshAH3Cc4YQ/formResponse",
+            data:  { "entry.1799616567" : task , "entry.834843107" : project , "entry.407187055" : location },
+            type: "POST",
+            dataType: "xml",
+            statusCode: {
+              0: function () {
+      //					alert("Click -OK- to submit message");
+              },
+              200: function () {
+      //					alert("Click -OK- to submit message");
+              }
+                  }
+          });
+              setTimeout(function(){
+                window.location.href = 'https://woodandmortar.github.io/clockedin.html';
+              }, 2500);
+      }
 }
 
 function changeEventHandler2(event) {
@@ -48,10 +48,28 @@ function changeEventHandler2(event) {
         document.getElementById('vresp2').innerHTML = 'Please Refresh Page';
       }
     else {
-      toggleVisibility(document.getElementById('foo4'));
+      if(document.getElementById('project').value == "2616 N 8th St")
+      {
+      toggleVisibility(document.getElementById('foo7'));
       document.getElementById('vresp2').innerHTML = (event.target.value);
-    }
-}
+      }
+      if(document.getElementById('project').value == "2635 N 22nd St")
+      {
+      toggleVisibility(document.getElementById('foo5'));
+      document.getElementById('vresp2').innerHTML = (event.target.value);
+      }
+      if(document.getElementById('project').value == "1525 N 51st St")
+      {
+      toggleVisibility(document.getElementById('foo6'));
+      document.getElementById('vresp2').innerHTML = (event.target.value);
+      }
+      if(document.getElementById('project').value == "10316 Cody")
+      {
+      toggleVisibility(document.getElementById('foo8'));
+      document.getElementById('vresp2').innerHTML = (event.target.value);
+      }
+         }
+                                    }
 
 
 
@@ -82,17 +100,17 @@ function changeEventHandler2(event) {
   }
 
 
-var email ="claporgetbang@gmail.com";
-function onSignIn(googleUser) {
+  var email ="claporgetbang@gmail.com";
+  function onSignIn(googleUser) {
 
-  var profile = googleUser.getBasicProfile();
-  var fName = profile.getName();
-  var userImage = profile.getImageUrl();
-  var email = profile.getEmail();
-  document.getElementById('vresp2').innerHTML = profile.getName();
-  document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSeRQc8USwknbnE5cw3mndz2qaPBVpwl58kF6EpPshAH3Cc4YQ/formResponse";
-  document.getElementById('profilePic').src = userImage;
-  toggleVisibility(document.getElementById('foo'));
+    var profile = googleUser.getBasicProfile();
+    var fName = profile.getName();
+    var userImage = profile.getImageUrl();
+    var email = profile.getEmail();
+    document.getElementById('vresp2').innerHTML = profile.getName();
+    document.getElementById("main-contact-form").action = "https://docs.google.com/forms/d/e/1FAIpQLSeRQc8USwknbnE5cw3mndz2qaPBVpwl58kF6EpPshAH3Cc4YQ/formResponse";
+    document.getElementById('profilePic').src = userImage;
+    toggleVisibility(document.getElementById('foo'));
 
 
 }

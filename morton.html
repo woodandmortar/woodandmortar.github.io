@@ -35,26 +35,41 @@
 
   </head>
   <body>
+
+    <style>
+
+    .pic1 {
+       width: 100px;
+       top: 30px;
+       position: absolute;
+       right: 200px;
+       z-index: 9999;
+     }
+
+     </style>
+
+
   <main class="page__main">
+    <div class="pic1"><img id="mortonPic" src="pics/hi.gif" style="width:200px"></div>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <div class="block--background">
       <div class="chatbot__overview">
         <ul class="chatlist">
-          <li class="bot__output bot__output--standard"><img id="profilePic" src="pics/wm.png" style="width:100px"><br/><span id="vresp1">Please Login</span></li>
+          <li class="bot__output bot__output--standard"><img id="profilePic" src="pics/wm.png" style="width:100px"><br/><span id="vresp1"><b>Please Login</b></span></li>
 
           <li class="bot__output bot__output--standard">
-            <span class="bot__output--second-sentence">Geolocation: <br/><span id="vresp9">Requesting Access</span></span>
+            <span class="bot__output--second-sentence">Quick access tab:</span>
             <ul>
               <li class="input__nested-list" id="foo1" style="display:none"><a href="javascript:formMicheal()">Clock in/out</a></li>
               <li class="input__nested-list" id="foo2" style="display:none"><a href="javascript:formCrycella()">Clock in/out</a></li>
               <li class="input__nested-list" id="foo3" style="display:none"><a href="javascript:formRandall()">Clock in/out</a></li>
               <li class="input__nested-list" id="foo4" style="display:none"><a href="javascript:formEddie()">Clock in/out</a></li>
-              <li class="input__nested-list">Also I can <span class="bot__command">Clockout</span></li>
-              <li class="input__nested-list">Maybe I could <span class="bot__command">help</span> (for more instructions)</li>
-              <li class="input__nested-list">Type <span class="bot__command">commands</span> for a list of every command</li>
+              <li class="input__nested-list">Your schedule: <span id="vresp7" class="bot__command">Pending</span></li>
+              <li class="input__nested-list">Materials Needed: <span id="vresp8" class="bot__command">Pending</span></li>
+              <li class="input__nested-list">Type <span class="bot__command">help</span> (for more instructions) or <span class="bot__command">commands</span> for a list of every command</li>
+              <li class="input__nested-list">Geolocation: <span id="vresp9" class="bot__command">Requesting Access</span></li>
             </ul>
           </li>
-          <li class="bot__output bot__output--standard">Your schedule: <span id="vresp7">Pending</span><br/>Materials Needed: <span id="vresp8">Pending</span></li>
         </ul>
       </div>
       <div class="chatbox-area">
@@ -353,7 +368,7 @@ function onSignIn(googleUser) {
             //Custom class for styling
             image.classList.add('bot__outputImage');
             //Gets the image
-            image.src = "/images/"+e;
+            image.src = "./pics/"+e;
             chatList.appendChild(image);
 
             animateBotOutput()
@@ -384,75 +399,95 @@ function onSignIn(googleUser) {
           var possibleInput = {
             // "hlep" : this.help(),
             "help" : function(){
+              document.getElementById("mortonPic").src = "./pics/no.gif";
               responseText("You can type a command in the chatbox")
-              responseText("Something like &quot;Morton, please show me Mees&rsquo; best work&quot;")
-              responseText("Did you find a bug or problem? Tweet me @MeesRttn")
+              responseText("Something like &quot;Morton, please show me Kitchens&quot;")
+              responseText("Did you find a bug or problem? Email me at Micheal@salmon.fund")
+              responseImg("Ampersand.gif");
               commandReset(0);
               return
               },
             "best work" : function(){
-              responseText("I will show you your best work!");
-              responseText("These are your <a href='#animation'>best animations</a>")
-              responseText("These are your <a href='#projects'>best projects</a>")
-              responseText("Would you like to see how I was built? (Yes/No)")
+              document.getElementById("mortonPic").src = "./pics/okfine.gif";
+              responseText("I will show you our best work!");
+              responseImg("9gallery.jpg");
+              responseImg("11gallery.jpg");
+              responseImg("21gallery.jpg");
+              responseImg("23gallery.jpg");
+              responseImg("31gallery.jpg");
+              responseText("Would you like to learn more? (Yes/No)")
               commandReset(1);
               return
               },
             "about" : function(){
-              responseText("I'm Morton, a Java based AI helper for WoodandMortar LLC");
+              document.getElementById("mortonPic").src = "./pics/peek.gif";
+              responseText("I'm Morton, the digital assistant for WoodandMortar LLC");
               responseText("I also help www.salmon.fund with token curation.");
-              responseText("If you have a google account, you're halfway there.");
-              responseText("Would you like to learn more about the salmon.fund (Yes/No)");
+              responseText("If you have a google account, I'll be able to remember you.");
+              responseText("Would you like to like to connect? (Yes/No)");
               commandReset(2);
               return
               },
             "experience" : function(){
-              responseText("Micheal has previously worked at:");
-              responseText("Cobra Systems as web- developer / designer");
-              responseText("BIT Students as web- developer / designer");
-              responseText("MediaMonks as a junior Front-end Developer");
+              document.getElementById("mortonPic").src = "./pics/yay.gif";
+              responseText("We've completed 18 High-end to Flip Kitchens in the past 8 months");
+              responseText("We sub-contract 75% of our work load, to Kansas City non-profits through our mentorship platform.");
+              responseText("Micheal Salmon, Founder and Co-Owner pays special attention to project details and workflow ensuring the best possible value.");
+              responseText("Crycella Freitag, Co-Owner and human resource powerhouse manages all aspects of communication, logistics and finance.");
+              responseText("Would you like to see our business plan? (Yes/No)");
               commandReset(3);
               return
             },
-            "hobbies" : function(){
-              responseText("WoodandMortar Specialize in:");
-              responseText("Coding complicated chatbots");
-              responseText("Family time");
-              responseText("Going out with friends");
-              responseText("Working out");
+            "specials" : function(){
+              document.getElementById("mortonPic").src = "./pics/cry.gif";
+              responseText("Summer means decks, patios, and landscaping");
+              responseText("We're ordering our lumber for summer projects, so all appointments made before june 29th get all lumber AT COST.");
+              responseText("$6000 Two-Story decks");
+              responseText("$4000 /room Water Damage Reframe");
+              responseText("$2500 Emperor's Tree House");
               commandReset(4);
               return
             },
-            "interests" : function(){
+            "theme" : function(){
               responseText("Our 2019 aesthetic begin with:");
-              responseText("Coding complicated chatbots");
-              responseText("Family time");
-              responseText("Going out with friends");
-              responseText("Working out");
+              responseText("Chic Grey Walls");
+              responseText("Satin Ultra-White Trim");
+              responseText("Midnight Horse Black Front Door");
+              responseText("Forest Green, Faded Two-Tone Exterior");
+              document.getElementById("mortonPic").src = "./pics/yay.gif";
               commandReset(5);
               return
             },
             "vision" : function(){
-              responseText("Things I want to learn or do:");
-              responseText("Get great at CSS & JS animation");
-              responseText("Create 3D browser experiences");
-              responseText("Learn Three.js and WebGL");
-              responseText("Combine Motion Design with Front-End");
+              document.getElementById("mortonPic").src = "./pics/yay.gif";
+              responseText("We hope to reinvigorate Kansas City...");
+              responseText("By training locals in specialized trades,");
+              responseText("and utilizing our resources to provide valuable materials.");
+              responseText("We use ethereum blockchain technology to invest back into our community,");
+              responseText("giving equal oppourtunity for high yield local property investments.");
               commandReset(6);
               return
             },
             "contact" : function(){
+              document.getElementById("mortonPic").src = "./pics/cry.gif";
               responseText("email: <a href='mailto:micheal.mfg@gmail.com?Subject=Hello%20Micheal' target='_top'>send me a message</a>");
               commandReset(7);
               return
             },
+            "morton" : function(){
+              responseText("UmmmmmHmmmmmm.... Yes?");
+              document.getElementById("mortonPic").src = "./pics/bye.gif";
+              commandReset(8);
+              return
+            },
             "commands" : function(){
+              document.getElementById("mortonPic").src = "./pics/no4.gif";
               responseText("This is a list of commands Morton knows:");
-              responseText("help, best work, about, vision, experience, CV, hobbies / interests, contact, rick roll");
+              responseText("help, best work, about, vision, experience, specials, theme / interests, contact, commercial");
               commandReset(9);
               return
             },
-            "rick roll" : function(){
+            "commercial" : function(){
               window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               },
 
@@ -460,24 +495,29 @@ function onSignIn(googleUser) {
 
           var reactionInput = {
             "best work" : function(){
-              responseText("On this GitHub page you'll find everything about Navvy");
-              responseText("<a href='https://github.com/meesrutten/chatbot'>Navvy on GitHub</a>")
+              document.getElementById("mortonPic").src = "./pics/Ampersand.gif";
+              responseText("<a href='https://woodandmortar.github.io/'>Click the arrows on our homepage</a>")
+              responseText("On this GitHub page you'll find everything about Morton");
+              responseText("<a href='https://github.com/woodandmortar'>WoodandMortar on GitHub</a>")
               animationCounter = 1;
               return
             },
             "about" : function(){
-              responseText("Things I want to learn or do:");
-              responseText("Get great at CSS & JS animation");
-              responseText("Create 3D browser experiences");
-              responseText("Learn Three.js and WebGL");
-              responseText("Combine Motion Design with Front-End");
-              animationCounter = 1;
+              document.getElementById("mortonPic").src = "./pics/Ampersand.gif";
+              responseText("Wait one moment while I check you for cleanliness...");
+              setTimeout(function(){
+                window.location.href = "https://www.salmon.fund/contact-1"; }, 4000);
+                animationCounter = 1;
               return
               },
             "experience" : function(){
-              responseText("I will redirect you to Mees' CV");
+              document.getElementById("mortonPic").src = "./pics/Ampersand.gif";
+              responseText("MetaMask is a Google Chrome browser extention.");
+              responseText("It acts as a Digital wallet for your crypto assets.");
+              responseText("Setup only takes a minute, and it's absolutely FREE.");
+              responseText("I will redirect you to WoodandMortar's Business Plan");
               setTimeout(function(){
-                window.location.href = "/images/CV-MeesRutten-2017-februari.png"; }, 3000);
+                window.location.href = "https://docs.google.com/document/d/1OAgXxoruvHMqD7lyAqu0m1Bq082rXp7g2Z1wcc-vZnY/edit?usp=sharing"; }, 6000);
               animationCounter = 1;
               return
             }
@@ -512,8 +552,8 @@ function formCrycella(){
           var task = document.getElementById('vresp8').innerHTML;
 
             $.ajax({
-              url: "https://docs.google.com/forms/d/e/1FAIpQLSfGrQPtd0BMak84g5t6pp5Qnpd5AoYmUPXj100I_4Rqg9-blA/formResponse",
-              data:  { "entry.1391362619" : task , "entry.50381592" : project , "entry.1322961902" : location },
+              url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse",
+              data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
               type: "POST",
               dataType: "xml",
               statusCode: {
@@ -534,8 +574,8 @@ function formRandall(){
           var task = document.getElementById('vresp8').innerHTML;
 
             $.ajax({
-              url: "https://docs.google.com/forms/d/e/1FAIpQLSfGrQPtd0BMak84g5t6pp5Qnpd5AoYmUPXj100I_4Rqg9-blA/formResponse",
-              data:  { "entry.1391362619" : task , "entry.50381592" : project , "entry.1322961902" : location },
+              url: "https://docs.google.com/forms/d/e/1FAIpQLSfXd1tghcFlanVddUIGs_IbcQieTRxyBdsVfYfizougvtl9Tw/formResponse",
+              data:  { "entry.1911758555" : task , "entry.1154384407" : project , "entry.2120476047" : location },
               type: "POST",
               dataType: "xml",
               statusCode: {
@@ -556,8 +596,8 @@ function formEddie(){
           var task = document.getElementById('vresp8').innerHTML;
 
             $.ajax({
-              url: "https://docs.google.com/forms/d/e/1FAIpQLSfGrQPtd0BMak84g5t6pp5Qnpd5AoYmUPXj100I_4Rqg9-blA/formResponse",
-              data:  { "entry.1391362619" : task , "entry.50381592" : project , "entry.1322961902" : location },
+              url: "https://docs.google.com/forms/d/e/1FAIpQLSeRQc8USwknbnE5cw3mndz2qaPBVpwl58kF6EpPshAH3Cc4YQ/formResponse",
+              data:  { "entry.1799616567" : task , "entry.834843107" : project , "entry.407187055" : location },
               type: "POST",
               dataType: "xml",
               statusCode: {

@@ -60,10 +60,10 @@
           <li class="bot__output bot__output--standard">
             <span class="bot__output--second-sentence">Quick access tab:</span>
             <ul>
-              <li class="input__nested-list" id="foo1" style="display:none"><a href="javascript:formMicheal()">Clock in/out</a></li>
-              <li class="input__nested-list" id="foo2" style="display:none"><a href="javascript:formCrycella()">Clock in/out</a></li>
-              <li class="input__nested-list" id="foo3" style="display:none"><a href="javascript:formRandall()">Clock in/out</a></li>
-              <li class="input__nested-list" id="foo4" style="display:none"><a href="javascript:formEddie()">Clock in/out</a></li>
+              <li class="input__nested-list" id="foo1" style="display:none"><a href="javascript:formMicheal()"><span id="fo1">Clock in/out</span></a></li>
+              <li class="input__nested-list" id="foo2" style="display:none"><a href="javascript:formCrycella()"><span id="fo2">Clock in/out</span></a></li>
+              <li class="input__nested-list" id="foo3" style="display:none"><a href="javascript:formRandall()"><span id="fo3">Clock in/out</span></a></li>
+              <li class="input__nested-list" id="foo4" style="display:none"><a href="javascript:formEddie()"><span id="fo4">Clock in/out</span></a></li>
               <li class="input__nested-list">Your schedule: <span id="vresp7" class="bot__command">Pending</span></li>
               <li class="input__nested-list">Materials Needed: <span id="vresp8" class="bot__command">Pending</span></li>
               <li class="input__nested-list">Type <span class="bot__command">help</span> (for more instructions) or <span class="bot__command">commands</span> for a list of every command</li>
@@ -487,9 +487,40 @@ function onSignIn(googleUser) {
               commandReset(9);
               return
             },
+            "logistics" : function(){
+              document.getElementById("mortonPic").src = "./pics/bye.gif";
+              responseText("Entering logistics mode...");
+              responseText("Please Select RECORD NOW from the quick access menu.");
+              document.getElementById('fo1').innerHTML = "RECORD NOW";
+              document.getElementById('vresp8').innerHTML = "Logistics Start/End";
+              commandReset(10);
+              return
+            },
+            "lunch" : function(){
+              document.getElementById("mortonPic").src = "./pics/bye.gif";
+              responseText("Phew... Rough day.");
+              responseText("Please Select TAKE LUNCH from the quick access menu.");
+              document.getElementById('fo1').innerHTML = "TAKE LUNCH";
+              document.getElementById('vresp8').innerHTML = "LUNCH Start/End";
+              commandReset(11);
+              return
+            },
+            "tucked" : function(){
+              document.getElementById("mortonPic").src = "./pics/yay.gif";
+              responseText("Finally, I was getting worried");
+              responseText("Please Select TUCKED IN from the quick access menu.");
+              document.getElementById('fo1').innerHTML = "TUCKED IN";
+              document.getElementById('vresp8').innerHTML = "TUCKED IN";
+              commandReset(12);
+              return
+            },
             "commercial" : function(){
               window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               },
+            "receipt" : function(){
+              responseText("Please Select Scan when redirected to Google drive.");
+                setTimeout(function() {window.location.href = "https://drive.google.com/drive/folders/0B0YOwoRGCfoFflBDYlVFUkV6cFAwV2VDdmN3VUhieWVMME1za3pfanN0UzNMd2Nsck82d0E?usp=sharing"}, 4000);
+                },
 
           }
 

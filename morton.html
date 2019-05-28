@@ -34,23 +34,21 @@
           </script>
 
   </head>
+  <style>
+
+  .pic1 {
+     top: 20px;
+     position: absolute;
+     right: 20px;
+     z-index: 9999;
+   }
+
+   </style>
+   <div class="pic1"><img id="mortonPic" src="pics/hi.gif" style="width:120px"></div>
+
   <body>
 
-    <style>
-
-    .pic1 {
-       width: 100px;
-       top: 150px;
-       position: absolute;
-       right: 20px;
-       z-index: 9999;
-     }
-
-     </style>
-
-
   <main class="page__main">
-    <div class="pic1"><img id="mortonPic" src="pics/hi.gif" style="width:200px"></div>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <div class="block--background">
       <div class="chatbot__overview">
@@ -492,6 +490,9 @@ function onSignIn(googleUser) {
               responseText("Entering logistics mode...");
               responseText("Please Select RECORD NOW from the quick access menu.");
               document.getElementById('fo1').innerHTML = "RECORD NOW";
+              document.getElementById('fo2').innerHTML = "RECORD NOW";
+              document.getElementById('fo3').innerHTML = "RECORD NOW";
+              document.getElementById('fo4').innerHTML = "RECORD NOW";
               document.getElementById('vresp8').innerHTML = "Logistics Start/End";
               commandReset(10);
               return
@@ -501,6 +502,9 @@ function onSignIn(googleUser) {
               responseText("Phew... Rough day.");
               responseText("Please Select TAKE LUNCH from the quick access menu.");
               document.getElementById('fo1').innerHTML = "TAKE LUNCH";
+              document.getElementById('fo2').innerHTML = "TAKE LUNCH";
+              document.getElementById('fo3').innerHTML = "TAKE LUNCH";
+              document.getElementById('fo4').innerHTML = "TAKE LUNCH";
               document.getElementById('vresp8').innerHTML = "LUNCH Start/End";
               commandReset(11);
               return
@@ -510,6 +514,9 @@ function onSignIn(googleUser) {
               responseText("Finally, I was getting worried");
               responseText("Please Select TUCKED IN from the quick access menu.");
               document.getElementById('fo1').innerHTML = "TUCKED IN";
+              document.getElementById('fo2').innerHTML = "TUCKED IN";
+              document.getElementById('fo3').innerHTML = "TUCKED IN";
+              document.getElementById('fo4').innerHTML = "TUCKED IN";
               document.getElementById('vresp8').innerHTML = "TUCKED IN";
               commandReset(12);
               return

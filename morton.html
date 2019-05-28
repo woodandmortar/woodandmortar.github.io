@@ -63,7 +63,7 @@
               <li class="input__nested-list" id="foo3" style="display:none"><a href="javascript:formRandall()"><span id="fo3">Clock in/out</span></a></li>
               <li class="input__nested-list" id="foo4" style="display:none"><a href="javascript:formEddie()"><span id="fo4">Clock in/out</span></a></li>
               <li class="input__nested-list">Your schedule: <span id="vresp7" class="bot__command">Pending</span></li>
-              <li class="input__nested-list">Materials Needed: <span id="vresp8" class="bot__command">Pending</span></li>
+              <li class="input__nested-list">Comments: <span id="vresp8">Pending</span></li>
               <li class="input__nested-list">Type <span class="bot__command">help</span> (for more instructions) or <span class="bot__command">commands</span> for a list of every command</li>
               <li class="input__nested-list">Geolocation: <span id="vresp9" class="bot__command">Requesting Access</span></li>
             </ul>
@@ -163,8 +163,8 @@ function onSignIn(googleUser) {
           break;
         case 'scott.randall.w@gmail.com':
         toggleVisibility(document.getElementById('foo3'));
-            document.getElementById('vresp7').innerHTML = "Meet at 9am at 10316 Cody : Cris and Jay Martiny ";
-            document.getElementById('vresp8').innerHTML = "Notepad, General Tile tools, plumbing tools, and prep";
+            document.getElementById('vresp7').innerHTML = "Collect Prep Materials from Maggie -> 10316 Cody : Cris and Jay Martiny ";
+            document.getElementById('vresp8').innerHTML = "Finish Prep Kitchen, Lay all prep for flooring, Scuff Sand all cabinets.";
           break;
  }
 

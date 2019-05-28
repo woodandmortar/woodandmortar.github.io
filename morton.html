@@ -58,10 +58,10 @@
           <li class="bot__output bot__output--standard">
             <span class="bot__output--second-sentence">Quick access tab:</span>
             <ul>
-              <li class="input__nested-list" id="foo1" style="display:none"><button href="javascript:formMicheal()" style="height:50px;width:200px;font-size:30px"><span id="fo1">Clock in/out</span></button></li>
-              <li class="input__nested-list" id="foo2" style="display:none"><button href="javascript:formCrycella()" style="height:50px;width:200px;font-size:30px"><span id="fo2">Clock in/out</span></button></li>
-              <li class="input__nested-list" id="foo3" style="display:none"><button href="javascript:formRandall()" style="height:50px;width:200px;font-size:30px"><span id="fo3">Clock in/out</span></button></li>
-              <li class="input__nested-list" id="foo4" style="display:none"><button href="javascript:formEddie()" style="height:50px;width:200px;font-size:30px"><span id="fo4">Clock in/out</span></button></li>
+              <li class="input__nested-list" id="foo1" style="display:none"><button onclick="formMicheal()" style="height:50px;width:200px;font-size:30px"><span id="fo1">Clock in/out</span></button></li>
+              <li class="input__nested-list" id="foo2" style="display:none"><button onclick="formCrycella()" style="height:50px;width:200px;font-size:30px"><span id="fo2">Clock in/out</span></button></li>
+              <li class="input__nested-list" id="foo3" style="display:none"><button onclick="formRandall()" style="height:50px;width:200px;font-size:30px"><span id="fo3">Clock in/out</span></button></li>
+              <li class="input__nested-list" id="foo4" style="display:none"><button onclick="formEddie()" style="height:50px;width:200px;font-size:30px"><span id="fo4">Clock in/out</span></button></li>
               <li class="input__nested-list">Your schedule: <span id="vresp7" class="bot__command">Pending</span></li>
               <li class="input__nested-list">Comments: <span id="vresp8">Pending</span></li>
               <li class="input__nested-list">Type <span class="bot__command">help</span> (for more instructions) or <span class="bot__command">commands</span> for a list of every command</li>
@@ -566,6 +566,7 @@ function formMicheal(){
           var project = document.getElementById('vresp7').innerHTML;
           var location = document.getElementById('vresp9').innerHTML;
           var task = document.getElementById('vresp8').innerHTML;
+          toggleVisibility(document.getElementById('foo1'));
 
             $.ajax({
               url: "https://docs.google.com/forms/d/e/1FAIpQLSfGrQPtd0BMak84g5t6pp5Qnpd5AoYmUPXj100I_4Rqg9-blA/formResponse",
@@ -588,6 +589,7 @@ function formCrycella(){
           var project = document.getElementById('vresp7').innerHTML;
           var location = document.getElementById('vresp9').innerHTML;
           var task = document.getElementById('vresp8').innerHTML;
+          toggleVisibility(document.getElementById('foo2'));
 
             $.ajax({
               url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse",
@@ -610,6 +612,7 @@ function formRandall(){
           var project = document.getElementById('vresp7').innerHTML;
           var location = document.getElementById('vresp9').innerHTML;
           var task = document.getElementById('vresp8').innerHTML;
+          toggleVisibility(document.getElementById('foo3'));
 
             $.ajax({
               url: "https://docs.google.com/forms/d/e/1FAIpQLSfXd1tghcFlanVddUIGs_IbcQieTRxyBdsVfYfizougvtl9Tw/formResponse",
@@ -632,6 +635,7 @@ function formEddie(){
           var project = document.getElementById('vresp7').innerHTML;
           var location = document.getElementById('vresp9').innerHTML;
           var task = document.getElementById('vresp8').innerHTML;
+          toggleVisibility(document.getElementById('foo4'));
 
             $.ajax({
               url: "https://docs.google.com/forms/d/e/1FAIpQLSeRQc8USwknbnE5cw3mndz2qaPBVpwl58kF6EpPshAH3Cc4YQ/formResponse",

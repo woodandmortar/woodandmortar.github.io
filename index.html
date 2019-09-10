@@ -23,11 +23,6 @@
 
       <link rel="stylesheet" href="css/style.css">
 
-
-      <script src="https://apis.google.com/js/platform.js" async defer></script>
-      <meta name="google-signin-client_id" content="876802948446-hq89rbp43opigb73ks5soa3c3gmqmnrj.apps.googleusercontent.com">
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123535120-1"></script>
       <script>
@@ -90,7 +85,6 @@
 
 
 <body>
-<div class="pic1"><img id="profilePic" src="pics/Ampersand.gif" style="width:100px"></div>
 
 <div class="carousel">
   <div class="carousel__nav">
@@ -126,10 +120,10 @@
     <div class="carousel-item__image"></div>
     <div class="carousel-item__info">
       <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">The Perfect Bid</h2>
-      <h1 class="carousel-item__title"><b>Property</b><br/>Consulting</h1>
-      <p class="carousel-item__description">We annotate each step, highlight possible anomalies, or managing your project.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVlat1nCeoW2u7zHolB3bkhaKGvA-z81tUZFWCvv-Gg180CdZf8dikQ0EC3nRatM04AMcNiEGE796c/pub?output=pdf" class="carousel-item__btn">View Bid*</a>
+      <h2 class="carousel-item__subtitle">A Tough of Random</h2>
+      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
+      <p class="carousel-item__description">This irregularly shaped veneer features brown, rust, tan, and grey hues.
+        <br/><br/><b><font size="4"><a class="carousel-item__btn">Autumn Haze Random</a>
         </div>
     </div>
   </div>
@@ -139,7 +133,7 @@
     <div class="carousel-item__info">
       <div class="carousel-item__container">
       <h2 class="carousel-item__subtitle">Seasonal Special</h2>
-      <h1 class="carousel-item__title"><b>Dove Grey</b><br/>Veneer</h1>
+      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
       <p class="carousel-item__description">Pre-order Dove Grey Ashlar 3" veneer at cost!
         <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20would%20like%20to%20be%20added%20to%20the%20veneer%20preorder%20list" >913.280.2336</a></font></b></p>
         </div>
@@ -150,7 +144,7 @@
     <div class="carousel-item__image"></div>
     <div class="carousel-item__info">
       <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Our Gallery</h2>
+      <h2 class="carousel-item__subtitle">A Touch of Random</h2>
       <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
       <p class="carousel-item__description">Property Consultants
         <br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >913.280.2336</a></font></b></p>
@@ -394,8 +388,8 @@
                       <li class="input__nested-list" id="foo4" style="display:none"><button onclick="formJChalmers()" style="height:40px;width:180px;font-size:18px"><span id="fo4">Clock in/out</span></button></li>
                       <li class="input__nested-list" id="foo5" style="display:none"><button onclick="formLTener()" style="height:40px;width:180px;font-size:18px"><span id="fo5">Clock in/out</span></button></li>
                       <li class="input__nested-list" id="foo6" style="display:none"><button onclick="formJRagsdale()" style="height:40px;width:180px;font-size:18px"><span id="fo6">Clock in/out</span></button></li>
-                      <li class="input__nested-list"><span id="vresp7" class="bot__command">Pending</span></li>
-                      <li class="input__nested-list"><span id="vresp8">Pending</span></li>
+                      <li class="input__nested-list"><span id="vresp7" class="bot__command">To view our fall and winter stone options click "Hide/Show" to minimize and cycle through our gallery.</span></li>
+                      <li class="input__nested-list"><span id="vresp8">Great for fireplaces and pits, accent walls, and exterior wraps</span></li>
                       <li class="input__nested-list">Type <span class="bot__command">help</span> (for more instructions) or <span class="bot__command">commands</span> for a list of every command</li>
 
                     </ul>
@@ -432,128 +426,6 @@
           element.style.display='block';
       }
     }
-
-  var location;
-  var project;
-  var task;
-  var fName;
-  var userImage;
-
-    function startGeoLookup() {
-      navigator.geolocation.getCurrentPosition(success, error);
-       $('.overlay, .loader').fadeIn('fast');
-    }
-    startGeoLookup();
-
-    function success(pos) {
-      $('.overlay, .loader').fadeOut('fast');
-      var crd = pos.coords;
-      var tme = pos.timestamp;
-      var d = new Date(tme);
-      var t = new Date(tme);
-      // alert("Altitude: " + crd.altitude + " \nAltitudeAccuracy: " + crd.altitudeAccuracy);
-      var roundAcc = Math.floor(crd.accuracy);
-      document.getElementById('vresp9').innerHTML = crd.latitude + ' ' + crd.longitude;
-    }
-
-    /* Error Codes: 1 PERMISSION_DENIED, 2 POSITION_UNAVAILABLE, 3 TIMEOUT */
-    function error(err) {
-      var geoerror = (err.code == (1, 2, 3) ? "Error loading" : err.message);
-      document.getElementById('vresp').innerHTML = geoerror;
-      $('.overlay, .loader').fadeOut('fast');
-    }
-
-
-  function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    var fName = profile.getName();
-    var userImage = profile.getImageUrl();
-    document.getElementById('vresp1').innerHTML = profile.getName();
-    document.getElementById('profilePic').src = userImage;
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-    switch(profile.getEmail()){
-      default:
-          setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/morton.html';}, 6000);
-          break;
-          case 'micheal.mfg@gmail.com':
-              toggleVisibility(document.getElementById('foo1'));
-              toggleVisibility(document.getElementById('foo2'));
-              toggleVisibility(document.getElementById('foo3'));
-              toggleVisibility(document.getElementById('foo4'));
-              toggleVisibility(document.getElementById('foo5'));
-              toggleVisibility(document.getElementById('foo6'));
-              document.getElementById('fo1').innerHTML = "Admin";
-              document.getElementById('fo2').innerHTML = "Travis Windsor";
-              document.getElementById('fo3').innerHTML = "Joe Carter";
-              document.getElementById('fo4').innerHTML = "Jamari Chalmers";
-              document.getElementById('fo5').innerHTML = "Latishua Tener";
-              document.getElementById('fo6').innerHTML = "Jordan Ragsdale";
-              document.getElementById('vresp7').innerHTML = "Please call Micheal at 913 280 2336 between 730 830am, Monday morning.";
-              document.getElementById('vresp8').innerHTML = "Pending phone conversation.";
-                break;
-          case 'woodmortar@gmail.com':
-          toggleVisibility(document.getElementById('foo1'));
-          toggleVisibility(document.getElementById('foo1'));
-          toggleVisibility(document.getElementById('foo2'));
-          toggleVisibility(document.getElementById('foo3'));
-          toggleVisibility(document.getElementById('foo4'));
-          toggleVisibility(document.getElementById('foo5'));
-          toggleVisibility(document.getElementById('foo6'));
-          document.getElementById('fo1').innerHTML = "Admin";
-          document.getElementById('fo2').innerHTML = "Travis Windsor";
-          document.getElementById('fo3').innerHTML = "Joe Carter";
-          document.getElementById('fo4').innerHTML = "Jamari Chalmers";
-          document.getElementById('fo5').innerHTML = "Latishua Tener";
-          document.getElementById('fo6').innerHTML = "Jordan Ragsdale";
-          document.getElementById('vresp7').innerHTML = "Please call Micheal at 913 280 2336 between 730 830am, Monday morning.";
-          document.getElementById('vresp8').innerHTML = "Pending phone conversation.";
-            break;
-          case 'traviswindsor22@gmail.com':
-          toggleVisibility(document.getElementById('foo2'));
-          document.getElementById('vresp7').innerHTML = "Please call Micheal at 913 280 2336 between 730 830am, Monday morning.";
-          document.getElementById('vresp8').innerHTML = "Pending phone conversation.";
-            break;
-          case 'josephcarter8404@gmail.com':
-          toggleVisibility(document.getElementById('foo3'));
-          document.getElementById('vresp7').innerHTML = "Please call Micheal at 913 280 2336 between 730 830am, Monday morning.";
-          document.getElementById('vresp8').innerHTML = "Pending phone conversation.";
-            break;
-          case 'chalmersjc37@gmail.com':
-          toggleVisibility(document.getElementById('foo4'));
-          document.getElementById('vresp7').innerHTML = "Please call Micheal at 913 280 2336 between 730 830am, Monday morning.";
-          document.getElementById('vresp8').innerHTML = "Pending phone conversation.";
-            break;
-          case 'latishuatener@gmail.com':
-          toggleVisibility(document.getElementById('foo5'));
-          document.getElementById('vresp7').innerHTML = "Please call Micheal at 913 280 2336 between 730 830am, Monday morning.";
-          document.getElementById('vresp8').innerHTML = "Pending phone conversation.";
-            break;
-          case 'jrags60@gmail.com':
-          toggleVisibility(document.getElementById('foo6'));
-          document.getElementById('vresp7').innerHTML = "Please call Micheal at 913 280 2336 between 730 830am, Monday morning.";
-          document.getElementById('vresp8').innerHTML = "Pending phone conversation.";
-            break;
-          case 'open@gmail.com':
-          toggleVisibility(document.getElementById('foo7'));
-          document.getElementById('vresp7').innerHTML = "Please call Micheal at 913 280 2336 between 730 830am, Monday morning.";
-          document.getElementById('vresp8').innerHTML = "Pending phone conversation.";
-            break;
-
-
-   }
-
-  }
-
-          function onSignInCallback(resp) {
-            gapi.client.load('plus', 'v1', apiClientLoaded);
-          }
-
-          /**
-           * Sets up an API call after the Google API client loads.
-           */
-          function apiClientLoaded() {
-            gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
-          }
 
     var sendForm = document.querySelector('#chatform'),
         textInput = document.querySelector('.chatbox'),
@@ -757,7 +629,7 @@
       //Custom class for styling
       image.classList.add('bot__outputImage');
       //Gets the image
-      image.src = "/images/"+e;
+      image.src = "pics/"+e;
       chatList.appendChild(image);
 
       animateBotOutput()
@@ -795,11 +667,28 @@
     var possibleInput = {
       "help" : function(){
         responseText("You can type a command in the chatbox")
-        responseText("Something like &quot;Morton, please show me Micheal&rsquo; best work&quot;")
-        responseText("Did you find a bug or problem? Tweet me @MichealRu")
+        responseText("Something like &quot;Morton, please show me Fall Specials&quot;")
+        responseText("Did you find a bug or problem? Email us at info@woodandmortar.com")
         commandReset(0);
         return
         },
+
+      "fall" : function(){
+        responseText("WoodandMortar's Fall Special for 2019 features veneer stone.")
+        responseText("We are bringing the focus to your home's exterior with fire pits and house wraps or warming up your interior with fireplaces and accent walls.")
+        responseText("With 21 stone options and endless combinations, let's find the perfect color schema for you and your home.")
+        commandReset(0);
+        return
+        },
+
+      "projects" : function(){
+        responseText("Outside of our fall special, WoodandMortar has many other areas of expertise.")
+        responseText("We pride ourselves on our beautiful kitchens, bathrooms, and tile work.")
+        responseText("Email us at info@woodandmortar.com or give us a call at 913-280-2336 to schedule your bid.")
+        commandReset(0);
+        return
+        },
+
       "best work" : function(){
         responseText("I will show you Micheal' best work!");
         //These links will scroll you to another link with #animation or #projects
@@ -810,16 +699,45 @@
         commandReset(1);
         return
         },
+
       "about" : function(){
-        responseText("This is me, Morton's maker, Micheal Salmon");
+        responseText("Hi, I'm Mortan, WoodandMortar's chatbot");
         //Outputs an image
-        responseImg("rsz_Michealface.jpg");
-        responseText("I'm a 20 year old Communication and Multimedia Design student");
-        responseText("My ambition is to become a great Creative Front-End Developer");
-        responseText("Would you like to know about Micheal' vision? (Yes/No)");
+        responseImg("hi.gif");
+        responseText("I'm here to help you learn and navigate!");
+        responseText("Type &quot;founder&quot; to learn about Micheal, &quot;history&quot; to learn about WoodandMortar or &quot;consulting&quot to learn more.");
         commandReset(2);
         return
         },
+
+      "founder" : function(){
+        responseText("WoodandMortar was founded by Micheal Salmon in June 2018 after five years in construction.");
+        responseText("Before this, he was a web developer/designer which is how I get to exist!");
+        //Outputs an image
+        responseImg("peek.gif");
+        responseText("Micheal enjoys going out with friends, coding complicated chatbots, and seeing people's expressions when they walk into their newly finished dream kitchen.");
+        commandReset(2);
+        return
+        },
+
+      "history" : function(){
+        responseText("WoodandMortar LLC was established in 2018");
+        responseText("Though we are pretty young to the scene, we have a lot of experience under our belts.");
+        responseText("In that short amount of time, we have finished more than 60 projects!");
+        responseText("While we specialize in kitchens and bathrooms, we can build a home from the studs up and even beautify your exterior while we're at it!");
+        responseText("This level of well-rounded ensures there is nothing we can't handle!");
+        commandReset(2);
+        return
+        },
+
+      "consulting" : function(){
+        responseText("Wood&Mortar LLC starts with Property Consulting by focusing on construction education.");
+        responseText("We build the perfect bid, giving our clients pick and choose options to fit their budget. Our bids are completely transparent as we annotate each step of the construction process, highlight possible anomalies, and manage your project to completion if needed.");
+        responseText("We are the first step everyone should take before beginning any large project, and your ally in the construction business.");
+        commandReset(2);
+        return
+        },
+
       "experience" : function(){
         responseText("Micheal has previously worked at:");
         responseText("Cobra Systems as web- developer / designer");
@@ -871,7 +789,7 @@
       },
       "commands" : function(){
         responseText("This is a list of commands Morton knows:")
-        responseText("help, best work, about, vision, experience, CV, hobbies / interests, contact, rick roll");
+        responseText("help, best work, about, vision, experience, CV, hobbies / interests, contact, fall, projects, rick roll");
         commandReset(9);
         return
       },
@@ -931,97 +849,7 @@
               }
 
 
-              function formCrycella(){
-                        document.getElementById("vresp1").innerHTML = "Clock in worked";
-                        var project = document.getElementById('vresp7').innerHTML;
-                        var location = document.getElementById('vresp9').innerHTML;
-                        var task = document.getElementById('vresp8').innerHTML;
-                        toggleVisibility(document.getElementById('foo2'));
 
-                          $.ajax({
-                            url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse",
-                            data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
-                            type: "POST",
-                            dataType: "xml",
-                            statusCode: {
-                              0: function () {
-                        //					alert("Click -OK- to submit message");
-                              },
-                              200: function () {
-                        //					alert("Click -OK- to submit message");
-                              }
-                                  }
-                          });
-                        }
-
-              function formTWindsor(){
-                        document.getElementById("vresp1").innerHTML = "Clock in worked";
-                        var project = document.getElementById('vresp7').innerHTML;
-                        var location = document.getElementById('vresp9').innerHTML;
-                        var task = document.getElementById('vresp8').innerHTML;
-                        toggleVisibility(document.getElementById('foo2'));
-
-                          $.ajax({
-                            url: "https://docs.google.com/forms/d/e/1FAIpQLSfoz71NOsz3IAnHPrVu4TwsQBr5n_EfDwX8UOMcinNDLGcdjQ/formResponse",
-                            data:  { "entry.1493901935" : task , "entry.971569004" : project , "entry.29486422" : location },
-                            type: "POST",
-                            dataType: "xml",
-                            statusCode: {
-                              0: function () {
-                        //					alert("Click -OK- to submit message");
-                              },
-                              200: function () {
-                        //					alert("Click -OK- to submit message");
-                              }
-                                  }
-                          });
-                        }
-
-              function formJChalmers(){
-                        document.getElementById("vresp1").innerHTML = "Clock in worked";
-                        var project = document.getElementById('vresp7').innerHTML;
-                        var location = document.getElementById('vresp9').innerHTML;
-                        var task = document.getElementById('vresp8').innerHTML;
-                        toggleVisibility(document.getElementById('foo4'));
-
-                          $.ajax({
-                            url: "https://docs.google.com/forms/d/e/1FAIpQLSeRQc8USwknbnE5cw3mndz2qaPBVpwl58kF6EpPshAH3Cc4YQ/formResponse",
-                            data:  { "entry.1799616567" : task , "entry.834843107" : project , "entry.407187055" : location },
-                            type: "POST",
-                            dataType: "xml",
-                            statusCode: {
-                              0: function () {
-                        //					alert("Click -OK- to submit message");
-                              },
-                              200: function () {
-                        //					alert("Click -OK- to submit message");
-                              }
-                                  }
-                          });
-                        }
-
-              function formLTener(){
-                        document.getElementById("vresp1").innerHTML = "Clock in worked";
-                        var project = document.getElementById('vresp7').innerHTML;
-                        var location = document.getElementById('vresp9').innerHTML;
-                        var task = document.getElementById('vresp8').innerHTML;
-                        toggleVisibility(document.getElementById('foo5'));
-
-                          $.ajax({
-                            url: "https://docs.google.com/forms/d/e/1FAIpQLSf9-cTXzsfKJJ1CLbLreYW58NcUnyK3qpQNUMRHRAkHmxAw0Q/formResponse",
-                            data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
-                            type: "POST",
-                            dataType: "xml",
-                            statusCode: {
-                              0: function () {
-                        //					alert("Click -OK- to submit message");
-                              },
-                              200: function () {
-                        //					alert("Click -OK- to submit message");
-                              }
-                                  }
-                          });
-                        }
 
 </script>
 

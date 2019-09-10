@@ -134,94 +134,64 @@ body {
   background-image: url('../pics/woodmortar.jpg');
 }
 .carousel-item--2 .carousel-item__image{
-  background-image: url('../pics/1gallery.jpg');
+  background-image: url('../pics/2gallery.jpeg');
 }
 .carousel-item--3 .carousel-item__image{
-  background-image: url('../pics/2gallery.jpg');
+  background-image: url('../pics/3gallery.jpeg');
 }
 .carousel-item--4 .carousel-item__image{
-  background-image: url('../pics/3gallery.jpg');
+  background-image: url('../pics/4gallery.jpeg');
 }
 .carousel-item--5 .carousel-item__image{
-  background-image: url('../pics/4gallery.jpg');
+  background-image: url('../pics/5gallery.jpeg');
 }
 .carousel-item--6 .carousel-item__image{
-  background-image: url('../pics/5gallery.jpg');
+  background-image: url('../pics/6gallery.jpeg');
 }
 .carousel-item--7 .carousel-item__image{
-  background-image: url('../pics/6gallery.jpg');
+  background-image: url('../pics/7gallery.jpeg');
 }
 .carousel-item--8 .carousel-item__image{
-  background-image: url('../pics/7gallery.jpg');
+  background-image: url('../pics/8gallery.jpeg');
 }
 .carousel-item--9 .carousel-item__image{
-  background-image: url('../pics/8gallery.jpg');
+  background-image: url('../pics/9gallery.jpeg');
 }
 .carousel-item--10 .carousel-item__image{
-  background-image: url('../pics/9gallery.jpg');
+  background-image: url('../pics/10gallery.jpeg');
 }
 .carousel-item--11 .carousel-item__image{
-  background-image: url('../pics/10gallery.jpg');
+  background-image: url('../pics/11gallery.jpeg');
 }
 .carousel-item--12 .carousel-item__image{
-  background-image: url('../pics/11gallery.jpg');
+  background-image: url('../pics/12gallery.jpeg');
 }
 .carousel-item--13 .carousel-item__image{
-  background-image: url('../pics/12gallery.jpg');
+  background-image: url('../pics/13gallery.jpeg');
 }
 .carousel-item--14 .carousel-item__image{
-  background-image: url('../pics/13gallery.jpg');
+  background-image: url('../pics/14gallery.jpeg');
 }
 .carousel-item--15 .carousel-item__image{
-  background-image: url('../pics/14gallery.jpg');
+  background-image: url('../pics/15gallery.jpeg');
 }
 .carousel-item--16 .carousel-item__image{
-  background-image: url('../pics/15gallery.jpg');
+  background-image: url('../pics/16gallery.jpeg');
 }
 .carousel-item--17 .carousel-item__image{
-  background-image: url('../pics/16gallery.jpg');
+  background-image: url('../pics/17gallery.jpeg');
 }
 .carousel-item--18 .carousel-item__image{
-  background-image: url('../pics/17gallery.jpg');
+  background-image: url('../pics/18gallery.jpeg');
 }
 .carousel-item--19 .carousel-item__image{
-  background-image: url('../pics/18gallery.jpg');
+  background-image: url('../pics/19gallery.jpeg');
 }
 .carousel-item--20 .carousel-item__image{
-  background-image: url('../pics/19gallery.jpg');
+  background-image: url('../pics/20gallery.jpeg');
 }
 .carousel-item--21 .carousel-item__image{
-  background-image: url('../pics/20gallery.jpg');
-}
-.carousel-item--22 .carousel-item__image{
-  background-image: url('../pics/21gallery.jpg');
-}
-.carousel-item--23 .carousel-item__image{
-  background-image: url('../pics/22gallery.jpg');
-}
-.carousel-item--24 .carousel-item__image{
-  background-image: url('../pics/23gallery.jpg');
-}
-.carousel-item--32 .carousel-item__image{
-  background-image: url('../pics/31gallery.jpg');
-}
-.carousel-item--33 .carousel-item__image{
-  background-image: url('../pics/32gallery.jpg');
-}
-.carousel-item--34 .carousel-item__image{
-  background-image: url('../pics/33gallery.jpg');
-}
-.carousel-item--35 .carousel-item__image{
-  background-image: url('../pics/34gallery.jpg');
-}
-.carousel-item--36 .carousel-item__image{
-  background-image: url('../pics/35gallery.jpg');
-}
-.carousel-item--37 .carousel-item__image{
-  background-image: url('../pics/36gallery.jpg');
-}
-.carousel-item--38 .carousel-item__image{
-  background-image: url('../pics/37gallery.jpg');
+  background-image: url('../pics/21gallery.jpeg');
 }
 
 
@@ -393,7 +363,7 @@ transform: translateX(0);
 	font-size: 12px;
 	right: 24px;
 	position: fixed;
-	width: 300px;
+	width: 400px;
 }
 
 #live-chat header {

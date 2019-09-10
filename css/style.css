@@ -193,7 +193,9 @@ body {
 .carousel-item--21 .carousel-item__image{
   background-image: url('../pics/21gallery.jpeg');
 }
-
+.carousel-item--22 .carousel-item__image{
+  background-image: url('../pics/22gallery.jpeg');
+}
 
 .carousel-item__container{
 

@@ -10,7 +10,7 @@
       <html class="no-js" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <meta name="google-signin-client_id" content="876802948446-hq89rbp43opigb73ks5soa3c3gmqmnrj.apps.googleusercontent.com">
-      <META NAME="KEYWORDS" CONTENT="WoodandMortar LLC, WoodandMortar, Wood and Mortar, property maintenance, home improvement, home repair, house repair, house improvement, design, home design, designers, kitchen remodel, bathroom remodel, kitchen design, kitchen makeover, improvement, kitchen, bathroom, small kitchen remodel, Painters, Painting, woodworking, tile, home repair, Contractors, Home, Home Renovations, Wood, wood&mortar, wood & mortar, brick, stucco, Wood and Mortar, WoodandMortar">
+      <META NAME="KEYWORDS" CONTENT="WoodandMortar LLC, WoodandMortar, Wood and Mortar, property maintenance, home improvement, home repair, house repair, house improvement, design, home design, designers, kitchen remodel, bathroom remodel, cement, stone, veneer, kitchen, bathroom, veneer stone, Painters, Painting, fireplace, tile, home repair, Contractors, Home, Home Renovations, Wood, wood&mortar, wood & mortar, brick, stucco, Wood and Mortar, WoodandMortar">
       <META NAME="ROBOTS" CONTENT="ALL,FOLLOW">
         <script src="https://apis.google.com/js/platform.js" async defer></script>
           <meta name="description" content="Property Consultants">
@@ -129,6 +129,36 @@ button.loading {
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
+
+
+
+
+
+<div  class="newsletter-overlay">
+
+  <div id="newsletter-popup">
+    <a href="#" class="popup-close">X</a>
+    <div class="newsletter-in">
+      <center><h3>Veneer Pre-order</h3>
+      <p>Leave your email to get your stone veneer <br/> <b>AT COST!</b> <i>(limited time)</i></p></center>
+      <form>
+        <div>
+          <input class="newsletter-popup" id="vresp11" name="vresp11" type="text" placeholder="YOUR NAME">
+        </div>
+        <div>
+          <input class="newsletter-popup" id="vresp21" name="vresp21" type="text" placeholder="YOUR EMAIL">
+        </div>
+      </form>
+      <br/>
+            <button data-label="submit">Submit</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 <body>
 <div class="pic1"><span id="vresp2" class="carousel-item__btn">Please login</span><br/><img id="profilePic" src="pics/Ampersand.gif" style="width:100px"></div>
 
@@ -154,12 +184,10 @@ button.loading {
       <p class="carousel-item__description">Property Consultants
         <br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >913.280.2336</a></font></b></p>
 <br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Email us</a></font></b>
-
+<span id="vresp9" style="visibility: hidden">Geolocation</span>
 <br/><br/>
       <div class="g-signin2" data-onsuccess="onSignIn"></div>
 
-<br/><br/>
-      <button data-label="Help">Help</button>
         </div>
     </div>
   </div>
@@ -429,45 +457,425 @@ button.loading {
     </div>
   </div>
 
-
-
 </div>
 </body>
+
+
+<div id="live-chat">
+
+  <header class="clearfix">
+
+    <a onclick="togglediv('item')">Hide/Show</a>
+
+  </header>
+
+  <div id="item" class="chat">
+
+        <div class="chat-message-content clearfix">
+
+
+
+
+                <ul class="chatlist">
+                  <li class="bot__output bot__output--standard">
+                    <span class="bot__output--second-sentence">Welcome to Wood&Mortar!</span>
+                    <ul>
+                      <li class="input__nested-list" id="foo1" style="display:none"><button onclick="formMicheal()" style="height:40px;width:180px;font-size:18px"><span id="fo1">Clock in/out</span></button></li>
+                      <li class="input__nested-list" id="foo2" style="display:none"><button onclick="formTWindsor()" style="height:40px;width:180px;font-size:18px"><span id="fo2">Clock in/out</span></button></li>
+                      <li class="input__nested-list" id="foo3" style="display:none"><button onclick="formJCarter()" style="height:40px;width:180px;font-size:18px"><span id="fo3">Clock in/out</span></button></li>
+                      <li class="input__nested-list" id="foo4" style="display:none"><button onclick="formJChalmers()" style="height:40px;width:180px;font-size:18px"><span id="fo4">Clock in/out</span></button></li>
+                      <li class="input__nested-list" id="foo5" style="display:none"><button onclick="formLTener()" style="height:40px;width:180px;font-size:18px"><span id="fo5">Clock in/out</span></button></li>
+                      <li class="input__nested-list" id="foo6" style="display:none"><button onclick="formJRagsdale()" style="height:40px;width:180px;font-size:18px"><span id="fo6">Clock in/out</span></button></li>
+                      <li class="input__nested-list"><span id="vresp7" class="bot__command">Pending</span></li>
+                      <li class="input__nested-list"><span id="vresp8">Pending</span></li>
+                      <li class="input__nested-list">Type <span class="bot__command">help</span> (for more instructions) or <span class="bot__command">commands</span> for a list of every command</li>
+
+                    </ul>
+                  </li>
+                </ul>
+
+                <div class="chatbox-area">
+                  <form action="" id="chatform">
+                      <textarea placeholder="Talk to me!" class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
+                      <input class="submit-button" type="submit" value="send">
+                  </form>
+                </div>
+            </div>
+
+
+
+        </div> <!-- end chat-message-content -->
+
+</div> <!-- end live-chat -->
+
+
+
+
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-
-
-
     <script  src="js/index.js"></script>
 
-  <script>
-    var loading = function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      e.target.classList.add('loading');
-      e.target.setAttribute('disabled','disabled');
-      setTimeout(function(){
-        e.target.classList.remove('loading');
-        e.target.removeAttribute('disabled');
-      },1500);
-      setTimeout(function(){window.location.href = "https://woodandmortar.github.io/morton.html";}, 2500);
+    <script>
+
+
+    var toggleVisibility = function(element) {
+      if(element.style.display=='block'){
+          element.style.display='none';
+      } else {
+          element.style.display='block';
+      }
+    }
+
+    var sendForm = document.querySelector('#chatform'),
+        textInput = document.querySelector('.chatbox'),
+        chatList = document.querySelector('.chatlist'),
+        userBubble = document.querySelectorAll('.userInput'),
+        botBubble = document.querySelectorAll('.bot__output'),
+        animateBotBubble = document.querySelectorAll('.bot__input--animation'),
+        overview = document.querySelector('.chatbot__overview'),
+        hasCorrectInput,
+        imgLoader = false,
+        animationCounter = 1,
+        animationBubbleDelay = 600,
+        input,
+        previousInput,
+        isReaction = false,
+        unkwnCommReaction = "I didn't quite get that.";
+
+    // //fixed that when you scroll to end it doesnt scroll window
+    // chatList.addEventListener('mouseover', function(){
+    //   document.body.style.overflow='hidden';
+    // })
+    // //
+    // chatList.addEventListener('mouseout', function(){
+    //   document.body.style.overflow='auto';
+    //   document.body.style.overflowX='hidden';
+    // })
+
+    sendForm.onkeydown = function(e){
+      if(e.keyCode == 13){
+        e.preventDefault();
+
+        //No mix ups with upper and lowercases
+        var input = textInput.value.toLowerCase();
+
+        //Empty textarea fix
+        if(input.length > 0) {
+          createBubble(input)
+        }
+      }
     };
 
-    var btns = document.querySelectorAll('button');
-    for (var i=btns.length-1;i>=0;i--) {
-      btns[i].addEventListener('click',loading);
+    sendForm.addEventListener('submit', function(e) {
+      //so form doesnt submit page (no page refresh)
+      e.preventDefault();
+
+      //No mix ups with upper and lowercases
+      var input = textInput.value.toLowerCase();
+
+      //Empty textarea fix
+      if(input.length > 0) {
+        createBubble(input)
+      }
+    }) //end of eventlistener
+
+    var createBubble = function(input) {
+      //create input bubble
+      var chatBubble = document.createElement('li');
+      chatBubble.classList.add('userInput');
+
+      //adds input of textarea to chatbubble list item
+      chatBubble.innerHTML = input;
+      console.log('input = '+input);
+
+      //adds chatBubble to chatlist
+      chatList.appendChild(chatBubble)
+
+      checkInput(input);
+    }
+
+    var checkInput = function(input) {
+      hasCorrectInput = false;
+      isReaction = false;
+      //Checks all text values in possibleInput
+      for(var textVal in possibleInput){
+
+        // if(input.includes(textVal) == true){
+        //   console.log("include succes");
+        // }
+
+        //If user reacts with "yes" and the previous input was in textVal
+        if(input == "yes" || input.indexOf("yes") >= 0){
+          if(previousInput == textVal) {
+            console.log("sausigheid");
+
+            isReaction = true;
+            hasCorrectInput = true;
+            botResponse(textVal);
+          }
+        }
+        if(input == "no" && previousInput == textVal){
+          unkwnCommReaction = "For a list of commands type: Commands";
+          unknownCommand("I'm sorry to hear that :(")
+          unknownCommand(unkwnCommReaction);
+          hasCorrectInput = true;
+        }
+        //Is a word of the input also in possibleInput object?
+        if(input == textVal || input.indexOf(textVal) >=0 && isReaction == false){
+    			console.log("succes");
+          hasCorrectInput = true;
+          botResponse(textVal);
+    		}
+    	}
+      //When input is not in possibleInput
+      if(hasCorrectInput == false){
+        console.log("failed");
+        unknownCommand(unkwnCommReaction);
+        hasCorrectInput = true;
+      }
+    }
+
+    // debugger;
+
+    function botResponse(textVal) {
+      //create response bubble
+      var userBubble = document.createElement('li');
+      userBubble.classList.add('bot__output');
+
+      console.log(isReaction);
+      console.log("previnp= "+previousInput);
+      console.log("texval= "+textVal);
+      if(isReaction == true){
+        if (typeof reactionInput[textVal] === "function") {
+        //adds input of textarea to chatbubble list item
+          userBubble.innerHTML = reactionInput[textVal]();
+        } else {
+          userBubble.innerHTML = reactionInput[textVal];
+        }
+      }
+
+      if(isReaction == false){
+        //Is the command a function?
+        if (typeof possibleInput[textVal] === "function") {
+          // console.log(possibleInput[textVal] +" is a function");
+        //adds input of textarea to chatbubble list item
+          userBubble.innerHTML = possibleInput[textVal]();
+        } else {
+          userBubble.innerHTML = possibleInput[textVal];
+        }
+      }
+      //add list item to chatlist
+      chatList.appendChild(userBubble) //adds chatBubble to chatlist
+
+      // reset text area input
+      textInput.value = "";
+    }
+
+    function unknownCommand(unkwnCommReaction) {
+      // animationCounter = 1;
+
+      //create response bubble
+      var failedResponse = document.createElement('li');
+
+      failedResponse.classList.add('bot__output');
+      failedResponse.classList.add('bot__output--failed');
+
+      //Add text to failedResponse
+      failedResponse.innerHTML = unkwnCommReaction; //adds input of textarea to chatbubble list item
+
+      //add list item to chatlist
+      chatList.appendChild(failedResponse) //adds chatBubble to chatlist
+
+      animateBotOutput();
+
+      // reset text area input
+      textInput.value = "";
+
+      //Sets chatlist scroll to bottom
+      chatList.scrollTop = chatList.scrollHeight;
+
+      animationCounter = 1;
+    }
+
+    function responseText(e) {
+
+      var response = document.createElement('li');
+
+      response.classList.add('bot__output');
+
+      //Adds whatever is given to responseText() to response bubble
+      response.innerHTML = e;
+
+      chatList.appendChild(response);
+
+      animateBotOutput();
+
+      console.log(response.clientHeight);
+
+      //Sets chatlist scroll to bottom
+      setTimeout(function(){
+        chatList.scrollTop = chatList.scrollHeight;
+      //   // chatList.scrollTop = chatList.scrollTop + response.clientHeight;
+      //   // console.log(chatList.scrollTop = chatList.scrollTop + response.clientHeight);
+        console.log(response.clientHeight);
+      }, 0)
+    }
+
+    function responseImg(e) {
+      var image = new Image();
+
+      image.classList.add('bot__output');
+      //Custom class for styling
+      image.classList.add('bot__outputImage');
+      //Gets the image
+      image.src = "/images/"+e;
+      chatList.appendChild(image);
+
+      animateBotOutput()
+      if(image.completed) {
+        console.log(image.scrollHeight);
+        // chatList.scrollTop = chatList.scrollHeight;
+        chatList.scrollTop = chatList.scrollTop + image.scrollHeight;
+      }
+      else {
+        image.addEventListener('load', function(){
+          console.log(image.scrollHeight);
+          chatList.scrollTop = chatList.scrollTop + image.scrollHeight;
+        })
+      }
+      //Load image so height gets checked after chatlist add
+
+    }
+
+    //change to SCSS loop
+    function animateBotOutput() {
+      // chatList.scrollTop = chatList.scrollTop + response.scrollHeight;
+      chatList.lastElementChild.style.animationDelay= (animationCounter * animationBubbleDelay)+"ms";
+      animationCounter++;
+      chatList.lastElementChild.style.animationPlayState = "running";
+    }
+
+    function commandReset(e){
+      animationCounter = 1;
+      previousInput = Object.keys(possibleInput)[e];
+
+      console.log(previousInput);
     }
 
 
-    function onSignIn(googleUser) {
-      var profile = googleUser.getBasicProfile();
-      var fName = profile.getName();
-      var userImage = profile.getImageUrl();
-      document.getElementById('vresp2').innerHTML = profile.getName();
-      document.getElementById('profilePic').src = userImage;
-      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    var possibleInput = {
+      "help" : function(){
+        responseText("You can type a command in the chatbox")
+        responseText("Something like &quot;Morton, please show me Micheal&rsquo; best work&quot;")
+        responseText("Did you find a bug or problem? Tweet me @MichealRu")
+        commandReset(0);
+        return
+        },
+      "best work" : function(){
+        responseText("I will show you Micheal' best work!");
+        //These links will scroll you to another link with #animation or #projects
+        responseText("These are his <a href='#animation'>best animations</a>")
+        responseText("These are his <a href='#projects'>best projects</a>")
+        responseText("Would you like to see how I was built? (Yes/No)")
+
+        commandReset(1);
+        return
+        },
+      "about" : function(){
+        responseText("This is me, Morton's maker, Micheal Salmon");
+        //Outputs an image
+        responseImg("rsz_Michealface.jpg");
+        responseText("I'm a 20 year old Communication and Multimedia Design student");
+        responseText("My ambition is to become a great Creative Front-End Developer");
+        responseText("Would you like to know about Micheal' vision? (Yes/No)");
+        commandReset(2);
+        return
+        },
+      "experience" : function(){
+        responseText("Micheal has previously worked at:");
+        responseText("Cobra Systems as web- developer / designer");
+        responseText("BIT Students as web- developer / designer");
+        responseText("Would you like to see Micheal' CV? (Yes/No)");
+        commandReset(3);
+        return
+      },
+      "hobbies" : function(){
+        responseText("Micheal loves:");
+        responseText("Coding complicated chatbots");
+        responseText("Family time");
+        responseText("Going out with friends");
+        responseText("Working out");
+        commandReset(4);
+        return
+      },
+      "interests" : function(){
+        responseText("Micheal loves:");
+        responseText("Coding complicated chatbots");
+        responseText("Family time");
+        responseText("Going out with friends");
+        responseText("Working out");
+        commandReset(5);
+        return
+      },
+      "cv" : function(){
+        responseText("I will redirect you to Micheal' CV");
+        //Redirects you to an image
+        setTimeout(function(){
+          window.location.href = "/images/CV-MichealSalmon-2017-februari.png"; }, 3000);
+        commandReset(6);
+        return
+      },
+      "vision" : function(){
+        responseText("Things I want to learn or do:");
+        responseText("Get great at CSS & JS animation");
+        responseText("Create 3D browser experiences");
+        responseText("Learn Three.js and WebGL");
+        responseText("Combine Motion Design with Front-End");
+        commandReset(7);
+        return
+      },
+      "contact" : function(){
+        responseText("email: <a href='mailto:MichealSalmon@gmail.com?Subject=Hello%20Micheal' target='_top'>send me a message</a>");
+        responseText("Twitter: <a href='https://twitter.com/Michealrttn'>@MichealRttn</a>");
+        commandReset(8);
+        return
+      },
+      "commands" : function(){
+        responseText("This is a list of commands Morton knows:")
+        responseText("help, best work, about, vision, experience, CV, hobbies / interests, contact, rick roll");
+        commandReset(9);
+        return
+      },
+      "rick roll" : function(){
+        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        },
     }
+
+    var reactionInput = {
+      "best work" : function(){
+        responseText("On this GitHub page you'll find everything about Morton");
+        responseText("<a href='https://github.com/MichealSalmon/chatbot'>Morton on GitHub</a>")
+        animationCounter = 1;
+        return
+      },
+      "about" : function(){
+        responseText("Things I want to learn or do:");
+        responseText("Get great at CSS & JS animation");
+        responseText("Create 3D browser experiences");
+        responseText("Learn Three.js and WebGL");
+        responseText("Combine Motion Design with Front-End");
+        animationCounter = 1;
+        return
+        },
+      "experience" : function(){
+        responseText("I will redirect you to Micheal' CV");
+        setTimeout(function(){
+          window.location.href = "/images/CV-MichealSalmon-2017-februari.png"; }, 3000);
+        animationCounter = 1;
+        return
+      }
+    }
+
 </script>
-
 
 </body>
 

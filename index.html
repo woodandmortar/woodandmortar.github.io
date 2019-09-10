@@ -43,82 +43,7 @@
          z-index: 9999;
        }
 
-       button {
-	position:relative;
-	border:0;
-	margin:0;
-	padding:0;
-	cursor:pointer;
-	font-size:1rem;
-	font-weight:bold;
-	color:rgba(0,0,0,0);
-	background:transparent;
-	border-radius:.25rem;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-touch-callout: none;
-}
-
-button,
-button:after,
-button:before {
-	padding:.6875rem 2rem;
-	-webkit-transition:-webkit-transform 0.75s,background-color .125s;
-	-moz-transition:-moz-transform 0.75s,background-color .125s;
-	-ms-transition:-ms-transform 0.75s,background-color .125s;
-	transition:transform 0.75s,background-color .125s;
-	-webkit-transform-style:preserve-3d;
-	-moz-transform-style:preserve-3d;
-	-ms-transform-style:preserve-3d;
-	transform-style:preserve-3d;
-}
-
-button:after,
-button:before {
-	position:absolute;
-	top:0;
-	bottom:0;
-	left:0;
-	right:0;
-	border-radius:.25rem;
-	-webkit-backface-visibility:hidden;
-	-moz-backface-visibility:hidden;
-	-ms-backface-visibility:hidden;
-	backface-visibility:hidden;
-
-}
-
-button:before {
-	z-index:2;
-	color:#fff;
-	background-color:#444444;
-	content:attr(data-label);
-}
-
-button:after {
-	z-index:1;
-	background-color:#999;
-	background-repeat:no-repeat;
-	background-position:center center;
-	background-image:url(data:image/gif;base64,R0lGODlhEAAQAPIAAJmZmf///7CwsOPj4////9fX18rKysPDwyH+GkNyZWF0ZWQgd2l0aCBhamF4bG9hZC5pbmZvACH5BAAKAAAAIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQACgABACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkEAAoAAgAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkEAAoAAwAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkEAAoABAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQACgAFACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQACgAGACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAAKAAcALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==);
-	-webkit-transform:rotateX(180deg);
-	-moz-transform:rotateX(180deg);
-	-ms-transform:rotateX(180deg);
-	transform:rotateX(180deg);
-	content:'';
-}
-
-button:active:before {
-	background-color:#3571c8;
-}
-
-button.loading {
-	-webkit-transform:rotateX(180deg);
-	-moz-transform:rotateX(180deg);
-	-ms-transform:rotateX(180deg);
-	transform:rotateX(180deg);
-}
-
-      </style>
+</style>
 
 </head>
 
@@ -140,17 +65,17 @@ button.loading {
     <a href="#" class="popup-close">X</a>
     <div class="newsletter-in">
       <center><h3>Veneer Pre-order</h3>
-      <p>Leave your email to get your stone veneer <br/> <b>AT COST!</b> <i>(limited time)</i></p></center>
+      <p>Email us to inquire about how to get your stone veneer <br/> <b>AT COST!</b> <i>(limited time)</i></p></center>
       <form>
         <div>
-          <input class="newsletter-popup" id="vresp11" name="vresp11" type="text" placeholder="YOUR NAME">
+          <input class="newsletter-popup" id="vName" name="vName" type="text" placeholder="YOUR NAME">
         </div>
         <div>
-          <input class="newsletter-popup" id="vresp21" name="vresp21" type="text" placeholder="YOUR EMAIL">
+          <input class="newsletter-popup" id="vEmail" name="vEmail" type="text" placeholder="YOUR EMAIL">
         </div>
       </form>
       <br/>
-            <button data-label="submit">Submit</button>
+            <button onclick="formVeneer()" style="height:40px;width:180px;font-size:18px">Send Inquiry</button>
     </div>
   </div>
 </div>
@@ -874,6 +799,34 @@ button.loading {
         return
       }
     }
+
+    function formVeneer(){
+
+      $('.newsletter-overlay').hide();
+      setCookie('newsletter-popup', 'popped', 30);
+
+              var vName = document.getElementById('vName').value;
+              var vEmail = document.getElementById('vEmail').value;
+
+
+                $.ajax({
+                  url: "https://docs.google.com/forms/d/e/1FAIpQLSeMohoaLj7xbaSRpd027QOJxkMrEOhuB9ETdNcX4xIbn3TRpA/formResponse",
+                  data:  { "entry.1937233099" : vName , "entry.1351174333" : vEmail },
+                  type: "POST",
+                  dataType: "xml",
+                  statusCode: {
+                    0: function () {
+              //					alert("Click -OK- to submit message");
+                    },
+                    200: function () {
+              //					alert("Click -OK- to submit message");
+                    }
+                        }
+                });
+              }
+
+
+
 
 </script>
 

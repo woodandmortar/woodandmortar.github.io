@@ -931,6 +931,98 @@
                 gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
               }
 
+              function formCrycella(){
+                        document.getElementById("vresp1").innerHTML = "Clock in worked";
+                        var project = document.getElementById('vresp7').innerHTML;
+                        var location = document.getElementById('vresp9').innerHTML;
+                        var task = document.getElementById('vresp8').innerHTML;
+                        toggleVisibility(document.getElementById('foo2'));
+
+                          $.ajax({
+                            url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdJelY-AAwO2k3BO2z9ELxoQmXe-A3HcE-yITKEVeFjcOSUyA/formResponse",
+                            data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
+                            type: "POST",
+                            dataType: "xml",
+                            statusCode: {
+                              0: function () {
+                        //					alert("Click -OK- to submit message");
+                              },
+                              200: function () {
+                        //					alert("Click -OK- to submit message");
+                              }
+                                  }
+                          });
+                        }
+
+              function formTWindsor(){
+                        document.getElementById("vresp1").innerHTML = "Clock in worked";
+                        var project = document.getElementById('vresp7').innerHTML;
+                        var location = document.getElementById('vresp9').innerHTML;
+                        var task = document.getElementById('vresp8').innerHTML;
+                        toggleVisibility(document.getElementById('foo2'));
+
+                          $.ajax({
+                            url: "https://docs.google.com/forms/d/e/1FAIpQLSfoz71NOsz3IAnHPrVu4TwsQBr5n_EfDwX8UOMcinNDLGcdjQ/formResponse",
+                            data:  { "entry.1493901935" : task , "entry.971569004" : project , "entry.29486422" : location },
+                            type: "POST",
+                            dataType: "xml",
+                            statusCode: {
+                              0: function () {
+                        //					alert("Click -OK- to submit message");
+                              },
+                              200: function () {
+                        //					alert("Click -OK- to submit message");
+                              }
+                                  }
+                          });
+                        }
+
+              function formJChalmers(){
+                        document.getElementById("vresp1").innerHTML = "Clock in worked";
+                        var project = document.getElementById('vresp7').innerHTML;
+                        var location = document.getElementById('vresp9').innerHTML;
+                        var task = document.getElementById('vresp8').innerHTML;
+                        toggleVisibility(document.getElementById('foo4'));
+
+                          $.ajax({
+                            url: "https://docs.google.com/forms/d/e/1FAIpQLSeRQc8USwknbnE5cw3mndz2qaPBVpwl58kF6EpPshAH3Cc4YQ/formResponse",
+                            data:  { "entry.1799616567" : task , "entry.834843107" : project , "entry.407187055" : location },
+                            type: "POST",
+                            dataType: "xml",
+                            statusCode: {
+                              0: function () {
+                        //					alert("Click -OK- to submit message");
+                              },
+                              200: function () {
+                        //					alert("Click -OK- to submit message");
+                              }
+                                  }
+                          });
+                        }
+
+              function formLTener(){
+                        document.getElementById("vresp1").innerHTML = "Clock in worked";
+                        var project = document.getElementById('vresp7').innerHTML;
+                        var location = document.getElementById('vresp9').innerHTML;
+                        var task = document.getElementById('vresp8').innerHTML;
+                        toggleVisibility(document.getElementById('foo5'));
+
+                          $.ajax({
+                            url: "https://docs.google.com/forms/d/e/1FAIpQLSf9-cTXzsfKJJ1CLbLreYW58NcUnyK3qpQNUMRHRAkHmxAw0Q/formResponse",
+                            data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
+                            type: "POST",
+                            dataType: "xml",
+                            statusCode: {
+                              0: function () {
+                        //					alert("Click -OK- to submit message");
+                              },
+                              200: function () {
+                        //					alert("Click -OK- to submit message");
+                              }
+                                  }
+                          });
+                        }
+
 </script>
 
 </body>

@@ -671,12 +671,21 @@
         return
         },
 
+       "insurance" : function(){
+        setTimeout(function(){
+        window.location.href = "pics/insurance.pdf"; }, 3000);
+        commandReset(0);
+        return
+        },
+
       "best work" : function(){
-        responseText("I will show you Micheal' best work!");
+        responseText("I will show you some of WoodandMortar recent work!");
         //These links will scroll you to another link with #animation or #projects
-        responseText("These are his <a href='#animation'>best animations</a>")
-        responseText("These are his <a href='#projects'>best projects</a>")
-        responseText("Would you like to see how I was built? (Yes/No)")
+        responseImg("v1.jpeg");
+        responseImg("v2.jpeg");
+        responseImg("v3.jpeg");
+        responseImg("v4.jpeg");
+        responseText("Would you like to see more? (Yes/No)");
 
         commandReset(1);
         return
@@ -697,7 +706,7 @@
         responseText("Before this, he was a web developer/designer which is how I get to exist!");
         //Outputs an image
         responseImg("peek.gif");
-        responseText("Micheal enjoys going out with friends, coding complicated chatbots, and seeing people's expressions when they walk into their newly finished dream kitchen.");
+        responseText("Micheal spends most of his time fundraising for the development of north KCK, and working with Kansas City's disenfranchised.");
         commandReset(2);
         return
         },
@@ -728,29 +737,29 @@
         commandReset(3);
         return
       },
-      "hobbies" : function(){
-        responseText("Micheal loves:");
-        responseText("Coding complicated chatbots");
-        responseText("Family time");
-        responseText("Going out with friends");
-        responseText("Working out");
+      "fundraising" : function(){
+        responseText("The Salmon.fund is a Kansas based 501c3, focused on affordable housing.");
+        responseText("There is two main parts of operation.");
+        responseText("The first is the standard tax exempt donation.");
+        responseText("The second is property investment.");
+        responseText("You can learn more by asking about crypto, or Salmon.fund!");
         commandReset(4);
         return
       },
-      "interests" : function(){
-        responseText("Micheal loves:");
-        responseText("Coding complicated chatbots");
-        responseText("Family time");
-        responseText("Going out with friends");
-        responseText("Working out");
+      "salmon" : function(){
+        responseImg("fund.jpeg");
+        responseText("Thank you for taking the time to learn more about our non-profit.");
+        responseText("The Salmon.fund needs your donations / investments to be able to keep repairing affordable housing.");
+        responseText("It usually takes us 24 hours for convert Paypal funds into crypto / SFND tokens.");
+        responseText("You can donate <a href='https://paypal.me/salmonfund?locale.x=en_US'>here</a>, or calling us at 913.280.2336!");
         commandReset(5);
         return
       },
-      "cv" : function(){
-        responseText("I will redirect you to Micheal' CV");
+      "crypto" : function(){
+        responseText("I will redirect you to Salmon.fund crypto contracts.");
         //Redirects you to an image
         setTimeout(function(){
-          window.location.href = "/images/CV-MichealSalmon-2017-februari.png"; }, 3000);
+          window.location.href = "https://etherscan.io/token/0x6c8b1ad764d3d5f6de14546145c3d9f3f098c6a7"; }, 3000);
         commandReset(6);
         return
       },
@@ -764,14 +773,15 @@
         return
       },
       "contact" : function(){
-        responseText("email: <a href='mailto:MichealSalmon@gmail.com?Subject=Hello%20Micheal' target='_top'>send me a message</a>");
-        responseText("Twitter: <a href='https://twitter.com/Michealrttn'>@MichealRttn</a>");
+        responseText("Email: <a href='mailto:info@woodandmortar.com?Subject=Hello%20Micheal' target='_top'>send me a message</a>");
+        responseText("Phone: <a href='mailto:info@woodandmortar.com?Subject=Hello%20Micheal'>913.280.2336</a>");
+        responseText("<a href='https://www.linkedin.com/in/mfglife/'>Linkedin</a>, <a href='https://paypal.me/salmonfund?locale.x=en_US'>Paypal</a>");
         commandReset(8);
         return
       },
       "commands" : function(){
         responseText("This is a list of commands Morton knows:")
-        responseText("about, best work, commands, consulting, contact, experience, fall, founder, help, history, hobbies, interests, projects, vision, rick roll");
+        responseText("about, best work, commands, consulting, contact, experience, fall, founder, help, history, fundraising, crypto, projects, vision, insurance, rick roll");
         commandReset(9);
         return
       },
@@ -783,23 +793,20 @@
     var reactionInput = {
       "best work" : function(){
         responseText("On this GitHub page you'll find everything about Morton");
-        responseText("<a href='https://github.com/MichealSalmon/chatbot'>Morton on GitHub</a>")
+        responseText("<a href='https://github.com/woodandmortar/woodandmortar.github.io'>Morton on GitHub</a>")
         animationCounter = 1;
         return
       },
       "about" : function(){
-        responseText("Things I want to learn or do:");
-        responseText("Get great at CSS & JS animation");
-        responseText("Create 3D browser experiences");
-        responseText("Learn Three.js and WebGL");
-        responseText("Combine Motion Design with Front-End");
+        responseText("On this GitHub page you'll find everything about Morton");
+        responseText("<a href='https://github.com/woodandmortar/woodandmortar.github.io'>Morton on GitHub</a>")
         animationCounter = 1;
         return
         },
       "experience" : function(){
-        responseText("I will redirect you to Micheal' CV");
+        responseText("I will redirect you to Micheal's CV");
         setTimeout(function(){
-          window.location.href = "/images/CV-MichealSalmon-2017-februari.png"; }, 3000);
+          window.location.href = "https://www.linkedin.com/in/mfglife/"; }, 3000);
         animationCounter = 1;
         return
       }

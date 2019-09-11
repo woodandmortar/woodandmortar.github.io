@@ -648,8 +648,7 @@
 
     var possibleInput = {
       "help" : function(){
-        responseText("You can type a command in the chatbox")
-        responseText("Something like &quot;Morton, please show me Fall Specials&quot;")
+        responseText("You can type something like &quot;Morton, please show me Fall Specials&quot;")
         responseText("Did you find a bug or problem? Email us at info@woodandmortar.com")
         commandReset(0);
         return
@@ -692,8 +691,8 @@
         return
         },
 
-      "best work" : function(){
-        responseText("I will show you some of WoodandMortar recent work!");
+      "work" : function(){
+        responseText("I will show you some of WoodandMortar's recent work!");
         //These links will scroll you to another link with #animation or #projects
         responseImg("v1.jpeg");
         responseImg("v2.jpeg");
@@ -706,7 +705,7 @@
         },
 
       "about" : function(){
-        responseText("Hi, I'm Mortan, WoodandMortar's chatbot");
+        responseText("Hi, I'm Mortan.");
         //Outputs an image
         responseImg("hi.gif");
         responseText("I'm here to help you learn and navigate!");
@@ -744,16 +743,16 @@
         },
 
       "experience" : function(){
-        responseText("Micheal has previously worked at:");
-        responseText("Cobra Systems as web- developer / designer");
-        responseText("BIT Students as web- developer / designer");
-        responseText("Would you like to see Micheal' CV? (Yes/No)");
+        responseText("Managed the completion of 16 housing units in 2018.");
+        responseText("25 housing units in 2019, including a 14 unit apartment complex.");
+        responseText("Currently leads an inhouse team of four, with 14 trade specialized sub-contrators.");
+        responseText("Would you like to see Micheal's CV? (Yes/No)");
         commandReset(3);
         return
       },
       "fundraising" : function(){
         responseText("The Salmon.fund is a Kansas based 501c3, focused on affordable housing.");
-        responseText("There is two main parts of operation.");
+        responseText("There is two main parts.");
         responseText("The first is the standard tax exempt donation.");
         responseText("The second is property investment.");
         responseText("You can learn more by asking about crypto, or Salmon.fund!");
@@ -761,17 +760,16 @@
         return
       },
       "salmon" : function(){
-        responseImg("fund.jpeg");
         responseText("Thank you for taking the time to learn more about our non-profit.");
-        responseText("The Salmon.fund needs your donations / investments to be able to keep repairing affordable housing.");
+        responseText("The Salmon.fund needs your donations / investments to be able to keep building affordable housing.");
         responseText("It usually takes us 24 hours for convert Paypal funds into crypto / SFND tokens.");
         responseText("Type &quot;year&quot; to learn about what we've been doing so far or &quot;agreement&quot; to see an example agreement.");
-        responseText("You can donate <a href='https://paypal.me/salmonfund?locale.x=en_US'>here</a>, or calling us at 913.280.2336!");
+        responseText("You can donate <a href='https://paypal.me/salmonfund?locale.x=en_US'>here</a>, or call us at 913.280.2336!");
         commandReset(5);
         return
       },
       "crypto" : function(){
-        responseText("I will redirect you to Salmon.fund crypto contracts.");
+        responseText("Please wait while I redirect you to our Salmon.fund crypto contracts, at Etherscan.io.");
         //Redirects you to an image
         setTimeout(function(){
           window.location.href = "https://etherscan.io/token/0x6c8b1ad764d3d5f6de14546145c3d9f3f098c6a7"; }, 3000);
@@ -779,11 +777,10 @@
         return
       },
       "vision" : function(){
-        responseText("Things I want to learn or do:");
-        responseText("Get great at CSS & JS animation");
-        responseText("Create 3D browser experiences");
-        responseText("Learn Three.js and WebGL");
-        responseText("Combine Motion Design with Front-End");
+        responseText("Micheal is the Co-Owner of Wood&Mortar working with Crycella Freitag to up-level the Kansas City construction personality.");
+        responseText("We started in March of 2017, doing every project ourselves creating the Woodandmortar standard.");
+        responseText("Working with the disenfranchized to work more effectively through personal development and communication training, we hope by 2020 to operate as a non-profit focusing on sub-collegiate level students and homeless.");
+        responseText("We care about our city, and we believe in providing a structured learning environment - allowing paid opportunities with a baseline of moral values that change lives.");
         commandReset(7);
         return
       },
@@ -794,9 +791,9 @@
         commandReset(8);
         return
       },
-      "commands" : function(){
+      "command" : function(){
         responseText("This is a list of commands Morton knows:")
-        responseText("about, best work, commands, consulting, contact, experience, fall, founder, help, history, fundraising, crypto, projects, vision, insurance, rick roll");
+        responseText("about, best work, commands, consulting, contact, <br>experience, fall, founder, help, history, <br>insurance, fundraising, crypto, projects, vision, rick roll");
         commandReset(9);
         return
       },
@@ -806,7 +803,7 @@
     }
 
     var reactionInput = {
-      "best work" : function(){
+      "work" : function(){
         responseText("On this GitHub page you'll find everything about Morton");
         responseText("<a href='https://github.com/woodandmortar/woodandmortar.github.io'>Morton on GitHub</a>")
         animationCounter = 1;
@@ -819,7 +816,7 @@
         return
         },
       "experience" : function(){
-        responseText("I will redirect you to Micheal's CV");
+        responseText("Please wait while I redirect you to Micheal's CV");
         setTimeout(function(){
           window.location.href = "https://www.linkedin.com/in/mfglife/"; }, 3000);
         animationCounter = 1;

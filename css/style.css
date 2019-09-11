@@ -279,7 +279,7 @@ transform: translateX(0);
 	font-size: 16px;
 	right: 10px;
 	position: fixed;
-	width: 90vh;
+	width: 90vw;
 }
 
 #live-chat header {

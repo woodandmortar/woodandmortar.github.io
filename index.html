@@ -678,6 +678,20 @@
         return
         },
 
+        "agreement" : function(){
+        setTimeout(function(){
+        window.location.href = "pics/agreement.pdf"; }, 3000);
+        commandReset(0);
+        return
+        },
+
+        "year" : function(){
+        setTimeout(function(){
+        window.location.href = "pics/review.pdf"; }, 3000);
+        commandReset(0);
+        return
+        },
+
       "best work" : function(){
         responseText("I will show you some of WoodandMortar recent work!");
         //These links will scroll you to another link with #animation or #projects
@@ -696,7 +710,7 @@
         //Outputs an image
         responseImg("hi.gif");
         responseText("I'm here to help you learn and navigate!");
-        responseText("Type &quot;founder&quot; to learn about Micheal, &quot;history&quot; to learn about WoodandMortar or &quot;consulting&quot to learn more.");
+        responseText("Type &quot;founder&quot; to learn about Micheal, &quot;history&quot; or &quot;consulting&quot to learn about WoodandMortar or Salmon fund to learn about our not for profit.");
         commandReset(2);
         return
         },
@@ -751,6 +765,7 @@
         responseText("Thank you for taking the time to learn more about our non-profit.");
         responseText("The Salmon.fund needs your donations / investments to be able to keep repairing affordable housing.");
         responseText("It usually takes us 24 hours for convert Paypal funds into crypto / SFND tokens.");
+        responseText("Type &quot;year&quot; to learn about what we've been doing so far or &quot;agreement&quot; to see an example agreement.");
         responseText("You can donate <a href='https://paypal.me/salmonfund?locale.x=en_US'>here</a>, or calling us at 913.280.2336!");
         commandReset(5);
         return

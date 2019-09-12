@@ -581,3 +581,97 @@ input[type="submit"] {
         opacity: 1; }
       .card:nth-child(2n + 1) {
         margin-left: 5%; } }
+
+
+
+
+
+
+
+
+
+        #newsletter-popup{
+          margin: 70px auto;
+          padding:30px 40px 40px;
+          background: #ee9a40;
+          border-radius: 5px;
+          width: 50%;
+          position: relative;
+          transition: all 1s ease-in-out;
+        }
+
+        @media screen and (max-width: 1000px){
+          #newsletter-popup{
+            width: 80%;
+          }
+        }
+
+        @media screen and (max-width: 750px){
+          #newsletter-popup{
+            width: 80%;
+          }
+        }
+
+        .newsletter-overlay{
+          position: fixed;
+          z-index: 99999;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: rgba(0, 0, 0, 0.7);
+          transition: opacity 500ms;
+          visibility: visible;
+          opacity: 1;
+          display: none;
+        }
+
+        #newsletter-popup h3{
+          color: #fff;
+          font-size: 24px;
+          margin: 0 0 10px;
+          font-family: 'Playfair Display';
+        }
+
+        #newsletter-popup input[type="text"]{
+            width: 100%;
+            height: 36px;
+            border: none;
+            text-indent: 10px;
+            font-size: 13px;
+            border-bottom: 2px solid #ee9a40;
+            border-top: 2px solid #fff;
+            padding: 0;
+            color: black;
+            margin-bottom: 15px;
+        }
+
+        #newsletter-popup input[type="submit"]{
+          background: #444444;
+            border: none;
+            border-bottom: 3px solid #fff;
+            color: black;
+            text-align: center;
+            display: block;
+            padding: 0;
+            line-height: 1.5;
+            width: 100%;
+            cursor: pointer;
+            margin: 0;
+            font-size: 21px;
+            font-family: "Playfair Display";
+        }
+
+        #newsletter-popup .popup-close{
+          color: #fff;
+          height: 30px;
+          width: 30px;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          text-align: center;
+          text-decoration: none;
+          line-height: 30px;
+          font-family:  "Playfair Display";
+          font-weight: bold;
+        }

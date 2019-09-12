@@ -56,6 +56,29 @@
 
 <body>
 
+
+  <div id="item2" class="newsletter-overlay">
+
+    <div id="newsletter-popup">
+      <a href="#" class="popup-close">X</a>
+      <div class="newsletter-in">
+        <center><h3>Contact Form</h3>
+        <p>Leave your full <b>Email Address</b>, then tell us a little about your project and a good time to contact you and a bid specialist will respond within 24 hours.</p></center>
+        <form>
+          <div>
+            <input id="vName" name="vName" type="text" placeholder="YOUR EMAIL">
+          </div>
+          <div>
+            <input id="vEmail" name="vEmail" type="text" placeholder="INFORMATION">
+          </div>
+        </form>
+        <br/>
+              <button onclick="formVeneer()">Submit</button>
+      </div>
+    </div>
+  </div>
+
+
 <div class="carousel">
   <div class="carousel__nav">
    <span id="moveLeft" class="carousel__arrow">
@@ -371,7 +394,7 @@
                       <li class="input__nested-list" id="foo5" style="display:none"><button onclick="formLTener()" style="height:40px;width:180px;font-size:18px"><span id="fo5">Clock in/out</span></button></li>
                       <li class="input__nested-list" id="foo6" style="display:none"><button onclick="formJRagsdale()" style="height:40px;width:180px;font-size:18px"><span id="fo6">Clock in/out</span></button></li>
                       <li class="input__nested-list"><span id="vresp7" class="bot__command">To view our fall and winter stone options click "Hide/Show" to minimize and cycle through our gallery.</span></li>
-                      <li class="input__nested-list"><span id="vresp8">Great for fireplaces and pits, accent walls, and exterior wraps</span></li>
+                      <li class="input__nested-list"><span id="vresp8">We specialize in bid construction and project management. If you are ready to take your first step in building your perfect bid, click <button onclick="togglediv('item2')">Start</button></span></li>
                       <li class="input__nested-list">Type <span class="bot__command">help</span> (for more instructions) or <span class="bot__command">commands</span> for a list of every command</li>
 
                     </ul>
@@ -490,7 +513,7 @@
         //If user reacts with "yes" and the previous input was in textVal
         if(input == "yes" || input.indexOf("yes") >= 0){
           if(previousInput == textVal) {
-            console.log("sausigheid");
+            console.log("failed to commit");
 
             isReaction = true;
             hasCorrectInput = true;
@@ -643,6 +666,11 @@
       previousInput = Object.keys(possibleInput)[e];
 
       console.log(previousInput);
+    }
+
+    function startBid(){
+      responseText("Let's gather some basic information.")
+      togglediv('item2');
     }
 
 
@@ -841,6 +869,7 @@
                     }
                         }
                 });
+                togglediv('item2')
               }
 
 

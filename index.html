@@ -10,10 +10,10 @@
       <html class="no-js" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <meta name="google-signin-client_id" content="876802948446-hq89rbp43opigb73ks5soa3c3gmqmnrj.apps.googleusercontent.com">
-      <META NAME="KEYWORDS" CONTENT="WoodandMortar LLC, WoodandMortar, Wood and Mortar, property maintenance, home improvement, home repair, house repair, house improvement, design, home design, designers, kitchen remodel, bathroom remodel, cement, stone, veneer, kitchen, bathroom, veneer stone, Painters, Painting, fireplace, tile, home repair, Contractors, Home, Home Renovations, Wood, wood&mortar, wood & mortar, brick, stucco, Wood and Mortar, WoodandMortar">
+      <META NAME="KEYWORDS" CONTENT="WoodandMortar LLC, WoodandMortar, Wood and Mortar, Bid Consultants, home improvement, home repair, house repair, house improvement, design, home design, designers, kitchen remodel, bathroom remodel, cement, stone, veneer, kitchen, bathroom, veneer stone, Painters, Painting, fireplace, tile, home repair, Contractors, Home, Home Renovations, Wood, wood&mortar, wood & mortar, brick, stucco, Wood and Mortar, WoodandMortar">
       <META NAME="ROBOTS" CONTENT="ALL,FOLLOW">
         <script src="https://apis.google.com/js/platform.js" async defer></script>
-          <meta name="description" content="Property Consultants">
+          <meta name="description" content="Bid Consultants">
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="apple-touch-icon" sizes="180x180" href="pics/wm.png">
               <link rel="icon" type="image/png" href="pics/wm.png" sizes="32x32">
@@ -75,7 +75,7 @@
       <div class="carousel-item__container">
       <h2 class="carousel-item__subtitle">Kansas City Founded</h2>
       <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">Property Consultants
+      <p class="carousel-item__description">Bid Consultants
         <br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >913.280.2336</a></font></b></p>
 <br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Email us</a></font></b>
 <span id="vresp9" style="visibility: hidden">Geolocation</span>
@@ -735,7 +735,7 @@
         },
 
       "consulting" : function(){
-        responseText("Wood&Mortar LLC starts with Property Consulting by focusing on construction education.");
+        responseText("Wood&Mortar LLC starts with Bid Consulting by focusing on construction education.");
         responseText("We build the perfect bid, giving our clients pick and choose options to fit their budget. Our bids are completely transparent as we annotate each step of the construction process, highlight possible anomalies, and manage your project to completion if needed.");
         responseText("We are the first step everyone should take before beginning any large project, and your ally in the construction business.");
         commandReset(2);
@@ -751,17 +751,17 @@
         return
       },
       "fundraising" : function(){
-        responseText("The Salmon.fund is a Kansas based 501c3, focused on affordable housing.");
+        responseText("The <a href='https://docs.google.com/presentation/d/e/2PACX-1vSguUDJx7M76dXvl-HRh2Vek0vYPihxrSxohNaFYJj-Ve30v5LcTzHc7IkLVoqMI-W-dJDjxk9V2Lhh/pub?start=true&loop=true&delayms=3000&slide=id.g5276e6346f_1_45'>Salmon.fund</a> is a Kansas based 501c3, focused on affordable housing.");
         responseText("There is two main parts.");
         responseText("The first is the standard tax exempt donation.");
         responseText("The second is property investment.");
-        responseText("You can learn more by asking about crypto, or Salmon.fund!");
+        responseText("You can learn more by asking about crypto, or <a href='https://docs.google.com/presentation/d/e/2PACX-1vSguUDJx7M76dXvl-HRh2Vek0vYPihxrSxohNaFYJj-Ve30v5LcTzHc7IkLVoqMI-W-dJDjxk9V2Lhh/pub?start=true&loop=true&delayms=3000&slide=id.g5276e6346f_1_45'>Salmon.fund</a>!");
         commandReset(4);
         return
       },
       "salmon" : function(){
         responseText("Thank you for taking the time to learn more about our non-profit.");
-        responseText("The Salmon.fund needs your donations / investments to be able to keep building affordable housing.");
+        responseText("The <a href='https://docs.google.com/presentation/d/e/2PACX-1vSguUDJx7M76dXvl-HRh2Vek0vYPihxrSxohNaFYJj-Ve30v5LcTzHc7IkLVoqMI-W-dJDjxk9V2Lhh/pub?start=true&loop=true&delayms=3000&slide=id.g5276e6346f_1_45'>Salmon.fund</a> needs your donations / investments to be able to keep building affordable housing.");
         responseText("It usually takes us 24 hours for convert Paypal funds into crypto / SFND tokens.");
         responseText("Type &quot;year&quot; to learn about what we've been doing so far or &quot;agreement&quot; to see an example agreement.");
         responseText("You can donate <a href='https://paypal.me/salmonfund?locale.x=en_US'>here</a>, or call us at 913.280.2336!");
@@ -825,14 +825,8 @@
     }
 
     function formVeneer(){
-
-      $('.newsletter-overlay').hide();
-      setCookie('newsletter-popup', 'popped', 30);
-
               var vName = document.getElementById('vName').value;
               var vEmail = document.getElementById('vEmail').value;
-
-
                 $.ajax({
                   url: "https://docs.google.com/forms/d/e/1FAIpQLSeMohoaLj7xbaSRpd027QOJxkMrEOhuB9ETdNcX4xIbn3TRpA/formResponse",
                   data:  { "entry.1937233099" : vName , "entry.1351174333" : vEmail },

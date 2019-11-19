@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Salmon Fund</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <META NAME="KEYWORDS" CONTENT="property maintenance, home improvement, home repair, house repair, house improvement, design, home design, designers, kitchen remodel, bathroom remodel, kitchen design, kitchen makeover, improvement, kitchen, bathroom, small kitchen remodel, Painters, Painting, woodworking, tile, home repair, Contractors, Home, Home Renovations, Wood, wood&mortar, wood & mortar, brick, stucco, Wood and Mortar, WoodandMortar">
+  <META NAME="ROBOTS" CONTENT="ALL,FOLLOW">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style3.css">
+<link rel="icon" type="image/png" href="./logo.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="./logo.png" sizes="16x16">
+        <link rel="mask-icon" href="./logo.png" color="#fff">
+        <link rel="shortcut icon" href="./logo.png">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="694261835706-6rghlohatovnk2qpog25g8esv7qgvb2g.apps.googleusercontent.com">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="https://kit.fontawesome.com/605a1dc14a.js" crossorigin="anonymous"></script>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123535120-1"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-123535120-1');
+          </script>
+
+          <style>
+
+          .menu {
+            -webkit-filter: url("#shadowed-goo");
+                    filter: url("#shadowed-goo");
+          }
+
+          .menu-item, .menu-open-button {
+            background: #222222;
+            border-radius: 100%;
+            width: 80px;
+            height: 80px;
+            margin-left: -40px;
+            position: absolute;
+            top: 20px;
+            color: white;
+            text-align: center;
+            line-height: 80px;
+            -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0);
+            transition: -webkit-transform ease-out 200ms;
+            transition: transform ease-out 200ms;
+            transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
+          }
+
+          .menu-open {
+            display: none;
+          }
+
+          .hamburger {
+            width: 25px;
+            height: 3px;
+            background: white;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -12.5px;
+            margin-top: -1.5px;
+            transition: -webkit-transform 200ms;
+            transition: transform 200ms;
+            transition: transform 200ms, -webkit-transform 200ms;
+          }
+
+          .hamburger-1 {
+            -webkit-transform: translate3d(0, -8px, 0);
+                    transform: translate3d(0, -8px, 0);
+          }
+
+          .hamburger-2 {
+            -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0);
+          }
+
+          .hamburger-3 {
+            -webkit-transform: translate3d(0, 8px, 0);
+                    transform: translate3d(0, 8px, 0);
+          }
+
+          .menu-open:checked + .menu-open-button .hamburger-1 {
+            -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+                    transform: translate3d(0, 0, 0) rotate(45deg);
+          }
+          .menu-open:checked + .menu-open-button .hamburger-2 {
+            -webkit-transform: translate3d(0, 0, 0) scale(0.1, 1);
+                    transform: translate3d(0, 0, 0) scale(0.1, 1);
+          }
+          .menu-open:checked + .menu-open-button .hamburger-3 {
+            -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
+                    transform: translate3d(0, 0, 0) rotate(-45deg);
+          }
+
+          .menu {
+            position: absolute;
+            z-index: 99999;
+            left: 50%;
+            margin-left: -190px;
+            padding-top: 20px;
+            padding-left: 190px;
+            box-sizing: border-box;
+            font-size: 20px;
+            text-align: left;
+          }
+
+          .menu-item:hover {
+            background: white;
+            color: #fe6262;
+          }
+          .menu-item:nth-child(3) {
+            transition-duration: 70ms;
+          }
+          .menu-item:nth-child(4) {
+            transition-duration: 130ms;
+          }
+          .menu-item:nth-child(5) {
+            transition-duration: 190ms;
+          }
+          .menu-item:nth-child(6) {
+            transition-duration: 250ms;
+          }
+          .menu-item:nth-child(7) {
+            transition-duration: 310ms;
+          }
+
+          .menu-open-button {
+            z-index: 2;
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition-duration: 400ms;
+            -webkit-transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+                    transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+            cursor: pointer;
+          }
+
+          .menu-open-button:hover {
+            -webkit-transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+                    transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+          }
+
+          .menu-open:checked + .menu-open-button {
+            transition-timing-function: linear;
+            transition-duration: 200ms;
+            -webkit-transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+                    transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+          }
+
+          .menu-open:checked ~ .menu-item {
+            transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(3) {
+            transition-duration: 160ms;
+            -webkit-transform: translate3d(114.42548px, 11.48084px, 0);
+                    transform: translate3d(114.42548px, 11.48084px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(4) {
+            transition-duration: 240ms;
+            -webkit-transform: translate3d(77.18543px, 85.2491px, 0);
+                    transform: translate3d(77.18543px, 85.2491px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(5) {
+            transition-duration: 320ms;
+            -webkit-transform: translate3d(0.09158px, 114.99996px, 0);
+                    transform: translate3d(0.09158px, 114.99996px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(6) {
+            transition-duration: 400ms;
+            -webkit-transform: translate3d(-77.04956px, 85.37192px, 0);
+                    transform: translate3d(-77.04956px, 85.37192px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(7) {
+            transition-duration: 480ms;
+            -webkit-transform: translate3d(-114.40705px, 11.66307px, 0);
+                    transform: translate3d(-114.40705px, 11.66307px, 0);
+          }
+
+
+          @-webkit-keyframes flip {
+            0%, 100% {
+              -webkit-transform: rotateY(0deg);
+                      transform: rotateY(0deg);
+            }
+            50% {
+              -webkit-transform: rotateY(180deg);
+                      transform: rotateY(180deg);
+            }
+          }
+          @keyframes flip {
+            0%, 100% {
+              -webkit-transform: rotateY(0deg);
+                      transform: rotateY(0deg);
+            }
+            50% {
+              -webkit-transform: rotateY(180deg);
+                      transform: rotateY(180deg);
+            }
+          }
+
+           </style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="parallax-world-of-ugg">
+
+
+
+  <nav class="menu">
+    <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+    <label class="menu-open-button" for="menu-open">
+      <span class="hamburger hamburger-1"></span>
+      <span class="hamburger hamburger-2"></span>
+      <span class="hamburger hamburger-3"></span>
+    </label>
+
+    <a href="mailto:info@salmon.fund" target=”_blank” class="menu-item"> <i class="fas fa-envelope"></i> </a>
+    <a href="./how.html" target=”_blank” class="menu-item"> <i class="fas fa-donate"></i> </a>
+    <a href="https://twitter.com/woodandmortar" target=”_blank” class="menu-item"> <i class="fab fa-twitter"></i> </a>
+    <a href="./app.html" target=”_blank” class="menu-item"> <i class="fas fa-home"></i> </a>
+    <a href="./about.html" target=”_blank” class="menu-item"> <svg class="logo" width="40" height="40" viewBox="-359 -463 900 500">
+      <path d="M408 34L290-130c-6-8-20-15-30-15H16c-10 0-23 7-29 15l-33 45L40 34c3 4 5 10 5 15s-2 11-5 15l-86 119 33 45c6 8 19 15 29 15h244c10 0 24-7 30-15L408 64c3-4 5-10 5-15s-2-11-5-15zM206-90c12 0 21 9 21 21s-9 21-21 21-21-9-21-21 9-21 21-21z" fill="#FFF"></path>
+      <path d="M3 49c0 6-2 11-5 15l-119 164c-6 8-20 15-30 15h-146c-7 0-11-3-11-8 0-2 1-5 3-7l130-179-130-179-3-7c0-5 4-8 11-8h146c10 0 24 7 30 15L-2 34c3 4 5 10 5 15z" fill="#fff"></path>
+    </svg> </a>
+
+  </nav>
+
+
+  <!-- filters -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <filter id="shadowed-goo">
+
+            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+            <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+            <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+            <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+            <feBlend in2="shadow" in="goo" result="goo" />
+            <feBlend in2="goo" in="SourceGraphic" result="mix" />
+        </filter>
+        <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+            <feBlend in2="goo" in="SourceGraphic" result="mix" />
+        </filter>
+      </defs>
+  </svg>
+
+
+
+
+<section>
+  <div class="title">
+    <h3>Kansas 501(c)3</h3><br/>
+    <h1>Salmon Fund</h1>
+  </div>
+</section>
+
+<section>
+    <div class="parallax-one">
+      <h2>WoodandMortar LLC</h2>
+    </div>
+</section>
+
+<section>
+  <div class="block">
+    <p><span class="first-character c1">S</span>almon Fund was launched in April 2019 by Micheal Salmon. After having started and successfully sustaining a small construction company, Woodandmortar LLC, in the heart of urban Kansas City Metro, we noticed a number of negative trends amidst our tradespeople, community members, and property owners. Some tradespeople did not have the resources to succeed in the workplace such as regular transportation for their commutes and connectivity via smart device for both work functions and communication. Community members did not trust incoming property management which caused property damage and theft. Lastly, property owners were regularly more concerned with the bottom line and the bottom dollar over the safety and well being of the tenants residing in the properties they owned.</p>
+    <p class="line-break margin-top-10"></p>
+    <p class="margin-top-10">Salmon Fund 501(c)3 nonprofit was started with to fund the development of Wyandotte County using endemic tradespeople, bridge relationships between existing nonprofits to unite the community, and remove bare minimum property management systems. Located in the center of targeted rehabilitation areas, WoodandMortar headquarters is the training ground for beginning participants as well as our materials warehouse. The Salmon Fund aims to secure $787,660 in investments managed in cryptocurrency escrow - SMN Tokens - to provide complete transparency and tracking throughout the Urban Improvement and Trust program. These funds will be allocated towards permanent home acquisition, tradesperson labor and construction, then transferred to participants seeking program completion. At the end of four years, each participant will have accumulated enough SMN tokens to acquire their permanent home deed. Along with upgrading a dilapidated area, we believe trade education and property maintenance will be the necessary motivation in keeping Wyandotte County beautiful.</p>
+  </div>
+</section>
+
+<section>
+  <div class="parallax-two">
+    <h2>Tradespeople</h2>
+  </div>
+</section>
+
+<section>
+  <div class="block">
+    <p><span class="first-character c2">W</span>e are designed to help the disenfranchised tackle the barriers that stand between them and success. We provide the resources to start a remodeling career by giving each participant a smart device and a vehicle. The ability to maintain their career is supported with continued training through a micro-credentials, mCred, online platform and affordable housing. Unfit, vacant properties are acquired by Salmon Fund, renovated by the participants through their employment, and given to qualifying participants to live in upon property completion at a fixed rate rent. From the time the participant receives their affordable housing to program completion, an estimated four years, the participants will gain trade experience, finance management assistance, continued education through provided NCCER curriculum, and internal leadership opportunities. The final incentive is keeping the affordable home with no strings attached, by which we mean a no mortgage, no rent, full ownership of the home the participant remodeled and is already living in.</p>
+    <p class="line-break margin-top-10"></p>
+    <p style="text-align:center;" class="margin-top-10"><img width="99%" src="./mcred.jpg"></p>
+  </div>
+</section>
+
+<section>
+  <div class="parallax-three">
+    <h2>Our Community</h2>
+  </div>
+</section>
+
+<section>
+  <div class="block">
+    <p><span class="first-character c3">W</span>yandotte County and namely, northeastern Kansas City, has been on the losing end of battle with low income. With a per capita income of only $20,192, it sits nearly $10,000 lower than its nearest income neighbor Leavenworth County and more than $22,000 lower than its only other neighbor in state, Johnson County (QuickFacts: Wyandotte County, KS 2017). This income disparity has caused other issues in the area. The first problem is homelessness. The homeless population, which was counted with a partnering out-of-state county, sits at a combined 1,798 in 2018 for both Wyandotte and Jackson Counties (Point in Time, 2018). In contrast, Johnson County had 168 recorded homeless people as of January 2018 (Homelessness in Johnson County, 2018). In 2002, homelessness per person cost taxpayers between $35,000 and $150,000 per year (Moorhead, 2002); we can only surmise how inflation and cost of living changes have altered these values as there is not more current information readily available.</p>
+    <p class="line-break margin-top-10"></p>
+    <p class="margin-top-10">The Salmon Fund is designed to help the disenfranchised as a general category, to encompass as many participants as possible. The end goal for participants is permanent homeownership and as such, disqualifies homeowners and landlords from participation. Along that same vein, reducing unemployment in Wyandotte County is a side effect of our program and already employed individuals are at a lesser need for our services. An advantage in the workforce is a college education. While we recognize that an Associate’s degree and other continued education does not guarantee employment, our participant focus is geared towards those having not completed any higher than a high school education.
+<br/><br/>
+General qualifications, as can be found by other employers, also exist for Salmon Fund. The nature of the work does entail a certain physical aptitude and the ability to safely lift at least 50 pounds is a necessity. Salmon Fund also requires the ability to work a 40 hour standard work week but offers flexibility for illnesses, court mandated meetings, and other schedule impediments such as possible family obligations. Registered sex offenders are prohibited from admission into this program. This combination of qualifications protects Salmon Fund, its participants, and partners while still having an enormous pool of people that can benefit from our program.
+</p>
+  </div>
+</section>
+
+<section>
+  <div class="parallax-four">
+    <h2>Our Journey</h2>
+  </div>
+</section>
+
+<section>
+  <div class="block">
+    <p><span class="first-character c4">T</span>he Urban Improvement and Trust’s program will be evaluated on three primary levels. The participant information as a group, individual participant data, and community impact - property and material - will be reviewed. The analysis will include fidelity of implementation, cost effectiveness, social impact, and community response. The external evaluator will collect and analyze  program documentation, metrics, focus group and interview data, and direct contact with participants where permitted. Dr. Peter Witham is acting as the lead independent reviewer to conduct a formative and summative evaluation. Reporting will include quarterly and annual reports over the course of four years.</p>
+    <p class="line-break margin-top-10"></p>
+    <p style="text-align:center;" class="margin-top-10"><img width="99%" src="info.jpg"></p>
+<p>
+The Salmon Fund aims to secure $787,660 in investments managed in cryptocurrency escrow - SMN Tokens - to provide complete transparency and tracking throughout the Urban Improvement and Trust involvement. These funds will be allocated towards permanent home acquisition, tradesperson labor and construction, then transferred to participants seeking program completion. At the end of four years, each participant will have accumulated enough SMN tokens to acquire their permanent home deed. Along with upgrading a dilapidated area, we believe trade education and property maintenance will be the necessary motivation in keeping Wyandotte County beautiful.
+  </p>
+  </div>
+</section>
+
+</div>
+<!-- partial -->
+
+</body>
+</html>

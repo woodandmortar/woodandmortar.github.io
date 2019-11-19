@@ -1,882 +1,328 @@
+
 <!DOCTYPE html>
 <html lang="en" >
-
 <head>
   <meta charset="UTF-8">
-  <title>WoodandMortar LLC</title>
-  <html lang="en" class="no-js"><head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <html class="no-js" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-        <meta name="google-signin-client_id" content="876802948446-hq89rbp43opigb73ks5soa3c3gmqmnrj.apps.googleusercontent.com">
-      <META NAME="KEYWORDS" CONTENT="WoodandMortar LLC, WoodandMortar, Wood and Mortar, Bid Consultants, home improvement, home repair, house repair, house improvement, design, home design, designers, kitchen remodel, bathroom remodel, cement, stone, veneer, kitchen, bathroom, veneer stone, Painters, Painting, fireplace, tile, home repair, Contractors, Home, Home Renovations, Wood, wood&mortar, wood & mortar, brick, stucco, Wood and Mortar, WoodandMortar">
-      <META NAME="ROBOTS" CONTENT="ALL,FOLLOW">
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
-          <meta name="description" content="Bid Consultants">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <link rel="apple-touch-icon" sizes="180x180" href="pics/wm.png">
-              <link rel="icon" type="image/png" href="pics/wm.png" sizes="32x32">
-              <link rel="icon" type="image/png" href="pics/wm.png" sizes="16x16">
-              <link rel="mask-icon" href="pics/wm.png" color="#fff">
-              <link rel="shortcut icon" href="pics/wm.png">
-
-      <link rel="stylesheet" href="css/style.css">
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123535120-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-123535120-1');
-      </script>
-
-      <style>
-
-      .pic1 {
-         width: 100px;
-         top: 10px;
-         position: absolute;
-         right: 10px;
-         z-index: 9999;
-       }
-
-</style>
-
-</head>
-
-<body>
-
-  <head>
-  <title>WoodandMortar LLC</title>
+  <title>Salmon Fund</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <META NAME="KEYWORDS" CONTENT="property maintenance, home improvement, home repair, house repair, house improvement, design, home design, designers, kitchen remodel, bathroom remodel, kitchen design, kitchen makeover, improvement, kitchen, bathroom, small kitchen remodel, Painters, Painting, woodworking, tile, home repair, Contractors, Home, Home Renovations, Wood, wood&mortar, wood & mortar, brick, stucco, Wood and Mortar, WoodandMortar">
+  <META NAME="ROBOTS" CONTENT="ALL,FOLLOW">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style3.css">
+<link rel="icon" type="image/png" href="./logo.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="./logo.png" sizes="16x16">
+        <link rel="mask-icon" href="./logo.png" color="#fff">
+        <link rel="shortcut icon" href="./logo.png">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="694261835706-6rghlohatovnk2qpog25g8esv7qgvb2g.apps.googleusercontent.com">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="https://kit.fontawesome.com/605a1dc14a.js" crossorigin="anonymous"></script>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123535120-1"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-123535120-1');
+          </script>
+
+          <style>
+
+          .menu {
+            -webkit-filter: url("#shadowed-goo");
+                    filter: url("#shadowed-goo");
+          }
+
+          .menu-item, .menu-open-button {
+            background: #222222;
+            border-radius: 100%;
+            width: 80px;
+            height: 80px;
+            margin-left: -40px;
+            position: absolute;
+            top: 20px;
+            color: white;
+            text-align: center;
+            line-height: 80px;
+            -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0);
+            transition: -webkit-transform ease-out 200ms;
+            transition: transform ease-out 200ms;
+            transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
+          }
+
+          .menu-open {
+            display: none;
+          }
+
+          .hamburger {
+            width: 25px;
+            height: 3px;
+            background: white;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -12.5px;
+            margin-top: -1.5px;
+            transition: -webkit-transform 200ms;
+            transition: transform 200ms;
+            transition: transform 200ms, -webkit-transform 200ms;
+          }
+
+          .hamburger-1 {
+            -webkit-transform: translate3d(0, -8px, 0);
+                    transform: translate3d(0, -8px, 0);
+          }
+
+          .hamburger-2 {
+            -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0);
+          }
+
+          .hamburger-3 {
+            -webkit-transform: translate3d(0, 8px, 0);
+                    transform: translate3d(0, 8px, 0);
+          }
+
+          .menu-open:checked + .menu-open-button .hamburger-1 {
+            -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+                    transform: translate3d(0, 0, 0) rotate(45deg);
+          }
+          .menu-open:checked + .menu-open-button .hamburger-2 {
+            -webkit-transform: translate3d(0, 0, 0) scale(0.1, 1);
+                    transform: translate3d(0, 0, 0) scale(0.1, 1);
+          }
+          .menu-open:checked + .menu-open-button .hamburger-3 {
+            -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
+                    transform: translate3d(0, 0, 0) rotate(-45deg);
+          }
+
+          .menu {
+            position: absolute;
+            z-index: 99999;
+            left: 50%;
+            margin-left: -190px;
+            padding-top: 20px;
+            padding-left: 190px;
+            box-sizing: border-box;
+            font-size: 20px;
+            text-align: left;
+          }
+
+          .menu-item:hover {
+            background: white;
+            color: #fe6262;
+          }
+          .menu-item:nth-child(3) {
+            transition-duration: 70ms;
+          }
+          .menu-item:nth-child(4) {
+            transition-duration: 130ms;
+          }
+          .menu-item:nth-child(5) {
+            transition-duration: 190ms;
+          }
+          .menu-item:nth-child(6) {
+            transition-duration: 250ms;
+          }
+          .menu-item:nth-child(7) {
+            transition-duration: 310ms;
+          }
+
+          .menu-open-button {
+            z-index: 2;
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition-duration: 400ms;
+            -webkit-transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+                    transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+            cursor: pointer;
+          }
+
+          .menu-open-button:hover {
+            -webkit-transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+                    transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+          }
+
+          .menu-open:checked + .menu-open-button {
+            transition-timing-function: linear;
+            transition-duration: 200ms;
+            -webkit-transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+                    transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+          }
+
+          .menu-open:checked ~ .menu-item {
+            transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(3) {
+            transition-duration: 160ms;
+            -webkit-transform: translate3d(114.42548px, 11.48084px, 0);
+                    transform: translate3d(114.42548px, 11.48084px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(4) {
+            transition-duration: 240ms;
+            -webkit-transform: translate3d(77.18543px, 85.2491px, 0);
+                    transform: translate3d(77.18543px, 85.2491px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(5) {
+            transition-duration: 320ms;
+            -webkit-transform: translate3d(0.09158px, 114.99996px, 0);
+                    transform: translate3d(0.09158px, 114.99996px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(6) {
+            transition-duration: 400ms;
+            -webkit-transform: translate3d(-77.04956px, 85.37192px, 0);
+                    transform: translate3d(-77.04956px, 85.37192px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(7) {
+            transition-duration: 480ms;
+            -webkit-transform: translate3d(-114.40705px, 11.66307px, 0);
+                    transform: translate3d(-114.40705px, 11.66307px, 0);
+          }
+
+
+          @-webkit-keyframes flip {
+            0%, 100% {
+              -webkit-transform: rotateY(0deg);
+                      transform: rotateY(0deg);
+            }
+            50% {
+              -webkit-transform: rotateY(180deg);
+                      transform: rotateY(180deg);
+            }
+          }
+          @keyframes flip {
+            0%, 100% {
+              -webkit-transform: rotateY(0deg);
+                      transform: rotateY(0deg);
+            }
+            50% {
+              -webkit-transform: rotateY(180deg);
+                      transform: rotateY(180deg);
+            }
+          }
+
+           </style>
 </head>
-
 <body>
+<!-- partial:index.partial.html -->
+<div id="parallax-world-of-ugg">
 
 
-  <div id="item2" class="newsletter-overlay">
 
-    <div id="newsletter-popup">
-      <a href="#" class="popup-close">X</a>
-      <div class="newsletter-in">
-        <center><h3>Contact Form</h3>
-        <p>Leave your full <b>Email Address</b>, then tell us a little about your project and a good time to contact you and a bid specialist will respond within 24 hours.</p></center>
-        <form>
-          <div>
-            <input id="vName" name="vName" type="text" placeholder="YOUR EMAIL">
-          </div>
-          <div>
-            <input id="vEmail" name="vEmail" type="text" placeholder="INFORMATION">
-          </div>
-        </form>
-        <br/>
-              <button onclick="formVeneer()">Submit</button>
-      </div>
+  <nav class="menu">
+    <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+    <label class="menu-open-button" for="menu-open">
+      <span class="hamburger hamburger-1"></span>
+      <span class="hamburger hamburger-2"></span>
+      <span class="hamburger hamburger-3"></span>
+    </label>
+
+    <a href="./about.html" target=”_blank” class="menu-item"> <i class="fas fa-info-circle"></i> </a>
+    <a href="mailto:info@salmon.fund" target=”_blank” class="menu-item"> <i class="fas fa-paper-plane"></i> </a>
+    <a href="./how.html" target=”_blank” class="menu-item"> <i class="fas fa-donate"></i> </a>
+    <a href="https://twitter.com/woodandmortar" target=”_blank” class="menu-item"> <i class="fab fa-twitter"></i> </a>
+    <a href="./index.html" target=”_blank” class="menu-item"> <i class="fas fa-home"></i> </a>
+
+
+  </nav>
+
+
+  <!-- filters -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <filter id="shadowed-goo">
+
+            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+            <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+            <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+            <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+            <feBlend in2="shadow" in="goo" result="goo" />
+            <feBlend in2="goo" in="SourceGraphic" result="mix" />
+        </filter>
+        <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+            <feBlend in2="goo" in="SourceGraphic" result="mix" />
+        </filter>
+      </defs>
+  </svg>
+
+
+
+
+<section>
+  <div class="title">
+    <h3>Kansas 501(c)3</h3><br/>
+    <h1>Salmon Fund</h1>
+  </div>
+</section>
+
+<section>
+    <div class="parallax-one">
+      <h2>WoodandMortar LLC</h2>
     </div>
-  </div>
+</section>
 
-
-<div class="carousel">
-  <div class="carousel__nav">
-   <span id="moveLeft" class="carousel__arrow">
-        <svg class="carousel__icon" width="24" height="24" viewBox="0 0 24 24">
-    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path>
-</svg>
-    </span>
-    <span id="moveRight" class="carousel__arrow" >
-      <svg class="carousel__icon"  width="24" height="24" viewBox="0 0 24 24">
-  <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
-</svg>
-    </span>
+<section>
+  <div class="block">
+    <p><span class="first-character c1">S</span>almon Fund was launched in April 2019 by Micheal Salmon. After having started and successfully sustaining a small construction company, Woodandmortar LLC, in the heart of urban Kansas City Metro, we noticed a number of negative trends amidst our tradespeople, community members, and property owners. Some tradespeople did not have the resources to succeed in the workplace such as regular transportation for their commutes and connectivity via smart device for both work functions and communication. Community members did not trust incoming property management which caused property damage and theft. Lastly, property owners were regularly more concerned with the bottom line and the bottom dollar over the safety and well being of the tenants residing in the properties they owned.</p>
+    <p class="line-break margin-top-10"></p>
+    <p class="margin-top-10">Salmon Fund 501(c)3 nonprofit was started with to fund the development of Wyandotte County using endemic tradespeople, bridge relationships between existing nonprofits to unite the community, and remove bare minimum property management systems. Located in the center of targeted rehabilitation areas, WoodandMortar headquarters is the training ground for beginning participants as well as our materials warehouse. The Salmon Fund aims to secure $787,660 in investments managed in cryptocurrency escrow - SMN Tokens - to provide complete transparency and tracking throughout the Urban Improvement and Trust program. These funds will be allocated towards permanent home acquisition, tradesperson labor and construction, then transferred to participants seeking program completion. At the end of four years, each participant will have accumulated enough SMN tokens to acquire their permanent home deed. Along with upgrading a dilapidated area, we believe trade education and property maintenance will be the necessary motivation in keeping Wyandotte County beautiful.</p>
   </div>
-  <div class="carousel-item carousel-item--1">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Kansas City Founded</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">Bid Consultants
-        <br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >913.280.2336</a></font></b></p>
-<br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Email us</a></font></b>
-<span id="vresp9" style="visibility: hidden">Geolocation</span>
+</section>
+
+<section>
+  <div class="parallax-two">
+    <h2>Tradespeople</h2>
+  </div>
+</section>
+
+<section>
+  <div class="block">
+    <p><span class="first-character c2">W</span>e are designed to help the disenfranchised tackle the barriers that stand between them and success. We provide the resources to start a remodeling career by giving each participant a smart device and a vehicle. The ability to maintain their career is supported with continued training through a micro-credentials, mCred, online platform and affordable housing. Unfit, vacant properties are acquired by Salmon Fund, renovated by the participants through their employment, and given to qualifying participants to live in upon property completion at a fixed rate rent. From the time the participant receives their affordable housing to program completion, an estimated four years, the participants will gain trade experience, finance management assistance, continued education through provided NCCER curriculum, and internal leadership opportunities. The final incentive is keeping the affordable home with no strings attached, by which we mean a no mortgage, no rent, full ownership of the home the participant remodeled and is already living in.</p>
+    <p class="line-break margin-top-10"></p>
+    <p style="text-align:center;" class="margin-top-10"><img width="95%" src="./mcred.jpg"></p>
+  </div>
+</section>
+
+<section>
+  <div class="parallax-three">
+    <h2>Our Community</h2>
+  </div>
+</section>
+
+<section>
+  <div class="block">
+    <p><span class="first-character c3">W</span>yandotte County and namely, northeastern Kansas City, has been on the losing end of battle with low income. With a per capita income of only $20,192, it sits nearly $10,000 lower than its nearest income neighbor Leavenworth County and more than $22,000 lower than its only other neighbor in state, Johnson County (QuickFacts: Wyandotte County, KS 2017). This income disparity has caused other issues in the area. The first problem is homelessness. The homeless population, which was counted with a partnering out-of-state county, sits at a combined 1,798 in 2018 for both Wyandotte and Jackson Counties (Point in Time, 2018). In contrast, Johnson County had 168 recorded homeless people as of January 2018 (Homelessness in Johnson County, 2018). In 2002, homelessness per person cost taxpayers between $35,000 and $150,000 per year (Moorhead, 2002); we can only surmise how inflation and cost of living changes have altered these values as there is not more current information readily available.</p>
+    <p class="line-break margin-top-10"></p>
+    <p class="margin-top-10">The Salmon Fund is designed to help the disenfranchised as a general category, to encompass as many participants as possible. The end goal for participants is permanent homeownership and as such, disqualifies homeowners and landlords from participation. Along that same vein, reducing unemployment in Wyandotte County is a side effect of our program and already employed individuals are at a lesser need for our services. An advantage in the workforce is a college education. While we recognize that an Associate’s degree and other continued education does not guarantee employment, our participant focus is geared towards those having not completed any higher than a high school education.
 <br/><br/>
-      <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
-        </div>
-    </div>
+General qualifications, as can be found by other employers, also exist for Salmon Fund. The nature of the work does entail a certain physical aptitude and the ability to safely lift at least 50 pounds is a necessity. Salmon Fund also requires the ability to work a 40 hour standard work week but offers flexibility for illnesses, court mandated meetings, and other schedule impediments such as possible family obligations. Registered sex offenders are prohibited from admission into this program. This combination of qualifications protects Salmon Fund, its participants, and partners while still having an enormous pool of people that can benefit from our program.
+</p>
   </div>
+</section>
 
-  <div class="carousel-item carousel-item--2">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Crisp Autumn Day</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">This bold, rough cut veneer features brown, rust, tan, and grey striations over a warm toned base.
-      <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20would%20like%20to%20be%20added%20to%20the%20veneer%20preorder%20list" >Autumn Haze</a></font></b></p>
-      </div>
-    </div>
+<section>
+  <div class="parallax-four">
+    <h2>Our Journey</h2>
   </div>
+</section>
 
-  <div class="carousel-item carousel-item--3">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Straight as a Board</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">Autumn Haze's flush cut variation brings a bit of order to a rustic aesthetic.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20would%20like%20to%20be%20added%20to%20the%20veneer%20preorder%20list" >Autumn Haze Straight Edge</a></font></b></p>
-        </div>
-    </div>
+<section>
+  <div class="block">
+    <p><span class="first-character c4">T</span>he Urban Improvement and Trust’s program will be evaluated on three primary levels. The participant information as a group, individual participant data, and community impact - property and material - will be reviewed. The analysis will include fidelity of implementation, cost effectiveness, social impact, and community response. The external evaluator will collect and analyze  program documentation, metrics, focus group and interview data, and direct contact with participants where permitted. Dr. Peter Witham is acting as the lead independent reviewer to conduct a formative and summative evaluation. Reporting will include quarterly and annual reports over the course of four years.</p>
+    <p class="line-break margin-top-10"></p>
+    <p style="text-align:center;" class="margin-top-10"><img width="95%" src="info.jpg"></p>
+<p>
+The Salmon Fund aims to secure $787,660 in investments managed in cryptocurrency escrow - SMN Tokens - to provide complete transparency and tracking throughout the Urban Improvement and Trust involvement. These funds will be allocated towards permanent home acquisition, tradesperson labor and construction, then transferred to participants seeking program completion. At the end of four years, each participant will have accumulated enough SMN tokens to acquire their permanent home deed. Along with upgrading a dilapidated area, we believe trade education and property maintenance will be the necessary motivation in keeping Wyandotte County beautiful.
+  </p>
   </div>
-
-  <div class="carousel-item carousel-item--4">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Touch of Random</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">Bring a truly natural look to your home with this irregularly shaped veneer.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Autumn Haze Random</a></font></b></p>
-        </div>
-    </div>
-  </div>
-
-  <div class="carousel-item carousel-item--5">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Stone's Snow</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">A hint of lightness makes this stone an immaculate touch to your home.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Birch White Dimensional</a></font></b></p>
-        </div>
-    </div>
-  </div>
-
-  <div class="carousel-item carousel-item--6">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Light and Cozy</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">This veneer shifts towards a warmer feel while maintaining a light and bright vision.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Birch White Random Ashlar</a></font></b></p>
-        </div>
-    </div>
-  </div>
-
-  <div class="carousel-item carousel-item--7">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Modern Sands</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">Bring the beach home with this neutral limestone featuring small seashells for a unique texture.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Buckskin</a></font></b></p>
-        </div>
-    </div>
-  </div>
-
-  <div class="carousel-item carousel-item--8">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Dark Appeal</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">Perfect as a contrast color or an intrepid solo scheme, this dark purple to black stone makes a statement.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Burgundy Grey</a></font></b></p>
-        </div>
-    </div>
-  </div>
-
-  <div class="carousel-item carousel-item--9">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Smooth River</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">Tame the river aspect with this smooth versatile stone.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Creek Flats</a></font></b></p>
-        </div>
-    </div>
-  </div>
-
-  <div class="carousel-item carousel-item--10">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Cute Creek</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">Keep an authentic creek look with varying shades from beige to brown on this round veneer.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Creek Cobbles</a></font></b></p>
-        </div>
-    </div>
-  </div>
-
-  <div class="carousel-item carousel-item--11">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Rolling Hills</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">With a fetching mix of cool greys and warm browns, this stone is imbued with a rustic vibe.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Hill Country</a></font></b></p>
-        </div>
-    </div>
-  </div>
-
-  <div class="carousel-item carousel-item--12">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Precisely Narrow</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">This clean line veneer is cut thin and perfect for a bright and modern space.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Holston Valley Ledge</a></font></b></p>
-        </div>
-    </div>
-  </div>
-
-  <div class="carousel-item carousel-item--13">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Textured Warmth</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">Excellent as a warm stand alone stone or mixed with a contrast color, this high texture sandstone brings a cheery air to your home.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >James Creek Dimensional</a></font></b></p>
-        </div>
-    </div>
-  </div>
-
-  <div class="carousel-item carousel-item--14">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Thin and Folksy</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">Mixing a modern cut with rustic colors, this thin cut veneer is the perfect medium.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >James Creek Ledge</a></font></b></p>
-        </div>
-    </div>
-  </div>
-
-  <div class="carousel-item carousel-item--15">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Rough Beauty</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">This textured rock brings a beautiful porous appeal to decorative projects for a classic look.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Moss Rock</a></font></b></p>
-        </div>
-    </div>
-  </div>
-
-  <div class="carousel-item carousel-item--16">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Spice of Life</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">Excellent for the loud and proud project, this extremely colorful sandstone is perfect for a making a statement.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Multi Colored Split Face</a></font></b></p>
-        </div>
-    </div>
-  </div>
-
-  <div class="carousel-item carousel-item--17">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Precious Earth</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">Featuring hints of silver and gold, this dense quartzite stone solidifies regality.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Mystic Mountain</a></font></b></p>
-        </div>
-    </div>
-  </div>
-
-  <div class="carousel-item carousel-item--18">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Classic Plateau</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">This yellow to brown veneer brings the beauty of the desert to your home.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Pecos Tan</a></font></b></p>
-        </div>
-    </div>
-  </div>
-
-  <div class="carousel-item carousel-item--19">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Fields of Gold</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">Bring the gold and yellow tones of rolling plains to your home with this coarse limestone veneer.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Prairie Field</a></font></b></p>
-        </div>
-    </div>
-  </div>
-
-  <div class="carousel-item carousel-item--20">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Cool and Contemporary</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">This modern grey stone with thin viens of gold brings a noble finish to your project.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Silver Mist</a></font></b></p>
-        </div>
-    </div>
-  </div>
-
-  <div class="carousel-item carousel-item--21">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Raw Charm</h2>
-      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-      <p class="carousel-item__description">This native limestone is locally processed and perfect for an authentic meld of outdoors to inside.
-        <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Western Buff</a></font></b></p>
-        </div>
-    </div>
-  </div>
-
-    <div class="carousel-item carousel-item--22">
-      <div class="carousel-item__image"></div>
-      <div class="carousel-item__info">
-        <div class="carousel-item__container">
-        <h2 class="carousel-item__subtitle">Fine Sophisticate</h2>
-        <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
-        <p class="carousel-item__description">Another local limestone, this cool toned subtle veneer features subtle veins of silver and tan.
-          <br/><br/><b><font size="4"><a style="text-decoration:none;color:#ee9a40;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Wolf Creek</a></font></b></p>
-          </div>
-      </div>
-    </div>
-
-
-
+</section>
 
 </div>
-</body>
-
-
-<div id="live-chat">
-
-  <header class="clearfix">
-
-    <a onclick="togglediv('item')">Hide/Show</a>
-
-  </header>
-
-  <div id="item" class="chat">
-
-        <div class="chat-message-content clearfix">
-
-
-
-
-                <ul class="chatlist">
-                  <li class="bot__output bot__output--standard">
-                    <span class="bot__output--second-sentence">Welcome to Wood&Mortar!</span>
-                    <ul>
-                      <li class="input__nested-list" id="foo1" style="display:none"><button onclick="formMicheal()" style="height:40px;width:180px;font-size:18px"><span id="fo1">Clock in/out</span></button></li>
-                      <li class="input__nested-list" id="foo2" style="display:none"><button onclick="formTWindsor()" style="height:40px;width:180px;font-size:18px"><span id="fo2">Clock in/out</span></button></li>
-                      <li class="input__nested-list" id="foo3" style="display:none"><button onclick="formJCarter()" style="height:40px;width:180px;font-size:18px"><span id="fo3">Clock in/out</span></button></li>
-                      <li class="input__nested-list" id="foo4" style="display:none"><button onclick="formJChalmers()" style="height:40px;width:180px;font-size:18px"><span id="fo4">Clock in/out</span></button></li>
-                      <li class="input__nested-list" id="foo5" style="display:none"><button onclick="formLTener()" style="height:40px;width:180px;font-size:18px"><span id="fo5">Clock in/out</span></button></li>
-                      <li class="input__nested-list" id="foo6" style="display:none"><button onclick="formJRagsdale()" style="height:40px;width:180px;font-size:18px"><span id="fo6">Clock in/out</span></button></li>
-                      <li class="input__nested-list"><span id="vresp7" class="bot__command">To view our fall and winter stone options click "Hide/Show" to minimize and cycle through our gallery.</span></li>
-                      <li class="input__nested-list"><span id="vresp8">We specialize in bid construction and project management. If you are ready to take your first step in building your perfect bid, click <button onclick="togglediv('item2')">Start</button></span></li>
-                      <li class="input__nested-list">Type <span class="bot__command">help</span> (for more instructions) or <span class="bot__command">commands</span> for a list of every command</li>
-
-                    </ul>
-                  </li>
-                </ul>
-
-                <div class="chatbox-area">
-                  <form action="" id="chatform">
-                      <textarea placeholder="Talk to me!" class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
-                      <input class="submit-button" type="submit" value="send">
-                  </form>
-                </div>
-            </div>
-
-
-
-        </div> <!-- end chat-message-content -->
-
-</div> <!-- end live-chat -->
-
-
-
-
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    <script  src="js/index.js"></script>
-
-    <script>
-
-
-    var toggleVisibility = function(element) {
-      if(element.style.display=='block'){
-          element.style.display='none';
-      } else {
-          element.style.display='block';
-      }
-    }
-
-    var sendForm = document.querySelector('#chatform'),
-        textInput = document.querySelector('.chatbox'),
-        chatList = document.querySelector('.chatlist'),
-        userBubble = document.querySelectorAll('.userInput'),
-        botBubble = document.querySelectorAll('.bot__output'),
-        animateBotBubble = document.querySelectorAll('.bot__input--animation'),
-        overview = document.querySelector('.chatbot__overview'),
-        hasCorrectInput,
-        imgLoader = false,
-        animationCounter = 1,
-        animationBubbleDelay = 600,
-        input,
-        previousInput,
-        isReaction = false,
-        unkwnCommReaction = "Not programmed to understand that command";
-
-    // //fixed that when you scroll to end it doesnt scroll window
-    // chatList.addEventListener('mouseover', function(){
-    //   document.body.style.overflow='hidden';
-    // })
-    // //
-    // chatList.addEventListener('mouseout', function(){
-    //   document.body.style.overflow='auto';
-    //   document.body.style.overflowX='hidden';
-    // })
-
-    sendForm.onkeydown = function(e){
-      if(e.keyCode == 13){
-        e.preventDefault();
-
-        //No mix ups with upper and lowercases
-        var input = textInput.value.toLowerCase();
-
-        //Empty textarea fix
-        if(input.length > 0) {
-          createBubble(input)
-        }
-      }
-    };
-
-    sendForm.addEventListener('submit', function(e) {
-      //so form doesnt submit page (no page refresh)
-      e.preventDefault();
-
-      //No mix ups with upper and lowercases
-      var input = textInput.value.toLowerCase();
-
-      //Empty textarea fix
-      if(input.length > 0) {
-        createBubble(input)
-      }
-    }) //end of eventlistener
-
-    var createBubble = function(input) {
-      //create input bubble
-      var chatBubble = document.createElement('li');
-      chatBubble.classList.add('userInput');
-
-      //adds input of textarea to chatbubble list item
-      chatBubble.innerHTML = input;
-      console.log('input = '+input);
-
-      //adds chatBubble to chatlist
-      chatList.appendChild(chatBubble)
-
-      checkInput(input);
-    }
-
-    var checkInput = function(input) {
-      hasCorrectInput = false;
-      isReaction = false;
-      //Checks all text values in possibleInput
-      for(var textVal in possibleInput){
-
-        // if(input.includes(textVal) == true){
-        //   console.log("include succes");
-        // }
-
-        //If user reacts with "yes" and the previous input was in textVal
-        if(input == "yes" || input.indexOf("yes") >= 0){
-          if(previousInput == textVal) {
-            console.log("failed to commit");
-
-            isReaction = true;
-            hasCorrectInput = true;
-            botResponse(textVal);
-          }
-        }
-        if(input == "no" && previousInput == textVal){
-          unkwnCommReaction = "For a list of commands type: Commands";
-          unknownCommand("I'm sorry to hear that :(")
-          unknownCommand(unkwnCommReaction);
-          hasCorrectInput = true;
-        }
-        //Is a word of the input also in possibleInput object?
-        if(input == textVal || input.indexOf(textVal) >=0 && isReaction == false){
-    			console.log("succes");
-          hasCorrectInput = true;
-          botResponse(textVal);
-    		}
-    	}
-      //When input is not in possibleInput
-      if(hasCorrectInput == false){
-        console.log("failed");
-        unknownCommand(unkwnCommReaction);
-        hasCorrectInput = true;
-      }
-    }
-
-    // debugger;
-
-    function botResponse(textVal) {
-      //create response bubble
-      var userBubble = document.createElement('li');
-      userBubble.classList.add('bot__output');
-
-      console.log(isReaction);
-      console.log("previnp= "+previousInput);
-      console.log("texval= "+textVal);
-      if(isReaction == true){
-        if (typeof reactionInput[textVal] === "function") {
-        //adds input of textarea to chatbubble list item
-          userBubble.innerHTML = reactionInput[textVal]();
-        } else {
-          userBubble.innerHTML = reactionInput[textVal];
-        }
-      }
-
-      if(isReaction == false){
-        //Is the command a function?
-        if (typeof possibleInput[textVal] === "function") {
-          // console.log(possibleInput[textVal] +" is a function");
-        //adds input of textarea to chatbubble list item
-          userBubble.innerHTML = possibleInput[textVal]();
-        } else {
-          userBubble.innerHTML = possibleInput[textVal];
-        }
-      }
-      //add list item to chatlist
-      chatList.appendChild(userBubble) //adds chatBubble to chatlist
-
-      // reset text area input
-      textInput.value = "";
-    }
-
-    function unknownCommand(unkwnCommReaction) {
-      // animationCounter = 1;
-
-      //create response bubble
-      var failedResponse = document.createElement('li');
-
-      failedResponse.classList.add('bot__output');
-      failedResponse.classList.add('bot__output--failed');
-
-      //Add text to failedResponse
-      failedResponse.innerHTML = unkwnCommReaction; //adds input of textarea to chatbubble list item
-
-      //add list item to chatlist
-      chatList.appendChild(failedResponse) //adds chatBubble to chatlist
-
-      animateBotOutput();
-
-      // reset text area input
-      textInput.value = "";
-
-      //Sets chatlist scroll to bottom
-      chatList.scrollTop = chatList.scrollHeight;
-
-      animationCounter = 1;
-    }
-
-    function responseText(e) {
-
-      var response = document.createElement('li');
-
-      response.classList.add('bot__output');
-
-      //Adds whatever is given to responseText() to response bubble
-      response.innerHTML = e;
-
-      chatList.appendChild(response);
-
-      animateBotOutput();
-
-      console.log(response.clientHeight);
-
-      //Sets chatlist scroll to bottom
-      setTimeout(function(){
-        chatList.scrollTop = chatList.scrollHeight;
-      //   // chatList.scrollTop = chatList.scrollTop + response.clientHeight;
-      //   // console.log(chatList.scrollTop = chatList.scrollTop + response.clientHeight);
-        console.log(response.clientHeight);
-      }, 0)
-    }
-
-    function responseImg(e) {
-      var image = new Image();
-
-      image.classList.add('bot__output');
-      //Custom class for styling
-      image.classList.add('bot__outputImage');
-      //Gets the image
-      image.src = "pics/"+e;
-      chatList.appendChild(image);
-
-      animateBotOutput()
-      if(image.completed) {
-        console.log(image.scrollHeight);
-        // chatList.scrollTop = chatList.scrollHeight;
-        chatList.scrollTop = chatList.scrollTop + image.scrollHeight;
-      }
-      else {
-        image.addEventListener('load', function(){
-          console.log(image.scrollHeight);
-          chatList.scrollTop = chatList.scrollTop + image.scrollHeight;
-        })
-      }
-      //Load image so height gets checked after chatlist add
-
-    }
-
-    //change to SCSS loop
-    function animateBotOutput() {
-      // chatList.scrollTop = chatList.scrollTop + response.scrollHeight;
-      chatList.lastElementChild.style.animationDelay= (animationCounter * animationBubbleDelay)+"ms";
-      animationCounter++;
-      chatList.lastElementChild.style.animationPlayState = "running";
-    }
-
-    function commandReset(e){
-      animationCounter = 1;
-      previousInput = Object.keys(possibleInput)[e];
-
-      console.log(previousInput);
-    }
-
-    function startBid(){
-      responseText("Let's gather some basic information.")
-      togglediv('item2');
-    }
-
-
-    var possibleInput = {
-      "help" : function(){
-        responseText("You can type something like &quot;Morton, please show me Fall Specials&quot;")
-        responseText("Did you find a bug or problem? Email us at info@woodandmortar.com")
-        commandReset(0);
-        return
-        },
-
-      "fall" : function(){
-        responseText("WoodandMortar's Fall Special for 2019 features veneer stone.")
-        responseText("We are bringing the focus to your home's exterior with fire pits and house wraps or warming up your interior with fireplaces and accent walls.")
-        responseText("With 21 stone options and endless combinations, let's find the perfect color schema for you and your home.")
-        commandReset(0);
-        return
-        },
-
-      "projects" : function(){
-        responseText("Outside of our fall special, WoodandMortar has many other areas of expertise.")
-        responseText("We pride ourselves on our beautiful kitchens, bathrooms, and tile work.")
-        responseText("Email us at info@woodandmortar.com or give us a call at 913-280-2336 to schedule your bid.")
-        commandReset(0);
-        return
-        },
-
-       "insurance" : function(){
-        setTimeout(function(){
-        window.location.href = "pics/insurance.pdf"; }, 3000);
-        commandReset(0);
-        return
-        },
-
-        "agreement" : function(){
-        setTimeout(function(){
-        window.location.href = "pics/agreement.pdf"; }, 3000);
-        commandReset(0);
-        return
-        },
-
-        "year" : function(){
-        setTimeout(function(){
-        window.location.href = "pics/review.pdf"; }, 3000);
-        commandReset(0);
-        return
-        },
-
-      "work" : function(){
-        responseText("I will show you some of WoodandMortar's recent work!");
-        //These links will scroll you to another link with #animation or #projects
-        responseImg("v1.jpeg");
-        responseImg("v2.jpeg");
-        responseImg("v3.jpeg");
-        responseImg("v4.jpeg");
-        responseText("Would you like to see more? (Yes/No)");
-
-        commandReset(1);
-        return
-        },
-
-      "about" : function(){
-        responseText("Hi, I'm Mortan.");
-        //Outputs an image
-        responseImg("hi.gif");
-        responseText("I'm here to help you learn and navigate!");
-        responseText("Type &quot;founder&quot; to learn about Micheal, &quot;history&quot; or &quot;consulting&quot to learn about WoodandMortar or Salmon fund to learn about our not for profit.");
-        commandReset(2);
-        return
-        },
-
-      "founder" : function(){
-        responseText("WoodandMortar was founded by Micheal Salmon in June 2018 after five years in construction.");
-        responseText("Before this, he was a web developer/designer which is how I get to exist!");
-        //Outputs an image
-        responseImg("peek.gif");
-        responseText("Micheal spends most of his time fundraising for the development of north KCK, and working with Kansas City's disenfranchised.");
-        commandReset(2);
-        return
-        },
-
-      "history" : function(){
-        responseText("WoodandMortar LLC was established in 2018");
-        responseText("Though we are pretty young to the scene, we have a lot of experience under our belts.");
-        responseText("In that short amount of time, we have finished more than 60 projects!");
-        responseText("While we specialize in kitchens and bathrooms, we can build a home from the studs up and even beautify your exterior while we're at it!");
-        responseText("This level of well-roundedness ensures there is nothing we can't handle!");
-        commandReset(2);
-        return
-        },
-
-      "consulting" : function(){
-        responseText("Wood&Mortar LLC starts with Bid Consulting by focusing on construction education.");
-        responseText("We build the perfect bid, giving our clients pick and choose options to fit their budget. Our bids are completely transparent as we annotate each step of the construction process, highlight possible anomalies, and manage your project to completion if needed.");
-        responseText("We are the first step everyone should take before beginning any large project, and your ally in the construction business.");
-        commandReset(2);
-        return
-        },
-
-      "experience" : function(){
-        responseText("Managed the completion of 16 housing units in 2018.");
-        responseText("25 housing units in 2019, including a 14 unit apartment complex.");
-        responseText("Currently leads an inhouse team of four, with 14 trade specialized sub-contrators.");
-        responseText("Would you like to see Micheal's CV? (Yes/No)");
-        commandReset(3);
-        return
-      },
-      "fundraising" : function(){
-        responseText("The <a href='https://docs.google.com/presentation/d/e/2PACX-1vSguUDJx7M76dXvl-HRh2Vek0vYPihxrSxohNaFYJj-Ve30v5LcTzHc7IkLVoqMI-W-dJDjxk9V2Lhh/pub?start=true&loop=true&delayms=3000&slide=id.g5276e6346f_1_45'>Salmon.fund</a> is a Kansas based 501c3, focused on affordable housing.");
-        responseText("There is two main parts.");
-        responseText("The first is the standard tax exempt donation.");
-        responseText("The second is property investment.");
-        responseText("You can learn more by asking about crypto, or <a href='https://docs.google.com/presentation/d/e/2PACX-1vSguUDJx7M76dXvl-HRh2Vek0vYPihxrSxohNaFYJj-Ve30v5LcTzHc7IkLVoqMI-W-dJDjxk9V2Lhh/pub?start=true&loop=true&delayms=3000&slide=id.g5276e6346f_1_45'>Salmon.fund</a>!");
-        commandReset(4);
-        return
-      },
-      "salmon" : function(){
-        responseText("Thank you for taking the time to learn more about our non-profit.");
-        responseText("The <a href='https://docs.google.com/presentation/d/e/2PACX-1vSguUDJx7M76dXvl-HRh2Vek0vYPihxrSxohNaFYJj-Ve30v5LcTzHc7IkLVoqMI-W-dJDjxk9V2Lhh/pub?start=true&loop=true&delayms=3000&slide=id.g5276e6346f_1_45'>Salmon.fund</a> needs your donations / investments to be able to keep building affordable housing.");
-        responseText("It usually takes us 24 hours for convert Paypal funds into crypto / SFND tokens.");
-        responseText("Type &quot;year&quot; to learn about what we've been doing so far or &quot;agreement&quot; to see an example agreement.");
-        responseText("You can donate <a href='https://paypal.me/salmonfund?locale.x=en_US'>here</a>, or call us at 913.280.2336!");
-        commandReset(5);
-        return
-      },
-      "crypto" : function(){
-        responseText("Please wait while I redirect you to our Salmon.fund crypto contracts, at Etherscan.io.");
-        //Redirects you to an image
-        setTimeout(function(){
-          window.location.href = "https://etherscan.io/token/0x6c8b1ad764d3d5f6de14546145c3d9f3f098c6a7"; }, 3000);
-        commandReset(6);
-        return
-      },
-      "vision" : function(){
-        responseText("Micheal is the Co-Owner of Wood&Mortar working with Crycella Freitag to up-level the Kansas City construction personality.");
-        responseText("We started in March of 2017, doing every project ourselves creating the Woodandmortar standard.");
-        responseText("Working with the disenfranchized to work more effectively through personal development and communication training, we hope by 2020 to operate as a non-profit focusing on sub-collegiate level students and homeless.");
-        responseText("We care about our city, and we believe in providing a structured learning environment - allowing paid opportunities with a baseline of moral values that change lives.");
-        commandReset(7);
-        return
-      },
-      "contact" : function(){
-        responseText("Email: <a href='mailto:info@woodandmortar.com?Subject=Hello%20Micheal' target='_top'>send me a message</a>");
-        responseText("Phone: <a href='mailto:info@woodandmortar.com?Subject=Hello%20Micheal'>913.280.2336</a>");
-        responseText("<a href='https://www.linkedin.com/in/mfglife/'>Linkedin</a>, <a href='https://paypal.me/salmonfund?locale.x=en_US'>Paypal</a>");
-        commandReset(8);
-        return
-      },
-      "command" : function(){
-        responseText("This is a list of commands Morton knows:")
-        responseText("about, best work, commands, consulting, contact, <br>experience, fall, founder, help, history, <br>insurance, fundraising, crypto, projects, vision, rick roll");
-        commandReset(9);
-        return
-      },
-      "rick roll" : function(){
-        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-        },
-    }
-
-    var reactionInput = {
-      "work" : function(){
-        responseText("On this GitHub page you'll find everything about Morton");
-        responseText("<a href='https://github.com/woodandmortar/woodandmortar.github.io'>Morton on GitHub</a>")
-        animationCounter = 1;
-        return
-      },
-      "about" : function(){
-        responseText("On this GitHub page you'll find everything about Morton");
-        responseText("<a href='https://github.com/woodandmortar/woodandmortar.github.io'>Morton on GitHub</a>")
-        animationCounter = 1;
-        return
-        },
-      "experience" : function(){
-        responseText("Please wait while I redirect you to Micheal's CV");
-        setTimeout(function(){
-          window.location.href = "https://www.linkedin.com/in/mfglife/"; }, 3000);
-        animationCounter = 1;
-        return
-      }
-    }
-
-    function formVeneer(){
-              var vName = document.getElementById('vName').value;
-              var vEmail = document.getElementById('vEmail').value;
-                $.ajax({
-                  url: "https://docs.google.com/forms/d/e/1FAIpQLSeMohoaLj7xbaSRpd027QOJxkMrEOhuB9ETdNcX4xIbn3TRpA/formResponse",
-                  data:  { "entry.1937233099" : vName , "entry.1351174333" : vEmail },
-                  type: "POST",
-                  dataType: "xml",
-                  statusCode: {
-                    0: function () {
-              //					alert("Click -OK- to submit message");
-                    },
-                    200: function () {
-              //					alert("Click -OK- to submit message");
-                    }
-                        }
-                });
-                togglediv('item2')
-              }
-
-
-
-
-</script>
+<!-- partial -->
 
 </body>
-
 </html>

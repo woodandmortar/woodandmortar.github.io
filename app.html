@@ -32,24 +32,17 @@
             margin: 0 15px 0 0;
           }
 
+          .textwrapr {
+            margin: 0 0 0 30px;
+          }
+
           * {
             box-sizing: border-box;
           }
 
           blockquote {
-            font-size: 3.9rem;
-            margin-right: 15%;
-            margin-left: 15%;
-            color: #fff;
-          }
-          cite {
-            display: block;
-            font-family: Verdana, Arial, sans-serif;
-            margin-top: 2rem;
-            margin-right: 15%;
-            margin-left: 15%;
-            font-size: 1rem;
-            color: #fff;
+            font-size: 2rem;
+            color: #f0566d;
           }
           blockquote q {
             font-family: Georgia, serif;
@@ -255,76 +248,78 @@
 <body>
 <!-- partial:index.partial.html -->
 <div id="parallax-world-of-ugg">
-
-
-
-  <nav class="menu">
-    <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
-    <label class="menu-open-button" for="menu-open">
-      <span class="hamburger hamburger-1"></span>
-      <span class="hamburger hamburger-2"></span>
-      <span class="hamburger hamburger-3"></span>
-    </label>
-
-    <a href="mailto:info@salmon.fund" target=”_blank” class="menu-item"> <i class="fas fa-envelope"></i> </a>
-    <a href="./how.html" target=”_blank” class="menu-item"> <i class="fas fa-donate"></i> </a>
-    <a href="https://twitter.com/woodandmortar" target=”_blank” class="menu-item"> <i class="fab fa-twitter"></i> </a>
-    <a href="./app.html" target=”_blank” class="menu-item"> <i class="fas fa-home"></i> </a>
-    <a href="./about.html" target=”_blank” class="menu-item"> <svg class="logo" width="40" height="40" viewBox="-359 -463 900 500">
-      <path d="M408 34L290-130c-6-8-20-15-30-15H16c-10 0-23 7-29 15l-33 45L40 34c3 4 5 10 5 15s-2 11-5 15l-86 119 33 45c6 8 19 15 29 15h244c10 0 24-7 30-15L408 64c3-4 5-10 5-15s-2-11-5-15zM206-90c12 0 21 9 21 21s-9 21-21 21-21-9-21-21 9-21 21-21z" fill="#FFF"></path>
-      <path d="M3 49c0 6-2 11-5 15l-119 164c-6 8-20 15-30 15h-146c-7 0-11-3-11-8 0-2 1-5 3-7l130-179-130-179-3-7c0-5 4-8 11-8h146c10 0 24 7 30 15L-2 34c3 4 5 10 5 15z" fill="#fff"></path>
-    </svg> </a>
-
-  </nav>
-
-
-  <!-- filters -->
-  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-      <defs>
-        <filter id="shadowed-goo">
-
-            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-            <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
-            <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
-            <feOffset in="shadow" dx="1" dy="1" result="shadow" />
-            <feBlend in2="shadow" in="goo" result="goo" />
-            <feBlend in2="goo" in="SourceGraphic" result="mix" />
-        </filter>
-        <filter id="goo">
-            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-            <feBlend in2="goo" in="SourceGraphic" result="mix" />
-        </filter>
-      </defs>
-  </svg>
-
-
-
-
 <section>
   <div class="title">
-    <h3>Woodandmortar LLC</h3><br/>
-    <h1>Salmon Fund</h1>
+    <blockquote contenteditable="true"><q>100% of profit is donated to helping wyandotte grow</q>
+    </blockquote>
   </div>
 </section>
 
 <section>
     <div class="parallax-one">
-        <blockquote contenteditable="true"><q>Kansas authentic 501(c)3</q>
-          <cite>on the Ethereum Blockchain</cite>
-        </blockquote>
+
+      <h2>.Fund</h2>
+
+        <nav class="menu">
+          <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+          <label class="menu-open-button" for="menu-open">
+            <span class="hamburger hamburger-1"></span>
+            <span class="hamburger hamburger-2"></span>
+            <span class="hamburger hamburger-3"></span>
+          </label>
+
+          <a href="mailto:info@salmon.fund" target=”_blank” class="menu-item"> <i class="fas fa-envelope"></i> </a>
+          <a href="./how.html" target=”_blank” class="menu-item"> <i class="fas fa-donate"></i> </a>
+          <a href="https://twitter.com/woodandmortar" target=”_blank” class="menu-item"> <i class="fab fa-twitter"></i> </a>
+          <a href="./app.html" target=”_blank” class="menu-item"> <i class="fas fa-home"></i> </a>
+          <a href="./about.html" target=”_blank” class="menu-item"> <svg class="logo" width="40" height="40" viewBox="-359 -463 900 500">
+            <path d="M408 34L290-130c-6-8-20-15-30-15H16c-10 0-23 7-29 15l-33 45L40 34c3 4 5 10 5 15s-2 11-5 15l-86 119 33 45c6 8 19 15 29 15h244c10 0 24-7 30-15L408 64c3-4 5-10 5-15s-2-11-5-15zM206-90c12 0 21 9 21 21s-9 21-21 21-21-9-21-21 9-21 21-21z" fill="#FFF"></path>
+            <path d="M3 49c0 6-2 11-5 15l-119 164c-6 8-20 15-30 15h-146c-7 0-11-3-11-8 0-2 1-5 3-7l130-179-130-179-3-7c0-5 4-8 11-8h146c10 0 24 7 30 15L-2 34c3 4 5 10 5 15z" fill="#fff"></path>
+          </svg> </a>
+
+        </nav>
+
+
+        <!-- filters -->
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+              <filter id="shadowed-goo">
+
+                  <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                  <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+                  <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+                  <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+                  <feBlend in2="shadow" in="goo" result="goo" />
+                  <feBlend in2="goo" in="SourceGraphic" result="mix" />
+              </filter>
+              <filter id="goo">
+                  <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                  <feBlend in2="goo" in="SourceGraphic" result="mix" />
+              </filter>
+            </defs>
+        </svg>
+
+
     </div>
 </section>
 
 <section>
   <div class="block">
-    <p class="margin-top-10"><a href="https://www.linkedin.com/in/mfglife/"><img class="textwrap" width="120px" src="woodandmortar.jpeg"></a> Woodandmortar LLC can be reached at <a href="mailto:info@woodandmortar.com"><button>info@WoodandMortar.com</button></a> and calls should be directed to (785) 214-9030. Woodandmortar LLC is currently scheduling for (mid) December with a current special on kitchen countertop replacements and backsplash. Connect with us via email for all inquiries, product catalog / inventory, and bids. If you'd like to dicuss how to be involved with Salmon Fund you can contact <a href="mailto:micheal@salmon.fund"><button>Micheal@salmon.fund</button></a> or call (913) 280-2336.
-    </p>
-    <p class="line-break margin-top-10"></p><br/>
-    <p>Salmon Fund was launched in April 2019 by Micheal Salmon. After starting and successfully sustaining a small construction company, Woodandmortar LLC, in the heart of urban Kansas City Metro, we noticed a number of negative trends amidst our tradespeople, community members, and property owners. Some tradespeople did not have the resources to succeed in the workplace such as regular transportation for their commutes and connectivity via smart device for both work functions and communication. Community members did not trust incoming property management which caused property damage and theft. Lastly, property owners were regularly more concerned with the bottom line and the bottom dollar over the safety and well being of the tenants residing in the properties they owned.</p>
-    <br/>
+<center>
+    <h1>Wood&mortar <a href="mailto:info@woodandmortar.com" target=”_blank”> <i style="color: Tomato;" class="fas fa-envelope fa-sm"></i> </a></h1><br/>
+    <h3>(785) 214-9030</h3></center>
+<br/><br/>
+
     <p class="margin-top-10">Salmon Fund 501(c)3 nonprofit was started with to fund the development of Wyandotte County using endemic tradespeople, bridge relationships between existing nonprofits to unite the community, and remove bare minimum property management systems. Located in the center of targeted rehabilitation areas, WoodandMortar headquarters is the training ground for beginning participants as well as our materials warehouse. The Salmon Fund aims to secure $787,660 in investments managed in cryptocurrency escrow - SMN Tokens - to provide complete transparency and tracking throughout the Urban Improvement and Trust program. These funds will be allocated towards permanent home acquisition, tradesperson labor and construction, then transferred to participants seeking program completion. At the end of four years, each participant will have accumulated enough SMN tokens to acquire their permanent home deed. Along with upgrading a dilapidated area, we believe trade education and property maintenance will be the necessary motivation in keeping Wyandotte County beautiful.</p>
+
+<br/>
+
+<center><h1>Salmon Fund 501(3)c <a href="mailto:info@salmon.fund" target=”_blank”> <i style="color: Tomato;" class="fas fa-envelope fa-sm"></i> </a></h1><br/>
+<h3>(913) 280-2336</h3></center>
+<br/>
+
 </div>
 </section>
 
@@ -361,7 +356,7 @@ General qualifications, as can be found by other employers, also exist for Salmo
 
 <section>
   <div class="parallax-four">
-    <h2>Our Journey</h2>
+    <h2>Partners</h2>
   </div>
 </section>
 
@@ -373,6 +368,8 @@ General qualifications, as can be found by other employers, also exist for Salmo
 <p>
 The Salmon Fund aims to secure $787,660 in investments managed in cryptocurrency escrow - SMN Tokens - to provide complete transparency and tracking throughout the Urban Improvement and Trust involvement. These funds will be allocated towards permanent home acquisition, tradesperson labor and construction, then transferred to participants seeking program completion. At the end of four years, each participant will have accumulated enough SMN tokens to acquire their permanent home deed. Along with upgrading a dilapidated area, we believe trade education and property maintenance will be the necessary motivation in keeping Wyandotte County beautiful.
   </p>
+
+  <a href="https://www.linkedin.com/in/mfglife/"><img class="textwrap" width="120px" src="woodandmortar.jpeg"></a>
   </div>
 </section>
 

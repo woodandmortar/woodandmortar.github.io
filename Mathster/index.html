@@ -714,7 +714,7 @@
         window.addEventListener('DOMContentLoaded', init)
 
         function showInfo(data) {
-          var mNum = Math.floor(Math.random() * 40);
+          var mNum = Math.floor((Math.random() * 399) + 1);
           var mProb = data[mNum].Name;
           var mAns = data[mNum].Answer;
           document.getElementById("math").innerHTML = [ mProb ].join(", ");

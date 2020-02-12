@@ -475,7 +475,7 @@ _::-webkit-:host:not(:root:root), .card__excerpt--underlay {
 /*# sourceMappingURL=main.css.map */
 
    </style>
-   <div class="pic1"><img id="profilePic" src="./hat.png" style="width:120px"></div>
+   <div class="pic1"><a href="./index.html"><img src="./WMThumb.jpg" style="width:120px"></a></div>
 
   <body>
 
@@ -484,7 +484,7 @@ _::-webkit-:host:not(:root:root), .card__excerpt--underlay {
     <div class="block--background">
       <div class="chatbot__overview">
         <ul class="chatlist">
-          <li class="bot__output bot__output--standard"><img id="profilePic" src="pics/wm.png" style="width:100px"><br/><span id="vresp1"><b>Please Login</b></span></li>
+          <li class="bot__output bot__output--standard"><img id="profilePic" src="./login.png" style="width:100px"><br/><span id="vresp1"><b>Please Login</b></span></li>
 
           <li class="bot__output bot__output--standard">
             <span class="bot__output--second-sentence">Quick access tab:</span>
@@ -495,8 +495,17 @@ _::-webkit-:host:not(:root:root), .card__excerpt--underlay {
               <li class="input__nested-list" id="foo4" style="display:none"><button onclick="formJChalmers()" style="height:40px;width:180px;font-size:18px"><span id="fo4">Clock in/out</span></button></li>
               <li class="input__nested-list" id="foo5" style="display:none"><button onclick="formLTener()" style="height:40px;width:180px;font-size:18px"><span id="fo5">Clock in/out</span></button></li>
               <li class="input__nested-list" id="foo6" style="display:none"><button onclick="formJRagsdale()" style="height:40px;width:180px;font-size:18px"><span id="fo6">Clock in/out</span></button></li>
-              <li class="input__nested-list"><button onclick="formSchedule()" style="height:40px;width:180px;font-size:18px"><span>Schedule</span></button> | <span id="vresp7" class="bot__command">Pending</span></li>
-              <li class="input__nested-list"><span id="vresp8">Pending</span></li>
+              <li class="input__nested-list"><span id="vresp7" class="bot__command">Pending login</span></li>
+              <li class="input__nested-list">
+<label for="tasks">Choose a Task:</label>
+<select id="vresp8" style="height:40px;width:180px;font-size:18px">
+  <option value="Drywall">Drywall</option>
+  <option value="Texture">Texture</option>
+  <option value="Painting">Painting</option>
+  <option value="Tile">Tile</option>
+  <option value="Woodwork">Woodwork</option>
+  <option value="Demolition">Demolition</option>
+</select></li>
               <li class="input__nested-list">Type <span class="bot__command">help</span> (for more instructions) or <span class="bot__command">commands</span> for a list of every command</li>
               <li class="input__nested-list">Geolocation: <span id="vresp9" class="bot__command">Requesting Access</span></li>
             </ul>
@@ -583,7 +592,6 @@ function onSignIn(googleUser) {
             document.getElementById('fo5').innerHTML = "Latishua Tener";
             document.getElementById('fo6').innerHTML = "Jordan Ragsdale";
             document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
-            document.getElementById('vresp8').innerHTML = "End time is 5:00pm";
               break;
         case 'woodmortar@gmail.com':
         toggleVisibility(document.getElementById('foo1'));
@@ -599,37 +607,30 @@ function onSignIn(googleUser) {
         document.getElementById('fo5').innerHTML = "Latishua Tener";
         document.getElementById('fo6').innerHTML = "Jordan Ragsdale";
         document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
-        document.getElementById('vresp8').innerHTML = "End time is 5:00pm";
           break;
         case 'traviswindsor22@gmail.com':
         toggleVisibility(document.getElementById('foo2'));
         document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
-        document.getElementById('vresp8').innerHTML = "End time is 5:00pm";
           break;
         case 'BiGbawlN@gmail.com':
         toggleVisibility(document.getElementById('foo3'));
         document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
-        document.getElementById('vresp8').innerHTML = "End time is 5:00pm";
           break;
         case 'chalmersjc37@gmail.com':
         toggleVisibility(document.getElementById('foo4'));
         document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
-        document.getElementById('vresp8').innerHTML = "End time is 5:00pm";
           break;
         case 'latishuatener@gmail.com':
         toggleVisibility(document.getElementById('foo5'));
         document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
-        document.getElementById('vresp8').innerHTML = "End time is 5:00pm";
           break;
         case 'jrags60@gmail.com':
         toggleVisibility(document.getElementById('foo6'));
         document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
-        document.getElementById('vresp8').innerHTML = "End time is 5:00pm";
           break;
         case 'open@gmail.com':
         toggleVisibility(document.getElementById('foo7'));
         document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
-        document.getElementById('vresp8').innerHTML = "End time is 5:00pm";
           break;
 
 
@@ -1051,7 +1052,7 @@ function formCFreitag(){
 
             $.ajax({
               url: "https://docs.google.com/forms/d/e/1FAIpQLSfa54ksd_dyPwl1SMkLxYdUCczIwo0D4Bcu50mX9dg-5bDVYg/formResponse",
-              data:  { "entry.416551146" : task , "entry.707183520" : project , "entry.727581677" : location },
+              data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
               type: "POST",
               dataType: "xml",
               statusCode: {
@@ -1204,9 +1205,6 @@ function formTWindsor(){
             });
           }
 
-function formSchedule(){
-          window.location.href = "https://docs.google.com/document/d/11utOaHHCTvGZPOWn6ZAJJgdOs3GUos6owb4ugaNUlVw/edit?usp=sharing";
-          }
 
   </script>
   </body>

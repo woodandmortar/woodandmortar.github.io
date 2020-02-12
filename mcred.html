@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Morton</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <META NAME="KEYWORDS" CONTENT="property maintenance, home improvement, home repair, house repair, house improvement, design, home design, designers, kitchen remodel, bathroom remodel, kitchen design, kitchen makeover, improvement, kitchen, bathroom, small kitchen remodel, Painters, Painting, woodworking, tile, home repair, Contractors, Home, Home Renovations, Wood, wood&mortar, wood & mortar, brick, stucco, Wood and Mortar, WoodandMortar">
+        <META NAME="ROBOTS" CONTENT="ALL,FOLLOW">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="description" content="Property Consultants">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" sizes="180x180" href="pics/wm.png">
+        <link rel="icon" type="image/png" href="pics/wm.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="pics/wm.png" sizes="16x16">
+        <link rel="mask-icon" href="pics/wm.png" color="#fff">
+        <link rel="shortcut icon" href="pics/wm.png">
+        <link rel="manifest" href="manifest.json">
+
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="876802948446-hq89rbp43opigb73ks5soa3c3gmqmnrj.apps.googleusercontent.com">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123535120-1"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-123535120-1');
+          </script>
+
+  </head>
+  <style>
+
+  .pic1 {
+     top: 20px;
+     position: absolute;
+     right: 20px;
+     z-index: 9999;
+   }
+
+   /*@import url(../styles/reset.css);*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Roboto");
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1em;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.45;
+  background-color: #363636; }
+
+.chatbot__overview {
+  background-color: #363636;
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: space-between;
+  min-height: 70vh;
+  max-height: 70vh;
+  margin: 0 auto;
+  padding: 1em;
+  padding-bottom: 0; }
+
+.chatlist {
+  font-family: inherit;
+  font-size: 1em;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 35em;
+  max-height: 65vh;
+  margin: 0 auto; }
+  .chatlist .userInput, .chatlist .bot__output {
+    padding: 0.85em;
+    margin: 0.5em;
+    max-width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    border-bottom: 1px solid #777; }
+  .chatlist .userInput {
+    text-transform: lowercase;
+    box-shadow: 1px 1px 2px #666;
+    border-top: 4px solid #CC8914;
+    opacity: 0;
+    animation-name: animateBubble;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+    animation-fill-mode: forwards; }
+  .chatlist .bot__output {
+    align-self: flex-start;
+    box-shadow: -1px 1px 2px #666;
+    border-top: 4px solid #27ae60;
+    will-change: auto;
+    height: auto;
+    opacity: 0;
+    animation-name: animateBubble;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    animation-play-state: paused;
+    animation-fill-mode: forwards; }
+    .chatlist .bot__output:last-child {
+      display: none; }
+  .chatlist .bot__command {
+    color: #f5f5f5;
+    color: #27ae60;
+    font-weight: 600;
+    padding: 0.1em; }
+  .chatlist .bot__output:nth-child(1) {
+    animation-delay: 600ms;
+    animation-play-state: running; }
+  .chatlist .bot__output:nth-child(2) {
+    animation-delay: 1200ms;
+    animation-play-state: running; }
+  .chatlist .bot__output:nth-child(3) {
+    animation-delay: 1800ms;
+    animation-play-state: running; }
+  .chatlist .bot__output--standard:last-child {
+    display: block; }
+  .chatlist .bot__output--failed {
+    display: block !important; }
+  .chatlist .bot__output--second-sentence {
+    display: block; }
+  .chatlist .bot__outputImage {
+    max-width: 16em;
+    height: 12em; }
+
+@keyframes animateBubble {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+.block--background {
+  background-color: #363636;
+  width: 100vw;
+  height: 100vh; }
+
+#chatform {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  max-width: 35em;
+  margin: 0 auto;
+  padding-top: 1em;
+  font-size: 1em;
+  font-family: Helvetica; }
+  @media screen and (max-width: 29em) {
+    #chatform {
+      width: 90%; } }
+
+.chatbox-area {
+  margin: 0 auto;
+  position: relative;
+  bottom: 0;
+  height: auto;
+  width: 100%; }
+
+textarea[name="chatbox"] {
+  resize: none;
+  border: 2px solid #27ae60;
+  border-right: 0;
+  width: 70%;
+  background-color: transparent;
+  color: #fff;
+  height: 3em;
+  margin: 0;
+  padding: 0.75em;
+  border-radius: 8px 0px 0px 8px;
+  font-family: inherit;
+  font-size: 1em; }
+  textarea[name="chatbox"]:focus {
+    outline: none;
+    border: 2px solid #4bd786; }
+
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #fff; }
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #fff;
+  opacity: 1; }
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #fff;
+  opacity: 1; }
+
+input[type="submit"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  width: 25%;
+  margin: 0;
+  background-color: #27ae60;
+  color: #fff;
+  border: 2px solid #27ae60;
+  border-left: 0;
+  border-radius: 0 8px 8px 0;
+  font-family: inherit;
+  font-size: 1em;
+  transition: 200ms all ease-in; }
+  input[type="submit"]:hover {
+    background-color: #4bd786;
+    border-color: #4bd786;
+    color: #fff; }
+
+.input__nested-list {
+  list-style: disc;
+  list-style-position: inside;
+  padding: 0.5em; }
+  .input__nested-list:first-child {
+    padding-top: 1em; }
+
+.input__nested-link {
+  color: #2ecc71;
+  text-decoration: none;
+  border-bottom: 1px solid #2ecc71; }
+
+::-webkit-scrollbar {
+  width: 0.65em;
+  /* for vertical scrollbars */
+  height: 0.65em;
+  /* for horizontal scrollbars */ }
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); }
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3); }
+
+.more {
+  text-align: center;
+  color: #f5f5f5;
+  margin-bottom: -1.5em;
+  margin-top: 1em;
+  padding: 0; }
+
+.downarrow-svg {
+  width: 1.877em;
+  height: 1em;
+  position: relative;
+  left: 50%;
+  top: 2em;
+  transform: translateX(-50%);
+  animation: pointyArrow 1.2s ease-in infinite;
+  will-change: transform; }
+  .downarrow-svg g g {
+    stroke: #fff; }
+
+@keyframes pointyArrow {
+  0% {
+    transform: translateY(0%); }
+  50% {
+    transform: translateY(-20%); }
+  100% {
+    transform: translateY(0%); } }
+.grid__section {
+  width: 80vw;
+  max-width: 55em;
+  margin: 0 auto; }
+
+.block__article {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0;
+  margin: 0 auto; }
+
+.title {
+  font-size: 2em;
+  padding-top: 1em;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff; }
+  .title:first-child {
+    padding-bottom: 1em; }
+
+.small-screen__help, .large-screen__help {
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.85em;
+  font-style: italic;
+  color: #f5f5f5;
+  margin-top: -1em;
+  padding-bottom: 1em; }
+
+.large-screen__help {
+  display: none; }
+
+@media screen and (min-width: 48em) {
+  .small-screen__help {
+    display: none; }
+
+  .large-screen__help {
+    display: block; } }
+.about__intro {
+  color: #f5f5f5; }
+
+.about__nav {
+  margin-top: 2.5em;
+  color: #f5f5f5; }
+  .about__nav h3 {
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    padding: 1em 0; }
+  .about__nav ul li a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    padding: 1.5em 0;
+    padding-top: 0; }
+    .about__nav ul li a span {
+      transition: 200ms all linear;
+      color: #2ecc71;
+      border-bottom: 2px solid #2ecc71;
+      border-radius: 10%; }
+    .about__nav ul li a:hover span {
+      color: #CC8914;
+      border-bottom: 2px solid #CC8914; }
+
+.card {
+  margin: 1.5em auto;
+  padding-top: 0;
+  text-decoration: none;
+  width: 100%; }
+  .card article {
+    width: 100%;
+    height: 100%; }
+  .card .card__link {
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 100%; }
+  .card .image__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-bottom: -3em; }
+    @media screen and (min-width: 48em) {
+      .card .image__container {
+        margin-bottom: -1.5%; } }
+  .card .card__image {
+    width: 100%;
+    height: 100%; }
+  .card .card__title {
+    font-size: 1.5em;
+    position: absolute;
+    top: 10%;
+    z-index: 3;
+    color: #FFF;
+    background: #27ae60;
+    padding: 0.2em 0.5em 0.2em 1em;
+    margin-left: -0.5em; }
+  .card .card__button {
+    appearance: none;
+    border: none;
+    box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.1);
+    outline: none;
+    background-color: #2ecc71;
+    display: flex;
+    justify-content: center;
+    width: 2.75em;
+    height: 2.75em;
+    font-size: 1em;
+    border-radius: 50%;
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-65%);
+    z-index: 13;
+    cursor: pointer;
+    transition: 200ms transform ease-in, 200ms background ease-in; }
+    .card .card__button:hover {
+      background-color: #27ae60; }
+    .card .card__button svg {
+      position: absolute;
+      left: 27.5%;
+      top: 30%;
+      transform: rotate(180deg);
+      transition: 200ms transform ease-in;
+      width: 1.25em; }
+      .card .card__button svg g {
+        stroke: #fff; }
+    @media screen and (min-width: 48em) {
+      .card .card__button {
+        display: none; } }
+  .card .card__button[aria-expanded=true] {
+    transform: translateX(-50%) translateY(-13.675em); }
+    .card .card__button[aria-expanded=true] svg {
+      transform: rotate(0deg) translateY(10%); }
+    .card .card__button[aria-expanded=true] + .card__excerpt--underlay {
+      transform: scaleY(1);
+      opacity: 0.95; }
+      .card .card__button[aria-expanded=true] + .card__excerpt--underlay .card__excerpt {
+        opacity: 1; }
+  .card .card__excerpt--underlay {
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    display: block;
+    width: 100%;
+    transform-origin: bottom;
+    background-color: #363636;
+    height: 12em;
+    z-index: 12;
+    transition: 400ms opacity ease-in, 200ms transform ease-in; }
+    @media screen and (max-width: 48em) {
+      .card .card__excerpt--underlay {
+        transform: scaleY(0);
+        opacity: 0.95; } }
+  .card .card__excerpt {
+    position: absolute;
+    bottom: 10%;
+    z-index: 7;
+    padding: 1em;
+    font-size: 1em;
+    font-weight: 600;
+    color: #f5f5f5;
+    filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.85));
+    transition: 200ms opacity ease-out;
+    opacity: 0; }
+    @media screen and (min-width: 48em) {
+      .card .card__excerpt {
+        padding-bottom: 1em; } }
+    @media screen and (min-width: 56em) {
+      .card .card__excerpt {
+        font-size: 1em; } }
+    @media screen and (max-width: 48em) {
+      .card .card__excerpt {
+        opacity: 0; } }
+  @media screen and (min-width: 48em) {
+    .card {
+      width: 47.5%;
+      margin: 2.5em 0; }
+      .card:hover .card__excerpt--underlay {
+        opacity: 0.95;
+        box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.1); }
+      .card:hover .card__excerpt {
+        opacity: 1; }
+      .card:nth-child(2n + 1) {
+        margin-left: 5%; } }
+
+footer {
+  display: block;
+  width: 100vw;
+  text-align: center;
+  background-color: #222;
+  padding: 1em 0;
+  margin-top: 2em; }
+  footer .footer__link {
+    text-decoration: none;
+    font-size: 2em;
+    font-family: "Montserrat", sans-serif;
+    color: #f5f5f5;
+    border-bottom: 3px solid #f5f5f5;
+    transition: 200ms color ease-in; }
+    footer .footer__link:hover {
+      color: #2ecc71; }
+
+_::-webkit-:host:not(:root:root), .card__excerpt--underlay {
+  transform: translateY(-3em); }
+
+/*# sourceMappingURL=main.css.map */
+
+   </style>
+   <div class="pic1"><img id="mortonPic" src="pics/hi.gif" style="width:120px"></div>
+
+  <body>
+
+  <main class="page__main">
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <div class="block--background">
+      <div class="chatbot__overview">
+        <ul class="chatlist">
+          <li class="bot__output bot__output--standard"><img id="profilePic" src="pics/wm.png" style="width:100px"><br/><span id="vresp1"><b>Please Login</b></span></li>
+
+          <li class="bot__output bot__output--standard">
+            <span class="bot__output--second-sentence">Quick access tab:</span>
+            <ul>
+              <li class="input__nested-list" id="foo1" style="display:none"><button onclick="formAdmin()" style="height:40px;width:180px;font-size:18px"><span id="fo1">Clock in/out</span></button></li>
+              <li class="input__nested-list" id="foo2" style="display:none"><button onclick="formTWindsor()" style="height:40px;width:180px;font-size:18px"><span id="fo2">Clock in/out</span></button></li>
+              <li class="input__nested-list" id="foo3" style="display:none"><button onclick="formCFreitag()" style="height:40px;width:180px;font-size:18px"><span id="fo3">Clock in/out</span></button></li>
+              <li class="input__nested-list" id="foo4" style="display:none"><button onclick="formJChalmers()" style="height:40px;width:180px;font-size:18px"><span id="fo4">Clock in/out</span></button></li>
+              <li class="input__nested-list" id="foo5" style="display:none"><button onclick="formLTener()" style="height:40px;width:180px;font-size:18px"><span id="fo5">Clock in/out</span></button></li>
+              <li class="input__nested-list" id="foo6" style="display:none"><button onclick="formJRagsdale()" style="height:40px;width:180px;font-size:18px"><span id="fo6">Clock in/out</span></button></li>
+              <li class="input__nested-list"><button onclick="formSchedule()" style="height:40px;width:180px;font-size:18px"><span>Schedule</span></button> | <span id="vresp7" class="bot__command">Pending</span></li>
+              <li class="input__nested-list"><span id="vresp8">Pending</span></li>
+              <li class="input__nested-list">Type <span class="bot__command">help</span> (for more instructions) or <span class="bot__command">commands</span> for a list of every command</li>
+              <li class="input__nested-list">Geolocation: <span id="vresp9" class="bot__command">Requesting Access</span></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="chatbox-area">
+        <form action="" id="chatform">
+            <textarea placeholder="Talk to me!" class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
+            <input class="submit-button" type="submit" value="send">
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+  <script>
+  var toggleVisibility = function(element) {
+    if(element.style.display=='block'){
+        element.style.display='none';
+    } else {
+        element.style.display='block';
+    }
+  }
+
+var location;
+var project;
+var task;
+var fName;
+var userImage;
+
+  function startGeoLookup() {
+    navigator.geolocation.getCurrentPosition(success, error);
+     $('.overlay, .loader').fadeIn('fast');
+  }
+  startGeoLookup();
+
+  function success(pos) {
+    $('.overlay, .loader').fadeOut('fast');
+    var crd = pos.coords;
+    var tme = pos.timestamp;
+    var d = new Date(tme);
+    var t = new Date(tme);
+    // alert("Altitude: " + crd.altitude + " \nAltitudeAccuracy: " + crd.altitudeAccuracy);
+    var roundAcc = Math.floor(crd.accuracy);
+    document.getElementById('vresp9').innerHTML = crd.latitude + ' ' + crd.longitude;
+  }
+
+  /* Error Codes: 1 PERMISSION_DENIED, 2 POSITION_UNAVAILABLE, 3 TIMEOUT */
+  function error(err) {
+    var geoerror = (err.code == (1, 2, 3) ? "Error loading" : err.message);
+    document.getElementById('vresp').innerHTML = geoerror;
+    $('.overlay, .loader').fadeOut('fast');
+  }
+
+
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  var fName = profile.getName();
+  var userImage = profile.getImageUrl();
+  document.getElementById('vresp1').innerHTML = profile.getName();
+  document.getElementById('profilePic').src = userImage;
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  switch(profile.getEmail()){
+    default:
+        setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/morton.html';}, 6000);
+        break;
+        case 'micheal.mfg@gmail.com':
+            toggleVisibility(document.getElementById('foo1'));
+            toggleVisibility(document.getElementById('foo2'));
+            toggleVisibility(document.getElementById('foo3'));
+            toggleVisibility(document.getElementById('foo4'));
+            toggleVisibility(document.getElementById('foo5'));
+            toggleVisibility(document.getElementById('foo6'));
+            document.getElementById('fo1').innerHTML = "Admin";
+            document.getElementById('fo2').innerHTML = "Travis Windsor";
+            document.getElementById('fo3').innerHTML = "Christian Freitag";
+            document.getElementById('fo4').innerHTML = "Jamari Chalmers";
+            document.getElementById('fo5').innerHTML = "Latishua Tener";
+            document.getElementById('fo6').innerHTML = "Jordan Ragsdale";
+            document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
+            document.getElementById('vresp8').innerHTML = "End time is 5:00pm";
+              break;
+        case 'woodmortar@gmail.com':
+        toggleVisibility(document.getElementById('foo1'));
+        toggleVisibility(document.getElementById('foo2'));
+        toggleVisibility(document.getElementById('foo3'));
+        toggleVisibility(document.getElementById('foo4'));
+        toggleVisibility(document.getElementById('foo5'));
+        toggleVisibility(document.getElementById('foo6'));
+        document.getElementById('fo1').innerHTML = "Admin";
+        document.getElementById('fo2').innerHTML = "Travis Windsor";
+        document.getElementById('fo3').innerHTML = "Christian Freitag";
+        document.getElementById('fo4').innerHTML = "Jamari Chalmers";
+        document.getElementById('fo5').innerHTML = "Latishua Tener";
+        document.getElementById('fo6').innerHTML = "Jordan Ragsdale";
+        document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
+        document.getElementById('vresp8').innerHTML = "End time is 5:00pm";
+          break;
+        case 'traviswindsor22@gmail.com':
+        toggleVisibility(document.getElementById('foo2'));
+        document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
+        document.getElementById('vresp8').innerHTML = "End time is 5:00pm";
+          break;
+        case 'BiGbawlN@gmail.com':
+        toggleVisibility(document.getElementById('foo3'));
+        document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
+        document.getElementById('vresp8').innerHTML = "End time is 5:00pm";
+          break;
+        case 'chalmersjc37@gmail.com':
+        toggleVisibility(document.getElementById('foo4'));
+        document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
+        document.getElementById('vresp8').innerHTML = "End time is 5:00pm";
+          break;
+        case 'latishuatener@gmail.com':
+        toggleVisibility(document.getElementById('foo5'));
+        document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
+        document.getElementById('vresp8').innerHTML = "End time is 5:00pm";
+          break;
+        case 'jrags60@gmail.com':
+        toggleVisibility(document.getElementById('foo6'));
+        document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
+        document.getElementById('vresp8').innerHTML = "End time is 5:00pm";
+          break;
+        case 'open@gmail.com':
+        toggleVisibility(document.getElementById('foo7'));
+        document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
+        document.getElementById('vresp8').innerHTML = "End time is 5:00pm";
+          break;
+
+
+ }
+
+}
+
+        function onSignInCallback(resp) {
+          gapi.client.load('plus', 'v1', apiClientLoaded);
+        }
+
+        /**
+         * Sets up an API call after the Google API client loads.
+         */
+        function apiClientLoaded() {
+          gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
+        }
+
+          var sendForm = document.querySelector('#chatform'),
+              textInput = document.querySelector('.chatbox'),
+              chatList = document.querySelector('.chatlist'),
+              userBubble = document.querySelectorAll('.userInput'),
+              botBubble = document.querySelectorAll('.bot__output'),
+              animateBotBubble = document.querySelectorAll('.bot__input--animation'),
+              overview = document.querySelector('.chatbot__overview'),
+              hasCorrectInput,
+              imgLoader = false,
+              animationCounter = 1,
+              animationBubbleDelay = 600,
+              input,
+              previousInput,
+              isReaction = false,
+              unkwnCommReaction = "Currently not programmed to understand.",
+              chatbotButton = document.querySelector(".submit-button")
+
+          sendForm.onkeydown = function(e){
+            if(e.keyCode == 13){
+              e.preventDefault();
+
+              //No mix ups with upper and lowercases
+              var input = textInput.value.toLowerCase();
+
+              //Empty textarea fix
+              if(input.length > 0) {
+                createBubble(input)
+              }
+            }
+          };
+
+          sendForm.addEventListener('submit', function(e) {
+            //so form doesnt submit page (no page refresh)
+            e.preventDefault();
+
+            //No mix ups with upper and lowercases
+            var input = textInput.value.toLowerCase();
+
+            //Empty textarea fix
+            if(input.length > 0) {
+              createBubble(input)
+            }
+          }) //end of eventlistener
+
+          var createBubble = function(input) {
+            //create input bubble
+            var chatBubble = document.createElement('li');
+            chatBubble.classList.add('userInput');
+
+            //adds input of textarea to chatbubble list item
+            chatBubble.innerHTML = input;
+
+            //adds chatBubble to chatlist
+            chatList.appendChild(chatBubble)
+
+            checkInput(input);
+          }
+
+          var checkInput = function(input) {
+            hasCorrectInput = false;
+            isReaction = false;
+            //Checks all text values in possibleInput
+            for(var textVal in possibleInput){
+              //If user reacts with "yes" and the previous input was in textVal
+              if(input == "yes" || input.indexOf("yes") >= 0){
+                if(previousInput == textVal) {
+                  console.log("sausigheid");
+
+                  isReaction = true;
+                  hasCorrectInput = true;
+                  botResponse(textVal);
+                }
+              }
+              if(input == "no" && previousInput == textVal){
+                unkwnCommReaction = "For a list of commands type: Commands";
+                unknownCommand("I'm sorry to hear that :(")
+                unknownCommand(unkwnCommReaction);
+                hasCorrectInput = true;
+              }
+              //Is a word of the input also in possibleInput object?
+              if(input == textVal || input.indexOf(textVal) >=0 && isReaction == false){
+          			console.log("succes");
+                hasCorrectInput = true;
+                botResponse(textVal);
+          		}
+          	}
+            //When input is not in possibleInput
+            if(hasCorrectInput == false){
+              console.log("failed");
+              unknownCommand(unkwnCommReaction);
+              hasCorrectInput = true;
+            }
+          }
+
+          // debugger;
+
+          function botResponse(textVal) {
+            //sets previous input to that what was called
+            // previousInput = input;
+
+            //create response bubble
+            var userBubble = document.createElement('li');
+            userBubble.classList.add('bot__output');
+
+            if(isReaction == true){
+              if (typeof reactionInput[textVal] === "function") {
+              //adds input of textarea to chatbubble list item
+                userBubble.innerHTML = reactionInput[textVal]();
+              } else {
+                userBubble.innerHTML = reactionInput[textVal];
+              }
+            }
+
+            if(isReaction == false){
+              //Is the command a function?
+              if (typeof possibleInput[textVal] === "function") {
+                // console.log(possibleInput[textVal] +" is a function");
+              //adds input of textarea to chatbubble list item
+                userBubble.innerHTML = possibleInput[textVal]();
+              } else {
+                userBubble.innerHTML = possibleInput[textVal];
+              }
+            }
+            //add list item to chatlist
+            chatList.appendChild(userBubble) //adds chatBubble to chatlist
+
+            // reset text area input
+            textInput.value = "";
+          }
+
+          function unknownCommand(unkwnCommReaction) {
+            // animationCounter = 1;
+
+            //create response bubble
+            var failedResponse = document.createElement('li');
+
+            failedResponse.classList.add('bot__output');
+            failedResponse.classList.add('bot__output--failed');
+
+            //Add text to failedResponse
+            failedResponse.innerHTML = unkwnCommReaction; //adds input of textarea to chatbubble list item
+
+            //add list item to chatlist
+            chatList.appendChild(failedResponse) //adds chatBubble to chatlist
+
+            animateBotOutput();
+
+            // reset text area input
+            textInput.value = "";
+
+            //Sets chatlist scroll to bottom
+            chatList.scrollTop = chatList.scrollHeight;
+
+            animationCounter = 1;
+          }
+
+          function responseText(e) {
+
+            var response = document.createElement('li');
+
+            response.classList.add('bot__output');
+
+            //Adds whatever is given to responseText() to response bubble
+            response.innerHTML = e;
+
+            chatList.appendChild(response);
+
+            animateBotOutput();
+
+            console.log(response.clientHeight);
+
+            //Sets chatlist scroll to bottom
+            setTimeout(function(){
+              chatList.scrollTop = chatList.scrollHeight;
+              console.log(response.clientHeight);
+            }, 0)
+          }
+
+          function responseImg(e) {
+            var image = new Image();
+
+            image.classList.add('bot__output');
+            //Custom class for styling
+            image.classList.add('bot__outputImage');
+            //Gets the image
+            image.src = "./pics/"+e;
+            chatList.appendChild(image);
+
+            animateBotOutput()
+            if(image.completed) {
+              chatList.scrollTop = chatList.scrollTop + image.scrollHeight;
+            }
+            else {
+              image.addEventListener('load', function(){
+                chatList.scrollTop = chatList.scrollTop + image.scrollHeight;
+              })
+            }
+          }
+
+          //change to SCSS loop
+          function animateBotOutput() {
+            chatList.lastElementChild.style.animationDelay= (animationCounter * animationBubbleDelay)+"ms";
+            animationCounter++;
+            chatList.lastElementChild.style.animationPlayState = "running";
+          }
+
+          function commandReset(e){
+            animationCounter = 1;
+            previousInput = Object.keys(possibleInput)[e];
+          }
+
+          // hlep
+
+          var possibleInput = {
+            // "hlep" : this.help(),
+            "help" : function(){
+              document.getElementById("mortonPic").src = "./pics/no.gif";
+              responseText("You can type a command in the chatbox")
+              responseText("Something like &quot;Morton, please show me Kitchens&quot;")
+              responseText("Did you find a bug or problem? Email me at Micheal@salmon.fund")
+              responseImg("Ampersand.gif");
+              commandReset(0);
+              return
+              },
+            "best work" : function(){
+              document.getElementById("mortonPic").src = "./pics/okfine.gif";
+              responseText("I will show you our best work!");
+              responseImg("9gallery.jpg");
+              responseImg("11gallery.jpg");
+              responseImg("21gallery.jpg");
+              responseImg("23gallery.jpg");
+              responseImg("31gallery.jpg");
+              responseText("Would you like to learn more? (Yes/No)")
+              commandReset(1);
+              return
+              },
+            "about" : function(){
+              document.getElementById("mortonPic").src = "./pics/peek.gif";
+              responseText("I'm Morton, the digital assistant for WoodandMortar LLC");
+              responseText("I also help www.salmon.fund with token curation.");
+              responseText("If you have a google account, I'll be able to remember you.");
+              responseText("Would you like to like to connect? (Yes/No)");
+              commandReset(2);
+              return
+              },
+            "experience" : function(){
+              document.getElementById("mortonPic").src = "./pics/yay.gif";
+              responseText("We've completed 18 High-end to Flip Kitchens in the past 8 months");
+              responseText("We sub-contract 75% of our work load, to Kansas City non-profits through our mentorship platform.");
+              responseText("Micheal Salmon, Founder and Co-Owner pays special attention to project details and workflow ensuring the best possible value.");
+              responseText("Crycella Freitag, Co-Owner and human resource powerhouse manages all aspects of communication, logistics and finance.");
+              responseText("Would you like to see our business plan? (Yes/No)");
+              commandReset(3);
+              return
+            },
+            "specials" : function(){
+              document.getElementById("mortonPic").src = "./pics/cry.gif";
+              responseText("Summer means decks, patios, and landscaping");
+              responseText("We're ordering our lumber for summer projects, so all appointments made before june 29th get all lumber AT COST.");
+              responseText("$6000 Two-Story decks");
+              responseText("$4000 /room Water Damage Reframe");
+              responseText("$2500 Emperor's Tree House");
+              commandReset(4);
+              return
+            },
+            "theme" : function(){
+              responseText("Our 2019 aesthetic begin with:");
+              responseText("Chic Grey Walls");
+              responseText("Satin Ultra-White Trim");
+              responseText("Midnight Horse Black Front Door");
+              responseText("Forest Green, Faded Two-Tone Exterior");
+              document.getElementById("mortonPic").src = "./pics/yay.gif";
+              commandReset(5);
+              return
+            },
+            "vision" : function(){
+              document.getElementById("mortonPic").src = "./pics/yay.gif";
+              responseText("We hope to reinvigorate Kansas City...");
+              responseText("By training locals in specialized trades,");
+              responseText("and utilizing our resources to provide valuable materials.");
+              responseText("We use ethereum blockchain technology to invest back into our community,");
+              responseText("giving equal oppourtunity for high yield local property investments.");
+              commandReset(6);
+              return
+            },
+            "contact" : function(){
+              document.getElementById("mortonPic").src = "./pics/cry.gif";
+              responseText("email: <a href='mailto:micheal.mfg@gmail.com?Subject=Hello%20Micheal' target='_top'>send me a message</a>");
+              commandReset(7);
+              return
+            },
+            "morton" : function(){
+              responseText("UmmmmmHmmmmmm.... Yes?");
+              document.getElementById("mortonPic").src = "./pics/bye.gif";
+              commandReset(8);
+              return
+            },
+            "commands" : function(){
+              document.getElementById("mortonPic").src = "./pics/no4.gif";
+              responseText("Here is a list of commands I know:");
+              responseText("mcred, lunch, logistics, best work, about, vision, experience, specials, theme / interests, contact, commercial");
+              commandReset(9);
+              return
+            },
+            "logistics" : function(){
+              document.getElementById("mortonPic").src = "./pics/bye.gif";
+              responseText("Entering logistics mode...");
+              responseText("Please Select RECORD NOW from the quick access menu.");
+              document.getElementById('fo1').innerHTML = "RECORD NOW";
+              document.getElementById('fo2').innerHTML = "RECORD NOW";
+              document.getElementById('fo3').innerHTML = "RECORD NOW";
+              document.getElementById('fo4').innerHTML = "RECORD NOW";
+              document.getElementById('fo5').innerHTML = "RECORD NOW";
+              document.getElementById('fo6').innerHTML = "RECORD NOW";
+              document.getElementById('vresp8').innerHTML = "Logistics Start/End";
+              commandReset(10);
+              return
+            },
+            "lunch" : function(){
+              document.getElementById("mortonPic").src = "./pics/bye.gif";
+              responseText("Phew... Rough day.");
+              responseText("Please Select TAKE LUNCH from the quick access menu.");
+              document.getElementById('fo1').innerHTML = "TAKE LUNCH";
+              document.getElementById('fo2').innerHTML = "TAKE LUNCH";
+              document.getElementById('fo3').innerHTML = "TAKE LUNCH";
+              document.getElementById('fo4').innerHTML = "TAKE LUNCH";
+              document.getElementById('fo5').innerHTML = "TAKE LUNCH";
+              document.getElementById('fo6').innerHTML = "TAKE LUNCH";
+              document.getElementById('vresp8').innerHTML = "LUNCH Start/End";
+              commandReset(11);
+              return
+            },
+            "tucked" : function(){
+              document.getElementById("mortonPic").src = "./pics/yay.gif";
+              responseText("Finally, I was getting worried");
+              responseText("Please Select TUCKED IN from the quick access menu.");
+              document.getElementById('fo1').innerHTML = "TUCKED IN";
+              document.getElementById('fo2').innerHTML = "TUCKED IN";
+              document.getElementById('fo3').innerHTML = "TUCKED IN";
+              document.getElementById('fo4').innerHTML = "TUCKED IN";
+              document.getElementById('fo5').innerHTML = "TUCKED IN";
+              document.getElementById('fo6').innerHTML = "TUCKED IN";
+              document.getElementById('vresp8').innerHTML = "TUCKED IN";
+              commandReset(12);
+              return
+            },
+            "mcred" : function(){
+              responseText("<a href='https://drive.google.com/open?id=10lbMd2b0YuqKF9mq5D9gMK6g58yQ849lJ2_LwJ3QpRI' target='_blank'>Safety Training</a> <br>  <a href='https://drive.google.com/open?id=1aovEiosNLQ2Bv09UtQuf15Pxf28PXco4ogT02ryoF1w' target='_blank'>Safety Practices</a> <br> <a href='https://drive.google.com/open?id=1OLezOcO7mLV8Jc0Mp6sy9o4HodRoHZlT67xecsrpbTM' style='color:red;' target='_blank'>Safety TEST</a>");
+              responseText("<a href='https://drive.google.com/open?id=1sIbw07cA7386r0BX2-nRuf5_6BO8obgt4868zk1MMvU' target='_blank'>Drywall & Texture Study Guide</a> <br>  <a href='https://drive.google.com/open?id=1mfcnDzY4__0RGBMBmOoUm3KWVUxoXyYwWuwHNY7M788' style='color:red;' target='_blank'>Drywall & Texture TEST</a> ");
+              responseText("<a href='https://drive.google.com/open?id=1ywAJ7PvYA3WsdG1ninCW0S8H18etPnLJ_asRghmqP9I' target='_blank'>Painting Study Guide</a> <br>  <a href='https://drive.google.com/open?id=1mKbNJ-wTZ9MlJrOtLc1Ei4C0f08HrpTnUIPmk2l_25I' style='color:red;' target='_blank'>Painting TEST</a> ");
+              responseText("<a href='https://drive.google.com/open?id=16vgbiM7Y6I2D4UYYffhL44UDrJ1iHVMNTo7DJ7uQTCE' target='_blank'>Tile Study Guide</a> <br>  <a href='https://drive.google.com/open?id=1fUV4WDuQJfwW7cukP1aoeFlR0ZgY1MVK3IWeqdO4jH4' style='color:red;' target='_blank'>Tile TEST</a> ");
+              commandReset(13);
+              return
+            },
+            "timesheet" : function(){
+              window.location.href = "https://docs.google.com/spreadsheets/d/1K0sWp607gZG_RlPcfUuZhyN_nZoAno5f-gIXwbE-eSw/edit?usp=sharing"
+              },
+            "receipt" : function(){
+              responseText("Always take a photo or the receipt.");
+                setTimeout(function() {window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSf7j7tfOSDwOR2U5UIarKxhRsUwIlBhoJkOtSq7kDAPmUl-3Q/viewform"}, 4000);
+                },
+
+          }
+
+          var reactionInput = {
+            "best work" : function(){
+              document.getElementById("mortonPic").src = "./pics/Ampersand.gif";
+              responseText("<a href='https://woodandmortar.github.io/'>Click the arrows on our homepage</a>")
+              responseText("On this GitHub page you'll find everything about Morton");
+              responseText("<a href='https://github.com/woodandmortar'>WoodandMortar on GitHub</a>")
+              animationCounter = 1;
+              return
+            },
+            "about" : function(){
+              document.getElementById("mortonPic").src = "./pics/Ampersand.gif";
+              responseText("Wait one moment while I check you for cleanliness...");
+              setTimeout(function(){
+                window.location.href = "https://www.salmon.fund/contact-1"; }, 4000);
+                animationCounter = 1;
+              return
+              },
+            "experience" : function(){
+              document.getElementById("mortonPic").src = "./pics/Ampersand.gif";
+              responseText("MetaMask is a Google Chrome browser extention.");
+              responseText("It acts as a Digital wallet for your crypto assets.");
+              responseText("Setup only takes a minute, and it's absolutely FREE.");
+              responseText("I will redirect you to WoodandMortar's Business Plan");
+              setTimeout(function(){
+                window.location.href = "https://docs.google.com/document/d/1OAgXxoruvHMqD7lyAqu0m1Bq082rXp7g2Z1wcc-vZnY/edit?usp=sharing"; }, 6000);
+              animationCounter = 1;
+              return
+            }
+          }
+
+function formCFreitag(){
+          document.getElementById("vresp1").innerHTML = "Clock in worked";
+          var project = document.getElementById('vresp7').innerHTML;
+          var location = document.getElementById('vresp9').innerHTML;
+          var task = document.getElementById('vresp8').innerHTML;
+          toggleVisibility(document.getElementById('foo3'));
+
+            $.ajax({
+              url: "https://docs.google.com/forms/d/e/1FAIpQLSfa54ksd_dyPwl1SMkLxYdUCczIwo0D4Bcu50mX9dg-5bDVYg/formResponse",
+              data:  { "entry.416551146" : task , "entry.707183520" : project , "entry.727581677" : location },
+              type: "POST",
+              dataType: "xml",
+              statusCode: {
+                0: function () {
+          //					alert("Click -OK- to submit message");
+                },
+                200: function () {
+          //					alert("Click -OK- to submit message");
+                }
+                    }
+            });
+          }
+
+function formAdmin(){
+          document.getElementById("vresp1").innerHTML = "Clock in worked";
+          var project = document.getElementById('vresp7').innerHTML;
+          var location = document.getElementById('vresp9').innerHTML;
+          var task = document.getElementById('vresp8').innerHTML;
+          toggleVisibility(document.getElementById('foo2'));
+
+            $.ajax({
+              url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfN2kkQpPALiBnKuXyfW-iRYivAp_CutzqngiAo_KSzi664QQ/formResponse",
+              data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
+              type: "POST",
+              dataType: "xml",
+              statusCode: {
+                0: function () {
+          //					alert("Click -OK- to submit message");
+                },
+                200: function () {
+          //					alert("Click -OK- to submit message");
+                }
+                    }
+            });
+          }
+
+function formTWindsor(){
+          document.getElementById("vresp1").innerHTML = "Clock in worked";
+          var project = document.getElementById('vresp7').innerHTML;
+          var location = document.getElementById('vresp9').innerHTML;
+          var task = document.getElementById('vresp8').innerHTML;
+          toggleVisibility(document.getElementById('foo2'));
+
+            $.ajax({
+              url: "https://docs.google.com/forms/d/e/1FAIpQLSfoz71NOsz3IAnHPrVu4TwsQBr5n_EfDwX8UOMcinNDLGcdjQ/formResponse",
+              data:  { "entry.1493901935" : task , "entry.971569004" : project , "entry.29486422" : location },
+              type: "POST",
+              dataType: "xml",
+              statusCode: {
+                0: function () {
+          //					alert("Click -OK- to submit message");
+                },
+                200: function () {
+          //					alert("Click -OK- to submit message");
+                }
+                    }
+            });
+          }
+
+function formJChalmers(){
+          document.getElementById("vresp1").innerHTML = "Clock in worked";
+          var project = document.getElementById('vresp7').innerHTML;
+          var location = document.getElementById('vresp9').innerHTML;
+          var task = document.getElementById('vresp8').innerHTML;
+          toggleVisibility(document.getElementById('foo4'));
+
+            $.ajax({
+              url: "https://docs.google.com/forms/d/e/1FAIpQLSeRQc8USwknbnE5cw3mndz2qaPBVpwl58kF6EpPshAH3Cc4YQ/formResponse",
+              data:  { "entry.1799616567" : task , "entry.834843107" : project , "entry.407187055" : location },
+              type: "POST",
+              dataType: "xml",
+              statusCode: {
+                0: function () {
+          //					alert("Click -OK- to submit message");
+                },
+                200: function () {
+          //					alert("Click -OK- to submit message");
+                }
+                    }
+            });
+          }
+
+function formLTener(){
+          document.getElementById("vresp1").innerHTML = "Clock in worked";
+          var project = document.getElementById('vresp7').innerHTML;
+          var location = document.getElementById('vresp9').innerHTML;
+          var task = document.getElementById('vresp8').innerHTML;
+          toggleVisibility(document.getElementById('foo5'));
+
+            $.ajax({
+              url: "https://docs.google.com/forms/d/e/1FAIpQLSf9-cTXzsfKJJ1CLbLreYW58NcUnyK3qpQNUMRHRAkHmxAw0Q/formResponse",
+              data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
+              type: "POST",
+              dataType: "xml",
+              statusCode: {
+                0: function () {
+          //					alert("Click -OK- to submit message");
+                },
+                200: function () {
+          //					alert("Click -OK- to submit message");
+                }
+                    }
+            });
+          }
+
+function formJRagsdale(){
+          document.getElementById("vresp1").innerHTML = "Clock in worked";
+          var project = document.getElementById('vresp7').innerHTML;
+          var location = document.getElementById('vresp9').innerHTML;
+          var task = document.getElementById('vresp8').innerHTML;
+          toggleVisibility(document.getElementById('foo6'));
+
+            $.ajax({
+              url: "https://docs.google.com/forms/d/e/1FAIpQLSeMCYgJIoZax0kxvISsPhl-xdRceqJ-bfO6tzdaJ7Spic2VHA/formResponse",
+              data:  { "entry.416551146" : task , "entry.707183520" : project , "entry.727581677" : location },
+              type: "POST",
+              dataType: "xml",
+              statusCode: {
+                0: function () {
+          //					alert("Click -OK- to submit message");
+                },
+                200: function () {
+          //					alert("Click -OK- to submit message");
+                }
+                    }
+            });
+          }
+
+
+function formTWindsor(){
+          document.getElementById("vresp1").innerHTML = "Clock in worked";
+          var project = document.getElementById('vresp7').innerHTML;
+          var location = document.getElementById('vresp9').innerHTML;
+          var task = document.getElementById('vresp8').innerHTML;
+          toggleVisibility(document.getElementById('foo6'));
+
+            $.ajax({
+              url: "https://docs.google.com/forms/d/e/1FAIpQLSeRQc8USwknbnE5cw3mndz2qaPBVpwl58kF6EpPshAH3Cc4YQ/formResponse",
+              data:  { "entry.1799616567" : task , "entry.834843107" : project , "entry.407187055" : location },
+              type: "POST",
+              dataType: "xml",
+              statusCode: {
+                0: function () {
+          //					alert("Click -OK- to submit message");
+                },
+                200: function () {
+          //					alert("Click -OK- to submit message");
+                }
+                    }
+            });
+          }
+
+function formSchedule(){
+          window.location.href = "https://docs.google.com/document/d/11utOaHHCTvGZPOWn6ZAJJgdOs3GUos6owb4ugaNUlVw/edit?usp=sharing";
+          }
+
+  </script>
+  </body>
+</html>

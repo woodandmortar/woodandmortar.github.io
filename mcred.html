@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>MCRED</title>
+  <title>Morton</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <META NAME="KEYWORDS" CONTENT="MCRED, Microcredentials, Micro credientials, house repair, house improvement, design, home design, designers, kitchen remodel, bathroom remodel, kitchen design, kitchen makeover, improvement, kitchen, bathroom, small kitchen remodel, Painters, Painting, woodworking, tile, home repair, Contractors, Home, Home Renovations, Wood, wood&mortar, wood & mortar, brick, stucco, Wood and Mortar, WoodandMortar">
@@ -34,13 +34,6 @@
 
   </head>
   <style>
-
-  .pic1 {
-     top: 20px;
-     position: absolute;
-     right: 20px;
-     z-index: 9999;
-   }
 
    /*@import url(../styles/reset.css);*/
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Roboto");
@@ -472,10 +465,12 @@ footer {
 _::-webkit-:host:not(:root:root), .card__excerpt--underlay {
   transform: translateY(-3em); }
 
-/*# sourceMappingURL=main.css.map */
-
    </style>
-   <div class="pic1"><a href="./index.html"><img src="./WMThumb.jpg" style="width:120px"></a></div>
+
+
+
+
+
 
   <body>
 
@@ -484,18 +479,18 @@ _::-webkit-:host:not(:root:root), .card__excerpt--underlay {
     <div class="block--background">
       <div class="chatbot__overview">
         <ul class="chatlist">
-          <li class="bot__output bot__output--standard"><img id="profilePic" src="./login.png" style="width:100px"><br/><span id="vresp1"><b>Please Login</b></span></li>
+          <li class="bot__output bot__output--standard"><img id="profilePic" src="./login.png" style="width:100px"><br/><span id="vresp1"><b>LOCKED</b></span></li>
 
           <li class="bot__output bot__output--standard">
             <span class="bot__output--second-sentence">Quick access tab:</span>
             <ul>
-              <li class="input__nested-list" id="foo1" style="display:none"><button onclick="formAdmin()" style="height:40px;width:180px;font-size:18px"><span id="fo1">Clock in/out</span></button></li>
-              <li class="input__nested-list" id="foo2" style="display:none"><button onclick="formTWindsor()" style="height:40px;width:180px;font-size:18px"><span id="fo2">Clock in/out</span></button></li>
-              <li class="input__nested-list" id="foo3" style="display:none"><button onclick="formCFreitag()" style="height:40px;width:180px;font-size:18px"><span id="fo3">Clock in/out</span></button></li>
-              <li class="input__nested-list" id="foo4" style="display:none"><button onclick="formJChalmers()" style="height:40px;width:180px;font-size:18px"><span id="fo4">Clock in/out</span></button></li>
-              <li class="input__nested-list" id="foo5" style="display:none"><button onclick="formLTener()" style="height:40px;width:180px;font-size:18px"><span id="fo5">Clock in/out</span></button></li>
-              <li class="input__nested-list" id="foo6" style="display:none"><button onclick="formJRagsdale()" style="height:40px;width:180px;font-size:18px"><span id="fo6">Clock in/out</span></button></li>
-              <li class="input__nested-list"><span id="vresp7" class="bot__command">Pending login</span></li>
+              <li class="input__nested-list" id="foo1" style="display:none"><button onclick="formAdmin()" style="height:40px;width:180px;font-size:18px"><span id="fo1">Worky Work</span></button>
+                <button onclick="formAdminA()" style="height:40px;width:180px;font-size:18px"><span id="fo1a">No Worky Work</span></button></li>
+              <li class="input__nested-list" id="foo2" style="display:none"><button onclick="formTWindsor()" style="height:40px;width:180px;font-size:18px"><span id="fo2">Worky Work</span></button>
+                <button onclick="formTWindsorA()" style="height:40px;width:180px;font-size:18px"><span id="fo2a">No Worky Work</span></button></li>
+              <li class="input__nested-list" id="foo3" style="display:none"><button onclick="formCFreitag()" style="height:40px;width:180px;font-size:18px"><span id="fo3">Worky Work</span></button>
+                <button onclick="formCFreitagA()" style="height:40px;width:180px;font-size:18px"><span id="fo3a">No Worky Work</span></button></li>
+              <li class="input__nested-list"><span id="vresp7" class="bot__command">Pending</span> <span id="vresp8" class="bot__command">Login</span></li>
               <li class="input__nested-list">
 
                 <form>
@@ -1046,36 +1041,15 @@ function onSignIn(googleUser) {
             }
           }
 
-function formCFreitag(){
 
-          document.getElementById("vresp1").innerHTML = "Clock in worked";
-          var project = document.getElementById('vresp7').innerHTML;
-          var location = document.getElementById('vresp9').innerHTML;
-          var task = document.getElementById("mySelect").value;
-          toggleVisibility(document.getElementById('foo3'));
-
-            $.ajax({
-              url: "https://docs.google.com/forms/d/e/1FAIpQLSfa54ksd_dyPwl1SMkLxYdUCczIwo0D4Bcu50mX9dg-5bDVYg/formResponse",
-              data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
-              type: "POST",
-              dataType: "xml",
-              statusCode: {
-                0: function () {
-          //					alert("Click -OK- to submit message");
-                },
-                200: function () {
-          //					alert("Click -OK- to submit message");
-                }
-                    }
-            });
-          }
 
 function formAdmin(){
 
-          document.getElementById("vresp1").innerHTML = "Clock in worked";
+          var intake = document.getElementById('fo1').innerHTML;
+          document.getElementById('vresp7').innerHTML = intake;
           var project = document.getElementById('vresp7').innerHTML;
           var location = document.getElementById('vresp9').innerHTML;
-          var task = document.getElementById("mySelect").value;
+          var task = document.getElementById('vresp8').innerHTML;
           toggleVisibility(document.getElementById('foo2'));
 
             $.ajax({
@@ -1096,10 +1070,11 @@ function formAdmin(){
 
 function formTWindsor(){
 
-          document.getElementById("vresp1").innerHTML = "Clock in worked";
+          var intake = document.getElementById('fo2').innerHTML;
+          document.getElementById('vresp7').innerHTML = intake;
           var project = document.getElementById('vresp7').innerHTML;
           var location = document.getElementById('vresp9').innerHTML;
-          var task = document.getElementById("mySelect").value;
+          var task = document.getElementById('vresp8').innerHTML;
           toggleVisibility(document.getElementById('foo2'));
 
             $.ajax({
@@ -1118,40 +1093,42 @@ function formTWindsor(){
             });
           }
 
-function formJChalmers(){
+          function formCFreitag(){
 
-          document.getElementById("vresp1").innerHTML = "Clock in worked";
-          var project = document.getElementById('vresp7').innerHTML;
-          var location = document.getElementById('vresp9').innerHTML;
-          var task = document.getElementById("mySelect").value;
-          toggleVisibility(document.getElementById('foo4'));
+                    var intake = document.getElementById('fo3').innerHTML;
+                    document.getElementById('vresp7').innerHTML = intake;
+                    var project = document.getElementById('vresp7').innerHTML;
+                    var location = document.getElementById('vresp9').innerHTML;
+                    var task = document.getElementById('vresp8').innerHTML;
+                    toggleVisibility(document.getElementById('foo3'));
 
-            $.ajax({
-              url: "https://docs.google.com/forms/d/e/1FAIpQLSeRQc8USwknbnE5cw3mndz2qaPBVpwl58kF6EpPshAH3Cc4YQ/formResponse",
-              data:  { "entry.1799616567" : task , "entry.834843107" : project , "entry.407187055" : location },
-              type: "POST",
-              dataType: "xml",
-              statusCode: {
-                0: function () {
-          //					alert("Click -OK- to submit message");
-                },
-                200: function () {
-          //					alert("Click -OK- to submit message");
-                }
+                      $.ajax({
+                        url: "https://docs.google.com/forms/d/e/1FAIpQLSfa54ksd_dyPwl1SMkLxYdUCczIwo0D4Bcu50mX9dg-5bDVYg/formResponse",
+                        data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
+                        type: "POST",
+                        dataType: "xml",
+                        statusCode: {
+                          0: function () {
+                    //					alert("Click -OK- to submit message");
+                          },
+                          200: function () {
+                    //					alert("Click -OK- to submit message");
+                          }
+                              }
+                      });
                     }
-            });
-          }
 
-function formLTener(){
+function formAdminA(){
 
-          document.getElementById("vresp1").innerHTML = "Clock in worked";
+          var intake = document.getElementById('fo1a').innerHTML;
+          document.getElementById('vresp7').innerHTML = intake;
           var project = document.getElementById('vresp7').innerHTML;
           var location = document.getElementById('vresp9').innerHTML;
-          var task = document.getElementById("mySelect").value;
-          toggleVisibility(document.getElementById('foo5'));
+          var task = document.getElementById('vresp8').innerHTML;
+          toggleVisibility(document.getElementById('foo2'));
 
             $.ajax({
-              url: "https://docs.google.com/forms/d/e/1FAIpQLSf9-cTXzsfKJJ1CLbLreYW58NcUnyK3qpQNUMRHRAkHmxAw0Q/formResponse",
+              url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfN2kkQpPALiBnKuXyfW-iRYivAp_CutzqngiAo_KSzi664QQ/formResponse",
               data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
               type: "POST",
               dataType: "xml",
@@ -1166,17 +1143,18 @@ function formLTener(){
             });
           }
 
-function formJRagsdale(){
+function formTWindsorA(){
 
-          document.getElementById("vresp1").innerHTML = "Clock in worked";
+          var intake = document.getElementById('fo2a').innerHTML;
+          document.getElementById('vresp7').innerHTML = intake;
           var project = document.getElementById('vresp7').innerHTML;
           var location = document.getElementById('vresp9').innerHTML;
-          var task = document.getElementById("mySelect").value;
-          toggleVisibility(document.getElementById('foo6'));
+          var task = document.getElementById('vresp8').innerHTML;
+          toggleVisibility(document.getElementById('foo2'));
 
             $.ajax({
-              url: "https://docs.google.com/forms/d/e/1FAIpQLSeMCYgJIoZax0kxvISsPhl-xdRceqJ-bfO6tzdaJ7Spic2VHA/formResponse",
-              data:  { "entry.416551146" : task , "entry.707183520" : project , "entry.727581677" : location },
+              url: "https://docs.google.com/forms/d/e/1FAIpQLSfoz71NOsz3IAnHPrVu4TwsQBr5n_EfDwX8UOMcinNDLGcdjQ/formResponse",
+              data:  { "entry.1493901935" : task , "entry.971569004" : project , "entry.29486422" : location },
               type: "POST",
               dataType: "xml",
               statusCode: {
@@ -1190,30 +1168,30 @@ function formJRagsdale(){
             });
           }
 
+          function formCFreitagA(){
 
-function formTWindsor(){
+                    var intake = document.getElementById('fo3a').innerHTML;
+                    document.getElementById('vresp7').innerHTML = intake;
+                    var project = document.getElementById('vresp7').innerHTML;
+                    var location = document.getElementById('vresp9').innerHTML;
+                    var task = document.getElementById('vresp8').innerHTML;
+                    toggleVisibility(document.getElementById('foo3'));
 
-          document.getElementById("vresp1").innerHTML = "Clock in worked";
-          var project = document.getElementById('vresp7').innerHTML;
-          var location = document.getElementById('vresp9').innerHTML;
-          var task = document.getElementById("mySelect").value;
-          toggleVisibility(document.getElementById('foo6'));
-
-            $.ajax({
-              url: "https://docs.google.com/forms/d/e/1FAIpQLSeRQc8USwknbnE5cw3mndz2qaPBVpwl58kF6EpPshAH3Cc4YQ/formResponse",
-              data:  { "entry.1799616567" : task , "entry.834843107" : project , "entry.407187055" : location },
-              type: "POST",
-              dataType: "xml",
-              statusCode: {
-                0: function () {
-          //					alert("Click -OK- to submit message");
-                },
-                200: function () {
-          //					alert("Click -OK- to submit message");
-                }
+                      $.ajax({
+                        url: "https://docs.google.com/forms/d/e/1FAIpQLSfa54ksd_dyPwl1SMkLxYdUCczIwo0D4Bcu50mX9dg-5bDVYg/formResponse",
+                        data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
+                        type: "POST",
+                        dataType: "xml",
+                        statusCode: {
+                          0: function () {
+                    //					alert("Click -OK- to submit message");
+                          },
+                          200: function () {
+                    //					alert("Click -OK- to submit message");
+                          }
+                              }
+                      });
                     }
-            });
-          }
 
 
   </script>

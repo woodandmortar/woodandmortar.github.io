@@ -107,6 +107,7 @@ var project;
 var task;
 var fName;
 var userImage;
+var getTask = "None selected";
 
   function startGeoLookup() {
     navigator.geolocation.getCurrentPosition(success, error);
@@ -560,6 +561,8 @@ function formAdmin(){
           document.getElementById('vresp7').innerHTML = intake;
           var project = document.getElementById('vresp7').innerHTML;
           var location = document.getElementById('vresp9').innerHTML;
+          getTask = document.getElementById('select').value;
+          document.getElementById('vresp8').innerHTML = getTask;
           var task = document.getElementById('vresp8').innerHTML;
           toggleVisibility(document.getElementById('foo1'));
           toggleVisibility(document.getElementById('foo2'));
@@ -587,6 +590,8 @@ function formTWindsor(){
           document.getElementById('vresp7').innerHTML = intake;
           var project = document.getElementById('vresp7').innerHTML;
           var location = document.getElementById('vresp9').innerHTML;
+          getTask = document.getElementById('select').value;
+          document.getElementById('vresp8').innerHTML = getTask;
           var task = document.getElementById('vresp8').innerHTML;
           toggleVisibility(document.getElementById('foo2'));
 
@@ -612,6 +617,8 @@ function formTWindsor(){
                     document.getElementById('vresp7').innerHTML = intake;
                     var project = document.getElementById('vresp7').innerHTML;
                     var location = document.getElementById('vresp9').innerHTML;
+                    getTask = document.getElementById('select').value;
+                    document.getElementById('vresp8').innerHTML = getTask;
                     var task = document.getElementById('vresp8').innerHTML;
                     toggleVisibility(document.getElementById('foo3'));
 
@@ -637,6 +644,8 @@ function formAdminA(){
           document.getElementById('vresp7').innerHTML = intake;
           var project = document.getElementById('vresp7').innerHTML;
           var location = document.getElementById('vresp9').innerHTML;
+          getTask = document.getElementById('select').value;
+          document.getElementById('vresp8').innerHTML = getTask;
           var task = document.getElementById('vresp8').innerHTML;
           toggleVisibility(document.getElementById('foo1'));
           toggleVisibility(document.getElementById('foo2'));
@@ -664,6 +673,8 @@ function formTWindsorA(){
           document.getElementById('vresp7').innerHTML = intake;
           var project = document.getElementById('vresp7').innerHTML;
           var location = document.getElementById('vresp9').innerHTML;
+          getTask = document.getElementById('select').value;
+          document.getElementById('vresp8').innerHTML = getTask;
           var task = document.getElementById('vresp8').innerHTML;
           toggleVisibility(document.getElementById('foo2'));
 
@@ -689,6 +700,8 @@ function formTWindsorA(){
                     document.getElementById('vresp7').innerHTML = intake;
                     var project = document.getElementById('vresp7').innerHTML;
                     var location = document.getElementById('vresp9').innerHTML;
+                    getTask = document.getElementById('select').value;
+                    document.getElementById('vresp8').innerHTML = getTask;
                     var task = document.getElementById('vresp8').innerHTML;
                     toggleVisibility(document.getElementById('foo3'));
 

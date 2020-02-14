@@ -63,7 +63,7 @@
 
                 <form>
                   <select id="mySelect" style="height:32px;width:140px;font-size:16px">
-                    <option value="None">Select Task</option>
+                    <option value="None" selected>Select Task</option>
                       <option value="Drywall">Drywall</option>
                       <option value="Texture">Texture</option>
                       <option value="Painting">Painting</option>
@@ -107,7 +107,6 @@ var project;
 var task;
 var fName;
 var userImage;
-var getTask = "None selected";
 
   function startGeoLookup() {
     navigator.geolocation.getCurrentPosition(success, error);
@@ -561,9 +560,7 @@ function formAdmin(){
           document.getElementById('vresp7').innerHTML = intake;
           var project = document.getElementById('vresp7').innerHTML;
           var location = document.getElementById('vresp9').innerHTML;
-          getTask = document.getElementById('select').value;
-          document.getElementById('vresp8').innerHTML = getTask;
-          var task = document.getElementById('vresp8').innerHTML;
+          var task = document.getElementById('mySelect').value;
           toggleVisibility(document.getElementById('foo1'));
           toggleVisibility(document.getElementById('foo2'));
           toggleVisibility(document.getElementById('foo3'));
@@ -590,9 +587,7 @@ function formTWindsor(){
           document.getElementById('vresp7').innerHTML = intake;
           var project = document.getElementById('vresp7').innerHTML;
           var location = document.getElementById('vresp9').innerHTML;
-          getTask = document.getElementById('select').value;
-          document.getElementById('vresp8').innerHTML = getTask;
-          var task = document.getElementById('vresp8').innerHTML;
+          var task = document.getElementById('mySelect').value;
           toggleVisibility(document.getElementById('foo2'));
 
             $.ajax({
@@ -617,9 +612,7 @@ function formTWindsor(){
                     document.getElementById('vresp7').innerHTML = intake;
                     var project = document.getElementById('vresp7').innerHTML;
                     var location = document.getElementById('vresp9').innerHTML;
-                    getTask = document.getElementById('select').value;
-                    document.getElementById('vresp8').innerHTML = getTask;
-                    var task = document.getElementById('vresp8').innerHTML;
+                    var task = document.getElementById('mySelect').value;
                     toggleVisibility(document.getElementById('foo3'));
 
                       $.ajax({
@@ -644,9 +637,7 @@ function formAdminA(){
           document.getElementById('vresp7').innerHTML = intake;
           var project = document.getElementById('vresp7').innerHTML;
           var location = document.getElementById('vresp9').innerHTML;
-          getTask = document.getElementById('select').value;
-          document.getElementById('vresp8').innerHTML = getTask;
-          var task = document.getElementById('vresp8').innerHTML;
+          var task = document.getElementById('mySelect').value;
           toggleVisibility(document.getElementById('foo1'));
           toggleVisibility(document.getElementById('foo2'));
           toggleVisibility(document.getElementById('foo3'));
@@ -673,9 +664,7 @@ function formTWindsorA(){
           document.getElementById('vresp7').innerHTML = intake;
           var project = document.getElementById('vresp7').innerHTML;
           var location = document.getElementById('vresp9').innerHTML;
-          getTask = document.getElementById('select').value;
-          document.getElementById('vresp8').innerHTML = getTask;
-          var task = document.getElementById('vresp8').innerHTML;
+          var task = document.getElementById('mySelect').value;
           toggleVisibility(document.getElementById('foo2'));
 
             $.ajax({
@@ -700,9 +689,7 @@ function formTWindsorA(){
                     document.getElementById('vresp7').innerHTML = intake;
                     var project = document.getElementById('vresp7').innerHTML;
                     var location = document.getElementById('vresp9').innerHTML;
-                    getTask = document.getElementById('select').value;
-                    document.getElementById('vresp8').innerHTML = getTask;
-                    var task = document.getElementById('vresp8').innerHTML;
+                    var task = document.getElementById('mySelect').value;
                     toggleVisibility(document.getElementById('foo3'));
 
                       $.ajax({

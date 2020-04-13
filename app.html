@@ -257,7 +257,6 @@
       <span class="hamburger hamburger-3"></span>
     </label>
 
-    <a href="./about.html" class="menu-item"> <i class="fas fa-arrow-right"></i> </a>
     <a href="mailto:info@salmon.fund" target=”_blank” class="menu-item"> <i class="fas fa-envelope"></i> </a>
     <a href="./index.html" target=”_blank” class="menu-item"> <i class="fas fa-images"></i> </a>
     <a href="./card.html" target=”_blank” class="menu-item"> <svg class="logo" width="40" height="40" viewBox="-359 -463 900 500">
@@ -294,12 +293,12 @@
 <section>
   <div class="block">
 
-    <p class="margin-top-10"><span class="first-character c3">W</span>oodandmortar LLC is the leading source for trusted and punctual home improvement in Johnson county. We are the educational backbone for DIYers and a valuable support system for real estate agents. We believe in full transparency by taking our clients through every step of our process. We build comprehensive bids that provide insight for budgeting and allow easy modifications for those unsure of their next steps. Micheal Salmon and Crycella Freitag lead the way as Co owners along with Woodandmortars team of subcontractors and field experts. <i>All projects exceeding $1,000 are broken into draw schedules and paid upon section completion.</i> </p>
+    <p class="margin-top-10"><span class="first-character c3">W</span>oodandmortar LLC is the leading source for trusted and punctual home improvement from Johnson to Wyandotte county. Micheal ensures project completion with full transparency by taking our clients through every step of the process. Build comprehensive bids that provide insight for budgeting and allow easy modifications for those unsure of their next steps. Micheal Salmon and Crycella Freitag lead the way as Co owners along with Woodandmortars team of subcontractors and field experts. <i>All projects exceeding $1,000 are broken into draw schedules and paid upon section completion.</i> </p>
 
     <br/>
 
 <center>
-    <h1>Wood&mortar <a href="mailto:info@woodandmortar.com" target=”_blank”> <i style="color: Tomato;" class="fas fa-envelope fa-sm"></i> </a></h1><br/>
+    <h1>Micheal Salmon <a href="mailto:info@woodandmortar.com" target=”_blank”> <i style="color: Tomato;" class="fas fa-envelope fa-sm"></i> </a></h1><br/>
     <h3>(913) 280-2336</h3></center>
 
   </div>
@@ -316,10 +315,10 @@
 
     <p class="margin-top-10"><span class="first-character c1">D</span>uring the Housing Committee meeting as Council members deliberated the Tenants Bill of Rights package, some decent compromises on the resolution were made. The ordinance that was passed out of Mayor Lucas' Special Committee on Housing Policy stated that the resolution and ordinance would be heard and voted on by the full council on December 12th and Woodandmortar LLC is gearing up to help all sides.
 <br/><br/>
-Affordable Maintenance Program<br/>
-$50-100/mo per unit
+Module Wall<br/>
+<b>$2000 /room</b>
 <br/><br/>
-Partnering with Woodandmortar as landlord/renter will guarantee both sides have a buffer throughout this litigious time. We are currently offering a low-cost solution for properties that qualify for the Affordable Maintenance Program. We will provide a walk-through with the tenant addressing all seen and unseen issues providing a comprehensive checklist for property maintenance. Sitting down with the property owners we will share education on the best route to address these items and set up a budget friendly maintenance schedule. Woodandmortar will work with the tenants schedule to ensure happiness throughout the maintenance program and provide both parties with a housing agreement that defers all possible litigation.
+The next step in home improvement. Walls that can be removed from any living space in under 20 minutes. 
 <br/>
 
 </div>
@@ -337,7 +336,7 @@ Partnering with Woodandmortar as landlord/renter will guarantee both sides have 
 
     <br/>
 
-    <center><h1>Salmon Fund 501(3)c <a href="mailto:info@salmon.fund" target=”_blank”> <i style="color: Tomato;" class="fas fa-envelope fa-sm"></i> </a></h1><br/>
+    <center><h1>Crycella Freitag <a href="mailto:woodmortar@gmail.com" target=”_blank”> <i style="color: Tomato;" class="fas fa-envelope fa-sm"></i> </a></h1><br/>
     <h3>(785) 214-9030</h3></center>
     <br/><br/>
 
@@ -387,47 +386,6 @@ The Salmon Fund aims to secure $787,660 in investments managed in cryptocurrency
 
 </div>
 <!-- partial -->
-<script>
-function splitWords() {
-  let quote = document.querySelector("blockquote q");
-  quote.innerText.replace(/(<([^>]+)>)/ig,"");
-  quotewords = quote.innerText.split(" "),
-  wordCount = quotewords.length;
-  quote.innerHTML = "";
-  for (let i=0; i < wordCount; i++) {
-    quote.innerHTML += "<span>"+quotewords[i]+"</span>";
-    if (i < quotewords.length - 1) {
-      quote.innerHTML += " ";
-    }
-  }
-  quotewords = document.querySelectorAll("blockquote q span");
-  fadeWords(quotewords);
-}
 
-function getRandom(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
-function fadeWords(quotewords) {
-  Array.prototype.forEach.call(quotewords, function(word) {
-    let animate = word.animate([{
-      opacity: 0,
-      filter: "blur("+getRandom(2,5)+"px)"
-    }, {
-      opacity: 1,
-      filter: "blur(0px)"
-    }],
-    {
-      duration: 1000,
-      delay: getRandom(500,3300),
-      fill: 'forwards'
-    }
-   )
-  })
-}
-
-
-splitWords();
-</script>
 </body>
 </html>

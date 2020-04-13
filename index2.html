@@ -60,10 +60,9 @@ width: auto; "><h1><b id="vTime">0</b> Creds</h1></div>
     </span>
   </div>
   <div class="carousel-item carousel-item--4">
-    <div class="carousel-item__image"></div>
+    <div id="changeme" class="carousel-item__image"></div>
     <div class="carousel-item__info">
       <div class="carousel-item__container">
-        <img id="profilePic" src="salmon.svg" style="width:100px" onerror="this.onerror=null; this.src='./pics/wm.png'">
       <h2 class="carousel-item__subtitle">Hello <span id="vresp1"><b>No Login</b></span>!</h2>
       <h1 class="carousel-item__title">Dashboard</h1>
         <br><button id="button1" class="open-modal2" href="#" onClick="startGeoLookup()"><span id="vresp9">Get location</span></button>
@@ -186,8 +185,7 @@ width: auto; "><h1><b id="vTime">0</b> Creds</h1></div>
     var fName = profile.getName();
     var userImage = profile.getImageUrl();
     document.getElementById('vresp1').innerHTML = profile.getName();
-    document.getElementById('profilePic').src = userImage;
-    document.getElementById('.carousel-item--5 .carousel-item__image').src = userImage;
+    $('#changeme').css('background-image', userImage);
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     switch(profile.getEmail()){
       default:

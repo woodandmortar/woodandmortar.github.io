@@ -57,9 +57,9 @@
       <div class="carousel-item__container">
       <h2 class="carousel-item__subtitle">Project Management</h2>
       <h1 class="carousel-item__title"><b>Micheal</b><br>Salmon</h1>
-      <p class="carousel-item__description">
+      <p class="carousel-item__description">913.280.2336
         <br/><b><font size="4"><a style="text-decoration:none;color:#D95952;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >913.280.2336</a></font></b></p>
-<br/><b><font size="4"><a style="text-decoration:none;color:#D95952;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Email me</a></font></b>
+<br/><b><font size="4"><a style="text-decoration:none;color:#D95952;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Email us</a></font></b>
         </div>
     </div>
   </div>
@@ -68,12 +68,11 @@
     <div class="carousel-item__image"></div>
     <div class="carousel-item__info">
       <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Contruction Education</h2>
-      <h1 class="carousel-item__title"><b>Crycella</b><br/>Freitag</h1>
-      <p class="carousel-item__description">
-        <br/><b><font size="4"><a style="text-decoration:none;color:#D95952;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >580.214.9030</a></font></b></p>
-  <br/><b><font size="4"><a style="text-decoration:none;color:#D95952;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20have%20a%20quick%20question%20here%20is%20my%20email%20address%20and%20I%20am%20looking%20forward%20to%20speaking%20with%20you" >Email me</a></font></b>
-        </div>
+      <h2 class="carousel-item__subtitle">Crisp Autumn Day</h2>
+      <h1 class="carousel-item__title"><b>Wood&</b><br/>Mortar</h1>
+      <p class="carousel-item__description">This bold, rough cut veneer features brown, rust, tan, and grey striations over a warm toned base.
+      <br/><br/><b><font size="4"><a style="text-decoration:none;color:#D95952;" href="mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20would%20like%20to%20be%20added%20to%20the%20veneer%20preorder%20list" >Autumn Haze</a></font></b></p>
+      </div>
     </div>
   </div>
 
@@ -325,10 +324,10 @@
 
 <div style="position:absolute; top:10px; left:10px; z-index:9999999999999999999999;">
       <img id="profilePic" src="salmon.svg" style="width:100px" onerror="this.onerror=null; this.src='./pics/wm.png'">
-        <br/><span style="display: none;" id="vresp1"><b>No Login | </b><b style="display: none;" id="vTime">0</b></span><br>
-        <button style="display: none;"><span id="vresp9">Get location</span></button>
+        <br/><span id="vresp1"><b>No Login | </b><b id="vTime">0</b></span><br>
+        <button class="open-modal2" href="#" onClick="startGeoLookup()"><span id="vresp9">Get location</span></button>
         <form>
-          <select id="mySelect" style="display: none;">
+          <select id="mySelect" style="height:20px;width:80px;font-size:11px">
             <option value="None" selected>Login Tab</option>
             <option value="Food Deduction">Good Eats</option>
               <option value="Drywall">Drywall</option>
@@ -345,7 +344,7 @@
 
 
 
-<div style="display: none;" id="live-chat">
+<div id="live-chat">
 
   <header class="clearfix">
     <a onclick="togglediv('item')">Hide/Show</a>
@@ -435,20 +434,34 @@
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     switch(profile.getEmail()){
       default:
-          setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/index.html';}, 9000);
+          setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/mcred.html';}, 9000);
           break;
           case 'micheal.mfg@gmail.com':
-              setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/index2.html';}, 1200);
-              break;
+              toggleVisibility(document.getElementById('foo1'));
+              toggleVisibility(document.getElementById('foo2'));
+              toggleVisibility(document.getElementById('foo3'));
+              document.getElementById('fo1').innerHTML = "Admin Clock in";
+              document.getElementById('fo2').innerHTML = "Travis Windsor Clock in";
+              document.getElementById('fo3').innerHTML = "Christian Freitag Clock in";
+              document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
+                break;
           case 'woodmortar@gmail.com':
-          setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/index2.html';}, 1200);
-              break;
+          toggleVisibility(document.getElementById('foo1'));
+          toggleVisibility(document.getElementById('foo2'));
+          toggleVisibility(document.getElementById('foo3'));
+          document.getElementById('fo1').innerHTML = "Admin Clock in";
+          document.getElementById('fo2').innerHTML = "Travis Windsor Clock in";
+          document.getElementById('fo3').innerHTML = "Christian Freitag Clock in";
+          document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
+            break;
           case 'traviswindsor22@gmail.com':
-          setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/index2.html';}, 1200);
-              break;
+          toggleVisibility(document.getElementById('foo2'));
+          document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
+            break;
           case 'bigbawln@gmail.com':
-          setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/index2.html';}, 1200);
-              break;
+          toggleVisibility(document.getElementById('foo3'));
+          document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
+            break;
 
 
    }

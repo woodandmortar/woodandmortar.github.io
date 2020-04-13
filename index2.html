@@ -185,7 +185,7 @@ width: auto; "><h1><b id="vTime">0</b> Creds</h1></div>
     var fName = profile.getName();
     var userImage = profile.getImageUrl();
     document.getElementById('vresp1').innerHTML = profile.getName();
-    $('#changeme').css('background-image', userImage);
+    $('#changeme').css('background-image', profile.getImageUrl());
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     switch(profile.getEmail()){
       default:

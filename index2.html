@@ -187,6 +187,7 @@ width: auto; "><h1><b id="vTime">0</b> Creds</h1></div>
     var userImage = profile.getImageUrl();
     document.getElementById('vresp1').innerHTML = profile.getName();
     document.getElementById('profilePic').src = userImage;
+    document.getElementById('.carousel-item--5 .carousel-item__image').src = userImage;
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     switch(profile.getEmail()){
       default:

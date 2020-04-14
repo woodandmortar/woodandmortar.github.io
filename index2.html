@@ -225,12 +225,6 @@ width: auto; "><h1><b id="vTime">0</b> Creds</h1></div>
 
           function onSignInCallback(resp) {
             gapi.client.load('plus', 'v1', apiClientLoaded);
-
-               function changeBackground() {
-                 var $content = profile.getImageUrl();
-                 setTimeout(function(){$('#changeme').css('background-image', '$content');}, 4000);
-               }
-               changeBackground();
           }
 
           /**
@@ -1578,6 +1572,14 @@ width: auto; "><h1><b id="vTime">0</b> Creds</h1></div>
                         function compute5() {
                           document.getElementById("finalSolution").innerHTML += "E";
                           }
+
+
+
+                             function changeBackground() {
+                               var $content = profile.getImageUrl();
+                               setTimeout(function(){$('#changeme').css('background-image', '$content');}, 4000);
+                             }
+                             changeBackground();
 
     </script>
 

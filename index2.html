@@ -184,7 +184,7 @@ width: auto; "><h1><b id="vTime">0</b> Creds</h1></div>
 
     var profile = googleUser.getBasicProfile();
     var fName = profile.getName();
-    var $userImage = profile.getImageUrl();
+    var userImage = profile.getImageUrl();
     document.getElementById('vresp1').innerHTML = profile.getName();
     document.getElementById('profilePic').src = userImage;
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
@@ -203,7 +203,7 @@ width: auto; "><h1><b id="vTime">0</b> Creds</h1></div>
                 break;
 
           case 'woodmortar@gmail.com':
-          $('#changeme').css('background-image', $userImage);
+          $('#changeme').css('background-image', 'document.getElementById('profilePic').src');
                 break;
 
           case 'bigbawln@gmail.com':

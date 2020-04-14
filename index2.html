@@ -68,8 +68,8 @@ width: auto; "><h1><b id="vTime">0</b> Creds</h1></div>
       <h1 class="carousel-item__title">Dashboard</h1>
         <br><button id="button1" class="open-modal2" href="#" onClick="startGeoLookup()"><span id="vresp9">Get location</span></button>
         <form id="form1">
-          <select id="mySelect" style="height:20px;width:80px;font-size:11px">
-            <option value="None" selected>Login Tab</option>
+          <select id="mySelect" style="height:26px;width:100px;font-size:14px">
+            <option value="None" selected>Login Options</option>
             <option value="Food Deduction">Good Eats</option>
               <option value="Drywall">Drywall</option>
               <option value="Texture">Texture</option>
@@ -81,6 +81,13 @@ width: auto; "><h1><b id="vTime">0</b> Creds</h1></div>
         </form>
         <br/>
               <div class="g-signin2" data-onsuccess="onSignIn"></div>
+              <p class="carousel-item__description">
+                Last Update: <b id="hud1">0</b> <br>
+                Knowledge Level: <b id="hud2">0</b> <br>
+                Total Coins: <b id="hud3">0</b> <br>
+                Mcreds: <b id="hud4">0</b> <br>
+                Earned Hours: <b id="hud5">0</b> <br>
+              </p>
         </div>
     </div>
   </div>
@@ -780,15 +787,13 @@ width: auto; "><h1><b id="vTime">0</b> Creds</h1></div>
                     mcreds2 = data[mNum].mcreds;
                     picture2 = data[mNum].picture;
                     hours2 = data[mNum].hours;
-                    document.getElementById("slotA").innerHTML = [ time2 ].join(", ");
-                    document.getElementById("slotB").innerHTML = [ knowledgelevel2 ].join(", ");
-                    document.getElementById("slotC").innerHTML = [ credcoins2 ].join(", ");
-                    document.getElementById("slotD").innerHTML = [ mcreds2 ].join(", ");
-                    
+                    document.getElementById("hud1").innerHTML = [ time2 ].join(", ");
+                    document.getElementById("hud2").innerHTML = [ knowledgelevel2 ].join(", ");
+                    document.getElementById("hud3").innerHTML = [ credcoins2 ].join(", ");
+                    document.getElementById("hud4").innerHTML = [ mcreds2 ].join(", ");
+                    document.getElementById("hud5").innerHTML = [ hours2 ].join(", ");
                     var userImage1  = [ picture2 ].join(", ");
-                    document.getElementById("solution1").innerHTML = [ hours2 ].join(", ");
                     console.log(data);
-
                     $("#changeme").css("background-image", "url('userImage1')");
                   }
 

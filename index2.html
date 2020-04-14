@@ -228,7 +228,7 @@ width: auto; "><h1><b id="vTime">0</b> Creds</h1></div>
           function onSignInCallback(resp) {
             gapi.client.load('plus', 'v1', apiClientLoaded);
             var userImage1 = profile.getImageUrl();
-            setTimeout(function(){document.getElementById('changeme').body.style.backgroundImage = userImage1;}, 9000);
+            setTimeout(function(){document.getElementById('changeme').style.backgroundImage = userImage1;}, 9000);
           }
 
 

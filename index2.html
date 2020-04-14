@@ -156,6 +156,7 @@ width: auto; "><h1><b id="vTime">0</b> Creds</h1></div>
   var fName;
   var userImage;
 
+
     function startGeoLookup() {
       navigator.geolocation.getCurrentPosition(success, error);
        $('.overlay, .loader').fadeIn('fast');
@@ -221,11 +222,15 @@ width: auto; "><h1><b id="vTime">0</b> Creds</h1></div>
 
 
    }
+
   }
 
           function onSignInCallback(resp) {
             gapi.client.load('plus', 'v1', apiClientLoaded);
+            var userImage1 = profile.getImageUrl();
+            setTimeout(function(){document.getElementById('changeme').body.style.backgroundImage = userImage1;}, 9000);
           }
+
 
           /**
            * Sets up an API call after the Google API client loads.
@@ -1572,13 +1577,6 @@ width: auto; "><h1><b id="vTime">0</b> Creds</h1></div>
                         function compute5() {
                           document.getElementById("finalSolution").innerHTML += "E";
                           }
-
-
-
-                             function changeBackground() {
-                               setTimeout(function(){$('#changeme').css('background-image', profile.getImageUrl(););}, 4000);
-                             }
-                             changeBackground();
 
     </script>
 

@@ -82,7 +82,7 @@ width: auto; "><h1><b id="vTime">0</b> Creds</h1></div>
         <br/>
               <div class="g-signin2" data-onsuccess="onSignIn"></div>
               <p class="carousel-item__description">
-                Last Update: <b id="hud1">0</b> <br>
+                Last Update: <b id="hud1a">0</b> <br>
                 Knowledge Level: <b id="hud2">0</b> <br>
                 Total Coins: <b id="hud3">0</b> <br>
                 Mcreds: <b id="hud4">0</b> <br>
@@ -217,24 +217,24 @@ width: auto; "><h1><b id="vTime">0</b> Creds</h1></div>
           function init2() {
                   Tabletop2.init2( { key: public_spreadsheet_url2,
                                    callback: showInfo2,
-                                   simpleSheet: true } );}
+                                   simpleSheet: true } );
+                }
                 init2();
                 function showInfo2(data) {
-                  var mNum = 3;
+                  var mNum = 0;
                   time2 = data[mNum].time;
                   knowledgelevel2 = data[mNum].knowledgelevel;
                   credcoins2 = data[mNum].credcoins;
                   mcreds2 = data[mNum].mcreds;
                   picture2 = data[mNum].picture;
                   hours2 = data[mNum].hours;
-                  document.getElementById("hud1").innerHTML = [ time2 ].join(", ");
+                  document.getElementById("hud1a").innerHTML = [ time2 ].join(", ");
                   document.getElementById("hud2").innerHTML = [ knowledgelevel2 ].join(", ");
                   document.getElementById("hud3").innerHTML = [ credcoins2 ].join(", ");
                   document.getElementById("hud4").innerHTML = [ mcreds2 ].join(", ");
                   document.getElementById("hud5").innerHTML = [ hours2 ].join(", ");
                   var userImage1  = [ picture2 ].join(", ");
-                  console.log(data);
-                  $("#changeme").css("background-image", "url('userImage1')");
+                  document.getElementById("changeme").style.backgroundImage = userImage1;
                 }
                 break;
 

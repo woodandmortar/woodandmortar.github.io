@@ -21,15 +21,15 @@ var toggleVisibility = function(element) {
     toggleVisibility(document.getElementById('live-chat'));
     document.getElementById("changeme").style.backgroundImage = scrImage1;
     setTimeout(function(){document.getElementById("changeme").style.backgroundImage = scrImage2;
-                          document.getElementById("foo4").innerHTML = "They are creating an education standard for subcontractors using this teaching environment to provide honest and affordable contruction.";}, 7000);
+                          document.getElementById("foo4").innerHTML = "They are creating an education standard for subcontractors using my free, online teaching environment to provide honest and affordable contruction.";}, 7000);
     setTimeout(function(){document.getElementById("changeme").style.backgroundImage = scrImage3;
-                          document.getElementById("foo4").innerHTML = "We are specialized in both Interior and Exterior remodels of all sizes.";
+                          document.getElementById("foo4").innerHTML = "They are specialized in both interior and exterior remodels of all sizes.";
                                   setTimeout(function(){document.getElementById("changeme").style.backgroundImage = scrImage3a;}, 4000);
                                   setTimeout(function(){document.getElementById("changeme").style.backgroundImage = scrImage3b;}, 7000);
                                   setTimeout(function(){document.getElementById("changeme").style.backgroundImage = scrImage3c;}, 10000);
                           }, 16000);
     setTimeout(function(){document.getElementById("changeme").style.backgroundImage = scrImage4;
-                          document.getElementById("foo4").innerHTML = "The Woodandmortar training headquarters is under contruction, in Northern Kansas City, Kansas.";},28000);
+                          document.getElementById("foo4").innerHTML = "The Woodandmortar training headquarters is under contruction in northeastern Kansas City, Kansas.";},28000);
     setTimeout(function(){document.getElementById("changeme").style.backgroundImage = scrImage5;togglediv('item')
                           document.getElementById("foo4").innerHTML = "Click Contact us to bring up our pre-filled email. <br>Click learn more to dive deeper into Woodandmortar LLC and Salmon.fund.";
                                   setTimeout(function(){ aboutScr = function(){};}, 10000);

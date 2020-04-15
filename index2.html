@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Morton</title>
+  <title>Salmon</title>
   <html lang="en" class="no-js"><head>
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,7 +41,7 @@ top:0px;
 right:10px;
 z-index:9999999999999999999999;
 padding: 4px 4px;
-width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
+width: auto; "><h1 style="font-size:50;"><b id="vTime">0</b> /points</h1></div>
 
 <body>
 
@@ -53,7 +53,7 @@ width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
       <div class="carousel-item__container">
         <img id="profilePic" src="salmon.svg" style="width:120px" onerror="this.onerror=null; this.src='./pics/wm.png'">
       <h2 class="carousel-item__subtitle">Hello <span id="vresp1"><b>No Login</b></span>!</h2>
-      <h1 class="carousel-item__title">Morton</h1>
+      <h1 class="carousel-item__title">Salmon</h1>
         <br><button id="button1" class="open-modal2" href="#" onClick="startGeoLookup()"><span id="vresp9">Get location</span></button>
         <form id="form1">
           <select id="mySelect" style="height:20px;width:100px;font-size:12px">
@@ -91,7 +91,7 @@ width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
   <div id="item" class="chat">
         <div class="chat-message-content clearfix">
           <ul class="chatlist">
-            <li id="welcomeMessage" class="bot__output bot__output--standard">Morton here, and this is construction learning:<br>
+            <li id="welcomeMessage" class="bot__output bot__output--standard">Salmon here, and this is construction learning:<br>
             Type <span class="bot__command">help</span> (for more instructions) or <span class="bot__command">commands</span> for a list of every command.
           </li>
           <li id="welcomeMessage2" class="bot__output bot__output--standard">
@@ -137,6 +137,8 @@ width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
 
 setTimeout(function(){togglediv('welcomeMessage')}, 9000);
 setTimeout(function(){togglediv('welcomeMessage2')}, 19000);
+document.getElementById("changeme").style.backgroundImage = "url('./pics/ani3.gif')";
+setTimeout(function(){document.getElementById("changeme").style.backgroundImage = "url('./pics/ani4.gif')";}, 9000);
 
 
     var toggleVisibility = function(element) {
@@ -213,15 +215,12 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 19000);
                   knowledgelevel2 = data[mNum].knowledgelevel;
                   credcoins2 = data[mNum].credcoins;
                   mcreds2 = data[mNum].mcreds;
-                  picture2 = data[mNum].picture;
                   hours2 = data[mNum].hours;
                   document.getElementById("hud1a").innerHTML = [ time2 ].join(", ");
                   document.getElementById("hud2").innerHTML = [ knowledgelevel2 ].join(", ");
                   document.getElementById("hud3").innerHTML = [ credcoins2 ].join(", ");
                   document.getElementById("hud4").innerHTML = [ mcreds2 ].join(", ");
                   document.getElementById("hud5").innerHTML = [ hours2 ].join(", ");
-                  var userImage2  = [ picture2 ].join(", ");
-                  document.getElementById("changeme").style.backgroundImage = userImage2;
                 }
                 break;
 
@@ -239,15 +238,12 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 19000);
                   knowledgelevel3 = data[mNum].knowledgelevel;
                   credcoins3 = data[mNum].credcoins;
                   mcreds3 = data[mNum].mcreds;
-                  picture3 = data[mNum].picture;
                   hours3 = data[mNum].hours;
                   document.getElementById("hud1a").innerHTML = [ time3 ].join(", ");
                   document.getElementById("hud2").innerHTML = [ knowledgelevel3 ].join(", ");
                   document.getElementById("hud3").innerHTML = [ credcoins3 ].join(", ");
                   document.getElementById("hud4").innerHTML = [ mcreds3 ].join(", ");
                   document.getElementById("hud5").innerHTML = [ hours3 ].join(", ");
-                  var userImage3  = [ picture3 ].join(", ");
-                  document.getElementById("changeme").style.backgroundImage = userImage3;
                 }
                                 break;
 
@@ -486,6 +482,7 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 19000);
                 responseText("try trying something like... show BEST WORK")
                 responseText("Typing COMMANDS will always bring up the main list.")
                 commandReset(0);
+                document.getElementById("changeme").style.backgroundImage = "url('./pics/ani2.gif')";
                 return
                 },
               "best work" : function(){
@@ -500,7 +497,8 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 19000);
                 return
                 },
               "about" : function(){
-                responseText("Morton here, your digital assistant for everything WoodandMortar.");
+                document.getElementById("changeme").style.backgroundImage = "url('./pics/ani6.gif')";
+                responseText("Salmon here, your digital assistant for everything WoodandMortar.");
                 responseText("I'm also a Salmon.fund expert.");
                 responseText("Using your google account, I'll be able to remember you.");
                 responseText("Would you like to connect? (Yes/No)");
@@ -508,6 +506,7 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 19000);
                 return
                 },
               "experience" : function(){
+                document.getElementById("changeme").style.backgroundImage = "url('./pics/ani7.gif')";
                 responseText("We've completed 21 High-end to Flip Kitchens in the past 8 months");
                 responseText("We sub-contract 75% of our work load, to Kansas City non-profits through our mentorship platform.");
                 responseText("Micheal Salmon, Founder and Co-Owner pays special attention to project details and workflow ensuring the best possible value.");
@@ -543,16 +542,19 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 19000);
                 return
               },
               "contact" : function(){
+                document.getElementById("changeme").style.backgroundImage = "url('./pics/ani8.gif')";
                 responseText("email: <a href='mailto:micheal.mfg@gmail.com?Subject=Hello%20Micheal' target='_top'>send me a message</a>");
                 commandReset(7);
                 return
               },
-              "morton" : function(){
+              "salmon" : function(){
+                document.getElementById("changeme").style.backgroundImage = "url('./pics/ani9.gif')";
                 responseText("UmmmmmHmmmmmm.... Yes?");
                 commandReset(8);
                 return
               },
               "commands" : function(){
+                document.getElementById("changeme").style.backgroundImage = "url('./pics/ani10.gif')";
                 responseText("about, best work, contact, mcred <br> specials, theme, experience, vision");
                 commandReset(9);
                 return
@@ -761,7 +763,7 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 19000);
             var reactionInput = {
               "best work" : function(){
                 responseText("<a href='https://woodandmortar.github.io/'>Click the arrows on our homepage</a>")
-                responseText("On this GitHub page you'll find everything about Morton");
+                responseText("On this GitHub page you'll find everything about Salmon");
                 responseText("<a href='https://github.com/woodandmortar'>WoodandMortar on GitHub</a>")
                 animationCounter = 1;
                 return

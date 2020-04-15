@@ -192,40 +192,10 @@
   var project;
   var task;
   var fName;
-  var userImage;
-
-    function startGeoLookup() {
-      navigator.geolocation.getCurrentPosition(success, error);
-       $('.overlay, .loader').fadeIn('fast');
-    }
-
-    function success(pos) {
-      $('.overlay, .loader').fadeOut('fast');
-      var crd = pos.coords;
-      var tme = pos.timestamp;
-      var d = new Date(tme);
-      var t = new Date(tme);
-      // alert("Altitude: " + crd.altitude + " \nAltitudeAccuracy: " + crd.altitudeAccuracy);
-      var roundAcc = Math.floor(crd.accuracy);
-      document.getElementById('vresp9').innerHTML = crd.latitude + '<br>' + crd.longitude;
-    }
-
-    /* Error Codes: 1 PERMISSION_DENIED, 2 POSITION_UNAVAILABLE, 3 TIMEOUT */
-    function error(err) {
-      var geoerror = (err.code == (1, 2, 3) ? "Error loading" : err.message);
-      document.getElementById('vresp').innerHTML = geoerror;
-      $('.overlay, .loader').fadeOut('fast');
-    }
-
 
   function onSignIn(googleUser) {
 
     var profile = googleUser.getBasicProfile();
-    var fName = profile.getName();
-    var userImage = profile.getImageUrl();
-    document.getElementById('vresp1').innerHTML = profile.getName();
-    document.getElementById('profilePic').src = userImage;
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     switch(profile.getEmail()){
       default:
           setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/signup.html';}, 9000);

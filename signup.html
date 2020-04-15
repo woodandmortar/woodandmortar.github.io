@@ -35,109 +35,42 @@
 
 </head>
 
-<div id="hud1" style="
-position:absolute;
-top:0px;
-right:10px;
-z-index:9999999999999999999999;
-padding: 4px 4px;
-width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
 
 <body>
 
 
 <div class="carousel">
-  <div class="carousel__nav">
-   <span id="moveLeft" class="carousel__arrow">
-        <svg class="carousel__icon" width="24" height="24" viewBox="0 0 24 24">
-    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path>
-</svg>
-    </span>
-    <span id="moveRight" class="carousel__arrow" >
-      <svg class="carousel__icon"  width="24" height="24" viewBox="0 0 24 24">
-  <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
-</svg>
-    </span>
-  </div>
   <div class="carousel-item carousel-item--4">
     <div id="changeme" class="carousel-item__image"></div>
     <div class="carousel-item__info">
       <div class="carousel-item__container">
         <img id="profilePic" src="salmon.svg" style="width:120px" onerror="this.onerror=null; this.src='./pics/wm.png'">
-      <h2 class="carousel-item__subtitle">Hello <span id="vresp1"><b>No Login</b></span>!</h2>
-      <h1 class="carousel-item__title">Dashboard</h1>
-        <br><button id="button1" class="open-modal2" href="#" onClick="startGeoLookup()"><span id="vresp9">Get location</span></button>
-        <form id="form1">
-          <select id="mySelect" style="height:20px;width:100px;font-size:12px">
-            <option value="None" selected>Login Options</option>
-            <option value="Food Deduction">Lunch</option>
-              <option value="Drywall">Drywall</option>
-              <option value="Texture">Texture</option>
-              <option value="Painting">Painting</option>
-              <option value="Tile">Tile</option>
-              <option value="Woodwork">Woodwork</option>
-              <option value="Demolition">Demolition</option>
-          </select>
-        </form>
+      <h2 class="carousel-item__subtitle"><div id="innerEmail">Email not verified</div></h2>
+      <h1 class="carousel-item__title"><div id="innerName">Sign in</div></h1>
+
         <br/>
               <div class="g-signin2" data-onsuccess="onSignIn"></div>
-              <p class="carousel-item__description">
-                Last Update: <b id="hud1a">0</b> <br>
-                Level: <b id="hud2">0</b> <br>
-                Total Coins: <b id="hud3">0</b> <br>
-                Mcreds: <b id="hud4">0</b> <br>
-                Earned Hours: <b id="hud5">0</b> <br>
-              </p>
+
         </div>
     </div>
   </div>
 
-  <div class="carousel-item carousel-item--5">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Settings</h2>
-      <h1 class="carousel-item__title">Help</h1>
-      <p class="carousel-item__description">Text 913.280.2336 for emergencies!
-      </p>
-      </div>
-    </div>
-  </div>
 </div>
 </body>
 
 <div id="live-chat">
-
-  <header class="clearfix">
-    <button class="open-modal2" href="#" onclick="togglediv('item')">Hide/Show Menu</button>
-  </header>
-
   <div id="item" class="chat">
         <div class="chat-message-content clearfix">
           <ul class="chatlist">
-                <li class="bot__output bot__output--standard" id="foo4">Type <span class="bot__command">help</span> (for more instructions) or <span class="bot__command">commands</span> for a list of every command or <span class="bot__command">mcred</span> (to bring up the your available testing menu). <span class="bot__command">Daily Points</span> are collected from each answer, the study guide link for section outline. If you're not logged in, your points cannot be recorded.<p id="math"></p><p hidden id="answer"></p>
-                <div id="popup" class="btn-group" >
-                  <button class="open-modal" href="#" onClick="compute1()"><div id="slotA"></div></button>
-                  <button class="open-modal" href="#" onClick="compute2()"><div id="slotB"></div></button>
-                  <button class="open-modal" href="#" onClick="compute3()"><div id="slotC"></div></button>
-                  <button class="open-modal" href="#" onClick="compute4()"><div id="slotD"></div></button>
-                  <button class="open-modal1" href="#" onClick="compute()"><div id="finalSolution"></div></button>
-                  <button class="open-modal1" href="#" onclick="document.getElementById('finalSolution').innerHTML = ''">Clear</button>
-                  <button class="open-modal" style="display: none;"><div id="solution1"></div></button>
-                  <button class="open-modal" style="display: none;"><div id="metaData"></div></button>
-                  <p id="theStudyGuide"><p>
+                <li class="bot__output bot__output--standard" id="foo4">
+                <div style="font-size:22px;" id="popup" class="btn-group" >
+We dont see you in the system yet. Registration takes a minimum of 24 hours after email submission. Once we verify your email, we will send you a welcome letter walking you through the next steps.
+<br><br>Clicking the button will redirect us your preferred email application and allow limited guest access to our learning environment.
+<br><br>
+<button id="buttonA" class="open-modal" html="#" onclick="scRegister()">Register here</button>
+
                 </div></li>
           </ul>
-
-
-
-
-                <div class="chatbox-area">
-                  <form action="" id="chatform">
-                      <textarea placeholder="Talk to me!" class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
-                      <input class="submit-button" type="submit" value="send">
-                  </form>
-                </div>
             </div>
         </div>
 </div>
@@ -148,10 +81,13 @@ width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <script  src="js/index.js"></script>
     <script  src="js/tabletop.js"></script>
-    <script  src="js/tabletop2.js"></script>
-    <script  src="js/tabletop3.js"></script>
 
 <script>
+
+function scRegister(){
+  setTimeout(function() {window.location.href = "index2.html"}, 4000);
+  window.location.href = "mailto:woodmortar@gmail.com?&subject=Wood%20and%20Mortar&body=I%20am%20looking%20to%20register%20my%20email%20address%20and%20name%20and%20I%20am%20acknowledging%20location%20access%20when%20needed";
+}
 
     var toggleVisibility = function(element) {
       if(element.style.display=='block'){
@@ -161,10 +97,8 @@ width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
       }
     }
 
-  var location;
-  var project;
-  var task;
-  var fName;
+  var srcName;
+  var srcEmail;
   var userImage;
 
     function startGeoLookup() {
@@ -194,79 +128,10 @@ width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
   function onSignIn(googleUser) {
 
     var profile = googleUser.getBasicProfile();
-    var fName = profile.getName();
     var userImage = profile.getImageUrl();
-    document.getElementById('vresp1').innerHTML = profile.getName();
+    document.getElementById('innerName').innerHTML = profile.getName();
     document.getElementById('profilePic').src = userImage;
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-    switch(profile.getEmail()){
-      default:
-          setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/mcred.html';}, 9000);
-          break;
-          case 'micheal.mfg@gmail.com':
-              toggleVisibility(document.getElementById('foo1'));
-              toggleVisibility(document.getElementById('foo2'));
-              toggleVisibility(document.getElementById('foo3'));
-              document.getElementById('fo1').innerHTML = "Admin Clock in";
-              document.getElementById('fo2').innerHTML = "Travis Windsor Clock in";
-              document.getElementById('fo3').innerHTML = "Christian Freitag Clock in";
-              document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
-                break;
-
-          case 'woodmortar@gmail.com':
-          var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
-          function init2() {
-                  Tabletop2.init2( { key: public_spreadsheet_url2,
-                                   callback: showInfo2,
-                                   simpleSheet: true } );
-                }
-                init2();
-                function showInfo2(data) {
-                  var mNum = 0;
-                  time2 = data[mNum].time;
-                  knowledgelevel2 = data[mNum].knowledgelevel;
-                  credcoins2 = data[mNum].credcoins;
-                  mcreds2 = data[mNum].mcreds;
-                  picture2 = data[mNum].picture;
-                  hours2 = data[mNum].hours;
-                  document.getElementById("hud1a").innerHTML = [ time2 ].join(", ");
-                  document.getElementById("hud2").innerHTML = [ knowledgelevel2 ].join(", ");
-                  document.getElementById("hud3").innerHTML = [ credcoins2 ].join(", ");
-                  document.getElementById("hud4").innerHTML = [ mcreds2 ].join(", ");
-                  document.getElementById("hud5").innerHTML = [ hours2 ].join(", ");
-                  var userImage2  = [ picture2 ].join(", ");
-                  document.getElementById("changeme").style.backgroundImage = userImage2;
-                }
-                break;
-
-          case 'bigbawln@gmail.com':
-          var public_spreadsheet_url3 = 'https://docs.google.com/spreadsheets/d/15CTeL8jhHEZFhHu78aepZAwiINhz4_a-cd37vIavksk/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
-          function init3() {
-                  Tabletop3.init3( { key: public_spreadsheet_url3,
-                                   callback: showInfo3,
-                                   simpleSheet: true } );
-                }
-                init3();
-                function showInfo3(data) {
-                  var mNum = 0;
-                  time3 = data[mNum].time;
-                  knowledgelevel3 = data[mNum].knowledgelevel;
-                  credcoins3 = data[mNum].credcoins;
-                  mcreds3 = data[mNum].mcreds;
-                  picture3 = data[mNum].picture;
-                  hours3 = data[mNum].hours;
-                  document.getElementById("hud1a").innerHTML = [ time3 ].join(", ");
-                  document.getElementById("hud2").innerHTML = [ knowledgelevel3 ].join(", ");
-                  document.getElementById("hud3").innerHTML = [ credcoins3 ].join(", ");
-                  document.getElementById("hud4").innerHTML = [ mcreds3 ].join(", ");
-                  document.getElementById("hud5").innerHTML = [ hours3 ].join(", ");
-                  var userImage3  = [ picture3 ].join(", ");
-                  document.getElementById("changeme").style.backgroundImage = userImage3;
-                }
-                                break;
-
-
-   }
+    document.getElementById('innerEmail').innerHTML = profile.getEmail();
 
   }
 
@@ -798,278 +663,11 @@ width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
 
 
 
-  function formAdmin(){
-
-            var intake = document.getElementById('fo1').innerHTML;
-            document.getElementById('vresp7').innerHTML = intake;
-            var project = document.getElementById('vresp7').innerHTML;
-            var location = document.getElementById('vresp9').innerHTML;
-            var task = document.getElementById('mySelect').value;
-            toggleVisibility(document.getElementById('foo1'));
-            toggleVisibility(document.getElementById('foo2'));
-            toggleVisibility(document.getElementById('foo3'));
-
-              $.ajax({
-                url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfN2kkQpPALiBnKuXyfW-iRYivAp_CutzqngiAo_KSzi664QQ/formResponse",
-                data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
-                type: "POST",
-                dataType: "xml",
-                statusCode: {
-                  0: function () {
-            //					alert("Click -OK- to submit message");
-                  },
-                  200: function () {
-            //					alert("Click -OK- to submit message");
-                  }
-                      }
-              });
-            }
-
-  function formTWindsor(){
-
-            var intake = document.getElementById('fo2').innerHTML;
-            document.getElementById('vresp7').innerHTML = intake;
-            var project = document.getElementById('vresp7').innerHTML;
-            var location = document.getElementById('vresp9').innerHTML;
-            var task = document.getElementById('mySelect').value;
-            toggleVisibility(document.getElementById('foo2'));
-
-              $.ajax({
-                url: "https://docs.google.com/forms/d/e/1FAIpQLSfoz71NOsz3IAnHPrVu4TwsQBr5n_EfDwX8UOMcinNDLGcdjQ/formResponse",
-                data:  { "entry.1493901935" : task , "entry.971569004" : project , "entry.29486422" : location },
-                type: "POST",
-                dataType: "xml",
-                statusCode: {
-                  0: function () {
-            //					alert("Click -OK- to submit message");
-                  },
-                  200: function () {
-            //					alert("Click -OK- to submit message");
-                  }
-                      }
-              });
-            }
-
-            function formCFreitag(){
-
-                      var intake = document.getElementById('fo3').innerHTML;
-                      document.getElementById('vresp7').innerHTML = intake;
-                      var project = document.getElementById('vresp7').innerHTML;
-                      var location = document.getElementById('vresp9').innerHTML;
-                      var task = document.getElementById('mySelect').value;
-                      var metaData0 = document.getElementById('metaData').value;
-                      toggleVisibility(document.getElementById('foo3'));
-
-                        $.ajax({
-                          url: "https://docs.google.com/forms/d/e/1FAIpQLSfa54ksd_dyPwl1SMkLxYdUCczIwo0D4Bcu50mX9dg-5bDVYg/formResponse",
-                          data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location , "entry.696138045" : metaData0 },
-                          type: "POST",
-                          dataType: "xml",
-                          statusCode: {
-                            0: function () {
-                      //					alert("Click -OK- to submit message");
-                            },
-                            200: function () {
-                      //					alert("Click -OK- to submit message");
-                            }
-                                }
-                        });
-                      }
-
-  function formAdminA(){
-
-            var intake = document.getElementById('fo1a').innerHTML;
-            document.getElementById('vresp7').innerHTML = intake;
-            var project = document.getElementById('vresp7').innerHTML;
-            var location = document.getElementById('vresp9').innerHTML;
-            var task = document.getElementById('mySelect').value;
-            toggleVisibility(document.getElementById('foo1'));
-            toggleVisibility(document.getElementById('foo2'));
-            toggleVisibility(document.getElementById('foo3'));
-
-              $.ajax({
-                url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfN2kkQpPALiBnKuXyfW-iRYivAp_CutzqngiAo_KSzi664QQ/formResponse",
-                data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
-                type: "POST",
-                dataType: "xml",
-                statusCode: {
-                  0: function () {
-            //					alert("Click -OK- to submit message");
-                  },
-                  200: function () {
-            //					alert("Click -OK- to submit message");
-                  }
-                      }
-              });
-            }
-
-  function formTWindsorA(){
-
-            var intake = document.getElementById('fo2a').innerHTML;
-            document.getElementById('vresp7').innerHTML = intake;
-            var project = document.getElementById('vresp7').innerHTML;
-            var location = document.getElementById('vresp9').innerHTML;
-            var task = document.getElementById('mySelect').value;
-            toggleVisibility(document.getElementById('foo2'));
-
-              $.ajax({
-                url: "https://docs.google.com/forms/d/e/1FAIpQLSfoz71NOsz3IAnHPrVu4TwsQBr5n_EfDwX8UOMcinNDLGcdjQ/formResponse",
-                data:  { "entry.1493901935" : task , "entry.971569004" : project , "entry.29486422" : location },
-                type: "POST",
-                dataType: "xml",
-                statusCode: {
-                  0: function () {
-            //					alert("Click -OK- to submit message");
-                  },
-                  200: function () {
-            //					alert("Click -OK- to submit message");
-                  }
-                      }
-              });
-            }
-
-            function formCFreitagA(){
-
-                      var intake = document.getElementById('fo3a').innerHTML;
-                      document.getElementById('vresp7').innerHTML = intake;
-                      var project = document.getElementById('vresp7').innerHTML;
-                      var location = document.getElementById('vresp9').innerHTML;
-                      var task = document.getElementById('mySelect').value;
-                      toggleVisibility(document.getElementById('foo3'));
-
-                        $.ajax({
-                          url: "https://docs.google.com/forms/d/e/1FAIpQLSfa54ksd_dyPwl1SMkLxYdUCczIwo0D4Bcu50mX9dg-5bDVYg/formResponse",
-                          data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
-                          type: "POST",
-                          dataType: "xml",
-                          statusCode: {
-                            0: function () {
-                      //					alert("Click -OK- to submit message");
-                            },
-                            200: function () {
-                      //					alert("Click -OK- to submit message");
-                            }
-                                }
-                        });
-                      }
-
-
 
 </script>
 
 
 
-                      <script type="text/javascript">
-                        mNum = -1;
-
-                        var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1kTFnCiuDAYVdpzNqVIgNKsSLKYK9tRR1Mxd6gjBncFU/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
-
-                        function init() {
-                                Tabletop.init( { key: public_spreadsheet_url,
-                                                 callback: showInfo,
-                                                 simpleSheet: true } );
-                              }
-
-                              window.addEventListener('DOMContentLoaded', init)
-
-                              function showInfo(data) {
-                                var mNum = Math.floor((Math.random() * 42) + 1);
-                                mProb = data[mNum].Name;
-                                answerA = data[mNum].AnswerA;
-                                answerB = data[mNum].AnswerB;
-                                answerC = data[mNum].AnswerC;
-                                answerD = data[mNum].AnswerD;
-                                solution = data[mNum].Solution;
-                                studyGuide = data[mNum].Link;
-                                metadata = data[mNum].MetaData;
-                                document.getElementById("slotA").innerHTML = [ answerA ].join(", ");
-                                document.getElementById("slotB").innerHTML = [ answerB ].join(", ");
-                                document.getElementById("slotC").innerHTML = [ answerC ].join(", ");
-                                document.getElementById("slotD").innerHTML = [ answerD ].join(", ");
-                                document.getElementById("metaData").innerHTML = [ metadata ].join(", ");
-                                document.getElementById("solution1").innerHTML = [ solution ].join(", ");
-                                document.getElementById("theStudyGuide").innerHTML = [ studyGuide ].join(", ");
-                                document.getElementById("math").innerHTML = [ mProb ].join(", ");
-                                console.log(data);
-                              }
-
-
-
-
-
-                        </script>
-
-                      <script>
-                      function formmcreds() {
-
-                        var mCredName = document.getElementById('vresp1').innerHTML;
-                        var mCredMetadata = document.getElementById("metaData").innerHTML;
-                        var mCredLocation = document.getElementById('vresp9').innerHTML;
-                        var mCredPoints = document.getElementById('vTime').innerHTML;
-
-                          $.ajax({
-                            url: "https://docs.google.com/forms/d/e/1FAIpQLSdXU0IVPpGxLq5rk4Wd1WceQMC_b6OD6yhuHsyJnXJkjfHmzQ/formResponse",
-                            data:  { "entry.2037093222" : mCredName , "entry.291261238" : mCredMetadata , "entry.1107492006" : mCredLocation, "entry.196847829" : mCredPoints },
-                            type: "POST",
-                            dataType: "xml",
-                            statusCode: {
-                              0: function () {
-                        //					alert("Click -OK- to submit message");
-                              },
-                              200: function () {
-                        //					alert("Click -OK- to submit message");
-                              }
-                                  }
-                          });
-
-
-                      }
-
-                      function compute() {
-                        var finalAnswer = document.getElementById("finalSolution").innerHTML;
-                        var str = document.getElementById("solution1").innerHTML;
-                        var n = finalAnswer.includes(str);
-                        var videoTime = parseInt(document.getElementById("vTime").innerHTML);
-                        if ((n == true)){        // logical condition
-                        videoTime += 1;
-                        document.getElementById("vTime").innerHTML = videoTime;
-                        document.getElementById("finalSolution").innerHTML = "";
-                        setTimeout(function() {
-                          formmcreds();
-                          init();
-                      }, 300);
-                        }else{
-                          videoTime -= 3;
-                          document.getElementById("vTime").innerHTML = videoTime;
-                          document.getElementById("finalSolution").innerHTML = "";
-                          setTimeout(function() {
-                            formmcreds();
-                            init();
-                        }, 300);
-                        }
-                      }
-
-                      function compute1() {
-                        document.getElementById("finalSolution").innerHTML += "A";
-                      }
-
-                      function compute2() {
-                        document.getElementById("finalSolution").innerHTML += "B";
-                        }
-
-                      function compute3() {
-                        document.getElementById("finalSolution").innerHTML += "C";
-                        }
-
-                      function compute4() {
-                        document.getElementById("finalSolution").innerHTML += "D";
-                        }
-
-                        function compute5() {
-                          document.getElementById("finalSolution").innerHTML += "E";
-                          }
-
-    </script>
 
 </body>
 

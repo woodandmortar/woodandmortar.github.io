@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Salmon</title>
+  <title>Morton</title>
   <html lang="en" class="no-js"><head>
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,25 +47,13 @@ width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
 
 
 <div class="carousel">
-  <div class="carousel__nav">
-   <span id="moveLeft" class="carousel__arrow">
-        <svg class="carousel__icon" width="24" height="24" viewBox="0 0 24 24">
-    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path>
-</svg>
-    </span>
-    <span id="moveRight" class="carousel__arrow" >
-      <svg class="carousel__icon"  width="24" height="24" viewBox="0 0 24 24">
-  <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
-</svg>
-    </span>
-  </div>
   <div class="carousel-item carousel-item--4">
     <div id="changeme" class="carousel-item__image"></div>
     <div class="carousel-item__info">
       <div class="carousel-item__container">
         <img id="profilePic" src="salmon.svg" style="width:120px" onerror="this.onerror=null; this.src='./pics/wm.png'">
       <h2 class="carousel-item__subtitle">Hello <span id="vresp1"><b>No Login</b></span>!</h2>
-      <h1 class="carousel-item__title">Dashboard</h1>
+      <h1 class="carousel-item__title">Morton</h1>
         <br><button id="button1" class="open-modal2" href="#" onClick="startGeoLookup()"><span id="vresp9">Get location</span></button>
         <form id="form1">
           <select id="mySelect" style="height:20px;width:100px;font-size:12px">
@@ -91,18 +79,6 @@ width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
         </div>
     </div>
   </div>
-
-  <div class="carousel-item carousel-item--5">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-      <h2 class="carousel-item__subtitle">Settings</h2>
-      <h1 class="carousel-item__title">Help</h1>
-      <p class="carousel-item__description">Text 913.280.2336 for emergencies!
-      </p>
-      </div>
-    </div>
-  </div>
 </div>
 </body>
 
@@ -115,7 +91,14 @@ width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
   <div id="item" class="chat">
         <div class="chat-message-content clearfix">
           <ul class="chatlist">
-                <li class="bot__output bot__output--standard" id="foo4">Type <span class="bot__command">help</span> (for more instructions) or <span class="bot__command">commands</span> for a list of every command or <span class="bot__command">mcred</span> (to bring up the your available testing menu). <span class="bot__command">Daily Points</span> are collected from each answer, the study guide link for section outline. If you're not logged in, your points cannot be recorded.<p id="math"></p><p hidden id="answer"></p>
+            <li id="welcomeMessage" class="bot__output bot__output--standard">Morton here, and this is construction learning:<br>
+            Type <span class="bot__command">help</span> (for more instructions) or <span class="bot__command">commands</span> for a list of every command.
+          </li>
+          <li id="welcomeMessage2" class="bot__output bot__output--standard">
+          <span class="bot__command">Points</span> are collected from each answer and three are removed for every wrong answer. I suggest you use the study guide link providing the section outline for each question.
+        </li>
+                <li class="bot__output bot__output--standard" id="foo4">
+                  <p id="math"></p><p hidden id="answer"></p>
                 <div id="popup" class="btn-group" >
                   <button class="open-modal" href="#" onClick="compute1()"><div id="slotA"></div></button>
                   <button class="open-modal" href="#" onClick="compute2()"><div id="slotB"></div></button>
@@ -124,8 +107,7 @@ width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
                   <button class="open-modal1" href="#" onClick="compute()"><div id="finalSolution"></div></button>
                   <button class="open-modal1" href="#" onclick="document.getElementById('finalSolution').innerHTML = ''">Clear</button>
                   <button class="open-modal" style="display: none;"><div id="solution1"></div></button>
-                  <button class="open-modal" style="display: none;"><div id="metaData"></div></button>
-                  <p id="theStudyGuide"><p>
+                  <p><a id="theStudyGuide"></a> Section: <a id="metaData"></a></p>
                 </div></li>
           </ul>
 
@@ -152,6 +134,10 @@ width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
     <script  src="js/tabletop3.js"></script>
 
 <script>
+
+setTimeout(function(){togglediv('welcomeMessage')}, 9000);
+setTimeout(function(){togglediv('welcomeMessage2')}, 19000);
+
 
     var toggleVisibility = function(element) {
       if(element.style.display=='block'){
@@ -514,7 +500,7 @@ width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
                 return
                 },
               "about" : function(){
-                responseText("Salmon here, your digital assistant for everything WoodandMortar.");
+                responseText("Morton here, your digital assistant for everything WoodandMortar.");
                 responseText("I'm also a Salmon.fund expert.");
                 responseText("Using your google account, I'll be able to remember you.");
                 responseText("Would you like to connect? (Yes/No)");
@@ -561,7 +547,7 @@ width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
                 commandReset(7);
                 return
               },
-              "salmon" : function(){
+              "morton" : function(){
                 responseText("UmmmmmHmmmmmm.... Yes?");
                 commandReset(8);
                 return
@@ -775,7 +761,7 @@ width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
             var reactionInput = {
               "best work" : function(){
                 responseText("<a href='https://woodandmortar.github.io/'>Click the arrows on our homepage</a>")
-                responseText("On this GitHub page you'll find everything about Salmon");
+                responseText("On this GitHub page you'll find everything about Morton");
                 responseText("<a href='https://github.com/woodandmortar'>WoodandMortar on GitHub</a>")
                 animationCounter = 1;
                 return

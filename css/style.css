@@ -134,72 +134,30 @@ body {
   background-image: url('../pics/woodmortar.jpg');
 }
 .carousel-item--2 .carousel-item__image{
-  background-image: url('../pics/4gallery.jpeg');
+  background-image: url('../pics/v1.jpeg');
 }
 .carousel-item--3 .carousel-item__image{
-  background-image: url('../pics/3gallery.jpeg');
-}
-.carousel-item--4 .carousel-item__image{
-  background-image: url('../pics/2gallery.jpeg');
-}
-.carousel-item--5 .carousel-item__image{
-  background-image: url('../pics/5gallery.jpeg');
+  background-image: url('../pics/v2.jpeg');
 }
 .carousel-item--6 .carousel-item__image{
-  background-image: url('../pics/6gallery.jpeg');
+  background-image: url('../pics/v5.jpg');
 }
 .carousel-item--7 .carousel-item__image{
-  background-image: url('../pics/7gallery.jpeg');
+  background-image: url('../pics/v6.jpg');
 }
 .carousel-item--8 .carousel-item__image{
-  background-image: url('../pics/8gallery.jpeg');
+  background-image: url('../pics/v7.jpg');
 }
 .carousel-item--9 .carousel-item__image{
-  background-image: url('../pics/9gallery.jpeg');
+  background-image: url('../pics/v8.jpg');
 }
 .carousel-item--10 .carousel-item__image{
-  background-image: url('../pics/10gallery.jpeg');
-}
-.carousel-item--11 .carousel-item__image{
-  background-image: url('../pics/11gallery.jpeg');
-}
-.carousel-item--12 .carousel-item__image{
-  background-image: url('../pics/12gallery.jpeg');
-}
-.carousel-item--13 .carousel-item__image{
-  background-image: url('../pics/13gallery.jpeg');
-}
-.carousel-item--14 .carousel-item__image{
-  background-image: url('../pics/14gallery.jpeg');
-}
-.carousel-item--15 .carousel-item__image{
-  background-image: url('../pics/15gallery.jpeg');
-}
-.carousel-item--16 .carousel-item__image{
-  background-image: url('../pics/16gallery.jpeg');
-}
-.carousel-item--17 .carousel-item__image{
-  background-image: url('../pics/17gallery.jpeg');
-}
-.carousel-item--18 .carousel-item__image{
-  background-image: url('../pics/18gallery.jpeg');
-}
-.carousel-item--19 .carousel-item__image{
-  background-image: url('../pics/19gallery.jpeg');
-}
-.carousel-item--20 .carousel-item__image{
-  background-image: url('../pics/20gallery.jpeg');
-}
-.carousel-item--21 .carousel-item__image{
-  background-image: url('../pics/21gallery.jpeg');
-}
-.carousel-item--22 .carousel-item__image{
-  background-image: url('../pics/22gallery.jpeg');
+  background-image: url('../pics/v9.jpg');
 }
 
-.carousel-item__container{
 
-}
+.carousel-item__container{}
+
 
 .carousel-item__btn {
     width: 35%;
@@ -282,7 +240,7 @@ transform: translateX(0);
 }
 
 #live-chat header {
-	background: #363636;
+	background: transparent;
 	color: #fff;
 	padding: 4px 4px;
   width: auto;
@@ -684,7 +642,7 @@ textarea[name="chatbox"] {
             .open-modal {
                text-align: center;
             	border: none;
-            	background: #C7A652;
+            	background: #D95952;
             	color: #fff;
             	text-transform: uppercase;
             	letter-spacing: 2px;
@@ -718,7 +676,7 @@ textarea[name="chatbox"] {
             }
 
             .open-modal1:hover {
-            	background: #2ecc71;
+            	background: #D95952;
             }
 
             .open-modal2 {
@@ -729,14 +687,33 @@ textarea[name="chatbox"] {
             	text-transform: uppercase;
             	font-size: 13px;
             	font-weight: bold;
-            	border-radius: 5px;
+            	border-radius: 15px;
                cursor: pointer;
             	-webkit-transition: background 0.3s;
             	transition: background 0.3s;
             }
 
             .open-modal2:hover {
-            	background: #2ecc71;
+            	background: #D95952;
+            }
+
+            .open-modal3 {
+               text-align: center;
+            	border: none;
+            	background: #000000;
+            	color: #fff;
+            	text-transform: uppercase;
+              padding: 10px 10px;
+            	font-size: 16px;
+            	font-weight: bold;
+            	border-radius: 15px;
+               cursor: pointer;
+            	-webkit-transition: background 0.3s;
+            	transition: background 0.3s;
+            }
+
+            .open-modal3:hover {
+            	background: #D95952;
             }
 
             answers {

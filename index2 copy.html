@@ -83,7 +83,7 @@ width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
               <div class="g-signin2" data-onsuccess="onSignIn"></div>
               <p class="carousel-item__description">
                 Last Update: <b id="hud1a">0</b> <br>
-                Knowledge Level: <b id="hud2">0</b> <br>
+                Level: <b id="hud2">0</b> <br>
                 Total Coins: <b id="hud3">0</b> <br>
                 Mcreds: <b id="hud4">0</b> <br>
                 Earned Hours: <b id="hud5">0</b> <br>
@@ -149,6 +149,7 @@ width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
     <script  src="js/index.js"></script>
     <script  src="js/tabletop.js"></script>
     <script  src="js/tabletop2.js"></script>
+    <script  src="js/tabletop3.js"></script>
 
 <script>
 
@@ -233,15 +234,36 @@ width: auto; "><h1><b id="vTime">0</b> Coins</h1></div>
                   document.getElementById("hud3").innerHTML = [ credcoins2 ].join(", ");
                   document.getElementById("hud4").innerHTML = [ mcreds2 ].join(", ");
                   document.getElementById("hud5").innerHTML = [ hours2 ].join(", ");
-                  var userImage1  = [ picture2 ].join(", ");
-                  document.getElementById("changeme").style.backgroundImage = userImage1;
+                  var userImage2  = [ picture2 ].join(", ");
+                  document.getElementById("changeme").style.backgroundImage = userImage2;
                 }
                 break;
 
           case 'bigbawln@gmail.com':
-          toggleVisibility(document.getElementById('foo3'));
-          document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
-                break;
+          var public_spreadsheet_url3 = 'https://docs.google.com/spreadsheets/d/15CTeL8jhHEZFhHu78aepZAwiINhz4_a-cd37vIavksk/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+          function init3() {
+                  Tabletop3.init3( { key: public_spreadsheet_url3,
+                                   callback: showInfo3,
+                                   simpleSheet: true } );
+                }
+                init3();
+                function showInfo3(data) {
+                  var mNum = 0;
+                  time3 = data[mNum].time;
+                  knowledgelevel3 = data[mNum].knowledgelevel;
+                  credcoins3 = data[mNum].credcoins;
+                  mcreds3 = data[mNum].mcreds;
+                  picture3 = data[mNum].picture;
+                  hours3 = data[mNum].hours;
+                  document.getElementById("hud1a").innerHTML = [ time3 ].join(", ");
+                  document.getElementById("hud2").innerHTML = [ knowledgelevel3 ].join(", ");
+                  document.getElementById("hud3").innerHTML = [ credcoins3 ].join(", ");
+                  document.getElementById("hud4").innerHTML = [ mcreds3 ].join(", ");
+                  document.getElementById("hud5").innerHTML = [ hours3 ].join(", ");
+                  var userImage3  = [ picture3 ].join(", ");
+                  document.getElementById("changeme").style.backgroundImage = userImage3;
+                }
+                                break;
 
 
    }

@@ -248,12 +248,7 @@ width: auto; "></div>
 
 <script>
 
-window.addEventListener("load",function() {
-    setTimeout(function(){
-        // This hides the address bar:
-        window.scrollTo(0, 1);
-    }, 0);
-});
+document.body.requestFullscreen();
 
 setTimeout(function(){togglediv('welcomeMessage')}, 9000);
 setTimeout(function(){togglediv('welcomeMessage2')}, 19000);

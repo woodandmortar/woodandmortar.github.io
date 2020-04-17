@@ -724,3 +724,382 @@ textarea[name="chatbox"] {
               padding: 30px;
 
             }
+
+
+
+
+            .frame {
+              width: 400px;
+              height: 400px;
+              position: absolute;
+              top: 50%;
+              left: 70%;
+              -webkit-transform: translate(-50%, -50%);
+                      transform: translate(-50%, -50%);
+              background-color: transparent;
+            }
+            .t-shirt {
+              position: absolute;
+              left: 50%;
+              top: 69.1%;
+              -webkit-transform: translate(-50%, -50%);
+                      transform: translate(-50%, -50%);
+              width: 113.5px;
+              height: 14.625%;
+              background-color: #faca78;
+              border-bottom-left-radius: 20px;
+              border-bottom-right-radius: 20px;
+            }
+            .collar {
+              width: 100%;
+              height: 30%;
+              background-color: #faca78;
+            }
+            .upper-stripe {
+              width: 100%;
+              height: 13%;
+              background-color: #ffdea6;
+            }
+            .middle-upper-stripe {
+              width: 100%;
+              height: 20%;
+              background-color: #faca78;
+            }
+            .middle-lower-stripe {
+              width: 100%;
+              height: 13%;
+              background-color: #ffdea6;
+            }
+            .bottom-stripe {
+              width: 100%;
+              height: 24%;
+              background-color: #faca78;
+              border-bottom-left-radius: 20px;
+              border-bottom-right-radius: 20px;
+            }
+            .hair {
+              position: absolute;
+              width: 131px;
+              height: 60px;
+              top: 34%;
+              left: 50%;
+              -webkit-transform: translate(-50%, -50%);
+                      transform: translate(-50%, -50%);
+            }
+            .left-hair {
+              width: 40px;
+              height: 120%;
+              background-color: #e6610c;
+              border-top-right-radius: 100%;
+              border-top-left-radius: 100%;
+              position: absolute;
+              -webkit-transform: rotate(-40deg) translate(30%, 10%);
+                      transform: rotate(-40deg) translate(30%, 10%);
+            }
+            .middle-hair {
+              width: 40px;
+              height: 100%;
+              background-color: #e6610c;
+              border-top-right-radius: 100%;
+              border-top-left-radius: 100%;
+              position: absolute;
+              left: 50%;
+              -webkit-transform: rotate(7deg) translateX(-50%);
+                      transform: rotate(7deg) translateX(-50%);
+            }
+            .right-hair {
+              width: 35px;
+              height: 100%;
+              background-color: #e6610c;
+              border-top-right-radius: 50%;
+              border-top-left-radius: 50%;
+              position: absolute;
+              top: 15%;
+              left: 60%;
+              -webkit-transform: rotate(30deg);
+                      transform: rotate(30deg);
+            }
+            .head {
+              fill: #f6914e;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              -webkit-transform: translate(-50%, -50%);
+                      transform: translate(-50%, -50%);
+            }
+            .hoop {
+              position: absolute;
+              top: 13%;
+              left: 50%;
+              -webkit-transform: translateX(-50%);
+                      transform: translateX(-50%);
+              fill: none;
+              stroke: #74859e;
+              stroke-width: 3px;
+            }
+            .hoop-2 {
+              position: absolute;
+              top: 10%;
+              left: 50%;
+              -webkit-transform: translateX(-50%);
+                      transform: translateX(-50%);
+              fill: none;
+              stroke: #575967;
+              stroke-width: 8px;
+              stroke-linecap: round;
+            }
+            .face {
+              width: 99px;
+              height: 63px;
+              position: absolute;
+              top: 49%;
+              left: 50%;
+              -webkit-transform: translate(-50%, -50%);
+                      transform: translate(-50%, -50%);
+            }
+            .lips {
+              fill: none;
+              stroke: #f47d31;
+              stroke-width: 10px;
+              position: absolute;
+              top: 40%;
+              left: 50%;
+              -webkit-transform: translateX(-50%);
+                      transform: translateX(-50%);
+              stroke-linecap: round;
+            }
+            .mouth {
+              fill: none;
+              stroke: #575967;
+              stroke-width: 2.5px;
+              position: absolute;
+              top: 45%;
+              left: 50%;
+              -webkit-transform: translateX(-50%);
+                      transform: translateX(-50%);
+              stroke-linecap: round;
+            }
+            .fins {
+              position: absolute;
+              left: 50%;
+              top: 69%;
+              -webkit-transform: translate(-50%, -50%);
+                      transform: translate(-50%, -50%);
+              width: 120px;
+              height: 60px;
+            }
+            .left-fin {
+              fill: #f28744;
+              stroke: #f28744;
+              stroke-width: 14px;
+              stroke-linecap: round;
+              position: absolute;
+              left: -99%;
+              bottom: 75%;
+              stroke-miterlimit: 10;
+            }
+            .right-fin {
+              fill: #f28744;
+              stroke: #f28744;
+              stroke-width: 14px;
+              stroke-linecap: round;
+              position: absolute;
+              left: 37%;
+              bottom: 75%;
+              stroke-miterlimit: 10;
+transform: scale(-1, 1);
+            }
+            .hair,
+            .head,
+            .face {
+              -webkit-animation: breathe-face 2s cubic-bezier(0.78, 0.28, 0.5, 0.88) infinite alternate;
+                      animation: breathe-face 2s cubic-bezier(0.78, 0.28, 0.5, 0.88) infinite alternate;
+            }
+            .collar,
+            .upper-stripe,
+            .middle-upper-stripe,
+            .middle-lower-stripe {
+              -webkit-animation: torso 2s cubic-bezier(0.78, 0.28, 0.5, 0.88) infinite alternate;
+                      animation: torso 2s cubic-bezier(0.78, 0.28, 0.5, 0.88) infinite alternate;
+            }
+            .fins {
+              -webkit-animation: fins 2s cubic-bezier(0.78, 0.28, 0.5, 0.88) infinite alternate;
+                      animation: fins 2s cubic-bezier(0.78, 0.28, 0.5, 0.88) infinite alternate;
+            }
+            @-webkit-keyframes breathe-face {
+              from {
+                -webkit-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+              }
+              to {
+                -webkit-transform: translate(-50%, -65%);
+                        transform: translate(-50%, -65%);
+              }
+            }
+            @keyframes breathe-face {
+              from {
+                -webkit-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+              }
+              to {
+                -webkit-transform: translate(-50%, -65%);
+                        transform: translate(-50%, -65%);
+              }
+            }
+            @-webkit-keyframes breathe-head {
+              from {
+                -webkit-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+              }
+              to {
+                -webkit-transform: translate(-50%, -57%);
+                        transform: translate(-50%, -57%);
+              }
+            }
+            @keyframes breathe-head {
+              from {
+                -webkit-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+              }
+              to {
+                -webkit-transform: translate(-50%, -57%);
+                        transform: translate(-50%, -57%);
+              }
+            }
+            @-webkit-keyframes torso {
+              from {
+                -webkit-transform: translateY(0);
+                        transform: translateY(0);
+              }
+              to {
+                -webkit-transform: translateY(-15px);
+                        transform: translateY(-15px);
+              }
+            }
+            @keyframes torso {
+              from {
+                -webkit-transform: translateY(0);
+                        transform: translateY(0);
+              }
+              to {
+                -webkit-transform: translateY(-15px);
+                        transform: translateY(-15px);
+              }
+            }
+            @-webkit-keyframes fins {
+              from {
+                -webkit-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+                        -webkit-transform:scale(1);
+              }
+              to {
+                -webkit-transform: translate(-50%, -65%);
+                        transform: translate(-50%, -65%);
+                        -webkit-transform:scale(1.1);
+              }
+            }
+            @keyframes fins {
+              from {
+                -webkit-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+                        -webkit-transform:scale(1.1);
+              }
+              to {
+                -webkit-transform: translate(-50%, -65%);
+                        transform: translate(-50%, -65%);
+                        -webkit-transform:scale(1);
+              }
+            }
+
+            .st2{fill:#232323;}
+            .st1{fill:#000;}
+
+            @keyframes open {
+		0% { ry: 61.7; }
+		95% { ry: 61.7; }
+		100% { ry: 0; }
+	}
+	.left-eye {
+    position: sticky;
+		animation-name: open;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+	}
+  .right-eye {
+    position: sticky;
+    animation-name: open;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+
+  #main {
+   display: block;
+   width: 40px;
+  height: 40px;
+   top: 0px;
+   left: 0px;
+   -webkit-transform-style: preserve-3d;
+  animation:turn 7.5s infinite linear;
+}
+
+  .coin{
+      display: block;
+      position: absolute;
+      width: 95%;
+      height: 95%;
+      -webkit-transform-style: preserve-3d;
+      background-image: url('../salmon.svg');
+        background-repeat: no-repeat;
+  }
+
+
+  #child {
+
+      -webkit-transform: translateZ(0px);
+  }
+
+  #child:after{
+    content:'';
+    position:absolute;
+  }
+
+#child1 {
+  -webkit-transform: translateZ(-1px);
+}
+
+#child2 {
+  -webkit-transform: translateZ(1px);
+
+}
+
+#child3 {
+  -webkit-transform: translateZ(-2px);
+}
+
+#child4 {
+  -webkit-transform: translateZ(2px);
+}
+
+
+
+@keyframes turn{
+   0%{
+     transform: rotateY(0deg);
+   }
+   35%{
+     transform: rotateY(15deg);
+   }
+   50%{
+     transform: rotateY(50deg);
+   }
+   85%{
+     transform: rotateY(20deg);
+   }
+   100%{
+     transform: rotateY(0deg);
+   }
+ }

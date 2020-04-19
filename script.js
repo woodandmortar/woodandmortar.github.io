@@ -28,17 +28,16 @@ var TiltAnimation = function() {
   }
 
   var _accelerometerUpdate = function(e) {
-    // http://stackoverflow.com/questions/4474508/access-accelerometer-via-javascript-in-android
     var aX = event.accelerationIncludingGravity.x*1;
     var aY = event.accelerationIncludingGravity.y*1;
     var aZ = event.accelerationIncludingGravity.z*1;
     //The following two lines are just to calculate a
     // tilt. Not really needed.
-    var xPosition = Math.atan2(aY, aZ) * 20;
-    var yPosition = Math.atan2(aX, aZ) * 20;
+    // var xPosition = Math.atan2(aY, aZ) * 20;
+    // var yPosition = Math.atan2(aX, aZ) * 20;
 
-    xPosition = (Math.round(xPosition * 1000) / 1000) / 400;
-    yPosition = (Math.round(yPosition * 1000) / 1000) / 400;
+    xPosition = (Math.round(xPosition * 1000) / 1000) * 1.25;
+    yPosition = (Math.round(yPosition * 1000) / 1000) * 1.25;
 
     _animate(yPosition, xPosition);
 

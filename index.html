@@ -42,10 +42,10 @@
       <div class="app">
         <header class="header">
           <div class="header__left">
-            <img src="salmon.svg" height="50" width="50">
+            <img src="salmon.svg" height="40" width="40">
           </div>
           <div class="header__right">
-            <p>Copyright 2020</p>
+            <p><b id="vTime">0</b>/pts</p>
           </div>
         </header>
 
@@ -719,39 +719,9 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 24000);
                 commandReset(8);
                 return
               },
-              "commands" : function(){
+              "command" : function(){
                 responseText("about, best work, contact, mcred <br> specials, theme, experience, vision");
                 commandReset(9);
-                return
-              },
-              "logistics" : function(){
-                responseText("Entering logistics mode...");
-                responseText("Please Select RECORD NOW from the quick access menu.");
-                document.getElementById('fo1').innerHTML = "RECORD NOW";
-                document.getElementById('fo2').innerHTML = "RECORD NOW";
-                document.getElementById('fo3').innerHTML = "RECORD NOW";
-                document.getElementById('vresp8').innerHTML = "Logistics Start/End";
-                commandReset(10);
-                return
-              },
-              "lunch" : function(){
-                responseText("Phew... Rough day.");
-                responseText("Please Select TAKE LUNCH from the quick access menu.");
-                document.getElementById('fo1').innerHTML = "TAKE LUNCH";
-                document.getElementById('fo2').innerHTML = "TAKE LUNCH";
-                document.getElementById('fo3').innerHTML = "TAKE LUNCH";
-                document.getElementById('vresp8').innerHTML = "LUNCH Start/End";
-                commandReset(11);
-                return
-              },
-              "tucked" : function(){
-                responseText("Finally, I was getting worried");
-                responseText("Please Select TUCKED IN from the quick access menu.");
-                document.getElementById('fo1').innerHTML = "TUCKED IN";
-                document.getElementById('fo2').innerHTML = "TUCKED IN";
-                document.getElementById('fo3').innerHTML = "TUCKED IN";
-                document.getElementById('vresp8').innerHTML = "TUCKED IN";
-                commandReset(12);
                 return
               },
               "mcred" : function(){
@@ -962,7 +932,6 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 24000);
             toggleVisibility(document.getElementById('foo1'));
             toggleVisibility(document.getElementById('foo2'));
             toggleVisibility(document.getElementById('foo3'));
-            window.location.href=window.location.href;
 
               $.ajax({
                 url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfN2kkQpPALiBnKuXyfW-iRYivAp_CutzqngiAo_KSzi664QQ/formResponse",
@@ -991,7 +960,6 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 24000);
                       mySelect.setAttribute("disabled", "true");
                       var metaData0 = document.getElementById('metaData').value;
                       toggleVisibility(document.getElementById('foo3'));
-                      window.location.href=window.location.href;
 
                         $.ajax({
                           url: "https://docs.google.com/forms/d/e/1FAIpQLSfa54ksd_dyPwl1SMkLxYdUCczIwo0D4Bcu50mX9dg-5bDVYg/formResponse",
@@ -1020,7 +988,6 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 24000);
             toggleVisibility(document.getElementById('foo1'));
             toggleVisibility(document.getElementById('foo2'));
             toggleVisibility(document.getElementById('foo3'));
-            window.location.href=window.location.href;
 
               $.ajax({
                 url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfN2kkQpPALiBnKuXyfW-iRYivAp_CutzqngiAo_KSzi664QQ/formResponse",
@@ -1048,7 +1015,6 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 24000);
                       var task = document.getElementById('mySelect').value;
                       mySelect.setAttribute("disabled", "true");
                       toggleVisibility(document.getElementById('foo3'));
-                      window.location.href=window.location.href;
 
                         $.ajax({
                           url: "https://docs.google.com/forms/d/e/1FAIpQLSfa54ksd_dyPwl1SMkLxYdUCczIwo0D4Bcu50mX9dg-5bDVYg/formResponse",
@@ -1139,7 +1105,6 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 24000);
                         document.getElementById("vTime").innerHTML = videoTime;
                         document.getElementById("finalSolution").innerHTML = "";
                         setTimeout(function() {
-                          confetti();
                           formmcreds();
                           init();
                       }, 300);
@@ -1148,7 +1113,6 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 24000);
                           document.getElementById("vTime").innerHTML = videoTime;
                           document.getElementById("finalSolution").innerHTML = "";
                           setTimeout(function() {
-                             $(".confetti").remove();
                             formmcreds();
                             init();
                         }, 300);

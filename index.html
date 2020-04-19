@@ -90,7 +90,7 @@
         <main class="main">
           <article class="section" id="vienna" data-section>
             <header class="section__header" style="background-image: url('Back0.jpg');">
-              <h1 class="section__title">Welcome</h1>
+              <h1 class="section__title"><span id="vresp1"><b>No Login</b></span></h1>
               <p class="section__subtitle">
 
                 <div class="g-signin2" data-onsuccess="onSignIn"></div>
@@ -121,7 +121,6 @@
               <div class="section__controls">
                 <div class="user">
                   <img id="profilePic" src="https://source.unsplash.com/200x200/?people" class="user__img" alt="" />
-                  <span class="user__name"><span id="vresp1"><b>No Login</b></span></span>
                 </div>
               </div>
             </header>
@@ -282,11 +281,9 @@
 <script  src="./script.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 <script  src="js/index.js"></script>
-<script  src="js/animate.js"></script>
 <script  src="js/tabletop.js"></script>
 <script  src="js/tabletop2.js"></script>
 <script  src="js/tabletop3.js"></script>
-<script  src="js/mechanics.js"></script>
 <script  src="js/jquery.min.js"></script>
 <script  src="js/bootstrap.min.js"></script>
 
@@ -1071,11 +1068,6 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 24000);
 
 
 
-</script>
-
-
-
-                      <script type="text/javascript">
                         mNum = -1;
 
                         var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1kTFnCiuDAYVdpzNqVIgNKsSLKYK9tRR1Mxd6gjBncFU/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
@@ -1112,10 +1104,6 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 24000);
 
 
 
-
-                        </script>
-
-                      <script>
                       function formmcreds() {
 
                         var mCredName = document.getElementById('vresp1').innerHTML;
@@ -1188,14 +1176,6 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 24000);
                           }
 
 
-function deleteBubble() {
-
-  var htmlstring = document.getElementById("finalSolution").innerHTML;
-  htmlstring = (htmlstring.trim) ? htmlstring.trim() : htmlstring.replace(/^\s+/,'');
-
-if(htmlstring == '') {
-
-document.getElementById("poof").style.display = "none";}}
 
 </script>
 

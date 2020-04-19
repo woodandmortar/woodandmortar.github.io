@@ -33,11 +33,11 @@ var TiltAnimation = function() {
     var aZ = event.accelerationIncludingGravity.z*1;
     //The following two lines are just to calculate a
     // tilt. Not really needed.
-    // var xPosition = Math.atan2(aY, aZ) * 20;
-    // var yPosition = Math.atan2(aX, aZ) * 20;
+     var xPosition = Math.atan2(aY, aZ) * 20;
+     var yPosition = Math.atan2(aX, aZ) * 20;
 
-    xPosition = (Math.round(xPosition * 1000) / 1000) * 1.25;
-    yPosition = (Math.round(yPosition * 1000) / 1000) * 1.25;
+    xPosition = Math.round(xPosition * 1000) / 1000;
+    yPosition = Math.round(yPosition * 1000) / 1000;
 
     _animate(yPosition, xPosition);
 

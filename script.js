@@ -39,7 +39,7 @@ var TiltAnimation = function() {
     xPosition = Math.round(xPosition * 1000) / 1000;
     yPosition = Math.round(yPosition * 1000) / 1000;
 
-    _animate(xPosition);
+    _animate(yPosition);
 
     textY.innerHTML = yPosition;
     textX.innerHTML = xPosition;

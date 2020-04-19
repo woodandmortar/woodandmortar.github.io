@@ -35,6 +35,8 @@ function randomize(collection) {
   return collection[randomNumber]
 }
 
+
+
 function confetti() {
   var $confettiItems = $('<div class="confetti"></div>'),
   colors = [
@@ -46,8 +48,9 @@ function confetti() {
 
   var scale, $confettiItem;
 
-  for(var i=0; i<100; i++) {
-    scale = Math.random() * 1.75 + 1;
+
+  for(var i=0; i<80; i++) {
+    scale = Math.random() * 1.75 + 2;
     $confettiItem = $('<svg class=\'confetti-item\' width=\'' + width * scale + '\' height=\'' + height * scale + '\' viewbox=\'0 0 ' + width + ' ' + height + '\'>\n  <use transform=\'rotate(' + Math.random() * 360 + ', ' + width / 2 + ', ' + height / 2 + ')\' xlink:href=\'#svg-confetti\' />\n</svg>');
     $confettiItem.css({
       'animation': Math.random() + 2 + 's ' + Math.random() * 2 + 's confetti-fall ease-in both',
@@ -58,3 +61,20 @@ function confetti() {
   }
   $('body').append($confettiItems)
 }
+
+
+var cnt=document.getElementById("vTime");
+var water=document.getElementById("water");
+var percent=cnt.innerText;
+var interval;
+var waterLevel
+interval=setInterval(function(){
+  percent ++;
+  cnt.innerHTML = percent;
+  water.style.transform='translate(0'+','+(100-((percent)/10))+'%)';
+  if(percent==1000){
+    clearInterval(interval);
+  }
+
+document.getElementById('vText').innerText = 'translate(0'+','+(100-((percent)/10))+'%)';
+},100);

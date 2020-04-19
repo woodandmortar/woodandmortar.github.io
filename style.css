@@ -887,3 +887,54 @@ textarea[name="chatbox"] {
             .open-modal3:hover {
             	background: #D95952;
             }
+
+            svg path { fill: silver; }
+
+            #container {
+              position: absolute;
+              width: 100px;
+              height: 60px;
+              margin: 0;
+              left: calc(50% - 50px);
+              top: calc(50% - 30px); }
+
+            #loading-mask1, #loading-mask2, #loading-mask3, #loading-mask4, #loading-mask5 {
+              animation-name: loader1;
+              animation-duration: 2.1s;
+              animation-iteration-count: infinite;
+              animation-fill-mode: both;
+              transform: translate(-10px, 0);
+            }
+
+            #loading-mask2 { animation-name: loader2; }
+
+            #loading-mask3 { animation-name: loader3; }
+
+            #loading-mask4 { animation-name: loader4; }
+
+            #loading-mask5 { animation-name: loader5; }
+
+            @keyframes loader1 {
+              from {  transform: translate(-10px, 0); }
+              to { transform: translate(70px, 0); }
+            }
+
+            @keyframes loader2 {
+              from {  transform: translate(-100px, 0); }
+              to { transform: translate(70px, 0); }
+            }
+
+            @keyframes loader3 {
+              from {  transform: translate(-200px, 0); }
+              to { transform: translate(70px, 0); }
+            }
+
+            @keyframes loader4 {
+              from {  transform: translate(-300px, 0); }
+              to { transform: translate(70px, 0); }
+            }
+
+            @keyframes loader5 {
+              from {  transform: translate(-400px, 0); }
+              to { transform: translate(70px, 0); }
+            }

@@ -10,7 +10,7 @@ var TiltAnimation = function() {
     textX,
     textY;
 
-  var _init = function() {
+  var _init0 = function() {
     mouseX    = 0;
     mouseY    = 0;
     slider    = document.getElementById('hero');
@@ -63,11 +63,11 @@ var TiltAnimation = function() {
   }
 
   var _animate = function(rotationYValue, rotationXValue) {
-    TweenLite.to(slider, 0.6, { rotationY:rotationYValue, rotationX:rotationXValue, ease:Power1.easeOut, transformPerspective:900, transformOrigin:"center" });
+    TweenLite.to(slider, 0.3, { rotationY:rotationYValue, rotationX:rotationXValue, ease:Power1.easeOut, transformPerspective:900, transformOrigin:"center" });
   }
 
   return {
-    init: _init
+    init: _init0
   }
 }();
 

@@ -17,8 +17,7 @@
               <link rel="icon" type="image/png" href="pics/wm.png" sizes="16x16">
               <link rel="mask-icon" href="pics/wm.png" color="#fff">
               <link rel="shortcut icon" href="pics/wm.png">
-              <link rel="stylesheet" href="./style.css">
-      <link rel="stylesheet" href="css/animate.css">
+              <link rel="stylesheet" href="style.css">
 
       <script src="https://apis.google.com/js/platform.js" async defer></script>
       <meta name="google-signin-client_id" content="930580119599-2j4jj0rjjdr7vkrurdsq5ecnsqm029tb.apps.googleusercontent.com">
@@ -38,22 +37,12 @@
 <body>
 <!-- partial:index.partial.html -->
 <div class="hero" id="hero">
-  <div class="hero__container">
-    <div class="hero__item">
 
       <!-- partial:index.partial.html -->
       <div class="app">
         <header class="header">
           <div class="header__left">
-            <span>
-              <div id="main">
-              <div id="child" class="coin"></div>
-              <div id="child1" class="coin"></div>
-              <div id="child2" class="coin"></div>
-              <div id="child3" class="coin"></div>
-              <div id="child4" class="coin"></div>
-              </div>
-            </span>
+            <img src="salmon.svg" height="50" width="50">
           </div>
           <div class="header__right">
             <p>Copyright 2020</p>
@@ -104,9 +93,12 @@
               <h1 class="section__title">Welcome</h1>
               <p class="section__subtitle">
 
-                <button id="button1" class="open-modal2" href="#" onClick="startGeoLookup()" style="position:absolute;
-                top: 1%;
-                z-index:999999999999999999999;"><span id="vresp9">Sub</span></button>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+
+                <button id="button1" class="open-modal1" href="#" onClick="startGeoLookup()" style="position:absolute;
+                top: 1%; display: none;
+                z-index:999999999999999999999;"><span id="vresp9">Clock in</span></button>
                 <form id="form1" style="display: none;
                 position:absolute;
                 top: 1%;
@@ -161,8 +153,8 @@
 
           <article class="section" id="lisbon" data-section>
             <header class="section__header" style="background-image: url('Back1.jpg');">
-              <h1 class="section__title">Woodandmortar</h1>
-              <p class="section__subtitle">Subcontracting</p>
+              <h1 class="section__title">W&M</h1>
+              <p class="section__subtitle">Home Improvement</p>
               <div class="section__controls">
                 <button class="btn btn--prev" title="Previous">
                   <span class="arrow arrow--left"></span>
@@ -200,45 +192,50 @@
 
 
           <article class="section" id="newyork" data-section>
-
-            <header class="section__header" style="background-image: url('Back1.jpg');">
-
-<h1 class="section__title"><b id="vTime">100</b>/pts
-<br>
-<b id="vText" style="display:none;"></b></h1>
-
-
-              <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
-              <p class="section__subtitle">
-                Last Update: <b id="hud1a">0</b> <br>
-                Level: <b id="hud2">0</b> <br>
-                Bank: <b id="hud3">0</b> <br>
-                Mcreds: <b id="hud4">0</b> <br>
-                Earned Hours: <b id="hud5">0</b> <br>
-              </p>
-              </div>
+            <header class="section__header" style="background-image: url('https://lonelyplanetimages.imgix.net/mastheads/GettyImages-538096543_medium.jpg?sharp=10&vib=20&w=2000');">
+              <h1 class="section__title">Donate</h1>
+              <p class="section__subtitle">40.42°N, 74.02°W</p>
             </header>
-
-
-
-
-
-
-
+            <div class="section__content">
+              <ul class="boxgrid">
+                <li class="boxgrid__item boxgrid__item--wide">
+                  <a href="#" class="box box--image">
+                    <img src="https://source.unsplash.com/600x400/?art" class="box__img" alt="" />
+                  </a>
+                </li>
+                <li class="boxgrid__item">
+                  <a href="#" class="box box--weather">
+                    <p><span class="text--large">30°C</span><br />Sunny</p>
+                  </a>
+                </li>
+                <li class="boxgrid__item boxgrid__item--push">
+                  <a href="#" class="box box--video">
+                    <img src="https://source.unsplash.com/300x300/?art" class="box__img" alt="" />
+                  </a>
+                </li>
+                <li class="boxgrid__item boxgrid__item--push">
+                  <a href="#" class="box box--image">
+                    <img src="https://source.unsplash.com/300x300/?people" class="box__img" alt="" />
+                  </a>
+                </li>
+                <li class="boxgrid__item boxgrid__item--push">
+                  <a href="#" class="box box--locations">
+                    <p><span class="text--large">1.366</span><br />Locations</p>
+                  </a>
+                </li>
+                <li class="boxgrid__item">
+                  <a href="#" class="box box--cost">
+                    <p><span class="text--large">150$</span><br />Daily cost</p>
+                  </a>
+                </li>
+                <li class="boxgrid__item">
+                  <a href="#" class="box box--image">
+                    <img src="https://source.unsplash.com/300x300/?technology" class="box__img" alt="" />
+                  </a>
+                </li>
+              </ul>
+            </div>
           </article>
-
-
-
-
-
-
-
-
-
-
-
-
         </main>
 
         <button class="scrollctrl scrollctrl--prev" data-scroll-dir="prev">
@@ -248,7 +245,52 @@
           <span class="arrow arrow--large arrow--down"></span>
         </button>
 
+
+
+        <div id="live-chat">
+
+          <header class="clearfix">
+            <button class="open-modal2" href="#" onclick="togglediv('item')">Hide/Show Menu</button>
+          </header>
+
+          <div id="item" class="chat">
+                <div class="chat-message-content clearfix">
+                  <ul class="chatlist">
+                    <li id="welcomeMessage" class="bot__output bot__output--standard">Morton here, and this is construction learning:<br>
+                    Type <span class="bot__command">help</span> (for more instructions) or <span class="bot__command">commands</span> for a list of every command.
+                  </li>
+                  <li id="welcomeMessage2" class="bot__output bot__output--standard">
+                  <span class="bot__command">Points</span> are collected from each answer and three are removed for every wrong answer. I suggest you use the study guide link providing the section outline for each question.
+                </li>
+                        <li class="bot__output bot__output--standard" id="foo4">
+                          <p id="math"></p><p hidden id="answer"></p>
+                        <div id="popup" class="btn-group" >
+                          <button class="open-modal" href="#" onClick="compute1()"><div id="slotA"></div></button>
+                          <button class="open-modal" href="#" onClick="compute2()"><div id="slotB"></div></button>
+                          <button class="open-modal" href="#" onClick="compute3()"><div id="slotC"></div></button>
+                          <button class="open-modal" href="#" onClick="compute4()"><div id="slotD"></div></button>
+                          <button class="open-modal1" href="#" onClick="compute()"><div id="finalSolution"></div></button>
+                          <button class="open-modal1" href="#" onclick="document.getElementById('finalSolution').innerHTML = ''">Clear</button>
+                          <button class="open-modal" style="display: none;"><div id="solution1"></div></button>
+                          <p><a id="theStudyGuide"></a> Section: <a id="metaData"></a></p>
+                        </div></li>
+                  </ul>
+
+
+
+
+                        <div class="chatbox-area">
+                          <form action="" id="chatform">
+                              <textarea placeholder="Talk to me!" class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
+                              <input class="submit-button" type="submit" value="send">
+                          </form>
+                        </div>
+                    </div>
+                </div>
+        </div>
         <footer class="footer">
+
+
           <p>
 
 <span class='slider__itemX'>0</span>, y: <span class='slider__itemY'>0</span>
@@ -262,67 +304,9 @@
           </p>
         </footer>
 
-      </div>
 
-
-
-      <svg class="dn">
-        <defs>
-          <symbol id="svg-confetti">
-            <path fill="currentColor" d="M-.017 6.91L4.035.012l2.587 1.52L2.57 8.43z"></path>
-          </symbol>
-        </defs>
-      </svg>
-
-
-
-    </div>
   </div>
 
-  <div id="live-chat">
-
-    <header class="clearfix">
-      <button class="open-modal2" href="#" onclick="togglediv('item'),confetti()">Hide/Show Menu</button>
-
-    </header>
-
-
-
-    <div id="item" class="chat">
-          <div class="chat-message-content clearfix">
-            <ul class="chatlist">
-              <li id="welcomeMessage" class="bot__output bot__output--standard">Morton here, and this is construction learning:<br>
-              Type <span class="bot__command">help</span> (for more instructions) or <span class="bot__command">commands</span> for a list of every command.
-            </li>
-            <li id="welcomeMessage2" class="bot__output bot__output--standard">
-            <span class="bot__command">Points</span> are collected from each answer and three are removed for every wrong answer. I suggest you use the study guide link providing the section outline for each question.
-          </li>
-                  <li class="bot__output bot__output--standard" id="foo4">
-                    <p id="math"></p><p hidden id="answer"></p>
-                  <div id="popup" class="btn-group" >
-                    <button class="open-modal" href="#" onClick="compute1()"><div id="slotA"></div></button>
-                    <button class="open-modal" href="#" onClick="compute2()"><div id="slotB"></div></button>
-                    <button class="open-modal" href="#" onClick="compute3()"><div id="slotC"></div></button>
-                    <button class="open-modal" href="#" onClick="compute4()"><div id="slotD"></div></button>
-                    <button class="open-modal1" href="#" onClick="compute()"><div id="finalSolution"></div></button>
-                    <button class="open-modal1" href="#" onclick="document.getElementById('finalSolution').innerHTML = ''">Clear</button>
-                    <button class="open-modal" style="display: none;"><div id="solution1"></div></button>
-                    <p><button class="open-modal2"><a id="theStudyGuide"></a></button> Section: <a id="metaData"></a></p>
-                  </div></li>
-            </ul>
-
-
-
-
-                  <div class="chatbox-area">
-                    <form action="" id="chatform">
-                        <textarea placeholder="Talk to me!" class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
-                        <input class="submit-button" type="submit" value="send">
-                    </form>
-                  </div>
-              </div>
-          </div>
-  </div>
 
 
 </div>
@@ -333,5 +317,238 @@
 <script  src="js/tabletop.js"></script>
 <script  src="js/tabletop2.js"></script>
 <script  src="js/tabletop3.js"></script>
+<script  src="js/mechanics.js"></script>
+<script  src="js/jquery.min.js"></script>
+<script  src="js/bootstrap.min.js"></script>
+
+
+
+
+<script>
+
+                        var mNum = -1;
+
+                        var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1kTFnCiuDAYVdpzNqVIgNKsSLKYK9tRR1Mxd6gjBncFU/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+
+                        function init0() {
+                                Tabletop.init0( { key: public_spreadsheet_url,
+                                                 callback: showInfo,
+                                                 simpleSheet: true } );
+                              }
+
+                              window.addEventListener('DOMContentLoaded', init0)
+
+                              function showInfo(data) {
+                                var mNum = Math.floor((Math.random() * 42) + 1);
+                                mProb = data[mNum].Name;
+                                answerA = data[mNum].AnswerA;
+                                answerB = data[mNum].AnswerB;
+                                answerC = data[mNum].AnswerC;
+                                answerD = data[mNum].AnswerD;
+                                solution = data[mNum].Solution;
+                                studyGuide = data[mNum].Link;
+                                metadata = data[mNum].MetaData;
+                                document.getElementById("slotA").innerHTML = [ answerA ].join(", ");
+                                document.getElementById("slotB").innerHTML = [ answerB ].join(", ");
+                                document.getElementById("slotC").innerHTML = [ answerC ].join(", ");
+                                document.getElementById("slotD").innerHTML = [ answerD ].join(", ");
+                                document.getElementById("metaData").innerHTML = [ metadata ].join(", ");
+                                document.getElementById("solution1").innerHTML = [ solution ].join(", ");
+                                document.getElementById("theStudyGuide").innerHTML = [ studyGuide ].join(", ");
+                                document.getElementById("math").innerHTML = [ mProb ].join(", ");
+                                console.log(data);
+                              }
+
+
+                                function formAdmin(){
+
+                                          var intake = document.getElementById('fo1').innerHTML;
+                                          document.getElementById('vresp7').innerHTML = intake;
+                                          var project = document.getElementById('vresp7').innerHTML;
+                                          var location = document.getElementById('vresp9').innerHTML;
+                                          var task = document.getElementById('mySelect').value;
+                                          mySelect.setAttribute("disabled", "true");
+                                          toggleVisibility(document.getElementById('foo1'));
+                                          toggleVisibility(document.getElementById('foo2'));
+                                          toggleVisibility(document.getElementById('foo3'));
+                                          window.location.href=window.location.href;
+
+                                            $.ajax({
+                                              url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfN2kkQpPALiBnKuXyfW-iRYivAp_CutzqngiAo_KSzi664QQ/formResponse",
+                                              data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
+                                              type: "POST",
+                                              dataType: "xml",
+                                              statusCode: {
+                                                0: function () {
+                                          //					alert("Click -OK- to submit message");
+                                                },
+                                                200: function () {
+                                          //					alert("Click -OK- to submit message");
+                                                }
+                                                    }
+                                            });
+                                          }
+
+
+                                          function formCFreitag(){
+
+                                                    var intake = document.getElementById('fo3').innerHTML;
+                                                    document.getElementById('vresp7').innerHTML = intake;
+                                                    var project = document.getElementById('vresp7').innerHTML;
+                                                    var location = document.getElementById('vresp9').innerHTML;
+                                                    var task = document.getElementById('mySelect').value;
+                                                    mySelect.setAttribute("disabled", "true");
+                                                    var metaData0 = document.getElementById('metaData').value;
+                                                    toggleVisibility(document.getElementById('foo3'));
+                                                    window.location.href=window.location.href;
+
+                                                      $.ajax({
+                                                        url: "https://docs.google.com/forms/d/e/1FAIpQLSfa54ksd_dyPwl1SMkLxYdUCczIwo0D4Bcu50mX9dg-5bDVYg/formResponse",
+                                                        data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location , "entry.696138045" : metaData0 },
+                                                        type: "POST",
+                                                        dataType: "xml",
+                                                        statusCode: {
+                                                          0: function () {
+                                                    //					alert("Click -OK- to submit message");
+                                                          },
+                                                          200: function () {
+                                                    //					alert("Click -OK- to submit message");
+                                                          }
+                                                              }
+                                                      });
+                                                    }
+
+                                function formAdminA(){
+
+                                          var intake = document.getElementById('fo1a').innerHTML;
+                                          document.getElementById('vresp7').innerHTML = intake;
+                                          var project = document.getElementById('vresp7').innerHTML;
+                                          var location = document.getElementById('vresp9').innerHTML;
+                                          var task = document.getElementById('mySelect').value;
+                                          mySelect.setAttribute("disabled", "true");
+                                          toggleVisibility(document.getElementById('foo1'));
+                                          toggleVisibility(document.getElementById('foo2'));
+                                          toggleVisibility(document.getElementById('foo3'));
+                                          window.location.href=window.location.href;
+
+                                            $.ajax({
+                                              url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfN2kkQpPALiBnKuXyfW-iRYivAp_CutzqngiAo_KSzi664QQ/formResponse",
+                                              data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
+                                              type: "POST",
+                                              dataType: "xml",
+                                              statusCode: {
+                                                0: function () {
+                                          //					alert("Click -OK- to submit message");
+                                                },
+                                                200: function () {
+                                          //					alert("Click -OK- to submit message");
+                                                }
+                                                    }
+                                            });
+                                          }
+
+
+                                          function formCFreitagA(){
+
+                                                    var intake = document.getElementById('fo3a').innerHTML;
+                                                    document.getElementById('vresp7').innerHTML = intake;
+                                                    var project = document.getElementById('vresp7').innerHTML;
+                                                    var location = document.getElementById('vresp9').innerHTML;
+                                                    var task = document.getElementById('mySelect').value;
+                                                    mySelect.setAttribute("disabled", "true");
+                                                    toggleVisibility(document.getElementById('foo3'));
+                                                    window.location.href=window.location.href;
+
+                                                      $.ajax({
+                                                        url: "https://docs.google.com/forms/d/e/1FAIpQLSfa54ksd_dyPwl1SMkLxYdUCczIwo0D4Bcu50mX9dg-5bDVYg/formResponse",
+                                                        data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
+                                                        type: "POST",
+                                                        dataType: "xml",
+                                                        statusCode: {
+                                                          0: function () {
+                                                    //					alert("Click -OK- to submit message");
+                                                          },
+                                                          200: function () {
+                                                    //					alert("Click -OK- to submit message");
+                                                          }
+                                                              }
+                                                      });
+                                                    }
+
+
+
+                                                            function formmcreds() {
+
+                                                              var mCredName = document.getElementById('vresp1').innerHTML;
+                                                              var mCredMetadata = document.getElementById("metaData").innerHTML;
+                                                              var mCredLocation = document.getElementById('vresp9').innerHTML;
+                                                              var mCredPoints = document.getElementById('vTime').innerHTML;
+
+                                                                $.ajax({
+                                                                  url: "https://docs.google.com/forms/d/e/1FAIpQLSdXU0IVPpGxLq5rk4Wd1WceQMC_b6OD6yhuHsyJnXJkjfHmzQ/formResponse",
+                                                                  data:  { "entry.2037093222" : mCredName , "entry.291261238" : mCredMetadata , "entry.1107492006" : mCredLocation, "entry.196847829" : mCredPoints },
+                                                                  type: "POST",
+                                                                  dataType: "xml",
+                                                                  statusCode: {
+                                                                    0: function () {
+                                                              //					alert("Click -OK- to submit message");
+                                                                    },
+                                                                    200: function () {
+                                                              //					alert("Click -OK- to submit message");
+                                                                    }
+                                                                        }
+                                                                });
+
+
+                                                            }
+
+                                                            function compute() {
+                                                              var finalAnswer = document.getElementById("finalSolution").innerHTML;
+                                                              var str = document.getElementById("solution1").innerHTML;
+                                                              var n = finalAnswer.includes(str);
+                                                              var videoTime = parseInt(document.getElementById("vTime").innerHTML);
+                                                              if ((n == true)){        // logical condition
+                                                              videoTime += 1;
+                                                              document.getElementById("vTime").innerHTML = videoTime;
+                                                              document.getElementById("finalSolution").innerHTML = "";
+                                                              setTimeout(function() {
+                                                                formmcreds();
+                                                                init0();
+                                                            }, 300);
+                                                              }else{
+                                                                videoTime -= 3;
+                                                                document.getElementById("vTime").innerHTML = videoTime;
+                                                                document.getElementById("finalSolution").innerHTML = "";
+                                                                setTimeout(function() {
+                                                                  formmcreds();
+                                                                  init0();
+                                                              }, 300);
+                                                              }
+                                                            }
+
+                                                            function compute1() {
+                                                              document.getElementById("finalSolution").innerHTML += "A";
+                                                            }
+
+                                                            function compute2() {
+                                                              document.getElementById("finalSolution").innerHTML += "B";
+                                                              }
+
+                                                            function compute3() {
+                                                              document.getElementById("finalSolution").innerHTML += "C";
+                                                              }
+
+                                                            function compute4() {
+                                                              document.getElementById("finalSolution").innerHTML += "D";
+                                                              }
+
+                                                              function compute5() {
+                                                                document.getElementById("finalSolution").innerHTML += "E";
+                                                                }
+
+
+</script>
+
+
 </body>
 </html>

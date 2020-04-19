@@ -1,9 +1,7 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-}
-
-html {
-  height: 100%;
 }
 
 body {
@@ -14,94 +12,6 @@ body {
   background-color: #121519;
   font-family: 'Montserrat', 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
-
-.hero {
-  height: 100%;
-  width: 100%;
-  padding: 1em;
-}
-@media (min-width: 800px) {
-  .hero {
-    padding: 2em;
-  }
-}
-.hero__container {
-  width: 100%;
-  overflow: hidden;
-  height: 100%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-  white-space: nowrap;
-}
-.hero__item {
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  position: relative;
-}
-.hero__itemImage {
-  display: block;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-}
-.hero__itemImage::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.5)));
-  background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
-}
-.hero__itemText {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 0 2em;
-  color: #fff;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  z-index: 100;
-}
-.hero__itemText p {
-  margin: 0;
-  text-shadow: 0 1px 1px #000;
-  font-size: 1.125em;
-}
-.hero__itemTitle {
-  text-transform: uppercase;
-  font-weight: 300;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 1.5em;
-  margin-bottom: 0;
-  text-shadow: 0 1px 1px #000;
-}
-@media (min-width: 800px) {
-  .hero__itemTitle {
-    font-size: 3em;
-  }
-}
-
 
 ul, ol {
   list-style-type: none;
@@ -977,17 +887,3 @@ textarea[name="chatbox"] {
             .open-modal3:hover {
             	background: #D95952;
             }
-
-
-
-
-.chatbot1 {
-
-
-position: absolute;
-width: 600%;
-
-
-
-
-}

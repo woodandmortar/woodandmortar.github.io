@@ -888,7 +888,6 @@ textarea[name="chatbox"] {
             	background: #D95952;
             }
 
-            svg path { fill: silver; }
 
             #container {
               position: absolute;
@@ -937,4 +936,35 @@ textarea[name="chatbox"] {
             @keyframes loader5 {
               from {  transform: translate(-400px, 0); }
               to { transform: translate(70px, 0); }
+            }
+
+
+
+
+            .confetti {
+              left: 0;
+              pointer-events: none ;
+              position: fixed;
+              top: 0;
+              transform: translate3d(0, 0, 0);
+              will-change: transform;
+              height: 100%;
+              width: 100%;
+            }
+
+            .confetti-item {
+              position: absolute;
+              transform: translate3d(0, 0, 0);
+              will-change: transform;
+            }
+
+            @keyframes confetti-fall {
+              0% {
+                transform: translateY(-100%);}
+              95% {
+                animation-timing-function: ease-in-out;
+                transform: translateY(calc(100vh - 55%));}
+              100% {
+                transform: translateY(calc(100vh - 65%));}
+
             }

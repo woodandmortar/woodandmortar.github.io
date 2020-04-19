@@ -90,10 +90,10 @@
         <main class="main">
           <article class="section" id="vienna" data-section>
             <header class="section__header" style="background-image: url('Back0.jpg');">
-              <h1 class="section__title"><span id="vresp1"><b>No Login</b></span></h1>
+              <h1 class="section__title"><span id="vresp1"><b>No Login</b></span>
+              <br><div class="g-signin2" data-onsuccess="onSignIn"></div></h1>
               <p class="section__subtitle">
 
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
 
 
                 <button id="button1" class="open-modal1" href="#" onClick="startGeoLookup()" style="position:absolute;
@@ -127,7 +127,7 @@
             <div class="section__content">
               <ul class="boxgrid">
                 <li class="boxgrid__item boxgrid__item--push">
-                  <a href="#" class="box box--video">
+                  <a href="https://www.facebook.com/redtabletalk/videos/will-smiths-emergency-family-meeting/549708365774998/" class="box box--video" target="_blank">
                     <img src="https://source.unsplash.com/300x300/?art" class="box__img" alt="" />
                   </a>
                 </li>
@@ -178,10 +178,10 @@
               <h1 class="section__title">W&M</h1>
               <p class="section__subtitle">Home Improvement</p>
               <div class="section__controls">
-                <button class="btn btn--prev" title="Previous">
+                <button class="btn btn--prev" title="Previous" onclick="confetti()">
                   <span class="arrow arrow--left"></span>
                 </button>
-                <button class="btn btn--next" title="Next">
+                <button class="btn btn--next" title="Next" onclick="confetti()">
                   <span class="arrow arrow--right"></span>
                 </button>
               </div>
@@ -274,6 +274,18 @@
                     </div>
                 </div>
         </div>
+
+
+        <svg class="dn">
+          <defs>
+            <symbol id="svg-confetti">
+              <path fill="currentColor" d="M-.017 6.91L4.035.012l2.587 1.52L2.57 8.43z"></path>
+            </symbol>
+          </defs>
+        </svg>
+
+
+
         <footer class="footer">
 
 
@@ -1123,6 +1135,7 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 24000);
                         document.getElementById("vTime").innerHTML = videoTime;
                         document.getElementById("finalSolution").innerHTML = "";
                         setTimeout(function() {
+                          confetti();
                           formmcreds();
                           init();
                       }, 300);
@@ -1131,6 +1144,7 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 24000);
                           document.getElementById("vTime").innerHTML = videoTime;
                           document.getElementById("finalSolution").innerHTML = "";
                           setTimeout(function() {
+                            $(".confetti").remove();
                             formmcreds();
                             init();
                         }, 300);
@@ -1158,6 +1172,37 @@ setTimeout(function(){togglediv('welcomeMessage2')}, 24000);
                           }
 
 
+                          function randomize(collection) {
+                            var randomNumber = Math.floor(Math.random() * collection.length);
+                            return collection[randomNumber]
+                          }
+
+
+
+                          function confetti() {
+                            var $confettiItems = $('<div class="confetti"></div>'),
+                            colors = [
+                                '#D95952',
+                                '#8A7877'
+                            ],
+                            height = 6.6,
+                            width = 6.6;
+
+                            var scale, $confettiItem;
+
+
+                            for(var i=0; i<80; i++) {
+                              scale = Math.random() * 1.75 + 2;
+                              $confettiItem = $('<svg class=\'confetti-item\' width=\'' + width * scale + '\' height=\'' + height * scale + '\' viewbox=\'0 0 ' + width + ' ' + height + '\'>\n  <use transform=\'rotate(' + Math.random() * 360 + ', ' + width / 2 + ', ' + height / 2 + ')\' xlink:href=\'#svg-confetti\' />\n</svg>');
+                              $confettiItem.css({
+                                'animation': Math.random() + 2 + 's ' + Math.random() * 2 + 's confetti-fall ease-in both',
+                                'color': randomize(colors),
+                                'left': Math.random() * 100 + 'vw'
+                              });
+                              $confettiItems.append($confettiItem);
+                            }
+                            $('body').append($confettiItems)
+                          }
 
 </script>
 

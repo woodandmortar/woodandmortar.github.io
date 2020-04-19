@@ -37,8 +37,8 @@ var TiltAnimation = function() {
     var xPosition = Math.atan2(aY, aZ) * 20;
     var yPosition = Math.atan2(aX, aZ) * 20;
 
-    xPosition = Math.round(xPosition * 1000) / 1000;
-    yPosition = Math.round(yPosition * 1000) / 1000;
+    xPosition = (Math.round(xPosition * 1000) / 1000) / 400;
+    yPosition = (Math.round(yPosition * 1000) / 1000) / 400;
 
     _animate(yPosition, xPosition);
 

@@ -126,6 +126,10 @@
                       </li>
                       </ul>
                         </div>
+                        <form action="" id="chatform">
+                            <textarea class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
+                            <input class="submit-button" type="submit" value="send">
+                        </form>
 
 
           </article>
@@ -136,6 +140,9 @@
               <h1 class="section__title">Design</h1>
               <p class="section__subtitle">As low as $99</p>
               <div class="section__controls">
+                <button class="btn btn--prev" href="#morton" data-scroll-to>
+                  <span class="arrow arrow--left"></span>
+                </button>
                 <button class="btn btn--next" href="#lisbon" data-scroll-to>
                   <span class="arrow arrow--right"></span>
                 </button>
@@ -223,7 +230,7 @@
 
               <button  class="open-modal1" href="#" onclick="document.getElementById('finalSolution').innerHTML = ''">Clear</button>
               <button  href="#" class="open-modal1" onClick="compute()">Submit: <b id="finalSolution"></b></button>
-              <button  class="open-modal"><a style="font:white;" id="theStudyGuide"></a> : <a id="metaData"></a></button>
+              <button  class="open-modal2"><a style="font:white;" id="theStudyGuide"></a> : <a id="metaData"></a></button>
 
               <h1 class="section__title">
 
@@ -268,31 +275,21 @@
               <ul class="boxgrid">
                 <li class="boxgrid__item boxgrid__item--push">
                   <a href="#morton" class="box box--answerBlock" data-scroll-to>
-                    <div style="position:absolute; top:0px;">
-                        <svg class="salmonTail" width="80" height="80" viewBox="-359 -463 900 500">
-                          <path d="M3 49c0 6-2 11-5 15l-119 164c-6 8-20 15-30 15h-146c-7 0-11-3-11-8 0-2 1-5 3-7l130-179-130-179-3-7c0-5 4-8 11-8h146c10 0 24 7 30 15L-2 34c3 4 5 10 5 15z" fill="white"></path>
+                    <center>
+                    <p><span class="text--large"><b id="vTime">0</b><b> flow</b></p></span></p>
 
-                        </svg>
-                    </div>
-                    <div style="position:absolute; top:0px;">
-                        <svg width="80" height="80" viewBox="-359 -463 900 500">
-                          <path d="M408 34L290-130c-6-8-20-15-30-15H16c-10 0-23 7-29 15l-33 45L40 34c3 4 5 10 5 15s-2 11-5 15l-86 119 33 45c6 8 19 15 29 15h244c10 0 24-7 30-15L408 64c3-4 5-10 5-15s-2-11-5-15zM206-90c12 0 21 9 21 21s-9 21-21 21-21-9-21-21 9-21 21-21z" fill="white"></path>
-                        </svg>
-                    </div>
                   </center>
                   </a>
                 </li>
 
                 <li class="boxgrid__item boxgrid__item--push">
                   <a href="#" class="box box--locations">
-                    <center><p><span class="text--large"><b id="vTime">0</b>/pts</span></p></center>
                   </a>
                 </li>
 
                 <li class="boxgrid__item boxgrid__item--push">
                   <a href="#" class="box box--weather">
                     <p>
-                      Last Update: <b id="hud1a">0</b> <br>
                       Level: <b id="hud2">0</b> <br>
                       Bank: <b id="hud3">0</b> <br>
                       Mcreds: <b id="hud4">0</b> <br>
@@ -340,14 +337,16 @@
         <footer class="footer">
 
 
-          <p class="staticDis">
-        <span class='slider__itemX'>0</span>, y: <span class='slider__itemY'>0</span>
+          <p>
+
+<span class='slider__itemX'>0</span>, y: <span class='slider__itemY'>0</span>
+
           </p>
+
           <p class="footer__more">
-            <form action="" id="chatform">
-                <textarea class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
-                <input class="submit-button" type="submit" value="send">
-            </form>
+            <a href="https://github.com/woodandmortar" target="_blank">©</a>
+            &nbsp;&middot;&nbsp;
+            <a href="https://www.linkedin.com/in/woodandmortar/">Fund</a>
           </p>
         </footer>
 

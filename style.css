@@ -264,6 +264,7 @@ p {
   background-color: #6C73DC;
 }
 .box--answerBlock {
+  justify-content: right;
   background-color: #D95952;
 }
 .box--image, .box--video {

@@ -238,24 +238,7 @@
               <p class="section__subtitle">
 
 
-                <button id="button1" class="open-modal1" href="#" onClick="startGeoLookup()" style="position:absolute;
-                top: 1%; display: none;
-                z-index:999999999999999999999;"><span id="vresp9">Clock in</span></button>
-                <form id="form1" style="display: none;
-                position:absolute;
-                top: 1%;
-                z-index:999999999999999999999;">
-                  <select id="mySelect" class="open-modal1">
-                    <option value="None" selected>Login Options</option>
-                    <option value="Food Deduction">Lunch</option>
-                      <option value="Drywall">Drywall</option>
-                      <option value="Texture">Texture</option>
-                      <option value="Painting">Painting</option>
-                      <option value="Tile">Tile</option>
-                      <option value="Woodwork">Woodwork</option>
-                      <option value="Demolition">Demolition</option>
-                  </select>
-                </form>
+
 
 
 
@@ -283,7 +266,10 @@
                 </li>
 
                 <li class="boxgrid__item boxgrid__item--push">
-                  <a href="#" class="box box--locations">
+                  <a href="#" onClick="startGeoLookup()" class="box box--locations">
+
+                    
+
                   </a>
                 </li>
 
@@ -343,6 +329,8 @@
 
           </p>
 
+<span id="vresp9"></span>
+
           <p class="footer__more">
             <a href="https://github.com/woodandmortar" target="_blank">©</a>
             &nbsp;&middot;&nbsp;
@@ -373,42 +361,6 @@
 
 <script>
 
-
-
-var doc = window.document;
-  var docEl = doc.documentElement;
-
-  var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
-  var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
-
-  if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
-    requestFullScreen.call(docEl);
-  }
-  else {
-    cancelFullScreen.call(doc);
-  }
-
-setTimeout(function(){togglediv('welcomeMessage')}, 12000);
-
-function swapPower(){
-  var x2 = document.getElementById("powerButton");
-  if (x2.innerHTML === "Back") {
-    x2.innerHTML = "Open Chat";
-    document.getElementById("hero").style.display = "block";
-  } else {
-    x2.innerHTML = "Back";
-    document.getElementById("hero").style.display = "none";
-  }
-}
-
-function changeBot(){
-  togglediv('poof1');
-  togglediv('poof2');
-  togglediv('poof3');
-  togglediv('math');
-  togglediv('poof5');
-  togglediv('popup');
-}
 
     var toggleVisibility = function(element) {
       if(element.style.display=='block'){

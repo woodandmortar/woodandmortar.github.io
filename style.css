@@ -196,7 +196,7 @@ p {
 }
 @media screen and (min-width: 1024px) {
   .section {
-    margin-bottom: 750px;
+    margin-bottom: 450px;
   }
   .section__header {
     -webkit-transform: translateZ(-1px) scale(1.9);
@@ -445,8 +445,6 @@ button:focus {
     display: absolute;
   flex-flow: row nowrap;
   align-content: space-between;
-  bottom: 0;
-  max-height: 450px;
   margin: 0 auto;
   padding: 1em;
   padding-bottom: 0; }
@@ -461,7 +459,7 @@ button:focus {
     overflow-x: hidden;
     width: 100%;
     max-width: 75vw;
-    max-height: 75vh;
+    max-height: 55vh;
     margin: 0 auto; }
     .chatlist .userInput, .chatlist .bot__output {
       padding: 0.85em;
@@ -533,21 +531,15 @@ button:focus {
     display: flex;
     justify-content: center;
     width: 80%;
-    max-width: 35em;
     margin: 0 auto;
     padding-top: 1em;
+    padding-bottom: 1em;
     font-size: 1em;
     font-family: Helvetica; }
     @media screen and (max-width: 29em) {
       #chatform {
         width: 90%; } }
 
-  .chatbox-area {
-    margin: 0 auto;
-    position: relative;
-    bottom: 0;
-    height: 600px;
-    width: 100%; }
 
 textarea[name="chatbox"] {
   resize: none;
@@ -556,14 +548,14 @@ textarea[name="chatbox"] {
   width: 100%;
   background: transparent;
   color: white;
-  height: 2em;
+  height: 2.12em;
   margin: 0;
   border-radius: 4px 0px 0px 4px;
   font-family: inherit;
-  font-size: 1em; }
+  font-size: 1.4em; }
   textarea[name="chatbox"]:focus {
     outline: none;
-    border: 2px solid #4bd786; }
+    border: 2px solid #8A7877; }
 
 
     input[type="submit"] {
@@ -581,8 +573,8 @@ textarea[name="chatbox"] {
       font-size: 1em;
       transition: 200ms all ease-in; }
       input[type="submit"]:hover {
-        background-color: #4bd786;
-        border-color: #4bd786;
+        background-color: #8A7877;
+        border-color: #8A7877;
         color: #fff; }
 
     .input__nested-list {
@@ -593,9 +585,9 @@ textarea[name="chatbox"] {
         padding-top: 1em; }
 
     .input__nested-link {
-      color: #2ecc71;
+      color: #8A7877;
       text-decoration: none;
-      border-bottom: 1px solid #2ecc71; }
+      border-bottom: 1px solid #8A7877; }
 
     ::-webkit-scrollbar {
       width: 0.65em;
@@ -665,8 +657,8 @@ textarea[name="chatbox"] {
         padding-top: 0; }
         .about__nav ul li a span {
           transition: 200ms all linear;
-          color: #2ecc71;
-          border-bottom: 2px solid #2ecc71;
+          color: #8A7877;
+          border-bottom: 2px solid #8A7877;
           border-radius: 10%; }
         .about__nav ul li a:hover span {
           color: #CC8914;
@@ -710,7 +702,7 @@ textarea[name="chatbox"] {
         border: none;
         box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.1);
         outline: none;
-        background-color: #2ecc71;
+        background-color: #8A7877;
         display: flex;
         justify-content: center;
         width: 2.75em;
@@ -958,27 +950,6 @@ textarea[name="chatbox"] {
 }
 
 
-/* ---------- LIVE-CHAT ---------- */
-
-#live-chat {
-  z-index: 999;
-	bottom: -10px;
-  right: 50px;
-	font-size: 14px;
-	position: absolute;
-	width: 450px;
-}
-
-#live-chat header {
-	background: transparent;
-	color: #fff;
-	padding: 4px 4px;
-  width: auto;
-}
-
-#live-chat form {
-	padding: 24px;
-}
 
 
 .salmonTail {
@@ -995,11 +966,4 @@ animation: kaboom 2s ease alternate infinite;
   100% {
     transform: translateX(0px);
   }
-}
-
-#blackOut {
-  height: 100%;
-  width: 100%;
-  background-color: #000000;
-  opacity: 0.8;
 }

@@ -1,0 +1,94 @@
+
+#zero {
+color:red;
+}
+#first {
+color:blue;
+}
+#second {
+color:green;
+}
+#third {
+color:#a52a2a;
+}
+
+
+.left-fin2 {
+  fill: #f28744;
+  stroke: #f28744;
+  stroke-width: 14px;
+  stroke-linecap: round;
+  position: absolute;
+  left: -99%;
+  bottom: 75%;
+  stroke-miterlimit: 10;
+}
+.right-fin2 {
+  fill: #f28744;
+  stroke: #f28744;
+  stroke-width: 14px;
+  stroke-linecap: round;
+  position: absolute;
+  left: 37%;
+  bottom: 75%;
+  stroke-miterlimit: 10;
+transform: scale(-1, 1);
+}
+
+
+.fins2 {
+  -webkit-animation: fins 2s cubic-bezier(0.78, 0.28, 0.5, 0.88) infinite alternate;
+          animation: fins 2s cubic-bezier(0.78, 0.28, 0.5, 0.88) infinite alternate;
+}
+
+
+@-webkit-keyframes fins2 {
+  from {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            -webkit-transform:scale(1);
+  }
+  to {
+    -webkit-transform: translate(-50%, -65%);
+            transform: translate(-50%, -65%);
+            -webkit-transform:scale(1.1);
+  }
+}
+@keyframes fins2 {
+  from {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            -webkit-transform:scale(1.1);
+  }
+  to {
+    -webkit-transform: translate(-50%, -65%);
+            transform: translate(-50%, -65%);
+            -webkit-transform:scale(1);
+  }
+}
+
+.confetti {
+  left: 0;
+  pointer-events: none ;
+  position: fixed;
+  top: 0;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  height: 100%;
+  width: 100%;
+}
+
+.confetti-item {
+  position: absolute;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100%);}
+  95% {
+    animation-timing-function: ease-in-out;
+    transform: translateY(calc(100vh - 55%));}
+  100% {
+    transform: translateY(calc(100vh - 65%));}

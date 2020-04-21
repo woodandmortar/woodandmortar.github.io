@@ -51,7 +51,7 @@
 <div id="item4" style="
   position:absolute;
   align-content: center;
-  top:50px;
+  top:100px;
   width: 90vw;
   background: rgba(0, 0, 00, 0.8);
   border-radius: 5px;
@@ -59,7 +59,7 @@
   padding: 0.85em;
   margin: 0.5em;">
   <div id="foo4">
-    <p style="font-size:1.5em;" id="math"></p><p hidden id="answer"></p>
+    <p style="font-size:1.3em;" id="math"></p><p hidden id="answer"></p>
   <div id="popup" class="btn-group" >
     <button id="menuButton1" class="open-modal" href="#" onClick="compute1(),document.getElementById('menuButton1').style='background:black'"><div id="slotA"></div></button>
     <button id="menuButton2" class="open-modal" href="#" onClick="compute2(),document.getElementById('menuButton2').style='background:black'"><div id="slotB"></div></button>
@@ -111,18 +111,19 @@
   position:absolute;
   top: 0px;
   right:5px;">
-<img id="profilePic" src="salmon.svg" style="z-index:999999999999999999999; width:100px;">
-<br/><div class="g-signin2" data-onsuccess="onSignIn"></div>
+<img id="profilePic" src="salmon.svg" style="z-index:999999999999999999999; width:60px;">
 </div>
 
 
 <div id="item5" style="
   position:absolute;
-  top: -55px;
+  align-content: center;
+  top:35px;
+  border-radius: 5px;
   font-family: 'Permanent Marker', cursive;
   font-size: 3em;
   color: #D95952;
-  left:25px;">
+">
 <p><center>FLOW <b id="vTime">0</b></center><p>
 </div>
 
@@ -130,6 +131,12 @@
   position:absolute;
   bottom:5px; right:15px;">
 <button class="open-modal1" href="#" id="changeDash" onClick="changeDash()">MORE INFO</button>
+</div>
+
+<div id="item7" style="
+  position:absolute;
+  top:15px; left:15px;">
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
 </div>
 
 

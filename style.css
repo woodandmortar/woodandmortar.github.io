@@ -157,7 +157,7 @@ textarea[name="chatbox"] {
   border: 2px solid #363636;
   border-right: 0;
   width: 100%;
-  background-color: transparent;
+  background-color: white;
   color: black;
   height: 2em;
   margin: 0;

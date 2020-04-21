@@ -130,7 +130,7 @@
 <div id="item6" style="
   position:absolute;
   bottom:5px; right:15px;">
-<button class="open-modal1" href="#" id="changeDash" onClick="changeDash()">MORE INFO</button>
+<button class="open-modal1" href="#" id="changeDash" onClick="changeDash()">INFO</button>
 </div>
 
 <div id="item7" style="
@@ -155,7 +155,7 @@
 <div id="live-chat">
 
   <header class="clearfix">
-    <button class="open-modal1 button-1" href="#" onclick="menuChange()"><b id="menuChange">Open chat</b></button>
+    <button class="open-modal1 button-1" href="#" onclick="menuChange(),toggleVisibility2(document.getElementById('item4'))"><b id="menuChange">Open chat</b></button>
   </header>
 
 
@@ -169,7 +169,7 @@
             <span class="bot__output--second-sentence">You can ask me a bunch of things!</span>
             <ul>
               <li class="input__nested-list">Something like tell me <span class="bot__command">about</span>yoursself.</li>
-              <li class="input__nested-list">I'm ready for <span class="bot__command">Testing</span></li>
+              <li class="input__nested-list">I'm ready for <span class="bot__command">testing</span></li>
               <li class="input__nested-list">Typing <span class="bot__command">commands</span> will generate a short list.</li>
             </ul>
             You could also scroll type back to select another subject.
@@ -232,6 +232,14 @@ document.getElementById('menuButton4').style='background:#D95952';
         element.style.display='none';
     } else {
         element.style.display='block';
+    }
+  }
+
+  var toggleVisibility2 = function(element) {
+    if(element.style.display=='none'){
+        element.style.display='block';
+    } else {
+        element.style.display='none';
     }
   }
 

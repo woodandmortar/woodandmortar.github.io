@@ -18,11 +18,14 @@
               <link rel="mask-icon" href="pics/wm.png" color="#fff">
               <link rel="shortcut icon" href="pics/wm.png">
 
-      <link rel="stylesheet" href="./style.css">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="style4.css">
 
       <script src="https://apis.google.com/js/platform.js" async defer></script>
       <meta name="google-signin-client_id" content="930580119599-2j4jj0rjjdr7vkrurdsq5ecnsqm029tb.apps.googleusercontent.com">
       <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+      <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
 
             <!-- Global site tag (gtag.js) - Google Analytics -->
             <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123535120-1"></script>
@@ -34,38 +37,100 @@
             </script>
 
 </head>
+
+
+
+<style>
+
+
+
+</style>
+
 <body>
-  <div style="position:absolute; top:20px; left:20px; width:150px;">
-    <div id="item2"><img id="profilePic" src="pics/guest.png" style="
-    z-index:999999999999999999999;
-    width:80px;"><br/> <span id="vresp1"><b>No Login</b></span><br/> Current Flow: <b id="vTime">0</b>
-    <br><button id="button1" class="open-modal2" href="#" onClick="startGeoLookup()" style="z-index:999999999999999999999;"><span id="vresp9">Clock in</span></button>
-    <form id="form1" style="display:none;">
-      <select class="open-modal" id="mySelect" style="height:20px;width:100px;font-size:12px
-      z-index:999999999999999999999;">
-        <option value="None" selected>Options</option>
-        <option value="Food Deduction">Lunch</option>
-          <option value="Drywall">Drywall</option>
-          <option value="Texture">Texture</option>
-          <option value="Painting">Painting</option>
-          <option value="Tile">Tile</option>
-          <option value="Woodwork">Woodwork</option>
-          <option value="Demolition">Demolition</option>
-      </select>
-    </form>
-    <br/>
-          <div class="g-signin2" data-onsuccess="onSignIn"></div>
-  </div>
 
-  </div>
+<div id="item4" style="
+  position:absolute;
+  align-content: center;
+  top:50px;
+  width: 90vw;
+  background: rgba(0, 0, 00, 0.8);
+  border-radius: 5px;
+  color: white;
+  padding: 0.85em;
+  margin: 0.5em;">
+  <div id="foo4">
+    <p style="font-size:1.5em;" id="math"></p><p hidden id="answer"></p>
+  <div id="popup" class="btn-group" >
+    <button id="menuButton1" class="open-modal" href="#" onClick="compute1(),document.getElementById('menuButton1').style='background:black'"><div id="slotA"></div></button>
+    <button id="menuButton2" class="open-modal" href="#" onClick="compute2(),document.getElementById('menuButton2').style='background:black'"><div id="slotB"></div></button>
+    <button id="menuButton3" class="open-modal" href="#" onClick="compute3(),document.getElementById('menuButton3').style='background:black'"><div id="slotC"></div></button>
+    <button id="menuButton4" class="open-modal" href="#" onClick="compute4(),document.getElementById('menuButton4').style='background:black'"><div id="slotD"></div></button>
+    <button class="open-modal1" href="#" onclick="clearCompute(),document.getElementById('finalSolution').innerHTML = ''">Clear</button>
+    <button class="open-modal5" href="#" onClick="compute()">Submit</button>
+    <button class="open-modal" style="display: none;"><div id="solution1"></div></button>
+    <button class="open-modal1"><a id="theStudyGuide"></a> Section: <a id="metaData"></a></button>
+  </div></div>
+</div>
 
-  <div id="item3" style="position:absolute; top:20px; left:160px; width="150px"">
-          Last Update: <b id="hud1a">0</b> <br>
-          Level: <b id="hud2">0</b> <br>
-          Bank: <b id="hud3">0</b> <br>
-          Mcreds: <b id="hud4">0</b> <br>
-          Earned Hours: <b id="hud5">0</b> <br>
-  </div>
+<div id="item3" style="
+  position:absolute;
+  display: none;
+  bottom:100px; right:5px;
+  background: rgba(0, 0, 00, 0.8);
+  border-radius: 5px;
+  color: white;
+  padding: 0.85em;
+  margin: 0.5em;">
+
+  <span id="vresp1"><b>No Login</b></span>
+  <br><button id="button1" class="open-modal2" href="#" onClick="startGeoLookup()" style="z-index:999999999999999999999;"><span id="vresp9">Clock in</span></button>
+  <form id="form1" style="display:none;">
+    <select class="open-modal" id="mySelect" style="height:20px;width:100px;font-size:12px
+    z-index:999999999999999999999;">
+      <option value="None" selected>Options</option>
+      <option value="Food Deduction">Lunch</option>
+        <option value="Drywall">Drywall</option>
+        <option value="Texture">Texture</option>
+        <option value="Painting">Painting</option>
+        <option value="Tile">Tile</option>
+        <option value="Woodwork">Woodwork</option>
+        <option value="Demolition">Demolition</option>
+    </select>
+  </form>
+  <br/>
+                Last Update: <b id="hud1a">0</b> <br>
+                Level: <b id="hud2">0</b> <br>
+                Bank: <b id="hud3">0</b> <br>
+                Mcreds: <b id="hud4">0</b> <br>
+                Earned Hours: <b id="hud5">0</b> <br>
+                <div style="display:none;" id="finalSolution"></div>
+
+</div>
+
+<div id="item4" style="
+  position:absolute;
+  top: 0px;
+  right:5px;">
+<img id="profilePic" src="salmon.svg" style="z-index:999999999999999999999; width:100px;">
+<br/><div class="g-signin2" data-onsuccess="onSignIn"></div>
+</div>
+
+
+<div id="item5" style="
+  position:absolute;
+  top: -55px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 3em;
+  color: #D95952;
+  left:25px;">
+<p><center>FLOW <b id="vTime">0</b></center><p>
+</div>
+
+<div id="item6" style="
+  position:absolute;
+  bottom:5px; right:15px;">
+<button class="open-modal1" href="#" id="changeDash" onClick="changeDash()">MORE INFO</button>
+</div>
 
 
   <div style="position:absolute;">
@@ -83,46 +148,32 @@
 <div id="live-chat">
 
   <header class="clearfix">
-    <button class="open-modal2" href="#" onclick="togglediv('item')">Hide/Show Menu</button>
-    <button class="open-modal2" href="#" onclick="toggleVisibility(document.getElementById('item2'))">Profile</button>
-    <button class="open-modal2" href="#" onclick="toggleVisibility(document.getElementById('item3'))">Stats</button>
+    <button class="open-modal1 button-1" href="#" onclick="menuChange()"><b id="menuChange">Open chat</b></button>
   </header>
 
 
 
 
 
-  <div id="item" class="chat">
-        <div class="chat-message-content clearfix">
-          <ul class="chatlist">
-<li id="welcomeMessage" class="bot__output bot__output--standard">
-  Type <span class="bot__command">help</span> (for more instructions) or <span class="bot__command">commands</span> for a list of every command.
-</li>
-
-                <li class="bot__output bot__output--standard" id="foo4">
-                  <p id="math"></p><p hidden id="answer"></p>
-                <div id="popup" class="btn-group" >
-                  <button class="open-modal" href="#" onClick="compute1()"><div id="slotA"></div></button>
-                  <button class="open-modal" href="#" onClick="compute2()"><div id="slotB"></div></button>
-                  <button class="open-modal" href="#" onClick="compute3()"><div id="slotC"></div></button>
-                  <button class="open-modal" href="#" onClick="compute4()"><div id="slotD"></div></button>
-                  <button class="open-modal1" href="#" onClick="compute()"><div id="finalSolution"></div></button>
-                  <button class="open-modal1" href="#" onclick="document.getElementById('finalSolution').innerHTML = ''">Clear</button>
-                  <button class="open-modal" style="display: none;"><div id="solution1"></div></button>
-                  <p><a id="theStudyGuide"></a> Section: <a id="metaData"></a></p>
-                </div></li>
-          </ul>
-
-
-
-
-                <div class="chatbox-area">
-                  <form action="" id="chatform">
-                      <textarea placeholder="Talk to me!" class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
-                      <input class="submit-button" type="submit" value="send">
-                  </form>
-                </div>
-            </div>
+  <div id="item" class="chat" style="color:white; font-size:1.2em; display:none;" >
+        <ul class="chatlist">
+          <li class="bot__output bot__output--standard">Hey, I'm Morton - your digital navigator.</li>
+          <li class="bot__output bot__output--standard">
+            <span class="bot__output--second-sentence">You can ask me a bunch of things!</span>
+            <ul>
+              <li class="input__nested-list">Something like tell me <span class="bot__command">about</span>yoursself.</li>
+              <li class="input__nested-list">I'm ready for <span class="bot__command">Testing</span></li>
+              <li class="input__nested-list">Typing <span class="bot__command">commands</span> will generate a short list.</li>
+            </ul>
+            You could also scroll type back to select another subject.
+          </li>
+        </ul>
+      <div class="chatbox-area">
+        <form action="" id="chatform">
+            <textarea placeholder="Talk to me!" class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
+            <input class="submit-button" type="submit" value="send">
+        </form>
+      </div>
         </div>
 </div>
 <!-- partial -->
@@ -136,19 +187,36 @@
 
   <script>
 
-
-  var doc = window.document;
-  var docEl = doc.documentElement;
-
-  var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
-  var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
-
-  if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
-  requestFullScreen.call(docEl);
+  function clearCompute() {
+document.getElementById('menuButton1').style='background:#D95952';
+document.getElementById('menuButton2').style='background:#D95952';
+document.getElementById('menuButton3').style='background:#D95952';
+document.getElementById('menuButton4').style='background:#D95952';
   }
-  else {
-  cancelFullScreen.call(doc);
+
+  function changeDash() {
+    var x = document.getElementById("changeDash");
+    if (x.innerHTML === "CLOSE") {
+      x.innerHTML = "MORE INFO";
+      document.getElementById("item3").style.display = "none";
+    } else {
+      x.innerHTML = "CLOSE";
+      document.getElementById("item3").style.display = "block";
+    }
   }
+
+
+  function menuChange() {
+    var x = document.getElementById("menuChange");
+    if (x.innerHTML === "CLOSE") {
+      x.innerHTML = "OPEN CHAT";
+      document.getElementById("item").style.display = "none";
+    } else {
+      x.innerHTML = "CLOSE";
+      document.getElementById("item").style.display = "block";
+    }
+  }
+
 
   setTimeout(function(){togglediv('welcomeMessage')}, 12000);
 

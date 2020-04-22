@@ -60,6 +60,38 @@ animation: swim 2.4s ease alternate infinite;
 
 </style>
 
+<div id="live-chat">
+
+  <header class="clearfix">
+    <button class="open-modal1 button-1" href="#" onclick="menuChange(),toggleVisibility2(document.getElementById('item4'))"><b id="menuChange">Open chat</b></button>
+  </header>
+
+
+
+
+
+  <div id="item" class="chat" style="color:white; font-size:1.2em; display:none;" >
+        <ul class="chatlist">
+          <li class="bot__output bot__output--standard">Hey, I'm Morton - your digital navigator.</li>
+          <li class="bot__output bot__output--standard">
+            <span class="bot__output--second-sentence">You can ask me a bunch of things!</span>
+            <ul>
+              <li class="input__nested-list">Something like tell me <span class="bot__command">about</span>yoursself.</li>
+              <li class="input__nested-list">I'm ready for <span class="bot__command">testing</span></li>
+              <li class="input__nested-list">Typing <span class="bot__command">commands</span> will generate a short list.</li>
+            </ul>
+            You could also scroll type back to select another subject.
+          </li>
+        </ul>
+      <div class="chatbox-area">
+        <form action="" id="chatform">
+            <textarea placeholder="Talk to me!" class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
+            <input class="submit-button" type="submit" value="send">
+        </form>
+      </div>
+        </div>
+</div>
+
 <body>
 
 <div id="item4" style="
@@ -74,7 +106,6 @@ animation: swim 2.4s ease alternate infinite;
   margin: 0.5em;">
   <div id="foo4">
     <p style="font-size:1.3em;" id="math"></p><p hidden id="answer"></p>
-  <div id="popup" class="btn-group" >
     <button id="menuButton1" class="open-modal" href="#" onClick="compute1(),document.getElementById('menuButton1').style='background:black'"><div id="slotA"></div></button>
     <button id="menuButton2" class="open-modal" href="#" onClick="compute2(),document.getElementById('menuButton2').style='background:black'"><div id="slotB"></div></button>
     <button id="menuButton3" class="open-modal" href="#" onClick="compute3(),document.getElementById('menuButton3').style='background:black'"><div id="slotC"></div></button>
@@ -83,7 +114,7 @@ animation: swim 2.4s ease alternate infinite;
     <button class="open-modal5" href="#" onClick="compute()">Submit</button>
     <button class="open-modal" style="display: none;"><div id="solution1"></div></button>
     <button class="open-modal1"><a id="theStudyGuide"></a> Section: <a id="metaData"></a></button>
-  </div></div>
+  </div>
 </div>
 
 <div id="item3" style="
@@ -166,37 +197,7 @@ animation: swim 2.4s ease alternate infinite;
 <!-- partial:index.partial.html -->
 <canvas id="canvas"></canvas>
 
-<div id="live-chat">
 
-  <header class="clearfix">
-    <button class="open-modal1 button-1" href="#" onclick="menuChange(),toggleVisibility2(document.getElementById('item4'))"><b id="menuChange">Open chat</b></button>
-  </header>
-
-
-
-
-
-  <div id="item" class="chat" style="color:white; font-size:1.2em; display:none;" >
-        <ul class="chatlist">
-          <li class="bot__output bot__output--standard">Hey, I'm Morton - your digital navigator.</li>
-          <li class="bot__output bot__output--standard">
-            <span class="bot__output--second-sentence">You can ask me a bunch of things!</span>
-            <ul>
-              <li class="input__nested-list">Something like tell me <span class="bot__command">about</span>yoursself.</li>
-              <li class="input__nested-list">I'm ready for <span class="bot__command">testing</span></li>
-              <li class="input__nested-list">Typing <span class="bot__command">commands</span> will generate a short list.</li>
-            </ul>
-            You could also scroll type back to select another subject.
-          </li>
-        </ul>
-      <div class="chatbox-area">
-        <form action="" id="chatform">
-            <textarea placeholder="Talk to me!" class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
-            <input class="submit-button" type="submit" value="send">
-        </form>
-      </div>
-        </div>
-</div>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js'></script><script  src="./script.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>

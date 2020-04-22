@@ -111,7 +111,7 @@ animation: swim 2.4s ease alternate infinite;
     <button id="menuButton3" class="open-modal" href="#" onClick="compute3(),document.getElementById('menuButton3').style='background:black'"><div id="slotC"></div></button>
     <button id="menuButton4" class="open-modal" href="#" onClick="compute4(),document.getElementById('menuButton4').style='background:black'"><div id="slotD"></div></button>
     <button class="open-modal1" href="#" onclick="clearCompute(),document.getElementById('finalSolution').innerHTML = ''">Clear</button>
-    <button class="open-modal5" href="#" onClick="compute()">Submit</button>
+    <button class="open-modal5" href="#" onClick="compute(),clearCompute()">Submit</button>
     <button class="open-modal" style="display: none;"><div id="solution1"></div></button>
     <button class="open-modal1"><a id="theStudyGuide"></a> Section: <a id="metaData"></a></button>
   </div>
@@ -238,9 +238,6 @@ document.getElementById('menuButton4').style='background:#D95952';
       document.getElementById("item").style.display = "block";
     }
   }
-
-
-  setTimeout(function(){togglediv('welcomeMessage')}, 12000);
 
   var toggleVisibility = function(element) {
     if(element.style.display=='block'){

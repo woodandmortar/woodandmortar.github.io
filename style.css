@@ -229,7 +229,7 @@ textarea[name="chatbox"] {
                cursor: pointer;
             	-webkit-transition: background 0.3s;
             	transition: background 0.3s;
-              animation: pulse 2s infinite;
+              animation: pulse 3s infinite;
             }
 
             .open-modal:hover {
@@ -251,7 +251,7 @@ textarea[name="chatbox"] {
                cursor: pointer;
             	-webkit-transition: background 0.3s;
             	transition: background 0.3s;
-              animation: shrink 2s infinite;
+              animation: shrink 3s infinite;
             }
 
             .open-modal1:hover {
@@ -271,7 +271,7 @@ textarea[name="chatbox"] {
                cursor: pointer;
             	-webkit-transition: background 0.3s;
             	transition: background 0.3s;
-              animation: shrink 2s infinite;
+              animation: shrink 3s infinite;
             }
 
             .open-modal2:hover {
@@ -291,7 +291,7 @@ textarea[name="chatbox"] {
                cursor: pointer;
             	-webkit-transition: background 0.3s;
             	transition: background 0.3s;
-              animation: shrink 2s infinite;
+              animation: shrink 3s infinite;
             }
 
             .open-modal3:hover {
@@ -313,7 +313,7 @@ textarea[name="chatbox"] {
                cursor: pointer;
               -webkit-transition: background 0.3s;
               transition: background 0.3s;
-              animation: pulse 2s infinite;
+              animation: pulse 3s infinite;
             }
 
             .open-modal5:hover {
@@ -342,7 +342,7 @@ textarea[name="chatbox"] {
   }
 
   50% {
-    opacity:0.5;
+    opacity:0.8;
     box-shadow:0px 0px 5px 0px $color;
   }
 

@@ -42,7 +42,21 @@
 
 <style>
 
-
+.salmonTail {
+transform: translateX(-4px);
+animation: swim 2.4s ease alternate infinite;
+}
+@keyframes swim {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-4px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
 
 </style>
 
@@ -106,13 +120,13 @@
                 <div style="display:none;" id="finalSolution"></div>
 
 </div>
-
+<g onclick="window.location.href='index.html'" value="Redirect">
 <div id="item4" style="
   position:absolute;
   top: 0px;
   right:5px;">
 <img id="profilePic" src="salmon.svg" style="z-index:999999999999999999999; width:60px;">
-</div>
+</div></g>
 
 
 <div id="item5" style="
@@ -1122,6 +1136,7 @@ document.getElementById('menuButton4').style='background:#D95952';
                         confetti();
                         formmcreds();
                         init();
+                        clearCompute();
                     }, 300);
                       }else{
                         videoTime -= 3;
@@ -1131,6 +1146,7 @@ document.getElementById('menuButton4').style='background:#D95952';
                            $(".confetti").remove();
                           formmcreds();
                           init();
+                          clearCompute();
                       }, 300);
                       }
                     }

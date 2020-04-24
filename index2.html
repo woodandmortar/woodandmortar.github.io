@@ -19,7 +19,6 @@
               <link rel="shortcut icon" href="pics/wm.png">
 
       <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="style4.css">
 
       <script src="https://apis.google.com/js/platform.js" async defer></script>
       <meta name="google-signin-client_id" content="930580119599-2j4jj0rjjdr7vkrurdsq5ecnsqm029tb.apps.googleusercontent.com">
@@ -58,9 +57,53 @@ animation: swim 2.4s ease alternate infinite;
   }
 }
 
+.walker {
+
+position: fixed;
+  animation: walking 10s infinite;
+
+
+}
+
+@keyframes walking
+{
+    from {
+        left: 0;
+        bottom: -40px;
+    }
+    to {
+        left: 100%;
+        bottom: -40px;
+    }
+}
+
+.bounce {
+  -moz-animation: bounce 12s infinite;
+  -webkit-animation: bounce 12s infinite;
+  animation: bounce 12s infinite;
+}
+
+@keyframes bounce {
+  0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100% {
+    transform: translateY(0);
+  }
+  7%, 17%, 27%, 37%, 47%, 57%, 67%, 77%, 87%, 97%  {
+    transform: translateY(16px);
+  }
+  13%, 23%, 33%, 43%, 53%, 63%, 73%, 83%, 93%  {
+    transform: translateY(10px);
+  }
+}
+
+#B div:not(:first-child) {
+  display: none;
+}
+
 </style>
 
 <body>
+
+
 
 
 
@@ -195,8 +238,20 @@ animation: swim 2.4s ease alternate infinite;
 ">
 <p><center>FLOW <b id="vTime">0</b></center><p>
 </div>
+
+<div id="B" class="walker">
+  <div></div>
+  <div></div>
+  <div></div>
+      <div><image class="bounce" src="micheal.png" onclick="found()"></div>
+        <div></div>
+        <div></div>
+  </div>
+
+
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js'></script><script  src="./script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js'></script>
+  <script  src="./script.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <script  src="js/index.js"></script>
   <script  src="js/animate.js"></script>
@@ -205,6 +260,27 @@ animation: swim 2.4s ease alternate infinite;
   <script  src="js/tabletop3.js"></script>
 
   <script>
+
+  function found(){
+    var videoTime = parseInt(document.getElementById("vTime").innerHTML);
+    videoTime += 1;
+    document.getElementById("vTime").innerHTML = videoTime;
+    confetti();
+    }
+
+  $(function() {
+    var n = 0;
+    setInterval(function() {
+        n = Math.floor((Math.random() * 6));
+        $("#B div").hide();
+        $("#B").find('div:eq('+n+')').show();
+    },5000);
+  });
+
+  function randomize(collection) {
+    var randomNumber = Math.floor(Math.random() * collection.length);
+    return collection[randomNumber]
+  }
 
   function clearCompute() {
 document.getElementById('menuButton1').style='background:#D95952';

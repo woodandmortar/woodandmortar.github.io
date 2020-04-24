@@ -103,10 +103,6 @@ position: fixed;
 
 <body>
 
-
-
-
-
 <div id="item3" style="
   position:absolute;
   display: none;
@@ -214,14 +210,8 @@ position: fixed;
   margin: 0.5em;">
   <div id="foo4">
     <p style="font-size:1.3em;" id="math"></p><p hidden id="answer"></p>
-    <button id="menuButton1" class="open-modal" href="#" onClick="compute1(),document.getElementById('menuButton1').style='background:black'"><div id="slotA"></div></button>
-    <button id="menuButton2" class="open-modal" href="#" onClick="compute2(),document.getElementById('menuButton2').style='background:black'"><div id="slotB"></div></button>
-    <button id="menuButton3" class="open-modal" href="#" onClick="compute3(),document.getElementById('menuButton3').style='background:black'"><div id="slotC"></div></button>
-    <button id="menuButton4" class="open-modal" href="#" onClick="compute4(),document.getElementById('menuButton4').style='background:black'"><div id="slotD"></div></button>
-    <button class="open-modal1" href="#" onclick="clearCompute(),document.getElementById('finalSolution').innerHTML = ''">Clear</button>
-    <button class="open-modal5" href="#" onClick="compute(),clearCompute()">Submit</button>
-    <button class="open-modal" style="display: none;"><div id="solution1"></div></button>
-    <button class="open-modal1"><a id="theStudyGuide"></a> Section: <a id="metaData"></a></button>
+    <input id="fill" type="text" placeholder="Answer">
+    <button class="open-modal" onclick="compute()">Submit</button>
   </div>
 </div>
 
@@ -260,6 +250,9 @@ position: fixed;
   <script  src="js/tabletop3.js"></script>
 
   <script>
+  setInterval(function(){$(".confetti").remove(); }, 90000);
+
+
 
   function found(){
     var videoTime = parseInt(document.getElementById("vTime").innerHTML);
@@ -1128,50 +1121,32 @@ document.getElementById('menuButton4').style='background:#D95952';
 
 
 
-                    <script type="text/javascript">
-                      mNum = -1;
+  <script type="text/javascript">
+    var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1r11RPc9KjiPSMxUMuAWWAe6qm-_DlzSZ2we9bcLUJX8/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
 
-                      var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1kTFnCiuDAYVdpzNqVIgNKsSLKYK9tRR1Mxd6gjBncFU/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+    function init() {
+            Tabletop.init( { key: public_spreadsheet_url,
+                             callback: showInfo,
+                             simpleSheet: true } );
+          }
 
-                      function init() {
-                              Tabletop.init( { key: public_spreadsheet_url,
-                                               callback: showInfo,
-                                               simpleSheet: true } );
-                            }
+          window.addEventListener('DOMContentLoaded', init)
 
-                            window.addEventListener('DOMContentLoaded', init)
-
-                            function showInfo(data) {
-                              var mNum = Math.floor((Math.random() * 42) + 1);
-                              mProb = data[mNum].Name;
-                              answerA = data[mNum].AnswerA;
-                              answerB = data[mNum].AnswerB;
-                              answerC = data[mNum].AnswerC;
-                              answerD = data[mNum].AnswerD;
-                              solution = data[mNum].Solution;
-                              studyGuide = data[mNum].Link;
-                              metadata = data[mNum].MetaData;
-                              document.getElementById("slotA").innerHTML = [ answerA ].join(", ");
-                              document.getElementById("slotB").innerHTML = [ answerB ].join(", ");
-                              document.getElementById("slotC").innerHTML = [ answerC ].join(", ");
-                              document.getElementById("slotD").innerHTML = [ answerD ].join(", ");
-                              document.getElementById("metaData").innerHTML = [ metadata ].join(", ");
-                              document.getElementById("solution1").innerHTML = [ solution ].join(", ");
-                              document.getElementById("theStudyGuide").innerHTML = [ studyGuide ].join(", ");
-                              document.getElementById("math").innerHTML = [ mProb ].join(", ");
-                              console.log(data);
-                            }
+          function showInfo(data) {
+            var mNum = Math.floor((Math.random() * 399) + 1);
+            var mProb = data[mNum].Name;
+            var mAns = data[mNum].Answer;
+            document.getElementById("math").innerHTML = [ mProb ].join(", ");
+            document.getElementById("answer").innerHTML = [ mAns ].join(", ");
+            console.log(data);
+          }
 
 
+    </script>
 
 
-
-                      </script>
 
                     <script>
-                    setInterval(function(){$(".confetti").remove(); }, 90000);
-
-
                     function formmcreds() {
 
                       var mCredName = document.getElementById('vresp1').innerHTML;
@@ -1197,53 +1172,26 @@ document.getElementById('menuButton4').style='background:#D95952';
 
                     }
 
+
                     function compute() {
-                      var finalAnswer = document.getElementById("finalSolution").innerHTML;
-                      var str = document.getElementById("solution1").innerHTML;
-                      var n = finalAnswer.includes(str);
+
                       var videoTime = parseInt(document.getElementById("vTime").innerHTML);
-                      if ((n == true)){        // logical condition
-                      videoTime += 1;
+                      if ((document.getElementById("fill").value == document.getElementById("answer").innerHTML)){        // logical condition
+                      videoTime += 5;
                       document.getElementById("vTime").innerHTML = videoTime;
-                      document.getElementById("finalSolution").innerHTML = "";
+                      document.getElementById('fill').value = "";
                       setTimeout(function() {
-                        confetti();
-                        formmcreds();
-                        init();
-                        clearCompute();
+                      confetti();
+                      init();
                     }, 300);
                       }else{
-                        videoTime -= 3;
+                        videoTime -= 1;
                         document.getElementById("vTime").innerHTML = videoTime;
-                        document.getElementById("finalSolution").innerHTML = "";
-                        setTimeout(function() {
-                          formmcreds();
-                          init();
-                          clearCompute();
-                      }, 300);
+                        document.getElementById('fill').value = "";
+
                       }
                     }
 
-                    function compute1() {
-                      document.getElementById("finalSolution").innerHTML += "A";
-                    }
-
-                    function compute2() {
-                      document.getElementById("finalSolution").innerHTML += "B";
-                      }
-
-                    function compute3() {
-                      document.getElementById("finalSolution").innerHTML += "C";
-                      }
-
-                    function compute4() {
-                      document.getElementById("finalSolution").innerHTML += "D";
-                      }
-
-                      function compute5() {
-                        document.getElementById("finalSolution").innerHTML += "E";
-                        }
-
-  </script>
+                    </script>
 </body>
 </html>

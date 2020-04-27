@@ -137,6 +137,7 @@ object {
     </select>
   </form>
   <br/>
+  <img id="profilePic" src="salmon.svg" style="z-index:999999999999999999999; width:60px;"><br>
   <font style="color: #D95952; font-weight: 900;">FLOW: <b id="vTime">0</b></font> <br>
   Last Update: <b id="hud1a">0</b> <br>
   Level: <b id="hud2">0</b> <br>
@@ -146,24 +147,11 @@ object {
   <div style="display:none;" id="finalSolution"></div>
 
 </div>
-<g onclick="window.location.href='index.html'" value="Redirect">
-<div id="item4" style="
-  position:absolute;
-  top: 0px;
-  right:5px;">
-<img id="profilePic" src="salmon.svg" style="z-index:999999999999999999999; width:60px;">
-</div></g>
 
-
-<div id="item6" style="
-  position:absolute;
-  bottom:5px; right:15px;">
-<button class="open-modal1" href="#" id="changeDash" onClick="changeDash()">INFO</button>
-</div>
 
 <div id="item7" style="
   position:absolute;
-  top:15px; left:15px;">
+  top:15px; right:15px;">
 <div class="g-signin2" data-onsuccess="onSignIn"></div>
 </div>
 
@@ -198,6 +186,7 @@ object {
               <li class="input__nested-list">Teach me how to <span class="bot__command">tile</span></li>
               <li class="input__nested-list">Typing <span class="bot__command">commands</span> will generate a short list</li>
             </ul>
+            <button class="open-modal1" href="#" id="changeDash" onClick="changeDash(),menuChange(),toggleVisibility2(document.getElementById('item4'))">INFO</button>
             <button class="open-modal1" onclick="window.location.href='index1.html'" value="Redirect">Wood&Mortar</button>
             <button class="open-modal" onclick="window.location.href='index2.html'" value="Redirect">Core Curriculum</button>
             <button class="open-modal" onclick="window.location.href='math.html'" value="Redirect">Basic Math</button>

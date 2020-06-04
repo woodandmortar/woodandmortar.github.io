@@ -182,12 +182,13 @@ object {
           <li class="bot__output bot__output--standard">
             <span class="bot__output--second-sentence">You can ask me a bunch of things!</span>
             <ul>
-              <li class="input__nested-list">Something like tell me <span class="bot__command">about</span> the movement</li>
+              <li class="input__nested-list">Something like tell me <span class="bot__command">about</span> yourself</li>
               <li class="input__nested-list">Teach me how to <span class="bot__command">tile</span></li>
               <li class="input__nested-list">Typing <span class="bot__command">commands</span> will generate a short list</li>
             </ul>
-            <button class="open-modal1" href="#" id="changeDash" onClick="changeDash(),menuChange()">Start</button>
-            <button class="open-modal" onclick="window.location.href='core.html'" value="Redirect">Core Curriculum</button>
+            <button class="open-modal1" href="#" id="changeDash" onClick="changeDash(),menuChange()">INFO</button>
+            <button class="open-modal1" onclick="window.location.href='index1.html'" value="Redirect">Wood&Mortar</button>
+            <button class="open-modal" onclick="window.location.href='index2.html'" value="Redirect">Core Curriculum</button>
             <button class="open-modal" onclick="window.location.href='math.html'" value="Redirect">Basic Math</button>
         </ul>
       <div class="chatbox-area">
@@ -200,7 +201,6 @@ object {
 </div>
 
 <div id="item4" style="
-  display: none;
   position:absolute;
   align-content: center;
   top:100px;
@@ -219,10 +219,24 @@ object {
     <button class="open-modal1" href="#" onclick="clearCompute(),document.getElementById('finalSolution').innerHTML = ''">Clear</button>
     <button class="open-modal5" href="#" onClick="compute(),clearCompute()">Submit</button>
     <button class="open-modal" style="display: none;"><div id="solution1"></div></button>
-    <button class="open-modal1" style="display: none;"><a id="theStudyGuide"></a> Section: <a id="metaData"></a></button>
+    <button class="open-modal1"><a id="theStudyGuide"></a> Section: <a id="metaData"></a></button>
   </div>
 </div>
 
+
+
+<div id="item5" style="
+display: none;
+  position:absolute;
+  align-content: center;
+  top:35px;
+  border-radius: 5px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 3em;
+  color: #D95952;
+">
+<p><center>FLOW <b id="vTime">0</b></center><p>
+</div>
 
 <div id="B" class="walker">
   <div></div>
@@ -281,11 +295,9 @@ document.getElementById('menuButton4').style='background:#D95952';
     if (x.innerHTML === "CLOSE") {
       x.innerHTML = "INFO";
       document.getElementById("item3").style.display = "none";
-      document.getElementById("item4").style.display = "none";
     } else {
       x.innerHTML = "CLOSE";
       document.getElementById("item3").style.display = "block";
-      document.getElementById("item4").style.display = "block";
     }
   }
 
@@ -618,7 +630,7 @@ document.getElementById('menuButton4').style='background:#D95952';
             //Custom class for styling
             image.classList.add('bot__outputImage');
             //Gets the image
-            image.src = "./pics/"+e;
+            image.src = "./"+e;
             chatList.appendChild(image);
 
             animateBotOutput()
@@ -649,32 +661,33 @@ document.getElementById('menuButton4').style='background:#D95952';
           var possibleInput = {
             // "hlep" : this.help(),
             "help" : function(){
+              responseText("try trying something like... show BEST WORK")
               responseText("Typing COMMANDS will always bring up the main list.")
               commandReset(0);
               return
               },
             "best work" : function(){
               responseText("I will show you our best work!");
-              responseImg("4.jpg");
-              responseImg("1.jpg");
-              responseImg("2.jpg");
-              responseImg("3.jpg");
-              responseImg("kitchen.jpg");
+              responseImg("image0.jpg");
+              responseImg("image1.jpg");
+              responseImg("image2.jpg");
+              responseImg("image3.jpg");
+              responseImg("image4.jpg");
               responseText("Would you like to see more? (Yes/No)")
               commandReset(1);
               return
               },
             "about" : function(){
-              responseText("Salmon.fund is a movement.");
-              responseText("We stand for equal rights, public accountablility, and affordable housing.");
+              responseText("Salmon here, your digital assistant for everything WoodandMortar.");
+              responseText("I'm also a Salmon.fund expert.");
               responseText("Using your google account, I'll be able to remember you.");
               responseText("Would you like to connect? (Yes/No)");
               commandReset(2);
               return
               },
             "experience" : function(){
-              responseText("We've completed over 20 High-end to Flips including interiors and exteriors around Kansas");
-              responseText("We manage a team of highly competent sub-contractors focusing on thier continuing education.");
+              responseText("We've completed 21 High-end to Flip Kitchens in the past 8 months");
+              responseText("We sub-contract 75% of our work load, to Kansas City non-profits through our mentorship platform.");
               responseText("Micheal Salmon, Founder and Co-Owner pays special attention to project details and workflow ensuring the best possible value.");
               responseText("Crycella Freitag, Co-Owner and human resource powerhouse manages all aspects of communication, logistics and finance.");
               responseText("Would you like to see our Business Process Manual? (Yes/No)");
@@ -691,7 +704,7 @@ document.getElementById('menuButton4').style='background:#D95952';
               return
             },
             "theme" : function(){
-              responseText("Our 2020 aesthetic begin with:");
+              responseText("Our 2019 aesthetic begin with:");
               responseText("Chic Grey Walls");
               responseText("Satin Ultra-White Trim");
               responseText("Midnight Horse Black Front Door");
@@ -700,10 +713,10 @@ document.getElementById('menuButton4').style='background:#D95952';
               return
             },
             "vision" : function(){
-              responseText("Micheal Salmon plans to run for public office in 2026.");
-              responseText("As an advocate for BLM, Police reform, and free education, Micheal wants to integrate technology and community responsibility.");
-              responseText("Micheal believes in giving equal oppourtunity, by focusing on the issues city and state level that prevent our society from moving outside social bias.");
-              responseText("Our small business tradespeople are the backbone for Kansas growth, and the future in sustained job oppourtunity.");
+              responseText("We are aiming for completing WoodandMortar.edu by 2022");
+              responseText("By training locals in specialized trades,");
+              responseText("we are giving equal oppourtunity for high yield local property investments and ownership.");
+              responseText("Our tradespeople will be the backbone for Kansas City remodeling.");
               commandReset(6);
               return
             },
@@ -925,8 +938,9 @@ document.getElementById('menuButton4').style='background:#D95952';
 
           var reactionInput = {
             "best work" : function(){
-              responseText("On this GitHub page you'll find everything about this apps backend.");
-              responseText("<a href='https://github.com/woodandmortar/woodandmortar.github.io'>WoodandMortar on GitHub</a>")
+              responseText("<a href='https://woodandmortar.github.io/'>Click the arrows on our homepage</a>")
+              responseText("On this GitHub page you'll find everything about Salmon");
+              responseText("<a href='https://github.com/woodandmortar'>WoodandMortar on GitHub</a>")
               animationCounter = 1;
               return
             },
@@ -1116,20 +1130,20 @@ document.getElementById('menuButton4').style='background:#D95952';
 
 
                     <script type="text/javascript">
-                    mNum = -1;
+                      mNum = -1;
 
-  var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1X0SsFqR828ad7FiQptvztIJ6yiQByrFEkzMPyjdqupI/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+                      var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1kTFnCiuDAYVdpzNqVIgNKsSLKYK9tRR1Mxd6gjBncFU/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
 
-  function init() {
-          Tabletop.init( { key: public_spreadsheet_url,
-                           callback: showInfo,
-                           simpleSheet: true } );
-        }
+                      function init() {
+                              Tabletop.init( { key: public_spreadsheet_url,
+                                               callback: showInfo,
+                                               simpleSheet: true } );
+                            }
 
-        window.addEventListener('DOMContentLoaded', init)
+                            window.addEventListener('DOMContentLoaded', init)
 
                             function showInfo(data) {
-                              mNum += 1;
+                              var mNum = Math.floor((Math.random() * 42) + 1);
                               mProb = data[mNum].Name;
                               answerA = data[mNum].AnswerA;
                               answerB = data[mNum].AnswerB;
@@ -1147,13 +1161,10 @@ document.getElementById('menuButton4').style='background:#D95952';
                               document.getElementById("theStudyGuide").innerHTML = [ studyGuide ].join(", ");
                               document.getElementById("math").innerHTML = [ mProb ].join(", ");
                               console.log(data);
-
-                              if (mNum == 13){
-                                if (parseInt(document.getElementById("vTime").innerHTML) < 3) {alert("You might be ignorant or just racist"); window.location.href = "morton.html"}
-                                else if (parseInt(document.getElementById("vTime").innerHTML) > 10) {alert("You are a future leader and should tell everyone your message, good job!"); window.location.href = "morton.html"}
-                                else {alert("You aren't quite woke, try again"); window.location.href = "morton.html"}
-                              }
                             }
+
+
+
 
 
                       </script>
@@ -1233,7 +1244,6 @@ document.getElementById('menuButton4').style='background:#D95952';
                       function compute5() {
                         document.getElementById("finalSolution").innerHTML += "E";
                         }
-
 
   </script>
 </body>

@@ -46,18 +46,6 @@ figure {
   width: 100vw;
   height: 100vh;
 }
-.hero:nth-child(1) figure {
-  background-image: url("./pics/hero.jpg");
-}
-.hero:nth-child(2) figure {
-  background-image: url("./pics/woodmortar.jpg");
-}
-.hero:nth-child(3) figure {
-  background-image: url("./pics/Back2.jpg");
-}
-.hero:nth-child(4) figure {
-  background-image: url("./pics/Back3.jpg");
-}
 
 .hero-inner {
   position: absolute;

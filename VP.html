@@ -84,10 +84,12 @@ animation: swim 2.4s ease alternate infinite;
     <center><p>
       <b id="article2"></b> <b id="article3"></b> <br>
       Phone Number: <b id="article4"></b> </br>
+      <button onclick="location.href='"'+document.getElementById("article10").innerHTML+'"'" type="button">
+         Invoice</button>
       <a href="https://docs.google.com/spreadsheets/d/1T4_ir4TVyJ9dh8A0rZpF9E_x7lAL1ONPhZap-fXaCAk/edit?usp=sharing">Datalist</a></p></center>
     <h3 class="content__author"  href="index2.html"><img src="salmon.svg"></h3>
 
-    <blockquote>Start date: <b id="article5"></b> <b id="article10" style="display:none"></b></blockquote>
+    <blockquote>Start date: <b id="article5"></b></blockquote>
     <p>
     Powerwash: <b id="article6"></b><br>
     Body Paint: <b id="article7"></b><br>
@@ -97,8 +99,13 @@ animation: swim 2.4s ease alternate infinite;
 
     <p>
       Body Paint color: <b id="article11"></b><br>
+      Gallons ordered: <b id="article19"></b> | used: <b id="article20"></b><br><br>
+
       Trim Paint color: <b id="article12"></b><br>
+      Gallons ordered: <b id="article21"></b> | used: <b id="article22"></b><br><br>
+
       Accent color: <b id="article13"></b>
+      Gallons ordered: <b id="article23"></b> | used: <b id="article24"></b>
     </p>
 
     <blockquote>Finish date: <b id="article14"></b></blockquote>
@@ -107,6 +114,7 @@ animation: swim 2.4s ease alternate infinite;
       Left: <b id="article16"></b>
       Back: <b id="article17"></b>
       Right: <b id="article18"></b>
+      <a id="article10"></a>
     </p>
 
     <center><p><h1 class="content__title" style="font-color:black;" onclick="nextPage()">Next Page</h1></p></center>
@@ -116,6 +124,7 @@ animation: swim 2.4s ease alternate infinite;
 
 
 <script  src="./tabletop.js"></script>
+
 <script type="text/javascript">
 
 mNum = -1;
@@ -149,6 +158,12 @@ mNum = -1;
                   article16 = data[mNum].Leftpic;
                   article17 = data[mNum].Backpic;
                   article18 = data[mNum].Rightpic;
+                  article19 = data[mNum].OrderB;
+                  article20 = data[mNum].UsedB;
+                  article21 = data[mNum].OrderT;
+                  article22 = data[mNum].UsedT;
+                  article23 = data[mNum].OrderA;
+                  article24 = data[mNum].UsedA;
                   document.getElementById("article1").innerHTML = [ article1 ].join(", ");
                   document.getElementById("article2").innerHTML = [ article2 ].join(", ");
                   document.getElementById("article3").innerHTML = [ article3 ].join(", ");
@@ -167,6 +182,12 @@ mNum = -1;
                   document.getElementById("article16").innerHTML = [ article16 ].join(", ");
                   document.getElementById("article17").innerHTML = [ article17 ].join(", ");
                   document.getElementById("article18").innerHTML = [ article18 ].join(", ");
+                  document.getElementById("article19").innerHTML = [ article19 ].join(", ");
+                  document.getElementById("article20").innerHTML = [ article20 ].join(", ");
+                  document.getElementById("article21").innerHTML = [ article21 ].join(", ");
+                  document.getElementById("article22").innerHTML = [ article22 ].join(", ");
+                  document.getElementById("article23").innerHTML = [ article23 ].join(", ");
+                  document.getElementById("article24").innerHTML = [ article24 ].join(", ");
 
                     }
 

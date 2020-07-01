@@ -84,7 +84,7 @@ animation: swim 2.4s ease alternate infinite;
     <center><p>
       <b id="article2"></b> <b id="article3"></b> <br>
       Phone Number: <b id="article4"></b> </br>
-      <button onclick="location.href='"'+document.getElementById("article10").innerHTML+'"'" type="button">
+      <button onclick="getInvoice()" type="button">
          Invoice</button>
       <a href="https://docs.google.com/spreadsheets/d/1T4_ir4TVyJ9dh8A0rZpF9E_x7lAL1ONPhZap-fXaCAk/edit?usp=sharing">Datalist</a></p></center>
     <h3 class="content__author"  href="index2.html"><img src="salmon.svg"></h3>
@@ -95,6 +95,7 @@ animation: swim 2.4s ease alternate infinite;
     Body Paint: <b id="article7"></b><br>
     Trim Paint: <b id="article8"></b><br>
     Touchup: <b id="article9"></b>
+    Invoice: <b id="article10"></b>
     </p>
 
     <p>
@@ -114,7 +115,6 @@ animation: swim 2.4s ease alternate infinite;
       Left: <b id="article16"></b>
       Back: <b id="article17"></b>
       Right: <b id="article18"></b>
-      <a id="article10"></a>
     </p>
 
     <center><p><h1 class="content__title" style="font-color:black;" onclick="nextPage()">Next Page</h1></p></center>
@@ -124,6 +124,22 @@ animation: swim 2.4s ease alternate infinite;
 
 
 <script  src="./tabletop.js"></script>
+
+<script type="text/javascript">
+
+function openInNewTab(href) {
+  Object.assign(document.createElement('a'), {
+    target: '_blank',
+    href,
+  }).click();
+}
+
+function getInvoice(){
+  var invoiceLink = document.getElementById("article10").innerHTML;
+  openInNewTab(invoiceLink);
+}
+
+</script>
 
 <script type="text/javascript">
 
@@ -194,7 +210,6 @@ mNum = -1;
 function nextPage(){
 init();
 }
-
                       </script>
 
 

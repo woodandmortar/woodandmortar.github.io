@@ -61,16 +61,31 @@ animation: swim 2.4s ease alternate infinite;
 <!-- partial:index.partial.html -->
 <section class="hero">
   <div class="hero-inner" id="section-0">
-    <figure></figure>
+    <figure id="mainDiv"></figure>
     <h2 id="article1" class="hero__title">Loading...</h2>
-<g onclick="nextPage()">
-    <div style="position:absolute; top:10px; left:30px; z-index:9999999999999999999999;">
+<g>
+
+<div style="position:absolute; top:10px; right:40px; z-index:99999999999;">
+
+  <button onclick="frontButton()" type="button">
+     Front</button>
+     <button onclick="leftButton()" type="button">
+        Left</button>
+        <button onclick="backButton()" type="button">
+           Back</button>
+           <button onclick="rightButton()" type="button">
+              Right</button>
+
+</div>
+
+
+    <div style="position:absolute; top:0px; left:25px; z-index:9999999999999999999999;">
         <svg class="salmonTail" width="80" height=80 viewBox="-359 -463 900 500">
           <path d="M3 49c0 6-2 11-5 15l-119 164c-6 8-20 15-30 15h-146c-7 0-11-3-11-8 0-2 1-5 3-7l130-179-130-179-3-7c0-5 4-8 11-8h146c10 0 24 7 30 15L-2 34c3 4 5 10 5 15z" fill="#D95952"></path>
 
         </svg>
     </div>
-    <div style="position:absolute; top:10px; left:30px; z-index:9999999999999999999998;">
+    <div style="position:absolute; top:0px; left:25px; z-index:9999999999999999999998;">
         <svg width="80" height=80 viewBox="-359 -463 900 500">
           <path d="M408 34L290-130c-6-8-20-15-30-15H16c-10 0-23 7-29 15l-33 45L40 34c3 4 5 10 5 15s-2 11-5 15l-86 119 33 45c6 8 19 15 29 15h244c10 0 24-7 30-15L408 64c3-4 5-10 5-15s-2-11-5-15zM206-90c12 0 21 9 21 21s-9 21-21 21-21-9-21-21 9-21 21-21z" fill="#D95952"></path>
         </svg>
@@ -95,7 +110,6 @@ animation: swim 2.4s ease alternate infinite;
     Body Paint: <b id="article7"></b><br>
     Trim Paint: <b id="article8"></b><br>
     Touchup: <b id="article9"></b>
-    Invoice: <b id="article10"></b>
     </p>
 
     <p>
@@ -115,6 +129,7 @@ animation: swim 2.4s ease alternate infinite;
       Left: <b id="article16"></b>
       Back: <b id="article17"></b>
       Right: <b id="article18"></b>
+      Invoice: <b id="article10"></b>
     </p>
 
     <center><p><h1 class="content__title" style="font-color:black;" onclick="nextPage()">Next Page</h1></p></center>
@@ -138,6 +153,25 @@ function getInvoice(){
   var invoiceLink = document.getElementById("article10").innerHTML;
   openInNewTab(invoiceLink);
 }
+
+function frontButton(){
+  document.getElementById("mainDiv").style.backgroundImage = document.getElementById("article15").innerHTML;
+}
+
+function leftButton(){
+  document.getElementById("mainDiv").style.backgroundImage = document.getElementById("article16").innerHTML;
+}
+
+function backButton(){
+  document.getElementById("mainDiv").style.backgroundImage = document.getElementById("article17").innerHTML;
+}
+
+function rightButton(){
+  document.getElementById("mainDiv").style.backgroundImage = document.getElementById("article18").innerHTML;
+}
+
+
+
 
 </script>
 
@@ -204,12 +238,14 @@ mNum = -1;
                   document.getElementById("article22").innerHTML = [ article22 ].join(", ");
                   document.getElementById("article23").innerHTML = [ article23 ].join(", ");
                   document.getElementById("article24").innerHTML = [ article24 ].join(", ");
+                  document.getElementById("mainDiv").style.backgroundImage = document.getElementById("article15").innerHTML;
 
                     }
 
 function nextPage(){
 init();
 }
+
                       </script>
 
 

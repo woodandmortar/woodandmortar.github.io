@@ -52,6 +52,72 @@ animation: swim 2.4s ease alternate infinite;
 .hero:nth-child(1) figure {
   background-image: url("./pics/hero.jpg");
 }
+
+
+.open-modal {
+   text-align: center;
+  border: none;
+  background: #000;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 13px;
+  padding: .5em .8em;
+  font-weight: bold;
+  border-radius: 10px;
+   cursor: pointer;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  animation: pulse 8s infinite;
+
+}
+
+.open-modal:hover {
+  background: #D95952;
+}
+
+.open-modal1 {
+   text-align: center;
+  border: none;
+  background: #D95952;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 13px;
+  padding: .5em .8em;
+  font-weight: bold;
+  border-radius: 10px;
+   cursor: pointer;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  animation: pulse 8s infinite;
+}
+
+.open-modal1:hover {
+  background: #27ae60;
+}
+
+@keyframes pulse {
+0% {
+opacity:1;
+}
+
+40% {
+opacity:0.4;
+box-shadow:0px 0px 5px 0px $color;
+}
+
+60% {
+opacity:0.4;
+box-shadow:0px 0px 5px 0px $color;
+}
+
+100%{
+opacity:1;
+box-shadow:none;
+}
+}
+
 </style>
 
 </head>
@@ -67,14 +133,16 @@ animation: swim 2.4s ease alternate infinite;
 
 <div style="position:absolute; top:10px; right:40px; z-index:99999999999;">
 
-  <button onclick="frontButton()" type="button">
+  <button class="open-modal" onclick="frontButton()" type="button">
      Front</button>
-     <button onclick="leftButton()" type="button">
+     <button class="open-modal" onclick="leftButton()" type="button">
         Left</button>
-        <button onclick="backButton()" type="button">
+        <button class="open-modal" onclick="backButton()" type="button">
            Back</button>
-           <button onclick="rightButton()" type="button">
+           <button class="open-modal" onclick="rightButton()" type="button">
               Right</button>
+              <button class="open-modal1" onclick="nextPage()" type="button">
+                 Next</button>
 
 </div>
 
@@ -99,7 +167,7 @@ animation: swim 2.4s ease alternate infinite;
     <center><p>
       <b id="article2"></b> <b id="article3"></b> <br>
       Phone Number: <b id="article4"></b> </br>
-      <button onclick="getInvoice()" type="button">
+      <button class="open-modal" onclick="getInvoice()" type="button">
          Invoice</button>
       <a href="https://docs.google.com/spreadsheets/d/1T4_ir4TVyJ9dh8A0rZpF9E_x7lAL1ONPhZap-fXaCAk/edit?usp=sharing">Datalist</a></p></center>
     <h3 class="content__author"  href="index2.html"><img src="salmon.svg"></h3>
@@ -119,7 +187,7 @@ animation: swim 2.4s ease alternate infinite;
       Trim Paint color: <b id="article12"></b><br>
       Gallons ordered: <b id="article21"></b> | used: <b id="article22"></b><br><br>
 
-      Accent color: <b id="article13"></b>
+      Accent color: <b id="article13"></b><br>
       Gallons ordered: <b id="article23"></b> | used: <b id="article24"></b>
     </p>
 
@@ -131,8 +199,6 @@ animation: swim 2.4s ease alternate infinite;
       Right: <b id="article18"></b>
       Invoice: <b id="article10"></b>
     </p>
-
-    <center><p><h1 class="content__title" style="font-color:black;" onclick="nextPage()">Next Page</h1></p></center>
 
     </article>
 </section>

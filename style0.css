@@ -12,6 +12,16 @@ body {
     font-family:'Nunito';
     overflow-x:hidden;
 }
+button {
+    display:block;
+    margin:15px 0;
+    position:relative;
+    background:none;
+    border:none;
+    font-size:1rem;
+    padding:0;
+    cursor:pointer;
+}
 h3 {
     display:block;
     font-size:2rem;
@@ -350,7 +360,7 @@ svg {
     margin:0;
     z-index:1;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:558px) {
     :root {
         --brand-color:#000 !important;
     }
@@ -389,7 +399,7 @@ svg {
     .brand {
         display:none;
     }
-    .navbar-right>li {
+    .navbar-right>ol li {
         margin:0px 5px;
     }
     nav[data-state="closed"] {
@@ -499,7 +509,7 @@ body[data-loading="false"] .container-prev h3,body[data-loading="false"] .contai
     padding-left: 0;
     height:auto;
 }
-.info-ul>li>a>svg {
+.info-ul>ol li>a>svg {
     width:1.25rem;
     height:1.25rem;
 }

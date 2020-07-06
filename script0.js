@@ -72,7 +72,7 @@ const setImageSrc = (img, placeholder) => {
   img.src = src;
   img.onload = () => {
     img.classList.add('loaded');
-    // animate the placeholder 
+    // animate the placeholder
     placeholder.dataset.visible = 'false';
   };
 };
@@ -121,7 +121,7 @@ let fragment = `
 			vec2 newUV = (vUv - vec2(0.5))*resolution.zw + vec2(0.5);
 
             vec2 uvDivided = fract(newUV*vec2(intensity,1.));
-     
+
 
 			vec2 uvDisplaced1 = newUV - rotate(0.0)*uvDivided*progress*0.05;
 			vec2 uvDisplaced2 = newUV - rotate(0.0)*uvDivided*(1. - progress)*0.05;
@@ -152,7 +152,7 @@ let renderer = new THREE.WebGLRenderer({
 // renderer opts
 renderer.setSize(hero.offsetWidth, hero.offsetHeight);
 renderer.setPixelRatio(window.devicePixelRatio || 1);
-// append canvas 
+// append canvas
 hero.appendChild(renderer.domElement);
 
 // images
@@ -209,7 +209,7 @@ const resize = () => {
 
 loadImages(resize);
 
-// create 
+// create
 let mat = new THREE.ShaderMaterial({
   side: THREE.DoubleSide,
   uniforms: {
@@ -253,27 +253,9 @@ const animateSlide = index => {
 };
 
 // slider
-let index = 0;
 const nextBtn = document.querySelector(".btn-next");
-const prevBtn = document.querySelector(".btn-prev");
 const heroBg = document.querySelector(".hero");
-const nextSlide = () => {
-  if (index < 1) {
-    animateSlide(1);
-    index += 1;
-  }
-};
-
-const prevSlider = () => {
-  if (index > 0) {
-    animateSlide(0);
-    index -= 1;
-  }
-};
 
 nextBtn.addEventListener("click", () => {
-  nextSlide();
-});
-prevBtn.addEventListener("click", () => {
-  prevSlider();
+  animateSlide(1);
 });

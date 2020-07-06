@@ -36,16 +36,16 @@ button {
     margin:15px 0;
     position:relative;
     background:none;
-    border:none;    
+    border:none;
     font-size:1rem;
     padding:0;
     cursor:pointer;
 }
 img {
-   width:100%; 
+   width:100%;
    display:block;
 }
-/* LAYOUT */ 
+/* LAYOUT */
 .grid-container {
     max-width:1170px;
     display:grid;
@@ -67,9 +67,9 @@ img {
             justify-content: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-            flex-direction: column; 
+            flex-direction: column;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:560px) {
     .grid-container {
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 }
@@ -80,7 +80,7 @@ img {
     text-align:left;
 }
 .arrow-btn span {
-    position:relative; 
+    position:relative;
 }
 .arrow-btn:hover span:before {
     -webkit-transform:translateX(10px);
@@ -114,7 +114,7 @@ img {
     -webkit-transition:0.16s ease;
     transition:0.16s ease;
 }
-/* SECTIONS */ 
+/* SECTIONS */
 .arrivals,.quote,.fashion,.modern {
     padding:45px 0px;
 }
@@ -334,7 +334,7 @@ li {
         content:"";
         position:absolute;
         width:50%;
-        top:57px;    
+        top:57px;
         height:2px;
         background:#000;
         width:0%;
@@ -368,7 +368,7 @@ li {
 }
 svg {
     width: 1.25rem;
-    height: 1.25rem;  
+    height: 1.25rem;
 }
 #shop-icon,#user-icon {
     fill:var(--brand-color);
@@ -381,7 +381,7 @@ svg {
     background: #000;
     border-radius:2px;
     -webkit-transition:0.24s ease all;
-    transition:0.24s ease all; 
+    transition:0.24s ease all;
 }
 .navbar-burger-btn span:first-child {
     top:3px;
@@ -459,7 +459,7 @@ svg {
         visibility:visible;
         opacity:1;
         -webkit-transition:0.01s ease visibility, 0.16s ease-in-out opacity 0.08s;
-        transition:0.01s ease visibility, 0.16s ease-in-out opacity 0.08s; 
+        transition:0.01s ease visibility, 0.16s ease-in-out opacity 0.08s;
     }
     nav[data-state="open"] .navbar-burger-btn span:first-child {
         -webkit-transform:rotate(225deg);
@@ -489,7 +489,7 @@ canvas {
 }
 .hero {
     position:relative;
-    height:100vh;
+    height:80vh;
     width: 100vw;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -638,7 +638,7 @@ body[data-loading="false"] .container-prev button,body[data-loading="false"] .co
 }
 /* ARRIVALS*/
 .arrivals-grid {
-    grid-template-areas: 
+    grid-template-areas:
     'arrival-text arrival-img1 arrival-img2'
     'arrival-text arrival-img1 arrival-img3';
     grid-template-columns: repeat(auto-fit,minmax(365px,0.5fr));
@@ -729,7 +729,7 @@ body[data-loading="false"] .container-prev button,body[data-loading="false"] .co
         'img2';
 }
 }
-/* ANIMATION / OBSERVER STYLES */ 
+/* ANIMATION / OBSERVER STYLES */
 .fade-in {
     opacity:0;
     -webkit-transform:translateY(50px);
@@ -745,12 +745,12 @@ body[data-loading="false"] .container-prev button,body[data-loading="false"] .co
 /* lazy load */
 .img-lazy {
     -o-object-fit: cover;
-       object-fit: cover; 
-    -webkit-transition:0.2s ease transform,0.2s ease filter,0.32s ease opacity; 
+       object-fit: cover;
+    -webkit-transition:0.2s ease transform,0.2s ease filter,0.32s ease opacity;
     transition:0.2s ease transform,0.2s ease filter,0.32s ease opacity;
-    width:100%;  
+    width:100%;
     position:absolute;
-    z-index:1;  
+    z-index:1;
     opacity:0;
 }
 .loaded {
@@ -846,7 +846,7 @@ body[data-loading="false"] .container-prev button,body[data-loading="false"] .co
     z-index:2;
 }
 .img-overlay a {
-    position:relative;   
+    position:relative;
 }
 .img-overlay a:after {
     content:"";
@@ -876,7 +876,7 @@ body[data-loading="false"] .container-prev button,body[data-loading="false"] .co
 .img-container:hover .img-overlay span {
     opacity:1;
     -webkit-transform:translateY(0px);
-            transform:translateY(0px);   
+            transform:translateY(0px);
 }
 .img-container:hover .img-overlay span:nth-child(2){
     -webkit-transition-delay:0.08s;

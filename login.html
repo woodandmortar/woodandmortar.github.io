@@ -143,27 +143,26 @@ object {
           <li class="bot__output bot__output--standard"><span id="vresp1"><b>No Login</b></span></li>
           <li class="bot__output bot__output--standard">
             <span class="bot__output--second-sentence">
-              <button id="button1" class="open-modal2" href="#" onClick="startGeoLookup()" style="z-index:999999999999999999999;"><span id="vresp9">CHECK IN</span></button><br>
+              <button id="button1" href="#" onClick="startGeoLookup()" style="z-index:999999999999999999999;"><span id="vresp9">CHECK IN</span></button>
+              <form id="form1" style="display:none;">
+                <select  id="mySelect" style="height:20px;width:100px;font-size:12px
+                z-index:999999999999999999999;">
+                  <option value="None" selected>Options</option>
+                  <option value="Off">Off</option>
+                  <option value="Prep">Prep</option>
+                  <option value="Painting">Painting</option>
+                  <option value="Carpentry">Carpentry</option>
+                  <option value="General">General</option>
+                  <option value="Break">Break</option>
+                  <option value="Driving">Driving</option>
+                </select>
+              </form>
+              <br>
               Last Update: <b id="hud1a">0</b> <br>
               Level: <b id="hud2">0</b> <br>
               Bank: <b id="hud3">0</b> <br>
               Mcreds: <b id="hud4">0</b> <br>
               Hours: <b id="hud5">0</b> <br>
-
-<br>
-<form id="form1" style="display:none;">
-  <select class="open-modal" id="mySelect" style="height:20px;width:100px;font-size:12px
-  z-index:999999999999999999999;">
-    <option value="None" selected>Options</option>
-    <option value="Off">Off</option>
-    <option value="Prep">Prep</option>
-    <option value="Painting">Painting</option>
-    <option value="Carpentry">Carpentry</option>
-    <option value="General">General</option>
-    <option value="Break">Break</option>
-    <option value="Driving">Driving</option>
-  </select>
-</form>
 </span></li></ul>
       <div class="chatbox-area">
         <form action="" id="chatform">
@@ -175,7 +174,6 @@ object {
 </div>
 
 <div id="item4" style="
-  display: none;
   position:absolute;
   align-content: center;
   top:100px;

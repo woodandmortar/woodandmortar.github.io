@@ -140,12 +140,13 @@ object {
 <div id="live-chat">
   <div id="item" class="chat" style="color:white; font-size:1.4em;" >
         <ul class="chatlist">
-          <li class="bot__output bot__output--standard"><span id="vresp1"><b>No Login</b></span></li>
+          <li class="bot__output bot__output--standard"><span id="vresp1">No Login</span></li>
           <li class="bot__output bot__output--standard">
             <span class="bot__output--second-sentence">
               <button id="button1" href="#" onClick="startGeoLookup()" style="z-index:999999999999999999999;"><span id="vresp9">CHECK IN</span></button>
+              <button id="button2" href="#" onClick="clockIN()" style="z-index:999999999999999999999;display:none;">CLOCK IN</button>
               <form id="form1" style="display:none;">
-                <select  id="mySelect" style="height:20px;width:100px;font-size:12px
+                <select  id="mySelect" onchange="clockButton()" style="height:20px;width:100px;font-size:12px
                 z-index:999999999999999999999;">
                   <option value="None" selected>Options</option>
                   <option value="Off">Off</option>
@@ -286,6 +287,13 @@ document.getElementById('menuButton4').style='background:#D95952';
     }
   }
 
+  function clockButton(){
+    document.getElementById('button2').style.display = "block";
+  }
+  function clockIN(){
+    formAdmin();
+  }
+
   var toggleVisibility2 = function(element) {
     if(element.style.display=='none'){
         element.style.display='block';
@@ -334,22 +342,8 @@ document.getElementById('menuButton4').style='background:#D95952';
   document.getElementById('vresp1').innerHTML = profile.getName();
   document.getElementById('profilePic').src = userImage;
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  switch(profile.getEmail()){
-    default:
-        setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/mcred.html';}, 9000);
-        break;
-        case 'micheal.mfg@gmail.com':
-            toggleVisibility(document.getElementById('foo1'));
-            toggleVisibility(document.getElementById('foo2'));
-            toggleVisibility(document.getElementById('foo3'));
-            document.getElementById('fo1').innerHTML = "Admin Clock in";
-            document.getElementById('fo2').innerHTML = "Travis Windsor Clock in";
-            document.getElementById('fo3').innerHTML = "Christian Freitag Clock in";
-            document.getElementById('vresp7').innerHTML = "Start time is 9:30 am at 8726 104th street, Overland Park KS";
-              break;
 
-        case 'woodmortar@gmail.com':
-        var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
         function init2() {
                 Tabletop2.init2( { key: public_spreadsheet_url2,
                                  callback: showInfo2,
@@ -369,6 +363,19 @@ document.getElementById('menuButton4').style='background:#D95952';
                 document.getElementById("hud4").innerHTML = [ mcreds2 ].join(", ");
                 document.getElementById("hud5").innerHTML = [ hours2 ].join(", ");
               }
+
+
+  switch(profile.getEmail()){
+    default:
+        setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/mcred.html';}, 9000);
+        break;
+        case 'micheal.mfg@gmail.com':
+        init2();
+            document.getElementById('hud1a').innerHTML = "4 Points";
+              break;
+
+        case 'woodmortar@gmail.com':
+        init2();
               break;
 
         case 'bigbawln@gmail.com':
@@ -927,15 +934,9 @@ document.getElementById('menuButton4').style='background:#D95952';
 
   function formAdmin(){
 
-          var intake = document.getElementById('fo1').innerHTML;
-          document.getElementById('vresp7').innerHTML = intake;
-          var project = document.getElementById('vresp7').innerHTML;
+          var project = document.getElementById('vresp1').innerHTML;
           var location = document.getElementById('vresp9').innerHTML;
           var task = document.getElementById('mySelect').value;
-          mySelect.setAttribute("disabled", "true");
-          toggleVisibility(document.getElementById('foo1'));
-          toggleVisibility(document.getElementById('foo2'));
-          toggleVisibility(document.getElementById('foo3'));
 
             $.ajax({
               url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfN2kkQpPALiBnKuXyfW-iRYivAp_CutzqngiAo_KSzi664QQ/formResponse",
@@ -953,138 +954,9 @@ document.getElementById('menuButton4').style='background:#D95952';
             });
           }
 
-  function formTWindsor(){
 
-          var intake = document.getElementById('fo2').innerHTML;
-          document.getElementById('vresp7').innerHTML = intake;
-          var project = document.getElementById('vresp7').innerHTML;
-          var location = document.getElementById('vresp9').innerHTML;
-          var task = document.getElementById('mySelect').value;
-          mySelect.setAttribute("disabled", "true");
-          toggleVisibility(document.getElementById('foo2'));
 
-            $.ajax({
-              url: "https://docs.google.com/forms/d/e/1FAIpQLSfoz71NOsz3IAnHPrVu4TwsQBr5n_EfDwX8UOMcinNDLGcdjQ/formResponse",
-              data:  { "entry.1493901935" : task , "entry.971569004" : project , "entry.29486422" : location },
-              type: "POST",
-              dataType: "xml",
-              statusCode: {
-                0: function () {
-          //					alert("Click -OK- to submit message");
-                },
-                200: function () {
-          //					alert("Click -OK- to submit message");
-                }
-                    }
-            });
-          }
 
-          function formCFreitag(){
-
-                    var intake = document.getElementById('fo3').innerHTML;
-                    document.getElementById('vresp7').innerHTML = intake;
-                    var project = document.getElementById('vresp7').innerHTML;
-                    var location = document.getElementById('vresp9').innerHTML;
-                    var task = document.getElementById('mySelect').value;
-                    mySelect.setAttribute("disabled", "true");
-                    var metaData0 = document.getElementById('metaData').value;
-                    toggleVisibility(document.getElementById('foo3'));
-
-                      $.ajax({
-                        url: "https://docs.google.com/forms/d/e/1FAIpQLSfa54ksd_dyPwl1SMkLxYdUCczIwo0D4Bcu50mX9dg-5bDVYg/formResponse",
-                        data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location , "entry.696138045" : metaData0 },
-                        type: "POST",
-                        dataType: "xml",
-                        statusCode: {
-                          0: function () {
-                    //					alert("Click -OK- to submit message");
-                          },
-                          200: function () {
-                    //					alert("Click -OK- to submit message");
-                          }
-                              }
-                      });
-                    }
-
-  function formAdminA(){
-
-          var intake = document.getElementById('fo1a').innerHTML;
-          document.getElementById('vresp7').innerHTML = intake;
-          var project = document.getElementById('vresp7').innerHTML;
-          var location = document.getElementById('vresp9').innerHTML;
-          var task = document.getElementById('mySelect').value;
-          mySelect.setAttribute("disabled", "true");
-          toggleVisibility(document.getElementById('foo1'));
-          toggleVisibility(document.getElementById('foo2'));
-          toggleVisibility(document.getElementById('foo3'));
-
-            $.ajax({
-              url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfN2kkQpPALiBnKuXyfW-iRYivAp_CutzqngiAo_KSzi664QQ/formResponse",
-              data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
-              type: "POST",
-              dataType: "xml",
-              statusCode: {
-                0: function () {
-          //					alert("Click -OK- to submit message");
-                },
-                200: function () {
-          //					alert("Click -OK- to submit message");
-                }
-                    }
-            });
-          }
-
-  function formTWindsorA(){
-
-          var intake = document.getElementById('fo2a').innerHTML;
-          document.getElementById('vresp7').innerHTML = intake;
-          var project = document.getElementById('vresp7').innerHTML;
-          var location = document.getElementById('vresp9').innerHTML;
-          var task = document.getElementById('mySelect').value;
-          mySelect.setAttribute("disabled", "true");
-          toggleVisibility(document.getElementById('foo2'));
-
-            $.ajax({
-              url: "https://docs.google.com/forms/d/e/1FAIpQLSfoz71NOsz3IAnHPrVu4TwsQBr5n_EfDwX8UOMcinNDLGcdjQ/formResponse",
-              data:  { "entry.1493901935" : task , "entry.971569004" : project , "entry.29486422" : location },
-              type: "POST",
-              dataType: "xml",
-              statusCode: {
-                0: function () {
-          //					alert("Click -OK- to submit message");
-                },
-                200: function () {
-          //					alert("Click -OK- to submit message");
-                }
-                    }
-            });
-          }
-
-          function formCFreitagA(){
-
-                    var intake = document.getElementById('fo3a').innerHTML;
-                    document.getElementById('vresp7').innerHTML = intake;
-                    var project = document.getElementById('vresp7').innerHTML;
-                    var location = document.getElementById('vresp9').innerHTML;
-                    var task = document.getElementById('mySelect').value;
-                    mySelect.setAttribute("disabled", "true");
-                    toggleVisibility(document.getElementById('foo3'));
-
-                      $.ajax({
-                        url: "https://docs.google.com/forms/d/e/1FAIpQLSfa54ksd_dyPwl1SMkLxYdUCczIwo0D4Bcu50mX9dg-5bDVYg/formResponse",
-                        data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
-                        type: "POST",
-                        dataType: "xml",
-                        statusCode: {
-                          0: function () {
-                    //					alert("Click -OK- to submit message");
-                          },
-                          200: function () {
-                    //					alert("Click -OK- to submit message");
-                          }
-                              }
-                      });
-                    }
 
 
 
@@ -1095,7 +967,7 @@ document.getElementById('menuButton4').style='background:#D95952';
                     <script type="text/javascript">
                     mNum = -1;
 
-  var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1X0SsFqR828ad7FiQptvztIJ6yiQByrFEkzMPyjdqupI/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+  var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1kTFnCiuDAYVdpzNqVIgNKsSLKYK9tRR1Mxd6gjBncFU/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
 
   function init() {
           Tabletop.init( { key: public_spreadsheet_url,
@@ -1124,19 +996,13 @@ document.getElementById('menuButton4').style='background:#D95952';
                               document.getElementById("theStudyGuide").innerHTML = [ studyGuide ].join(", ");
                               document.getElementById("math").innerHTML = [ mProb ].join(", ");
                               console.log(data);
-
-                              if (mNum == 19){
-                                if (parseInt(document.getElementById("vTime").innerHTML) < 3) {alert("You know very little about the #BlackLivesMatter movement."); window.location.href = "morton.html"}
-                                else if (parseInt(document.getElementById("vTime").innerHTML) > 10) {alert("You understand what the #BlackLivesMatter is about."); window.location.href = "morton.html"}
-                                else {alert("You aren't quite woke, try again"); window.location.href = "morton.html"}
-                              }
                             }
 
 
                       </script>
 
                     <script>
-                    setInterval(function(){$(".confetti").remove(); }, 90000);
+                    setInterval(function(){$(".confetti").remove(); }, 40000);
 
 
                     function formmcreds() {

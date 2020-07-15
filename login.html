@@ -109,22 +109,6 @@ object {
 
 
 
-
-
-<div id="item3" style="
-  position:absolute;
-  top:10px; left:5px;
-  background: rgba(0, 0, 00, 0.8);
-  border-radius: 5px;
-  color: white;
-  padding: 0.85em;
-  margin: 0.5em;">
-  <img id="profilePic" src="salmon.svg" style="z-index:999999999999999999999; width:60px;"><br>
-  <font style="color: #D95952; font-weight: 900;">FLOW: <b id="vTime">0</b></font>
-  <div style="display:none;" id="finalSolution"></div>
-</div>
-
-
   <div style="position:absolute;">
   <svg class="dn">
     <defs>
@@ -138,9 +122,18 @@ object {
 <!-- partial:index.partial.html -->
 <canvas id="canvas"></canvas>
 <div id="live-chat">
+  <header class="clearfix">
+    <button class="open-modal1 button-1" href="#" onclick="menuChange()"><b id="menuChange">CLOSE CHAT</b></button>
+  </header>
   <div id="item" class="chat" style="color:white; font-size:1.4em;" >
         <ul class="chatlist">
-          <li class="bot__output bot__output--standard"><span id="vresp1">No Login</span></li>
+          <li class="bot__output bot__output--standard">
+
+            <img id="profilePic" src="salmon.svg" style="z-index:999999999999999999999; width:60px;"><br>
+            <span id="vresp1">No Login</span><br>
+            <font style="color: #D95952; font-weight: 900;">FLOW: <b id="vTime">0</b></font>
+            <div style="display:none;" id="finalSolution"></div>
+            </li>
           <li class="bot__output bot__output--standard">
             <span class="bot__output--second-sentence">
               <button id="button1" href="#" onClick="startGeoLookup()" style="z-index:999999999999999999999;"><span id="vresp9">CHECK IN</span></button>
@@ -270,11 +263,11 @@ document.getElementById('menuButton4').style='background:#D95952';
 
   function menuChange() {
     var x = document.getElementById("menuChange");
-    if (x.innerHTML === "CLOSE") {
-      x.innerHTML = "OPEN CHAT";
+    if (x.innerHTML === "CLOSE CHAT") {
+      x.innerHTML = "OPEN";
       document.getElementById("item").style.display = "none";
     } else {
-      x.innerHTML = "CLOSE";
+      x.innerHTML = "CLOSE CHAT";
       document.getElementById("item").style.display = "block";
     }
   }
@@ -343,7 +336,12 @@ document.getElementById('menuButton4').style='background:#D95952';
   document.getElementById('profilePic').src = userImage;
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 
-var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+  switch(profile.getEmail()){
+    default:
+        setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/mcred.html';}, 9000);
+        break;
+        case 'micheal.mfg@gmail.com':
+        var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
         function init2() {
                 Tabletop2.init2( { key: public_spreadsheet_url2,
                                  callback: showInfo2,
@@ -363,19 +361,30 @@ var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJc
                 document.getElementById("hud4").innerHTML = [ mcreds2 ].join(", ");
                 document.getElementById("hud5").innerHTML = [ hours2 ].join(", ");
               }
-
-
-  switch(profile.getEmail()){
-    default:
-        setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/mcred.html';}, 9000);
-        break;
-        case 'micheal.mfg@gmail.com':
-        init2();
             document.getElementById('hud1a').innerHTML = "4 Points";
               break;
 
         case 'woodmortar@gmail.com':
-        init2();
+        var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+        function init2() {
+                Tabletop2.init2( { key: public_spreadsheet_url2,
+                                 callback: showInfo2,
+                                 simpleSheet: true } );
+              }
+              init2();
+              function showInfo2(data) {
+                var mNum = 0;
+                time2 = data[mNum].time;
+                knowledgelevel2 = data[mNum].knowledgelevel;
+                credcoins2 = data[mNum].credcoins;
+                mcreds2 = data[mNum].mcreds;
+                hours2 = data[mNum].hours;
+                document.getElementById("hud1a").innerHTML = [ time2 ].join(", ");
+                document.getElementById("hud2").innerHTML = [ knowledgelevel2 ].join(", ");
+                document.getElementById("hud3").innerHTML = [ credcoins2 ].join(", ");
+                document.getElementById("hud4").innerHTML = [ mcreds2 ].join(", ");
+                document.getElementById("hud5").innerHTML = [ hours2 ].join(", ");
+              }
               break;
 
         case 'cmjj0999@gmail.com':

@@ -10,7 +10,7 @@ document.getElementById('nav-linkp').style.display = 'none';
 document.getElementById('header1').style.height = '80%';
 document.getElementById('chat1').style.display = 'none';
 document.getElementById('nav-linko').innerHTML = '<a class="nav-link active" href="mailto:info@woodandmortar.com?Subject=Hello%20again&body=If%20GMAIL%20didnt%20open%20please%20send%20a%20gmail%20message%20to%20my%20sender%20address">Create Account</a>';
-document.getElementById('nav-linkp').innerHTML = '<div class="g-signin2" data-onsuccess="onSignIn"></div>';
+document.getElementById('nav-linkp').innerHTML = '<a class="nav-link"><div class="g-signin2" data-onsuccess="onSignIn"></div></a>';
 
 }
 

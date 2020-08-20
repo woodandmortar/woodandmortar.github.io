@@ -255,7 +255,12 @@ const animateSlide = index => {
 // slider
 const nextBtn = document.querySelector(".btn-next");
 const heroBg = document.querySelector(".hero");
+const prevBtn = document.querySelector(".btn-prev");
 
 nextBtn.addEventListener("click", () => {
   animateSlide(1);
+});
+
+prevBtn.addEventListener("click", () => {
+  animateSlide(0);
 });

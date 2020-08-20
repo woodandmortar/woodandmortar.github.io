@@ -35,35 +35,14 @@
 
 <style>
 
-/* ---------- LIVE-CHAT ---------- */
-
-#live-chat {
-  z-index: 999;
-	bottom: 0;
-  left: 0;
-	font-size: 14px;
-	width: 95vw;
-}
-
-#live-chat header {
-	background: transparent;
-	color: #fff;
-  width: 99vw;
-}
-
-#live-chat form {
-}
-
 
 .chatbot__overview {
   background-color: #363636;
   display: flex;
   flex-flow: row nowrap;
   align-content: space-between;
-  max-height: 70vh;
   margin: auto;
-  padding: 1em;
-  padding-bottom: 0; }
+}
 
 .chatlist {
   font-family: inherit;
@@ -145,9 +124,10 @@ background: rgba(0, 0, 00, 0.8);
 #chatform {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 90%;
+  height: 40%;
+  bottom: 0px;
   margin: auto;
-  padding-top: 1em;
   font-size: 1em;
   font-family: Helvetica; }
   @media screen and (max-width: 29em) {
@@ -155,19 +135,19 @@ background: rgba(0, 0, 00, 0.8);
       width: 100%; } }
 
 .chatbox-area {
-  margin: auto;
+  margin: 10px;
   position: relative;
   bottom: 0;
   height: auto;
   background-color: transparent;
   color: white;
-  width: 100%; }
+  width: 60%; }
 
 textarea[name="chatbox"] {
   resize: none;
   border: 2px solid #363636;
   width: 100%;
-  background-color: transparent;
+  background-color: white;
   color: black;
   height: 2em;
   margin: auto;
@@ -324,35 +304,50 @@ textarea[name="chatbox"] {
       </g>
     </svg>
   </div>
-  <nav data-state="closed">
-    <button class="navbar-burger-btn" aria-expanded="false" aria-label='menu toggle button'>
+  <nav data-state="closed" id="navClosed">
+    <button class="navbar-burger-btn" aria-expanded="false" aria-label='menu toggle button' id="navbarburgerbtn">
       <span></span>
       <span></span>
       <span></span>
     </button>
-    <ol class="navbar-left">
-      <li><a class="nav-link active" href="morton.html">W&M</a></li>
-      <li><a class="nav-link" href="https://www.facebook.com/woodmortar" target="_blank" >Book Now</a></li>
-      <li><a class="nav-link" href="mailto:info@woodandmortar.com?Subject=General%20Inquiry&body=Place%20message%20here%20please" target="_blank" >Contact</a></li>
+    <ol class="navbar-left" id="nav-linkm">
+      <li id="nav-linkn"><a class="nav-link active" href="index.html">W&M</a></li>
+      <li id="nav-linko"><a class="nav-link" href="https://www.facebook.com/woodmortar" target="_blank" >Book Now</a></li>
+      <li id="nav-linkp"><a class="nav-link" href="mailto:info@woodandmortar.com?Subject=General%20Inquiry&body=Place%20message%20here%20please" target="_blank" >Contact</a></li>
     </ol>
 
+<div id="sub" class="btn-next">
     <ol class="navbar-right">
-      <li><a href="https://forms.gle/CrFpQRC32gPJiiLt6" class="nav-link">
-          <svg viewBox="0 0 24 24">
-            <use xlink:href="#shop-icon" x="0" y="0">
-          </svg>
-        </a></li>
-      <li><a href="login.html" class="nav-link">
-          <svg viewBox="0 0 24 24">
+      <li style="margin:0px 5px;"><a href="javascript:void(0);" onclick="morph()" class="nav-link brand">Account</a></li>
+      <li style="margin:0px 5px;"><a href="javascript:void(0);" onclick="morph()" class="nav-link">
+          <svg viewBox="0 0 44 44">
             <use xlink:href="#user-icon" x="0" y="0">
           </svg>
         </a></li>
     </ol>
+</div>
+<div id="unSub" style="display:none;" class="btn-prev">
+    <ol class="navbar-right">
+      <li style="margin:0px 5px;"><a href="javascript:void(0);" onclick="unMorph()" class="nav-link brand">Home</a></li>
+      <li style="margin:0px 5px;"><a href="javascript:void(0);" onclick="unMorph()" class="nav-link">
+          <svg viewBox="0 0 44 44">
+            <use xlink:href="#shop-icon" x="0" y="0">
+          </svg>
+        </a></li>
+    </ol>
+</div>
   </nav>
-  <header>
-    <div class="hero" data-images='["https://woodandmortar.github.io/pics/hero.jpg","https://woodandmortar.github.io/pics/woodmortar.jpg","https://woodandmortar.github.io/pics/kitchen.jpg","https://woodandmortar.github.io/pics/hero.jpg"]'>
+
+  <div id="item7" style="
+    position:absolute;
+    display:none;
+    top:85px; left:8px;">
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  </div>
+
+  <header id="header1">
+    <div class="hero" data-images='["https://woodandmortar.github.io/pics/hero.jpg","https://woodandmortar.github.io/pics/woodmortar.jpg"]'>
       <div class="container-prev">
-        <div id="live-chat">
           <div id="item" class="chat" style="color:white; font-size:1.3em;" >
                 <ul class="chatlist">
                   <li class="bot__output bot__output--standard">
@@ -369,29 +364,61 @@ textarea[name="chatbox"] {
                     </div>
                     Welcome to Woodandmortar.com</li>
                   <li class="bot__output bot__output--standard">
-                    <span class="bot__output--second-sentence">Our seasonal specials are focused on outdoors. Scroll down to learn more about our services or use the chat box. </span>
-                    <ul>
-                      <li class="input__nested-list">Exterior <span class="bot__command"><a href="#paintSection">paint</a></span> starting at $3500 or powerwash from $200.</li>
-                      <li class="input__nested-list">New deck <span class="bot__command"><a href="#handSection">handrail</a></span> upgrade starting at $1200 or staining from $400.</li>
-                      <li class="input__nested-list">Virtually paint your house with <span class="bot__command"><a href="#colorSection">ColorSnap</a></span> from Sherwin Williams.</li>
-                      <li class="input__nested-list">We would love to create <span class="bot__command"><a href="#digiSection">digital</a></span> drawings of your house/concepts at $250 per room.</li>
+                    <span class="bot__output--second-sentence">Our seasonal specials include: Exterior <span class="bot__command"><a href="#paintSection">painting</a></span>,
+                    <span class="bot__command"><a href="#handSection">handrail</a></span> upgrades, and <span class="bot__command"><a href="#digiSection">digital</a></span> drawings.
+                    Virtually paint your house with <span class="bot__command"><a href="#colorSection">ColorSnap</a></span> from Sherwin Williams.
+                    </li>
+                  </li>
                     </ul>  </ul>
                 </div>
-        </div>
+
+                <div id="item2" class="chat" style="color:white; font-size:1.4em; display: none;" >
+                      <ul class="chatlist">
+                        <li class="bot__output bot__output--standard">
+
+                          <img id="profilePic" src="salmon.svg" style="z-index:999999999999999999999; width:60px;"><br>
+                          <span id="vresp1">No Login</span><br>
+                          <font style="color: #D95952; font-weight: 900; display:none;">FLOW: <b id="vTime">0</b></font>
+                          <div style="display:none;" id="finalSolution"></div>
+                          </li>
+                        <li class="bot__output bot__output--standard" id="employ" style="display:none;">
+                          <span class="bot__output--second-sentence">
+                            <button id="button1" href="#" onClick="startGeoLookup()" style="z-index:999999999999999999999;" class="open-modal"><span id="vresp9">CHECK IN</span></button>
+                            <button id="button2" href="#" onClick="clockIN()" style="z-index:999999999999999999999;display:none;" class="open-modal1">CLOCK IN</button>
+                            <form id="form1" style="display:none;">
+                              <select  id="mySelect" onchange="clockButton()" style="height:30px;width:100px;font-size:12px
+                              z-index:999999999999999999999;">
+                                <option value="None" selected>Options</option>
+                                <option value="Off">Off</option>
+                                <option value="Prep">Prep</option>
+                                <option value="Painting">Painting</option>
+                                <option value="Carpentry">Carpentry</option>
+                                <option value="General">General</option>
+                                <option value="Break">Break</option>
+                                <option value="Driving">Driving</option>
+                              </select>
+                            </form>
+                            <br>
+                            Last Update: <b id="hud1a">0</b> <br>
+                            Level: <b id="hud2">0</b> | <b id="hud3">0</b> <br>
+                            Bank: <b id="hud4">0</b> <br>
+                            Hours: <b id="hud5">0</b> <br>
+              </span></li></ul>
+                      </div>
+
+                  <div class="chatbox-area" id="chat1">
+                  <form action="" id="chatform">
+                  <textarea placeholder="Scroll down or Type here..." class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
+                  <input class="submit-button" type="submit" value="send">
+                  </form>
+                  </div>
+
+
       </div>
     </div>
   </header>
 
-  <div style="position:relative; width:50vw; margin:auto;">
-    <div class="chatbox-area">
-    <form action="" id="chatform">
-    <textarea placeholder="Type here..." class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
-    <input class="submit-button" type="submit" value="send">
-    </form>
-    </div>
-  </div>
-
-  <main>
+  <main id="everything">
     <section class="info fade-in">
       <div class="grid-container">
         <div class="grid-item">
@@ -615,7 +642,7 @@ Micheal Salmon and Crycella Freitag are Kansas Cities #1 source for Home Renovat
   </main>
 
   <svg style="display:none">
-    <symbol version="1.1" id="user-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <symbol version="1.1" id="user-icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24">
       <path d="M21 21v-2c0-1.38-0.561-2.632-1.464-3.536s-2.156-1.464-3.536-1.464h-8c-1.38 0-2.632 0.561-3.536 1.464s-1.464 2.156-1.464
         3.536v2c0 0.552 0.448 1 1 1s1-0.448 1-1v-2c0-0.829 0.335-1.577 0.879-2.121s1.292-0.879 2.121-0.879h8c0.829 0 1.577 0.335 2.121 0.879s0.879
         1.292 0.879 2.121v2c0 0.552 0.448 1 1 1s1-0.448 1-1zM17 7c0-1.38-0.561-2.632-1.464-3.536s-2.156-1.464-3.536-1.464-2.632 0.561-3.536 1.464-1.464
@@ -623,7 +650,7 @@ Micheal Salmon and Crycella Freitag are Kansas Cities #1 source for Home Renovat
         2.121s-1.292 0.879-2.121 0.879-1.577-0.335-2.121-0.879-0.879-1.292-0.879-2.121 0.335-1.577 0.879-2.121 1.292-0.879 2.121-0.879 1.577 0.335 2.121 0.879
         0.879 1.292 0.879 2.121z"></path>
     </symbol>
-    <symbol version="1.1" id="shop-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <symbol version="1.1" id="shop-icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24">
       <path d="M19 5h-14l1.5-2h11zM21.794 5.392l-2.994-3.992c-0.196-0.261-0.494-0.399-0.8-0.4h-12c-0.326
         0-0.616 0.156-0.8 0.4l-2.994 3.992c-0.043 0.056-0.081 0.117-0.111 0.182-0.065 0.137-0.096 0.283-0.095
         0.426v14c0 0.828 0.337 1.58 0.879 2.121s1.293 0.879 2.121 0.879h14c0.828 0 1.58-0.337 2.121-0.879s0.879-1.293
@@ -670,23 +697,74 @@ Micheal Salmon and Crycella Freitag are Kansas Cities #1 source for Home Renovat
     </symbol>
   </svg>
 </body>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js'></script>
+</body>
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 <script  src="./script0.js"></script>
 <script  src="./script.js"></script>
 <script  src="js/index.js"></script>
+<script  src="js/animate.js"></script>
+<script  src="js/tabletop.js"></script>
+<script  src="js/tabletop2.js"></script>
+<script  src="js/tabletop3.js"></script>
+<script  src="js/morph.js"></script>
+
+  <script>
 
 
-<script>
+
+  function found(){
+    var videoTime = parseInt(document.getElementById("vTime").innerHTML);
+    videoTime += 1;
+    document.getElementById("vTime").innerHTML = videoTime;
+    confetti();
+    }
+
+  $(function() {
+    var n = 0;
+    setInterval(function() {
+        n = Math.floor((Math.random() * 6));
+        $("#B div").hide();
+        $("#B").find('div:eq('+n+')').show();
+    },5000);
+  });
+
+  function randomize(collection) {
+    var randomNumber = Math.floor(Math.random() * collection.length);
+    return collection[randomNumber]
+  }
+
+  function clearCompute() {
+document.getElementById('menuButton1').style='background:#D95952';
+document.getElementById('menuButton2').style='background:#D95952';
+document.getElementById('menuButton3').style='background:#D95952';
+document.getElementById('menuButton4').style='background:#D95952';
+  }
+
+  function changeDash() {
+    var x = document.getElementById("changeDash");
+    if (x.innerHTML === "CLOSE") {
+      x.innerHTML = "INFO";
+      document.getElementById("item3").style.display = "none";
+      document.getElementById("item4").style.display = "none";
+    } else {
+      x.innerHTML = "CLOSE";
+      document.getElementById("item3").style.display = "block";
+      document.getElementById("item4").style.display = "block";
+    }
+  }
+
 
   function menuChange() {
     var x = document.getElementById("menuChange");
-    if (x.innerHTML === "HIDE") {
-      x.innerHTML = "OPEN CHAT";
+    if (x.innerHTML === "CLOSE CHAT") {
+      x.innerHTML = "OPEN";
       document.getElementById("item").style.display = "none";
     } else {
-      x.innerHTML = "HIDE";
+      x.innerHTML = "CLOSE CHAT";
       document.getElementById("item").style.display = "block";
     }
   }
@@ -699,533 +777,818 @@ Micheal Salmon and Crycella Freitag are Kansas Cities #1 source for Home Renovat
     }
   }
 
-function onSignInCallback(resp) {
-  gapi.client.load('plus', 'v1', apiClientLoaded);
-}
-
-/**
- * Sets up an API call after the Google API client loads.
- */
-function apiClientLoaded() {
-  gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
-}
-
-  var sendForm = document.querySelector('#chatform'),
-      textInput = document.querySelector('.chatbox'),
-      chatList = document.querySelector('.chatlist'),
-      userBubble = document.querySelectorAll('.userInput'),
-      botBubble = document.querySelectorAll('.bot__output'),
-      animateBotBubble = document.querySelectorAll('.bot__input--animation'),
-      overview = document.querySelector('.chatbot__overview'),
-      hasCorrectInput,
-      imgLoader = false,
-      animationCounter = 1,
-      animationBubbleDelay = 600,
-      input,
-      previousInput,
-      isReaction = false,
-      unkwnCommReaction = "I don't understand, can you check your spelling please.",
-      chatbotButton = document.querySelector(".submit-button")
-
-  sendForm.onkeydown = function(e){
-    if(e.keyCode == 13){
-      e.preventDefault();
-
-      //No mix ups with upper and lowercases
-      var input = textInput.value.toLowerCase();
-
-      //Empty textarea fix
-      if(input.length > 0) {
-        createBubble(input)
-      }
-    }
-  };
-
-  sendForm.addEventListener('submit', function(e) {
-    //so form doesnt submit page (no page refresh)
-    e.preventDefault();
-
-    //No mix ups with upper and lowercases
-    var input = textInput.value.toLowerCase();
-
-    //Empty textarea fix
-    if(input.length > 0) {
-      createBubble(input)
-    }
-  }) //end of eventlistener
-
-  var createBubble = function(input) {
-    //create input bubble
-    var chatBubble = document.createElement('li');
-    chatBubble.classList.add('userInput');
-
-    //adds input of textarea to chatbubble list item
-    chatBubble.innerHTML = input;
-
-    //adds chatBubble to chatlist
-    chatList.appendChild(chatBubble)
-
-    checkInput(input);
+  function clockButton(){
+    document.getElementById('button2').style.display = "block";
+  }
+  function clockIN(){
+    formAdmin();
   }
 
-  var checkInput = function(input) {
-    hasCorrectInput = false;
-    isReaction = false;
-    //Checks all text values in possibleInput
-    for(var textVal in possibleInput){
-      //If user reacts with "yes" and the previous input was in textVal
-      if(input == "yes" || input.indexOf("yes") >= 0){
-        if(previousInput == textVal) {
-          console.log("sausigheid");
+  var toggleVisibility2 = function(element) {
+    if(element.style.display=='none'){
+        element.style.display='block';
+    } else {
+        element.style.display='none';
+    }
+  }
 
-          isReaction = true;
-          hasCorrectInput = true;
-          botResponse(textVal);
+  var location;
+  var project;
+  var task;
+  var fName;
+  var userImage;
+
+  function startGeoLookup() {
+    navigator.geolocation.getCurrentPosition(success, error);
+     $('.overlay, .loader').fadeIn('fast');
+     setTimeout(function() {toggleVisibility(document.getElementById('form1'));}, 1000);
+     document.getElementById('button1').style.display = "none";
+   }
+
+  function success(pos) {
+    $('.overlay, .loader').fadeOut('fast');
+    var crd = pos.coords;
+    var tme = pos.timestamp;
+    var d = new Date(tme);
+    var t = new Date(tme);
+    // alert("Altitude: " + crd.altitude + " \nAltitudeAccuracy: " + crd.altitudeAccuracy);
+    var roundAcc = Math.floor(crd.accuracy);
+    document.getElementById('vresp9').innerHTML = crd.latitude + '<br>' + crd.longitude;
+  }
+
+  /* Error Codes: 1 PERMISSION_DENIED, 2 POSITION_UNAVAILABLE, 3 TIMEOUT */
+  function error(err) {
+    var geoerror = (err.code == (1, 2, 3) ? "Error loading" : err.message);
+    document.getElementById('vresp').innerHTML = geoerror;
+    $('.overlay, .loader').fadeOut('fast');
+  }
+
+
+  function onSignIn(googleUser) {
+
+  var profile = googleUser.getBasicProfile();
+  var fName = profile.getName();
+  var userImage = profile.getImageUrl();
+  document.getElementById('vresp1').innerHTML = profile.getName();
+  document.getElementById('profilePic').src = userImage;
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
+  switch(profile.getEmail()){
+    default:
+        setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/mcred.html';}, 9000);
+        break;
+        case 'micheal.mfg@gmail.com':
+        var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+        function init2() {
+                Tabletop2.init2( { key: public_spreadsheet_url2,
+                                 callback: showInfo2,
+                                 simpleSheet: true } );
+              }
+              init2();
+              function showInfo2(data) {
+                var mNum = 0;
+                time2 = data[mNum].time;
+                knowledgelevel2 = data[mNum].knowledgelevel;
+                credcoins2 = data[mNum].credcoins;
+                mcreds2 = data[mNum].mcreds;
+                hours2 = data[mNum].hours;
+                document.getElementById("hud1a").innerHTML = [ time2 ].join(", ");
+                document.getElementById("hud2").innerHTML = [ knowledgelevel2 ].join(", ");
+                document.getElementById("hud3").innerHTML = [ credcoins2 ].join(", ");
+                document.getElementById("hud4").innerHTML = [ mcreds2 ].join(", ");
+                document.getElementById("hud5").innerHTML = [ hours2 ].join(", ");
+              }
+              document.getElementById('employ').style.display = 'block';
+              break;
+
+        case 'woodmortar@gmail.com':
+        var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+        function init2() {
+                Tabletop2.init2( { key: public_spreadsheet_url2,
+                                 callback: showInfo2,
+                                 simpleSheet: true } );
+              }
+              init2();
+              function showInfo2(data) {
+                var mNum = 0;
+                time2 = data[mNum].time;
+                knowledgelevel2 = data[mNum].knowledgelevel;
+                credcoins2 = data[mNum].credcoins;
+                mcreds2 = data[mNum].mcreds;
+                hours2 = data[mNum].hours;
+                document.getElementById("hud1a").innerHTML = [ time2 ].join(", ");
+                document.getElementById("hud2").innerHTML = [ knowledgelevel2 ].join(", ");
+                document.getElementById("hud3").innerHTML = [ credcoins2 ].join(", ");
+                document.getElementById("hud4").innerHTML = [ mcreds2 ].join(", ");
+                document.getElementById("hud5").innerHTML = [ hours2 ].join(", ");
+              }
+              document.getElementById('employ').style.display = 'block';
+              break;
+
+        case 'pati09991@gmail.com':
+        var public_spreadsheet_url3 = 'https://docs.google.com/spreadsheets/d/15CTeL8jhHEZFhHu78aepZAwiINhz4_a-cd37vIavksk/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+        function init3() {
+                Tabletop3.init3( { key: public_spreadsheet_url3,
+                                 callback: showInfo3,
+                                 simpleSheet: true } );
+              }
+              init3();
+              function showInfo3(data) {
+                var mNum = 0;
+                time3 = data[mNum].time;
+                knowledgelevel3 = data[mNum].knowledgelevel;
+                credcoins3 = data[mNum].credcoins;
+                mcreds3 = data[mNum].mcreds;
+                hours3 = data[mNum].hours;
+                document.getElementById("hud1a").innerHTML = [ time3 ].join(", ");
+                document.getElementById("hud2").innerHTML = [ knowledgelevel3 ].join(", ");
+                document.getElementById("hud3").innerHTML = [ credcoins3 ].join(", ");
+                document.getElementById("hud4").innerHTML = [ mcreds3 ].join(", ");
+                document.getElementById("hud5").innerHTML = [ hours3 ].join(", ");
+              }
+              document.getElementById('employ').style.display = 'block';
+                              break;
+
+
+  }
+
+  }
+
+        function onSignInCallback(resp) {
+          gapi.client.load('plus', 'v1', apiClientLoaded);
         }
-      }
-      if(input == "no" && previousInput == textVal){
-        unkwnCommReaction = "For a list of commands type: Commands";
-        unknownCommand("I'm sorry to hear that :(")
-        unknownCommand(unkwnCommReaction);
-        hasCorrectInput = true;
-      }
-      //Is a word of the input also in possibleInput object?
-      if(input == textVal || input.indexOf(textVal) >=0 && isReaction == false){
-        console.log("succes");
-        hasCorrectInput = true;
-        botResponse(textVal);
-      }
-    }
-    //When input is not in possibleInput
-    if(hasCorrectInput == false){
-      console.log("failed");
-      unknownCommand(unkwnCommReaction);
-      hasCorrectInput = true;
-    }
-  }
 
-  // debugger;
+        /**
+         * Sets up an API call after the Google API client loads.
+         */
+        function apiClientLoaded() {
+          gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
+        }
 
-  function botResponse(textVal) {
-    //sets previous input to that what was called
-    // previousInput = input;
+          var sendForm = document.querySelector('#chatform'),
+              textInput = document.querySelector('.chatbox'),
+              chatList = document.querySelector('.chatlist'),
+              userBubble = document.querySelectorAll('.userInput'),
+              botBubble = document.querySelectorAll('.bot__output'),
+              animateBotBubble = document.querySelectorAll('.bot__input--animation'),
+              overview = document.querySelector('.chatbot__overview'),
+              hasCorrectInput,
+              imgLoader = false,
+              animationCounter = 1,
+              animationBubbleDelay = 600,
+              input,
+              previousInput,
+              isReaction = false,
+              unkwnCommReaction = "I don't understand, can you check your spelling please.",
+              chatbotButton = document.querySelector(".submit-button")
 
-    //create response bubble
-    var userBubble = document.createElement('li');
-    userBubble.classList.add('bot__output');
+          sendForm.onkeydown = function(e){
+            if(e.keyCode == 13){
+              e.preventDefault();
 
-    if(isReaction == true){
-      if (typeof reactionInput[textVal] === "function") {
-      //adds input of textarea to chatbubble list item
-        userBubble.innerHTML = reactionInput[textVal]();
-      } else {
-        userBubble.innerHTML = reactionInput[textVal];
-      }
-    }
+              //No mix ups with upper and lowercases
+              var input = textInput.value.toLowerCase();
 
-    if(isReaction == false){
-      //Is the command a function?
-      if (typeof possibleInput[textVal] === "function") {
-        // console.log(possibleInput[textVal] +" is a function");
-      //adds input of textarea to chatbubble list item
-        userBubble.innerHTML = possibleInput[textVal]();
-      } else {
-        userBubble.innerHTML = possibleInput[textVal];
-      }
-    }
-    //add list item to chatlist
-    chatList.appendChild(userBubble) //adds chatBubble to chatlist
+              //Empty textarea fix
+              if(input.length > 0) {
+                createBubble(input)
+              }
+            }
+          };
 
-    // reset text area input
-    textInput.value = "";
-  }
+          sendForm.addEventListener('submit', function(e) {
+            //so form doesnt submit page (no page refresh)
+            e.preventDefault();
 
-  function unknownCommand(unkwnCommReaction) {
-    // animationCounter = 1;
+            //No mix ups with upper and lowercases
+            var input = textInput.value.toLowerCase();
 
-    //create response bubble
-    var failedResponse = document.createElement('li');
+            //Empty textarea fix
+            if(input.length > 0) {
+              createBubble(input)
+            }
+          }) //end of eventlistener
 
-    failedResponse.classList.add('bot__output');
-    failedResponse.classList.add('bot__output--failed');
+          var createBubble = function(input) {
+            //create input bubble
+            var chatBubble = document.createElement('li');
+            chatBubble.classList.add('userInput');
 
-    //Add text to failedResponse
-    failedResponse.innerHTML = unkwnCommReaction; //adds input of textarea to chatbubble list item
+            //adds input of textarea to chatbubble list item
+            chatBubble.innerHTML = input;
 
-    //add list item to chatlist
-    chatList.appendChild(failedResponse) //adds chatBubble to chatlist
+            //adds chatBubble to chatlist
+            chatList.appendChild(chatBubble)
 
-    animateBotOutput();
+            checkInput(input);
+          }
 
-    // reset text area input
-    textInput.value = "";
+          var checkInput = function(input) {
+            hasCorrectInput = false;
+            isReaction = false;
+            //Checks all text values in possibleInput
+            for(var textVal in possibleInput){
+              //If user reacts with "yes" and the previous input was in textVal
+              if(input == "yes" || input.indexOf("yes") >= 0){
+                if(previousInput == textVal) {
+                  console.log("sausigheid");
 
-    //Sets chatlist scroll to bottom
-    chatList.scrollTop = chatList.scrollHeight;
+                  isReaction = true;
+                  hasCorrectInput = true;
+                  botResponse(textVal);
+                }
+              }
+              if(input == "no" && previousInput == textVal){
+                unkwnCommReaction = "For a list of commands type: Commands";
+                unknownCommand("I'm sorry to hear that :(")
+                unknownCommand(unkwnCommReaction);
+                hasCorrectInput = true;
+              }
+              //Is a word of the input also in possibleInput object?
+              if(input == textVal || input.indexOf(textVal) >=0 && isReaction == false){
+                console.log("succes");
+                hasCorrectInput = true;
+                botResponse(textVal);
+              }
+            }
+            //When input is not in possibleInput
+            if(hasCorrectInput == false){
+              console.log("failed");
+              unknownCommand(unkwnCommReaction);
+              hasCorrectInput = true;
+            }
+          }
 
-    animationCounter = 1;
-  }
+          // debugger;
 
-  function responseText(e) {
+          function botResponse(textVal) {
+            //sets previous input to that what was called
+            // previousInput = input;
 
-    var response = document.createElement('li');
+            //create response bubble
+            var userBubble = document.createElement('li');
+            userBubble.classList.add('bot__output');
 
-    response.classList.add('bot__output');
+            if(isReaction == true){
+              if (typeof reactionInput[textVal] === "function") {
+              //adds input of textarea to chatbubble list item
+                userBubble.innerHTML = reactionInput[textVal]();
+              } else {
+                userBubble.innerHTML = reactionInput[textVal];
+              }
+            }
 
-    //Adds whatever is given to responseText() to response bubble
-    response.innerHTML = e;
+            if(isReaction == false){
+              //Is the command a function?
+              if (typeof possibleInput[textVal] === "function") {
+                // console.log(possibleInput[textVal] +" is a function");
+              //adds input of textarea to chatbubble list item
+                userBubble.innerHTML = possibleInput[textVal]();
+              } else {
+                userBubble.innerHTML = possibleInput[textVal];
+              }
+            }
+            //add list item to chatlist
+            chatList.appendChild(userBubble) //adds chatBubble to chatlist
 
-    chatList.appendChild(response);
+            // reset text area input
+            textInput.value = "";
+          }
 
-    animateBotOutput();
+          function unknownCommand(unkwnCommReaction) {
+            // animationCounter = 1;
 
-    console.log(response.clientHeight);
+            //create response bubble
+            var failedResponse = document.createElement('li');
 
-    //Sets chatlist scroll to bottom
-    setTimeout(function(){
-      chatList.scrollTop = chatList.scrollHeight;
-      console.log(response.clientHeight);
-    }, 0)
-  }
+            failedResponse.classList.add('bot__output');
+            failedResponse.classList.add('bot__output--failed');
 
-  function responseImg(e) {
-    var image = new Image();
+            //Add text to failedResponse
+            failedResponse.innerHTML = unkwnCommReaction; //adds input of textarea to chatbubble list item
 
-    image.classList.add('bot__output');
-    //Custom class for styling
-    image.classList.add('bot__outputImage');
-    //Gets the image
-    image.src = "./"+e;
-    chatList.appendChild(image);
+            //add list item to chatlist
+            chatList.appendChild(failedResponse) //adds chatBubble to chatlist
 
-    animateBotOutput()
-    if(image.completed) {
-      chatList.scrollTop = chatList.scrollTop + image.scrollHeight;
-    }
-    else {
-      image.addEventListener('load', function(){
-        chatList.scrollTop = chatList.scrollTop + image.scrollHeight;
-      })
-    }
-  }
+            animateBotOutput();
 
-  //change to SCSS loop
-  function animateBotOutput() {
-    chatList.lastElementChild.style.animationDelay= (animationCounter * animationBubbleDelay)+"ms";
-    animationCounter++;
-    chatList.lastElementChild.style.animationPlayState = "running";
-  }
+            // reset text area input
+            textInput.value = "";
 
-  function commandReset(e){
-    animationCounter = 1;
-    previousInput = Object.keys(possibleInput)[e];
-  }
+            //Sets chatlist scroll to bottom
+            chatList.scrollTop = chatList.scrollHeight;
 
-  // hlep
+            animationCounter = 1;
+          }
 
-  var possibleInput = {
-    // "hlep" : this.help(),
-    "help" : function(){
-      responseText("try trying something like... show BEST WORK")
-      responseText("Typing COMMANDS will always bring up the main list.")
-      commandReset(0);
+          function responseText(e) {
+
+            var response = document.createElement('li');
+
+            response.classList.add('bot__output');
+
+            //Adds whatever is given to responseText() to response bubble
+            response.innerHTML = e;
+
+            chatList.appendChild(response);
+
+            animateBotOutput();
+
+            console.log(response.clientHeight);
+
+            //Sets chatlist scroll to bottom
+            setTimeout(function(){
+              chatList.scrollTop = chatList.scrollHeight;
+              console.log(response.clientHeight);
+            }, 0)
+          }
+
+          function responseImg(e) {
+            var image = new Image();
+
+            image.classList.add('bot__output');
+            //Custom class for styling
+            image.classList.add('bot__outputImage');
+            //Gets the image
+            image.src = "./pics/"+e;
+            chatList.appendChild(image);
+
+            animateBotOutput()
+            if(image.completed) {
+              chatList.scrollTop = chatList.scrollTop + image.scrollHeight;
+            }
+            else {
+              image.addEventListener('load', function(){
+                chatList.scrollTop = chatList.scrollTop + image.scrollHeight;
+              })
+            }
+          }
+
+          //change to SCSS loop
+          function animateBotOutput() {
+            chatList.lastElementChild.style.animationDelay= (animationCounter * animationBubbleDelay)+"ms";
+            animationCounter++;
+            chatList.lastElementChild.style.animationPlayState = "running";
+          }
+
+          function commandReset(e){
+            animationCounter = 1;
+            previousInput = Object.keys(possibleInput)[e];
+          }
+
+          // hlep
+
+          var possibleInput = {
+            // "hlep" : this.help(),
+            "help" : function(){
+              responseText("Typing COMMANDS will always bring up the main list.")
+              commandReset(0);
+              return
+              },
+            "best work" : function(){
+              responseText("I will show you our best work!");
+              responseImg("4.jpg");
+              responseImg("1.jpg");
+              responseImg("2.jpg");
+              responseImg("3.jpg");
+              responseImg("kitchen.jpg");
+              responseText("Would you like to see more? (Yes/No)")
+              commandReset(1);
+              return
+              },
+            "about" : function(){
+              responseText("Salmon.fund is a movement.");
+              responseText("We stand for equal rights, public accountablility, and affordable housing.");
+              responseText("Using your google account, I'll be able to remember you.");
+              responseText("Would you like to connect? (Yes/No)");
+              commandReset(2);
+              return
+              },
+            "experience" : function(){
+              responseText("We've completed over 20 High-end to Flips including interiors and exteriors around Kansas");
+              responseText("We manage a team of highly competent sub-contractors focusing on thier continuing education.");
+              responseText("Micheal Salmon, Founder and Co-Owner pays special attention to project details and workflow ensuring the best possible value.");
+              responseText("Crycella Freitag, Co-Owner and human resource powerhouse manages all aspects of communication, logistics and finance.");
+              responseText("Would you like to see our Business Process Manual? (Yes/No)");
+              commandReset(3);
+              return
+            },
+            "specials" : function(){
+              responseText("Spring means decks, patios, and landscaping");
+              responseText("We're ordering our lumber for summer projects, so all appointments made before june 29th get all lumber AT COST.");
+              responseText("$6000 Two-Story decks");
+              responseText("$4000 /room Water Damage Reframe");
+              responseText("$2500 Emperor's Tree House");
+              commandReset(4);
+              return
+            },
+            "theme" : function(){
+              responseText("Our 2020 aesthetic begin with:");
+              responseText("Chic Grey Walls");
+              responseText("Satin Ultra-White Trim");
+              responseText("Midnight Horse Black Front Door");
+              responseText("Forest Green, Faded Two-Tone Exterior");
+              commandReset(5);
+              return
+            },
+            "vision" : function(){
+              responseText("Micheal Salmon plans to run for public office in 2026.");
+              responseText("As an advocate for BLM, Police reform, and free education, Micheal wants to integrate technology and community responsibility.");
+              responseText("Micheal believes in giving equal oppourtunity, by focusing on the issues city and state level that prevent our society from moving outside social bias.");
+              responseText("Our small business tradespeople are the backbone for Kansas growth, and the future in sustained job oppourtunity.");
+              commandReset(6);
+              return
+            },
+            "contact" : function(){
+              responseText("email: <a href='mailto:micheal.mfg@gmail.com?Subject=Hello%20Micheal' target='_top'>send me a message</a>");
+              commandReset(7);
+              return
+            },
+            "salmon" : function(){
+              responseText("UmmmmmHmmmmmm.... Yes?");
+              commandReset(8);
+              return
+            },
+            "command" : function(){
+              responseText("about, best work, contact, mcred <br> specials, theme, experience, vision");
+              commandReset(9);
+              return
+            },
+            "logistics" : function(){
+              responseText("Entering logistics mode...");
+              responseText("Please Select RECORD NOW from the quick access menu.");
+              document.getElementById('fo1').innerHTML = "RECORD NOW";
+              document.getElementById('fo2').innerHTML = "RECORD NOW";
+              document.getElementById('fo3').innerHTML = "RECORD NOW";
+              document.getElementById('vresp8').innerHTML = "Logistics Start/End";
+              commandReset(10);
+              return
+            },
+            "lunch" : function(){
+              responseText("Phew... Rough day.");
+              responseText("Please Select TAKE LUNCH from the quick access menu.");
+              document.getElementById('fo1').innerHTML = "TAKE LUNCH";
+              document.getElementById('fo2').innerHTML = "TAKE LUNCH";
+              document.getElementById('fo3').innerHTML = "TAKE LUNCH";
+              document.getElementById('vresp8').innerHTML = "LUNCH Start/End";
+              commandReset(11);
+              return
+            },
+            "tucked" : function(){
+              responseText("Finally, I was getting worried");
+              responseText("Please Select TUCKED IN from the quick access menu.");
+              document.getElementById('fo1').innerHTML = "TUCKED IN";
+              document.getElementById('fo2').innerHTML = "TUCKED IN";
+              document.getElementById('fo3').innerHTML = "TUCKED IN";
+              document.getElementById('vresp8').innerHTML = "TUCKED IN";
+              commandReset(12);
+              return
+            },
+            "mcred" : function(){
+              responseText("<a href='https://drive.google.com/open?id=10lbMd2b0YuqKF9mq5D9gMK6g58yQ849lJ2_LwJ3QpRI' target='_blank'>Safety Training</a> <br>  <a href='https://drive.google.com/open?id=1aovEiosNLQ2Bv09UtQuf15Pxf28PXco4ogT02ryoF1w' target='_blank'>Safety Practices</a> <br> <a href='https://drive.google.com/open?id=1OLezOcO7mLV8Jc0Mp6sy9o4HodRoHZlT67xecsrpbTM' style='color:red;' target='_blank'>Safety TEST</a>");
+              responseText("<a href='https://drive.google.com/open?id=1sIbw07cA7386r0BX2-nRuf5_6BO8obgt4868zk1MMvU' target='_blank'>Drywall & Texture Study Guide</a> <br>  <a href='https://drive.google.com/open?id=1mfcnDzY4__0RGBMBmOoUm3KWVUxoXyYwWuwHNY7M788' style='color:red;' target='_blank'>Drywall & Texture TEST</a> ");
+              responseText("<a href='https://drive.google.com/open?id=1ywAJ7PvYA3WsdG1ninCW0S8H18etPnLJ_asRghmqP9I' target='_blank'>Painting Study Guide</a> <br>  <a href='https://drive.google.com/open?id=1mKbNJ-wTZ9MlJrOtLc1Ei4C0f08HrpTnUIPmk2l_25I' style='color:red;' target='_blank'>Painting TEST</a> ");
+              responseText("<a href='https://drive.google.com/open?id=16vgbiM7Y6I2D4UYYffhL44UDrJ1iHVMNTo7DJ7uQTCE' target='_blank'>Tile Study Guide</a> <br>  <a href='https://drive.google.com/open?id=1fUV4WDuQJfwW7cukP1aoeFlR0ZgY1MVK3IWeqdO4jH4' style='color:red;' target='_blank'>Tile TEST</a> ");
+              commandReset(13);
+              return
+            },
+            "receipt" : function(){
+              responseText("We'll need a photo of the receipt.");
+                setTimeout(function() {window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSf7j7tfOSDwOR2U5UIarKxhRsUwIlBhoJkOtSq7kDAPmUl-3Q/viewform"}, 4000);
+                },
+
+                "drywall" : function(){
+           responseText("Which step of drywalling are you on?");
+           responseText("Shimming <br> Hanging <br> Mudding <br> Sanding <br> Finish ");
+           responseText("Type one of these into your chatbox and I'll walk you through how to move forward");
+           commandReset(0);
+           return
+           },
+
+         "shimming" : function(){
+           responseText("So you want your walls FLAT flat, okay! ");
+           responseText("Hold the longest level you have (4ft or longer is ideal) across as many studs as possible to identify low areas");
+           responseText("Shim out all low areas to match the highest stud");
+           responseText("Decide what kind of sheetrock you need <br> Mold resistant is great for bathrooms and basements <br> ½ in is the most common thickness for drywall <br> If you’re patching, make sure to match the existing drywall");
+           responseText("Type &quot;hanging&quot; when you’re ready for the next step!");
+           commandReset(0);
+           return
+           },
+
+         "hanging" : function(){
+           responseText("Mount drywall on the ceilings first and the walls afterwards <br> It is more difficult but yields better results")
+           responseText("Mark your studs before you do anything else")
+           responseText("Measure where the drywall will be mounted before hanging <br> If the edge of the drywall does not land on a stud, it should be no more than 4in away from the nearest stud");
+           responseText("Cut the drywall if necessary <br> Use a T-square or chalk line to draw your cut line <br> Use a utility knife to cut the surface paper <br> IMPORTANT NOTE Utility knives should be sharp enough to achieve this with only a small amount of pressure. If your knife is not cutting, change your blade. Do NOT apply more pressure, this increases the risk of injury");
+           responseText("Bend the piece at the cut line until it snaps then use the utility knife on the paper on the other side")
+           responseText("For a super crisp edge, plane the edge of the piece with your utility knife or shaving tool")
+           responseText("Type &quot;mudding&quot; when you’re ready for the next step");
+           commandReset(0);
+           return
+           },
+
+         "mudding" : function(){
+           responseText("Decide what kind of drywall mud you should use <br> All Purpose matches its name and can be used almost anywhere <br> Topping gives a super smooth finish but is dense and takes a long time to dry <br> Setting Compounds, like 20 minute mud, are perfect for quick patches but should not be used as a top coat");
+           responseText("Apply your mud heavily to all seams and corners");
+           responseText("Place your seam tape on the heavily mudded joints");
+           responseText("Using a putty knife, squeeze the tape flat. <br> Excess mud should squeeze out both sides during this step");
+           responseText("Using the excess mud and as much extra mud as you need, smooth out all tape areas until the tape cannot be seen");
+           responseText("Allow this layer of mud to dry THOROUGHLY before moving on to the next step");
+           responseText("Type &quot;sanding&quot; when you’re ready for the next step!");
+           commandReset(0);
+           return
+           },
+
+         "sanding" : function(){
+           responseText("All sanding should be done with the finished product in mind so keep a lighter hand than you think");
+           responseText("Use a fine or super fine grit sanding sponge or sanding pad");
+           responseText("Decide how you will sand <br> Sanding sponges are great for small areas like closets or trouble areas that need a little extra love <br> Sanding poles are perfect for large expanses and ceilings");
+           responseText("Sand down all seams and screw holes in a circular motion until smooth");
+           responseText("Special focus should be given to large floats with smoothness as the goal <br>-Pro Tip: Smooth always beats flat! Large blemishes can be worked out with a good float so don’t spoil it with over sanding!");
+           responseText("It is very likely that you will have to repeat this step after you sand <br> this is called a skim coat and can be done more than once if necessary.");
+           responseText("Type &quot;finish&quot; when you are ready for the next step");
+           commandReset(0);
+           return
+           },
+
+         "finish" : function(){
+           responseText("Finish doesn’t mean the end here, just the final look!");
+           responseText("Decide what type of finish your after <br> Flat <br> Texture ");
+           responseText("Type one of these into your chatbox and I'll walk you through how to get your desired finish");
+           return
+           },
+
+         "flat" : function(){
+           responseText("You’ve decided on flat walls and ceilings! ");
+           responseText("Flat is one of the most difficult finishes to pull off but I believe in you! <br> Break out the drywall mud because you will need it!");
+           responseText("After the initial sanding you will definitely need a skim coat <br> You can apply the skim coat to trouble areas in the way described during mudding <br> You can also slightly water down the drywall mud to the consistency of pancake batter and roll it on with a paint roller <br> Follow the roll with a large 12in putty knife to smooth out large expanses quickly.");
+           responseText("Allow all skim coat areas to dry thoroughly");
+           responseText("Repeat the sanding step <br> Delicacy is key for a flat finish <br> -Pro Tip: Look at each of your areas from different angles to ensure a smooth finish from everywhere in the room");
+           responseText("Apply primer in the preferred method (See priming for more details)” <br> This will allow you to see flaws and imperfections you may have missed before");
+           responseText("Once the primer is dry, use paint tape to mark areas that need touch up mud <br> Before you remove the tape, allow touch ups to dry and sand each area <br> removing the paint tape before sanding makes it easier to miss spots.");
+           responseText("Your walls and surfaces should now be flat. Enjoy your chic new space!");
+           return
+           },
+
+       "texture" : function(){
+           responseText("You’ve decided on textured walls and ceilings! ");
+           responseText("Be prepared to get messy! From popcorn and knockdown to comb and crows feet, there is no clean way to do texture <br> Before we get there, first, we have to prep our surface");
+           responseText("After the initial sanding you will probably need a skim coat <br> You can apply the skim coat to trouble areas in the way described during mudding <br> You can also slightly water down the drywall mud to the consistency of pancake batter and roll it on with a paint roller <br> Follow the roller with a 12in putty knife to smooth out large expanses quickly.");
+           responseText("Allow all skim coat areas to dry thoroughly");
+           responseText("Repeat the sanding step <br> Getting the walls as smooth as possible in a reasonable time is key <br> Textures tend to hide a lot and a flawless finish isn’t required but that doesn’t mean neglect your skim coat");
+           responseText("Texture does not have to be standard and custom textures are not uncommon and can be a great way to make a bold statement");
+           responseText("Regardless of what kind of texture you’re doing be it knockdown or a custom comb in a wave, the mix is key <br> Ensure your texture is thoroughly mixed and stirred<br> Clumps will clog your hoppers and gouge your product and air bubbles will ruin an otherwise perfectly textured finish ");
+           responseText("If you are applying your texture with a hopper, consider protecting areas in the line of fire that are not intended to be textured <br> Texture is easy to sand down so this step is not always necessary but should be considered especially for larger areas");
+           responseText("Apply the texture in the style desired and allow to dry thoroughly <br> Using a pole sander, very lightly sand for a consistent height and a crisp finish <br> When we say lightly, we mean lightly!! That pole sander should be barely touching the surface");
+           responseText("Your walls and surfaces should now be textured. Enjoy your chic new space!");
+           return
+           },
+
+  "tile" : function(){
+      responseText("Which step of tiling are you on?");
+      responseText("Leveling <br> Placement <br> Tiling <br> Grout <br> Polish ");
+      responseText("Type one of these into your chatbox and I'll walk you through how to move forward");
       return
       },
-    "best work" : function(){
-      responseText("I will show you our best work!");
-      responseImg("image0.jpg");
-      responseImg("image1.jpg");
-      responseImg("image2.jpg");
-      responseImg("image3.jpg");
-      responseImg("image4.jpg");
-      responseText("Would you like to see more? (Yes/No)")
-      commandReset(1);
+
+    "leveling" : function(){
+      responseText("For wood floors or subflooring <br> - Lay out hardie backer board (Do NOT secure yet) <br> - Shim underneath any areas that are low <br> - Secure hardie backer with specialized screws");
+      responseText("For cement floors <br> - Apply autoleveling compound according to manufacturer's instructions <br> - Allow to dry thoroughly <br> - Mix thinset mortar slightly thinner than manufacturer recommendation. The consistency of pancake batter is ideal for this step <br> - Apply mortar to any dramatically lower areas using a 'float out' method");
+      responseText("For walls or horizontal surfaces <br> - Identify low areas before demolition <br> - Shim out at the stud <br> - Mount drywall or hardie backer with corresponding screw type");
       return
       },
-    "about" : function(){
-      responseText("Salmon here, your digital assistant for everything WoodandMortar.");
-      responseText("I'm also a Salmon.fund expert.");
-      responseText("Using your google account, I'll be able to remember you.");
-      responseText("Would you like to connect? (Yes/No)");
-      commandReset(2);
+
+    "placement" : function(){
+      responseText("All placement starts with the center line. Finding the center line is always based off of maximum visual aesthetic");
+      responseText("For a single room's floor <br> - Measure the center point at each end of the room running the direction you intend your tile to run <br> - Draw or string chalk this line");
+      responseText("For multiple room's floor <br> - Find the line that intersects the most rooms (halls, doorways, intersections, etc.) <br> - Place a long level or board in the area until two points of measure can be decided. <br> - For precision you may use the two points of measure but in most cases, placing a long level or board is sufficient enough for eyeing a straight center line <br> - Trace your level or board or use a chalk line to mark");
+      responseText("For walls or horizontal surfaces <br> - The wall opposite of the entry to a room should be the center point <br> - Measure the center point at the top and bottom of the wall <br> - Draw or string chalk this line");
+      responseText("Type &quot;place 2&quot; when you're ready for the next step");
       return
       },
-    "experience" : function(){
-      responseText("We've completed 21 High-end to Flip Kitchens in the past 8 months");
-      responseText("We sub-contract 75% of our work load, to Kansas City non-profits through our mentorship platform.");
-      responseText("Micheal Salmon, Founder and Co-Owner pays special attention to project details and workflow ensuring the best possible value.");
-      responseText("Crycella Freitag, Co-Owner and human resource powerhouse manages all aspects of communication, logistics and finance.");
-      responseText("Would you like to see our Business Process Manual? (Yes/No)");
-      commandReset(3);
-      return
-    },
-    "specials" : function(){
-      responseText("Spring means decks, patios, and landscaping");
-      responseText("We're ordering our lumber for summer projects, so all appointments made before june 29th get all lumber AT COST.");
-      responseText("$6000 Two-Story decks");
-      responseText("$4000 /room Water Damage Reframe");
-      responseText("$2500 Emperor's Tree House");
-      commandReset(4);
-      return
-    },
-    "theme" : function(){
-      responseText("Our 2019 aesthetic begin with:");
-      responseText("Chic Grey Walls");
-      responseText("Satin Ultra-White Trim");
-      responseText("Midnight Horse Black Front Door");
-      responseText("Forest Green, Faded Two-Tone Exterior");
-      commandReset(5);
-      return
-    },
-    "vision" : function(){
-      responseText("We are aiming for completing WoodandMortar.edu by 2022");
-      responseText("By training locals in specialized trades,");
-      responseText("we are giving equal oppourtunity for high yield local property investments and ownership.");
-      responseText("Our tradespeople will be the backbone for Kansas City remodeling.");
-      commandReset(6);
-      return
-    },
-    "contact" : function(){
-      responseText("email: <a href='mailto:micheal.mfg@gmail.com?Subject=Hello%20Micheal' target='_top'>send me a message</a>");
-      commandReset(7);
-      return
-    },
-    "salmon" : function(){
-      responseText("UmmmmmHmmmmmm.... Yes?");
-      commandReset(8);
-      return
-    },
-    "commands" : function(){
-      responseText("about, best work, contact, mcred <br> specials, theme, experience, vision");
-      commandReset(9);
-      return
-    },
-    "logistics" : function(){
-      responseText("Entering logistics mode...");
-      responseText("Please Select RECORD NOW from the quick access menu.");
-      document.getElementById('fo1').innerHTML = "RECORD NOW";
-      document.getElementById('fo2').innerHTML = "RECORD NOW";
-      document.getElementById('fo3').innerHTML = "RECORD NOW";
-      document.getElementById('vresp8').innerHTML = "Logistics Start/End";
-      commandReset(10);
-      return
-    },
-    "lunch" : function(){
-      responseText("Phew... Rough day.");
-      responseText("Please Select TAKE LUNCH from the quick access menu.");
-      document.getElementById('fo1').innerHTML = "TAKE LUNCH";
-      document.getElementById('fo2').innerHTML = "TAKE LUNCH";
-      document.getElementById('fo3').innerHTML = "TAKE LUNCH";
-      document.getElementById('vresp8').innerHTML = "LUNCH Start/End";
-      commandReset(11);
-      return
-    },
-    "tucked" : function(){
-      responseText("Finally, I was getting worried");
-      responseText("Please Select TUCKED IN from the quick access menu.");
-      document.getElementById('fo1').innerHTML = "TUCKED IN";
-      document.getElementById('fo2').innerHTML = "TUCKED IN";
-      document.getElementById('fo3').innerHTML = "TUCKED IN";
-      document.getElementById('vresp8').innerHTML = "TUCKED IN";
-      commandReset(12);
-      return
-    },
-    "mcred" : function(){
-      responseText("<a href='https://drive.google.com/open?id=10lbMd2b0YuqKF9mq5D9gMK6g58yQ849lJ2_LwJ3QpRI' target='_blank'>Safety Training</a> <br>  <a href='https://drive.google.com/open?id=1aovEiosNLQ2Bv09UtQuf15Pxf28PXco4ogT02ryoF1w' target='_blank'>Safety Practices</a> <br> <a href='https://drive.google.com/open?id=1OLezOcO7mLV8Jc0Mp6sy9o4HodRoHZlT67xecsrpbTM' style='color:red;' target='_blank'>Safety TEST</a>");
-      responseText("<a href='https://drive.google.com/open?id=1sIbw07cA7386r0BX2-nRuf5_6BO8obgt4868zk1MMvU' target='_blank'>Drywall & Texture Study Guide</a> <br>  <a href='https://drive.google.com/open?id=1mfcnDzY4__0RGBMBmOoUm3KWVUxoXyYwWuwHNY7M788' style='color:red;' target='_blank'>Drywall & Texture TEST</a> ");
-      responseText("<a href='https://drive.google.com/open?id=1ywAJ7PvYA3WsdG1ninCW0S8H18etPnLJ_asRghmqP9I' target='_blank'>Painting Study Guide</a> <br>  <a href='https://drive.google.com/open?id=1mKbNJ-wTZ9MlJrOtLc1Ei4C0f08HrpTnUIPmk2l_25I' style='color:red;' target='_blank'>Painting TEST</a> ");
-      responseText("<a href='https://drive.google.com/open?id=16vgbiM7Y6I2D4UYYffhL44UDrJ1iHVMNTo7DJ7uQTCE' target='_blank'>Tile Study Guide</a> <br>  <a href='https://drive.google.com/open?id=1fUV4WDuQJfwW7cukP1aoeFlR0ZgY1MVK3IWeqdO4jH4' style='color:red;' target='_blank'>Tile TEST</a> ");
-      commandReset(13);
-      return
-    },
-    "receipt" : function(){
-      responseText("We'll need a photo of the receipt.");
-        setTimeout(function() {window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSf7j7tfOSDwOR2U5UIarKxhRsUwIlBhoJkOtSq7kDAPmUl-3Q/viewform"}, 4000);
-        },
 
-        "drywall" : function(){
-   responseText("Which step of drywalling are you on?");
-   responseText("Shimming <br> Hanging <br> Mudding <br> Sanding <br> Finish ");
-   responseText("Type one of these into your chatbox and I'll walk you through how to move forward");
-   commandReset(0);
-   return
-   },
-
- "shimming" : function(){
-   responseText("So you want your walls FLAT flat, okay! ");
-   responseText("Hold the longest level you have (4ft or longer is ideal) across as many studs as possible to identify low areas");
-   responseText("Shim out all low areas to match the highest stud");
-   responseText("Decide what kind of sheetrock you need <br> Mold resistant is great for bathrooms and basements <br> ½ in is the most common thickness for drywall <br> If you’re patching, make sure to match the existing drywall");
-   responseText("Type &quot;hanging&quot; when you’re ready for the next step!");
-   commandReset(0);
-   return
-   },
-
- "hanging" : function(){
-   responseText("Mount drywall on the ceilings first and the walls afterwards <br> It is more difficult but yields better results")
-   responseText("Mark your studs before you do anything else")
-   responseText("Measure where the drywall will be mounted before hanging <br> If the edge of the drywall does not land on a stud, it should be no more than 4in away from the nearest stud");
-   responseText("Cut the drywall if necessary <br> Use a T-square or chalk line to draw your cut line <br> Use a utility knife to cut the surface paper <br> IMPORTANT NOTE Utility knives should be sharp enough to achieve this with only a small amount of pressure. If your knife is not cutting, change your blade. Do NOT apply more pressure, this increases the risk of injury");
-   responseText("Bend the piece at the cut line until it snaps then use the utility knife on the paper on the other side")
-   responseText("For a super crisp edge, plane the edge of the piece with your utility knife or shaving tool")
-   responseText("Type &quot;mudding&quot; when you’re ready for the next step");
-   commandReset(0);
-   return
-   },
-
- "mudding" : function(){
-   responseText("Decide what kind of drywall mud you should use <br> All Purpose matches its name and can be used almost anywhere <br> Topping gives a super smooth finish but is dense and takes a long time to dry <br> Setting Compounds, like 20 minute mud, are perfect for quick patches but should not be used as a top coat");
-   responseText("Apply your mud heavily to all seams and corners");
-   responseText("Place your seam tape on the heavily mudded joints");
-   responseText("Using a putty knife, squeeze the tape flat. <br> Excess mud should squeeze out both sides during this step");
-   responseText("Using the excess mud and as much extra mud as you need, smooth out all tape areas until the tape cannot be seen");
-   responseText("Allow this layer of mud to dry THOROUGHLY before moving on to the next step");
-   responseText("Type &quot;sanding&quot; when you’re ready for the next step!");
-   commandReset(0);
-   return
-   },
-
- "sanding" : function(){
-   responseText("All sanding should be done with the finished product in mind so keep a lighter hand than you think");
-   responseText("Use a fine or super fine grit sanding sponge or sanding pad");
-   responseText("Decide how you will sand <br> Sanding sponges are great for small areas like closets or trouble areas that need a little extra love <br> Sanding poles are perfect for large expanses and ceilings");
-   responseText("Sand down all seams and screw holes in a circular motion until smooth");
-   responseText("Special focus should be given to large floats with smoothness as the goal <br>-Pro Tip: Smooth always beats flat! Large blemishes can be worked out with a good float so don’t spoil it with over sanding!");
-   responseText("It is very likely that you will have to repeat this step after you sand <br> this is called a skim coat and can be done more than once if necessary.");
-   responseText("Type &quot;finish&quot; when you are ready for the next step");
-   commandReset(0);
-   return
-   },
-
- "finish" : function(){
-   responseText("Finish doesn’t mean the end here, just the final look!");
-   responseText("Decide what type of finish your after <br> Flat <br> Texture ");
-   responseText("Type one of these into your chatbox and I'll walk you through how to get your desired finish");
-   return
-   },
-
- "flat" : function(){
-   responseText("You’ve decided on flat walls and ceilings! ");
-   responseText("Flat is one of the most difficult finishes to pull off but I believe in you! <br> Break out the drywall mud because you will need it!");
-   responseText("After the initial sanding you will definitely need a skim coat <br> You can apply the skim coat to trouble areas in the way described during mudding <br> You can also slightly water down the drywall mud to the consistency of pancake batter and roll it on with a paint roller <br> Follow the roll with a large 12in putty knife to smooth out large expanses quickly.");
-   responseText("Allow all skim coat areas to dry thoroughly");
-   responseText("Repeat the sanding step <br> Delicacy is key for a flat finish <br> -Pro Tip: Look at each of your areas from different angles to ensure a smooth finish from everywhere in the room");
-   responseText("Apply primer in the preferred method (See priming for more details)” <br> This will allow you to see flaws and imperfections you may have missed before");
-   responseText("Once the primer is dry, use paint tape to mark areas that need touch up mud <br> Before you remove the tape, allow touch ups to dry and sand each area <br> removing the paint tape before sanding makes it easier to miss spots.");
-   responseText("Your walls and surfaces should now be flat. Enjoy your chic new space!");
-   return
-   },
-
-"texture" : function(){
-   responseText("You’ve decided on textured walls and ceilings! ");
-   responseText("Be prepared to get messy! From popcorn and knockdown to comb and crows feet, there is no clean way to do texture <br> Before we get there, first, we have to prep our surface");
-   responseText("After the initial sanding you will probably need a skim coat <br> You can apply the skim coat to trouble areas in the way described during mudding <br> You can also slightly water down the drywall mud to the consistency of pancake batter and roll it on with a paint roller <br> Follow the roller with a 12in putty knife to smooth out large expanses quickly.");
-   responseText("Allow all skim coat areas to dry thoroughly");
-   responseText("Repeat the sanding step <br> Getting the walls as smooth as possible in a reasonable time is key <br> Textures tend to hide a lot and a flawless finish isn’t required but that doesn’t mean neglect your skim coat");
-   responseText("Texture does not have to be standard and custom textures are not uncommon and can be a great way to make a bold statement");
-   responseText("Regardless of what kind of texture you’re doing be it knockdown or a custom comb in a wave, the mix is key <br> Ensure your texture is thoroughly mixed and stirred<br> Clumps will clog your hoppers and gouge your product and air bubbles will ruin an otherwise perfectly textured finish ");
-   responseText("If you are applying your texture with a hopper, consider protecting areas in the line of fire that are not intended to be textured <br> Texture is easy to sand down so this step is not always necessary but should be considered especially for larger areas");
-   responseText("Apply the texture in the style desired and allow to dry thoroughly <br> Using a pole sander, very lightly sand for a consistent height and a crisp finish <br> When we say lightly, we mean lightly!! That pole sander should be barely touching the surface");
-   responseText("Your walls and surfaces should now be textured. Enjoy your chic new space!");
-   return
-   },
-
-"tile" : function(){
-responseText("Which step of tiling are you on?");
-responseText("Leveling <br> Placement <br> Tiling <br> Grout <br> Polish ");
-responseText("Type one of these into your chatbox and I'll walk you through how to move forward");
-return
-},
-
-"leveling" : function(){
-responseText("For wood floors or subflooring <br> - Lay out hardie backer board (Do NOT secure yet) <br> - Shim underneath any areas that are low <br> - Secure hardie backer with specialized screws");
-responseText("For cement floors <br> - Apply autoleveling compound according to manufacturer's instructions <br> - Allow to dry thoroughly <br> - Mix thinset mortar slightly thinner than manufacturer recommendation. The consistency of pancake batter is ideal for this step <br> - Apply mortar to any dramatically lower areas using a 'float out' method");
-responseText("For walls or horizontal surfaces <br> - Identify low areas before demolition <br> - Shim out at the stud <br> - Mount drywall or hardie backer with corresponding screw type");
-return
-},
-
-"placement" : function(){
-responseText("All placement starts with the center line. Finding the center line is always based off of maximum visual aesthetic");
-responseText("For a single room's floor <br> - Measure the center point at each end of the room running the direction you intend your tile to run <br> - Draw or string chalk this line");
-responseText("For multiple room's floor <br> - Find the line that intersects the most rooms (halls, doorways, intersections, etc.) <br> - Place a long level or board in the area until two points of measure can be decided. <br> - For precision you may use the two points of measure but in most cases, placing a long level or board is sufficient enough for eyeing a straight center line <br> - Trace your level or board or use a chalk line to mark");
-responseText("For walls or horizontal surfaces <br> - The wall opposite of the entry to a room should be the center point <br> - Measure the center point at the top and bottom of the wall <br> - Draw or string chalk this line");
-responseText("Type &quot;place 2&quot; when you're ready for the next step");
-return
-},
-
-"place 2" : function(){
-responseText("Decide how you want your tile laid. For some common options and inspirations, click <a href='https://www.bunnings.com.au/diy-advice/home-improvement/tiles/10-tile-patterns-you-need-to-know'>here</a>");
-responseText("Dry lay (this means lay without any mortar or adhesive) a section large enough to establish your pattern");
-responseText("If you are tiling a ceiling, remember your dry lay should be done back side of the tile facing you");
-responseText("Dry laying on a wall is nearly impossible and we don't recommend it, but if you are really determined to, you can either draw the tiles on your wall or lay out a mock wall on the ground");
-responseText("Adjust the tiles as needed until you are confident you can achieve your pattern without excessive measuring for the real lay");
-return
-},
-
-"tiling" : function(){
-responseText("Mix mortar to manufacturer's specifications or prepare your tile adhesive <br> - - IMPORTANT NOTE: Tile adhesive can be used on walls and ceilings but should never be used on floors <br> - Mortar can be used on all surfaces but should be mixed a little thicker for walls and ceilings");
-responseText("Apply mortar or tile adhesive to the working surface and distribute evenly with the flat side of the trowel <br> - 90% coverage is minimum to code but 100% coverage is ideal");
-responseText("Using the toothed side of the trowel, draw lines in the mortar opposite to how the tile will be laid <br> - Pro Tip: use a bull's eye swirl when tiling ceilings for a strong suction");
-responseText("Place tiles in the desired pattern");
-responseText("Press down hard and slide the tile around slightly before resting it in its final position. This will remove air bubbles and ensure a good seal");
-responseText("Use tile spacers liberally for consistent grout lines");
-responseText("Wait at least 24 hours before moving on to the next step");
-return
-},
-
-"grout" : function(){
-responseText("Choose your grout type. Sanded is the most common but unsanded does have its place. For the differences, click <a href='https://homeguides.sfgate.com/sanded-vs-nonsanded-grout-tile-93501.html'>here</a>");
-responseText("Mix the grout to manufacturer's specifications <br> -Pro Tip: It is better to mix small amounts of grout and make more batches to ensure consistency");
-responseText("Using a rubber float, apply the grout to the exposed lines squeezing out air pockets as you go");
-responseText("If working on a horizontal surface, ensure the grout lines are as level to the tile as possible");
-responseText("If working on a vertical surface, run either your finger or the corner of your float over the grout line to create a small valley. This allows water to run guided down the wall");
-responseText("Just so you know, the more excess grout you have the harder the polishing step is");
-return
-},
-
-"polish" : function(){
-responseText("This step should be completed in concurrence with the grouting step about ten minutes after you have begun grouting.");
-responseText("Using a large sponge and a bucket of fresh water, gently wipe the excess grout off the tiles");
-responseText("Rinse your sponge frequently and change your bucket of water regularly for best results");
-responseText("Have mixed grout at the ready for touch ups on areas you may have missed or areas where you have polished too hard");
-responseText("BE THOROUGH! Once the grout has cured, removing it will be extremely difficult");
-responseText("Allow at least 24 hours (ideally 48 - 72) for grout to cure");
-responseText("Your tile project should now be complete. Enjoy your beautiful new space!");
-return
-},
-  }
-
-
-
-
-
-
-
-  var reactionInput = {
-    "best work" : function(){
-      responseText("<a href='https://woodandmortar.github.io/'>Click the arrows on our homepage</a>")
-      responseText("On this GitHub page you'll find everything about Salmon");
-      responseText("<a href='https://github.com/woodandmortar'>WoodandMortar on GitHub</a>")
-      animationCounter = 1;
-      return
-    },
-    "about" : function(){
-      responseText("I'll need to use GMAIL as your contact point.");
-      setTimeout(function(){
-        window.location.href = "mailto:info@woodandmortar.com?Subject=Hello%20again&body=If%20GMAIL%20didnt%20open%20please%20send%20a%20gmail%20message%20to%20my%20sender%20address"; }, 4000);
-        animationCounter = 1;
+    "place 2" : function(){
+      responseText("Decide how you want your tile laid. For some common options and inspirations, click <a href='https://www.bunnings.com.au/diy-advice/home-improvement/tiles/10-tile-patterns-you-need-to-know'>here</a>");
+      responseText("Dry lay (this means lay without any mortar or adhesive) a section large enough to establish your pattern");
+      responseText("If you are tiling a ceiling, remember your dry lay should be done back side of the tile facing you");
+      responseText("Dry laying on a wall is nearly impossible and we don't recommend it, but if you are really determined to, you can either draw the tiles on your wall or lay out a mock wall on the ground");
+      responseText("Adjust the tiles as needed until you are confident you can achieve your pattern without excessive measuring for the real lay");
       return
       },
-    "experience" : function(){
-      responseText("I will redirect you a printable Business Process Manual");
-      setTimeout(function(){
-        window.location.href = "https://docs.google.com/document/d/1OAgXxoruvHMqD7lyAqu0m1Bq082rXp7g2Z1wcc-vZnY/edit?usp=sharing"; }, 6000);
-      animationCounter = 1;
+
+    "tiling" : function(){
+      responseText("Mix mortar to manufacturer's specifications or prepare your tile adhesive <br> - - IMPORTANT NOTE: Tile adhesive can be used on walls and ceilings but should never be used on floors <br> - Mortar can be used on all surfaces but should be mixed a little thicker for walls and ceilings");
+      responseText("Apply mortar or tile adhesive to the working surface and distribute evenly with the flat side of the trowel <br> - 90% coverage is minimum to code but 100% coverage is ideal");
+      responseText("Using the toothed side of the trowel, draw lines in the mortar opposite to how the tile will be laid <br> - Pro Tip: use a bull's eye swirl when tiling ceilings for a strong suction");
+      responseText("Place tiles in the desired pattern");
+      responseText("Press down hard and slide the tile around slightly before resting it in its final position. This will remove air bubbles and ensure a good seal");
+      responseText("Use tile spacers liberally for consistent grout lines");
+      responseText("Wait at least 24 hours before moving on to the next step");
       return
-    }
-  }
+      },
+
+    "grout" : function(){
+      responseText("Choose your grout type. Sanded is the most common but unsanded does have its place. For the differences, click <a href='https://homeguides.sfgate.com/sanded-vs-nonsanded-grout-tile-93501.html'>here</a>");
+      responseText("Mix the grout to manufacturer's specifications <br> -Pro Tip: It is better to mix small amounts of grout and make more batches to ensure consistency");
+      responseText("Using a rubber float, apply the grout to the exposed lines squeezing out air pockets as you go");
+      responseText("If working on a horizontal surface, ensure the grout lines are as level to the tile as possible");
+      responseText("If working on a vertical surface, run either your finger or the corner of your float over the grout line to create a small valley. This allows water to run guided down the wall");
+      responseText("Just so you know, the more excess grout you have the harder the polishing step is");
+      return
+    },
+
+    "polish" : function(){
+      responseText("This step should be completed in concurrence with the grouting step about ten minutes after you have begun grouting.");
+      responseText("Using a large sponge and a bucket of fresh water, gently wipe the excess grout off the tiles");
+      responseText("Rinse your sponge frequently and change your bucket of water regularly for best results");
+      responseText("Have mixed grout at the ready for touch ups on areas you may have missed or areas where you have polished too hard");
+      responseText("BE THOROUGH! Once the grout has cured, removing it will be extremely difficult");
+      responseText("Allow at least 24 hours (ideally 48 - 72) for grout to cure");
+      responseText("Your tile project should now be complete. Enjoy your beautiful new space!");
+      return
+      },
+          }
 
 
-</script>
+
+
+
+
+
+          var reactionInput = {
+            "best work" : function(){
+              responseText("On this GitHub page you'll find everything about this apps backend.");
+              responseText("<a href='https://github.com/woodandmortar/woodandmortar.github.io'>WoodandMortar on GitHub</a>")
+              animationCounter = 1;
+              return
+            },
+            "about" : function(){
+              responseText("I'll need to use GMAIL as your contact point.");
+              setTimeout(function(){
+                window.location.href = "mailto:info@woodandmortar.com?Subject=Hello%20again&body=If%20GMAIL%20didnt%20open%20please%20send%20a%20gmail%20message%20to%20my%20sender%20address"; }, 4000);
+                animationCounter = 1;
+              return
+              },
+            "experience" : function(){
+              responseText("I will redirect you a printable Business Process Manual");
+              setTimeout(function(){
+                window.location.href = "https://docs.google.com/document/d/1OAgXxoruvHMqD7lyAqu0m1Bq082rXp7g2Z1wcc-vZnY/edit?usp=sharing"; }, 6000);
+              animationCounter = 1;
+              return
+            }
+          }
+
+
+
+  function formAdmin(){
+
+    document.getElementById('button2').style='display:none;';
+    window.location.href = "https://docs.google.com/spreadsheets/d/1NnyHRHMPu6qIZgjvp_KJeKpOjgst1uF56y96F44JdtY/edit#gid=1567723544";
+
+          var project = document.getElementById('vresp1').innerHTML;
+          var location = document.getElementById('vresp9').innerHTML;
+          var task = document.getElementById('mySelect').value;
+
+            $.ajax({
+              url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfN2kkQpPALiBnKuXyfW-iRYivAp_CutzqngiAo_KSzi664QQ/formResponse",
+              data:  { "entry.569412235" : task , "entry.320157692" : project , "entry.1143322173" : location },
+              type: "POST",
+              dataType: "xml",
+              statusCode: {
+                0: function () {
+          //					alert("Click -OK- to submit message");
+                },
+                200: function () {
+          //					alert("Click -OK- to submit message");
+                }
+                    }
+            });
+          }
+
+
+
+
+
+
+
+  </script>
+
+
+
+                    <script type="text/javascript">
+                    mNum = -1;
+
+  var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1kTFnCiuDAYVdpzNqVIgNKsSLKYK9tRR1Mxd6gjBncFU/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+
+  function init() {
+          Tabletop.init( { key: public_spreadsheet_url,
+                           callback: showInfo,
+                           simpleSheet: true } );
+        }
+
+        window.addEventListener('DOMContentLoaded', init)
+
+                            function showInfo(data) {
+                              mNum += 1;
+                              mProb = data[mNum].Name;
+                              answerA = data[mNum].AnswerA;
+                              answerB = data[mNum].AnswerB;
+                              answerC = data[mNum].AnswerC;
+                              answerD = data[mNum].AnswerD;
+                              solution = data[mNum].Solution;
+                              studyGuide = data[mNum].Link;
+                              metadata = data[mNum].MetaData;
+                              document.getElementById("slotA").innerHTML = [ answerA ].join(", ");
+                              document.getElementById("slotB").innerHTML = [ answerB ].join(", ");
+                              document.getElementById("slotC").innerHTML = [ answerC ].join(", ");
+                              document.getElementById("slotD").innerHTML = [ answerD ].join(", ");
+                              document.getElementById("metaData").innerHTML = [ metadata ].join(", ");
+                              document.getElementById("solution1").innerHTML = [ solution ].join(", ");
+                              document.getElementById("theStudyGuide").innerHTML = [ studyGuide ].join(", ");
+                              document.getElementById("math").innerHTML = [ mProb ].join(", ");
+                              console.log(data);
+                            }
+
+
+                      </script>
+
+                    <script>
+                    setInterval(function(){$(".confetti").remove(); }, 40000);
+
+
+                    function formmcreds() {
+
+                      var mCredName = document.getElementById('vresp1').innerHTML;
+                      var mCredMetadata = document.getElementById("metaData").innerHTML;
+                      var mCredLocation = document.getElementById('vresp9').innerHTML;
+                      var mCredPoints = document.getElementById('vTime').innerHTML;
+
+                        $.ajax({
+                          url: "https://docs.google.com/forms/d/e/1FAIpQLSdXU0IVPpGxLq5rk4Wd1WceQMC_b6OD6yhuHsyJnXJkjfHmzQ/formResponse",
+                          data:  { "entry.2037093222" : mCredName , "entry.291261238" : mCredMetadata , "entry.1107492006" : mCredLocation, "entry.196847829" : mCredPoints },
+                          type: "POST",
+                          dataType: "xml",
+                          statusCode: {
+                            0: function () {
+                      //					alert("Click -OK- to submit message");
+                            },
+                            200: function () {
+                      //					alert("Click -OK- to submit message");
+                            }
+                                }
+                        });
+
+
+                    }
+
+                    function compute() {
+                      var finalAnswer = document.getElementById("finalSolution").innerHTML;
+                      var str = document.getElementById("solution1").innerHTML;
+                      var n = finalAnswer.includes(str);
+                      var videoTime = parseInt(document.getElementById("vTime").innerHTML);
+                      if ((n == true)){        // logical condition
+                      videoTime += 1;
+                      document.getElementById("vTime").innerHTML = videoTime;
+                      document.getElementById("finalSolution").innerHTML = "";
+                      setTimeout(function() {
+                        confetti();
+                        formmcreds();
+                        init();
+                        clearCompute();
+                    }, 300);
+                      }else{
+                        videoTime -= 3;
+                        document.getElementById("vTime").innerHTML = videoTime;
+                        document.getElementById("finalSolution").innerHTML = "";
+                        setTimeout(function() {
+                          formmcreds();
+                          init();
+                          clearCompute();
+                      }, 300);
+                      }
+                    }
+
+                    function compute1() {
+                      document.getElementById("finalSolution").innerHTML += "A";
+                    }
+
+                    function compute2() {
+                      document.getElementById("finalSolution").innerHTML += "B";
+                      }
+
+                    function compute3() {
+                      document.getElementById("finalSolution").innerHTML += "C";
+                      }
+
+                    function compute4() {
+                      document.getElementById("finalSolution").innerHTML += "D";
+                      }
+
+                      function compute5() {
+                        document.getElementById("finalSolution").innerHTML += "E";
+                        }
+
+
+  </script>
 </body>
 </html>

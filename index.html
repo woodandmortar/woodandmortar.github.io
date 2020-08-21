@@ -284,6 +284,25 @@ textarea[name="chatbox"] {
       }
       }
 
+         .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create four equal columns that sits next to each other */
+.column2 {
+  flex: 50%;
+  max-width: 50%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column2 {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
 
 </style>
 
@@ -644,46 +663,53 @@ Micheal Salmon and Crycella Freitag are Kansas Cities #1 source for Home Renovat
   </main>
 
 
-<popup id="client" style="width:100%; z-index:9999999999999999999999999999; display:none;">
+<popup id="client" style="display:block; width:100%; height:75%; z-index:9999999999999999999999999999; display:none;">
 
-<center>
+  <div class="row">
+          <div id="col1" class="column2">
 
+    <br><br><br><br>
+            <center><h1 id="article2"></h1> <h1 id="article3"></h1> <br>
+                Phone Number: <b id="article4"></b> <br>
+                <b id="article1">Loading...</b> <br>
 
-    <h1 id="article2"></h1> <h1 id="article3"></h1> <br>
-    Phone Number: <b id="article4"></b> <br>
-    <b id="article1">Loading...</b> <br>
+                <button class="open-modal" onclick="getInvoice()" type="button">
+                   Invoice</button> <br><br>
 
-    <button class="open-modal" onclick="getInvoice()" type="button">
-       Invoice</button>
+                   Start Time: <b id="article17"></b><br>
+                   End Time: <b id="article18"></b><br></center>
+          </div>
+          <div id="col2" class="column2">
+            <center>
+              <br><br><br>
+            Start Date: <b id="article5"></b><br><br>
+              Powerwash: <b id="article6"></b><br>
+              Body Paint: <b id="article7"></b><br>
+              Trim Paint: <b id="article8"></b><br>
+              Touchup: <b id="article9"></b><br><br>
 
-Start Date: <b id="article5"></b><br><br>
-  Powerwash: <b id="article6"></b><br>
-  Body Paint: <b id="article7"></b><br>
-  Trim Paint: <b id="article8"></b><br>
-  Touchup: <b id="article9"></b><br><br>
+                Body Paint color: <b id="article11"></b><br>
+                Gallons ordered: <b id="article19"></b> | used: <b id="article20"></b><br><br>
 
-    Body Paint color: <b id="article11"></b><br>
-    Gallons ordered: <b id="article19"></b> | used: <b id="article20"></b><br><br>
+                Trim Paint color: <b id="article12"></b><br>
+                Gallons ordered: <b id="article21"></b> | used: <b id="article22"></b><br><br>
 
-    Trim Paint color: <b id="article12"></b><br>
-    Gallons ordered: <b id="article21"></b> | used: <b id="article22"></b><br><br>
+                Accent color: <b id="article13"></b><br>
+                Gallons ordered: <b id="article23"></b> | used: <b id="article24"></b>
+            <br><br>
+              Finish date: <b id="article14"></b>
+              <br><br>
+                Modifications: <b id="article15"></b><br>
+                Notes: <b id="article16"></b><br>
+                Index: <b id="xx1p">0</b>
 
-    Accent color: <b id="article13"></b><br>
-    Gallons ordered: <b id="article23"></b> | used: <b id="article24"></b>
-<br><br>
-  Finish date: <b id="article14"></b>
-  <br><br>
-    Front: <b id="article15"></b><br>
-    Left: <b id="article16"></b><br>
-    Back: <b id="article17"></b><br>
-    Right: <b id="article18"></b><br>
-    Index: <b id="xx1p">0</b>
+              <b style="display:none;">
+                Invoice: <b id="article10"></b>
+              </b>
 
-  <b style="display:none;">
-    Invoice: <b id="article10"></b>
-  </b>
-
-</center>
+            </center>
+          </div>
+      </div>
 
 </popup>
 

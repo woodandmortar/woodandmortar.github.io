@@ -250,7 +250,6 @@
 
 "xx1p" : function(){
       responseText("Generating...");
-      document.getElementById("xx1p").innerHTML = "0";
       init4();
       document.getElementById("everything").style.display = "none";
       document.getElementById("client").style.display = "block";
@@ -258,15 +257,6 @@
       return
       },
 
-"xx2p" : function(){
-      responseText("Generating...");
-      document.getElementById("xx1p").innerHTML = "1";
-      init4();
-      document.getElementById("everything").style.display = "none";
-      document.getElementById("client").style.display = "block";
-      window.scrollTo(0,document.body.scrollHeight);
-      return
-    },
           }
 
 

@@ -664,54 +664,9 @@ Micheal Salmon and Crycella Freitag are Kansas Cities #1 source for temporary su
   </main>
 
 
-<popup id="client" style="display:block; width:100%; height:75%; z-index:9999999999999999999999999999; display:none;">
-
-  <div class="row">
-          <div id="col1" class="column2">
-
-    <br><br><br><br>
-            <center><h1 id="article2"></h1> <h1 id="article3"></h1> <br>
-                Phone Number: <b id="article4"></b> <br>
-                <b id="article1">Loading...</b> <br>
-
-                <button class="open-modal" onclick="getInvoice()" type="button">
-                   Invoice</button> <br><br>
-
-                   Start Time: <b id="article17"></b><br>
-                   End Time: <b id="article18"></b><br></center>
-          </div>
-          <div id="col2" class="column2">
-            <center>
-              <br><br><br>
-            Start Date: <b id="article5"></b><br><br>
-              Powerwash: <b id="article6"></b><br>
-              Body Paint: <b id="article7"></b><br>
-              Trim Paint: <b id="article8"></b><br>
-              Touchup: <b id="article9"></b><br><br>
-
-                Body Paint color: <b id="article11"></b><br>
-                Gallons ordered: <b id="article19"></b> | used: <b id="article20"></b><br><br>
-
-                Trim Paint color: <b id="article12"></b><br>
-                Gallons ordered: <b id="article21"></b> | used: <b id="article22"></b><br><br>
-
-                Accent color: <b id="article13"></b><br>
-                Gallons ordered: <b id="article23"></b> | used: <b id="article24"></b>
-            <br><br>
-              Finish date: <b id="article14"></b>
-              <br><br>
-                Modifications: <b id="article15"></b><br>
-                Notes: <b id="article16"></b><br>
-                Index: <b id="xx1p">0</b>
-
-              <b style="display:none;">
-                Invoice: <b id="article10"></b>
-              </b>
-
-            </center>
-          </div>
-      </div>
-
+<popup id="client" style="width:100%; height:75%; z-index:9999999999999999999999999999; display:none;">
+<post>
+</post>
 </popup>
 
   <svg style="display:none">
@@ -1386,60 +1341,20 @@ document.getElementById('menuButton4').style='background:#D95952';
 
   function init4() {Tabletop4.init4( { key: public_spreadsheet_url4,callback: showInfo4,simpleSheet: true } );}
 
-  window.addEventListener('DOMContentLoaded', init4)
-
         function showInfo4(data) {
-                  var mNum4 = parseInt(document.getElementById("xx1p").innerHTML);
-                  article1 = data[mNum4].Address;
-                  article2 = data[mNum4].First;
-                  article3 = data[mNum4].Last;
-                  article4 = data[mNum4].Phone;
-                  article5 = data[mNum4].Start;
-                  article6 = data[mNum4].Wash;
-                  article7 = data[mNum4].Body;
-                  article8 = data[mNum4].Trim;
-                  article9 = data[mNum4].Touchup;
-                  article10 = data[mNum4].Invoice;
-                  article11 = data[mNum4].Bodypaint;
-                  article12 = data[mNum4].Trimpaint;
-                  article13 = data[mNum4].Accentpaint;
-                  article14 = data[mNum4].Finish;
-                  article15 = data[mNum4].Frontpic;
-                  article16 = data[mNum4].Leftpic;
-                  article17 = data[mNum4].Backpic;
-                  article18 = data[mNum4].Rightpic;
-                  article19 = data[mNum4].OrderB;
-                  article20 = data[mNum4].UsedB;
-                  article21 = data[mNum4].OrderT;
-                  article22 = data[mNum4].UsedT;
-                  article23 = data[mNum4].OrderA;
-                  article24 = data[mNum4].UsedA;
-                  document.getElementById("article1").innerHTML = [ article1 ].join(", ");
-                  document.getElementById("article2").innerHTML = [ article2 ].join(", ");
-                  document.getElementById("article3").innerHTML = [ article3 ].join(", ");
-                  document.getElementById("article4").innerHTML = [ article4 ].join(", ");
-                  document.getElementById("article5").innerHTML = [ article5 ].join(", ");
-                  document.getElementById("article6").innerHTML = [ article6 ].join(", ");
-                  document.getElementById("article7").innerHTML = [ article7 ].join(", ");
-                  document.getElementById("article8").innerHTML = [ article8 ].join(", ");
-                  document.getElementById("article9").innerHTML = [ article9 ].join(", ");
-                  document.getElementById("article10").innerHTML = [ article10 ].join(", ");
-                  document.getElementById("article11").innerHTML = [ article11 ].join(", ");
-                  document.getElementById("article12").innerHTML = [ article12 ].join(", ");
-                  document.getElementById("article13").innerHTML = [ article13 ].join(", ");
-                  document.getElementById("article14").innerHTML = [ article14 ].join(", ");
-                  document.getElementById("article15").innerHTML = [ article15 ].join(", ");
-                  document.getElementById("article16").innerHTML = [ article16 ].join(", ");
-                  document.getElementById("article17").innerHTML = [ article17 ].join(", ");
-                  document.getElementById("article18").innerHTML = [ article18 ].join(", ");
-                  document.getElementById("article19").innerHTML = [ article19 ].join(", ");
-                  document.getElementById("article20").innerHTML = [ article20 ].join(", ");
-                  document.getElementById("article21").innerHTML = [ article21 ].join(", ");
-                  document.getElementById("article22").innerHTML = [ article22 ].join(", ");
-                  document.getElementById("article23").innerHTML = [ article23 ].join(", ");
-                  document.getElementById("article24").innerHTML = [ article24 ].join(", ");
+          for (var mNum4 = 0; mNum4 < data.length; mNum4++){
+          $("popup").append(
 
-                    }
+
+            "<div class='row'><div id='col1' class='column2'><br><br><br><br><center><h1>" + data[mNum4].First + data[mNum4].Last +  "</h1> <br> Phone: " + data[mNum4].Phone + "<br>" + data[mNum4].Address
+             +  "<br> <button class='open-modal' onclick='location.href=" + data[mNum4].Invoice + ";' type='button'>Invoice</button> <br><br> Start Time: " +
+             + data[mNum4].Body + "<br>End Time: " + data[mNum4].Rightpic + "<br></div><div id='col2' class='column2'><br><br><br>Start: " + data[mNum4].Start + "<br><br> Powerwash: " + data[mNum4].Wash + "<br>Body Paint: " + data[mNum4].Body + "<br>Trim Paint: " + data[mNum4].Trim + "<br>Touchup: " + data[mNum4].Touchup + "<br><br>  Body Paint color: "
+             + data[mNum4].Bodypaint + "<br>Gallons ordered: " + data[mNum4].OrderB + " Gallons used: " + data[mNum4].UsedB + "<br><br> Trim Paint color: " + data[mNum4].Trimpaint + "<br> Gallons ordered: " + data[mNum4].OrderT + "Gallons used: " + data[mNum4].UsedT + "<br><br> Accent color: " + data[mNum4].Accentpaint + "<br> Gallons ordered: "
+             + data[mNum4].OrderA + "Gallons used: " + data[mNum4].UsedA + "<br><br> Finish Date: " + data[mNum4].Finish + "<br><br> Modifications: " + data[mNum4].Modifications + "<br>Notes: " + data[mNum4].Notes + "</center></div></div><br><br><br><hr style='height:2px;border-width:0;color:gray;background-color:gray'>"
+
+)}}
+
+
 
 </script>
 

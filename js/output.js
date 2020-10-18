@@ -27,8 +27,8 @@
               return
               },
             "experience" : function(){
-              responseText("We've completed over 20 High-end to Flips including interiors and exteriors around Kansas");
-              responseText("We manage a team of highly competent sub-contractors focusing on thier continuing education.");
+              responseText("We've completed over 50 interiors and exteriors renovations in Kansas/Missouri");
+              responseText("We manage a team of highly competent - insured and bonded sub-contractors, focusing on thier continuing education.");
               responseText("Micheal Salmon, Founder and Co-Owner pays special attention to project details and workflow ensuring the best possible value.");
               responseText("Crycella Freitag, Co-Owner and human resource powerhouse manages all aspects of communication, logistics and finance.");
               responseText("Would you like to see our Business Process Manual? (Yes/No)");

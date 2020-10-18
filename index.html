@@ -32,7 +32,7 @@
             </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="./style0.css">
-
+<script src="https://kit.fontawesome.com/bdd89edb33.js" crossorigin="anonymous"></script>
 <style>
 
 .chatbot__overview {
@@ -303,6 +303,76 @@ textarea[name="chatbox"] {
   }
 }
 
+.bounce2 {
+  /*arrow bouncing duration*/
+  -webkit-animation: bounce2 2s infinite;
+  animation: bounce2 2s infinite;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -27px;
+  width: 60px;
+  height: 70px;
+  z-index: 1000;
+  /*change with size of arrow to make it sit on bottom of page*/
+}
+
+a.down-arrow i {
+  display: block;
+  color: #fff;
+  /*arrow color*/
+  opacity: 1;
+  /*arrow opacity*/
+  font-size: 2rem;
+  /*arrow size*/
+}
+
+.down-arrow svg.svg-inline--fa:hover {
+  opacity: 0.5;
+  /*arrow hover opacity*/
+}
+
+@-webkit-keyframes bounce2 {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes bounce2 {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
 
 </style>
 
@@ -329,9 +399,24 @@ textarea[name="chatbox"] {
       <span></span>
     </button>
     <ol class="navbar-left" id="nav-linkm">
-      <li id="nav-linkn"><a class="nav-link active" href="index.html">W&M</a></li>
-      <li id="nav-linko"><a class="nav-link" href="https://www.facebook.com/woodmortar" target="_blank" >Book Now</a></li>
+      <li id="nav-linkn"><a class="nav-link active" href="index.html">
+
+        <div style="position:absolute; width:50px; height:122px;  top:0px; left:0px; z-index:2;">
+            <svg class="salmonTail" width="50" height="122" viewBox="-359 -463 900 500">
+              <path d="M3 49c0 6-2 11-5 15l-119 164c-6 8-20 15-30 15h-146c-7 0-11-3-11-8 0-2 1-5 3-7l130-179-130-179-3-7c0-5 4-8 11-8h146c10 0 24 7 30 15L-2 34c3 4 5 10 5 15z" fill="#D95952"></path>
+
+            </svg>
+        </div>
+        <div style="position:absolute; width:50px; height:122px; top:0px; left:0px; z-index:2;">
+            <svg width="50" height="122" viewBox="-359 -463 900 500">
+              <path d="M408 34L290-130c-6-8-20-15-30-15H16c-10 0-23 7-29 15l-33 45L40 34c3 4 5 10 5 15s-2 11-5 15l-86 119 33 45c6 8 19 15 29 15h244c10 0 24-7 30-15L408 64c3-4 5-10 5-15s-2-11-5-15zM206-90c12 0 21 9 21 21s-9 21-21 21-21-9-21-21 9-21 21-21z" fill="#D95952"></path>
+            </svg>
+        </div>
+
+      </a></li>
       <li id="nav-linkp"><a class="nav-link" href="mailto:info@woodandmortar.com?Subject=General%20Inquiry&body=Place%20message%20here%20please" target="_blank" >Contact</a></li>
+      <li id="nav-linko"><a class="nav-link" href="https://salmonfund.github.io/solidity/" target="_blank" >Donate</a></li>
+
     </ol>
 
 <div id="sub" class="btn-next">
@@ -370,25 +455,10 @@ textarea[name="chatbox"] {
           <div id="item" class="chat" style="color:white; font-size:1.3em;" >
                 <ul class="chatlist">
                   <li class="bot__output bot__output--standard">
-                    <div style="position:absolute; width:380px; height:380px;  top:0px; left:0px; z-index:9999999999999999999999;">
-                        <svg class="salmonTail" width="380" height="380" viewBox="-359 -463 900 500">
-                          <path d="M3 49c0 6-2 11-5 15l-119 164c-6 8-20 15-30 15h-146c-7 0-11-3-11-8 0-2 1-5 3-7l130-179-130-179-3-7c0-5 4-8 11-8h146c10 0 24 7 30 15L-2 34c3 4 5 10 5 15z" fill="#D95952"></path>
-
-                        </svg>
-                    </div>
-                    <div style="position:absolute; width:380px; height:380px; top:0px; left:0px; z-index:9999999999999999999998;">
-                        <svg width="380" height="380" viewBox="-359 -463 900 500">
-                          <path d="M408 34L290-130c-6-8-20-15-30-15H16c-10 0-23 7-29 15l-33 45L40 34c3 4 5 10 5 15s-2 11-5 15l-86 119 33 45c6 8 19 15 29 15h244c10 0 24-7 30-15L408 64c3-4 5-10 5-15s-2-11-5-15zM206-90c12 0 21 9 21 21s-9 21-21 21-21-9-21-21 9-21 21-21z" fill="#D95952"></path>
-                        </svg>
-                    </div>
-                    Welcome to Woodandmortar.com</li>
-                  <li class="bot__output bot__output--standard">
-                    <span class="bot__output--second-sentence">Our seasonal specials include: Exterior <span class="bot__command"><a href="#paintSection">painting</a></span>,
-                    <span class="bot__command"><a href="#handSection">handrail</a></span> upgrades, and <span class="bot__command"><a href="#digiSection">digital</a></span> drawings.
-                    Virtually paint your house with <span class="bot__command"><a href="#colorSection">ColorSnap</a></span> from Sherwin Williams.
-                    </li>
+                    Hello, I'm Woodandmortar's chatbot programmed to educate you on our digital platform. It's designed to transparently manage subcontracting from first contact through final draw and walk-through.
+</li>
                     <li class="bot__output bot__output--standard">
-                      Enter Verification code below...
+                      Type <span class="bot__command">command</span> for a list of topics, or enter your housing code below...
                   </li>
                     </ul>  </ul>
                 </div>
@@ -435,9 +505,18 @@ textarea[name="chatbox"] {
                   </form>
                   </div>
 
+                  <a href="#paintSection" class="down-arrow">
+                          <div class="arrow bounce2">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                          </div>
+                        </a>
 
       </div>
     </div>
+
+
+
+
   </header>
 
   <main id="everything">
@@ -446,69 +525,30 @@ textarea[name="chatbox"] {
         <div class="grid-item">
           <p>
 With over 30 years of Residential Construction experience on our team, and countless more within our subcontractor structure we transparently manage projects with honestly and an open communication channel.
+Micheal Salmon and Crycella Freitag are Kansas Cities #1 source for temporary subcontracting. Feel free to email us anytime, attach your current project bid and we will ensure everything adds up.
           </p>
-          <a href="#" class="info-text-small">Phone: 913.280.2336</a>
+          <button onclick="window.open('mailto:info@woodandmortar.com?Subject=Bid%20Reviews&body=Place%20message%20here%20please%20and%20dont%20forget%20to%20attach%20your%20bid', '_blank');" class="open-modal">Review Now</button>
+          <a href="#" class="info-text-small">Phone: 913.280.2336</a><br>
+          <a href="#" class="info-text-small">info@woodandmortar.com</a>
         </div>
         <div class="grid-item">
           <p>
-Micheal Salmon and Crycella Freitag are Kansas Cities #1 source for temporary subcontracting. Feel free to email us anytime, attach your current project bid and we will ensure everything adds up.
+            Salmon Fund was founded in April 2019 in the heart of urban Kansas City Metro. Micheal noticed a number of negative trends amidst his tradespeople, community
+          members, and property owners. Tradespeople did not have the resources to succeed in the workplace such
+          as regular transportation for their commutes and connectivity via smart device for both work functions
+          and communication. Community members did not trust incoming property management which caused
+          property damage and theft. Lastly, property owners were regularly more concerned with the bottom line
+          and the bottom dollar over the safety and well being of the tenants residing in the properties they owned.
+          <button onclick="window.open('https://salmon.fund', '_blank');" class="open-modal">Learn More</button>
           </p>
-          <a href="#" class="info-text-small">info@woodandmortar.com</a>
         </div>
       </div>
     </section>
-    <section class="arrivals fade-in">
-      <div class="grid-container arrivals-grid">
-        <div class="grid-item centered">
-          <h3 id="paintSection">Feature</h1>
-            <p>A+ Tri-Color Exterior Painting Starting at $3,500!
-              <br><br><i>
-              Exterior colors are sometimes overwhelming to choose,
-              our 2020:palette includes colors inspired from our loved American Sycamore.</i>
-              <br><br>
-              Use the Sherwin Williams ColorSnap app to paint your house using photos, or fill out the form above to continue.
-            </p><br>
-            <center><image id="colorSection" src="pics/swatch.png"></center>
-              <br>
-            <button onclick="window.open('https://www.sherwin-williams.com/visualizer#/active', '_blank');" class="open-modal">Go To ColorSnap<span></span></button>
-            <button class="open-modal1" onclick="animateSlide(1);window.open('https://forms.gle/CrFpQRC32gPJiiLt6', '_blank');">Start Painting Project</button>
-        </div>
-        <div class="grid-item">
-          <div class="img-container">
-            <div class="placeholder-container" data-visible="true">
-              <img src="pics/amper.gif" class="img-placeholder" alt="">
-            </div>
 
-            <img class="img-lazy" data-src="pics/deck5.jpg" src="" alt="" />
-            <div class="img-overlay">
-              <a href="#"><span>W</span><span>&</span><span>M</span></a>
-            </div>
-          </div>
-        </div>
-        <div class="grid-item">
-          <div class="img-container">
-            <div class="placeholder-container" data-visible="true">
-              <img src="pics/amper.gif" class="img-placeholder" alt="">
-            </div>
-            <img class="img-lazy" data-src="pics/deck4.jpg" src="" alt="" />
-            <div class="img-overlay">
-              <a href="#"><span>W</span><span>&</span><span>M</span></a>
-            </div>
-          </div>
-        </div>
-        <div class="grid-item">
-          <div class="img-container">
-            <div class="placeholder-container" data-visible="true">
-              <img src="pics/amper.gif" class="img-placeholder" alt="">
-            </div>
-            <img class="img-lazy" data-src="pics/diagram.png" src="" alt="" />
-            <div class="img-overlay">
-              <a href="#"><span>W</span><span>&</span><span>M</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+
+
+
+
     <section class="fashion fade-in">
       <div class="grid-container">
         <div class="grid-item">
@@ -516,146 +556,152 @@ Micheal Salmon and Crycella Freitag are Kansas Cities #1 source for temporary su
             <div class="placeholder-container" data-visible="true">
               <img src="pics/amper.gif" class="img-placeholder" alt="">
             </div>
-            <img class="img-lazy" data-src="pics/Contemporary.jpg" src="" alt="" />
+            <img class="img-lazy" data-src="pics/micheal.jpg" src="" alt="" />
             <div class="img-overlay">
               <a href="#"><span>W</span><span>&</span><span>M</span></a>
             </div>
           </div>
         </div>
+
+
+
         <div class="grid-item">
           <div class="img-container">
             <div class="placeholder-container" data-visible="true">
               <img src="pics/amper.gif" class="img-placeholder" alt="">
             </div>
-            <img class="img-lazy" data-src="pics/Diagonal.jpg" src="" alt="" />
+            <img class="img-lazy" data-src="pics/crycella.jpg" src="" alt="" />
             <div class="img-overlay">
               <a id="handSection" href="#"><span>W</span><span>&</span><span>M</span></a>
             </div>
           </div>
         </div>
-        <div class="grid-item centered">
-          <h3>Custom handrails</h3>
-          <p>Starting at $1,200, get your old broken handrails removed, and replaced with your choice
-            custom handrail. Request our catalogue or email us a picture, and we will have your deck looking
-            amazing.</p>
-        </div>
       </div>
+
+
       <div class="grid-container">
         <div class="grid-item">
           <div class="img-container">
             <div class="placeholder-container" data-visible="true">
               <img src="pics/amper.gif" class="img-placeholder" alt="">
             </div>
-            <img class="img-lazy" data-src="pics/Metal.jpg" src="" alt="" />
+            <img class="img-lazy" data-src="https://lh3.googleusercontent.com/Gh60eamqWp1xUQ0WMWD02YejRL1wlKVjznqdRhXMtF6bYlIJ2kLv_SVLsRENEjxyOBWw8suQD5pgdQ-mOApNVrML1D4_DSyAYUYFplgQUcfpW0mE1PI1arukjL4ub0ApdgHLwvsR-A=w2400?source=screenshot.guru%22%3E%20%3Cimg%20src=%22https://lh3.googleusercontent.com/Gh60eamqWp1xUQ0WMWD02YejRL1wlKVjznqdRhXMtF6bYlIJ2kLv_SVLsRENEjxyOBWw8suQD5pgdQ-mOApNVrML1D4_DSyAYUYFplgQUcfpW0mE1PI1arukjL4ub0ApdgHLwvsR-A=w600-h315-p-k" src="" alt="" />
             <div class="img-overlay">
               <a href="#"><span>W</span><span>&</span><span>M</span></a>
             </div>
           </div>
         </div>
-        <div class="grid-item">
-          <div class="img-container">
-            <div class="placeholder-container" data-visible="true">
-              <img src="pics/amper.gif" class="img-placeholder" alt="">
-            </div>
-            <img class="img-lazy" data-src="pics/Privacy.jpg" src="" alt="" />
-            <div class="img-overlay">
-              <a href="#"><span>W</span><span>&</span><span>M</span></a>
-            </div>
-          </div>
-        </div>
-        <div class="grid-item">
-          <div class="img-container">
-            <div class="placeholder-container" data-visible="true">
-              <img src="pics/amper.gif" class="img-placeholder" alt="">
-            </div>
-            <img class="img-lazy" data-src="pics/Two Board.jpg" src="" alt="" />
-            <div class="img-overlay">
-              <a href="#"><span>W</span><span>&</span><span>M</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
 
-    </section>
 
-    <section class="fashion fade-in">
-      <div class="grid-container">
         <div class="grid-item">
           <div class="img-container">
             <div class="placeholder-container" data-visible="true">
               <img src="pics/amper.gif" class="img-placeholder" alt="">
             </div>
-            <img class="img-lazy" data-src="pics/4.jpg" src="" alt="" />
+            <img class="img-lazy" data-src="https://lh3.googleusercontent.com/e6YChNTCQ016w-Ds4guMF1THvnbUlqETEWuBY1lquBWuDMi0CNkAIwbZtWYH0IaBfp-0dmm858p5wcF1VoGnykLabEN5nBsqQkY3bSbBfL2rZFXAFhBz3_9JJpZ9dUzc3XwEOJg4_g=w2400" src="" alt="" />
             <div class="img-overlay">
               <a href="#"><span>W</span><span>&</span><span>M</span></a>
             </div>
           </div>
         </div>
-        <div class="grid-item">
-          <div class="img-container">
-            <div class="placeholder-container" data-visible="true">
-              <img src="pics/amper.gif" class="img-placeholder" alt="">
-            </div>
-            <img class="img-lazy" data-src="pics/2.jpg" src="" alt="" />
-            <div class="img-overlay">
-              <a href="#"><span>W</span><span>&</span><span>M</span></a>
-            </div>
-          </div>
-        </div>
-        <div class="grid-item centered">
-          <h3 id="digiSection">Digital Designs and Virtual Tours</h3>
-          <p>
-            Project/Room: $250<br>
-            Basic render of single area, walls studs, doorways, decks, bedroom, designs needed for concepts.
-            <br><br>
-            Contractor Package: $550<br>
-            Advanced render of single area, multiple angles, special requests, designs needed for non architectural permits.
-          </p>
-          <button onclick="window.open('mailto:info@woodandmortar.com?Subject=General%20Inquiry&body=Place%20message%20here%20please');" class="open-modal">Reach out<span></span></button>
-        </div>
-      </div>
-      <div class="grid-container">
-        <div class="grid-item">
-          <div class="img-container">
-            <div class="placeholder-container" data-visible="true">
-              <img src="pics/amper.gif" class="img-placeholder" alt="">
-            </div>
-            <img class="img-lazy" data-src="pics/3.jpg" src="" alt="" />
-            <div class="img-overlay">
-              <a href="#"><span>W</span><span>&</span><span>M</span></a>
-            </div>
-          </div>
-        </div>
-        <div class="grid-item">
-          <div class="img-container">
-            <div class="placeholder-container" data-visible="true">
-              <img src="pics/amper.gif" class="img-placeholder" alt="">
-            </div>
-            <img class="img-lazy" data-src="pics/1.jpg" src="" alt="" />
-            <div class="img-overlay">
-              <a href="#"><span>W</span><span>&</span><span>M</span></a>
-            </div>
-          </div>
-        </div>
-        <div class="grid-item">
-          <div class="img-container">
-            <div class="placeholder-container" data-visible="true">
-              <img src="pics/amper.gif" class="img-placeholder" alt="">
-            </div>
-            <img class="img-lazy" data-src="pics/kitchen.jpg" src="" alt="" />
-            <div class="img-overlay">
-              <a href="#"><span>W</span><span>&</span><span>M</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
 
+
+        <div class="grid-item">
+          <div class="img-container">
+            <div class="placeholder-container" data-visible="true">
+              <img src="pics/amper.gif" class="img-placeholder" alt="">
+            </div>
+            <img class="img-lazy" data-src="https://lh3.googleusercontent.com/zOfzKxZ4EfqlAAGHgMVr7-5cRUSHudhqP4XknjIethIqyJimFRmvH_p6ooLp1_5BK5fWhxwz9aY_1ROMAl95ryWJDfaitOTc6nw4iAsQUIouaj4PzhQKc1TuX9iWW8fe-1hquWDZaA=w2400" src="" alt="" />
+            <div class="img-overlay">
+              <a href="#"><span>W</span><span>&</span><span>M</span></a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="grid-item">
+          <div class="img-container">
+            <div class="placeholder-container" data-visible="true">
+              <img src="pics/amper.gif" class="img-placeholder" alt="">
+            </div>
+            <img class="img-lazy" data-src="https://lh3.googleusercontent.com/NH6T8y3K_r3Iqm1yS0YOs5YICSVDmsp8XSe0F9F0NsDUFJOH9Od1AE-izNFLiVyh_zDN8b7xTaqeru-Cv_Xm8xJiTAToYpsbDPWB05cq2-RHsKm3kDDJ26jXSB5Qre5lUIlZcrdMSQ=w2400" src="" alt="" />
+            <div class="img-overlay">
+              <a href="#"><span>W</span><span>&</span><span>M</span></a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="grid-item">
+          <div class="img-container">
+            <div class="placeholder-container" data-visible="true">
+              <img src="pics/amper.gif" class="img-placeholder" alt="">
+            </div>
+            <img class="img-lazy" data-src="https://lh3.googleusercontent.com/NFfN2uDZ6WhSvceikXAQatXbUFNq6YeA6JZQdmnd8P9GRm-X9CkQadHepEJntZhwoFgLf-8zcrqaaoffJ39wScCW2idG2SW6_8ltO1eDI7yrQKpE0DZ2_bwQ_od2Pl5zcAc8ZNjl6w=w2400" src="" alt="" />
+            <div class="img-overlay">
+              <a href="#"><span>W</span><span>&</span><span>M</span></a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="grid-item">
+          <div class="img-container">
+            <div class="placeholder-container" data-visible="true">
+              <img src="pics/amper.gif" class="img-placeholder" alt="">
+            </div>
+            <img class="img-lazy" data-src="https://lh3.googleusercontent.com/cVg66OgzYHwlzRVdgplzyocE5GAYkNWQoDdWtFkMUU8nA4dMKTVsXoPnrGLqQV6N4BPmAm2MImOgoqapvzRdHMxediiDFbwvkCnEV_Dj7mCysSI8jtJCtbejRFJNGsJShM4LCe_NCg=w2400" src="" alt="" />
+            <div class="img-overlay">
+              <a href="#"><span>W</span><span>&</span><span>M</span></a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="grid-item">
+          <div class="img-container">
+            <div class="placeholder-container" data-visible="true">
+              <img src="pics/amper.gif" class="img-placeholder" alt="">
+            </div>
+            <img class="img-lazy" data-src="https://lh3.googleusercontent.com/KWRrQCeUEft6c4KRhoAoQW2RJYyb54a0IrxwnJMMHl-b4eTzbBW5XQq1M1sk457AEmaGpjO0zSwct647JtV19kjl9477K6-Fhr_LqzHbiJLBQkNR8M08yiXozSeZ4Fw9GCEy5nCVpQ=w2400" src="" alt="" />
+            <div class="img-overlay">
+              <a href="#"><span>W</span><span>&</span><span>M</span></a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="grid-item">
+          <div class="img-container">
+            <div class="placeholder-container" data-visible="true">
+              <img src="pics/amper.gif" class="img-placeholder" alt="">
+            </div>
+            <img class="img-lazy" data-src="https://lh3.googleusercontent.com/0uVngHXa9BZZc-5iuQRpBLn0pNa1XZ4Id419NU19fz74w6fCpDpExjNBI7I_xPo0glH1V9TvQxpt3RsBWXP48yhsPk7tMAfInNUBMu-l7qduS8IlJ1ajTi0zSjFdaCDs63cZAihvjQ=w2400" src="" alt="" />
+            <div class="img-overlay">
+              <a href="#"><span>W</span><span>&</span><span>M</span></a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="grid-item">
+          <div class="img-container">
+            <div class="placeholder-container" data-visible="true">
+              <img src="pics/amper.gif" class="img-placeholder" alt="">
+            </div>
+            <img class="img-lazy" data-src="https://lh3.googleusercontent.com/g4g1YkZtW-JvNjy79m-8EiJGgG-iuISyTlcNdOYN3d09yRexoV7dFDEDFwPJSnDCiCJJxcDs22RJpsnJH3PT7VO99RkQsift3DvMPQ-aVvkUnGZVr6YR0wcmtBS70N2pggpOum-DMg=w2400" src="" alt="" />
+            <div class="img-overlay">
+              <a href="#"><span>W</span><span>&</span><span>M</span></a>
+            </div>
+          </div>
+        </div>
     </section>
 
     <section class="quote fade-in">
       <div class="grid-container">
         <div class="grid-item span-3">
           <p>"The first step to doing anything is to believe you can do it. <br> See it finished in your mind before you ever start."</p>
+          <button onclick="window.open('https://drive.google.com/file/d/1yb643RYhSmF-H326hAPCW3nZ6rfZsa0h/view?usp=sharing', '_blank');" class="open-modal">Whitepaper</button>
         </div>
       </div>
     </section>

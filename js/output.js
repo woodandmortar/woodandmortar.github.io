@@ -248,7 +248,7 @@
 
 
 
-"xx1p" : function(){
+"245" : function(){
       responseText("Generating...");
       init4();
       document.getElementById("everything").style.display = "none";

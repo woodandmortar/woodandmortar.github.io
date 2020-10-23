@@ -455,10 +455,9 @@ a.down-arrow i {
           <div id="item" class="chat" style="color:white; font-size:1.3em;" >
                 <ul class="chatlist">
                   <li class="bot__output bot__output--standard">
-                    Hello, I'm Woodandmortar's chatbot programmed to educate you on our digital platform. It's designed to transparently manage subcontracting from first contact through final draw and walk-through.
-</li>
+                    Welcome to WoodandMortar.com</li>
                     <li class="bot__output bot__output--standard">
-                      Type <span class="bot__command">command</span> for a list of topics, or enter your housing code below...
+                      Type <span class="bot__command">command</span> for our site index, or enter your Project Number below.
                   </li>
                     </ul>  </ul>
                 </div>
@@ -1393,10 +1392,15 @@ document.getElementById('menuButton4').style='background:#D95952';
 
 
             "<div class='row'><div id='col1' class='column2'><br><br><br><br><center><h1>" + data[mNum4].First + data[mNum4].Last +  "</h1> <br> Phone: " + data[mNum4].Phone + "<br>" + data[mNum4].Address
-             +  "<br> <button class='open-modal' onclick='location.href=" + data[mNum4].Invoice + ";' type='button'>Invoice</button> <br><br> Start Time: " +
-             + data[mNum4].Body + "<br>End Time: " + data[mNum4].Rightpic + "<br></div><div id='col2' class='column2'><br><br><br>Start: " + data[mNum4].Start + "<br><br> Powerwash: " + data[mNum4].Wash + "<br>Body Paint: " + data[mNum4].Body + "<br>Trim Paint: " + data[mNum4].Trim + "<br>Touchup: " + data[mNum4].Touchup + "<br><br>  Body Paint color: "
-             + data[mNum4].Bodypaint + "<br>Gallons ordered: " + data[mNum4].OrderB + " Gallons used: " + data[mNum4].UsedB + "<br><br> Trim Paint color: " + data[mNum4].Trimpaint + "<br> Gallons ordered: " + data[mNum4].OrderT + "Gallons used: " + data[mNum4].UsedT + "<br><br> Accent color: " + data[mNum4].Accentpaint + "<br> Gallons ordered: "
-             + data[mNum4].OrderA + "Gallons used: " + data[mNum4].UsedA + "<br><br> Finish Date: " + data[mNum4].Finish + "<br><br> Modifications: " + data[mNum4].Modifications + "<br>Notes: " + data[mNum4].Notes + "</center></div></div><br><br><br><hr style='height:2px;border-width:0;color:gray;background-color:gray'>"
+            +  "<br> <button class='open-modal' onclick='location.href=" + data[mNum4].Invoice + ";' type='button'>Invoice</button>"
+            + " <br>Completion Total: " + data[mNum4].Totalc + " <br>Remaining Balance: $" + data[mNum4].Salary + "<br> Paid to: " + data[mNum4].Subc
+
+            + "<br></div><div id='col2' class='column2'><br><br><br>Start Date: " + data[mNum4].Start + "<br> Estimated Finish: " + data[mNum4].Finish
+            + "<br><br> Task 1: " + data[mNum4].Task1 + "<br> Completion: " + data[mNum4].Task1c
+            + "<br><br> Task 2: " + data[mNum4].Task2 + "<br> Completion: " + data[mNum4].Task2c
+            + "<br><br> Task 3: " + data[mNum4].Task3 + "<br> Completion: " + data[mNum4].Task3c
+            + "<br><br> Task 4: " + data[mNum4].Task4 + "<br> Completion: " + data[mNum4].Task4c
+            + "<br><br>Modification: " + data[mNum4].Modifications + "<br>Notes: " + data[mNum4].Notes + "</center></div></div><br><br><br><hr style='height:2px;border-width:0;color:gray;background-color:gray'>"
 
 )}}
 

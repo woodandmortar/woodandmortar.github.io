@@ -244,8 +244,24 @@
 
 
 // Address for each invoice
+"vpaint" : function(){
+      responseText("Generating...");
+      init4();
+      init5();
+      document.getElementById("everything").style.display = "none";
+      document.getElementById("client").style.display = "block";
+      window.scrollTo(0,document.body.scrollHeight);
+      return
+      },
 
-
+"244" : function(){
+      responseText("Generating...");
+      init5();
+      document.getElementById("everything").style.display = "none";
+      document.getElementById("client").style.display = "block";
+      window.scrollTo(0,document.body.scrollHeight);
+      return
+      },
 
 
 "245" : function(){

@@ -307,10 +307,6 @@ animation: progressAnimation 6s;
   margin-right: 200px;
 }
 
-.color-menu {
-  flex-shrink: 0;
-}
-
 .msg {
   padding: 30px;
   background-color: var(--unselected-mail);
@@ -356,7 +352,7 @@ animation: progressAnimation 6s;
 }
 .inbox-container {
   border-right: 1px solid var(--border-color);
-  width: 420px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   overflow: auto;
@@ -471,22 +467,15 @@ animation: progressAnimation 6s;
   height: 44px;
 }
 
-.mail-icons {
-  flex-shrink: 0;
-}
 .mail-icons svg {
-  width: 42px;
-  height: 42px;
-  padding: 13px;
+  width: 35px;
+  height: 35px;
+  padding: 8px;
   flex-shrink: 0;
-  margin-left: 10px;
   border-radius: 50%;
   overflow: visible;
   background-color: var(--button-bg-color);
   color: var(--button-color);
-}
-.mail-icons svg:first-child {
-  margin-left: 0;
 }
 
 .mail-contents {
@@ -494,12 +483,11 @@ animation: progressAnimation 6s;
 }
 .mail-contents-subject {
   display: flex;
-  align-items: center;
+  align-items: left;
 }
 .mail-contents-title {
   font-weight: 700;
   font-size: 17px;
-  margin-left: 5px;
 }
 
 .mail {
@@ -640,7 +628,6 @@ animation: progressAnimation 6s;
 }
 
 .inbox-calendar-checkbox {
-  position: relative;
   width: 100%;
   height: 100%;
   padding: 0;
@@ -1054,20 +1041,15 @@ animation: progressAnimation 6s;
 
 .colorpicker {
   border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 55px;
-  top: -8px;
-  right: -8px;
+  border-radius: 30%;
+  width: 35px;
+  height: 35px;
+  top: 0px;
+  right: 0px;
   position: absolute;
   cursor: pointer;
 }
 
-@media screen and (max-width: 1270px) {
-  .mail-icons svg:not(:first-child) {
-    display: none;
-  }
-}
 @media screen and (max-width: 1160px) {
   .inbox-container {
     display: inline-block;
@@ -1078,10 +1060,6 @@ animation: progressAnimation 6s;
     width: 320px;
   }
 }
-@media screen and (max-width: 1070px) {
-  .inbox-container {
-    display: none;
-  }
 
   .mail-detail-header .mail-icons svg {
     display: inline-block;
@@ -1097,10 +1075,6 @@ animation: progressAnimation 6s;
     display: none;
   }
 }
-@media screen and (max-width: 530px) {
-  .search-bar {
-    display: none;
-  }
 
   .mail-textarea {
     padding: 0;
@@ -1112,9 +1086,7 @@ animation: progressAnimation 6s;
   }
 }
 @media screen and (max-width: 485px) {
-  .mail-icons svg:not(:first-child) {
-    display: none;
-  }
+
 
   .inbox-calendar {
     margin-right: 0;
@@ -1122,12 +1094,6 @@ animation: progressAnimation 6s;
 
   .calendar-container {
     padding: 30px 20px;
-  }
-}
-@media screen and (max-width: 370px) {
-  .mail-doc-icons,
-  .mail-checklist-date {
-    display: none;
   }
 }
 .anim-y {

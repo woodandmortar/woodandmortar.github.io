@@ -374,19 +374,18 @@ function hideInvoice(){
   document.getElementById('profilePic').src = profile.getImageUrl();
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 
+  var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+  function init2() {
+          Tabletop2.init2( { key: public_spreadsheet_url2,
+                           callback: showInfo2,
+                           simpleSheet: true } );
+        }
+
   switch(profile.getEmail()){
     default:
         setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/mcred.html';}, 9000);
         break;
         case 'micheal.mfg@gmail.com':
-
-
-        var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
-        function init2() {
-                Tabletop2.init2( { key: public_spreadsheet_url2,
-                                 callback: showInfo2,
-                                 simpleSheet: true } );
-              }
                 init2();
           function showInfo2(data) {
 
@@ -399,20 +398,9 @@ function hideInvoice(){
               document.getElementById("gEmail").innerHTML = data[2].Email;
               $("#progBar").css('width', data[2].Finish)
                 }
-
-
-
-
               break;
 
         case 'woodmortar@gmail.com':
-
-        var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
-        function init2() {
-                Tabletop2.init2( { key: public_spreadsheet_url2,
-                                 callback: showInfo2,
-                                 simpleSheet: true } );
-              }
                 init2();
           function showInfo2(data) {
               document.getElementById("compTasks").innerHTML = data[1].Completed;
@@ -424,19 +412,9 @@ function hideInvoice(){
               document.getElementById("gEmail").innerHTML = data[1].Email;
               $("#progBar").css('width', data[1].Finish)
                 }
-
-
-
               break;
 
         case 'pati09991@gmail.com':
-
-        var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
-        function init2() {
-                Tabletop2.init2( { key: public_spreadsheet_url2,
-                                 callback: showInfo2,
-                                 simpleSheet: true } );
-              }
                 init2();
           function showInfo2(data) {
               document.getElementById("compTasks").innerHTML = data[4].Completed;
@@ -448,9 +426,6 @@ function hideInvoice(){
               document.getElementById("gEmail").innerHTML = data[4].Email;
               $("#progBar").css('width', data[4].Finish)
                 }
-
-
-
                               break;
 
 

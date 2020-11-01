@@ -1,7 +1,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>W&M</title>
+  <title>W&M - Contract Management</title>
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -28,94 +28,10 @@
             </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <script src="https://kit.fontawesome.com/bdd89edb33.js" crossorigin="anonymous"></script>
-  <title>W&M - Subcontracting Manager</title>
 <link rel="stylesheet" href="./home.css">
 </head>
 <body onload="init2(),ani();">
 <!-- partial:index.partial.html -->
-
-
-
-<div id="paperInvoice" style="z-index:9999;display:none;">
-
-  <div id="mail" class="mail-detail">
-   <div class="mail-detail-header">
-    <div class="mail-detail-profile">
-     <div id="clientName" class="mail-detail-name">Please Login</div><p style="right:15px;" onclick="hideInvoice()"> close</p><div id="invoiceNow" style="display:none;" class="mail-detail-name">-1</div><div id="hiddenLocation" style="display:none;"></div>
-    </div>
-
-   </div>
-   <div class="mail-contents">
-    <div id="mailContent" class="mail-contents-subject">
-     <input type="checkbox" name="msg" id="mail20" class="mail-choice" checked>
-     <label for="mail20"></label>
-     <div id="invoiceAddress" class="mail-contents-title"></div>
-    </div>
-    <div class="mail">
-     <div class="mail-time">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
-       <circle cx="12" cy="12" r="10" />
-       <path d="M12 6v6l4 2" /></svg>
-      Estimated Finish Date: <b id="finish1"></b>
-     </div>
-     <div class="mail-inside">
-
-
-<b id="task2"></b><br>
-<b id="task3"></b>
-<div class="mail-checklist">
-<input type="checkbox" name="msg" id="mail30" onclick="validateInvoice()" class="mail-choice" unchecked>
-<label for="mail30">Complete task</label>
-<div class="mail-checklist-date"><p><script> document.write(new Date().toLocaleDateString()); </script></p></div>
-</div>
-
-
-     </div>
-     <div class="mail-assign">
-      <div class="assignee">
-       <strong><b id="notes1"></b></strong>
-      </div>
-      <div class="assignee">
-       <strong><b id="modifications1"></b></strong>
-      </div>
-     </div>
-
-     <div id="invoice" class="mail-doc">
-      <div class="mail-doc-wrapper">
-       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
-        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-        <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" /></svg>
-       <div class="mail-doc-detail">
-        <div class="mail-doc-name">INVOICE.pdf</div>
-        <div class="mail-doc-date"><p>Last updated: <b id="startTime2">17 May, 2020</b></p></div>
-       </div>
-      </div>
-      <div class="mail-doc-icons">
-       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download-cloud">
-        <path d="M8 17l4 4 4-4M12 12v9" />
-        <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29" /></svg>
-      </div>
-     </div>
-    </div>
-   </div>
-   <div class="mail-textarea">
-    <input id="invoiceComment" type="text" placeholder="Write a comment...">
-    <div class="textarea-icons">
-     <div class="attach">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
-       <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48" /></svg>
-     </div>
-     <div class="send">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send">
-       <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" /></svg>
-     </div>
-    </div>
-   </div>
-  </div>
-
-</div>
-
-
 
 
 <div class="container">
@@ -128,18 +44,17 @@
    </div>
    <div class="user-notification">
     <div class="notify">
-     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" fill="currentColor">
-      <path d="M13.533 5.6h-.961a.894.894 0 01-.834-.57.906.906 0 01.197-.985l.675-.675a.466.466 0 000-.66l-1.32-1.32a.466.466 0 00-.66 0l-.676.677a.9.9 0 01-.994.191.906.906 0 01-.56-.837V.467A.467.467 0 007.933 0H6.067A.467.467 0 005.6.467v.961c0 .35-.199.68-.57.834a.902.902 0 01-.983-.195L3.37 1.39a.466.466 0 00-.66 0L1.39 2.71a.466.466 0 000 .66l.675.675c.25.25.343.63.193.995a.902.902 0 01-.834.56H.467A.467.467 0 000 6.067v1.866c0 .258.21.467.467.467h.961c.35 0 .683.202.834.57a.904.904 0 01-.197.984l-.675.676a.466.466 0 000 .66l1.32 1.32a.466.466 0 00.66 0l.68-.68a.894.894 0 01.994-.187.897.897 0 01.556.829v.961c0 .258.21.467.467.467h1.866c.258 0 .467-.21.467-.467v-.961c0-.35.202-.683.57-.834a.904.904 0 01.984.197l.676.675a.466.466 0 00.66 0l1.32-1.32a.466.466 0 000-.66l-.68-.68a.894.894 0 01-.187-.994.897.897 0 01.829-.556h.961c.258 0 .467-.21.467-.467V6.067a.467.467 0 00-.467-.467zM7 9.333C5.713 9.333 4.667 8.287 4.667 7S5.713 4.667 7 4.667 9.333 5.713 9.333 7 8.287 9.333 7 9.333z" /></svg>
-      <input type="color" value="#4d76fd" style="opacity:0" class="colorpicker" id="colorpicker"></input>
-    </div>
-    <div class="notify alert">
-     <svg id="user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
-      <path d="M10.688 95.156C80.958 154.667 204.26 259.365 240.5 292.01c4.865 4.406 10.083 6.646 15.5 6.646 5.406 0 10.615-2.219 15.469-6.604 36.271-32.677 159.573-137.385 229.844-196.896 4.375-3.698 5.042-10.198 1.5-14.719C494.625 69.99 482.417 64 469.333 64H42.667c-13.083 0-25.292 5.99-33.479 16.438-3.542 4.52-2.875 11.02 1.5 14.718z" />
-      <path d="M505.813 127.406a10.618 10.618 0 00-11.375 1.542C416.51 195.01 317.052 279.688 285.76 307.885c-17.563 15.854-41.938 15.854-59.542-.021-33.354-30.052-145.042-125-208.656-178.917a10.674 10.674 0 00-11.375-1.542A10.674 10.674 0 000 137.083v268.25C0 428.865 19.135 448 42.667 448h426.667C492.865 448 512 428.865 512 405.333v-268.25a10.66 10.66 0 00-6.187-9.677z" /></svg>
-    </div>
-    <div class="notify alert">
-     <svg id="clip" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
-      <path d="M467.812 431.851l-36.629-61.056a181.363 181.363 0 01-25.856-93.312V224c0-67.52-45.056-124.629-106.667-143.04V42.667C298.66 19.136 279.524 0 255.993 0s-42.667 19.136-42.667 42.667V80.96C151.716 99.371 106.66 156.48 106.66 224v53.483c0 32.853-8.939 65.109-25.835 93.291L44.196 431.83a10.653 10.653 0 00-.128 10.752c1.899 3.349 5.419 5.419 9.259 5.419H458.66c3.84 0 7.381-2.069 9.28-5.397 1.899-3.329 1.835-7.468-.128-10.753zM188.815 469.333C200.847 494.464 226.319 512 255.993 512s55.147-17.536 67.179-42.667H188.815z" /></svg>
+
+      <input type="color" value="#4d76fd" style="z-index:999;left:-37;opacity:0;" class="colorpicker" id="colorpicker"></input>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" fill="currentColor" style="position:absolute; left:-37;">
+       <path d="M13.533 5.6h-.961a.894.894 0 01-.834-.57.906.906 0 01.197-.985l.675-.675a.466.466 0 000-.66l-1.32-1.32a.466.466 0 00-.66 0l-.676.677a.9.9 0 01-.994.191.906.906 0 01-.56-.837V.467A.467.467 0 007.933 0H6.067A.467.467 0 005.6.467v.961c0 .35-.199.68-.57.834a.902.902 0 01-.983-.195L3.37 1.39a.466.466 0 00-.66 0L1.39 2.71a.466.466 0 000 .66l.675.675c.25.25.343.63.193.995a.902.902 0 01-.834.56H.467A.467.467 0 000 6.067v1.866c0 .258.21.467.467.467h.961c.35 0 .683.202.834.57a.904.904 0 01-.197.984l-.675.676a.466.466 0 000 .66l1.32 1.32a.466.466 0 00.66 0l.68-.68a.894.894 0 01.994-.187.897.897 0 01.556.829v.961c0 .258.21.467.467.467h1.866c.258 0 .467-.21.467-.467v-.961c0-.35.202-.683.57-.834a.904.904 0 01.984.197l.676.675a.466.466 0 00.66 0l1.32-1.32a.466.466 0 000-.66l-.68-.68a.894.894 0 01-.187-.994.897.897 0 01.829-.556h.961c.258 0 .467-.21.467-.467V6.067a.467.467 0 00-.467-.467zM7 9.333C5.713 9.333 4.667 8.287 4.667 7S5.713 4.667 7 4.667 9.333 5.713 9.333 7 8.287 9.333 7 9.333z"></svg>
+      <div class="inbox-calendar">
+       <input id="mainCheck" type="checkbox" class="inbox-calendar-checkbox">
+       <div class="toggle-page">
+        <span>Inbox</span>
+       </div>
+       <div class="layer"></div>
+      </div>
     </div>
    </div>
    <div class="progress-status"><p><b id="compTasks">0</b>/<b id="planTasks">0</b></p></div>
@@ -164,123 +79,137 @@
     </div>
    </div>
   </div>
-  <div class="side-wrapper">
-   <div class="project-title">Salary*</div>
-   <div class="project-name">
-    <div class="project-department">General Labor</div>
-    <div class="project-department">Specialist</div>
-    <div class="project-department">Contract</div>
-    <div class="project-department">Touch-ups</div>
-   </div>
-  </div>
-  <div class="side-wrapper">
-   <div class="project-title">Projects</div>
-   <div class="inbox-calendar">
-    <input type="checkbox" class="inbox-calendar-checkbox">
-    <div class="toggle-page">
-     <span>Inbox</span>
-    </div>
-    <div class="layer"></div>
-   </div>
-  </div>
- </div>
- <div class="main-area">
-  <div class="main-container">
-   <div id="contracts" class="inbox-container">
-    <div class="inbox">
-     <div class="msg msg-department anim-y">
-      <p>Task Manager</p>
-     </div>
-     <popup2></popup2>
-    </div>
-    <div id="mybtn" class="add-task">
-     <button class="add-button" onclick="mybtn.style='display:none;';init()">Load Tasks</button>
-    </div>
-   </div>
 
 
-   <div class="calendar-container">
-    <div class="calender-tab anim-y">
-     <div class="week-month">
-      <button class=" button active">Clock in</button>
-      <button class=" button button-month">Clock out</button>
+
+
+
+
+  <div id="paperInvoice" style="z-index:9999;display:none;">
+
+    <div id="mail" class="mail-detail">
+     <div class="mail-detail-header">
+      <div class="mail-detail-profile">
+       <div id="clientName" class="mail-detail-name">Please Login</div><div id="invoiceNow" style="display:none;" class="mail-detail-name">-1</div><div id="hiddenLocation" style="display:none;"></div>
+      </div>
+
      </div>
-     <div class="month-change">
-      <div class="current-month">October</div>
-      <div class="current-year">2020</div>
+     <div class="mail-contents">
+      <div id="mailContent" class="mail-contents-subject">
+       <input type="checkbox" name="msg" id="mail20" class="mail-choice" checked>
+       <label for="mail20"></label>
+       <div id="invoiceAddress" class="mail-contents-title"></div>
+      </div>
+      <div class="mail">
+       <div class="mail-time">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+         <circle cx="12" cy="12" r="10" />
+         <path d="M12 6v6l4 2" /></svg>
+        Estimated Finish Date: <b id="finish1"></b>
+       </div>
+       <div class="mail-inside">
+
+
+  <b id="task2"></b><br>
+  <b id="task3"></b>
+  <div class="mail-checklist">
+  <input type="checkbox" name="msg" id="mail30" onclick="validateInvoice()" class="mail-choice" unchecked>
+  <label for="mail30">Complete task</label>
+  <div class="mail-checklist-date"><p><script> document.write(new Date().toLocaleDateString()); </script></p></div>
+  </div>
+
+
+       </div>
+       <div class="mail-assign">
+        <div class="assignee">
+         <strong><b id="notes1"></b></strong>
+        </div>
+        <div class="assignee">
+         <strong><b id="modifications1"></b></strong>
+        </div>
+       </div>
+
+       <div id="invoice" class="mail-doc">
+        <div class="mail-doc-wrapper">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+          <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" /></svg>
+         <div class="mail-doc-detail">
+          <div class="mail-doc-name">Invoice<b id="invoiceNow2"></b> download</div>
+          <div class="mail-doc-date"><p>Last updated: <b id="startTime2">17 May, 2020</b></p></div>
+         </div>
+        </div>
+        <div class="mail-doc-icons">
+         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download-cloud">
+          <path d="M8 17l4 4 4-4M12 12v9" />
+          <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29" /></svg>
+        </div>
+       </div>
+      </div>
      </div>
-     <div class="week-month">
-      <button class=" button button-weekends">No Work</button>
-      <button class=" button button-task active">Ping Availability</button>
+     <div class="mail-textarea">
+      <input id="invoiceComment" type="text" placeholder="Write a comment...">
+      <div class="textarea-icons">
+       <div class="attach">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
+         <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48" /></svg>
+       </div>
+       <div class="send" onclick="hideInvoice()" style="color: white;">
+        <i class="fas fa-times-circle fa-2x"></i>
+       </div>
+      </div>
      </div>
     </div>
-    <div class="calendar-wrapper anim-y">
-     <div id="calendar2" class="calendar">
-      <div class="day project-market">1
-       <div class="hover-title">General Labor</div>
-       <div class="project-detail">Sales report from last month</div>
-       <div class="project-detail">Prepare offers for clients</div>
-       <div class="popup-check">
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
-        </svg>
-       </div>
+
+  </div>
+
+
+
+
+
+
+
+  <div class="main-area">
+   <div class="main-container">
+    <div id="contracts" class="inbox-container">
+     <div class="inbox">
+      <div class="msg msg-department anim-y">
+       <p>Task Manager</p>
       </div>
-      <div id="day2" class="day">2</div>
-      <div id="day3"  class="day project-design">3
-       <div class="project-detail design">Create 3 illustrations for blog post about design trends</div>
+      <popup2></popup2>
+     </div>
+     <div id="mybtn" class="add-task">
+      <button class="add-button" onclick="mybtn.style='display:none;';init()">Load Tasks</button>
+     </div>
+    </div>
+
+
+    <div class="calendar-container">
+     <div class="calender-tab anim-y">
+      <div class="week-month" style="margin:auto;">
+       <button class=" button button-task active">Ping <script> document.write(new Date().toLocaleDateString()); </script></button>
       </div>
-      <div id="day4"  class="day">4</div>
-      <div id="day5"  class="day">5</div>
-      <div id="day6"  class="day">6</div>
-      <div class="day project-develop">7
-       <div class="project-detail develop">Take part in course about future design trends and new technologies</div>
+     </div>
+
+     <script>
+
+       var public_spreadsheet_url0 = 'https://docs.google.com/spreadsheets/d/1iwOPspV8n7cdAnM9vRq32nJqUU3tw3dcfM4Uz-bplk0/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+       function init0() {Tabletop0.init0( { key: public_spreadsheet_url0,callback:showInfo0,simpleSheet: true } );}
+
+       window.addEventListener('DOMContentLoaded', init0)
+
+             function showInfo0(data) {
+               var mNum0 = 0;
+               while (data[mNum0]){
+                   $("#calendar2").append("<div id='day" + mNum0 + "' class='day'>" + data[mNum0].Start + "<div class='project-detail " + data[mNum0].Subc + "' onclick='choose(" + mNum0 + ");init3();showInvoice();pushInvoice();'>" + data[mNum0].Task1 + "</div></div>");
+                   mNum0++;
+               }}
+     </script>
+
+     <div class="calendar-wrapper anim-y">
+      <div id="calendar2" class="calendar">
+
       </div>
-      <div id="day8"  class="day">8</div>
-      <div id="day9"  class="day">9</div>
-      <div id="day10"  class="day">10</div>
-      <div id="day11"  class="day">11</div>
-      <div id="day12"  class="day">12</div>
-      <div id="day13"  class="day not-work">13</div>
-      <div id="day14"  class="day">14</div>
-      <div class="day project-market">15
-       <div class="hover-title">Marketing</div>
-       <div class="project-detail">Write an article about design trends</div>
-       <div class="popup-check">
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
-        </svg>
-       </div>
-      </div>
-      <div id="day16"  class="day">16</div>
-      <div class="day project-market">17
-       <div class="hover-title">Marketing</div>
-       <div class="project-detail">Create AdWords campaign</div>
-       <div class="project-detail">Send newsletter to clients</div>
-       <div class="popup-check">
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
-        </svg>
-       </div>
-      </div>
-      <div id="day18"  class="day">18</div>
-      <div id="day19"  class="day">19</div>
-      <div id="day20"  class="day">20</div>
-      <div id="day21"  class="day">21</div>
-      <div id="day22"  class="day">22</div>
-       <div class="day project-finance">23
-        <div class="hover-title">Management</div>
-       <div class="project-detail finance">Redesign project ui interface for clients and get feedback</div>
-       <div class="popup-check">
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
-        </svg>
-       </div>
-      </div>
-      <div id="day24"  class="day">24</div>
-      <div id="day25"  class="day">25</div>
-      <div id="day26"  class="day">26</div>
-      <div id="day27"  class="day">27</div>
-      <div id="day28"  class="day">28</div>
-      <div id="day29"  class="day">29</div>
-      <div id="day30"  class="day">30</div>
-      <div class="day not-work">31</div>
      </div>
     </div>
    </div>
@@ -296,6 +225,7 @@
   var invoiceNumber;
   function choose(choice){
     document.getElementById('invoiceNow').innerHTML = choice;
+    document.getElementById('invoiceNow2').innerHTML = choice;
 }
   </script>
 
@@ -360,9 +290,6 @@ window.addEventListener('DOMContentLoaded', init3)
             $("popup2").append(
             "<div class='msg selected-bg anim-y'><input type='checkbox' name='msg' id='mail" + mNum + "' class='mail-choice' onclick='choose(" + mNum + ");init3();showInvoice();' unchecked><label for='mail" + mNum + "'></label><div class='msg-content'><div class='msg-title'>"
              + data[mNum].Task1 + "</div><div class='msg-date'>" + data[mNum].Month + " " + data[mNum].Start + ", " + data[mNum].Year + "</div></div></div>");
-
-
-
 }}
 
 </script>
@@ -373,7 +300,9 @@ function validateInvoice(){
 alert("Are you ready for inspection?")
 
 }
-
+function pushInvoice (){
+  document.getElementById("mainCheck").click();
+}
 function showInvoice(){
   document.getElementById('paperInvoice').style.display = 'block';
 }
@@ -576,7 +505,7 @@ function hideInvoice(){
 
 
 </script>
-
+<script  src="js/tabletop0.js"></script>
 <script  src="js/tabletop.js"></script>
 <script  src="js/tabletop2.js"></script>
 <script  src="js/tabletop3.js"></script>

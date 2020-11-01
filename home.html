@@ -34,11 +34,23 @@
 <!-- partial:index.partial.html -->
 
 
+
+
+<div id="item1" style="
+  position:absolute;
+  display:none;
+  top:85px; left:8px;
+  z-index:999999999999999999999999">
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+</div>
+
+
+
+
 <div class="container">
  <div class="user-profile-area">
   <div class="side-wrapper">
    <div class="user-profile">
-    <img id="profilePic" src="salmon.svg" alt="" class="user-photo">
     <div id="fName" class="user-name">Please Login</div>
     <div id="gEmail" class="user-mail">Pending Login</div>
    </div>
@@ -65,17 +77,14 @@
     <div class="task-stat">
      <div id="compTasks2" class="task-number">0</div>
      <div class="task-condition">Completed</div>
-     <div class="task-tasks">tasks</div>
     </div>
     <div class="task-stat">
      <div id="planTasks2" class="task-number">0</div>
      <div class="task-condition">Planned</div>
-     <div class="task-tasks">tasks</div>
     </div>
     <div class="task-stat">
      <div id="finishTasks" class="task-number">0%</div>
      <div class="task-condition">Finish</div>
-     <div class="task-tasks">Quality</div>
     </div>
    </div>
   </div>
@@ -174,7 +183,9 @@
     <div id="contracts" class="inbox-container">
      <div class="inbox">
       <div class="msg msg-department anim-y">
-       <p>Task Manager</p>
+        <img id="profilePic" src="salmon.svg" alt="" class="user-photo">
+       <p> | Task Manager</p>
+
       </div>
       <popup2></popup2>
      </div>
@@ -257,30 +268,6 @@ window.addEventListener('DOMContentLoaded', init3)
 
   </script>
 
-<script>
-                    var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
-                    function init2() {
-                            Tabletop2.init2( { key: public_spreadsheet_url2,
-                                             callback: showInfo2,
-                                             simpleSheet: true } );
-                          }
-
-                      function showInfo2(data) {
-                        for (var mNum2 = 0; mNum2 < data.length; mNum2++){
-                          document.getElementById("compTasks").innerHTML = data[mNum2].Completed;
-                          document.getElementById("planTasks").innerHTML = data[mNum2].Planned;
-                          document.getElementById("compTasks2").innerHTML = data[mNum2].Completed;
-                          document.getElementById("planTasks2").innerHTML = data[mNum2].Planned;
-                          document.getElementById("finishTasks").innerHTML = data[mNum2].Finish;
-                          document.getElementById("fName").innerHTML = data[mNum2].First + " " + data[mNum2].Last;
-                          document.getElementById("gEmail").innerHTML = data[mNum2].Email;
-                          $("#progBar").css('width', data[mNum2].Finish)
-                            }}
-
-
-
-
-</script>
 <script>
 
   var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1iwOPspV8n7cdAnM9vRq32nJqUU3tw3dcfM4Uz-bplk0/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
@@ -383,10 +370,9 @@ function hideInvoice(){
   function onSignIn(googleUser) {
 
   var profile = googleUser.getBasicProfile();
-  var fName = profile.getName();
-  var userImage = profile.getImageUrl();
-  document.getElementById('vresp1').innerHTML = profile.getName();
-  document.getElementById('profilePic').src = userImage;
+  document.getElementById('fName').innerHTML = profile.getName();
+  document.getElementById('gEmail').innerHTML = profile.getEmail();
+  document.getElementById('profilePic').src = profile.getImageUrl();
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 
   switch(profile.getEmail()){
@@ -394,72 +380,80 @@ function hideInvoice(){
         setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/mcred.html';}, 9000);
         break;
         case 'micheal.mfg@gmail.com':
+
+
         var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
         function init2() {
                 Tabletop2.init2( { key: public_spreadsheet_url2,
                                  callback: showInfo2,
                                  simpleSheet: true } );
               }
-              init2();
 
-              function showInfo2(data) {
-                for (var mNum = 0; mNum < data.length; mNum++){
-                $("compTasks").append(data[mNum].Date;)
-                $("compTasks").append(data[mNum].Salary;)
-                $("compTasks").append(data[mNum].Planned;)
-                $("compTasks").append(data[mNum].Completed;)
-                $("compTasks").append(data[mNum].Finish;)
-                $("compTasks").append(data[mNum].Hours;)
-                $("compTasks").append(data[mNum].mCreds;)
+          function showInfo2(data) {
+            for (var mNum2 = 0; mNum2 < data.length; mNum2++){
+              document.getElementById("compTasks").innerHTML = data[mNum2].Completed;
+              document.getElementById("planTasks").innerHTML = data[mNum2].Planned;
+              document.getElementById("compTasks2").innerHTML = data[mNum2].Completed;
+              document.getElementById("planTasks2").innerHTML = data[mNum2].Planned;
+              document.getElementById("finishTasks").innerHTML = data[mNum2].Finish;
+              document.getElementById("fName").innerHTML = data[mNum2].First + " " + data[mNum2].Last;
+              document.getElementById("gEmail").innerHTML = data[mNum2].Email;
+              $("#progBar").css('width', data[mNum2].Finish)
                 }}
+
+
+
+
               break;
 
         case 'woodmortar@gmail.com':
+
         var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
         function init2() {
                 Tabletop2.init2( { key: public_spreadsheet_url2,
                                  callback: showInfo2,
                                  simpleSheet: true } );
               }
-              init2();
-              function showInfo2(data) {
-                var mNum = 0;
-                time2 = data[mNum].time;
-                knowledgelevel2 = data[mNum].knowledgelevel;
-                credcoins2 = data[mNum].credcoins;
-                mcreds2 = data[mNum].mcreds;
-                hours2 = data[mNum].hours;
-                document.getElementById("hud1a").innerHTML = [ time2 ].join(", ");
-                document.getElementById("hud2").innerHTML = [ knowledgelevel2 ].join(", ");
-                document.getElementById("hud3").innerHTML = [ credcoins2 ].join(", ");
-                document.getElementById("hud4").innerHTML = [ mcreds2 ].join(", ");
-                document.getElementById("hud5").innerHTML = [ hours2 ].join(", ");
-              }
-              document.getElementById('employ').style.display = 'block';
+
+          function showInfo2(data) {
+            for (var mNum2 = 0; mNum2 < data.length; mNum2++){
+              document.getElementById("compTasks").innerHTML = data[mNum2].Completed;
+              document.getElementById("planTasks").innerHTML = data[mNum2].Planned;
+              document.getElementById("compTasks2").innerHTML = data[mNum2].Completed;
+              document.getElementById("planTasks2").innerHTML = data[mNum2].Planned;
+              document.getElementById("finishTasks").innerHTML = data[mNum2].Finish;
+              document.getElementById("fName").innerHTML = data[mNum2].First + " " + data[mNum2].Last;
+              document.getElementById("gEmail").innerHTML = data[mNum2].Email;
+              $("#progBar").css('width', data[mNum2].Finish)
+                }}
+
+
+
               break;
 
         case 'pati09991@gmail.com':
-        var public_spreadsheet_url3 = 'https://docs.google.com/spreadsheets/d/15CTeL8jhHEZFhHu78aepZAwiINhz4_a-cd37vIavksk/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
-        function init3() {
-                Tabletop3.init3( { key: public_spreadsheet_url3,
-                                 callback: showInfo3,
+
+        var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+        function init2() {
+                Tabletop2.init2( { key: public_spreadsheet_url2,
+                                 callback: showInfo2,
                                  simpleSheet: true } );
               }
-              init3();
-              function showInfo3(data) {
-                var mNum = 0;
-                time3 = data[mNum].time;
-                knowledgelevel3 = data[mNum].knowledgelevel;
-                credcoins3 = data[mNum].credcoins;
-                mcreds3 = data[mNum].mcreds;
-                hours3 = data[mNum].hours;
-                document.getElementById("hud1a").innerHTML = [ time3 ].join(", ");
-                document.getElementById("hud2").innerHTML = [ knowledgelevel3 ].join(", ");
-                document.getElementById("hud3").innerHTML = [ credcoins3 ].join(", ");
-                document.getElementById("hud4").innerHTML = [ mcreds3 ].join(", ");
-                document.getElementById("hud5").innerHTML = [ hours3 ].join(", ");
-              }
-              document.getElementById('employ').style.display = 'block';
+
+          function showInfo2(data) {
+            for (var mNum2 = 0; mNum2 < data.length; mNum2++){
+              document.getElementById("compTasks").innerHTML = data[mNum2].Completed;
+              document.getElementById("planTasks").innerHTML = data[mNum2].Planned;
+              document.getElementById("compTasks2").innerHTML = data[mNum2].Completed;
+              document.getElementById("planTasks2").innerHTML = data[mNum2].Planned;
+              document.getElementById("finishTasks").innerHTML = data[mNum2].Finish;
+              document.getElementById("fName").innerHTML = data[mNum2].First + " " + data[mNum2].Last;
+              document.getElementById("gEmail").innerHTML = data[mNum2].Email;
+              $("#progBar").css('width', data[mNum2].Finish)
+                }}
+
+
+
                               break;
 
 

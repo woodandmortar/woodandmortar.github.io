@@ -380,7 +380,6 @@ function hideInvoice(){
   window.addEventListener('DOMContentLoaded', init2);
 
              function showInfo2(data) {
-               var mNum2 = -2;
                  for (var mNum2 = 0; mNum2 < data[mNum2].Account; mNum2++){
                    document.getElementById("compTasks").innerHTML = data[mNum2].Completed;
                    document.getElementById("planTasks").innerHTML = data[mNum2].Planned;

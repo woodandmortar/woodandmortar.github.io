@@ -359,8 +359,7 @@ animation: progressAnimation 6s;
 
 .main-container {
   display: flex;
-  flex-grow: 1;
-  overflow: hidden;
+  overflow: auto;
   background-color: var(--main-container-bg);
 }
 

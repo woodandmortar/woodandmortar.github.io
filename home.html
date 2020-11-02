@@ -38,7 +38,7 @@
 
 <div id="item1" style="
   position:absolute;
-  top:85px; left:8px;
+  top:15px; left:8px;
   z-index:999999999999999999999999">
 <div class="g-signin2" data-onsuccess="onSignIn"></div>
 </div>
@@ -372,65 +372,25 @@ function hideInvoice(){
   document.getElementById('fName').innerHTML = profile.getName();
   document.getElementById('gEmail').innerHTML = profile.getEmail();
   document.getElementById('profilePic').src = profile.getImageUrl();
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
+
 
   var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
-  function init2() {
-          Tabletop2.init2( { key: public_spreadsheet_url2,
-                           callback: showInfo2,
-                           simpleSheet: true } );
-        }
+  function init2() {Tabletop2.init2( { key: public_spreadsheet_url2,callback: showInfo2,simpleSheet: true } );}
+  window.addEventListener('DOMContentLoaded', init2);
 
-  switch(profile.getEmail()){
-    default:
-        setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/mcred.html';}, 9000);
-        break;
-        case 'micheal.mfg@gmail.com':
-                init2();
-          function showInfo2(data) {
-
-              document.getElementById("compTasks").innerHTML = data[2].Completed;
-              document.getElementById("planTasks").innerHTML = data[2].Planned;
-              document.getElementById("compTasks2").innerHTML = data[2].Completed;
-              document.getElementById("planTasks2").innerHTML = data[2].Planned;
-              document.getElementById("finishTasks").innerHTML = data[2].Finish;
-              document.getElementById("fName").innerHTML = data[2].First + " " + data[2].Last;
-              document.getElementById("gEmail").innerHTML = data[2].Email;
-              $("#progBar").css('width', data[2].Finish)
-                }
-              break;
-
-        case 'woodmortar@gmail.com':
-                init2();
-          function showInfo2(data) {
-              document.getElementById("compTasks").innerHTML = data[1].Completed;
-              document.getElementById("planTasks").innerHTML = data[1].Planned;
-              document.getElementById("compTasks2").innerHTML = data[1].Completed;
-              document.getElementById("planTasks2").innerHTML = data[1].Planned;
-              document.getElementById("finishTasks").innerHTML = data[1].Finish;
-              document.getElementById("fName").innerHTML = data[1].First + " " + data[1].Last;
-              document.getElementById("gEmail").innerHTML = data[1].Email;
-              $("#progBar").css('width', data[1].Finish)
-                }
-              break;
-
-        case 'pati09991@gmail.com':
-                init2();
-          function showInfo2(data) {
-              document.getElementById("compTasks").innerHTML = data[4].Completed;
-              document.getElementById("planTasks").innerHTML = data[4].Planned;
-              document.getElementById("compTasks2").innerHTML = data[4].Completed;
-              document.getElementById("planTasks2").innerHTML = data[4].Planned;
-              document.getElementById("finishTasks").innerHTML = data[4].Finish;
-              document.getElementById("fName").innerHTML = data[4].First + " " + data[4].Last;
-              document.getElementById("gEmail").innerHTML = data[4].Email;
-              $("#progBar").css('width', data[4].Finish)
-                }
-                              break;
-
-
-  }
-
+             function showInfo2(data) {
+               var mNum2 = 0;
+                 for (var mNum2 = 0; document.getElementById('gEmail').innerHTML != data[mNum2].Email; mNum2++){
+                   document.getElementById("compTasks").innerHTML = data[mNum2].Completed;
+                   document.getElementById("planTasks").innerHTML = data[mNum2].Planned;
+                   document.getElementById("compTasks2").innerHTML = data[mNum2].Completed;
+                   document.getElementById("planTasks2").innerHTML = data[mNum2].Planned;
+                   document.getElementById("finishTasks").innerHTML = data[mNum2].Finish;
+                   document.getElementById("fName").innerHTML = data[mNum2].First + " " + data[mNum2].Last;
+                   document.getElementById("gEmail").innerHTML = data[mNum2].Email;
+                   $("#progBar").css('width', data[mNum2].Finish);
+               }}
   }
 
         function onSignInCallback(resp) {

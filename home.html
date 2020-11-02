@@ -381,7 +381,7 @@ function hideInvoice(){
 
              function showInfo2(data) {
                var mNum2 = 0;
-                 for (var mNum2 = 0; document.getElementById('gEmail').innerHTML != data[mNum2].Email; mNum2++){
+                 for (var mNum2 = 0; mNum2 < data[mNum2].Account; mNum2++){
                    document.getElementById("compTasks").innerHTML = data[mNum2].Completed;
                    document.getElementById("planTasks").innerHTML = data[mNum2].Planned;
                    document.getElementById("compTasks2").innerHTML = data[mNum2].Completed;

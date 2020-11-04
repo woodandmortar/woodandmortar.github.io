@@ -373,28 +373,24 @@ function hideInvoice(){
   document.getElementById('gEmail').innerHTML = profile.getEmail();
   document.getElementById('profilePic').src = profile.getImageUrl();
 
-  function changeProfile() {
-alert('testing');
-  }
-    var findAccount;
-    var mNum2 = 0;
     var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
     function init2() {Tabletop2.init2( { key: public_spreadsheet_url2,callback: showInfo2,simpleSheet: true } );}
     window.addEventListener('DOMContentLoaded', init2);
 
                function showInfo2(data) {
-                 if (document.getElementById('gEmail').innerHTML != data[mNum2].Email){
-                   mNum2++;
-                 }
-                     document.getElementById("compTasks").innerHTML = data[mNum2].Completed;
-                     document.getElementById("planTasks").innerHTML = data[mNum2].Planned;
-                     document.getElementById("compTasks2").innerHTML = data[mNum2].Completed;
-                     document.getElementById("planTasks2").innerHTML = data[mNum2].Planned;
-                     document.getElementById("finishTasks").innerHTML = data[mNum2].Finish;
-                     document.getElementById("fName").innerHTML = data[mNum2].First + " " + data[mNum2].Last;
-                     document.getElementById("gEmail").innerHTML = data[mNum2].Email;
-                     $("#progBar").css('width', data[mNum2].Finish);
-                 }
+
+                     if (document.getElementById('gEmail').innerHTML == data[mNum2].Email){
+                       alert(mNum2);
+                       document.getElementById("compTasks").innerHTML = data[mNum2].Completed;
+                       document.getElementById("planTasks").innerHTML = data[mNum2].Planned;
+                       document.getElementById("compTasks2").innerHTML = data[mNum2].Completed;
+                       document.getElementById("planTasks2").innerHTML = data[mNum2].Planned;
+                       document.getElementById("finishTasks").innerHTML = data[mNum2].Finish;
+                       document.getElementById("fName").innerHTML = data[mNum2].First + " " + data[mNum2].Last;
+                       document.getElementById("gEmail").innerHTML = data[mNum2].Email;
+                       $("#progBar").css('width', data[mNum2].Finish);
+
+                     }else{mNum2++;}}
 
 
 

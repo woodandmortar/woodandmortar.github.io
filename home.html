@@ -273,6 +273,11 @@ var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJc
 function init2() {Tabletop2.init2( { key: public_spreadsheet_url2,callback: showInfo2,simpleSheet: true } );}
 window.addEventListener('DOMContentLoaded', init2);
 
+var mNum2;
+function createV (){
+  mNum2 = 0;
+}
+window.addEventListener('DOMContentLoaded', createV);
 
 
   var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1iwOPspV8n7cdAnM9vRq32nJqUU3tw3dcfM4Uz-bplk0/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
@@ -373,16 +378,16 @@ function hideInvoice(){
 
 
   function onSignIn(googleUser) {
-  var mNum2 = 0;
   var profile = googleUser.getBasicProfile();
   document.getElementById('fName').innerHTML = profile.getName();
   document.getElementById('gEmail').innerHTML = profile.getEmail();
   document.getElementById('profilePic').src = profile.getImageUrl();
+  alert(mNum2 + ' Logged in');
+
 
                  function showInfo2(data) {
 
                        if (document.getElementById('gEmail').innerHTML == data[mNum2].Email){
-                         alert(mNum2 + ' Logged in');
                          document.getElementById("compTasks").innerHTML = data[mNum2].Completed;
                          document.getElementById("planTasks").innerHTML = data[mNum2].Planned;
                          document.getElementById("compTasks2").innerHTML = data[mNum2].Completed;

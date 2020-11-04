@@ -269,10 +269,6 @@ window.addEventListener('DOMContentLoaded', init3)
 
 <script>
 
-var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
-function init2() {Tabletop2.init2( { key: public_spreadsheet_url2,callback: showInfo2,simpleSheet: true } );}
-window.addEventListener('DOMContentLoaded', init2);
-
 
   var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1iwOPspV8n7cdAnM9vRq32nJqUU3tw3dcfM4Uz-bplk0/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
   function init() {Tabletop.init( { key: public_spreadsheet_url,callback: showInfo,simpleSheet: true } );}
@@ -378,20 +374,6 @@ function hideInvoice(){
   document.getElementById('profilePic').src = profile.getImageUrl();
 
 
-                 function showInfo2(data) {
-                      for (var mNum2 = 0; mNum2 < data.length; mNum2++){
-                        alert(mNum2 + ' Logged in');
-                       if (document.getElementById('gEmail').innerHTML == data[mNum2].Email){
-                         document.getElementById("compTasks").innerHTML = data[mNum2].Completed;
-                         document.getElementById("planTasks").innerHTML = data[mNum2].Planned;
-                         document.getElementById("compTasks2").innerHTML = data[mNum2].Completed;
-                         document.getElementById("planTasks2").innerHTML = data[mNum2].Planned;
-                         document.getElementById("finishTasks").innerHTML = data[mNum2].Finish;
-                         document.getElementById("fName").innerHTML = data[mNum2].First + " " + data[mNum2].Last;
-                         document.getElementById("gEmail").innerHTML = data[mNum2].Email;
-                         $("#progBar").css('width', data[mNum2].Finish);
-
-                       }}}
 
   }
 
@@ -433,6 +415,35 @@ function hideInvoice(){
 
 
 </script>
+
+
+<script>
+
+var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+function init2() {Tabletop2.init2( { key: public_spreadsheet_url2,callback: showInfo2,simpleSheet: true } );}
+window.addEventListener('DOMContentLoaded', init2);
+
+
+                 function showInfo2(data) {
+                      for (var mNum2 = 0; mNum2 < data.length; mNum2++){
+                        alert(mNum2 + ' Logged in');
+                       if (document.getElementById('gEmail').innerHTML == data[mNum2].Email){
+                         document.getElementById("compTasks").innerHTML = data[mNum2].Completed;
+                         document.getElementById("planTasks").innerHTML = data[mNum2].Planned;
+                         document.getElementById("compTasks2").innerHTML = data[mNum2].Completed;
+                         document.getElementById("planTasks2").innerHTML = data[mNum2].Planned;
+                         document.getElementById("finishTasks").innerHTML = data[mNum2].Finish;
+                         document.getElementById("fName").innerHTML = data[mNum2].First + " " + data[mNum2].Last;
+                         document.getElementById("gEmail").innerHTML = data[mNum2].Email;
+                         $("#progBar").css('width', data[mNum2].Finish);
+
+                       }}}
+
+</script>
+
+
+
+
 <script  src="js/tabletop0.js"></script>
 <script  src="js/tabletop.js"></script>
 <script  src="js/tabletop2.js"></script>

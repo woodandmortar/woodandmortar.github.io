@@ -426,7 +426,6 @@ window.addEventListener('DOMContentLoaded', init2);
 
                  function showInfo2(data) {
                       for (var mNum2 = 0; mNum2 < data.length; mNum2++){
-                        alert(mNum2 + ' Logged in');
                        if (document.getElementById('gEmail').innerHTML == data[mNum2].Email){
                          document.getElementById("compTasks").innerHTML = data[mNum2].Completed;
                          document.getElementById("planTasks").innerHTML = data[mNum2].Planned;

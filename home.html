@@ -115,8 +115,10 @@
        <div class="mail-inside">
 
 
-  <b id="task2"></b><br>
-  <b id="task3"></b>
+  <b id="part1"></b><br>
+  <b id="part2"></b><br>
+  <b id="part3"></b><br>
+  <b id="part4"></b>
   <div class="mail-checklist">
   <input type="checkbox" name="msg" id="mail30" onclick="validateInvoice()" class="mail-choice" unchecked>
   <label for="mail30">Complete task</label>
@@ -179,14 +181,14 @@
     <div id="contracts" class="inbox-container">
      <div class="inbox">
       <div class="msg msg-department anim-y">
-        <img id="profilePic" src="salmon.svg" alt="" class="user-photo">
-       <p> | Task Manager</p>
+        <img id="profilePic" src="pics/amper.gif" alt="" class="user-photo">
+       <p>- Subcontract</p>
 
       </div>
       <popup2></popup2>
      </div>
      <div id="mybtn" class="add-task">
-      <button class="add-button" onclick="mybtn.style='display:none;';init()">Load Tasks</button>
+      <button class="add-button" onclick="mybtn.style='display:none;';init()">Available Tasks</button>
      </div>
     </div>
 
@@ -194,7 +196,7 @@
     <div class="calendar-container">
      <div class="calender-tab anim-y">
       <div class="week-month" style="margin:auto;">
-       <button class=" button button-task active">Ping <script> document.write(new Date().toLocaleDateString()); </script></button>
+       <button class=" button button-task active">Today: <script> document.write(new Date().toLocaleDateString()); </script></button>
       </div>
      </div>
 
@@ -254,8 +256,10 @@ window.addEventListener('DOMContentLoaded', init3)
             document.getElementById("startTime2").innerHTML = data[invoiceNumber].Month + ", " + data[invoiceNumber].Start + " " + data[invoiceNumber].Year;
             document.getElementById("clientName").innerHTML = data[invoiceNumber].First + " " + data[invoiceNumber].Last;
             document.getElementById("finish1").innerHTML = data[invoiceNumber].Finish;
-            document.getElementById("task2").innerHTML = data[invoiceNumber].Task2;
-            document.getElementById("task3").innerHTML = data[invoiceNumber].Task3;
+            document.getElementById("part1").innerHTML = data[invoiceNumber].Part1;
+            document.getElementById("part2").innerHTML = data[invoiceNumber].Part2;
+            document.getElementById("part3").innerHTML = data[invoiceNumber].Part3;
+            document.getElementById("part4").innerHTML = data[invoiceNumber].Part4;
             document.getElementById("modifications1").innerHTML = data[invoiceNumber].Modifications;
             document.getElementById("notes1").innerHTML = data[invoiceNumber].Notes;
 
@@ -435,7 +439,7 @@ window.addEventListener('DOMContentLoaded', init2);
                          document.getElementById("fName").innerHTML = data[mNum2].First + " " + data[mNum2].Last;
                          document.getElementById("gEmail").innerHTML = data[mNum2].Email;
                          $("#progBar").css('width', data[mNum2].Finish);
-
+                          $("#progBar").load(location.href + " #progBar > *");
                        }}}
 
 </script>

@@ -415,13 +415,13 @@ a.down-arrow i {
 
       </a></li>
       <li id="nav-linkp"><a class="nav-link" href="mailto:info@woodandmortar.com?Subject=General%20Inquiry&body=Place%20message%20here%20please" target="_blank" >Contact</a></li>
-      <li id="nav-linko"><a class="nav-link" href="https://salmonfund.github.io/solidity/" target="_blank" >Donate</a></li>
+      <li id="nav-linko"><a class="nav-link" href="https://salmonfund.github.io/solidity/" target="_blank" >About</a></li>
 
     </ol>
 
 <div id="sub" class="btn-next">
     <ol class="navbar-right">
-      <li style="margin:0px 5px;"><a href="javascript:void(0);" onclick="morph()" class="nav-link brand">Account</a></li>
+      <li style="margin:0px 5px;"><a href="javascript:void(0);" onclick="morph()" class="nav-link brand">Subcontract</a></li>
       <li style="margin:0px 5px;"><a href="javascript:void(0);" onclick="morph()" class="nav-link">
           <svg viewBox="0 0 44 44">
             <use xlink:href="#user-icon" x="0" y="0">
@@ -963,86 +963,7 @@ document.getElementById('menuButton4').style='background:#D95952';
   var userImage = profile.getImageUrl();
   document.getElementById('vresp1').innerHTML = profile.getName();
   document.getElementById('profilePic').src = userImage;
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 
-  switch(profile.getEmail()){
-    default:
-        setTimeout(function(){window.location.href = 'https://woodandmortar.github.io/mcred.html';}, 9000);
-        break;
-        case 'micheal.mfg@gmail.com':
-        var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
-        function init2() {
-                Tabletop2.init2( { key: public_spreadsheet_url2,
-                                 callback: showInfo2,
-                                 simpleSheet: true } );
-              }
-              init2();
-              function showInfo2(data) {
-                var mNum = 0;
-                time2 = data[mNum].time;
-                knowledgelevel2 = data[mNum].knowledgelevel;
-                credcoins2 = data[mNum].credcoins;
-                mcreds2 = data[mNum].mcreds;
-                hours2 = data[mNum].hours;
-                document.getElementById("hud1a").innerHTML = [ time2 ].join(", ");
-                document.getElementById("hud2").innerHTML = [ knowledgelevel2 ].join(", ");
-                document.getElementById("hud3").innerHTML = [ credcoins2 ].join(", ");
-                document.getElementById("hud4").innerHTML = [ mcreds2 ].join(", ");
-                document.getElementById("hud5").innerHTML = [ hours2 ].join(", ");
-              }
-              document.getElementById('employ').style.display = 'block';
-              break;
-
-        case 'woodmortar@gmail.com':
-        var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
-        function init2() {
-                Tabletop2.init2( { key: public_spreadsheet_url2,
-                                 callback: showInfo2,
-                                 simpleSheet: true } );
-              }
-              init2();
-              function showInfo2(data) {
-                var mNum = 0;
-                time2 = data[mNum].time;
-                knowledgelevel2 = data[mNum].knowledgelevel;
-                credcoins2 = data[mNum].credcoins;
-                mcreds2 = data[mNum].mcreds;
-                hours2 = data[mNum].hours;
-                document.getElementById("hud1a").innerHTML = [ time2 ].join(", ");
-                document.getElementById("hud2").innerHTML = [ knowledgelevel2 ].join(", ");
-                document.getElementById("hud3").innerHTML = [ credcoins2 ].join(", ");
-                document.getElementById("hud4").innerHTML = [ mcreds2 ].join(", ");
-                document.getElementById("hud5").innerHTML = [ hours2 ].join(", ");
-              }
-              document.getElementById('employ').style.display = 'block';
-              break;
-
-        case 'pati09991@gmail.com':
-        var public_spreadsheet_url3 = 'https://docs.google.com/spreadsheets/d/15CTeL8jhHEZFhHu78aepZAwiINhz4_a-cd37vIavksk/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
-        function init3() {
-                Tabletop3.init3( { key: public_spreadsheet_url3,
-                                 callback: showInfo3,
-                                 simpleSheet: true } );
-              }
-              init3();
-              function showInfo3(data) {
-                var mNum = 0;
-                time3 = data[mNum].time;
-                knowledgelevel3 = data[mNum].knowledgelevel;
-                credcoins3 = data[mNum].credcoins;
-                mcreds3 = data[mNum].mcreds;
-                hours3 = data[mNum].hours;
-                document.getElementById("hud1a").innerHTML = [ time3 ].join(", ");
-                document.getElementById("hud2").innerHTML = [ knowledgelevel3 ].join(", ");
-                document.getElementById("hud3").innerHTML = [ credcoins3 ].join(", ");
-                document.getElementById("hud4").innerHTML = [ mcreds3 ].join(", ");
-                document.getElementById("hud5").innerHTML = [ hours3 ].join(", ");
-              }
-              document.getElementById('employ').style.display = 'block';
-                              break;
-
-
-  }
 
   }
 
@@ -1056,6 +977,18 @@ document.getElementById('menuButton4').style='background:#D95952';
         function apiClientLoaded() {
           gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
         }
+
+        var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+        function init2() {Tabletop2.init2( { key: public_spreadsheet_url2,callback: showInfo2,simpleSheet: true } );}
+        window.addEventListener('DOMContentLoaded', init2);
+
+        function showInfo2(data) {
+             for (var mNum2 = 0; mNum2 < data.length; mNum2++){
+              if (document.getElementById('gEmail').innerHTML == data[mNum2].Email){
+                window.open('home.html');
+              }}}
+
+
 
           var sendForm = document.querySelector('#chatform'),
               textInput = document.querySelector('.chatbox'),

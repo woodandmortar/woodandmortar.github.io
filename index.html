@@ -468,6 +468,7 @@ a.down-arrow i {
 
                           <img id="profilePic" src="salmon.svg" style="z-index:999999999999999999999; width:60px;"><br>
                           <span id="vresp1">No Login</span><br>
+                          <b id="gEmail" style="display:none;">nothing</b>
                           <font style="color: #D95952; font-weight: 900; display:none;">FLOW: <b id="vTime">0</b></font>
                           <div style="display:none;" id="finalSolution"></div>
                           </li>
@@ -963,6 +964,7 @@ document.getElementById('menuButton4').style='background:#D95952';
   var userImage = profile.getImageUrl();
   document.getElementById('vresp1').innerHTML = profile.getName();
   document.getElementById('profilePic').src = userImage;
+  document.getElementById('gEmail').innerHTML = profile.getEmail();
 
 
   }

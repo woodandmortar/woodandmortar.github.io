@@ -46,6 +46,7 @@
 .chatlist {
   font-family: inherit;
   font-size: 1em;
+  color: black;
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-end;
@@ -58,13 +59,10 @@
     padding: 0.85em;
     margin: 0.5em;
     max-width: 100%;
-background: rgba(0, 0, 00, 0.8);
-    border-radius: 5px;
-    border-bottom: 1px solid #777; }
+background: white;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.4); }
   .chatlist .userInput {
     text-transform: lowercase;
-    box-shadow: 1px 1px 2px #666;
-    border-top: 4px solid #CC8914;
     opacity: 0;
     animation-name: animateBubble;
     animation-duration: 400ms;
@@ -73,8 +71,6 @@ background: rgba(0, 0, 00, 0.8);
     animation-fill-mode: forwards; }
   .chatlist .bot__output {
     align-self: flex-start;
-    box-shadow: -1px 1px 2px #666;
-    border-top: 4px solid #363636;
     will-change: auto;
     height: auto;
     opacity: 0;
@@ -136,7 +132,7 @@ background: rgba(0, 0, 00, 0.8);
 .chatbox-area {
   margin: 10px;
   position: relative;
-  bottom: 0;
+  bottom: -5px;
   height: auto;
   background-color: transparent;
   color: white;
@@ -144,43 +140,32 @@ background: rgba(0, 0, 00, 0.8);
 
 textarea[name="chatbox"] {
   resize: none;
-  border: 2px solid #363636;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.4);
   width: 100%;
   background-color: white;
   color: black;
-  height: 2em;
+  height: 2.4em;
   margin: auto;
-  border-radius: 4px 0px 0px 4px;
-  font-family: inherit;
   font-size: 1em; }
-  textarea[name="chatbox"]:focus {
-    outline: none;
-    border: 2px solid #D95952; }
+  textarea[name="chatbox"]:focus {outline: none; }
 
 
     input[type="submit"] {
       -webkit-appearance: none;
       appearance: none;
       display: none;
-      border: 0;
       width: 25%;
       margin: 0;
       background-color: #363636;
       color: #fff;
-      border: 2px solid #363636;
-      border-left: 0;
-      border-radius: 8px 8px 8px 8px;
-      font-family: inherit;
       font-size: 1em;
       transition: 200ms all ease-in; }
-      input[type="submit"]:hover {
-        background-color: #D95952;
-        border-color: #D95952;
-        color: #fff; }
+      input[type="submit"]:hover {}
 
     .input__nested-list {
       list-style: disc;
       list-style-position: inside;
+      text-decoration: none;
       padding: 0.5em; }
       .input__nested-list:first-child {
         padding-top: 1em; }
@@ -204,7 +189,7 @@ textarea[name="chatbox"] {
 
 
       .salmonTail {
-      transform: translateX(-4px);
+      transform: translateX(-2px);
       animation: swim 2.4s ease alternate infinite;
       }
       @keyframes swim {
@@ -212,7 +197,7 @@ textarea[name="chatbox"] {
           transform: translateX(0px);
         }
         50% {
-          transform: translateX(-4px);
+          transform: translateX(-2px);
         }
         100% {
           transform: translateX(0px);
@@ -222,16 +207,14 @@ textarea[name="chatbox"] {
 
       .open-modal {
          text-align: center;
-        border: none;
-        background: #000;
-        color: #fff;
+        border: 2px solid black;
+        background: transparent;
+        color: #000;
         text-transform: uppercase;
         letter-spacing: 4px;
         font-size: 14px;
         padding: .7em 1em;
         font-weight: bold;
-        border-radius: 10px;
-         cursor: pointer;
         -webkit-transition: background 0.3s;
         transition: background 0.3s;
         animation: pulse 8s infinite;
@@ -450,7 +433,7 @@ a.down-arrow i {
   </div>
 
   <header id="header1">
-    <div class="hero" data-images='["https://woodandmortar.github.io/pics/hero.jpg","https://woodandmortar.github.io/pics/woodmortar.jpg"]'>
+    <div class="hero" data-images='["https://woodandmortar.github.io/pics/woodmortar3.jpg","https://woodandmortar.github.io/pics/woodmortar2.jpg"]'>
       <div class="container-prev">
           <div id="item" class="chat" style="color:white; font-size:1.3em;" >
                 <ul class="chatlist">

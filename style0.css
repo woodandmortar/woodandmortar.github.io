@@ -506,17 +506,14 @@ body[data-loading="false"] .container-prev h3,body[data-loading="false"] .contai
     font-size:1rem;
     text-align:center;
 }
-.info-ul {
-    margin: auto;
-    padding-left: 0;
-    height:auto;
+ul {
+  list-style: none;
 }
-.info-ul>ol li>a>svg {
-    width:1.25rem;
-    height:1.25rem;
-}
-#share-icon,#fb-icon,#ig-icon {
-    fill:#000;
+
+ul li::before {
+  color: transparent;
+  font-weight: bold;
+  display: inline-block;
 }
 .border-right {
     border-right:2px solid black;

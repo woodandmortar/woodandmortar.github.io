@@ -34,7 +34,7 @@
 
 /* The Modal (background) */
 .modal {
-  display: block; /* Hidden by default */
+  display: none; /* Hidden by default */
   position: absolute; /* Stay in place */
   z-index: 9999999999999999999999999999999; /* Sit on top */
   padding-top: 100px; /* Location of the box */
@@ -128,6 +128,10 @@
      <div id="finishTasks" class="task-number">0%</div>
      <div class="task-condition">Finish</div>
     </div>
+    <div class="task-stat">
+     <div id="totalSalary" class="task-number">$0</div>
+     <div class="task-condition">Salary</div>
+    </div>
    </div>
   </div>
 
@@ -141,7 +145,7 @@
     <div id="mail" class="mail-detail">
      <div class="mail-detail-header">
       <div class="mail-detail-profile">
-       <div id="clientName" class="mail-detail-name">Please Login</div><div id="invoiceNow" style="display:none;" class="mail-detail-name">-1</div><div id="hiddenLocation" style="display:none;"></div>
+       <div class="mail-detail-name"><b id="code">#</b> | <b id="clientName">Please Login</b></div><div id="invoiceNow" style="display:none;" class="mail-detail-name">-1</div><div id="hiddenLocation" style="display:none;"></div>
       </div>
 
      </div>
@@ -302,6 +306,7 @@ window.addEventListener('DOMContentLoaded', init3)
             document.getElementById("startTime2").innerHTML = data[invoiceNumber].Month + ", " + data[invoiceNumber].Start + " " + data[invoiceNumber].Year;
             document.getElementById("clientName").innerHTML = data[invoiceNumber].First + " " + data[invoiceNumber].Last;
             document.getElementById("finish1").innerHTML = data[invoiceNumber].Finish;
+            document.getElementById("code").innerHTML = data[invoiceNumber].Code;
             document.getElementById("part1").innerHTML = data[invoiceNumber].Part1;
             document.getElementById("part2").innerHTML = data[invoiceNumber].Part2;
             document.getElementById("part3").innerHTML = data[invoiceNumber].Part3;
@@ -332,10 +337,15 @@ window.addEventListener('DOMContentLoaded', init3)
 </script>
 
 <script>
-
+function sendAgain(){
+  document.getElementById("sendIT").innerHTML = "Send Again?";
+}
+function validateEmail(){
+  window.location.href = "mailto:woodmortar@gmail.com?Subject=Task%20" + document.getElementById("code").innerHTML + "%20Walkthrough&body=Ive%20completed%20the%20project";
+}
 function validateInvoice(){
-alert("Are you ready for inspection?")
-
+document.getElementById("loginModal").innerHTML = "Are you sure you're ready for project " + document.getElementById("code").innerHTML + " inspection?<br><br><button id='sendIT' onclick='validateEmail();sendAgain();'>Yes</button><button style='margin-left:10px;' onclick='closeModal()'>Close</button>";
+document.getElementById("myModal").style.display = "block";
 }
 function pushInvoice (){
   document.getElementById("mainCheck").click();
@@ -465,6 +475,10 @@ function hideInvoice(){
 
 
 <script>
+function closeModal(){
+  document.getElementById("myModal").style.display = "none";
+}
+
 var loginVal = "Not Validated";
 
 var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
@@ -480,10 +494,11 @@ window.addEventListener('DOMContentLoaded', init2);
                          document.getElementById("compTasks2").innerHTML = data[mNum2].Completed;
                          document.getElementById("planTasks2").innerHTML = data[mNum2].Planned;
                          document.getElementById("finishTasks").innerHTML = data[mNum2].Finish;
+                         document.getElementById("totalSalary").innerHTML = data[mNum2].Salary;
                          document.getElementById("fName").innerHTML = data[mNum2].First + " " + data[mNum2].Last;
                          document.getElementById("gEmail").innerHTML = data[mNum2].Email;
                          $("#progBar").css('width', data[mNum2].Finish);
-                          document.getElementById("myModal").style.display = "none";
+                          closeModal();
                           document.getElementById("loginModal").innerHTML = "Validated";
                           (function()
 {

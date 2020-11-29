@@ -1,13 +1,13 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>W&M - Contract Management</title>
+  <title>Task Management</title>
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <META NAME="KEYWORDS" CONTENT="WoodandMortar LLC, WoodandMortar, Wood and Mortar, Bid Consultants, home improvement, home repair, house repair, house improvement, design, home design, designers, kitchen remodel, bathroom remodel, cement, stone, veneer, kitchen, bathroom, veneer stone, Painters, Painting, fireplace, tile, home repair, Contractors, Home, Home Renovations, Wood, wood&mortar, wood & mortar, brick, stucco, Wood and Mortar, WoodandMortar">
       <META NAME="ROBOTS" CONTENT="ALL,FOLLOW">
-          <meta name="description" content="Simple Subcontracting">
+          <meta name="description" content="Subcontracting Simplified">
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="apple-touch-icon" sizes="180x180" href="pics/wm.png">
               <link rel="icon" type="image/png" href="pics/wm.png" sizes="32x32">
@@ -29,19 +29,65 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <script src="https://kit.fontawesome.com/bdd89edb33.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="./home.css">
+
+<style>
+
+/* The Modal (background) */
+.modal {
+  display: block; /* Hidden by default */
+  position: absolute; /* Stay in place */
+  z-index: 9999999999999999999999999999999; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+</style>
+
 </head>
 <body>
 <!-- partial:index.partial.html -->
 
-<div id="item1" style="
-  position:absolute;
-  top:15px; left:8px;
-  z-index:999999999999999999999999">
-<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <p id="loginModal">Please Login</p>
+  </div>
+
 </div>
-
-
-
 
 <div class="container">
  <div class="user-profile-area">
@@ -376,9 +422,6 @@ function hideInvoice(){
   document.getElementById('fName').innerHTML = profile.getName();
   document.getElementById('gEmail').innerHTML = profile.getEmail();
   document.getElementById('profilePic').src = profile.getImageUrl();
-
-
-
   }
 
         function onSignInCallback(resp) {
@@ -422,6 +465,7 @@ function hideInvoice(){
 
 
 <script>
+var loginVal = "Not Validated";
 
 var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
 function init2() {Tabletop2.init2( { key: public_spreadsheet_url2,callback: showInfo2,simpleSheet: true } );}
@@ -439,7 +483,21 @@ window.addEventListener('DOMContentLoaded', init2);
                          document.getElementById("fName").innerHTML = data[mNum2].First + " " + data[mNum2].Last;
                          document.getElementById("gEmail").innerHTML = data[mNum2].Email;
                          $("#progBar").css('width', data[mNum2].Finish);
-                          $("#progBar").load(location.href + " #progBar > *");
+                          document.getElementById("myModal").style.display = "none";
+                          document.getElementById("loginModal").innerHTML = "Validated";
+                          (function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem('firstLoad') )
+    {
+      localStorage['firstLoad'] = true;
+      window.location.reload();
+    }
+    else
+      localStorage.removeItem('firstLoad');
+  }
+})();
                        }}}
 
 </script>

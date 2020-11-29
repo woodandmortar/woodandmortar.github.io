@@ -2,7 +2,6 @@
 function morph(){
 
 document.getElementById('everything').style.display = 'none';
-document.getElementById('item7').style.display = 'block';
 document.getElementById('item').style.display = 'none';
 document.getElementById('item2').style.display = 'block';
 document.getElementById('sub').style.display = 'none';
@@ -18,7 +17,6 @@ document.getElementById('nav-linko').innerHTML = '<a class="nav-link active" hre
 function unMorph(){
 
 document.getElementById('everything').style.display = 'block';
-document.getElementById('item7').style.display = 'none';
 document.getElementById('item').style.display = 'block';
 document.getElementById('item2').style.display = 'none';
 document.getElementById('sub').style.display = 'block';

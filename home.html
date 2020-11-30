@@ -110,6 +110,15 @@
        <div class="layer"></div>
       </div>
     </div>
+    <div onclick="window.open('index.html')">
+     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" fill="currentColor">
+       <path d="M16.101,32c-2.58,0-4.939-0.898-6.74-2.695c-3.59-3.594-3.59-9.445,0-13.035l8.336-7.938
+   			c0.461-0.465,0.727-1.102,0.727-1.785c0-0.68-0.266-1.32-0.742-1.805c-0.993-0.992-2.833-0.988-3.833,0.004
+   			c-0.985,0.992-0.985,2.609,0.007,3.602l-2.832,2.832c-2.55-2.555-2.55-6.707-0.003-9.262c2.562-2.559,6.934-2.555,9.49-0.004
+   			c1.242,1.238,1.922,2.887,1.922,4.637s-0.68,3.395-1.922,4.629l-8.338,7.934c-2.02,2.016-2.02,5.328,0.02,7.363
+   			c2.031,2.035,5.566,2.031,7.607,0c2.031-2.035,2.031-5.348,0-7.379l-1.424-1.414l4.354-4.348l2.602,2.828l-1.672,1.672
+   			c2.266,3.562,1.852,8.359-1.031,11.469C20.831,31.102,18.462,32,16.101,32L16.101,32z"/></path></svg>
+    </div>
    </div>
    <div class="progress-status"><p><b id="compTasks">0</b>/<b id="planTasks">0</b></p></div>
    <div class="progress">
@@ -146,6 +155,7 @@
      <div class="mail-detail-header">
       <div class="mail-detail-profile">
        <div class="mail-detail-name"><b id="code">#</b> | <b id="clientName">Please Login</b></div><div id="invoiceNow" style="display:none;" class="mail-detail-name">-1</div><div id="hiddenLocation" style="display:none;"></div>
+       <div id="hashKey" style="display:none;">na</div>
       </div>
 
      </div>
@@ -341,7 +351,7 @@ function sendAgain(){
   document.getElementById("sendIT").innerHTML = "Send Again?";
 }
 function validateEmail(){
-  window.location.href = "mailto:woodmortar@gmail.com?Subject=Task%20" + document.getElementById("code").innerHTML + "%20Walkthrough&body=Ive%20completed%20the%20project";
+  window.location.href = "mailto:woodmortar@gmail.com?Subject=Task%20" + document.getElementById("code").innerHTML + "%20Walkthrough&body=Ive%20completed%20the%20project%0A" + document.getElementById("hashKey").innerHTML;
 }
 function validateInvoice(){
 document.getElementById("loginModal").innerHTML = "Are you sure you're ready for project " + document.getElementById("code").innerHTML + " inspection?<br><br><button id='sendIT' onclick='validateEmail();sendAgain();'>Yes</button><button style='margin-left:10px;' onclick='closeModal()'>Close</button>";
@@ -495,30 +505,34 @@ window.addEventListener('DOMContentLoaded', init2);
                          document.getElementById("planTasks2").innerHTML = data[mNum2].Planned;
                          document.getElementById("finishTasks").innerHTML = data[mNum2].Finish;
                          document.getElementById("totalSalary").innerHTML = data[mNum2].Salary;
+                         document.getElementById("hashKey").innerHTML = data[mNum2].Hash;
                          document.getElementById("fName").innerHTML = data[mNum2].First + " " + data[mNum2].Last;
                          document.getElementById("gEmail").innerHTML = data[mNum2].Email;
                          $("#progBar").css('width', data[mNum2].Finish);
                           closeModal();
                           document.getElementById("loginModal").innerHTML = "Validated";
-                          (function()
-{
-  if( window.localStorage )
-  {
-    if( !localStorage.getItem('firstLoad') )
-    {
-      localStorage['firstLoad'] = true;
-      window.location.reload();
-    }
-    else
-      localStorage.removeItem('firstLoad');
-  }
-})();
+
                        }}}
 
 </script>
-
-
-
+<script>
+if (document.getElementById("loginModal").innerHTML == "Validated"){
+  (function()
+{
+if( window.localStorage )
+{
+if( !localStorage.getItem('firstLoad') )
+{
+localStorage['firstLoad'] = true;
+window.location.reload();
+}
+else
+localStorage.removeItem('firstLoad');
+document.getElementById("loginModal").innerHTML = "Refresh Page";
+}
+})();
+}
+</script>
 
 <script  src="js/tabletop0.js"></script>
 <script  src="js/tabletop.js"></script>

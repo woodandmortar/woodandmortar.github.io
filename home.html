@@ -414,8 +414,6 @@ function hideInvoice(){
   function startGeoLookup() {
     navigator.geolocation.getCurrentPosition(success, error);
      $('.overlay, .loader').fadeIn('fast');
-     setTimeout(function() {toggleVisibility(document.getElementById('form1'));}, 1000);
-     document.getElementById('button1').style.display = "none";
    }
 
   function success(pos) {
@@ -427,6 +425,20 @@ function hideInvoice(){
     // alert("Altitude: " + crd.altitude + " \nAltitudeAccuracy: " + crd.altitudeAccuracy);
     var roundAcc = Math.floor(crd.accuracy);
     document.getElementById('hiddenLocation').innerHTML = crd.latitude + '<br>' + crd.longitude;
+    (function()
+  {
+  if( window.localStorage )
+  {
+  if( !localStorage.getItem('firstLoad') )
+  {
+  localStorage['firstLoad'] = true;
+  window.location.reload();
+  }
+  else
+  localStorage.removeItem('firstLoad');
+  document.getElementById("loginModal").innerHTML = "Refresh Page";
+  }
+  })();
   }
 
   /* Error Codes: 1 PERMISSION_DENIED, 2 POSITION_UNAVAILABLE, 3 TIMEOUT */

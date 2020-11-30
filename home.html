@@ -368,8 +368,8 @@ function hideInvoice(){
   document.getElementById('paperInvoice').style.display = 'none';
 }
 function completeProject(){
-  if (document.getElementById("flags").innerHTML > 1 ){
-document.getElementById("loginModal").innerHTML = "You need to complete project " + document.getElementById("flags").innerHTML + "<br><br><button style='margin-left:10px;' onclick='closeModal()'>Close</button>";
+  if (document.getElementById("flags").innerHTML != "0" ){
+document.getElementById("loginModal").innerHTML = document.getElementById("flags").innerHTML + "<br><br><button style='margin-left:10px;' onclick='closeModal()'>Close</button>";
 document.getElementById("myModal").style.display = "block";
 }}
 

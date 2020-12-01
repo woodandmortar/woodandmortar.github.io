@@ -448,7 +448,7 @@ canvas {
 }
 .hero {
     position:relative;
-    height:85vh;
+    height:75vh;
     width: 100vw;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));

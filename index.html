@@ -53,7 +53,7 @@
   overflow-x: hidden;
   width: 90vw;
   max-width: 80vw;
-  max-height: 80vh;
+  max-height: 70vh;
   margin: 0; }
   .chatlist .userInput, .chatlist .bot__output {
     padding: 0.85em;
@@ -299,8 +299,8 @@ text-align: center; }
 
 .bounce2 {
   /*arrow bouncing duration*/
-  -webkit-animation: bounce2 2s infinite;
-  animation: bounce2 2s infinite;
+  -webkit-animation: bounce2 4s infinite;
+  animation: bounce2 4s infinite;
 }
 
 .arrow {
@@ -339,12 +339,12 @@ a.down-arrow i {
     transform: translateY(0);
   }
   40% {
-    -webkit-transform: translateY(-30px);
-    transform: translateY(-30px);
-  }
-  60% {
     -webkit-transform: translateY(-15px);
     transform: translateY(-15px);
+  }
+  60% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
   }
 }
 
@@ -358,12 +358,12 @@ a.down-arrow i {
     transform: translateY(0);
   }
   40% {
-    -webkit-transform: translateY(-30px);
-    transform: translateY(-30px);
-  }
-  60% {
     -webkit-transform: translateY(-15px);
     transform: translateY(-15px);
+  }
+  60% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
   }
 }
 
@@ -470,7 +470,7 @@ Click <b>above</b> for a detailed walkthrough of our platform, and our Q&A porti
 
                   <div class="chatbox-area" id="chat1">
                   <form action="" id="chatform">
-                  <textarea placeholder="Type here..." class="chatbox" name="chatbox" minlength="2"></textarea>
+                  <textarea placeholder="Type here..." class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
                   <input class="submit-button" type="submit" value="send">
                   </form>
                   </div>
@@ -839,25 +839,6 @@ function openInNewTab(href) {
         element.style.display='none';
     }
   }
-
-
-          function onSignInCallback(resp) {
-            gapi.client.load('plus', 'v1', apiClientLoaded);
-          }
-
-          /**
-           * Sets up an API call after the Google API client loads.
-           */
-          function apiClientLoaded() {
-            gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
-          }
-
-
-    var location;
-    var project;
-    var task;
-    var fName;
-    var userImage;
 
 
           var sendForm = document.querySelector('#chatform'),

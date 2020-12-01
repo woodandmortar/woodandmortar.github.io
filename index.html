@@ -60,9 +60,9 @@
     margin: 0.5em;
     max-width: 100%;
 background: white;
--moz-box-shadow:    inset 0 0 10px #000000;
--webkit-box-shadow: inset 0 0 10px #000000;
-box-shadow:         inset 0 0 10px #000000; }
+-moz-box-shadow:    0 0 10px #000000;
+-webkit-box-shadow: 0 0 10px #000000;
+box-shadow:         0 0 10px #000000; }
   .chatlist .userInput {
     text-transform: lowercase;
     opacity: 0;
@@ -135,15 +135,13 @@ box-shadow:         inset 0 0 10px #000000; }
   margin: 10px;
   position: relative;
   bottom: -5px;
-  height: auto;
   background-color: transparent;
-  color: white;
   width: 60%; }
 
 textarea[name="chatbox"] {
-  -moz-box-shadow:    inset 0 0 10px #000000;
-   -webkit-box-shadow: inset 0 0 10px #000000;
-   box-shadow:         inset 0 0 10px #000000;
+  -moz-box-shadow:    0 0 10px #000000;
+   -webkit-box-shadow: 0 0 10px #000000;
+   box-shadow:         0 0 10px #000000;
   width: 100%;
   background-color: white;
   color: black;
@@ -462,7 +460,7 @@ Click <b>above</b> for a detailed walkthrough of our platform, and our Q&A porti
 
                   <div class="chatbox-area" id="chat1">
                   <form action="" id="chatform">
-                  <textarea placeholder="Scroll down or Type here..." class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
+                  <textarea placeholder="Type here..." class="chatbox" name="chatbox" minlength="2"></textarea>
                   <input class="submit-button" type="submit" value="send">
                   </form>
                   </div>
@@ -833,6 +831,25 @@ function openInNewTab(href) {
   }
 
 
+          function onSignInCallback(resp) {
+            gapi.client.load('plus', 'v1', apiClientLoaded);
+          }
+
+          /**
+           * Sets up an API call after the Google API client loads.
+           */
+          function apiClientLoaded() {
+            gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
+          }
+
+
+    var location;
+    var project;
+    var task;
+    var fName;
+    var userImage;
+
+
           var sendForm = document.querySelector('#chatform'),
               textInput = document.querySelector('.chatbox'),
               chatList = document.querySelector('.chatlist'),
@@ -1043,12 +1060,7 @@ function openInNewTab(href) {
             animationCounter = 1;
             previousInput = Object.keys(possibleInput)[e];
           }
-
-
-
-
-
-
+</script>
 
 
 

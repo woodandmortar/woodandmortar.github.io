@@ -69,6 +69,12 @@ box-shadow:         0 0 10px #000000; }
   border-bottom-width: medium;
   border-bottom-color: rgb(232, 77, 77, .8);
 }
+.bot__output {
+    border-radius: 20px 20px 20px 0px;
+    border-bottom-style: solid;
+    border-bottom-width: medium;
+    border-bottom-color: rgb(0, 0, 0);
+}
   .chatlist .userInput {
     text-transform: lowercase;
     opacity: 0;
@@ -140,23 +146,21 @@ box-shadow:         0 0 10px #000000; }
 .chatbox-area {
   margin: 10px;
   position: relative;
-  bottom: -5px;
   background-color: transparent;
   width: 60%; }
 
 textarea[name="chatbox"] {
-  border-radius: 20px 20px 0px 20px;
-  -moz-box-shadow:    0 0 10px #000000;
-   -webkit-box-shadow: 0 0 10px #000000;
-   box-shadow:         0 0 10px #000000;
+  -moz-box-shadow:   inset 0 0 5px #000000;
+   -webkit-box-shadow: inset 0 0 5px #000000;
+   box-shadow:       inset  0 0 5px #000000;
   width: 100%;
   background-color: white;
   border-bottom-style: solid;
   border-bottom-width: medium;
   border-bottom-color: rgb(232, 77, 77, .8);
   color: black;
-  height: 2.4em;
-  font-size: 1.2em;
+  height: 1.7em;
+  font-size: 1.5em;
 text-align: center; }
   textarea[name="chatbox"]:focus {outline: none; }
 
@@ -297,77 +301,6 @@ text-align: center; }
   }
 }
 
-.bounce2 {
-  /*arrow bouncing duration*/
-  -webkit-animation: bounce2 4s infinite;
-  animation: bounce2 4s infinite;
-}
-
-.arrow {
-  position: absolute;
-  bottom: -20;
-  left: 50%;
-  margin-left: -27px;
-  width: 60px;
-  height: 70px;
-  z-index: 1000;
-  /*change with size of arrow to make it sit on bottom of page*/
-}
-
-a.down-arrow i {
-  display: absolute;
-  color: #000;
-  /*arrow color*/
-  opacity: 1;
-  /*arrow opacity*/
-  font-size: 2rem;
-  /*arrow size*/
-}
-
-.down-arrow svg.svg-inline--fa:hover {
-  opacity: 0.5;
-  /*arrow hover opacity*/
-}
-
-@-webkit-keyframes bounce2 {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -webkit-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
-  60% {
-    -webkit-transform: translateY(-8px);
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes bounce2 {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -webkit-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
-  60% {
-    -webkit-transform: translateY(-8px);
-    transform: translateY(-8px);
-  }
-}
-
-
 </style>
 
 </head>
@@ -436,14 +369,16 @@ a.down-arrow i {
   </nav>
 
   <header id="header1">
-    <div class="hero" data-images='["https://woodandmortar.github.io/pics/woodmortar3.jpg","https://woodandmortar.github.io/pics/woodmortar.jpg"]'>
+    <div class="hero" data-images='["https://woodandmortar.github.io/pics/wallpaper.jpg","https://woodandmortar.github.io/pics/woodmortar.jpg"]'>
       <div class="container-prev">
           <div id="item" class="chat" style="color:white; font-size:1.3em;" >
                 <ul class="chatlist">
                   <li class="bot__output bot__output--standard">
-                    Welcome to WoodandMortar.com </li>
+                    Welcome to WoodandMortar.com
+                  <a href="#everything"><button class="open-modal">Learn More</button></a>
+                </li>
                     <li class="bot__output bot__output--standard">
-                      Type <span class="bot__command">command</span> for our site index, or enter your Project Number below.
+                      Woodandmortar clients can enter <span class="bot__command">Project Hash*</span> below.
                   </li>
                     </ul>  </ul>
                 </div>
@@ -458,10 +393,8 @@ function b1Function() {
   location.replace("home.html");
 }
 </script>
-                            <button id="button1" onclick="b1Function()" style="z-index:999999999999999999999;" class="open-modal"><span id="vresp9">Subcontracting</span></button>
-Click <b>above</b> for the task manager and job calender. If your Google account is not yet linked, please click support.
-                            <button id="button2" href="#" style="z-index:999999999999999999999;" class="open-modal">Support</button>
-Click <b>above</b> for a detailed walkthrough of our platform, and our Q&A portion of WoodandMortar.com.
+                            <button id="button1" onclick="b1Function()" style="z-index:999999999999999999999;" class="open-modal"><span id="vresp9">Task Manager</span></button>
+                            <button id="button2" href="#" style="z-index:999999999999999999999;" class="open-modal">Contact</button>
                             <button id="button3" href="#" style="z-index:999999999999999999999;" class="open-modal">Partner</button>
                             <button id="button4" href="#" style="z-index:999999999999999999999;" class="open-modal">Admin</button>
 
@@ -483,11 +416,6 @@ Click <b>above</b> for a detailed walkthrough of our platform, and our Q&A porti
   </header>
 
   <main id="everything">
-    <a href="#mainSection" class="down-arrow">
-            <div class="arrow bounce2">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </div>
-          </a>
     <section class="info fade-in">
       <div class="grid-container">
         <div class="grid-item">
@@ -622,7 +550,7 @@ Micheal Salmon and Crycella Freitag are Kansas Cities #1 source for temporary su
         </div>
 
 
-        <div class="grid-item">
+        <div class="grid-item" id="currentProjects">
           <div class="img-container">
             <div class="placeholder-container" data-visible="true">
               <img src="pics/amper.gif" class="img-placeholder" alt="">
@@ -860,7 +788,7 @@ function openInNewTab(href) {
 
           sendForm.onkeydown = function(e){
             if(e.keyCode == 13){
-              
+
 
               //No mix ups with upper and lowercases
               var input = textInput.value.toLowerCase();

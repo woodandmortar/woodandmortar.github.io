@@ -328,6 +328,9 @@ window.addEventListener('DOMContentLoaded', init3)
 </script>
 
 <script>
+function gotoTimesheet(){
+  window.location.href = "https://docs.google.com/spreadsheets/d/1NnyHRHMPu6qIZgjvp_KJeKpOjgst1uF56y96F44JdtY/edit?usp=sharing";
+}
 function sendAgain(){
   document.getElementById("sendIT").innerHTML = "Send Again?";
 }
@@ -335,7 +338,7 @@ function validateEmail(){
   window.location.href = "mailto:woodmortar@gmail.com?Subject=Task%20" + document.getElementById("code").innerHTML + "%20Walkthrough&body=Ive%20completed%20the%20project%0A" + document.getElementById("hashKey").innerHTML;
 }
 function validateInvoice(){
-document.getElementById("loginModal").innerHTML = "You have CLocked in for project " + document.getElementById("code").innerHTML + "<br><br><button style='margin-left:10px;' onclick='closeModal()'>Close</button>";
+document.getElementById("loginModal").innerHTML = "You have clocked in for project " + document.getElementById("code").innerHTML + "<br><br><button id='sendIT' onclick='gotoTimesheet()'>View Timesheet</button><button style='margin-left:10px;' onclick='closeModal()'>Close</button>";
 document.getElementById("myModal").style.display = "block";
 }
 function pushInvoice (){

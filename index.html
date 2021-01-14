@@ -506,9 +506,18 @@ function b1Function() {
           </div>
         </div>
       </div>
+
+<script>function magButGone2(){document.getElementById("magButton2").style.display = "none";}</script>
+<center><button id="magButton2" class="open-modal" onclick="init2();magButGone2();">Current Projects</button></center>
+<generatePhoto2></generatePhoto2>
+
+<br><br>
+
+
 <script>function magButGone(){document.getElementById("magButton").style.display = "none";}</script>
-<center><button id="magButton" class="open-modal" onclick="init();magButGone();">Project: "Maggie" Gallery</button></center>
+<center><button id="magButton" class="open-modal" onclick="init();magButGone();">NonProfit Gallery</button></center>
 <generatePhoto></generatePhoto>
+
 
 
     </section>
@@ -598,6 +607,7 @@ function b1Function() {
 <script  src="js/index.js"></script>
 <script  src="js/animate.js"></script>
 <script  src="js/tabletop.js"></script>
+<script  src="js/tabletop2.js"></script>
 <script  src="js/tabletop4.js"></script>
 <script  src="js/tabletop5.js"></script>
 <script  src="js/morph.js"></script>
@@ -614,6 +624,21 @@ function b1Function() {
             "<div class='grid-container'><div class='grid-item'><div class='img-container'><div class='placeholder-container' data-visible='true'><img src="
              + data[mNum8].Photo + " class='img-placeholder' alt=''></div><img class='img-lazy' data-src="
              + data[mNum8].Photo + " src='' alt='' /><div class='img-overlay'><a href='#'><span>W</span><span>&</span><span>M</span></a></div></div></div>");
+}}
+
+</script>
+
+<script>
+
+
+  var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/1xGgaP-lF4XC68lvFDi9glCJFQPNdw9SvhfUHwa-n3KQ/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
+  function init2() {Tabletop2.init2( { key: public_spreadsheet_url2,callback: showInfo2,simpleSheet: true } );}
+        function showInfo2(data) {
+          for (var mNum7 = 0; mNum7 < data.length; mNum7++){
+            $("generatePhoto2").append(
+            "<div class='grid-container'><div class='grid-item'><div class='img-container'><div class='placeholder-container' data-visible='true'><img src="
+             + data[mNum7].Photo + " class='img-placeholder' alt=''></div><img class='img-lazy' data-src="
+             + data[mNum7].Photo + " src='' alt='' /><div class='img-overlay'><a href='#'><span>W</span><span>&</span><span>M</span></a></div></div></div>");
 }}
 
 </script>
@@ -921,7 +946,6 @@ function openInNewTab(href) {
 )}}
 </script>
 
-<script  src="js/tabletop2.js"></script>
 
 </body>
 </html>

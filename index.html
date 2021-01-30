@@ -21,8 +21,7 @@
       <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
       <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-      <scriptsrc="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdxT7T3JueW5tJF_JpruXBg_c4o5yAZlk&callback=initMap&libraries=&v=weekly"
-            defer></script>
+      <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdxT7T3JueW5tJF_JpruXBg_c4o5yAZlk&callback=initMap"></script>
             <!-- Global site tag (gtag.js) - Google Analytics -->
             <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123535120-1"></script>
             <script>
@@ -31,6 +30,8 @@
               gtag('js', new Date());
               gtag('config', 'UA-123535120-1');
             </script>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="./style0.css">
 <script src="https://kit.fontawesome.com/bdd89edb33.js" crossorigin="anonymous"></script>
@@ -310,7 +311,26 @@ text-align: center; }
   /* The width is the width of the web page */
 }
 </style>
+<script>
 
+let map;
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  const uluru = { lat: -94.683, lng: 38.974 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+}
+
+</script>
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -557,6 +577,8 @@ WoodandMortar has served the Kansas City's residential and commercial remodel an
       </p>
 
       <div id="map"></div>
+
+      <center><a href="https://www.facebook.com/woodmortar"><button class="open-modal">Kitchen Remodel Special</button></a></center>
     </section>
 
 
@@ -675,6 +697,7 @@ WoodandMortar has served the Kansas City's residential and commercial remodel an
 
 <script type="text/javascript">
 
+
 function openInNewTab(href) {
   Object.assign(document.createElement('a'), {
     target: '_blank',
@@ -682,22 +705,6 @@ function openInNewTab(href) {
   }).click();
 }
 
-
-// Initialize and add the map
-function initMap() {
-  // The location of Uluru
-  const uluru = { lat: -94.683, lng: 38.974 };
-  // The map, centered at Uluru
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
-    center: uluru,
-  });
-  // The marker, positioned at Uluru
-  const marker = new google.maps.Marker({
-    position: uluru,
-    map: map,
-  });
-}
 
 </script>
 

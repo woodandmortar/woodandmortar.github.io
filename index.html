@@ -21,7 +21,7 @@
       <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
       <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-      <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdxT7T3JueW5tJF_JpruXBg_c4o5yAZlk&callback=initMap"></script>
+      <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdxT7T3JueW5tJF_JpruXBg_c4o5yAZlk&callback=initMap&libraries=&v=weekly"></script>
             <!-- Global site tag (gtag.js) - Google Analytics -->
             <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123535120-1"></script>
             <script>
@@ -313,21 +313,30 @@ text-align: center; }
 </style>
 <script>
 
-let map;
-// Initialize and add the map
+// This example creates a simple polygon representing the Bermuda Triangle.
 function initMap() {
-  // The location of Uluru
-  const uluru = { lat: -94.683, lng: 38.974 };
-  // The map, centered at Uluru
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
-    center: uluru,
+    zoom: 10,
+    center: { lat: 38.969527466162965, lng: -94.66542115782907 },
+    mapTypeId: "terrain",
   });
-  // The marker, positioned at Uluru
-  const marker = new google.maps.Marker({
-    position: uluru,
-    map: map,
+  // Define the LatLng coordinates for the polygon's path.
+  const triangleCoords = [
+    { lat: 38.79895490523814, lng: -94.93626881927543 },
+    { lat: 39.17009523783616, lng: -94.9100737842075 },
+    { lat: 39.126996388137144, lng: -94.68541025813451 },
+    { lat: 38.95861452107517, lng: -94.48444666514898 },
+  ];
+  // Construct the polygon.
+  const bermudaTriangle = new google.maps.Polygon({
+    paths: triangleCoords,
+    strokeColor: "#FF0000",
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: "#FF0000",
+    fillOpacity: 0.35,
   });
+  bermudaTriangle.setMap(map);
 }
 
 </script>
@@ -567,7 +576,7 @@ function b1Function() {
           <center><button onclick="window.open('https://drive.google.com/file/d/1yb643RYhSmF-H326hAPCW3nZ6rfZsa0h/view?usp=sharing', '_blank');" class="open-modal">Whitepaper</button></center>
         </div>
       </div>
-      <p style="margin:150px;">
+      <p style="margin:30px;">
 WoodandMortar has served the Kansas City's residential and commercial remodel and construction needs since 2016. We are dedicated to providing the highest level of customer satisfaction while providing excellence in design ideas and craftsmanship.
  Every step of our remodeling process is performed with the end result and customer communication as our cornerstone. We provide progressive solutions for a wide range of remodeling projects including kitchen and bathroom re-design and upgrades,
  outdoor kitchens, outdoor living spaces, casitas, detached garages, garage conversions, room additions and expansions, landscaping design, creative workspaces and complete home makeovers.
@@ -576,6 +585,7 @@ WoodandMortar has served the Kansas City's residential and commercial remodel an
   redoing your floors to get the hardwood or tile you’ve always wanted, or adding an entirely new section to your existing home, WoodandMortar can get the job done.
       </p>
 
+<center><h1>Service Area</h1></center>
       <div id="map"></div>
 
       <center><a href="https://www.facebook.com/woodmortar"><button class="open-modal">Kitchen Remodel Special</button></a></center>

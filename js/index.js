@@ -36,16 +36,6 @@ $(function(){
 });
 
 
-jQuery(document).ready(function($){
-  setTimeout(function(){ showNewsletterPopup(); }, 1200);
-
-  $('.popup-close').click(function(){
-      $('.newsletter-overlay').hide();
-      setCookie('newsletter-popup', 'popped', 30);
-  });
-});
-
-
         function togglediv(id) {
     var div = document.getElementById(id);
     div.style.display = div.style.display == "none" ? "block" : "none";

@@ -322,10 +322,10 @@ function initMap() {
   });
   // Define the LatLng coordinates for the polygon's path.
   const triangleCoords = [
-    { lat: 38.79895490523814, lng: -94.93626881927543 },
-    { lat: 39.17009523783616, lng: -94.9100737842075 },
-    { lat: 39.126996388137144, lng: -94.68541025813451 },
-    { lat: 38.95861452107517, lng: -94.48444666514898 },
+    { lat: 38.75, lng: -94.95 }, //bot left//
+    { lat: 39.17009523783616, lng: -95 }, //top left//
+    { lat: 39.156996388137144, lng: -94.32 },//top right//
+    { lat: 38.75861452107517, lng: -94.48444666514898 },//bot right//
   ];
   // Construct the polygon.
   const bermudaTriangle = new google.maps.Polygon({
@@ -340,6 +340,9 @@ function initMap() {
 }
 
 </script>
+
+
+
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -363,60 +366,64 @@ function initMap() {
       <span></span>
     </button>
     <ol class="navbar-left" id="nav-linkm">
-      <li id="nav-linkn"><a class="nav-link active" href="index.html">
-
-        <div style="position:absolute; width:50px; height:122px;  top:0px; left:0px; z-index:2;">
-            <svg class="salmonTail" width="50" height="122" viewBox="-359 -463 900 500">
-              <path d="M3 49c0 6-2 11-5 15l-119 164c-6 8-20 15-30 15h-146c-7 0-11-3-11-8 0-2 1-5 3-7l130-179-130-179-3-7c0-5 4-8 11-8h146c10 0 24 7 30 15L-2 34c3 4 5 10 5 15z" fill="#D95952"></path>
-
-            </svg>
-        </div>
-        <div style="position:absolute; width:50px; height:122px; top:0px; left:0px; z-index:2;">
-            <svg width="50" height="122" viewBox="-359 -463 900 500">
-              <path d="M408 34L290-130c-6-8-20-15-30-15H16c-10 0-23 7-29 15l-33 45L40 34c3 4 5 10 5 15s-2 11-5 15l-86 119 33 45c6 8 19 15 29 15h244c10 0 24-7 30-15L408 64c3-4 5-10 5-15s-2-11-5-15zM206-90c12 0 21 9 21 21s-9 21-21 21-21-9-21-21 9-21 21-21z" fill="#D95952"></path>
-            </svg>
-        </div>
-
-      </a></li>
-      <li id="nav-linkp"><a class="nav-link" href="mailto:info@woodandmortar.com?Subject=General%20Inquiry&body=Place%20message%20here%20please" target="_blank" >Email us</a></li>
-      <li id="nav-linko"><a class="nav-link" href="tel:913-280-2336" target="_blank" >913-280-2336</a></li>
-
+      <li id="nav-linkn"><a class="nav-link active" href="index.html">W&M</a></li>
+      <li id="nav-linkp"><a class="nav-link" href="https://www.facebook.com/twogirlsroofingandconstructionLLC" target="_blank" >Facebook</a></li>
+      <li id="nav-linkp"><a class="nav-link" href="mailto:info@woodandmortar.com?Subject=General%20Inquiry&body=Place%20message%20here%20please" target="_blank" >Email</a></li>
     </ol>
 
 <div id="sub" class="btn-next">
     <ol class="navbar-right">
-      <li style="margin:0px 5px;"><a href="javascript:void(0);" onclick="morph()" class="nav-link brand">Subcontract</a></li>
       <li style="margin:0px 5px;"><a href="javascript:void(0);" onclick="morph()" class="nav-link">
-          <svg viewBox="0 0 44 44">
-            <use xlink:href="#user-icon" x="0" y="0">
-          </svg>
+
+                <div style="position:absolute; bottom:0px; right:10px; z-index:2;">
+                    <svg class="salmonTail" width="50" height="50" viewBox="-359 -463 900 500">
+                      <path d="M3 49c0 6-2 11-5 15l-119 164c-6 8-20 15-30 15h-146c-7 0-11-3-11-8 0-2 1-5 3-7l130-179-130-179-3-7c0-5 4-8 11-8h146c10 0 24 7 30 15L-2 34c3 4 5 10 5 15z" fill="#D95952"></path>
+
+                    </svg>
+                </div>
+                <div style="position:absolute; bottom:0px; right:10px; z-index:2;">
+                    <svg width="50" height="50" viewBox="-359 -463 900 500">
+                      <path d="M408 34L290-130c-6-8-20-15-30-15H16c-10 0-23 7-29 15l-33 45L40 34c3 4 5 10 5 15s-2 11-5 15l-86 119 33 45c6 8 19 15 29 15h244c10 0 24-7 30-15L408 64c3-4 5-10 5-15s-2-11-5-15zM206-90c12 0 21 9 21 21s-9 21-21 21-21-9-21-21 9-21 21-21z" fill="#D95952"></path>
+                    </svg>
+                </div>
         </a></li>
+        <li style="margin:0px 5px;"><a href="javascript:void(0);" onclick="morph()" class="nav-link brand">Clients</a></li>
+
     </ol>
 </div>
 <div id="unSub" style="display:none;" class="btn-prev">
     <ol class="navbar-right">
       <li style="margin:0px 5px;"><a href="javascript:void(0);" onclick="unMorph()" class="nav-link brand">Home</a></li>
-      <li style="margin:0px 5px;"><a href="javascript:void(0);" onclick="unMorph()" class="nav-link">
-          <svg viewBox="0 0 44 44">
-            <use xlink:href="#shop-icon" x="0" y="0">
-          </svg>
+      <li><a href="javascript:void(0);" onclick="unMorph()">
+        <li style="margin:0px 5px;"><a href="javascript:void(0);" onclick="unMorph()" class="nav-link">
+
+                  <div style="position:absolute; bottom:0px; right:10px; z-index:2;">
+                      <svg class="salmonTail" width="50" height="50" viewBox="-359 -463 900 500">
+                        <path d="M3 49c0 6-2 11-5 15l-119 164c-6 8-20 15-30 15h-146c-7 0-11-3-11-8 0-2 1-5 3-7l130-179-130-179-3-7c0-5 4-8 11-8h146c10 0 24 7 30 15L-2 34c3 4 5 10 5 15z" fill="#D95952"></path>
+
+                      </svg>
+                  </div>
+                  <div style="position:absolute; bottom:0px; right:10px; z-index:2;">
+                      <svg width="50" height="50" viewBox="-359 -463 900 500">
+                        <path d="M408 34L290-130c-6-8-20-15-30-15H16c-10 0-23 7-29 15l-33 45L40 34c3 4 5 10 5 15s-2 11-5 15l-86 119 33 45c6 8 19 15 29 15h244c10 0 24-7 30-15L408 64c3-4 5-10 5-15s-2-11-5-15zM206-90c12 0 21 9 21 21s-9 21-21 21-21-9-21-21 9-21 21-21z" fill="#D95952"></path>
+                      </svg>
+                  </div>
         </a></li>
     </ol>
 </div>
   </nav>
 
   <header id="header1">
-    <div class="hero" data-images='["https://woodandmortar.com/pics/woodmortar.jpg","https://woodandmortar.com/pics/wallpaper.jpg"]'>
-      <div class="container-prev">
+    <div class="hero" data-images='["https://woodandmortar.com/pics/woodmortar.jpg","https://salmon.fund/salmon.gif"]'>
+      <div class="container-prev" id="first">
           <div id="item" class="chat" style="color:white; font-size:1.3em;" >
                 <ul class="chatlist">
                   <li class="bot__output bot__output--standard">
-                    <a href="sms:913-280-2336"><button class="open-modal">Send a Text</button></a><a href="https://www.facebook.com/woodmortar"><button class="open-modal">Facebook</button></a>
-                  <a href="mailto:info@woodandmortar.com?Subject=Remodeling%20Inquiry&amp;body=Place%20message%20here%20please%20and%20dont%20forget%20to%20attach%20a%20contact%20phone%20number"><button class="open-modal">Email us</button></a>
-                  <br>General bids, inquiries, questions, and remodeling labor, Attn: Micheal for design, Crycella for scheduling.
-                </li>
-                    <li class="bot__output bot__output--standard">
-                      Clients please enter your <span class="bot__command">*Project Hash*</span> below.
+                    Welcome to <span class="bot__command">WoodandMortar.com</span>
+                    <br><br>
+                    I'm Micheal, your contracting expert connecting you to the leaders of construction and home remodeling.<br><br>
+                    If you have some time, I'd love to teach you a little about what I do and how I can help.
+                    <a onclick="lMore();"><button class="open-modal">Learn more</button></a>
                   </li>
                     </ul>  </ul>
                 </div>
@@ -454,10 +461,29 @@ function b1Function() {
   </header>
 
   <main id="everything">
-    <section class="info fade-in">
+    <section class="info fade-in" id="second">
 
-<center><a href="services.html"><button id="magButton3" class="open-modal">Our Services</button></a></center>
+        <div class="grid-container" style="background-image: url(pics/sloth.gif); background-repeat: no-repeat;">
+          <font size="6.6em" weight="900";><b><h1>July 4th 2021</h1></b></font>
+          <div class="grid-item span-3">
+          <font size="5.3em" weight="900";><b>Everyone wins a $200 gift card to be used as cash after Independance Day for any project over $1k.</b></font>
+            <center><button onclick="window.open('https://www.twogirlsroofingandconstruction.com/', '_blank');" class="open-modal">View contest on Facebook</button></center>
+          </div>
+        </div>
+        <p style="margin:30px;  font-size:1.5em;">
+Are you ready Kansas City, for the strongest brands in construction to come together and provide award winning service with prices comparible to your favorite handyman.
+To showcase the professionalism of our subcontractors the leaders in the industry are giving away FREE remodels, **materials included.
+  <br><br>
+<center><h1>Prizes include</h1>
+<div style="margin:30px; font-size:1.5em;">
+  Complete roof and gutter replacement from <b href="https://www.twogirlsroofingandconstruction.com/">@TwoGirlsRoofing</b><br>
+  Level 5 interior drywall and painting finish from <b href="">@FourCornersFraming</b><br>
+  Kitchen countertop replacement (Granite/Quartz) from <b href="">@MarioRockWork</b><br>
+  Floor refinish and restain from <b href="">@JJFlooringint</b></center>
+</div>
+        </p>
 
+        <center><a href="https://www.facebook.com/twogirlsroofingandconstructionLLC"><button class="open-modal">Schedule a bid now!</button></a></center>
 <br>
 
 
@@ -476,7 +502,7 @@ function b1Function() {
           <i class="fas fa-star" style="color:gold"></i><i class="fas fa-star" style="color:gold"></i><i class="fas fa-star" style="color:gold"></i><i class="fas fa-star" style="color:gold"></i><i class="fas fa-star" style="color:gold"></i><br>
           <a>Fred | Independance, MO</a><br>
           <p><i>
-            "Simply a great experience from beginning to end, and we continue to be pleased with the workmanship and results we are getting from the WoodandMortar team. We had representatives from two other companies look at our project and they were such a disappointment – so glad we called WoodandMortar to get a bid and have them do the work. I would highly recommend them."
+            "Simply a great experience from beginning to end, and we continue to be pleased with the workmanship and results we are getting from the WoodandMortar team. We had representatives from two other companies look at our project and they were such a disappointment – so glad we called Micheal to get a bid and have them do the work. I would highly recommend them."
           </i></p>
           <center><button onclick="window.open('bids/fred.pdf', '_blank');" class="open-modal">View bid</button></center>
         </div>
@@ -510,7 +536,7 @@ function b1Function() {
           <i class="fas fa-star" style="color:gold"></i><i class="fas fa-star" style="color:gold"></i><i class="fas fa-star" style="color:gold"></i><i class="fas fa-star" style="color:gold"></i><i class="fas fa-star" style="color:gold"></i><br>
           <a>Brandy | Olathe, KS</a><br>
           <p><i>
-            "WoodandMortar worked with our plans and choice of materials and created more than we expected. Our new bathroom is beautiful. They were very professional, gave us a clear invoice, and fulfilled every promise. They cleaned up after every day, and their work was immaculate."
+            "Micheal worked with our plans and choice of materials and created more than we expected. Our new bathroom is beautiful. They were very professional, gave us a clear invoice, and fulfilled every promise. They cleaned up after every day, and their work was immaculate."
           </i></p>
           <center><button onclick="window.open('bids/brandy.pdf', '_blank');" class="open-modal">View bid</button></center>
         </div>
@@ -556,39 +582,30 @@ function b1Function() {
 <center><button id="magButton2" class="open-modal" onclick="init2();magButGone2();">Current Projects</button></center>
 <generatePhoto2></generatePhoto2>
 
-<br><br>
-
-
-<script>function magButGone(){document.getElementById("magButton").style.display = "none";}</script>
-<center><button id="magButton" class="open-modal" onclick="init();magButGone();">NonProfit Gallery</button></center>
-<generatePhoto></generatePhoto>
-
-
 
     </section>
 
     <section class="quote fade-in">
       <div class="grid-container">
-        <h1>2616 North 8th Street<br> Kansas City, Kansas 66101</h1>
+        <h1>6301 Rockhill rd Suite 323<br> Kansas City, MO 64131</h1>
         <div class="grid-item span-3">
-          We're building our new warehouse and shop right in the heart of North Kansas City. We are moving from the Oak Park mall so we can better
-          serve the community and focus the training of our tradespeople. Every project we take on, 50% of the profit is redistributed to our community in the form of affordable housing.
-          <center><button onclick="window.open('https://drive.google.com/file/d/1yb643RYhSmF-H326hAPCW3nZ6rfZsa0h/view?usp=sharing', '_blank');" class="open-modal">Whitepaper</button></center>
+          Come down and see us at the historic Kansas City plaza. Chat with our construction professionals about what steps we can make for your next project. Merging with Two Girls Roofing to bring teams together, we are the hub for commercial and residential contruction.
+          <center><button onclick="window.open('https://www.twogirlsroofingandconstruction.com/', '_blank');" class="open-modal">Two Girls Roofing</button></center>
         </div>
       </div>
       <p style="margin:30px;">
-WoodandMortar has served the Kansas City's residential and commercial remodel and construction needs since 2016. We are dedicated to providing the highest level of customer satisfaction while providing excellence in design ideas and craftsmanship.
+Micheal has served the Kansas City's residential and commercial remodel and construction needs since 2016. We are dedicated to providing the highest level of customer satisfaction while providing excellence in design ideas and craftsmanship.
  Every step of our remodeling process is performed with the end result and customer communication as our cornerstone. We provide progressive solutions for a wide range of remodeling projects including kitchen and bathroom re-design and upgrades,
  outdoor kitchens, outdoor living spaces, casitas, detached garages, garage conversions, room additions and expansions, landscaping design, creative workspaces and complete home makeovers.
 <br><br>
- WoodandMortar has the experience and professionalism needed to ensure your next home remodeling project is a total success. We have over 13 years of experience doing residential projects and would love to help you bring your ideas to life. Whether it’s remodeling an old bathroom or kitchen,
-  redoing your floors to get the hardwood or tile you’ve always wanted, or adding an entirely new section to your existing home, WoodandMortar can get the job done.
+ Micheal has the experience and professionalism needed to ensure your next home remodeling project is a total success. We have over 13 years of experience doing residential projects and would love to help you bring your ideas to life. Whether it’s remodeling an old bathroom or kitchen,
+  redoing your floors to get the hardwood or tile you’ve always wanted, or adding an entirely new section to your existing home, Micheal can get the job done.
       </p>
+
 
 <center><h1>Service Area</h1></center>
       <div id="map"></div>
 
-      <center><a href="https://www.facebook.com/woodmortar"><button class="open-modal">Kitchen Remodel Special</button></a></center>
     </section>
 
 
@@ -655,6 +672,9 @@ WoodandMortar has served the Kansas City's residential and commercial remodel an
         0.377 0.052 0.742 0.15 1.088z"></path>
     </symbol>
   </svg>
+
+<center><a color="grey">©2021-WoodandmortarLLC</a></center>
+
 </body>
 </body>
 
@@ -663,7 +683,6 @@ WoodandMortar has served the Kansas City's residential and commercial remodel an
 <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 <script  src="./script0.js"></script>
-<script  src="./script.js"></script>
 <script  src="js/index.js"></script>
 <script  src="js/animate.js"></script>
 <script  src="js/tabletop.js"></script>
@@ -674,20 +693,8 @@ WoodandMortar has served the Kansas City's residential and commercial remodel an
 <script  src="js/output.js"></script>
 
 <script>
-
-
-  var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1kdg-V0w7hC-uf6rWS2uCJrJCA3nL8qsHOYepHqIZc1k/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
-  function init() {Tabletop.init( { key: public_spreadsheet_url,callback: showInfo,simpleSheet: true } );}
-        function showInfo(data) {
-          for (var mNum8 = 0; mNum8 < data.length; mNum8++){
-            $("generatePhoto").append(
-            "<div class='grid-container'><div class='grid-item'><div class='img-container'><div class='placeholder-container' data-visible='true'><img src="
-             + data[mNum8].Photo + " class='img-placeholder' alt=''></div><img class='img-lazy' data-src="
-             + data[mNum8].Photo + " src='' alt='' /><div class='img-overlay'><a href='#'><span>W</span><span>&</span><span>M</span></a></div></div></div>");
-}}
-
+setTimeout(function(){window.location.hash = '#second';},5000);
 </script>
-
 <script>
 
 
@@ -949,6 +956,31 @@ function openInNewTab(href) {
           function commandReset(e){
             animationCounter = 1;
             previousInput = Object.keys(possibleInput)[e];
+          }
+
+
+
+          function lMore() {
+            // animationCounter = 1;
+
+            //create response bubble
+            var failedResponse1 = document.createElement('li');
+
+            failedResponse1.classList.add('bot__output');
+            failedResponse1.classList.add('bot__output--failed');
+            failedResponse1.innerHTML = "Perfect, now it's time you use your keyboard. Use that space below to type - commands";
+            //add list item to chatlist
+            chatList.appendChild(failedResponse1) //adds chatBubble to chatlist
+
+            animateBotOutput();
+
+            // reset text area input
+            textInput.value = "";
+
+            //Sets chatlist scroll to bottom
+            chatList.scrollTop = chatList.scrollHeight;
+
+            animationCounter = 1;
           }
 </script>
 

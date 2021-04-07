@@ -303,7 +303,6 @@ ol li {
         right:50%;
     }
     .nav-link:after {
-        left:50%;
     }
     .navbar-left .nav-link:hover:before {
         width:50%;
@@ -317,15 +316,10 @@ ol li {
 .navbar-right {
     background: transparent;
     width:20%;
-    padding-left:0px;
 }
 .brand {
     display:block;
     color: var(--brand-color);
-}
-svg {
-    width: 1.25rem;
-    height: 1.25rem;
 }
 #shop-icon,#user-icon {
     fill:var(--brand-color);
@@ -391,8 +385,8 @@ svg {
         padding-left: 0px;
         position: absolute;
         display: inline-block;
-        right: 20px;
-        top: 8px;
+        right: 5px;
+        bottom:26%;
         height: auto;
         margin:0;
     }

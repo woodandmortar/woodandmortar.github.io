@@ -644,21 +644,15 @@ function b1Function() {
           <center><button onclick="window.open('bids/brandy.pdf', '_blank');" class="open-modal">View bid</button></center>
         </div>
       </div>
-    </section>
+</div>
 
-
-
-
-
-    <section class="fashion fade-in">
-
-
-<script>function magButGone2(){document.getElementById("magButton2").style.display = "none";}</script>
-<center><button id="magButton2" class="open-modal" onclick="init2();magButGone2();">Look at what we're working on</button></center>
-<generatePhoto2></generatePhoto2>
-
+      <script>function magButGone2(){document.getElementById("magButton2").style.display = "none";}</script>
+      <center><button id="magButton2" class="open-modal" onclick="init2();magButGone2();">Look at what we're working on</button></center>
+        <generatePhoto2></generatePhoto2>
 
     </section>
+
+
 
     <section class="quote fade-in">
       <div class="grid-container">
@@ -768,9 +762,6 @@ Micheal has served the Kansas City's residential and commercial remodel and cons
 <script  src="js/output.js"></script>
 
 <script>
-setTimeout(function(){window.location.hash = '#second';},5000);
-</script>
-<script>
 
 
   var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/1xGgaP-lF4XC68lvFDi9glCJFQPNdw9SvhfUHwa-n3KQ/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
@@ -779,7 +770,7 @@ setTimeout(function(){window.location.hash = '#second';},5000);
           for (var mNum7 = 0; mNum7 < data.length; mNum7++){
             $("generatePhoto2").append(
             "<div class='grid-container'><div class='grid-item'><div class='img-container'><div class='placeholder-container' data-visible='true'><img src="
-             + data[mNum7].Photo + " class='img-placeholder' alt=''></div><img class='img-lazy' data-src="
+             + data[mNum7].Photo + " class='img-placeholder' alt=''></div></div><img class='img-lazy' data-src="
              + data[mNum7].Photo + " src='' alt='' /><div class='img-overlay'><a href='#'><span>W</span><span>&</span><span>M</span></a></div></div></div>");
 }}
 

@@ -1,5 +1,103 @@
 
 
+
+
+          function lMore2() {
+            // animationCounter = 1;
+
+            //create response bubble
+            var failedResponse1 = document.createElement('li');
+
+            failedResponse1.classList.add('bot__output');
+            failedResponse1.classList.add('bot__output--failed');
+            failedResponse1.innerHTML = "WoodandMortar LLC was founded in 2018 in the heart of Kansas City. <br/> We want to make sure your home is a profitable asset, and a beautiful living environment. <br/> Using your google account, I'll be able to remember you. <br/> <a href='mailto:info@woodandmortar.com?Subject=General%20Inquiry&body=I%20would%20like%20to%20connect' target='none'><button class='open-modal'>Connect Via Gmail</button></a> ";
+            //add list item to chatlist
+            chatList.appendChild(failedResponse1) //adds chatBubble to chatlist
+
+            animateBotOutput();
+
+            // reset text area input
+            textInput.value = "";
+
+            //Sets chatlist scroll to bottom
+            scrollIntoView({ behavior: "smooth", block: "end" });
+
+            animationCounter = 1;
+          }
+
+
+          function lMore3() {
+            // animationCounter = 1;
+
+            //create response bubble
+            var failedResponse1 = document.createElement('li');
+
+            failedResponse1.classList.add('bot__output');
+            failedResponse1.classList.add('bot__output--failed');
+            failedResponse1.innerHTML = "Our 2022 aesthetic begin with: <br/> Timeless pastels, with Eggshell Trim. <br/> Midnight Black, Classical White Two-Tone Exterior finishing with a golden accented front door. <br/> <a href='mailto:info@woodandmortar.com?Subject=General%20Inquiry&body=I%20would%20like%20a%20bid' target='none'><button class='open-modal'>Message Via Gmail</button></a> ";
+            //add list item to chatlist
+            chatList.appendChild(failedResponse1) //adds chatBubble to chatlist
+
+            animateBotOutput();
+
+            // reset text area input
+            textInput.value = "";
+
+            //Sets chatlist scroll to bottom
+            scrollIntoView({ behavior: "smooth", block: "end" });
+
+            animationCounter = 1;
+          }
+
+          function lMore4() {
+            // animationCounter = 1;
+
+            //create response bubble
+            var failedResponse1 = document.createElement('li');
+
+            failedResponse1.classList.add('bot__output');
+            failedResponse1.classList.add('bot__output--failed');
+            failedResponse1.innerHTML = "Micheal Salmon plans to run for public office in 2026, <br/> Believes Blockchain technology is a community responsibility, and the Mid-west region is neglecting a valuable asset. <br/> By focusing on the issues city and state level that prevent our communities from profit, we have to educate. <br/> Salmon.fund is Kansas City's first blockchain consultancy. <br/> We are integrating Real estate and NFTs helping you get your home into the metaverse. <br/> <a href='mailto:info@woodandmortar.com?Subject=General%20Inquiry&body=I%20would%20like%20a%20bid' target='none'><button class='open-modal'>Message Via Gmail</button></a> ";
+            //add list item to chatlist
+            chatList.appendChild(failedResponse1) //adds chatBubble to chatlist
+
+            animateBotOutput();
+
+            // reset text area input
+            textInput.value = "";
+
+            //Sets chatlist scroll to bottom
+            scrollIntoView({ behavior: "smooth", block: "end" });
+
+            animationCounter = 1;
+          }
+
+
+          function lMore5() {
+            // animationCounter = 1;
+
+            //create response bubble
+            var failedResponse1 = document.createElement('li');
+
+            failedResponse1.classList.add('bot__output');
+            failedResponse1.classList.add('bot__output--failed');
+            failedResponse1.innerHTML = "We've completed over 50 interiors and exteriors renovations in Kansas/Missouri, <br/> We manage a team of highly competent - insured and bonded sub-contractors, focusing on thier continuing education. <br/> Micheal Salmon, Founder and Co-Owner pays special attention to project details and workflow ensuring the best possible value. <br/> <a href='https://docs.google.com/document/d/1OAgXxoruvHMqD7lyAqu0m1Bq082rXp7g2Z1wcc-vZnY/edit?usp=sharing' target='none'><button class='open-modal'>Business Process Manual</button></a> ";
+            //add list item to chatlist
+            chatList.appendChild(failedResponse1) //adds chatBubble to chatlist
+
+            animateBotOutput();
+
+            // reset text area input
+            textInput.value = "";
+
+            //Sets chatlist scroll to bottom
+            scrollIntoView({ behavior: "smooth", block: "end" });
+
+            animationCounter = 1;
+          }
+
+
+
           var possibleInput = {
             // "hlep" : this.help(),
             "help" : function(){
@@ -8,59 +106,12 @@
               return
               },
             "best work" : function(){
-              responseText("I will show you our best work!");
-              responseImg("4.jpg");
-              responseImg("1.jpg");
-              responseImg("2.jpg");
-              responseImg("3.jpg");
-              responseImg("kitchen.jpg");
-              responseText("Would you like to see more? (Yes/No)")
+              responseText("Our facebook page is up to date with picture galleries.");
+              responseText("<a href='https://www.facebook.com/woodmortar' target='none'><button class='open-modal'>View Facebook Gallery</button></a>")
               commandReset(1);
               return
               },
-            "about" : function(){
-              responseText("Salmon.fund is a movement.");
-              responseText("We stand for equal rights, public accountablility, and affordable housing.");
-              responseText("Using your google account, I'll be able to remember you.");
-              responseText("Would you like to connect? (Yes/No)");
-              commandReset(2);
-              return
-              },
-            "experience" : function(){
-              responseText("We've completed over 50 interiors and exteriors renovations in Kansas/Missouri");
-              responseText("We manage a team of highly competent - insured and bonded sub-contractors, focusing on thier continuing education.");
-              responseText("Micheal Salmon, Founder and Co-Owner pays special attention to project details and workflow ensuring the best possible value.");
-              responseText("Crycella Freitag, Co-Owner and human resource powerhouse manages all aspects of communication, logistics and finance.");
-              responseText("Would you like to see our Business Process Manual? (Yes/No)");
-              commandReset(3);
-              return
-            },
-            "specials" : function(){
-              responseText("Spring means decks, patios, and landscaping");
-              responseText("We're ordering our lumber for summer projects, so all appointments made before june 29th get all lumber AT COST.");
-              responseText("$6000 Two-Story decks");
-              responseText("$4000 /room Water Damage Reframe");
-              responseText("$2500 Emperor's Tree House");
-              commandReset(4);
-              return
-            },
-            "theme" : function(){
-              responseText("Our 2020 aesthetic begin with:");
-              responseText("Chic Grey Walls");
-              responseText("Satin Ultra-White Trim");
-              responseText("Midnight Horse Black Front Door");
-              responseText("Forest Green, Faded Two-Tone Exterior");
-              commandReset(5);
-              return
-            },
-            "vision" : function(){
-              responseText("Micheal Salmon plans to run for public office in 2026.");
-              responseText("As an advocate for BLM, Police reform, and free education, Micheal wants to integrate technology and community responsibility.");
-              responseText("Micheal believes in giving equal oppourtunity, by focusing on the issues city and state level that prevent our society from moving outside social bias.");
-              responseText("Our small business tradespeople are the backbone for Kansas growth, and the future in sustained job oppourtunity.");
-              commandReset(6);
-              return
-            },
+
             "contact" : function(){
               responseText("email: <a href='mailto:micheal.mfg@gmail.com?Subject=Hello%20Micheal' target='_top'>send me a message</a>");
               commandReset(7);
@@ -72,7 +123,10 @@
               return
             },
             "command" : function(){
-              responseText("about, best work, contact, mcred <br> specials, theme, experience, vision");
+              responseText("<a onclick='lMore2();''><button class='open-modal'>About the Brand</button></a><a href='https://www.facebook.com/woodmortar' target='none'><button class='open-modal'>View Facebook Gallery</button></a>");
+              responseText("<a href='https://www.facebook.com/woodmortar' target='none'><button class='open-modal'>2021 Themes</button></a>");
+              responseText("<a href='https://www.facebook.com/woodmortar' target='none'><button class='open-modal'>Experience</button></a>");
+              responseText("<a href='https://www.facebook.com/woodmortar' target='none'><button class='open-modal'>Company Vision</button></a>");
               commandReset(9);
               return
             },
@@ -280,9 +334,10 @@
 
                     var reactionInput = {
                       "best work" : function(){
-                        responseText("On this GitHub page you'll find everything about this apps backend.");
-                        responseText("<a href='https://github.com/woodandmortar/woodandmortar.github.io'>WoodandMortar on GitHub</a>")
-                        animationCounter = 1;
+                        responseText("I will redirect you to facebook now.");
+                        setTimeout(function(){
+                          window.location.href = "https://www.facebook.com/woodmortar"; }, 4000);
+                          animationCounter = 1;
                         return
                       },
                       "about" : function(){
@@ -292,11 +347,4 @@
                           animationCounter = 1;
                         return
                         },
-                      "experience" : function(){
-                        responseText("I will redirect you a printable Business Process Manual");
-                        setTimeout(function(){
-                          window.location.href = "https://docs.google.com/document/d/1OAgXxoruvHMqD7lyAqu0m1Bq082rXp7g2Z1wcc-vZnY/edit?usp=sharing"; }, 6000);
-                        animationCounter = 1;
-                        return
-                      }
                     }

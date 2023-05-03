@@ -34,7 +34,7 @@
 
             failedResponse1.classList.add('bot__output');
             failedResponse1.classList.add('bot__output--failed');
-            failedResponse1.innerHTML = "Our 2022 aesthetic begin with: <br/> Timeless pastels, with Eggshell Trim. <br/> Midnight Black, Classical White Two-Tone Exterior finishing with a golden accented front door. <br/> <a href='mailto:info@woodandmortar.com?Subject=General%20Inquiry&body=I%20would%20like%20a%20bid' target='none'><button class='open-modal'>Message Via Gmail</button></a> ";
+            failedResponse1.innerHTML = "Our 2023 aesthetic begin with: <br/><br/> Handcrafted white pine accents ontop Zombie black walls. <br/><br/> Smoked evergreen bottom cabinets with Classical White Two-Tone Tops and black hardware. <br/><br/> <a href='mailto:info@woodandmortar.com?Subject=General%20Inquiry&body=I%20would%20like%20a%20bid' target='none'><button class='open-modal'>Message Via Gmail</button></a> ";
             //add list item to chatlist
             chatList.appendChild(failedResponse1) //adds chatBubble to chatlist
 
@@ -124,7 +124,7 @@
             },
             "command" : function(){
               responseText("<a onclick='lMore2();''><button class='open-modal'>About the Brand</button></a><a href='https://www.facebook.com/woodmortar' target='none'><button class='open-modal'>View Facebook Gallery</button></a>");
-              responseText("<a href='https://www.facebook.com/woodmortar' target='none'><button class='open-modal'>2021 Themes</button></a>");
+              responseText("<a href='https://www.facebook.com/woodmortar' target='none'><button class='open-modal'>2023 Themes</button></a>");
               responseText("<a href='https://www.facebook.com/woodmortar' target='none'><button class='open-modal'>Experience</button></a>");
               responseText("<a href='https://www.facebook.com/woodmortar' target='none'><button class='open-modal'>Company Vision</button></a>");
               commandReset(9);

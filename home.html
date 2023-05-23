@@ -26,511 +26,548 @@
               gtag('js', new Date());
               gtag('config', 'UA-123535120-1');
             </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<script src="https://kit.fontawesome.com/bdd89edb33.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="./home.css">
 
-<style>
-
-/* The Modal (background) */
-.modal {
-  display: block; /* Hidden by default */
-  position: absolute; /* Stay in place */
-  z-index: 9999999999999999999999999999999; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-</style>
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <p id="loginModal">Please Login</p>
-  </div>
-
-</div>
-
-<div class="container">
- <div class="user-profile-area">
-  <div class="side-wrapper">
-   <div class="user-profile">
-    <div id="fName" class="user-name">Please Login</div>
-    <div id="gEmail" class="user-mail">Pending Login</div>
-   </div>
-   <div class="user-notification">
-    <div class="notify">
-
-      <input type="color" value="#4d76fd" style="z-index:999;left:-37;opacity:0;" class="colorpicker" id="colorpicker"></input>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" fill="currentColor" style="position:absolute; left:-37;">
-       <path d="M13.533 5.6h-.961a.894.894 0 01-.834-.57.906.906 0 01.197-.985l.675-.675a.466.466 0 000-.66l-1.32-1.32a.466.466 0 00-.66 0l-.676.677a.9.9 0 01-.994.191.906.906 0 01-.56-.837V.467A.467.467 0 007.933 0H6.067A.467.467 0 005.6.467v.961c0 .35-.199.68-.57.834a.902.902 0 01-.983-.195L3.37 1.39a.466.466 0 00-.66 0L1.39 2.71a.466.466 0 000 .66l.675.675c.25.25.343.63.193.995a.902.902 0 01-.834.56H.467A.467.467 0 000 6.067v1.866c0 .258.21.467.467.467h.961c.35 0 .683.202.834.57a.904.904 0 01-.197.984l-.675.676a.466.466 0 000 .66l1.32 1.32a.466.466 0 00.66 0l.68-.68a.894.894 0 01.994-.187.897.897 0 01.556.829v.961c0 .258.21.467.467.467h1.866c.258 0 .467-.21.467-.467v-.961c0-.35.202-.683.57-.834a.904.904 0 01.984.197l.676.675a.466.466 0 00.66 0l1.32-1.32a.466.466 0 000-.66l-.68-.68a.894.894 0 01-.187-.994.897.897 0 01.829-.556h.961c.258 0 .467-.21.467-.467V6.067a.467.467 0 00-.467-.467zM7 9.333C5.713 9.333 4.667 8.287 4.667 7S5.713 4.667 7 4.667 9.333 5.713 9.333 7 8.287 9.333 7 9.333z"></svg>
-      <div class="inbox-calendar">
-       <input id="mainCheck" type="checkbox" class="inbox-calendar-checkbox">
-       <div class="toggle-page">
-        <span>Inbox</span>
-       </div>
-       <div class="layer"></div>
-      </div>
-    </div>
-   </div>
-   <div class="progress-status"><p><b id="compTasks">0</b>/<b id="planTasks">0</b></p></div>
-   <div class="progress">
-     <div id="progBar" class="progress-bar"></div>
-   </div>
-   <div class="task-status">
-    <div class="task-stat">
-     <div id="compTasks2" class="task-number">0</div>
-     <div class="task-condition">Completed</div>
-    </div>
-    <div class="task-stat">
-     <div id="planTasks2" class="task-number">0</div>
-     <div class="task-condition">Planned</div>
-    </div>
-    <div class="task-stat">
-     <div id="finishTasks" class="task-number">0%</div>
-     <div class="task-condition">Finish</div>
-    </div>
-    <div class="task-stat">
-     <div id="totalSalary" class="task-number">$0</div>
-     <div class="task-condition">Salary</div>
-    </div>
-   </div>
-  </div>
-
-
-
-
-
-
-  <div id="paperInvoice" style="z-index:9999;display:none;">
-
-    <div id="mail" class="mail-detail">
-     <div class="mail-detail-header">
-      <div class="mail-detail-profile">
-       <div class="mail-detail-name"><b id="code">#</b> | <b id="clientName">Please Login</b></div><div id="invoiceNow" style="display:none;" class="mail-detail-name">-1</div><div id="hiddenLocation" style="display:none;"></div>
-       <div id="hashKey" style="display:none;">na</div><div id="flags" style="display:none;">0</div>
-      </div>
-
-     </div>
-     <div class="mail-contents">
-      <div id="mailContent" class="mail-contents-subject">
-       <input type="checkbox" name="msg" id="mail20" class="mail-choice" checked>
-       <label for="mail20"></label>
-       <div id="invoiceAddress" class="mail-contents-title"></div>
-      </div>
-      <div class="mail">
-       <div class="mail-time">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
-         <circle cx="12" cy="12" r="10" />
-         <path d="M12 6v6l4 2" /></svg>
-        Estimated Finish Date: <b id="finish1"></b>
-       </div>
-       <div class="mail-inside">
-
-
-  <b id="part1"></b><br>
-  <b id="part2"></b><br>
-  <b id="part3"></b><br>
-  <b id="part4"></b>
-  <div class="mail-checklist">
-  <input type="checkbox" name="msg" id="mail30" onclick="validateInvoice();formAdmin();" class="mail-choice" unchecked>
-  <label for="mail30">Clock In</label>
-  <div class="mail-checklist-date"><p><script> document.write(new Date().toLocaleDateString()); </script></p></div>
-  </div>
-
-
-       </div>
-       <div class="mail-assign">
-        <div class="assignee">
-         <strong><b id="notes1"></b></strong>
-        </div>
-        <div class="assignee">
-         <strong><b id="modifications1"></b></strong>
-        </div>
-       </div>
-
-       <div id="invoice" class="mail-doc">
-        <div id="invoiceSend" class="mail-doc-wrapper">
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
-          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-          <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" /></svg>
-         <div class="mail-doc-detail">
-          <div class="mail-doc-name">Invoice: <b id="code2"></b><b id="invoiceNow2" style="display:none;"></b></div>
-          <div class="mail-doc-date"><p>Project Date: <b id="startTime2"></b></p></div>
-         </div>
-        </div>
-        <div class="mail-doc-icons">
-          <div class="send" onclick="hideInvoice()" style="color: white;">
-           <i class="fas fa-times-circle fa-2x"></i>
-          </div>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-
-  </div>
-
-
-
-
-
-
-
-  <div class="main-area">
-   <div class="main-container">
-    <div id="contracts" class="inbox-container">
-     <div class="inbox">
-      <div class="msg msg-department anim-y">
-        <img id="profilePic" src="pics/amper.gif" alt="" class="user-photo">
-       <p>- Subcontract</p>
-
-      </div>
-      <popup2></popup2>
-     </div>
-     <div id="mybtn" class="add-task">
-      <button class="add-button" onclick="mybtn.style='display:none;';init()">Available Tasks</button>
-     </div>
-    </div>
-
-
-    <div class="calendar-container">
-     <div class="calender-tab anim-y">
-      <div class="week-month" style="margin:auto;">
-       <button class=" button button-task active" onclick="formAdmin();">Today: <script> document.write(new Date().toLocaleDateString()); </script></button>
-      </div>
-     </div>
-
-
-
-     <script>
-
-       var public_spreadsheet_url0 = 'https://docs.google.com/spreadsheets/d/1iwOPspV8n7cdAnM9vRq32nJqUU3tw3dcfM4Uz-bplk0/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
-       function init0() {Tabletop0.init0( { key: public_spreadsheet_url0,callback:showInfo0,simpleSheet: true } );}
-
-       window.addEventListener('DOMContentLoaded', init0)
-
-             function showInfo0(data) {
-               var mNum0 = 0;
-               while (data[mNum0]){
-                   $("#calendar2").append("<div id='day" + mNum0 + "' class='day'>" + data[mNum0].Start + "<div class='project-detail " + data[mNum0].Subc + "' onclick='choose(" + mNum0 + ");init3();showInvoice();pushInvoice();'>" + data[mNum0].Task1 + "</div></div>");
-                   mNum0++;
-               }}
-     </script>
-
-     <div class="calendar-wrapper anim-y">
-      <div id="calendar2" class="calendar">
-
-      </div>
-     </div>
-    </div>
-   </div>
-  </div>
- </div>
-</div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script  src="./home.js"></script>
-
-
-  <script>
-
-  var invoiceNumber;
-  function choose(choice){
-    document.getElementById('invoiceNow').innerHTML = choice;
-    document.getElementById('invoiceNow2').innerHTML = choice;
-}
-  </script>
-
-
-  <script>
-
-
-    var public_spreadsheet_url3 = 'https://docs.google.com/spreadsheets/d/1iwOPspV8n7cdAnM9vRq32nJqUU3tw3dcfM4Uz-bplk0/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
-    function init3() {Tabletop3.init3( { key: public_spreadsheet_url3,callback: showInfo3,simpleSheet: true } );}
-
-window.addEventListener('DOMContentLoaded', init3)
-
-          function showInfo3(data) {
-            invoiceNumber = document.getElementById('invoiceNow').innerHTML;
-            document.getElementById("invoiceAddress").innerHTML = data[invoiceNumber].Address;
-            document.getElementById("startTime2").innerHTML = data[invoiceNumber].Month + ", " + data[invoiceNumber].Start + " " + data[invoiceNumber].Year;
-            document.getElementById("clientName").innerHTML = data[invoiceNumber].First + " " + data[invoiceNumber].Last;
-            document.getElementById("finish1").innerHTML = data[invoiceNumber].Finish;
-            document.getElementById("code").innerHTML = data[invoiceNumber].Code;
-            document.getElementById("code2").innerHTML = data[invoiceNumber].Code;
-            document.getElementById("part1").innerHTML = data[invoiceNumber].Part1;
-            document.getElementById("part2").innerHTML = data[invoiceNumber].Part2;
-            document.getElementById("part3").innerHTML = data[invoiceNumber].Part3;
-            document.getElementById("part4").innerHTML = data[invoiceNumber].Part4;
-            document.getElementById("modifications1").innerHTML = data[invoiceNumber].Modifications;
-            document.getElementById("notes1").innerHTML = data[invoiceNumber].Notes;
-            document.getElementById("hashKey").innerHTML = data[invoiceNumber].Hash;
-
-
-            function myFunction2(){window.open(data[invoiceNumber].Invoice);}
-            document.getElementById("invoiceSend").addEventListener("click", myFunction2);
-
-          }
-
-  </script>
-
-<script>
-
-
-  var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1iwOPspV8n7cdAnM9vRq32nJqUU3tw3dcfM4Uz-bplk0/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
-  function init() {Tabletop.init( { key: public_spreadsheet_url,callback: showInfo,simpleSheet: true } );}
-        function showInfo(data) {
-          for (var mNum = 0; mNum < data.length; mNum++){
-            $("popup2").append(
-            "<div class='msg selected-bg anim-y'><input type='checkbox' name='msg' id='mail" + mNum + "' class='mail-choice' onclick='choose(" + mNum + ");init3();showInvoice();' unchecked><label for='mail" + mNum + "'></label><div class='msg-content'><div class='msg-title'>"
-             + data[mNum].Task1 + "</div><div class='msg-date'>" + data[mNum].Month + " " + data[mNum].Start + ", " + data[mNum].Year + "</div></div></div>");
-}}
-
-</script>
-
-<script>
-function gotoTimesheet(){
-  window.location.href = "https://docs.google.com/spreadsheets/d/1NnyHRHMPu6qIZgjvp_KJeKpOjgst1uF56y96F44JdtY/edit?usp=sharing";
-}
-function sendAgain(){
-  document.getElementById("sendIT").innerHTML = "Send Again?";
-}
-function validateEmail(){
-  window.location.href = "mailto:woodmortar@gmail.com?Subject=Task%20" + document.getElementById("code").innerHTML + "%20Walkthrough&body=Ive%20completed%20the%20project%0A" + document.getElementById("hashKey").innerHTML;
-}
-function validateInvoice(){
-document.getElementById("loginModal").innerHTML = "You have clocked in for project " + document.getElementById("code").innerHTML + "<br><br><button id='sendIT' onclick='gotoTimesheet()'>View Timesheet</button><button style='margin-left:10px;' onclick='closeModal()'>Close</button>";
-document.getElementById("myModal").style.display = "block";
-}
-function pushInvoice (){
-  document.getElementById("mainCheck").click();
-}
-function showInvoice(){
-  document.getElementById('paperInvoice').style.display = 'block';
-}
-function hideInvoice(){
-  document.getElementById('paperInvoice').style.display = 'none';
-}
-function completeProject(){
-  if (document.getElementById("flags").innerHTML != "0" ){
-document.getElementById("loginModal").innerHTML = document.getElementById("flags").innerHTML + "<br><br><button style='margin-left:10px;' onclick='closeModal()'>Close</button>";
-document.getElementById("myModal").style.display = "block";
-}}
-
-
-</script>
-
-
-
-
-  <script>
-    $('#user').click(function() {
-
-        $('#contracts').css({
-            'display': 'inline-block'
-        });
-        $('#mail').css({
-            'display': 'none'
-        });                      });
-
-  $('#clip').click(function() {
-      $('#contracts').css({
-          'display': 'none'
-      });
-      $('#mail').css({
-          'display': 'inline-block'
-      });                   });
-  </script>
-
-<script>
-
-
-
-  var toggleVisibility = function(element) {
-    if(element.style.display=='block'){
-        element.style.display='none';
-    } else {
-        element.style.display='block';
-    }
-  }
-
-
-  var location;
-  var project;
-  var task;
-  var fName;
-  var userImage;
-
-
-  var x2 = document.getElementById("hiddenLocation");
-
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-      x2.innerHTML = "Geolocation is not supported by this browser.";
-    }
-
-
-  function showPosition(position) {
-    x2.innerHTML = "Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude;
-  }
-
-
-
-  function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  document.getElementById('fName').innerHTML = profile.getName();
-  document.getElementById('gEmail').innerHTML = profile.getEmail();
-  document.getElementById('profilePic').src = profile.getImageUrl();
-  (function()
-{
-if( window.localStorage )
-{
-if( !localStorage.getItem('firstLoad') )
-{
-localStorage['firstLoad'] = true;
-window.location.reload();
-}
-else
-localStorage.removeItem('firstLoad');
-document.getElementById("loginModal").innerHTML = "Refresh Page";
-}
-})();
-  }
-
-        function onSignInCallback(resp) {
-          gapi.client.load('plus', 'v1', apiClientLoaded);
-        }
-
-        /**
-         * Sets up an API call after the Google API client loads.
-         */
-        function apiClientLoaded() {
-          gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
-        }
-
-
-          function formAdmin(){
-
-                  var codeSend = document.getElementById('code2').innerHTML;
-                  var locationSend = document.getElementById('hiddenLocation').innerHTML;
-                  var nameSend = document.getElementById('fName').innerHTML;
-
-                    $.ajax({
-                      url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfN2kkQpPALiBnKuXyfW-iRYivAp_CutzqngiAo_KSzi664QQ/formResponse",
-                      data:  { "entry.569412235" : nameSend , "entry.320157692" : codeSend , "entry.1143322173" : locationSend },
-                      type: "POST",
-                      dataType: "xml",
-                      statusCode: {
-                        0: function () {
-                  //					alert("Click -OK- to submit message");
-                        },
-                        200: function () {
-                  //					alert("Click -OK- to submit message");
-                        }
-                            }
-                    });
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+            <link rel="stylesheet" href="./home.css">
+
+            </head>
+            <body>
+            <!-- partial:index.partial.html -->
+            <div class="app-container">
+              <div class="app-header">
+                <div class="app-header-left">
+                  <span class="app-icon"></span>
+                  <p class="app-name">Task Manager</p>
+                  <div class="search-wrapper">
+                    <input class="search-input" type="text" placeholder="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-search" viewBox="0 0 24 24">
+                      <defs></defs>
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="app-header-right">
+                  <button class="mode-switch" title="Switch Theme">
+                    <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
+                      <defs></defs>
+                      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+                  </button>
+                  <button class="add-btn" title="Add New Project">
+                    <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <line x1="5" y1="12" x2="19" y2="12" /></svg>
+                  </button>
+                  <button class="notification-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
+                      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                      <path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg>
+                  </button>
+                  <button class="profile-btn">
+                    <img src="pics/wm.png" />
+                    <span>WoodandMortar LLC</span>
+                  </button>
+                </div>
+                <button class="messages-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
+                </button>
+              </div>
+              <div class="app-content">
+                <div class="app-sidebar">
+                  <a href="" class="app-sidebar-link active">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                      <polyline points="9 22 9 12 15 12 15 22" /></svg>
+                  </a>
+                  <a href="https://calendar.google.com" target="_SEJ" rel="noreferrer" class="app-sidebar-link">
+                    <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-pie-chart" viewBox="0 0 24 24">
+                      <defs />
+                      <path d="M21.21 15.89A10 10 0 118 2.83M22 12A10 10 0 0012 2v10z" />
+                    </svg>
+                  </a>
+                  <a href="https://calendar.google.com/" target="_SEJ" rel="noreferrer" class="app-sidebar-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" /></svg>
+                  </a>
+                  <a href="index.html" class="app-sidebar-link">
+                    <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-settings" viewBox="0 0 24 24">
+                      <defs />
+                      <circle cx="12" cy="12" r="3" />
+                      <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
+                    </svg>
+                  </a>
+                </div>
+                <div class="projects-section">
+                  <div class="projects-section-header">
+                    <p>Projects</p>
+                    <p class="time" id="currentDateTime"></p>
+                  </div>
+                  <div class="projects-section-line">
+                    <div class="projects-status">
+                      <div class="item-status">
+                        <span class="status-number">1</span>
+                        <span class="status-type">In Progress</span>
+                      </div>
+                      <div class="item-status">
+                        <span class="status-number">0</span>
+                        <span class="status-type">Overdue</span>
+                      </div>
+                      <div class="item-status">
+                        <span class="status-number">5</span>
+                        <span class="status-type">Queued</span>
+                      </div>
+                    </div>
+                    <div class="view-actions">
+                      <button class="view-btn list-view" title="List View">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
+                          <line x1="8" y1="6" x2="21" y2="6" />
+                          <line x1="8" y1="12" x2="21" y2="12" />
+                          <line x1="8" y1="18" x2="21" y2="18" />
+                          <line x1="3" y1="6" x2="3.01" y2="6" />
+                          <line x1="3" y1="12" x2="3.01" y2="12" />
+                          <line x1="3" y1="18" x2="3.01" y2="18" /></svg>
+                      </button>
+                      <button class="view-btn grid-view active" title="Grid View">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
+                          <rect x="3" y="3" width="7" height="7" />
+                          <rect x="14" y="3" width="7" height="7" />
+                          <rect x="14" y="14" width="7" height="7" />
+                          <rect x="3" y="14" width="7" height="7" /></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="project-boxes jsGridView">
+                    <div class="project-box-wrapper">
+                      <div class="project-box" style="background-color: #fee4cb;">
+                        <div class="project-box-header">
+                          <span>3031 S. 23rd Circle</span>
+                          <div class="more-wrapper">
+                            <button class="project-btn-more">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                                <circle cx="12" cy="12" r="1" />
+                                <circle cx="12" cy="5" r="1" />
+                                <circle cx="12" cy="19" r="1" /></svg>
+                            </button>
+                      </div>
+                    </div>
+                    <div class="project-box-content-header">
+                      <p class="box-content-header">Carport</p>
+                      <p class="box-content-subheader">Framing</p>
+                    </div>
+                    <div class="box-progress-wrapper">
+                      <p class="box-progress-header">Progress</p>
+                      <div class="box-progress-bar">
+                        <span class="box-progress" style="width: 10%; background-color: #ff942e"></span>
+                      </div>
+                      <p class="box-progress-percentage">10%</p>
+                    </div>
+                    <div class="project-box-footer">
+                      <div class="participants">
+                        <img src="Chris.png" alt="participant">
+                        <img src="Xtian.png" alt="participant">
+                        <button class="add-participant" style="color: #ff942e;">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                            <path d="M12 5v14M5 12h14" />
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="days-left" style="color: #ff942e;">
+                        <div id="timer"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-box-wrapper">
+                  <div class="project-box" style="background-color: #e9e7fd;">
+                    <div class="project-box-header">
+                      <span>3031 S. 23rd Circle</span>
+                      <div class="more-wrapper">
+                        <button class="project-btn-more">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                            <circle cx="12" cy="12" r="1" />
+                            <circle cx="12" cy="5" r="1" />
+                            <circle cx="12" cy="19" r="1" /></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="project-box-content-header">
+                      <p class="box-content-header">Carport</p>
+                      <p class="box-content-subheader">Roofing</p>
+                    </div>
+                    <div class="box-progress-wrapper">
+                      <p class="box-progress-header">Progress</p>
+                      <div class="box-progress-bar">
+                        <span class="box-progress" style="width: 0%; background-color: #4f3ff0"></span>
+                      </div>
+                      <p class="box-progress-percentage">0%</p>
+                    </div>
+                    <div class="project-box-footer">
+                      <div class="participants">
+                        <img src="Chris.png" alt="participant">
+                        <img src="Xtian.png" alt="participant">
+                        <button class="add-participant" style="color: #4f3ff0;">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                            <path d="M12 5v14M5 12h14" />
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="days-left" style="color: #4f3ff0;">
+                        <div id="timer2"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-box-wrapper">
+                  <div class="project-box">
+                    <div class="project-box-header">
+                      <span>3031 S. 23rd Circle</span>
+                      <div class="more-wrapper">
+                        <button class="project-btn-more">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                            <circle cx="12" cy="12" r="1" />
+                            <circle cx="12" cy="5" r="1" />
+                            <circle cx="12" cy="19" r="1" /></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="project-box-content-header">
+                      <p class="box-content-header">Bathroom</p>
+                      <p class="box-content-subheader">Demo</p>
+                    </div>
+                    <div class="box-progress-wrapper">
+                      <p class="box-progress-header">Progress</p>
+                      <div class="box-progress-bar">
+                        <span class="box-progress" style="width: 0%; background-color: #096c86"></span>
+                      </div>
+                      <p class="box-progress-percentage">0%</p>
+                    </div>
+                    <div class="project-box-footer">
+                      <div class="participants">
+                        <img src="Chris.png" alt="participant">
+                        <img src="Xtian.png" alt="participant">
+                        <button class="add-participant" style="color: #096c86;">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                            <path d="M12 5v14M5 12h14" />
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="days-left" style="color: #096c86;">
+                        <div id="timer3"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-box-wrapper">
+                  <div class="project-box" style="background-color: #ffd3e2;">
+                    <div class="project-box-header">
+                      <span>3031 S. 23rd Circle</span>
+                      <div class="more-wrapper">
+                        <button class="project-btn-more">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                            <circle cx="12" cy="12" r="1" />
+                            <circle cx="12" cy="5" r="1" />
+                            <circle cx="12" cy="19" r="1" /></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="project-box-content-header">
+                      <p class="box-content-header">Bathroom</p>
+                      <p class="box-content-subheader">Window Install</p>
+                    </div>
+                    <div class="box-progress-wrapper">
+                      <p class="box-progress-header">Progress</p>
+                      <div class="box-progress-bar">
+                        <span class="box-progress" style="width: 0%; background-color: #df3670"></span>
+                      </div>
+                      <p class="box-progress-percentage">0%</p>
+                    </div>
+                    <div class="project-box-footer">
+                      <div class="participants">
+                        <img src="Chris.png" alt="participant">
+                        <img src="Xtian.png" alt="participant">
+                        <img src="pics/Crycella.jpg" alt="participant">
+                        <button class="add-participant" style="color: #df3670;">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                            <path d="M12 5v14M5 12h14" />
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="days-left" style="color: #df3670;">
+                        <div id="timer4"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-box-wrapper">
+                  <div class="project-box" style="background-color: #c8f7dc;">
+                    <div class="project-box-header">
+                      <span>3031 S. 23rd Circle</span>
+                      <div class="more-wrapper">
+                        <button class="project-btn-more">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                            <circle cx="12" cy="12" r="1" />
+                            <circle cx="12" cy="5" r="1" />
+                            <circle cx="12" cy="19" r="1" /></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="project-box-content-header">
+                      <p class="box-content-header">Bathroom</p>
+                      <p class="box-content-subheader">Tile</p>
+                    </div>
+                    <div class="box-progress-wrapper">
+                      <p class="box-progress-header">Progress</p>
+                      <div class="box-progress-bar">
+                        <span class="box-progress" style="width: 0%; background-color: #34c471"></span>
+                      </div>
+                      <p class="box-progress-percentage">0%</p>
+                    </div>
+                    <div class="project-box-footer">
+                      <div class="participants">
+                        <img src="Chris.png" alt="participant">
+                        <img src="Xtian.png" alt="participant">
+                        <img src="pics/Crycella.jpg" alt="participant">
+                        <button class="add-participant" style="color: #34c471;">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                            <path d="M12 5v14M5 12h14" />
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="days-left" style="color: #34c471;">
+                        <div id="timer5"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-box-wrapper">
+                  <div class="project-box" style="background-color: #d5deff;">
+                    <div class="project-box-header">
+                      <span>3031 S. 23rd Circle</span>
+                      <div class="more-wrapper">
+                        <button class="project-btn-more">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                            <circle cx="12" cy="12" r="1" />
+                            <circle cx="12" cy="5" r="1" />
+                            <circle cx="12" cy="19" r="1" /></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="project-box-content-header">
+                      <p class="box-content-header">Final Walkthrough</p>
+                      <p class="box-content-subheader">Punchlist</p>
+                    </div>
+                    <div class="box-progress-wrapper">
+                      <p class="box-progress-header">Progress</p>
+                      <div class="box-progress-bar">
+                        <span class="box-progress" style="width: 2%; background-color: #4067f9"></span>
+                      </div>
+                      <p class="box-progress-percentage">2%</p>
+                    </div>
+                    <div class="project-box-footer">
+                      <div class="participants">
+                        <img src="Chris.png" alt="participant">
+                        <img src="Xtian.png" alt="participant">
+                        <img src="pics/Crycella.jpg" alt="participant">
+                        <button class="add-participant" style="color: #4067f9;">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                            <path d="M12 5v14M5 12h14" />
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="days-left" style="color: #4067f9;">
+                        <div id="timer6"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="messages-section">
+              <button class="messages-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="15" y1="9" x2="9" y2="15" />
+                  <line x1="9" y1="9" x2="15" y2="15" /></svg>
+              </button>
+              <div class="projects-section-header">
+                <p>Contractors</p>
+              </div>
+              <div class="messages">
+                <div class="message-box">
+                  <img src="Chris.png" alt="profile image">
+                  <div class="message-content">
+                    <div class="message-header">
+                      <div class="name">Chris J</div>
+                      <div class="star-checkbox">
+                        <input type="checkbox" id="star-1">
+                        <label for="star-1">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                        </label>
+                      </div>
+                    </div>
+                    <p class="message-line">
+                      <button onclick="window.open('https://docs.google.com/spreadsheets/d/e/2PACX-1vTmrMboaSeuwCdUO7WrelcJBmyN5ECgsVz0KzxGixksQFu0-7SOW-vB4nTfdiOSropFsL1SkDWzDQqV/pubhtml', '_blank');">Go to Payroll</button>
+                    </p>
+                    <p class="message-line time">
+                      <b>Phone:</b> 785.423.6374<br><b>Email:</b> Pati09991@gmail.com
+                    </p>
+                  </div>
+                </div>
+                <div class="message-box">
+                  <img src="Xtian.png" alt="profile image">
+                  <div class="message-content">
+                    <div class="message-header">
+                      <div class="name">Christian F</div>
+                      <div class="star-checkbox">
+                        <input type="checkbox" id="star-2">
+                        <label for="star-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                        </label>
+                      </div>
+                    </div>
+                    <p class="message-line">
+                      <button onclick="window.open('https://docs.google.com/spreadsheets/d/e/2PACX-1vTmrMboaSeuwCdUO7WrelcJBmyN5ECgsVz0KzxGixksQFu0-7SOW-vB4nTfdiOSropFsL1SkDWzDQqV/pubhtml', '_blank');">Go to Payroll</button>
+                    </p>
+                    <p class="message-line time">
+                      <b>Phone:</b> 785.893.1739<br><b>Email:</b> BigBawln@gmail.com
+                    </p>
+                  </div>
+                </div>
+                <div class="message-box">
+                  <img src="pics/crycella.jpg" alt="profile image">
+                  <div class="message-content">
+                    <div class="message-header">
+                      <div class="name">Crycella F</div>
+                      <div class="star-checkbox">
+                        <input type="checkbox" id="star-3">
+                        <label for="star-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                        </label>
+                      </div>
+                    </div>
+                    <p class="message-line">
+                      <button onclick="window.open('https://docs.google.com/spreadsheets/d/e/2PACX-1vTmrMboaSeuwCdUO7WrelcJBmyN5ECgsVz0KzxGixksQFu0-7SOW-vB4nTfdiOSropFsL1SkDWzDQqV/pubhtml', '_blank');">Go to Payroll</button>
+                    </p>
+                    <p class="message-line time">
+                      <b>Phone:</b> 785.214.9030<br><b>Email:</b> woodmortar@gmail.com
+                    </p>
+                  </div>
+                </div>
+                <div class="message-box">
+                  <img src="https://images.unsplash.com/photo-1533993192821-2cce3a8267d1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fHdvbWFuJTIwbW9kZXJufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="profile image">
+                  <div class="message-content">
+                    <div class="message-header">
+                      <div class="name">Jessica 🤩</div>
+                      <div class="star-checkbox">
+                        <input type="checkbox" id="star-4">
+                        <label for="star-4">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                        </label>
+                      </div>
+                    </div>
+                    <p class="message-line">
+                      <button onclick="window.open('https://docs.google.com/spreadsheets/d/e/2PACX-1vTmrMboaSeuwCdUO7WrelcJBmyN5ECgsVz0KzxGixksQFu0-7SOW-vB4nTfdiOSropFsL1SkDWzDQqV/pubhtml', '_blank');">Go to Payroll</button>
+                    </p>
+                    <p class="message-line time">
+                      <b>Phone:</b> 785.254.5630<br><b>Email:</b> woodmortar@gmail.com
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            </div>
+            <!-- partial -->
+              <script  src="./home.js"></script>
+              <script>
+
+                  // Get the current date and time
+                  var currentDate = new Date();
+
+                  // Format the date and time as desired
+                  var options = {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    second: 'numeric'
+                  };
+                  var formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+                  // Display the formatted date and time in the specified element
+                  var dateTimeElement = document.getElementById('currentDateTime');
+                  dateTimeElement.innerHTML = formattedDate;
+
+
+              </script>
+
+              <script>
+                  // Function to calculate the remaining time until the following Friday, one week from the current date
+                  function calculateRemainingTime() {
+                    const now = new Date();
+                    const friday = new Date();
+
+                    // Find the next Friday
+                    while (friday.getDay() !== 5) { // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+                      friday.setDate(friday.getDate() + 1);
+                    }
+
+                    // Add one week (7 days) to the next Friday
+                    friday.setDate(friday.getDate() + 7);
+
+                    const difference = friday - now;
+                    const remainingTime = {
+                      days: Math.floor(difference / (24 * 60 * 60 * 1000)),
+                      hours: Math.floor((difference / (60 * 60 * 1000)) % 24),
+                      minutes: Math.floor((difference / (60 * 1000)) % 60),
+                      seconds: Math.floor((difference / 1000) % 60)
+                    };
+
+                    return remainingTime;
                   }
 
+                  // Function to update the countdown timer
+                  function updateTimer() {
+                    const remainingTime = calculateRemainingTime();
+                    const timerDisplay = document.getElementById('timer');
+                    const timer2Display = document.getElementById('timer2');
+                    const timer3Display = document.getElementById('timer3');
+                    const timer4Display = document.getElementById('timer4');
+                    const timer5Display = document.getElementById('timer5');
+                    const timer6Display = document.getElementById('timer6');
 
-</script>
+                    if (remainingTime.days === 0 && remainingTime.hours === 0 && remainingTime.minutes === 0 && remainingTime.seconds === 0) {
+                      timerDisplay.textContent = 'Overdue!';
+                      clearInterval(timerInterval);
+                      return;
+                    }
+
+                    timerDisplay.textContent = `${remainingTime.days} days`;
+                    timer2Display.textContent = `${remainingTime.days + 7} days`;
+                    timer3Display.textContent = `${remainingTime.days + 12} days`;
+                    timer4Display.textContent = `${remainingTime.days + 13} days`;
+                    timer5Display.textContent = `${remainingTime.days + 16} days`;
+                    timer6Display.textContent = `${remainingTime.days + 21} days`;
+                  }
+
+                  // Update the timer initially
+                  updateTimer();
+
+                  // Update the timer every second
+                  const timerInterval = setInterval(updateTimer, 1000);
+                </script>
 
 
-<script>
-function closeModal(){
-  document.getElementById("myModal").style.display = "none";
-}
-
-var loginVal = "Not Validated";
-
-var public_spreadsheet_url2 = 'https://docs.google.com/spreadsheets/d/19LJeD4yJcuHpwan3USroCUd0K9e3huBsilo5LCi2E4M/pub?hl=en_US&hl=en_US&hl=en_US&output=html';
-function init2() {Tabletop2.init2( { key: public_spreadsheet_url2,callback: showInfo2,simpleSheet: true } );}
-window.addEventListener('DOMContentLoaded', init2);
-
-
-                 function showInfo2(data) {
-                      for (var mNum2 = 0; mNum2 < data.length; mNum2++){
-                       if (document.getElementById('gEmail').innerHTML == data[mNum2].Email){
-                         document.getElementById("compTasks").innerHTML = data[mNum2].Completed;
-                         document.getElementById("planTasks").innerHTML = data[mNum2].Planned;
-                         document.getElementById("compTasks2").innerHTML = data[mNum2].Completed;
-                         document.getElementById("planTasks2").innerHTML = data[mNum2].Planned;
-                         document.getElementById("finishTasks").innerHTML = data[mNum2].Finish;
-                         document.getElementById("totalSalary").innerHTML = data[mNum2].Salary;
-                         document.getElementById("flags").innerHTML = data[mNum2].Flags;
-                         document.getElementById("fName").innerHTML = data[mNum2].First + " " + data[mNum2].Last;
-                         document.getElementById("gEmail").innerHTML = data[mNum2].Email;
-                         $("#progBar").css('width', data[mNum2].Finish);
-                          closeModal();
-                          document.getElementById("loginModal").innerHTML = "Validated";
-                          completeProject();
-
-                       }}}
-
-</script>
-<script>
-if (document.getElementById("loginModal").innerHTML == "Validated"){
-  (function()
-{
-if( window.localStorage )
-{
-if( !localStorage.getItem('firstLoad') )
-{
-localStorage['firstLoad'] = true;
-window.location.reload();
-}
-else
-localStorage.removeItem('firstLoad');
-document.getElementById("loginModal").innerHTML = "Refresh Page";
-}
-})();
-}
-</script>
-
-<script  src="js/tabletop0.js"></script>
-<script  src="js/tabletop.js"></script>
-<script  src="js/tabletop2.js"></script>
-<script  src="js/tabletop3.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-</body>
-</html>
+            </body>
+            </html>

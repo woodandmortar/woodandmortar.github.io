@@ -76,12 +76,12 @@
               </div>
               <div class="app-content">
                 <div class="app-sidebar">
-                  <a href="" class="app-sidebar-link active">
+                  <a href="https://woodandmortar.com/" class="app-sidebar-link active">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
                       <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                       <polyline points="9 22 9 12 15 12 15 22" /></svg>
                   </a>
-                  <a href="https://calendar.google.com" target="_SEJ" rel="noreferrer" class="app-sidebar-link">
+                  <a href="https://drive.google.com/drive/folders/1qV3BPhpPpJGeYZEm2Zz9GlcaTSGCVao4?usp=sharing" target="_SEJ" rel="noreferrer" class="app-sidebar-link">
                     <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-pie-chart" viewBox="0 0 24 24">
                       <defs />
                       <path d="M21.21 15.89A10 10 0 118 2.83M22 12A10 10 0 0012 2v10z" />
@@ -94,7 +94,7 @@
                       <line x1="8" y1="2" x2="8" y2="6" />
                       <line x1="3" y1="10" x2="21" y2="10" /></svg>
                   </a>
-                  <a href="index.html" class="app-sidebar-link">
+                  <a href="https://docs.google.com/document/d/1swSD66f1UXhbRg_F2xqR6crz6_FlLWgyrgTaozVtiKw/edit?usp=sharing" class="app-sidebar-link">
                     <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-settings" viewBox="0 0 24 24">
                       <defs />
                       <circle cx="12" cy="12" r="3" />
@@ -513,59 +513,43 @@
               </script>
 
               <script>
-                  // Function to calculate the remaining time until the following Friday, one week from the current date
-                  function calculateRemainingTime() {
-                    const now = new Date();
-                    const friday = new Date();
 
-                    // Find the next Friday
-                    while (friday.getDay() !== 5) { // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
-                      friday.setDate(friday.getDate() + 1);
-                    }
+                  var countDownDate = new Date("Jun 5, 2023 17:30:00").getTime();
 
-                    // Add one week (7 days) to the next Friday
-                    friday.setDate(friday.getDate() + 7);
+// Update the count down every 1 second
+var x = setInterval(function() {
 
-                    const difference = friday - now;
-                    const remainingTime = {
-                      days: Math.floor(difference / (24 * 60 * 60 * 1000)),
-                      hours: Math.floor((difference / (60 * 60 * 1000)) % 24),
-                      minutes: Math.floor((difference / (60 * 1000)) % 60),
-                      seconds: Math.floor((difference / 1000) % 60)
-                    };
+  // Get today's date and time
+  var now = new Date().getTime();
 
-                    return remainingTime;
-                  }
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
 
-                  // Function to update the countdown timer
-                  function updateTimer() {
-                    const remainingTime = calculateRemainingTime();
-                    const timerDisplay = document.getElementById('timer');
-                    const timer2Display = document.getElementById('timer2');
-                    const timer3Display = document.getElementById('timer3');
-                    const timer4Display = document.getElementById('timer4');
-                    const timer5Display = document.getElementById('timer5');
-                    const timer6Display = document.getElementById('timer6');
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-                    if (remainingTime.days === 0 && remainingTime.hours === 0 && remainingTime.minutes === 0 && remainingTime.seconds === 0) {
-                      timerDisplay.textContent = 'Overdue!';
-                      clearInterval(timerInterval);
-                      return;
-                    }
+  // Display the result in the element with id="demo"
+  document.getElementById('timer').innerHTML = days + "d " + hours + "h ";
+  document.getElementById('timer2').innerHTML = (days + 1) + "d " + hours + "h ";
+  document.getElementById('timer3').innerHTML = (days - 3) + "d " + hours + "h ";
+  document.getElementById('timer4').innerHTML = (days + 5) + "d " + hours + "h ";
+  document.getElementById('timer5').innerHTML = (days + 8) + "d " + hours + "h ";
+  document.getElementById('timer6').innerHTML = (days + 14) + "d " + hours + "h ";
 
-                    timerDisplay.textContent = `${remainingTime.days} days`;
-                    timer2Display.textContent = `${remainingTime.days + 7} days`;
-                    timer3Display.textContent = `${remainingTime.days + 12} days`;
-                    timer4Display.textContent = `${remainingTime.days + 13} days`;
-                    timer5Display.textContent = `${remainingTime.days + 16} days`;
-                    timer6Display.textContent = `${remainingTime.days + 21} days`;
-                  }
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById('timer').innerHTML = "EXPIRED";
+    document.getElementById('timer2').innerHTML = "EXPIRED";
+    document.getElementById('timer3').innerHTML = "EXPIRED";
+    document.getElementById('timer4').innerHTML = "EXPIRED";
+    document.getElementById('timer5').innerHTML = "EXPIRED";
+    document.getElementById('timer6').innerHTML = "EXPIRED";
+  }
+}, 10000);
 
-                  // Update the timer initially
-                  updateTimer();
 
-                  // Update the timer every second
-                  const timerInterval = setInterval(updateTimer, 1000);
                 </script>
 
 

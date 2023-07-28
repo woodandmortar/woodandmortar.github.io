@@ -148,36 +148,47 @@
                         <div class="project-box-header">
                           <span>6606 E 100 Ter</span>
                           <div class="more-wrapper">
-                            <button class="project-btn-more">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
-                                <circle cx="12" cy="12" r="1" />
-                                <circle cx="12" cy="5" r="1" />
-                                <circle cx="12" cy="19" r="1" /></svg>
+                            <button class="project-btn-more" onclick="window.open('https://drive.google.com/drive/folders/1F2CSJxkEszsHV1ul2nPu2v4FoU1ezHVv?usp=drive_link'); return false;">
+                              <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    <defs>
+      <filter id="drop-shadow">
+        <feDropShadow dx="2" dy="2" stdDeviation="2"/>
+      </filter>
+    </defs>
+
+    <rect x="2" y="2" width="36" height="46" stroke="#222222" stroke-width="2" filter="url(#drop-shadow)"/>
+
+    <rect x="4" y="4" width="32" height="42" stroke="#222222" stroke-width="2" filter="url(#drop-shadow)"/>
+
+    <text x="20" y="32" fill="#222222" font-size="24" text-anchor="middle" >$</text>
+
+  </svg>
                             </button>
                       </div>
                     </div>
                     <div class="project-box-content-header">
-                      <p class="box-content-header">T's House</p>
+                      <p class="box-content-header" onclick="window.open('https://drive.google.com/drive/folders/1F2CSJxkEszsHV1ul2nPu2v4FoU1ezHVv?usp=drive_link'); return false;">T's House</p>
                       <p class="box-content-subheader">v3.0 Ends Sep 5</p>
                     </div>
                     <div class="box-progress-wrapper">
                       <p class="box-progress-header">Progress</p>
                       <div class="box-progress-bar">
-                        <span class="box-progress" style="width: 10%; background-color: #c9184a"></span>
+                        <span id="tBoxProgress" class="box-progress" style="width: 1%; background-color: #054950"></span>
                       </div>
-                      <p class="box-progress-percentage">10%</p>
+                      <p class="box-progress-percentage" id="tPercentInput">1%</p>
                     </div>
                     <div class="project-box-footer">
                       <div class="participants">
                         <img src="Chris.png" alt="participant">
                         <img src="Xtian.png" alt="participant">
-                        <button class="add-participant" style="color: #c9184a;">
+                        <button class="add-participant" style="color: #054950;">
                           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
                             <path d="M12 5v14M5 12h14" />
                           </svg>
                         </button>
                       </div>
-                      <div class="days-left" style="color: #c9184a;">
+                      <div class="days-left" style="color: #054950;">
                         <div id="timer"></div>
                       </div>
                     </div>
@@ -210,21 +221,21 @@
                     <div class="box-progress-wrapper">
                       <p class="box-progress-header">Progress</p>
                       <div class="box-progress-bar">
-                        <span class="box-progress" style="width: 20%; background-color: #c9184a"></span>
+                        <span class="box-progress" style="width: 20%; background-color: #054950"></span>
                       </div>
-                      <p class="box-progress-percentage">20%</p>
+                      <p class="box-progress-percentage" id="1tPercentInput">20%</p>
                     </div>
                     <div class="project-box-footer">
                       <div class="participants">
                         <img src="Chris.png" alt="participant">
                         <img src="Xtian.png" alt="participant">
-                        <button class="add-participant" style="color: #c9184a;">
+                        <button class="add-participant" style="color: #054950;">
                           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
                             <path d="M12 5v14M5 12h14" />
                           </svg>
                         </button>
                       </div>
-                      <div class="days-left" style="color: #c9184a;">
+                      <div class="days-left" style="color: #054950;">
                         <div id="timera"></div>
                       </div>
                     </div>
@@ -257,21 +268,21 @@
                     <div class="box-progress-wrapper">
                       <p class="box-progress-header">Progress</p>
                       <div class="box-progress-bar">
-                        <span class="box-progress" style="width: 1%; background-color: #c9184a"></span>
+                        <span class="box-progress" style="width: 1%; background-color: #054950"></span>
                       </div>
-                      <p class="box-progress-percentage">1%</p>
+                      <p class="box-progress-percentage" id="2tPercentInput">1%</p>
                     </div>
                     <div class="project-box-footer">
                       <div class="participants">
                         <img src="Chris.png" alt="participant">
                         <img src="Xtian.png" alt="participant">
-                        <button class="add-participant" style="color: #c9184a;">
+                        <button class="add-participant" style="color: #054950;">
                           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
                             <path d="M12 5v14M5 12h14" />
                           </svg>
                         </button>
                       </div>
-                      <div class="days-left" style="color: #c9184a;">
+                      <div class="days-left" style="color: #054950;">
                         <div id="timer1"></div>
                       </div>
                     </div>
@@ -304,21 +315,21 @@
                     <div class="box-progress-wrapper">
                       <p class="box-progress-header">Progress</p>
                       <div class="box-progress-bar">
-                        <span class="box-progress" style="width: 1%; background-color: #c9184a"></span>
+                        <span class="box-progress" style="width: 1%; background-color: #054950"></span>
                       </div>
-                      <p class="box-progress-percentage">1%</p>
+                      <p class="box-progress-percentage" id="3tPercentInput">1%</p>
                     </div>
                     <div class="project-box-footer">
                       <div class="participants">
                         <img src="Chris.png" alt="participant">
                         <img src="Xtian.png" alt="participant">
-                        <button class="add-participant" style="color: #c9184a;">
+                        <button class="add-participant" style="color: #054950;">
                           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
                             <path d="M12 5v14M5 12h14" />
                           </svg>
                         </button>
                       </div>
-                      <div class="days-left" style="color: #c9184a;">
+                      <div class="days-left" style="color: #054950;">
                         <div id="timer2"></div>
                       </div>
                     </div>
@@ -350,21 +361,21 @@
                     <div class="box-progress-wrapper">
                       <p class="box-progress-header">Progress</p>
                       <div class="box-progress-bar">
-                        <span class="box-progress" style="width: 1%; background-color: #c9184a"></span>
+                        <span class="box-progress" style="width: 1%; background-color: #054950"></span>
                       </div>
-                      <p class="box-progress-percentage">1%</p>
+                      <p class="box-progress-percentage" id="4tPercentInput">1%</p>
                     </div>
                     <div class="project-box-footer">
                       <div class="participants">
                         <img src="Chris.png" alt="participant">
                         <img src="Xtian.png" alt="participant">
-                        <button class="add-participant" style="color: #c9184a;">
+                        <button class="add-participant" style="color: #054950;">
                           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
                             <path d="M12 5v14M5 12h14" />
                           </svg>
                         </button>
                       </div>
-                      <div class="days-left" style="color: #c9184a;">
+                      <div class="days-left" style="color: #054950;">
                         <div id="timer3"></div>
                       </div>
                     </div>
@@ -396,21 +407,21 @@
                     <div class="box-progress-wrapper">
                       <p class="box-progress-header">Progress</p>
                       <div class="box-progress-bar">
-                        <span class="box-progress" style="width: 1%; background-color: #c9184a"></span>
+                        <span class="box-progress" style="width: 1%; background-color: #054950"></span>
                       </div>
-                      <p class="box-progress-percentage">1%</p>
+                      <p class="box-progress-percentage" id="5tPercentInput">1%</p>
                     </div>
                     <div class="project-box-footer">
                       <div class="participants">
                         <img src="Chris.png" alt="participant">
                         <img src="Xtian.png" alt="participant">
-                        <button class="add-participant" style="color: #c9184a;">
+                        <button class="add-participant" style="color: #054950;">
                           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
                             <path d="M12 5v14M5 12h14" />
                           </svg>
                         </button>
                       </div>
-                      <div class="days-left" style="color: #c9184a;">
+                      <div class="days-left" style="color: #054950;">
                         <div id="timer4"></div>
                       </div>
                     </div>
@@ -442,21 +453,21 @@
                     <div class="box-progress-wrapper">
                       <p class="box-progress-header">Progress</p>
                       <div class="box-progress-bar">
-                        <span class="box-progress" style="width: 100%; background-color: #c9184a"></span>
+                        <span class="box-progress" style="width: 100%; background-color: #054950"></span>
                       </div>
-                      <p class="box-progress-percentage">100%</p>
+                      <p class="box-progress-percentage" id="6tPercentInput">100%</p>
                     </div>
                     <div class="project-box-footer">
                       <div class="participants">
                         <img src="Chris.png" alt="participant">
                         <img src="Xtian.png" alt="participant">
-                        <button class="add-participant" style="color: #c9184a;">
+                        <button class="add-participant" style="color: #054950;">
                           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
                             <path d="M12 5v14M5 12h14" />
                           </svg>
                         </button>
                       </div>
-                      <div class="days-left" style="color: #c9184a;">
+                      <div class="days-left" style="color: #054950;">
                         <div id="timer5"></div>
                       </div>
                     </div>
@@ -486,21 +497,21 @@
                     <div class="box-progress-wrapper">
                       <p class="box-progress-header">Progress</p>
                       <div class="box-progress-bar">
-                        <span class="box-progress" style="width: 1%; background-color: #c9184a"></span>
+                        <span class="box-progress" style="width: 100%; background-color: #054950"></span>
                       </div>
-                      <p class="box-progress-percentage">1%</p>
+                      <p class="box-progress-percentage" id="7tPercentInput">100%</p>
                     </div>
                     <div class="project-box-footer">
                       <div class="participants">
                         <img src="Chris.png" alt="participant">
                         <img src="Xtian.png" alt="participant">
-                        <button class="add-participant" style="color: #c9184a;">
+                        <button class="add-participant" style="color: #054950;">
                           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
                             <path d="M12 5v14M5 12h14" />
                           </svg>
                         </button>
                       </div>
-                      <div class="days-left" style="color: #c9184a;">
+                      <div class="days-left" style="color: #054950;">
                         <div id="timer6"></div>
                       </div>
                     </div>
@@ -695,6 +706,40 @@ var x = setInterval(function() {
   }
 }, 1000);
 
+
+                </script>
+
+                <script>
+
+
+const tBox1 = document.getElementById('2tPercentInput').innerHTML;
+const numbertBox1 = tBox1.match(/\d+/)[0];
+var tBoxValue1 = Number(numbertBox1);
+
+const tBox2 = document.getElementById('3tPercentInput').innerHTML;
+const numbertBox2 = tBox2.match(/\d+/)[0];
+var tBoxValue2 = Number(numbertBox2);
+
+const tBox3 = document.getElementById('4tPercentInput').innerHTML;
+const numbertBox3 = tBox3.match(/\d+/)[0];
+var tBoxValue3 = Number(numbertBox3);
+
+const tBox4 = document.getElementById('5tPercentInput').innerHTML;
+const numbertBox4 = tBox4.match(/\d+/)[0];
+var tBoxValue4 = Number(numbertBox4);
+
+const tBox5 = document.getElementById('6tPercentInput').innerHTML;
+const numbertBox5 = tBox5.match(/\d+/)[0];
+var tBoxValue5 = Number(numbertBox5);
+
+const tBox6 = document.getElementById('7tPercentInput').innerHTML;
+const numbertBox6 = tBox6.match(/\d+/)[0];
+var tBoxValue6 = Number(numbertBox6);
+
+
+var tBox = Math.floor((tBoxValue1 + tBoxValue2 + tBoxValue3 + tBoxValue4 + tBoxValue5 + tBoxValue6)/6);
+document.getElementById('tPercentInput').innerHTML = tBox + '%';
+document.getElementById('tBoxProgress').style.width = 2.5*tBox;
 
                 </script>
 

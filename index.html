@@ -7,9 +7,9 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <html class="no-js" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <META NAME="KEYWORDS" CONTENT="WoodandMortar LLC, remodeling, home remodel, home remodeling, bathroom remodel, bathroom remodeling, kitchen, kitchen remodel, kitchen remodeling, overland park, lenexa, home depot, lowes, home improvement, home repair, house repair, house improvement, design, home design, designers, kitchen remodel, bathroom remodel, cement, stone, veneer, kitchen, bathroom, veneer stone, Painters, Painting, fireplace, tile, home repair, Contractors, Home, Home Renovations, Wood, wood&mortar, wood & mortar, brick, stucco, Wood and Mortar, WoodandMortar">
-      <META NAME="ROBOTS" CONTENT="ALL,FOLLOW">
-          <meta name="description" content="Building trust in residential construction">
+      <META NAME="KEYWORDS" CONTENT="energy efficient home retrofits, residential energy audits, green home remodeling, sustainable home construction, net zero energy homes, solar panel installation, air sealing contractors, HVAC upgrade rebates">
+      <META NAME="ROBOTS" CONTENT="INDEX,FOLLOW">
+      <meta name="description" content="We perform comprehensive home energy audits and green remodeling focused on improving efficiency, comfort and sustainability through weatherization, HVAC, appliances, renewables, air sealing and more.">
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="apple-touch-icon" sizes="180x180" href="pics/wm.png">
               <link rel="icon" type="image/png" href="pics/wm.png" sizes="32x32">
@@ -21,7 +21,6 @@
       <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
       <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-      <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdxT7T3JueW5tJF_JpruXBg_c4o5yAZlk&callback=initMap&libraries=&v=weekly"></script>
             <!-- Global site tag (gtag.js) - Google Analytics -->
             <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123535120-1"></script>
             <script>
@@ -224,6 +223,7 @@ text-align: center; }
 
       .open-modal {
          text-align: center;
+         display: block;
         border: 2px solid black;
         background: transparent;
         color: #000;
@@ -269,12 +269,12 @@ text-align: center; }
       }
 
       40% {
-      opacity:0.4;
+      opacity:0.8;
       box-shadow:0px 0px 5px 0px $color;
       }
 
       60% {
-      opacity:0.4;
+      opacity:0.7;
       box-shadow:0px 0px 5px 0px $color;
       }
 
@@ -303,43 +303,33 @@ text-align: center; }
   }
 }
 
-/* Set the size of the div element that contains the map */
-#map {
-  height: 400px;
-  /* The height is 400 pixels */
-  width: 100%;
-  /* The width is the width of the web page */
+
+  #icon-compass {
+  .needle {
+      transform-origin: center;
+    }
+
+  .needleOut {
+    transform-origin: center;
+    animation: spin 3.5 1;
+    -webkit-animation: spin 158.5s 1;
+    animation-iteration-count:infinite;
+    animation-timing-function: cubic-bezier(.5,-0.5,.5,1.5);
+  }
 }
+
+  @keyframes spin {
+    100% {
+  		-webkit-transform: rotate(360deg);
+  		transform:rotate(360deg); }
+  }
+
+  .inactive {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
 </style>
-<script>
-
-// This example creates a simple polygon representing the Bermuda Triangle.
-function initMap() {
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 10,
-    center: { lat: 38.969527466162965, lng: -94.66542115782907 },
-    mapTypeId: "terrain",
-  });
-  // Define the LatLng coordinates for the polygon's path.
-  const triangleCoords = [
-    { lat: 38.75, lng: -94.95 }, //bot left//
-    { lat: 39.17009523783616, lng: -95 }, //top left//
-    { lat: 39.156996388137144, lng: -94.32 },//top right//
-    { lat: 38.75861452107517, lng: -94.48444666514898 },//bot right//
-  ];
-  // Construct the polygon.
-  const bermudaTriangle = new google.maps.Polygon({
-    paths: triangleCoords,
-    strokeColor: "#FF0000",
-    strokeOpacity: 0.8,
-    strokeWeight: 2,
-    fillColor: "#FF0000",
-    fillOpacity: 0.35,
-  });
-  bermudaTriangle.setMap(map);
-}
-
-</script>
 
 
 
@@ -426,10 +416,16 @@ function initMap() {
                   <li class="bot__output bot__output--standard">
                     Welcome to <span class="bot__command">WoodandMortar.com</span>
                     <br><br>
-                    I'm Micheal, your residential construction expert helping with your <span class="bot__command">remodel</span> or maybe just an <span class="bot__command">inspection</span> before you buy.<br><br>
-                    Let's start with a text message or connect via facebook so I can see the best way I can meet your needs.
-                    <a href="https://www.facebook.com/woodmortar" target="none"><button class="open-modal">View Facebook Gallery</button></a>
-                    <a onclick="lMore();"><button class="open-modal">Learn more</button></a>
+                    I'm Micheal, your <span class="bot__command">Energy Auditor</span> helping you get your Home <span class="bot__command">Energy Rating</span>.<br><br>
+                    Our goal is to empower homeowners to reduce energy waste, lower utility bills, and increase comfort through smarter energy usage. By providing tools to analyze your current energy performance and identify areas for enhancement, we aim to make energy efficiency simple, accessible and rewarding.
+                    We want to help you save money while also reducing your environmental impact.<br><br>
+
+
+
+
+                    <a onclick="document.getElementById('insurance').scrollIntoView({behavior: 'smooth'});"><button class="open-modal">Go to tools</button></a>
+                    <a onclick="lMore();"><button class="open-modal">How do you save money?</button></a>
+                    <a href="https://www.facebook.com/woodmortar" target="none"><button class="open-modal">Let's connect on Facebook</button></a>
                   </li>
                     </ul>  </ul>
                 </div>
@@ -439,11 +435,7 @@ function initMap() {
 
                         <li class="bot__output bot__output--standard">
                           <span class="bot__output--second-sentence">
-                            <script>
-function b1Function() {
-  location.replace("home.html");
-}
-</script>
+
                             <button id="button2" onclick="window.open('https://woodandmortar.com/salmon.github.io/index.html', '_blank');" class="open-modal">Education</button>
                             <button id="button3" onclick="window.open('https://woodandmortar.com/home.html', '_blank');" class="open-modal">Contractors</button>
                             <button id="button4" onclick="window.open('https://docs.google.com/document/d/16X6jFrb6y_aCRXtP0rg5oKTlR5liKgnmeFTgtUl78jg/edit?usp=sharing', '_blank');" class="open-modal">View Proposal</button>
@@ -469,18 +461,52 @@ function b1Function() {
 
         <div class="grid-container">
           <div class="grid-item">
-          <font size="5.3em" weight="900";>Rather it's a simple walkthrough to better understand your home, or keeping costs low by working with insurance companies. We will ensure you get the knowledge you need, and a timely solution at a price you can afford. Just fill out the form below to get started.</font>
-            <center><button onclick="document.getElementById('insurance').scrollIntoView({behavior: 'smooth'});" class="open-modal">Learn more</button></center>
+          <font size="4.5em" weight="800";>Rather it's a simple walkthrough to better understand your home, or keeping costs low by working with insurance companies. We will ensure you get the knowledge you need, and a timely solution at a price you can afford. Just fill out the form below to get started.<br>
+          <br>Our licensed home inspectors provide the best, most detailed inspection available, helping to identify safety concerns and provide valuable information. With years of experience and a commitment to excellence, we'll give you peace of mind and a thorough understanding of your home's condition.</font>
           </div>
           <div class="grid-item">
-          <font size="5.3em" weight="900";>Our licensed home inspectors provide the best, most detailed inspection available, helping to identify safety concerns and provide valuable information. With years of experience and a commitment to excellence, we'll give you peace of mind and a thorough understanding of your home's condition.</font>
-            <center><button onclick="window.open('mailto:info@woodandmortar.com?Subject=I%20would%20like%20to%20schedule%20a%20home%20inspection&body=Place%20additional%20message%20here%20please', '_blank');" class="open-modal">Schedule your inspection</button></center>
+
+          <form action="mailto:info@woodandmortar.com" method="post" enctype="text/plain">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" required><br><br>
+
+          <label for="phone">Contact Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required><br><br>
+
+          <label for="contact">Best Way to Contact You:</label>
+          <select id="contact" name="contact" required>
+          <option value="phone">Phone</option>
+          <option value="email">Email</option>
+          </select><br><br>
+
+          <label for="timeframe">Next Available Time Frame for Inspection:</label>
+          <input type="datetime-local" id="timeframe" name="timeframe" required><br><br>
+
+          <label for="inspection">What type of visit:</label>
+          <select id="inspection" name="inspection" required>
+          <option value="basic">Walkthrough</option>
+          <option value="basic">Basic Inspection</option>
+          <option value="complete">Complete Inspection</option>
+          </select><br><br>
+
+          <label for="property">Do You Own the Property:</label>
+          <input type="radio" id="yes" name="property" value="yes" required>
+          <label for="yes">Yes</label>
+          <input type="radio" id="no" name="property" value="no">
+          <label for="no">No</label><br><br>
+
+          <label for="hear">How Did You Hear About Us:</label>
+          <input type="text" id="hear" name="hear" required><br><br>
+
+          <center><button type="submit" value="Submit" class="open-modal">Submit via Email<button><center>
+          </form>
+
           </div>
         </div>
       </section>
 
     <section class="fashion fade-in">
-      <center><h1>Local *<b>trust</b>ed contractors</h1></center>
+      <center><h1> Energy Auditors </h1></center>
     <div class="grid-container">
       <div class="grid-item">
         <div class="img-container">
@@ -658,127 +684,243 @@ function b1Function() {
 
 
     <section class="quote fade-in" id="insurance">
-      <center><h1>Getting Started</h1></center>
+      <center>beta v2.12 <h1><font id="titleChange" style="color: #D95952;">Energy</font><font id="titleChange2">Rating</font></h1><br>
+          Cost Diversion: <strong id="clicksRed"></strong>
+          Energy Effecient points: <strong id="clicksBlue"></strong>
+          New Technology credits: <strong id="clicksGold"></strong>
+          Audit flags: <strong id="clicksBlack"></strong></center>
       <div class="grid-container">
-        <font style="font-size: 150%;">A home inspection is a crucial step in the home buying process. It helps identify safety concerns and major issues that may cost the buyer a lot of money to repair beyond the purchase price. A professional inspector can thoroughly inspect the property, including structural integrity, electrical systems, plumbing, HVAC systems, and more. A home inspection can give you peace of mind when purchasing a home and help you save money by identifying problems that can be fixed before they become more costly. It is an invaluable resource for homeowners or potential buyers looking to purchase a home or commercial property.</font>
         <div class="grid-item span-3" style="text-align: left;">
 
-<form action="mailto:info@woodandmortar.com" method="post" enctype="text/plain">
-<label for="name">Full Name:</label>
-<input type="text" id="name" name="name" required><br><br>
 
-<label for="phone">Contact Phone Number:</label>
-<input type="tel" id="phone" name="phone" required><br><br>
+<button class="open-modal" onclick = "nextPhoto();">Learn More</button>
+<button class="open-modal" onclick = "testData();">Refresh</button>
+<button class="open-modal" onclick = "pushScore();">Get Results</button>
+<a id="descriptAll">Stuff here</a>
+<br>
+<a id="descriptAll2">Stuff here</a>
 
-<label for="contact">Best Way to Contact You:</label>
-<select id="contact" name="contact" required>
-<option value="phone">Phone</option>
-<option value="email">Email</option>
-</select><br><br>
 
-<label for="timeframe">Next Available Time Frame for Inspection:</label>
-<input type="datetime-local" id="timeframe" name="timeframe" required><br><br>
-
-<label for="inspection">What type of visit:</label>
-<select id="inspection" name="inspection" required>
-<option value="basic">Walkthrough</option>
-<option value="basic">Basic Inspection</option>
-<option value="complete">Complete Inspection</option>
-</select><br><br>
-
-<label for="property">Do You Own the Property:</label>
-<input type="radio" id="yes" name="property" value="yes" required>
-<label for="yes">Yes</label>
-<input type="radio" id="no" name="property" value="no">
-<label for="no">No</label><br><br>
-
-<label for="hear">How Did You Hear About Us:</label>
-<input type="text" id="hear" name="hear" required><br><br>
-
-<center><button type="submit" value="Submit" class="open-modal">Submit via Email<button><center>
-</form>
 
         </div>
+
+        <div class="grid-item span-3" style="text-align: left;">
+
+          <svg id="icon-compass" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" >
+                    <defs>
+                      <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="50%" stop-color="#efefef" />
+                <stop offset="100%" stop-color="#D95952" />
+              </linearGradient>
+                    </defs>
+              <g>
+                <path fill="#efefef" class="needleOut" fill-rule="evenodd" clip-rule="evenodd" d="M50,0C22.386,0,0,22.385,0,50c0,27.613,22.386,50,50,50s50-22.387,50-50   C100,22.385,77.614,0,50,0z M83.375,82.065l-1.948-1.947l-1.309,1.309l1.947,1.948c-2.463,2.367-5.179,4.473-8.118,6.253   l-1.387-2.402l-1.604,0.926l1.385,2.399c-2.971,1.641-6.144,2.957-9.467,3.917l-0.717-2.673l-1.789,0.479l0.718,2.677   c-2.56,0.628-5.201,1.04-7.907,1.224L50,89.814l-3.18,6.36c-2.706-0.184-5.348-0.596-7.907-1.224l0.717-2.677l-1.789-0.479   l-0.716,2.673c-3.324-0.96-6.497-2.276-9.468-3.917l1.385-2.399l-1.604-0.926l-1.386,2.402c-2.938-1.78-5.655-3.886-8.118-6.253   l1.948-1.948l-1.31-1.309l-1.948,1.947c-2.367-2.463-4.473-5.18-6.252-8.118l2.402-1.387l-0.926-1.604l-2.4,1.386   c-1.64-2.972-2.957-6.144-3.917-9.469l2.672-0.716l-0.479-1.789l-2.675,0.717c-0.628-2.559-1.041-5.199-1.225-7.905l6.36-3.18   l-6.361-3.18c0.184-2.706,0.597-5.348,1.226-7.907l2.675,0.717l0.479-1.789l-2.672-0.716c0.96-3.325,2.277-6.498,3.918-9.469   l2.399,1.385l0.926-1.604l-2.402-1.387c1.779-2.938,3.884-5.654,6.251-8.117l1.949,1.949l1.31-1.31l-1.949-1.949   c2.463-2.367,5.18-4.472,8.119-6.251l1.386,2.402l1.604-0.926l-1.385-2.4c2.971-1.64,6.144-2.957,9.468-3.918l0.716,2.672   l1.789-0.479l-0.716-2.675c2.558-0.628,5.2-1.041,7.906-1.225l3.18,6.36l3.18-6.36c2.706,0.184,5.348,0.596,7.906,1.225   l-0.717,2.675l1.789,0.479l0.717-2.672c3.323,0.961,6.496,2.278,9.467,3.918l-1.385,2.4l1.604,0.926l1.387-2.402   c2.939,1.779,5.656,3.884,8.119,6.251l-1.948,1.949l1.309,1.31l1.949-1.949c2.366,2.463,4.472,5.179,6.251,8.118l-2.401,1.386   l0.926,1.604l2.398-1.385c1.642,2.971,2.958,6.144,3.919,9.469l-2.673,0.716l0.479,1.789l2.676-0.717   c0.628,2.559,1.04,5.201,1.224,7.907L89.814,50l6.36,3.18c-0.184,2.706-0.596,5.347-1.224,7.905l-2.676-0.717l-0.479,1.789   l2.673,0.716c-0.961,3.325-2.277,6.497-3.918,9.469l-2.399-1.386l-0.926,1.604l2.402,1.387   C87.848,76.886,85.743,79.603,83.375,82.065z"/>
+                <path id="needleMove" fill="#efefef" class="needle" fill-rule="evenodd" clip-rule="evenodd" d="M57.092,38.082c-1.154-0.688-2.412-1.218-3.752-1.549L50,22.222l-3.339,14.311   c-2.102,0.52-4.019,1.508-5.622,2.864l-4.928-3.286l3.286,4.928c-1.356,1.603-2.345,3.519-2.865,5.622L22.222,50l14.31,3.339   c0.331,1.34,0.862,2.599,1.55,3.752l-15.86,20.687l20.687-15.859c1.154,0.688,2.412,1.219,3.751,1.55L50,77.777l3.34-14.31   c2.102-0.521,4.018-1.509,5.62-2.865l4.929,3.286l-3.285-4.929c1.355-1.603,2.344-3.519,2.863-5.621L77.777,50l-14.311-3.339   c-0.33-1.34-0.861-2.599-1.549-3.752l15.859-20.686L57.092,38.082z M39.301,55.5c-0.85-1.649-1.338-3.516-1.338-5.5   c0-6.648,5.389-12.037,12.037-12.037c1.984,0,3.85,0.488,5.5,1.338L50,43.519c-3.58,0-6.481,2.901-6.481,6.481L39.301,55.5z    M54.629,50c0,2.557-2.072,4.63-4.629,4.63c-2.557,0-4.629-2.073-4.629-4.63c0-2.557,2.072-4.629,4.629-4.629   C52.557,45.371,54.629,47.443,54.629,50z M62.037,50c0,6.647-5.389,12.037-12.037,12.037c-1.984,0-3.85-0.488-5.5-1.338l5.5-4.218   c3.579,0,6.481-2.902,6.481-6.481l4.218-5.5C61.549,46.15,62.037,48.016,62.037,50z"/>
+                <circle id="blueCircle" fill="#04acff" fill-rule="evenodd" clip-rule="evenodd" cx="50" cy="50" r="5" opacity=".9"><animate attributeName="r" values="3;2.5;3" dur=".41s" repeatCount="indefinite"/></circle>
+                <circle id="blackCircle" fill="#212121" fill-rule="evenodd" clip-rule="evenodd" cx="50" cy="50" r="5" opacity=".9"><animate attributeName="r" values="3;2.5;3" dur=".41s" repeatCount="indefinite"/></circle>
+                <circle id="goldCircle" fill="gold" fill-rule="evenodd" clip-rule="evenodd" cx="50" cy="50" r="5" opacity=".9"><animate attributeName="r" values="3;2.5;3" dur=".41s" repeatCount="indefinite"/></circle>
+                <circle id="redCircle" fill="#D95952" fill-rule="evenodd" z-index="20" clip-rule="evenodd" cx="50" cy="50" r="5" opacity=".9"><animate attributeName="r" values="3;2.5;3" dur=".41s" repeatCount="indefinite"/></circle>
+
+          </g>
+            </svg>
+
+        </div>
+
+
+
       </div>
 
+<div style="margin: 20px;">
+      <!-- Interactive Question -->
+      <div onclick="this.classList.toggle('inactive');">
+      <form name = "myform"><br><br><h2>How old is the Home?</h2><br>
+                <a class="open-modal" name = "rad" onclick = "getAnswer('1a', '1');changeBlue();changeBlue();changeGold();modifyclicksBlack();">Newer than 20 years</a>
+                <a class="open-modal" name = "rad" onclick = "getAnswer('1b', '2');changeRed();changeRed();changeBlack();addAudit();">20 years or older</a><br><br>
+                </div><div id = "para"></div></form>
 
-      <p style="margin:100px;">
-Micheal Salmon is a well-known name in the home remodeling community, renowned for his expertise in home inspections. With years of experience under his belt, Micheal has become a cornerstone in the industry, providing unmatched services to clients across Kansas and Missouri. His knowledge of home construction, electrical systems, plumbing, and HVAC systems is unparalleled, and his attention to detail is second to none. Micheal's reputation for excellence precedes him, and he has earned the trust of countless homeowners, real estate agents, and contractors. His dedication to his craft and his commitment to providing top-notch service make him the go-to guy for anyone seeking a home inspection or remodeling advice.</p>
-        <br><br><center><button onclick="window.open('https://docs.google.com/document/d/16X6jFrb6y_aCRXtP0rg5oKTlR5liKgnmeFTgtUl78jg/edit', '_blank');" class="open-modal">WoodandMortar Homes | a Salmon.Fund Project</button></center><br><br>
-<p style="margin:100px;">Micheal has served the Kansas City's residential and commercial remodel and construction needs since 2016. We are dedicated to providing the highest level of customer satisfaction while providing excellence in design ideas and craftsmanship.
- Every step of our remodeling process is performed with the end result and customer communication as our cornerstone. We provide progressive solutions for a wide range of remodeling projects including kitchen and bathroom re-design and upgrades,
- outdoor kitchens, outdoor living spaces, casitas, detached garages, garage conversions, room additions and expansions, landscaping design, creative workspaces and complete home makeovers.
-<br><br>
- Micheal has the experience and professionalism needed to ensure your next home remodeling project is a total success. We have <b>over 50 years of experience</b> doing residential projects and would love to help you bring your ideas to life. Whether it’s remodeling an old bathroom or kitchen,
-  redoing your floors to get the hardwood or tile you’ve always wanted, or adding an entirely new section to your existing home, Micheal can get the job done.
-      </p>
+                <script type = "text/javascript">
+
+      var reltext = [];
+      reltext[1] = "A newer home usually comes equipped with mechanicals around house age"
+      reltext[2] = "An older house needs to be checked to ensure all mechanicals are up to date"
+
+      function getAnswer(ans, rel) {
+        document.getElementById("para").innerHTML = reltext[rel];
+        result += "\rYour home age:\r" + reltext[rel] + "\r";
+
+      }
+
+      </script>
+      <!-- End of Interactive Question -->
+
+      <!-- Interactive Question -->
+      <div onclick="this.classList.toggle('inactive');">
+      <form name = "myform1"><br><br><h2>What type of heating system is in the home?</h2><br>
+        <a class="open-modal" name = "rad1" onclick = "unhide1a();getAnswer1('1a', '1');changeBlack();">Furnace</a>
+        <a class="open-modal" name = "rad1" onclick = "getAnswer1('1b', '2');changeGold();changeBlue();">Heat Pump</a>
+        <a class="open-modal" name = "rad1" onclick = "getAnswer1('1c', '3');changeBlack();changeRed();">Electric Resistance</a>
+        <a class="open-modal" name = "rad1" onclick = "unhide1a();getAnswer1('1d', '4');changeRed();changeBlack();">Forced Air</a>
+        <a class="open-modal" name = "rad1" onclick = "getAnswer1('1e', '5');changeBlue();changeBlue();changeBlue();changeGold();">Radiant</a>
+        <br><br></div><div id = "para1"></div></form><script type = "text/javascript">
+      var reltext1 = [];
+      reltext1[1] = "Gas-fired furnaces are one of the most popular heating systems. Standard efficiency models have AFUE ratings of 80-85%. Mid-range units are around 90-95% AFUE. High-efficiency condensing furnaces can reach 98% AFUE. Cost effective and reliable, but not the most efficient heating option. "
+      reltext1[2] = "Heat Pumps extract heat from outdoor air and transfers indoors via refrigerant. Most use electricity but gas-powered models available. Cold climate air source heat pumps can reach 8.5 HSPF. Geothermal heat pumps exceed 30 HSPF. Most energy efficient option, but higher upfront costs. "
+      reltext1[3] = "Electric Resistance uses electric current to produce heat through standard baseboard units. Very inefficient with 100% AFUE - loses no energy to exhaust. However, electric heat generation is inefficient overall. Low purchase costs but very expensive to operate. "
+      reltext1[4] = "Forced Air uses a blower motor to distribute heated air through ductwork. Can be fueled by natural gas, propane, oil. AFUE ratings similar to standard furnaces - 80-98% range. Efficiency affected by leaks in ductwork. Can pair with AC system to provide whole-house HVAC. "
+      reltext1[5] = "Radiant heats spaces directly using a network of tubing or electric coils. Hydronic systems pump hot water, steam or antifreeze. Electric radiant uses electric current to resistively heat coils. Very efficient as 100% of heat is transferred to occupants/objects. Gas boilers or standalone heaters can supply hydronic systems. "
+
+      function getAnswer1(ans1, rel1) {
+      document.getElementById("para1").innerHTML = reltext1[rel1];
+      result += "\rYour heating system:\r" + reltext1[rel1] + "\r";
+      }
+
+      function unhide1a(){document.getElementById("form1a").style.display = 'block';}
+
+      </script>
+      <!-- End of Interactive Question -->
+
+
+      <!-- Interactive Question -->
+      <div id="form1a" onclick="this.classList.toggle('inactive');" style="display: none;">
+      <form name = "myform1a"><br><br><h2>Look up the AFUE rating for the specific furnace model number or check the AFUE rating printed on the unit nameplate/rating plate attached to the furnace.<br><br>
+        <b>Input capacity</b> - Furnaces over 225,000 BTU/hr input are required to be 90% AFUE minimum. So larger furnaces likely meet it.<br><br>
+<b>Age</b> - Units installed after 2015 generally meet 90%+ AFUE ratings due to federal standards. Older systems likely fall short.<br><br>
+<b>Condensing</b> - Check if the unit has a secondary heat exchanger and condensate drain. This indicates a high efficiency condensing furnace.<br><br>
+<b>Multi-stage</b> - Variable speed and modulating furnaces often indicate higher model series with 90%+ AFUE ratings.
+</h2><br>
+        <a class="open-modal" name = "rad1a" onclick = "getAnswer1a('1a', '1');changeBlue();">The gas furnace is above 90% AFUE efficiency or Heat pump 8.2 HSPF efficiency</a>
+        <a class="open-modal" name = "rad1a" onclick = "getAnswer1a('1b', '2');changeRed();">The gas furnace is below 90% AFUE efficiency or Heat pump 8.2 HSPF efficiency</a>
+        <a class="open-modal" name = "rad1a" onclick = "getAnswer1a('1c', '3');changeBlack();addAudit();">I'm not reliable in finding this information, please skip</a>
+        <br><br></div><div id = "para1a"></div></form><script type = "text/javascript">
+
+
+
+      var reltext1a = [];
+      reltext1a[1] = "Gas-fired furnaces are one of the most popular heating systems. Standard efficiency models have AFUE ratings of 80-85%. Mid-range units are around 90-95% AFUE."
+      reltext1a[2] = "Cost effective and reliable, but not the most efficient heating option."
+      reltext1a[3] = "WoodandMortar will help you in finding this information, tagged for audit."
+
+      function getAnswer1a(ans1a, rel1a) {
+      document.getElementById("para1a").innerHTML = reltext1a[rel1a];
+      result += "\rThermostat:\r" + reltext1a[rel1a] + "\r";
+      }
+
+      </script>
+      <!-- End of Interactive Question -->
+
+
+      <!-- Interactive Question -->
+      <div onclick="this.classList.toggle('inactive');">
+      <form name = "myform2"><br><br><h2>What type of cooling system is in the home?</h2><br>
+        <a class="open-modal" name = "rad2" onclick = "getAnswer2('1a', '1');changeBlack();changeRed();changeRed();">Central Air Conditioner</a>
+        <a class="open-modal" name = "rad2" onclick = "getAnswer2('1b', '2');changeRed();changeBlack();addAudit();">Ductless Mini-split</a>
+        <a class="open-modal" name = "rad2" onclick = "getAnswer2('1c', '3');changeGold();changeGold();changeBlue();">Evaporative Cooler</a>
+        <a class="open-modal" name = "rad2" onclick = "getAnswer2('1d', '4');changeBlack();changeRed();addAudit();">Window Unit</a>
+        <a class="open-modal" name = "rad2" onclick = "getAnswer2('1e', '5');changeGold();changeBlue();changeBlue();changeBlue();">Radiant Cooling</a>
+        <br><br></div><div id = "para2"></div></form><script type = "text/javascript">
+      var reltext2 = [];
+      reltext2[1] = "Split ducted system with outdoor compressor and indoor air handler. Powered by electricity. Efficiency measured by SEER rating - higher is better. Minimum SEER is 14, but 18+ SEER models are 50% more efficient. "
+      reltext2[2] = "One or multiple indoor heads connected to an outdoor compressor. No ductwork required. Allows zoning different areas. Higher SEER ratings than central AC, typically 15-22 SEER or more. "
+      reltext2[3] = "Evaporative Cooler cools air naturally using evaporation and moving air. Uses significantly less energy than traditional AC. Work best in dry climates. Efficiency varies based on humidity. 75-80% less electricity usage than comparable AC. "
+      reltext2[4] = "Compact all-in-one Window units mounted in window openings. Effective for spot cooling but inefficient overall. Typical SEER rating of 9-12. Lower than central AC. No ductwork losses but higher leakage around unit. "
+      reltext2[5] = "Radiant Cooling works by circulating chilled water through tubes or panels. The cooled surfaces absorb heat directly from occupants and objects. Hydronic systems use tubing in floors, ceilings or walls. Panels are typically ceiling mounted. Very energy efficient as chills only occupied zones, not full volume of air. Requires chilled water loops, a chiller or cooling tower. "
+
+      function getAnswer2(ans2, rel2) {
+      document.getElementById("para2").innerHTML = reltext2[rel2];
+      result += "\rYour cooling system:\r" + reltext2[rel2] + "\r";
+      }
+
+      </script>
+      <!-- End of Interactive Question -->
+
+      <!-- Interactive Question -->
+      <div onclick="this.classList.toggle('inactive');">
+      <form name = "myform3"><br><br><h2>What kind of thermostat do you have?</h2><br>
+        <a class="open-modal" name = "rad2" onclick = "getAnswer3('1a', '1');changeBlack();changeRed();changeRed();">Non-Programmable</a>
+        <a class="open-modal" name = "rad3" onclick = "getAnswer3('1b', '2');changeRed();changeBlack();">Programmable</a>
+        <a class="open-modal" name = "rad3" onclick = "getAnswer3('1c', '3');changeGold();changeBlue();">Wi-Fi</a>
+        <a class="open-modal" name = "rad3" onclick = "getAnswer3('1d', '4');modifyclicksBlack();changeGold();changeBlue();">Smart</a>
+        <br><br></div><div id = "para3"></div></form><script type = "text/javascript">
+      var reltext3 = [];
+      reltext3[1] = "Non-Programmable thermostats can be energy efficient, but it is up to the user to monitor and adjust the temperature manually throughout the day."
+      reltext3[2] = "Programmable thermostats make basic energy adjustments easy to attain through manually input scheduling to increase or decrease HVAC usage efficiently."
+      reltext3[3] = "Wi-Fi thermostats allow for long distance control of your thermostat and built in programmable features to allow for full control and efficiency."
+      reltext3[4] = "Smart thermostats are designed to learn your heating and cooling preferences and account for exterior temperatures to create and maintain the most efficient HVAC usage."
+
+      function getAnswer3(ans3, rel3) {
+      document.getElementById("para3").innerHTML = reltext3[rel3];
+      result += "\rThermostat:\r" + reltext3[rel3] + "\r";
+      }
+
+      </script>
+      <!-- End of Interactive Question -->
+
+      <!-- Interactive Question -->
+      <div onclick="this.classList.toggle('inactive');">
+      <form name = "myform4"><br><br><h2>Insulation minimum is R-13 in walls and R-38 in attic, the depth minimum for sprayed is 11.6 inches.</h2><br>
+        <a class="open-modal" name = "rad4" onclick = "getAnswer4('1a', '1');modifyclicksBlack();changeBlue();changeGold();unhide4a();">The walls and attic meet minimum requirements</a>
+        <a class="open-modal" name = "rad4" onclick = "getAnswer4('1b', '2');changeRed();changeBlack();addAudit();">The walls and attic do not meet minimum requirements</a>
+        <a class="open-modal" name = "rad4" onclick = "getAnswer4('1c', '3');changeRed();changeBlack();addAudit();">I'm not reliable in finding this information, please skip</a>
+        <br><br></div><div id = "para4"></div></form><script type = "text/javascript">
+      var reltext4 = [];
+      reltext4[1] = "Go into the attic with a measure to get the depth of the insulation and take a photo. What does the insulation tag or label say? Please enter the R-value listed on it. Measure the thickness of insulation in an exterior wall and submit a photo showing the depth."
+      reltext4[2] = "Tagged for audit."
+      reltext4[3] = "WoodandMortar will help you in finding this information, tagged for audit."
+
+      function getAnswer4(ans4, rel4) {
+      document.getElementById("para4").innerHTML = reltext4[rel4];
+      result += "\rThermostat:\r" + reltext4[rel4] + "\r";
+      }
+
+
+      function unhide4a(){document.getElementById("form4a").style.display = 'block';}
+
+      </script>
+      <!-- End of Interactive Question -->
+
+      <!-- Interactive Question -->
+      <div id="form4a" onclick="this.classList.toggle('inactive');" style="display: none;">
+      <form name = "myform4a"><br><br><h2>Place all photos into Google:drive > Home > Insulation</h2><br>
+        <a class="open-modal" name = "rad4a" onclick = "getAnswer4a('1a', '1');changeBlue();window.open('https://drive.google.com', '_blank');">The foundation includes insulation and vapor barrier to achieve maximum rating.</a>
+        <a class="open-modal" name = "rad4a" onclick = "getAnswer4a('1b', '2');changeRed();addAudit();window.open('https://drive.google.com', '_blank');">The foundation includes insulation only.</a>
+        <a class="open-modal" name = "rad4a" onclick = "getAnswer4a('1c', '3');changeRed();addAudit();window.open('https://drive.google.com', '_blank');">Does not pass</a>
+        <br><br></div><div id = "para4a"></div></form><script type = "text/javascript">
+
+
+
+      var reltext4a = [];
+      reltext4a[1] = "The insulation meets all required standards."
+      reltext4a[2] = "The basement walls need vapor barrier to achieve maximum rating, tagged for audit."
+      reltext4a[3] = "Insulation failed to pass, tagged for audit."
+
+      function getAnswer4a(ans4a, rel4a) {
+      document.getElementById("para4a").innerHTML = reltext4a[rel4a];
+      result += "\rThermostat:\r" + reltext4a[rel4a] + "\r";
+      }
+
+      </script>
+      <!-- End of Interactive Question -->
+
+
+
+
+
+
+
+</div>
+
+
+        <br><br><center>
+
+          <button onclick="document.getElementById('insurance').scrollIntoView({behavior: 'smooth'});testData();" class="open-modal">Audit Selections</button>
+
+      </center><br><br>
 
     </section>
 
 
   </main>
 
-
-<popup id="client" style="width:100%; height:75%; z-index:9999999999999999999999999999; display:none;">
-<post>
-</post>
-</popup>
-
-  <svg style="display:none">
-    <symbol version="1.1" id="user-icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24">
-      <path d="M21 21v-2c0-1.38-0.561-2.632-1.464-3.536s-2.156-1.464-3.536-1.464h-8c-1.38 0-2.632 0.561-3.536 1.464s-1.464 2.156-1.464
-        3.536v2c0 0.552 0.448 1 1 1s1-0.448 1-1v-2c0-0.829 0.335-1.577 0.879-2.121s1.292-0.879 2.121-0.879h8c0.829 0 1.577 0.335 2.121 0.879s0.879
-        1.292 0.879 2.121v2c0 0.552 0.448 1 1 1s1-0.448 1-1zM17 7c0-1.38-0.561-2.632-1.464-3.536s-2.156-1.464-3.536-1.464-2.632 0.561-3.536 1.464-1.464
-        2.156-1.464 3.536 0.561 2.632 1.464 3.536 2.156 1.464 3.536 1.464 2.632-0.561 3.536-1.464 1.464-2.156 1.464-3.536zM15 7c0 0.829-0.335 1.577-0.879
-        2.121s-1.292 0.879-2.121 0.879-1.577-0.335-2.121-0.879-0.879-1.292-0.879-2.121 0.335-1.577 0.879-2.121 1.292-0.879 2.121-0.879 1.577 0.335 2.121 0.879
-        0.879 1.292 0.879 2.121z"></path>
-    </symbol>
-    <symbol version="1.1" id="shop-icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24">
-      <path d="M19 5h-14l1.5-2h11zM21.794 5.392l-2.994-3.992c-0.196-0.261-0.494-0.399-0.8-0.4h-12c-0.326
-        0-0.616 0.156-0.8 0.4l-2.994 3.992c-0.043 0.056-0.081 0.117-0.111 0.182-0.065 0.137-0.096 0.283-0.095
-        0.426v14c0 0.828 0.337 1.58 0.879 2.121s1.293 0.879 2.121 0.879h14c0.828 0 1.58-0.337 2.121-0.879s0.879-1.293
-        0.879-2.121v-14c0-0.219-0.071-0.422-0.189-0.585-0.004-0.005-0.007-0.010-0.011-0.015zM4 7h16v13c0 0.276-0.111
-        0.525-0.293 0.707s-0.431 0.293-0.707 0.293h-14c-0.276 0-0.525-0.111-0.707-0.293s-0.293-0.431-0.293-0.707zM15
-        10c0 0.829-0.335 1.577-0.879 2.121s-1.292 0.879-2.121 0.879-1.577-0.335-2.121-0.879-0.879-1.292-0.879-2.121c0-0.552-0.448-1-1-1s-1
-        0.448-1 1c0 1.38 0.561 2.632 1.464 3.536s2.156 1.464 3.536 1.464 2.632-0.561 3.536-1.464 1.464-2.156 1.464-3.536c0-0.552-0.448-1-1-1s-1 0.448-1 1z">
-      </path>
-    </symbol>
-    <symbol version="1.1" id="fb-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-      <path d="M17 3v2h-2c-0.552 0-1.053 0.225-1.414 0.586s-0.586 0.862-0.586 1.414v3c0 0.552 0.448 1 1 1h2.719l-0.5
-        2h-2.219c-0.552 0-1 0.448-1 1v7h-2v-7c0-0.552-0.448-1-1-1h-2v-2h2c0.552 0 1-0.448 1-1v-3c0-1.105 0.447-2.103
-        1.172-2.828s1.723-1.172 2.828-1.172zM18 1h-3c-1.657 0-3.158 0.673-4.243 1.757s-1.757 2.586-1.757 4.243v2h-2c-0.552 0-1
-        0.448-1 1v4c0 0.552 0.448 1 1 1h2v7c0 0.552 0.448 1 1 1h4c0.552 0 1-0.448 1-1v-7h2c0.466 0 0.858-0.319
-        0.97-0.757l1-4c0.134-0.536-0.192-1.079-0.728-1.213-0.083-0.021-0.167-0.031-0.242-0.030h-3v-2h3c0.552 0 1-0.448 1-1v-4c0-0.552-0.448-1-1-1z">
-      </path>
-    </symbol>
-    <symbol version="1.1" id="ig-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-      <path d="M7 1c-1.657 0-3.158 0.673-4.243 1.757s-1.757 2.586-1.757 4.243v10c0 1.657 0.673 3.158 1.757 4.243s2.586
-        1.757 4.243 1.757h10c1.657 0 3.158-0.673 4.243-1.757s1.757-2.586 1.757-4.243v-10c0-1.657-0.673-3.158-1.757-4.243s-2.586-1.757-4.243-1.757zM7
-        3h10c1.105 0 2.103 0.447 2.828 1.172s1.172 1.723 1.172 2.828v10c0 1.105-0.447 2.103-1.172 2.828s-1.723 1.172-2.828 1.172h-10c-1.105
-        0-2.103-0.447-2.828-1.172s-1.172-1.723-1.172-2.828v-10c0-1.105 0.447-2.103 1.172-2.828s1.723-1.172 2.828-1.172zM16.989
-        11.223c-0.15-0.972-0.571-1.857-1.194-2.567-0.754-0.861-1.804-1.465-3.009-1.644-0.464-0.074-0.97-0.077-1.477-0.002-1.366
-        0.202-2.521 0.941-3.282 1.967s-1.133 2.347-0.93 3.712 0.941 2.521 1.967 3.282 2.347 1.133 3.712 0.93 2.521-0.941 3.282-1.967
-        1.133-2.347 0.93-3.712zM15.011 11.517c0.122 0.82-0.1 1.609-0.558 2.227s-1.15 1.059-1.969 1.18-1.609-0.1-2.227-0.558-1.059-1.15-1.18-1.969
-        0.1-1.609 0.558-2.227 1.15-1.059 1.969-1.18c0.313-0.046 0.615-0.042 0.87-0.002 0.74 0.11 1.366 0.47 1.818 0.986 0.375 0.428 0.63 0.963 0.72 1.543zM17.5
-        7.5c0.552 0 1-0.448 1-1s-0.448-1-1-1-1 0.448-1 1 0.448 1 1 1z"></path>
-    </symbol>
-    <symbol version="1.1" id="share-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-      <path d="M16.214 18.098c0.025-0.033 0.048-0.067 0.070-0.104 0.020-0.035 0.038-0.071 0.054-0.107 0.073-0.108
-        0.156-0.209 0.248-0.301 0.363-0.363 0.861-0.586 1.414-0.586s1.051 0.223 1.414 0.586 0.586 0.861 0.586 1.414-0.223
-        1.051-0.586 1.414-0.861 0.586-1.414 0.586-1.051-0.223-1.414-0.586-0.586-0.861-0.586-1.414c0-0.325 0.077-0.631 0.214-0.902zM16.301
-        6.056c-0.009-0.017-0.018-0.034-0.028-0.051s-0.020-0.034-0.031-0.050c-0.154-0.283-0.242-0.608-0.242-0.955 0-0.553 0.223-1.051 0.586-1.414s0.861-0.586
-        1.414-0.586 1.051 0.223 1.414 0.586 0.586 0.861 0.586 1.414-0.223 1.051-0.586 1.414-0.861 0.586-1.414 0.586-1.051-0.223-1.414-0.586c-0.108-0.108-0.204-0.228-0.285-0.358zM7.699
-        10.944c0.009 0.017 0.018 0.034 0.028 0.051s0.020 0.034 0.031 0.050c0.154 0.283 0.242 0.608 0.242 0.955s-0.088 0.672-0.243 0.956c-0.011 0.016-0.021 0.033-0.031 0.050s-0.019
-        0.033-0.027 0.050c-0.081 0.13-0.177 0.25-0.285 0.358-0.363 0.363-0.861 0.586-1.414 0.586s-1.051-0.223-1.414-0.586-0.586-0.861-0.586-1.414 0.223-1.051 0.586-1.414
-        0.861-0.586 1.414-0.586 1.051 0.223 1.414 0.586c0.108 0.108 0.204 0.228 0.285 0.358zM14.15 6.088l-5.308
-        3.097c-0.004-0.005-0.009-0.009-0.014-0.014-0.722-0.722-1.724-1.171-2.828-1.171s-2.106 0.449-2.828 1.172-1.172 1.724-1.172 2.828 0.449 2.106 1.172 2.828 1.724 1.172
-        2.828 1.172 2.106-0.449 2.828-1.172c0.005-0.005 0.009-0.009 0.014-0.014l5.309 3.094c-0.098 0.347-0.151 0.714-0.151 1.092 0 1.104 0.449 2.106 1.172 2.828s1.724
-        1.172 2.828 1.172 2.106-0.449 2.828-1.172 1.172-1.724 1.172-2.828-0.449-2.106-1.172-2.828-1.724-1.172-2.828-1.172-2.106 0.449-2.828 1.172c-0.003 0.003-0.007
-        0.007-0.010 0.010l-5.312-3.095c0.098-0.346 0.15-0.71 0.15-1.087s-0.052-0.742-0.15-1.088l5.308-3.098c0.004 0.005 0.009 0.009 0.014 0.014 0.722 0.723 1.724
-        1.172 2.828 1.172s2.106-0.449 2.828-1.172 1.172-1.724 1.172-2.828-0.449-2.106-1.172-2.828-1.724-1.172-2.828-1.172-2.106 0.449-2.828 1.172-1.172 1.724-1.172 2.828c0
-        0.377 0.052 0.742 0.15 1.088z"></path>
-    </symbol>
-  </svg>
 
 <center><a color="grey">©2023-WoodandmortarLLC</a></center>
 
@@ -796,8 +938,214 @@ Micheal Salmon is a well-known name in the home remodeling community, renowned f
 <script  src="js/output.js"></script>
 
 
-
 <script type="text/javascript">
+
+
+          const descriptAll = [
+            "<h1>Pumice</h1><br> - The porous, lightweight nature of pumice represents the low cost but inefficient materials used in old appliances and electronics. Cheap to produce but outdated technologies.",
+            "<h1>Chalk</h1><br> - The soft, dusty chalk represents affordable materials that may not withstand wear and tear over time. Initial cost savings but prone to breakdowns.",
+            "<h1>Limestone</h1><br> - As a common sedimentary rock, limestone represents the moderate energy efficiency of mass-produced consumer goods for the average consumer.",
+            "<h1>Sandstone</h1><br> - Abundant like sand, sandstone materials are accessible and routinely used but not optimized for energy efficiency.",
+            "<h1>Shale</h1><br> - The laminated structure of shale represents the incremental improvements made to existing technologies that yield moderate efficiency gains.",
+            "<h1>Slate</h1><br> - Slate's use in roofing ties to insulation needs for housing. Slate materials provide improvements but at increased costs.",
+            "<h1>Granite</h1><br> - As an igneous rock, granite represents technological advancements that require intensive processes but yield meaningful efficiency gains.",
+            "<h1>Marble</h1><br> - The metamorphic quality of marble symbolizes the transformative innovations that produce materials and products optimized for sustainability.",
+            "<h1>Quartz</h1><br> - The high hardness and piezoelectricity of quartz parallels the significant energy required for next-generation technologies and materials.",
+          ];
+
+          const descriptAll2 = [
+            "<h1>Balsa</h1><br> - The ultra-lightweight balsa represents highly optimized renewable materials that maximize efficiency with minimal environmental impact.",
+            "<h1>Basswood</h1><br> - As a fast-growing softwood, basswood represents sustainable materials that balance efficiency, cost, and responsible sourcing.",
+            "<h1>Aspen</h1><br> - Aspen grows rapidly in groves, similar to how scalable technologies can be propagated widely to increase efficiency.",
+            "<h1>Pine</h1><br> - As a widespread softwood, pine represents the incremental efficiency gains from broadly adopted improvements to traditional materials.",
+            "<h1>Oak</h1><br> - With its hard, durable characteristics, oak symbolizes conventional materials enhanced through treatment and processing for better efficiency.",
+            "<h1>Ash</h1><br> - The straight grain and high strength of ash parallels materials engineered specifically for performance improvements.",
+            "<h1>Maple</h1><br> - Maple's hardness indicates more intensive processing and engineering required to create more efficient but still mainstream materials.",
+            "<h1>Mahogany</h1><br> - As a luxury wood, mahogany represents exotic materials with marginal efficiency gains but used primarily for aesthetic appeal.",
+            "<h1>Teak</h1><br> - The weather resistance of teak points to niche materials focused on durability rather than broad sustainability or efficiency.",
+          ];
+
+
+          const subcategories = {
+            "balsa": ["Balsa"],
+            "basswood": ["Basswood"],
+            "aspen": ["Aspen"],
+            "pine": ["Pine"],
+            "oak": ["Oak"],
+            "ash": ["Ash"],
+            "maple": ["Maple"],
+            "mahogany": ["Mahogany"],
+            "teak": ["Teak"],
+          };
+
+          const subcategories2 = {
+            "pumice": ["Pumice"],
+            "chalk": ["Chalk"],
+            "limestone": ["Limestone"],
+            "sandstone": ["Sandstone"],
+            "shale": ["Shale"],
+            "slate": ["Slate"],
+            "granite": ["Granite"],
+            "marble": ["Marble"],
+            "quartz": ["Quartz"],
+          };
+
+
+
+          let result = '';
+          let auditNum = 0;
+          var xaxis = 50;
+          var yaxis = 50;
+          var newRotation = 0;
+          let clicksRed = -3;
+          let clicksBlack = -3;
+          let clicksBlue = 5;
+          let clicksGold = 5;
+          let nextPho = 0;
+          let subcat = '';
+          let subcat2 = '';
+
+          function modifyclicksBlack(){clicksBlack += 1;
+          document.getElementById("clicksBlack").innerHTML = clicksBlack;}
+
+          function addAudit()
+          {
+            auditNum += 1;
+            result += "\rAudit:\r" + auditNum + "\r";
+          }
+
+          function nextPhoto(){
+            if (nextPho != 9) {
+              nextPho += 1;
+            }
+
+            if (nextPho == 9) {
+              nextPho = 0;
+            }
+            document.getElementById("descriptAll").innerHTML = descriptAll[nextPho];
+            document.getElementById("descriptAll2").innerHTML = descriptAll2[nextPho];
+          }
+
+          window.onload = function() {
+            document.getElementById("descriptAll").innerHTML = descriptAll[0];
+            document.getElementById("descriptAll2").innerHTML = descriptAll2[0];
+            clicksRed -= 1;
+            clicksBlack -= 1;
+            clicksBlue -= 1;
+            clicksGold -= 1;
+            document.getElementById("clicksRed").innerHTML = clicksRed;
+            document.getElementById("clicksBlack").innerHTML = clicksBlack;
+            document.getElementById("clicksBlue").innerHTML = clicksBlue;
+            document.getElementById("clicksGold").innerHTML = clicksGold;
+                    };
+
+
+          function changeRed() {
+              clicksRed -= 1;
+              document.getElementById("clicksRed").innerHTML = clicksRed;
+              xaxis += 4;
+              redCircle.setAttribute('cx', xaxis);
+               newRotation += 10;
+               needleMove.setAttribute('transform', `rotate(${newRotation})`);
+          }
+          function changeBlue() {
+              clicksBlue += 1;
+              document.getElementById("clicksBlue").innerHTML = clicksBlue;
+              xaxis -= 4;
+              blueCircle.setAttribute('cx', xaxis);
+              newRotation -= 10;
+              needleMove.setAttribute('transform', `rotate(${newRotation})`);
+          }
+          function changeBlack() {
+              clicksBlack -= 1;
+              document.getElementById("clicksBlack").innerHTML = clicksBlack;
+              yaxis += 4;
+              blackCircle.setAttribute('cy', yaxis);
+              newRotation += 10;
+              needleMove.setAttribute('transform', `rotate(${newRotation})`);
+          }
+          function changeGold() {
+              clicksGold += 1;
+              document.getElementById("clicksGold").innerHTML = clicksGold;
+              yaxis -= 4;
+              goldCircle.setAttribute('cy', yaxis);
+              newRotation -= 10;
+              needleMove.setAttribute('transform', `rotate(${newRotation})`);
+          }
+
+          function pushScore(){
+
+            xaxis = Math.max(0, Math.min(xaxis, 100));
+            redCircle.setAttribute('cx', xaxis);
+            blueCircle.setAttribute('cx', xaxis);
+            yaxis = Math.max(0, Math.min(yaxis, 100));
+            blackCircle.setAttribute('cx', yaxis);
+            goldCircle.setAttribute('cx', yaxis);
+
+            document.getElementById('insurance').scrollIntoView({behavior: 'smooth'});
+            const emailBody = encodeURIComponent(result);
+            window.location.href = `mailto:woodmortar@gmail.com?subject=WoodandMortar.com|EnergyAudit&body=` + emailBody + 'Rating:' + subcat + subcat2;
+          }
+
+
+
+
+
+
+function testData() {
+
+  let woodMath2 = Math.round(clicksBlack + clicksGold);
+  let stoneMath2 = Math.round(clicksRed + clicksBlue);
+
+  woodMath2 = Math.max(0, Math.min(woodMath2, 8));
+  stoneMath2 = Math.max(0, Math.min(stoneMath2, 8));
+
+  // Get current circle coords
+  var cxRed = redCircle.getAttribute('cx');
+  var cyRed = redCircle.getAttribute('cy');
+
+  var cxBlue = blueCircle.getAttribute('cx');
+  var cyBlue = blueCircle.getAttribute('cy');
+
+  var cxBlack = blackCircle.getAttribute('cx');
+  var cyBlack = blackCircle.getAttribute('cy');
+
+  var cxGold = goldCircle.getAttribute('cx');
+  var cyGold = goldCircle.getAttribute('cy');
+
+
+  let finalMessage = cxRed + cyRed + ' : ' + cxBlue + cyBlue + ' : ' + cxBlack + cyBlack + ' : ' + cxGold + cyGold;
+
+  if (woodMath2 <= 0) {subcat = subcategories.balsa;}
+  else if (woodMath2 == 1) {subcat = subcategories.basswood;}
+  else if (woodMath2 == 2) {subcat = subcategories.aspen;}
+  else if (woodMath2 == 3) {subcat = subcategories.pine;}
+  else if (woodMath2 == 4) {subcat = subcategories.oak;}
+  else if (woodMath2 == 5) {subcat = subcategories.ash;}
+  else if (woodMath2 == 6) {subcat = subcategories.maple;}
+  else if (woodMath2 == 7) {subcat = subcategories.mahogany;}
+  else if (woodMath2 > 7) {subcat = subcategories.teak;}
+
+  if (stoneMath2 <= 0) {subcat2 = subcategories2.pumice;}
+  else if (stoneMath2 == 1) {subcat2 = subcategories2.chalk;}
+  else if (stoneMath2 == 2) {subcat2 = subcategories2.limestone;}
+  else if (stoneMath2 == 3) {subcat2 = subcategories2.sandstone;}
+  else if (stoneMath2 == 4) {subcat2 = subcategories2.shale;}
+  else if (stoneMath2 == 5) {subcat2 = subcategories2.slate;}
+  else if (stoneMath2 == 6) {subcat2 = subcategories2.granite;}
+  else if (stoneMath2 == 7) {subcat2 = subcategories2.marble;}
+  else if (stoneMath2 > 7) {stoneMath2 == 8; subcat2 = subcategories2.quartz;}
+
+  document.getElementById("titleChange").innerHTML = subcat;
+  document.getElementById("titleChange2").innerHTML = subcat2;
+  document.getElementById("descriptAll").innerHTML = descriptAll[stoneMath2];
+  document.getElementById("descriptAll2").innerHTML = descriptAll2[woodMath2];
+
+
+    alert( subcat + "=" + woodMath2 + " | " + subcat2 + "=" + stoneMath2 + " " + finalMessage);
+}
+
+
 
 
 function openInNewTab(href) {
@@ -1068,7 +1416,16 @@ function openInNewTab(href) {
 
             animationCounter = 1;
           }
+
+
+
+
+
+
 </script>
+
+
+
 
 
 

@@ -702,7 +702,7 @@ button, a {
     z-index: 2;
     right:0;
     height: 100%;
-    width: 70%;
+    width: 83%;
   }
   .messages-section .messages-close {
     display: block;
@@ -844,7 +844,7 @@ button, a {
         text-transform: uppercase;
         letter-spacing: 4px;
         font-size: 14px;
-        padding: .7em 1em;
+        padding: .5em 1em;
         font-weight: bold;
         -webkit-transition: background 0.3s;
         transition: background 0.3s;
@@ -856,26 +856,6 @@ button, a {
         background: #D95952;
       }
 
-      .open-modal1 {
-         text-align: center;
-        border: none;
-        background: #D95952;
-        color: #fff;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        font-size: 14px;
-        padding: .7em 1em;
-        font-weight: bold;
-        border-radius: 10px;
-         cursor: pointer;
-        -webkit-transition: background 0.3s;
-        transition: background 0.3s;
-        animation: pulse 8s infinite;
-      }
-
-      .open-modal1:hover {
-        background: #27ae60;
-      }
 
       @keyframes pulse {
       0% {
@@ -987,8 +967,8 @@ button, a {
     height: 5px;
     border-radius: 6px;
     background: rgba(0, 0, 0, 0.25);
-    -webkit-animation: bars0 1.5s  infinite ease-in-out;
-            animation: bars0 1.5s  infinite ease-in-out;
+    -webkit-animation: bars0 2.5s  infinite ease-in-out;
+            animation: bars0 2.5s  infinite ease-in-out;
 
                       -webkit-animation-delay: 0.2s;
                               animation-delay: 0.2s;
@@ -1011,7 +991,7 @@ button, a {
               transform: translateY(15px);
       background: #000000;
     }
-    50% {
+    80% {
       height: 30px;
       -webkit-transform: translateY(15px);
               transform: translateY(15px);
@@ -1041,7 +1021,7 @@ button, a {
               transform: translateY(15px);
       background: #000000;
     }
-    50% {
+    80% {
       height: 5px;
       -webkit-transform: translateY(0px);
               transform: translateY(0px);
@@ -1076,8 +1056,8 @@ button, a {
     height: 5px;
     border-radius: 6px;
     background: rgba(0, 0, 0, 0.25);
-    -webkit-animation: bars0a 1.5s  infinite ease-in-out;
-            animation: bars0a 1.5s  infinite ease-in-out;
+    -webkit-animation: bars0a 2.5s  infinite ease-in-out;
+            animation: bars0a 2.5s  infinite ease-in-out;
 
   }
 
@@ -1120,7 +1100,7 @@ button, a {
               transform: translateY(15px);
       background: #000000;
     }
-    50% {
+    80% {
       height: 30px;
       -webkit-transform: translateY(15px);
               transform: translateY(15px);
@@ -1150,7 +1130,7 @@ button, a {
               transform: translateY(15px);
       background: #000000;
     }
-    50% {
+    80% {
       height: 5px;
       -webkit-transform: translateY(0px);
               transform: translateY(0px);
@@ -1182,8 +1162,8 @@ button, a {
   height: 5px;
   border-radius: 6px;
   background: rgba(0, 0, 0, 0.25);
-  -webkit-animation: bars1 1.5s  infinite ease-in-out;
-          animation: bars1 1.5s  infinite ease-in-out;
+  -webkit-animation: bars1 2.5s  infinite ease-in-out;
+          animation: bars1 2.5s  infinite ease-in-out;
 
           -webkit-animation-delay: 0.4s;
                   animation-delay: 0.4s;
@@ -1207,7 +1187,7 @@ button, a {
             transform: translateY(15px);
     background: #000000;
   }
-  50% {
+  80% {
     height: 28px;
     -webkit-transform: translateY(15px);
             transform: translateY(15px);
@@ -1237,7 +1217,7 @@ button, a {
             transform: translateY(15px);
     background: #000000;
   }
-  50% {
+  80% {
     height: 5px;
     -webkit-transform: translateY(0px);
             transform: translateY(0px);

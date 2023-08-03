@@ -129,24 +129,6 @@
                       </div>
                     </div>
 
-                    <div class="view-actions">
-                      <button class="view-btn list-view" title="List View">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
-                          <line x1="8" y1="6" x2="21" y2="6" />
-                          <line x1="8" y1="12" x2="21" y2="12" />
-                          <line x1="8" y1="18" x2="21" y2="18" />
-                          <line x1="3" y1="6" x2="3.01" y2="6" />
-                          <line x1="3" y1="12" x2="3.01" y2="12" />
-                          <line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                      </button>
-                      <button class="view-btn grid-view active" title="Grid View">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
-                          <rect x="3" y="3" width="7" height="7" />
-                          <rect x="14" y="3" width="7" height="7" />
-                          <rect x="14" y="14" width="7" height="7" />
-                          <rect x="3" y="14" width="7" height="7" /></svg>
-                      </button>
-                    </div>
                   </div>
 <div id="schedule" class="project-boxes" style="display: none;">
   <h1>HPXML Link goes below:</h1>
@@ -762,7 +744,7 @@
     <!-- Interactive Question -->
     <div onclick="this.classList.toggle('inactive');">
     <form name = "myform"><br><br><h2>How old is the Home?</h2><br>
-              <a class="open-modal" name = "rad" onclick = "getAnswer('1a', '1');changeBlue();changeBlue();changeGold();modifyclicksBlack();">Newer than 20 years</a>
+              <a class="open-modal" name = "rad" onclick = "getAnswer('1a', '1');changeBlue();changeBlue();changeGold();">Newer than 20 years</a>
               <a class="open-modal" name = "rad" onclick = "getAnswer('1b', '2');changeRed();changeRed();changeBlack();addAudit();">20 years or older</a><br><br>
               </div><div id = "para"></div></form>
 
@@ -774,7 +756,7 @@
 
     function getAnswer(ans, rel) {
       document.getElementById("para").innerHTML = reltext[rel];
-      result += "\rYour home age:\r" + reltext[rel] + "\r";
+      result += "WoodandMortar.com Energy Audit\r\rYour home age:\r" + reltext[rel];
 
     }
 
@@ -791,15 +773,15 @@
       <a class="open-modal" name = "rad1" onclick = "getAnswer1('1e', '5');changeBlue();changeBlue();changeBlue();changeGold();">Radiant</a>
       <br><br></div><div id = "para1"></div></form><script type = "text/javascript">
     var reltext1 = [];
-    reltext1[1] = "Gas-fired furnaces are one of the most popular heating systems. Standard efficiency models have AFUE ratings of 80-85%. Mid-range units are around 90-95% AFUE. High-efficiency condensing furnaces can reach 98% AFUE. Cost effective and reliable, but not the most efficient heating option. "
-    reltext1[2] = "Heat Pumps extract heat from outdoor air and transfers indoors via refrigerant. Most use electricity but gas-powered models available. Cold climate air source heat pumps can reach 8.5 HSPF. Geothermal heat pumps exceed 30 HSPF. Most energy efficient option, but higher upfront costs. "
-    reltext1[3] = "Electric Resistance uses electric current to produce heat through standard baseboard units. Very inefficient with 100% AFUE - loses no energy to exhaust. However, electric heat generation is inefficient overall. Low purchase costs but very expensive to operate. "
-    reltext1[4] = "Forced Air uses a blower motor to distribute heated air through ductwork. Can be fueled by natural gas, propane, oil. AFUE ratings similar to standard furnaces - 80-98% range. Efficiency affected by leaks in ductwork. Can pair with AC system to provide whole-house HVAC. "
-    reltext1[5] = "Radiant heats spaces directly using a network of tubing or electric coils. Hydronic systems pump hot water, steam or antifreeze. Electric radiant uses electric current to resistively heat coils. Very efficient as 100% of heat is transferred to occupants/objects. Gas boilers or standalone heaters can supply hydronic systems. "
+    reltext1[1] = "Gas-fired furnaces"
+    reltext1[2] = "Heat Pumps"
+    reltext1[3] = "Electric Resistance"
+    reltext1[4] = "Forced Air"
+    reltext1[5] = "Radiant"
 
     function getAnswer1(ans1, rel1) {
     document.getElementById("para1").innerHTML = reltext1[rel1];
-    result += "\rYour heating system:\r" + reltext1[rel1] + "\r";
+    result += "\rYour heating system:\r" + reltext1[rel1];
     }
 
     function unhide1a(){document.getElementById("form1a").style.display = 'block';}
@@ -810,12 +792,7 @@
 
     <!-- Interactive Question -->
     <div id="form1a" onclick="this.classList.toggle('inactive');" style="display: none;">
-    <form name = "myform1a"><br><br><h2>Look up the AFUE rating for the specific furnace model number or check the AFUE rating printed on the unit nameplate/rating plate attached to the furnace.<br><br>
-      <b>Input capacity</b> - Furnaces over 225,000 BTU/hr input are required to be 90% AFUE minimum. So larger furnaces likely meet it.<br><br>
-<b>Age</b> - Units installed after 2015 generally meet 90%+ AFUE ratings due to federal standards. Older systems likely fall short.<br><br>
-<b>Condensing</b> - Check if the unit has a secondary heat exchanger and condensate drain. This indicates a high efficiency condensing furnace.<br><br>
-<b>Multi-stage</b> - Variable speed and modulating furnaces often indicate higher model series with 90%+ AFUE ratings.
-</h2><br>
+    <form name = "myform1a"><br><br><h2>Look up the AFUE rating for the specific furnace model number or check the AFUE rating printed on the unit nameplate/rating plate attached to the furnace.</h2><br>
       <a class="open-modal" name = "rad1a" onclick = "getAnswer1a('1a', '1');changeBlue();">The gas furnace is above 90% AFUE efficiency or Heat pump 8.2 HSPF efficiency</a>
       <a class="open-modal" name = "rad1a" onclick = "getAnswer1a('1b', '2');changeRed();">The gas furnace is below 90% AFUE efficiency or Heat pump 8.2 HSPF efficiency</a>
       <a class="open-modal" name = "rad1a" onclick = "getAnswer1a('1c', '3');changeBlack();addAudit();">I'm not reliable in finding this information, please skip</a>
@@ -824,13 +801,13 @@
 
 
     var reltext1a = [];
-    reltext1a[1] = "Gas-fired furnaces are one of the most popular heating systems. Standard efficiency models have AFUE ratings of 80-85%. Mid-range units are around 90-95% AFUE."
+    reltext1a[1] = "Gas-fired furnaces are one of the most popular heating systems. Standard efficiency models have AFUE ratings of 80-85. Mid-range units are around 90-95 AFUE."
     reltext1a[2] = "Cost effective and reliable, but not the most efficient heating option."
     reltext1a[3] = "WoodandMortar will help you in finding this information, tagged for audit."
 
     function getAnswer1a(ans1a, rel1a) {
     document.getElementById("para1a").innerHTML = reltext1a[rel1a];
-    result += "\rThermostat:\r" + reltext1a[rel1a] + "\r";
+    result += "\rAFUE Rating:\r" + reltext1a[rel1a];
     }
 
     </script>
@@ -850,12 +827,12 @@
     reltext2[1] = "Split ducted system with outdoor compressor and indoor air handler. Powered by electricity. Efficiency measured by SEER rating - higher is better. Minimum SEER is 14, but 18+ SEER models are 50% more efficient. "
     reltext2[2] = "One or multiple indoor heads connected to an outdoor compressor. No ductwork required. Allows zoning different areas. Higher SEER ratings than central AC, typically 15-22 SEER or more. "
     reltext2[3] = "Evaporative Cooler cools air naturally using evaporation and moving air. Uses significantly less energy than traditional AC. Work best in dry climates. Efficiency varies based on humidity. 75-80% less electricity usage than comparable AC. "
-    reltext2[4] = "Compact all-in-one Window units mounted in window openings. Effective for spot cooling but inefficient overall. Typical SEER rating of 9-12. Lower than central AC. No ductwork losses but higher leakage around unit. "
+    reltext2[4] = "Compact all-in-one Window units mounted in window openings. Effective for spot cooling but inefficient overall. Typical SEER rating of 9-12. Lower than central AC. No ductwork losses but higher leakage around the unit. "
     reltext2[5] = "Radiant Cooling works by circulating chilled water through tubes or panels. The cooled surfaces absorb heat directly from occupants and objects. Hydronic systems use tubing in floors, ceilings or walls. Panels are typically ceiling mounted. Very energy efficient as chills only occupied zones, not full volume of air. Requires chilled water loops, a chiller or cooling tower. "
 
     function getAnswer2(ans2, rel2) {
     document.getElementById("para2").innerHTML = reltext2[rel2];
-    result += "\rYour cooling system:\r" + reltext2[rel2] + "\r";
+    result += "\rYour cooling system:\r" + reltext2[rel2];
     }
 
     </script>
@@ -867,17 +844,17 @@
       <a class="open-modal" name = "rad2" onclick = "getAnswer3('1a', '1');changeBlack();changeRed();changeRed();">Non-Programmable</a>
       <a class="open-modal" name = "rad3" onclick = "getAnswer3('1b', '2');changeRed();changeBlack();">Programmable</a>
       <a class="open-modal" name = "rad3" onclick = "getAnswer3('1c', '3');changeGold();changeBlue();">Wi-Fi</a>
-      <a class="open-modal" name = "rad3" onclick = "getAnswer3('1d', '4');modifyclicksBlack();changeGold();changeBlue();">Smart</a>
+      <a class="open-modal" name = "rad3" onclick = "getAnswer3('1d', '4');changeGold();changeBlue();">Smart</a>
       <br><br></div><div id = "para3"></div></form><script type = "text/javascript">
     var reltext3 = [];
-    reltext3[1] = "Non-Programmable thermostats can be energy efficient, but it is up to the user to monitor and adjust the temperature manually throughout the day."
-    reltext3[2] = "Programmable thermostats make basic energy adjustments easy to attain through manually input scheduling to increase or decrease HVAC usage efficiently."
+    reltext3[1] = "Non-Programmable thermostats can be energy efficient"
+    reltext3[2] = "Programmable thermostats make basic energy adjustments easy to attain."
     reltext3[3] = "Wi-Fi thermostats allow for long distance control of your thermostat and built in programmable features to allow for full control and efficiency."
     reltext3[4] = "Smart thermostats are designed to learn your heating and cooling preferences and account for exterior temperatures to create and maintain the most efficient HVAC usage."
 
     function getAnswer3(ans3, rel3) {
     document.getElementById("para3").innerHTML = reltext3[rel3];
-    result += "\rThermostat:\r" + reltext3[rel3] + "\r";
+    result += "\rThermostat:\r" + reltext3[rel3];
     }
 
     </script>
@@ -885,45 +862,270 @@
 
     <!-- Interactive Question -->
     <div onclick="this.classList.toggle('inactive');">
-    <form name = "myform4"><br><br><h2>Insulation minimum is R-13 in walls and R-38 in attic, the depth minimum for sprayed is 11.6 inches.</h2><br>
-      <a class="open-modal" name = "rad4" onclick = "getAnswer4('1a', '1');modifyclicksBlack();changeBlue();changeGold();unhide4a();">The walls and attic meet minimum requirements</a>
-      <a class="open-modal" name = "rad4" onclick = "getAnswer4('1b', '2');changeRed();changeBlack();addAudit();">The walls and attic do not meet minimum requirements</a>
+    <form name = "myform4"><br><br><h2>Insulation minimums are; R-13 in walls, R-5 in the basement, and R-38 in attic, with the depth minimum for sprayed is 11.6 inches.</h2><br>
+      <a class="open-modal" name = "rad4" onclick = "getAnswer4('1a', '1');changeBlue();changeGold();">The walls, basement and attic meet minimum requirements</a>
+      <a class="open-modal" name = "rad4" onclick = "getAnswer4('1b', '2');changeRed();changeBlack();addAudit();">The walls, basement and attic do not meet minimum requirements</a>
       <a class="open-modal" name = "rad4" onclick = "getAnswer4('1c', '3');changeRed();changeBlack();addAudit();">I'm not reliable in finding this information, please skip</a>
       <br><br></div><div id = "para4"></div></form><script type = "text/javascript">
     var reltext4 = [];
-    reltext4[1] = "Go into the attic with a measure to get the depth of the insulation and take a photo. What does the insulation tag or label say? Please enter the R-value listed on it. Measure the thickness of insulation in an exterior wall and submit a photo showing the depth."
+    reltext4[1] = "If blown in make sure to take photo and upload to drive."
     reltext4[2] = "Tagged for audit."
-    reltext4[3] = "WoodandMortar will help you in finding this information, tagged for audit."
+    reltext4[3] = "Tagged for audit."
 
     function getAnswer4(ans4, rel4) {
     document.getElementById("para4").innerHTML = reltext4[rel4];
-    result += "\rThermostat:\r" + reltext4[rel4] + "\r";
+    result += "\rValue:\r" + reltext4[rel4];
     }
 
 
-    function unhide4a(){document.getElementById("form4a").style.display = 'block';}
+    </script>
+    <!-- End of Interactive Question -->
+
+
+    <!-- Interactive Question -->
+    <div id="form5" onclick="this.classList.toggle('inactive');">
+    <form name = "myform5"><br><br><h2>What kind of windows are present?</h2><br>
+      <a class="open-modal" name = "rad5" onclick = "getAnswer5('1a', '1');unhide6();changeRed();changeBlack();">Single pane</a>
+      <a class="open-modal" name = "rad5" onclick = "getAnswer5('1b', '2');unhide6();changeRed();">Double pane</a>
+      <a class="open-modal" name = "rad5" onclick = "getAnswer5('1c', '3');unhide6();changGold();changeGold();">Triple pane</a>
+      <a class="open-modal" name = "rad5" onclick = "getAnswer5('1d', '4');changeRed();addAudit();">I have a mixture of windows</a>
+      <br><br></div><div id ="para5"></div></form><script type = "text/javascript">
+
+
+
+    var reltext5 = [];
+    reltext5[1] = "Single pane windows are the least energy effective windows."
+    reltext5[2] = "Double pane windows are contractor grade and industry standard."
+    reltext5[3] = "Triple pane windos are the most energy effecient"
+    reltext5[4] = "Tagged for audit."
+
+    function getAnswer5(ans5, rel5) {
+    document.getElementById("para5").innerHTML = reltext5[rel5];
+    result += "\rPane:\r" + reltext5[rel5];
+    }
+
+    function unhide6(){document.getElementById("form6").style.display = 'block';}
 
     </script>
     <!-- End of Interactive Question -->
 
     <!-- Interactive Question -->
-    <div id="form4a" onclick="this.classList.toggle('inactive');" style="display: none;">
-    <form name = "myform4a"><br><br><h2>Place all photos into Google:drive > Home > Insulation</h2><br>
-      <a class="open-modal" name = "rad4a" onclick = "getAnswer4a('1a', '1');changeBlue();window.open('https://drive.google.com', '_blank');">The foundation includes insulation and vapor barrier to achieve maximum rating.</a>
-      <a class="open-modal" name = "rad4a" onclick = "getAnswer4a('1b', '2');changeRed();addAudit();window.open('https://drive.google.com', '_blank');">The foundation includes insulation only.</a>
-      <a class="open-modal" name = "rad4a" onclick = "getAnswer4a('1c', '3');changeRed();addAudit();window.open('https://drive.google.com', '_blank');">Does not pass</a>
-      <br><br></div><div id = "para4a"></div></form><script type = "text/javascript">
+    <div id="form6" onclick="this.classList.toggle('inactive');" style="display: none;">
+    <form name = "myform6"><br><br><h2>Do the windows feature low-E coatings and/or gas fills?</h2><br>
+      <a class="open-modal" name = "rad6" onclick = "getAnswer6('1a', '1');changeBlue();changeGold();">My windows have both low-E coatings and gas fills</a>
+      <a class="open-modal" name = "rad6" onclick = "getAnswer6('1b', '2');changeRed();">My windows only have low-E coatings or gas fills</a>
+      <a class="open-modal" name = "rad6" onclick = "getAnswer6('1c', '3');changeRed();changeBlack();">My windows have neither low-E coatings nor gas fills</a>
+      <a class="open-modal" name = "rad6" onclick = "getAnswer6('1d', '4');changeRed();changeBlack();addAudit();">I have a mixture of windows</a>
+      <br><br></div><div id ="para6"></div></form><script type = "text/javascript">
 
 
 
-    var reltext4a = [];
-    reltext4a[1] = "The insulation meets all required standards."
-    reltext4a[2] = "The basement walls need vapor barrier to achieve maximum rating, tagged for audit."
-    reltext4a[3] = "Insulation failed to pass, tagged for audit."
+    var reltext6 = [];
+    reltext6[1] = "Low-E coatings and gas fills make for an energy effecient home."
+    reltext6[2] = "Only low-E coatings dont provide the thermobreak needed, and without e-coatings heat transfer is exponential."
+    reltext6[3] = "Having neither low-E coatings or gas fills is very ineffecient."
+    reltext6[4] = "Tagged for audit."
 
-    function getAnswer4a(ans4a, rel4a) {
-    document.getElementById("para4a").innerHTML = reltext4a[rel4a];
-    result += "\rThermostat:\r" + reltext4a[rel4a] + "\r";
+    function getAnswer6(ans6, rel6) {
+    document.getElementById("para6").innerHTML = reltext6[rel6];
+    result += "\rWindows:\r" + reltext6[rel6];
+    }
+
+    </script>
+    <!-- End of Interactive Question -->
+
+    <!-- Interactive Question -->
+    <div id="form7" onclick="this.classList.toggle('inactive');">
+    <form name = "myform7"><br><br><h2>What kind of lights are used?</h2><br>
+      <a class="open-modal" name = "rad7" onclick = "getAnswer7('1a', '1');changeRed();changeBlack();addAudit();">Fluorescent</a>
+      <a class="open-modal" name = "rad7" onclick = "getAnswer7('1b', '2');changeRed();">Incandescent</a>
+      <a class="open-modal" name = "rad7" onclick = "getAnswer7('1c', '3');changeBlue();">LED</a>
+      <a class="open-modal" name = "rad7" onclick = "getAnswer7('1d', '4');changeRed();">CFL</a>
+      <br><br></div><div id ="para7"></div></form><script type = "text/javascript">
+
+
+
+    var reltext7 = [];
+    reltext7[1] = "The least effecient source of light."
+    reltext7[2] = "Contractor grade, and mildly effecient."
+    reltext7[3] = "Cost effective and effecient."
+    reltext7[4] = "Contractor grade, and mildly effecient."
+
+    function getAnswer7(ans7, rel7) {
+    document.getElementById("para7").innerHTML = reltext7[rel7];
+    result += "\rLighting:\r" + reltext7[rel7];
+    }
+
+    </script>
+    <!-- End of Interactive Question -->
+
+    <!-- Interactive Question -->
+    <div id="form8" onclick="this.classList.toggle('inactive');">
+    <form name = "myform8"><br><br><h2>How air tight is the home?</h2><br>
+      <a class="open-modal" name = "rad8" onclick = "getAnswer8('1a', '1');changeBlue();">0.6 - 1 ACH50</a>
+      <a class="open-modal" name = "rad8" onclick = "getAnswer8('1b', '2');changeRed();addAudit();">1 - 6 ACH50</a>
+      <a class="open-modal" name = "rad8" onclick = "getAnswer8('1c', '3');changeRed();changeRed();changeBlack();addAudit();">6+ ACH50</a>
+      <a class="open-modal" name = "rad8" onclick = "getAnswer8('1d', '4');changeRed();addAudit();">I’m not reliable in finding this information, please skip</a>
+      <br><br></div><div id ="para8"></div></form><script type = "text/javascript">
+
+
+
+    var reltext8 = [];
+    reltext8[1] = "Blower door test result of 6 ACH50 or less is minimum, under 1 is effecient."
+    reltext8[2] = "Blower door test result of 6 ACH50 or less is minimum."
+    reltext8[3] = "Blower door test result of 6 ACH50 or more is not compliant."
+    reltext8[4] = "Tagged for audit."
+
+    function getAnswer8(ans8, rel8) {
+    document.getElementById("para8").innerHTML = reltext8[rel8];
+    result += "\rACH50:\r" + reltext8[rel8];
+    }
+
+    </script>
+    <!-- End of Interactive Question -->
+
+
+    <!-- Interactive Question -->
+    <div id="form9" onclick="this.classList.toggle('inactive');">
+    <form name = "myform9"><br><br><h2>What kind of water heater is present?</h2><br>
+      <a class="open-modal" name = "rad9" onclick = "getAnswer9('1a', '1');changeBlue();changeGold();">Solar, Heat pump, Hybrid heat pump, Electric tankless, or Gas tankless</a>
+      <a class="open-modal" name = "rad9" onclick = "getAnswer9('1b', '2');changeRed();addAudit();">Electric storage tank</a>
+      <a class="open-modal" name = "rad9" onclick = "getAnswer9('1c', '3');changeRed();changeBlack();addAudit();">Gas storage tank</a>
+      <a class="open-modal" name = "rad9" onclick = "getAnswer9('1d', '4');changeRed();addAudit();">I’m not reliable in finding this information, please skip</a>
+      <br><br></div><div id ="para9"></div></form><script type = "text/javascript">
+
+
+
+    var reltext9 = [];
+    reltext9[1] = "Solar, Heat pump, Hybrid heat pump, Electric tankless, or Gas tankless are all effecient."
+    reltext9[2] = "Electric storage tank units are of average energy effeciency, tagged for audit."
+    reltext9[3] = "Gas storage tank units are of average energy effeciency, tagged for audit."
+    reltext9[4] = "Tagged for audit."
+
+    function getAnswer9(ans9, rel9) {
+    document.getElementById("para9").innerHTML = reltext9[rel9];
+    result += "\rHeating:\r" + reltext9[rel9];
+    }
+
+    </script>
+    <!-- End of Interactive Question -->
+
+    <!-- Interactive Question -->
+    <div id="form10" onclick="this.classList.toggle('inactive');">
+    <form name = "myform10"><br><br><h2>Are the hot water lines insulated?</h2><br>
+      <a class="open-modal" name = "rad10" onclick = "getAnswer10('1a', '1');changeBlue();">Yes</a>
+      <a class="open-modal" name = "rad10" onclick = "getAnswer10('1b', '2');changeRed();addAudit();">No</a>
+      <a class="open-modal" name = "rad10" onclick = "getAnswer10('1c', '3');changeRed();addAudit();">I’m not reliable in finding this information, please skip</a>
+      <br><br></div><div id ="para10"></div></form><script type = "text/javascript">
+
+
+
+    var reltext10 = [];
+    reltext10[1] = "Water lines lose heat when they are not properly insulated"
+    reltext10[2] = "Water lines lose heat when they are not properly insulated, tagged for audit."
+    reltext10[3] = "Tagged for audit."
+
+    function getAnswer10(ans10, rel10) {
+    document.getElementById("para10").innerHTML = reltext10[rel10];
+    result += "\rPiping: \r" + reltext10[rel10];
+    }
+
+    </script>
+    <!-- End of Interactive Question -->
+
+    <!-- Interactive Question -->
+    <div id="form10a" onclick="this.classList.toggle('inactive');">
+    <form name = "myform10a"><br><br><h2>Are all of the appliances EnergyStar rated?</h2><br>
+      <a class="open-modal" name = "rad10a" onclick = "getAnswer10a('1a', '1');changeBlue();changeGold();">Yes</a>
+      <a class="open-modal" name = "rad10a" onclick = "getAnswer10a('1b', '2');changeRed();changeBlack();addAudit();">No</a>
+      <a class="open-modal" name = "rad10a" onclick = "getAnswer10a('1c', '3');changeRed();addAudit();">I’m not reliable in finding this information, please skip</a>
+      <br><br></div><div id ="para10a"></div></form><script type = "text/javascript">
+
+
+
+    var reltext10a = [];
+    reltext10a[1] = "All allpiances meet energyStar guidelines"
+    reltext10a[2] = "Appliances roughly use 25% of a homes energy, tagged for audit."
+    reltext10a[3] = "Tagged for audit."
+
+    function getAnswer10a(ans10a, rel10a) {
+    document.getElementById("para10a").innerHTML = reltext10a[rel10a];
+    result += "\rAppliances: \r" + reltext10a[rel10a];
+    }
+
+    </script>
+    <!-- End of Interactive Question -->
+
+
+    <!-- Interactive Question -->
+    <div id="form11a" onclick="this.classList.toggle('inactive');">
+    <form name = "myform11a"><br><br><h2>What type of cooktop is in the house?</h2><br>
+      <a class="open-modal" name = "rad11a" onclick = "getAnswer11a('1a', '1');changeGold();">Induction</a>
+      <a class="open-modal" name = "rad11a" onclick = "getAnswer11a('1b', '2');changeRed();addAudit();">Gas</a>
+      <a class="open-modal" name = "rad11a" onclick = "getAnswer11a('1c', '3');changeRed();changeBlack();addAudit();">Electric coil</a>
+      <a class="open-modal" name = "rad11a" onclick = "getAnswer11a('1d', '4');changeRed();addAudit();">Electric smooth</a>
+      <a class="open-modal" name = "rad11a" onclick = "getAnswer11a('1e', '5');changeRed();addAudit();">Electric radiant</a>
+      <br><br></div><div id = "para11a"></div></form><script type = "text/javascript">
+
+
+
+    var reltext11a = [];
+    reltext11a[1] = "Induction ovens are the most energy effecient."
+    reltext11a[2] = "Gas ovens are of middle grade energy effeciency, tagged for audit."
+    reltext11a[3] = "Electric coil ovens are of middle grade energy effeciency, tagged for audit."
+    reltext11a[4] = "Electric smooth ovens are of middle grade energy effeciency, tagged for audit."
+    reltext11a[5] = "Electric radiant ovens are of middle grade energy effeciency, tagged for audit."
+
+    function getAnswer11a(ans11a, rel11a) {
+    document.getElementById("para11a").innerHTML = reltext11a[rel11a];
+    result += "\rCooktop: \r" + reltext11a[rel11a];
+    }
+
+    </script>
+    <!-- End of Interactive Question -->
+
+
+    <!-- Interactive Question -->
+    <div id="form12" onclick="this.classList.toggle('inactive');">
+    <form name = "myform12"><br><br><h2>How is the home aerated?</h2><br>
+      <a class="open-modal" name = "rad12" onclick = "getAnswer12('1a', '1');changeGold();">Full aeration (hover action - attic, house, and ceiling fans)</a>
+      <a class="open-modal" name = "rad12" onclick = "getAnswer12('1b', '2');changeRed();addAudit();">Partial aeration (hover action - any combination of but not all attic, house, and ceiling fans)</a>
+      <a class="open-modal" name = "rad12" onclick = "getAnswer12('1c', '3');changeRed();addAudit();">I’m not reliable in finding this information, please skip</a>
+      <br><br></div><div id = "para12"></div></form><script type = "text/javascript">
+
+
+
+    var reltext12 = [];
+    reltext12[1] = "The house meets aeration guidelines."
+    reltext12[2] = "The house does not meet aeration guidelines, tagged for audit."
+    reltext12[3] = "Electric coil ovens are of middle grade energy effeciency, tagged for audit."
+
+    function getAnswer12(ans12, rel12) {
+    document.getElementById("para12").innerHTML = reltext12[rel12];
+    result += "\rAeration:\r" + reltext12[rel12];
+    }
+
+    </script>
+    <!-- End of Interactive Question -->
+
+    <!-- Interactive Question -->
+    <div id="form13" onclick="this.classList.toggle('inactive');">
+    <form name = "myform13"><br><br><h2>When was the most recent dryer exhaust purge?</h2><br>
+      <a class="open-modal" name = "rad13" onclick = "getAnswer13('1a', '1');changeRed();addAudit();">More than one year ago</a>
+      <a class="open-modal" name = "rad13" onclick = "getAnswer13('1b', '2');changeBlue();">Less than one year ago</a>
+      <a class="open-modal" name = "rad13" onclick = "getAnswer13('1c', '3');changeRed();addAudit();">I’m not reliable in finding this information, please skip</a>
+      <br><br></div><div id = "para13"></div></form><script type = "text/javascript">
+
+
+
+    var reltext13 = [];
+    reltext13[1] = "The house does not meet exhaust guidelines, tagged for audit"
+    reltext13[2] = "The house meets exhaust guidelines"
+    reltext13[3] = "Electric coil ovens are of middle grade energy effeciency, tagged for audit."
+
+    function getAnswer13(ans13, rel13) {
+    document.getElementById("para13").innerHTML = reltext13[rel13];
+    result += "\rExhaust:\r" + reltext13[rel13];
     }
 
     </script>
@@ -1296,13 +1498,10 @@ document.getElementById('finalNumber').innerHTML = totalPaid;
                           let subcat = '';
                           let subcat2 = '';
 
-                          function modifyclicksBlack(){clicksBlack += 1;
-                          document.getElementById("clicksBlack").innerHTML = clicksBlack;}
 
                           function addAudit()
                           {
                             auditNum += 1;
-                            result += "\rAudit:\r" + auditNum + "\r";
                           }
 
                           function nextPhoto(){
@@ -1375,7 +1574,7 @@ document.getElementById('finalNumber').innerHTML = totalPaid;
 
                             document.getElementById('insurance').scrollIntoView({behavior: 'smooth'});
                             const emailBody = encodeURIComponent(result);
-                            window.location.href = `mailto:woodmortar@gmail.com?subject=WoodandMortar.com|EnergyAudit&body=` + emailBody + 'Rating:' + subcat + subcat2;
+                            window.location.href = `mailto:woodmortar@gmail.com?subject=EnergyAudit&body=` + emailBody + 'Rating:' + subcat + subcat2;
                           }
 
 

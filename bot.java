@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class TextClassification {
 
-    private static final int FIXED_LENGTH = 100; // Change this to the fixed length of your model's input
+    private static final int FIXED_LENGTH = 100; 
 
     public void runTFLiteModel() {
         try {
@@ -17,9 +17,6 @@ public class TextClassification {
 
             ByteBuffer inputByteBuffer = ByteBuffer.allocateDirect(inputSize * 4);
             float[] input = new float[inputSize];
-
-            // TODO: Populate the 'input' array with appropriate input data before putting it into 'inputByteBuffer'
-            // For example, you can fill the 'input' array with word embeddings or encoded tokens of your text input.
 
             for (int i = 0; i < inputSize; i++) {
                 inputByteBuffer.putFloat(input[i]);
@@ -32,9 +29,6 @@ public class TextClassification {
             FloatBuffer output = outputByteBuffer.asFloatBuffer();
             float[] predictions = new float[outputSize];
             output.get(predictions);
-
-            // TODO: Use 'predictions' for further processing or analysis
-            // For example, you can interpret the 'predictions' to get the model's output class.
 
         } catch (IOException e) {
             e.printStackTrace();

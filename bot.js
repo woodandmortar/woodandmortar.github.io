@@ -1,14 +1,9 @@
 function encodeInput(text) {
-   // TODO: Implement encoding logic to convert 'text' into an appropriate input format for the model
-   // For example, you can tokenize the text, convert it into word embeddings, or any other preprocessing.
-   // Return the encoded input.
+  return encodeURIComponent(input);
  }
 
- // Function to decode model output
  function decodeOutput(probabilities) {
-   // TODO: Implement decoding logic to interpret the model's output.
-   // For example, you can find the index of the highest probability, map it to a class or label, and return the result.
-   // Return the decoded output.
+  return encodeURIComponent(output);
  }
 
  // Async function to run model

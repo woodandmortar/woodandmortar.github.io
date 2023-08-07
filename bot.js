@@ -9,10 +9,8 @@ function encodeInput(text) {
  // Async function to run model
  async function runModel() {
    const model = await tf.loadLayersModel('model.json');
-
    const inputText = document.getElementById('user-input').value;
    const inputData = tf.tensor2d([encodeInput(inputText)]);
-
    const predictions = await model.predict(inputData).data();
    return decodeOutput(predictions);
  }

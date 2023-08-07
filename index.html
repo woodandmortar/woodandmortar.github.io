@@ -237,8 +237,22 @@
 </div>
 
 
-<div id="splash" class="project-boxes">
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="splash" class="project-boxes">
 
     <img id="popupImage" style="position:absolute;height:600px;width:600px;left:-260px;bottom:0px;display:none;" src="pics/micheal.png">
 
@@ -248,11 +262,7 @@
     I'm Micheal, your <font style="color:#D95952;">Energy Auditor</font> helping you get your Home <font style="color:#D95952;">Energy Rating</font>.<br><br>
 
     We are proud to offer an innovative new HPXML-based app that makes evaluating and improving your home's energy efficiency more accessible than ever. Our easy-to-use web app allows homeowners to self-guide an energy audit by inputting details on their home's systems, construction, and equipment. The app dynamically generates a detailed HPXML file benchmarking your home's performance. With an HPXML blueprint of your home's energy profile, you can identify high-impact upgrades, track improvements over time, integrate with smart home devices, qualify for programs, and more. Our app empowers you with deeper insights into your home's performance while simplifying the audit process.
-
-    <br><br>
-
-
-
+<br><br>
 
     <a onclick="energyAuditActive();"><button class="open-modal">Start rating</button></a>
     <a onclick="shoppingActive();"><button class="open-modal">Woodandmortar Services</button></a>
@@ -1333,8 +1343,16 @@ The system is modular and can be expanded over time by adding more solar capacit
 
 <div id="salmon" class="project-boxes" style="display: none;">
 
-<image src="pics/woodmortar.jpg">
 
+  <div>
+    <textarea id="user-input" rows="2" cols="40"></textarea>
+    <button onclick="getResponse()">Submit</button>
+  </div>
+
+  <!-- Model response -->
+  <div id="model-response">
+    <p>Model response will go here...</p>
+  </div>
 </div>
 
 
@@ -1464,6 +1482,9 @@ The system is modular and can be expanded over time by adding more solar capacit
               <script  src="./crycella.js"></script>
               <script  src="./hpxml.js"></script>
               <script  src="./navbuttons.js"></script>
+              <script  src="./bot.js"></script>
+              <script  src="./bot.java"></script>
+              <script type="module" src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
 
 
 

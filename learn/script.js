@@ -1,350 +1,96 @@
-let max_particles = 1200;
+const heart = '<svg viewBox="0 0 100.1 86.8"> <path d="M85.3,2.7c-13-5.8-29.5,0-35.3,12.2C44.3,1.9,27-3.8,14.8,2.7C1.2,9.1-5.3,25,5.5,44.4C13.4,58,27,68.1,50,86.8 C73.8,68.1,87.4,58,94.6,44.4C105.4,25.7,98.9,9.1,85.3,2.7z"/> </svg>';
+const logo = '<svg viewBox="0 0 100.1 100"> <path d="M100.1,34.3c-0.4-2.6-3.3-4-5.3-5.3c-3.6-2.4-7.1-4.7-10.7-7.1C75.6,16.2,67,10.5,58.5,4.8c-2-1.3-4-2.7-6-4 c-1.4-1-3.3-1-4.8,0C42,4.6,36.2,8.5,30.5,12.3L5.3,29.1c-2.2,1.4-5.1,2.8-5.2,5.8c-0.1,3.3,0,6.7,0,10v16c0,2.9-0.6,6.3,2.1,8.1 c6.4,4.4,12.9,8.6,19.4,12.9c8,5.3,16,10.7,24,16c2.2,1.5,4.4,3.1,7.1,1.3c2.3-1.5,4.5-3,6.8-4.5c8.9-5.9,17.8-11.9,26.7-17.8 l9.9-6.6c0.6-0.4,1.3-0.8,1.9-1.3c1.4-1,2-2.4,2-4.1V37.4C100.1,36.3,100.2,35.3,100.1,34.3C100.1,34.2,100.1,34.5,100.1,34.3z M54.4,12.4l33.7,22.5L73.1,45L54.4,32.5V12.4z M45.8,12.4v20L27.2,44.9l-15.1-10L45.8,12.4z M8.7,42.9l10.7,7.2L8.7,57.3V42.9z M45.8,87.8L12.1,65.3l15-10.1l18.6,12.5L45.8,87.8L45.8,87.8z M50.1,60.3L34.9,50.1l15.2-10.2l15.2,10.2L50.1,60.3z M54.4,87.8v-20 L73,55.3l15,10.1L54.4,87.8z M91.5,57.3l-10.7-7.2l10.8-7.2C91.6,42.9,91.5,57.3,91.5,57.3z"/> </svg>';
+const robot = '<svg viewBox="0 0 100 100"> <circle cx="50" cy="50" r="40" /> <circle cx="35" cy="35" r="5" /> <circle cx="65" cy="35" r="5" /> <rect x="30" y="60" width="40" height="10" /> </svg>';
+const lightBulb = '<svg viewBox="0 0 100 100"> <path d="M50 10 Q60 20, 60 40 Q60 60, 70 70 L70 80 L30 80 L30 70 Q40 60, 40 40 Q40 20, 50 10" /> <rect x="45" y="80" width="10" height="10" /> </svg>';
+const star = '<svg viewBox="0 0 100.1 99.2"> <path d="M50,2.7l12.8,34.4l36.6,1.6L70.8,61.2l9.9,35.3L50,76.3L19.5,96.5l9.9-35.3L0.7,38.5L37.3,37L50,2.7z"/> </svg>';
+const cloud = '<svg viewBox="0 0 100.1 65.1"> <path class="st0" d="M36.6,58.6c0,1.5,1.2,1.7,1.9,1.2c1.8-1.6,15.9-14.6,15.9-14.6h19.3c3.8,0,4.4-0.8,4.4-4.5V9.6 c0-3.7-0.8-4.5-4.4-4.5H26.3c-3.6,0-4.4,0.9-4.4,4.5v31.1c0,3.7,0.7,4.4,4.4,4.4h10.4L36.6,58.6L36.6,58.6z"/></svg>';
+
+
+const data = [heart, logo, star, cloud, robot, lightBulb];
+
+const max = 50;
+
 let particles = [];
-let frequency = 20;
-let init_num = max_particles;
-let max_time = frequency * max_particles;
-let time_to_recreate = false;
-const data = createCanvas();
-let tela = data[0];
-let canvas = data[1];
 
-// Enable repopolate
-setTimeout(function () {
-  time_to_recreate = true;
-}.bind(this), max_time);
 
-// Popolate particles
-popolate(max_particles);
-
-class FishEgg {
-  constructor(canvas) {
-    const random = Math.random();
-    this.progress = 0;
-    this.canvas = canvas;
-    // Set position
-    this.x = $(window).width() / 2 + (Math.random() * 300 - Math.random() * 300);
-    this.y = $(window).height() / 2 + (Math.random() * $(window).height() / 4 - Math.random() * $(window).height() / 4);
-    // Get viewport size
+class Ball {
+  constructor(shape) {
+    this.shape = $(shape);
+    this.speed = 2 + Math.random() * 3;
+    this.vx = Math.random() * this.speed - Math.random() * this.speed;
+    this.vy = Math.random() * this.speed - Math.random() * this.speed;
+    this.radius = 10 + Math.round(Math.random() * 50);
     this.w = $(window).width();
     this.h = $(window).height();
+    this.x = (this.w - this.radius) / 2;
+    this.y = (this.h - this.radius) / 2;
 
-    // Dimension
-    this.radius = 12 + Math.random() * 6;
-    // Color
-    this.color = "rgba(255,255,255,1)";
-    // Setting
-    this.fish_egg = {
-      offset1: Math.random() > 0.5 ? 0.5 + Math.random() * 3 : 0.5 + Math.random() * -3,
-      offset2: Math.random() > 0.5 ? 0.5 + Math.random() * 3 : 0.5 + Math.random() * -3,
-      offset3: Math.random() > 0.5 ? 0.5 + Math.random() * 3 : 0.5 + Math.random() * -3,
-      radius1: 0.5 + Math.random() * 5,
-      radius2: 0.5 + Math.random() * 5,
-      radius3: 0.5 + Math.random() * 5 };
-
-    this.variantx1 = Math.random() * 100;
-    this.variantx2 = Math.random() * 100;
-    this.varianty1 = Math.random() * 100;
-    this.varianty2 = Math.random() * 100;
-  }
-
-  createCircle(x, y, r, c) {
-    this.canvas.beginPath();
-    this.canvas.fillStyle = c;
-    this.canvas.arc(x, y, r, 0, Math.PI * 2, false);
-    this.canvas.fill();
-    this.canvas.closePath();
-  }
-
-  createEyes() {
-    this.createCircle(this.x + this.fish_egg.offset2, this.y + this.fish_egg.offset2, this.fish_egg.radius2 + 4, "rgba(241, 242, 244, 0.06)");
-    this.createCircle(this.x + this.fish_egg.offset3, this.y + this.fish_egg.offset3, this.fish_egg.radius3 + 2, "rgba(255, 204, 67, 0.08)");
-    this.createCircle(this.x + Math.random(this.progress / 350) * this.fish_egg.offset1, this.y + Math.random(this.progress / 350) * this.fish_egg.offset1, this.fish_egg.radius1, "rgba(152, 19, 4, 0.19)");
+    $(window).on("resize", this.resize.bind(this));
+    this.render();
   }
 
   render() {
-    // Create inside parts
-    this.createEyes();
+    $(this.shape).css({
+      width: this.radius,
+      height: this.radius });
 
-    this.canvas.beginPath();
-    let c = '130, 151, 180';
-    let rad = this.canvas.createRadialGradient(this.x, this.y, this.radius, this.x, this.y, 1);
-    rad.addColorStop(0, 'rgba(' + c + ',0.09)');
-    rad.addColorStop(0.9, 'rgba(' + c + ',0)');
-    this.canvas.lineWidth = Math.random() * 2.2;
-    this.canvas.fillStyle = rad;
-    this.canvas.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-    this.canvas.fill();
-    this.canvas.strokeStyle = "rgba(255, 255, 217, 0.05)";
-    this.canvas.stroke();
-    this.canvas.closePath();
+    $("body").append(this.shape);
   }
 
-  move() {
-    this.x += Math.sin(this.progress / this.variantx1) * Math.cos(this.progress / this.variantx2) / 8;
-    this.y += Math.sin(this.progress / this.varianty1) * Math.cos(this.progress / this.varianty2) / 8;
-
-
-
-    if (this.x < 0 || this.x > this.w - this.radius) {
-      return false;
-    }
-
-    if (this.y < 0 || this.y > this.h - this.radius) {
-      return false;
-    }
-    this.render();
-    this.progress++;
-    return true;
-  }}
-
-
-class FishLarva {
-  constructor(canvas, progress) {
-    const random = Math.random();
-    this.progress = 0;
-    this.canvas = canvas;
-    this.speed = 0.5 + random * 1.3;
-
-    this.x = $(window).width() / 2 + (Math.random() * 200 - Math.random() * 200);
-    this.y = $(window).height() / 2 + (Math.random() * 200 - Math.random() * 200);
-
-    this.s = 0.8 + Math.random() * 0.6;
-    this.a = 0;
-
+  resize() {
     this.w = $(window).width();
     this.h = $(window).height();
-    this.radius = random * 1.3;
-    this.color = "#f69a34";
-
-    this.variantx1 = Math.random() * 1000;
-    this.variantx2 = Math.random() * 1000;
-    this.varianty1 = Math.random() * 1000;
-    this.varianty2 = Math.random() * 1000;
-  }
-
-  render() {
-    this.canvas.beginPath();
-    this.canvas.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-    this.canvas.lineWidth = 2;
-    this.canvas.fillStyle = this.color;
-    this.canvas.fill();
-    this.canvas.closePath();
   }
 
   move() {
-    // this.x += (Math.sin(this.progress/this.variantx1)*Math.cos(this.progress/this.variantx2))/this.speed;
-    // this.y += (Math.sin(this.progress/this.varianty1)*Math.cos(this.progress/this.varianty2))/this.speed;
-    this.x += Math.cos(this.a) * this.s;
-    this.y += Math.sin(this.a) * this.s;
-    this.a += Math.random() * 0.8 - 0.4;
-    if (this.x < 0 || this.x > this.w - this.radius) {
-      return false;
-    }
+    this.x = this.x + this.vx;
+    this.y = this.y + this.vy;
 
-    if (this.y < 0 || this.y > this.h - this.radius) {
-      return false;
+
+    this.shape.css({
+      left: this.x,
+      top: this.y,
+      transform: "rotate(" + this.y + "deg)" });
+
+
+    if (this.x < 0 || this.x > this.w - this.radius) {
+      this.vx = -this.vx;
+      $(this.shape).toggleClass("highlight");
+      if ($(this.shape).hasClass("highlight")) {
+    $(this.shape).find('path, circle, rect').attr('fill', '#D95952');
+} else {
+    $(this.shape).find('path, circle, rect').attr('fill', ''); // This will reset to the original color
+}
     }
-    this.render();
-    this.progress++;
-    return true;
+    if (this.y < 0 || this.y > this.h - this.radius) {
+      this.vy = -this.vy;
+      $(this.shape).toggleClass("highlight");
+      if ($(this.shape).hasClass("highlight")) {
+    $(this.shape).find('path, circle, rect').attr('fill', '#D95952');
+} else {
+    $(this.shape).find('path, circle, rect').attr('fill', ''); // This will reset to the original color
+}
+    }
+    return this;
   }}
 
 
 
-class FishLarvaEgg {
-  constructor(canvas, progress) {
-    const random = Math.random();
-    this.progress = 0;
-    this.canvas = canvas;
-    this.speed = 0.5 + random * 0.2;
-
-    this.x = $(window).width() / 2 + (Math.random() * 200 - Math.random() * 200);
-    this.y = $(window).height() / 2 + (Math.random() * 200 - Math.random() * 200);
-
-    this.s = Math.random() * 1;
-    this.a = 0;
-
-    this.w = $(window).width();
-    this.h = $(window).height();
-    this.radius = random * 0.8;
-    this.color = random > 0.8 ? "#82a0c4" : "#2E4765";
-
-    this.variantx1 = Math.random() * 100;
-    this.variantx2 = Math.random() * 100;
-    this.varianty1 = Math.random() * 100;
-    this.varianty2 = Math.random() * 100;
-  }
-
-  render() {
-    this.canvas.beginPath();
-    this.canvas.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-    this.canvas.lineWidth = 2;
-    this.canvas.fillStyle = this.color;
-    this.canvas.fill();
-    this.canvas.closePath();
-  }
-
-  move() {
-    this.x += Math.cos(this.a) * this.s;
-    this.y += Math.sin(this.a) * this.s;
-    this.a += Math.random() * 0.8 - 0.4;
-
-    if (this.x < 0 || this.x > this.w - this.radius) {
-      return false;
-    }
-
-    if (this.y < 0 || this.y > this.h - this.radius) {
-      return false;
-    }
-    this.render();
-    this.progress++;
-    return true;
-  }}
-
-
-class Paramecium {
-  constructor(canvas) {
-    const random = Math.random();
-    this.progress = 0;
-    this.canvas = canvas;
-    // Set position
-    this.x = $(window).width() / 2 + (Math.random() * 300 - Math.random() * 300);
-    this.y = $(window).height() / 2 + (Math.random() * $(window).height() / 4 - Math.random() * $(window).height() / 4);
-    // Get viewport size
-    this.w = $(window).width();
-    this.h = $(window).height();
-    this.rotation = random * 180 * Math.PI / 180;
-    // Dimension
-    this.radius = 12 + Math.random() * 6;
-    // Color
-    this.color = "rgba(255,255,255,1)";
-    // Setting
-    this.variantx1 = Math.random() * 100;
-    this.variantx2 = Math.random() * 100;
-    this.varianty1 = Math.random() * 100;
-    this.varianty2 = Math.random() * 100;
-  }
-
-  createOval(x, y, w, h) {
-    var kappa = .5522848,
-    ox = w / 2 * kappa, // control point offset horizontal
-    oy = h / 2 * kappa, // control point offset vertical
-    xe = x + w, // x-end
-    ye = y + h, // y-end
-    xm = x + w / 2, // x-middle
-    ym = y + h / 2; // y-middle
-
-    this.canvas.save();
-
-    this.canvas.translate(this.w / 2, this.h / 2);
-
-    // Rotate 1 degree
-    this.canvas.rotate(this.rotation);
-
-    // Move registration point back to the top left corner of canvas
-    this.canvas.translate(-this.w / 2, -this.h / 2);
-
-    this.canvas.beginPath();
-    this.canvas.moveTo(x, ym);
-    this.canvas.quadraticCurveTo(x, y, xm, y);
-    this.canvas.quadraticCurveTo(xe, y, xe, ym);
-    this.canvas.quadraticCurveTo(xe, ye, xm, ye);
-    this.canvas.quadraticCurveTo(x, ye, x, ym);
-
-    this.canvas.strokeStyle = 1;
-    this.canvas.fillStyle = "rgba(255,255,255,0.01)";
-    this.canvas.fill();
-    this.canvas.stroke();
-    this.canvas.restore();
-  }
-
-  render() {
-    // Create inside parts
-    this.createOval(this.x, this.y, 12, 4);
-  }
-
-  move() {
-    this.x += Math.sin(this.progress / this.variantx1) * Math.cos(this.progress / this.variantx2) / 4;
-    this.y += Math.sin(this.progress / this.varianty1) * Math.cos(this.progress / this.varianty2) / 4;
-
-    if (this.x < 0 || this.x > this.w - this.radius) {
-      return false;
-    }
-
-    if (this.y < 0 || this.y > this.h - this.radius) {
-      return false;
-    }
-    this.render();
-    this.progress++;
-    return true;
-  }}
-
-
-/*
- * Function to create canvas
- */
-function createCanvas() {
-  let tela = document.createElement('canvas');
-  tela.width = $(window).width();
-  tela.height = $(window).height();
-  $("body").append(tela);
-  let canvas = tela.getContext('2d');
-  return [tela, canvas];
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-/*
- * Function to clear layer canvas
- * @num:number number of particles
- */
-function popolate(num) {
-  for (var i = 0; i < num; i++) {
-    setTimeout(
-    function (x) {
-      return function () {
-        let random = Math.random();
-        // ------------------------------------
-        // Set type of planktom
-        let type = new FishLarva(canvas);
-        if (!time_to_recreate) {
-          if (random > .97) type = new FishEgg(canvas);
-          if (random < .1 && random > 0) type = new Paramecium(canvas);
-        }
-        if (random > .1 && random < .8) type = new FishLarvaEgg(canvas);
 
-        // if(random < .1) this.type  = "bryozoan"
-        // ------------------------------------
-        // Add particle
-        particles.push(type);
-      };
-    }(i),
-    frequency * i);
-  }
-  return particles.length;
+for (let i = 0; i < max; i++) {
+  particles.push(
+  new Ball(data[randomInt(0, data.length - 1)]));
+
 }
 
-/*
- * Function to clear layer canvas
- */
-function clear() {
-  let grd = canvas.createRadialGradient(tela.width / 2, tela.height / 2, 0, tela.width / 2, tela.height / 2, tela.width);
-  grd.addColorStop(0, "rgba(25,25,54,0.12)");
-  grd.addColorStop(1, "rgba(0,0,20,0.01)");
-  // Fill with gradient
-  canvas.fillStyle = grd;
-  canvas.fillRect(0, 0, tela.width, tela.height);
-}
-
-/*
- * Function to update particles in canvas
- */
 function update() {
-  clear();
-  particles = particles.filter(function (p) {return p.move();});
-  // Recreate particles
-  if (time_to_recreate) {
-    if (particles.length < init_num) {popolate(1);}
-  }
+  particles = particles.filter(function (p) {
+    return p.move();
+  });
   requestAnimationFrame(update.bind(this));
 }
-// Update canvas
 update();

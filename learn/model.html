@@ -51,8 +51,8 @@
 <div class="chat-window" id="chatWindow">
   Collective: "Hello! I'm Collective, your guide to the future of AI integration. How can I assist you today?"
 </div>
-<input type="text" id="userInput" placeholder="Type your message...">
-<button onclick="sendMessage()">Send</button> | <input type="file" id="baseDataSet" onchange="importBaseDataSet(event)" placeholder="Import Base Data Set"><button onclick="getTools()">Tools</button>
+<input class="open-modal" type="text" id="userInput" placeholder="Type message...">
+<button class="open-modal" onclick="sendMessage()">Send</button> | <input type="file" id="baseDataSet" onchange="importBaseDataSet(event)" placeholder="Import Base Data Set"><button class="open-modal" onclick="getTools()">Tools</button>
 
 <div id="toolMenu" style="display: none;">
 <h3>JSON Editor</h3>
@@ -64,13 +64,13 @@
 <button onclick="compileAndExportJSON()">Export Data</button>
 <button onclick="updateConversationData()">Update</button>
 </div></div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 
 
 <script src="chatbot.js"></script>
 <script src="chatbot2.js"></script>
 
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
   <script  src="./script.js"></script>
 
 </body>

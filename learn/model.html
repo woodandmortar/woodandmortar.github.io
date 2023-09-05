@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Collective</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+  <style>
+      .chat-window, .json-editor {
+          width: 100%;
+          height: 400px;
+          overflow-y: scroll;
+          font-size: 1.3em;
+          margin: 10px 10px 10px 10px;
+          white-space: pre-wrap;
+      }
+      @keyframes ellipsis {
+    0% { content: "."; }
+    5% { content: ".."; }
+    10% { content: "aE."; }
+    15% { content: "XDF"; }
+    20% { content: ".1."; }
+    25% { content: "f.e."; }
+    30% { content: "Polit"; }
+    35% { content: ".DS."; }
+    40% { content: "xpsp."; }
+    45% { content: "%$3"; }
+    50% { content: "&^32ff"; }
+    55% { content: "FDSEEE"; }
+    60% { content: "Salmon."; }
+    65% { content: "."; }
+    70% { content: "ical"; }
+    75% { content: "..."; }
+    80% { content: "."; }
+    85% { content: "Ballot"; }
+    90% { content: ".head."; }
+    95% { content: ".ing.com"; }
+    100% { content: "."; }
+}
+.thinking::after {
+    content: "...";
+    animation: ellipsis 2.3s infinite;
+}
+  </style>
+
+
+<div class="title">
+
+<div class="chat-window" id="chatWindow">
+  Collective: "Hello! I'm Collective, your guide to the future of AI integration. How can I assist you today?"
+</div>
+<input type="text" id="userInput" placeholder="Type your message...">
+<button onclick="sendMessage()">Send</button> | <input type="file" id="baseDataSet" onchange="importBaseDataSet(event)" placeholder="Import Base Data Set"><button onclick="getTools()">Tools</button>
+
+<div id="toolMenu" style="display: none;">
+<h3>JSON Editor</h3>
+<div id="editorInstructions" style="color: red; margin-bottom: 10px;"></div>
+<textarea class="json-editor" id="jsonEditor" placeholder="Format: [question, answer, liveChange]"></textarea>
+
+
+<input type="file" id="conversationDataSet" onchange="importConversationDataSet(event)" placeholder="Import Conversation Data Set">
+<button onclick="compileAndExportJSON()">Export Data</button>
+<button onclick="updateConversationData()">Update</button>
+</div></div>
+
+
+<script src="chatbot.js"></script>
+<script src="chatbot2.js"></script>
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <script  src="./script.js"></script>
+
+</body>
+</html>

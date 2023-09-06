@@ -4,6 +4,60 @@
   box-sizing: border-box;
 }
 
+
+/* For Webkit browsers like Chrome, Safari */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* For Firefox */
+html {
+    scrollbar-width: none;
+    overflow: -moz-scrollbars-none;
+}
+
+/* For IE and Edge */
+body {
+    -ms-overflow-style: none;
+}
+
+
+        .chat-window, .json-editor {
+            width: 100%;
+            height: 400px;
+            overflow-y: scroll;
+            font-size: 1.3em;
+            margin: 10px 10px 10px 10px;
+            white-space: pre-wrap;
+        }
+        @keyframes ellipsis {
+      0% { content: "."; }
+      5% { content: ".."; }
+      10% { content: "aE."; }
+      15% { content: "XDF"; }
+      20% { content: ".1."; }
+      25% { content: "f.e."; }
+      30% { content: "Polit"; }
+      35% { content: ".DS."; }
+      40% { content: "xpsp."; }
+      45% { content: "%$3"; }
+      50% { content: "&^32ff"; }
+      55% { content: "FDSEEE"; }
+      60% { content: "Salmon."; }
+      65% { content: "."; }
+      70% { content: "ical"; }
+      75% { content: "..."; }
+      80% { content: "."; }
+      85% { content: "Ballot"; }
+      90% { content: ".head."; }
+      95% { content: ".ing.com"; }
+      100% { content: "."; }
+  }
+  .thinking::after {
+      content: "...";
+      animation: ellipsis 2.3s infinite;
+  }
+
 :root {
   --app-container: #f3f6fd;
   --main-color: #1f1c2e;
@@ -78,8 +132,8 @@ button, a {
 .app-content {
   display: flex;
   height: 100%;
-  overflow: auto;
-  padding: 0px 0px 0px 0px;
+  overflow: hidden;
+  padding: 16px 24px 24px 0;
 }
 .app-header {
   display: flex;
@@ -100,7 +154,12 @@ button, a {
   margin-left: 10px;
 }
 .app-name {
-
+  color: var(--main-color);
+  margin: 0;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  margin: 0 32px;
 }
 
 .mode-switch {
@@ -200,7 +259,7 @@ button, a {
 }
 
 .app-sidebar {
-  padding: 10px 10px;
+  padding: 40px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -208,12 +267,12 @@ button, a {
 .app-sidebar-link {
   color: var(--main-color);
   color: var(--link-color);
-  margin: 16px 0 0 0;
+  margin: 16px 0;
   transition: 0.2s;
-  border-radius: 10%;
+  border-radius: 50%;
   flex-shrink: 0;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -231,9 +290,8 @@ button, a {
   flex: 2;
   background-color: var(--projects-section);
   border-radius: 32px;
-  padding: 14px 14px 14px 14px;
-  z-index: 99999999999999999999999;
-  overflow: auto;
+  padding: 32px 32px 0 32px;
+  overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -300,10 +358,6 @@ button, a {
 .view-actions {
   display: flex;
   align-items: center;
-}
-
-#barLogo {
-  display: block;
 }
 
 .view-btn {
@@ -438,33 +492,9 @@ button, a {
   opacity: 0.7;
 }
 .message-line.time {
-  display: flex;
-  flex-direction: row;
   text-align: right;
   margin-bottom: 0;
 }
-.message-line2 {
-  border-right: .1em solid;
-  background-color: lightgreen;
-  font-family: monospace;
-  animation: type 0.2s steps(1, end) 0s 1 normal both, blink 1s steps(1, end) infinite;
-}
-
-@keyframes type {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 24ch; /* Initial setting. Will be overridden by JS */
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
 
 .project-boxes {
   margin: 0 -8px;
@@ -678,7 +708,6 @@ button, a {
   flex-shrink: 0;
   padding: 6px 16px;
   font-weight: 700;
-  z-index:9999999999999999999999;
 }
 
 .mode-switch.active .moon {
@@ -688,12 +717,14 @@ button, a {
 .messages-btn {
   border-radius: 4px 0 0 4px;
   position: absolute;
-  left: 0;
-  top: 0px;
-  height: 50px;
+  right: 0;
+  top: 58px;
   background-color: var(--message-btn);
   border: none;
   color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 4px;
   display: none;
 }
@@ -722,7 +753,7 @@ button, a {
     position: absolute;
     opacity: 1;
     top: 0;
-    z-index: 25555555555555;
+    z-index: 2;
     right:0;
     height: 100%;
     width: 83%;
@@ -787,7 +818,7 @@ button, a {
   }
 
   .projects-section {
-    padding: 4px 4px 4px 4px;
+    padding: 24px 16px 0 16px;
   }
 
   .profile-btn img {
@@ -816,12 +847,7 @@ button, a {
   }
 
   .messages-btn {
-    top: 0px;
-    z-index: 9999999999999999999;
-  }
-
-  #barLogo {
-    display: none;
+    top: 48px;
   }
 
   .box-content-header {
@@ -906,30 +932,6 @@ button, a {
       }
       }
 
-      .open-modal2 {
-         text-align: center;
-         display: block;
-        border: 2px solid black;
-        background: transparent;
-        color: #000;
-        width: 30px;
-        Height: 120px;
-        text-transform: uppercase;
-        word-wrap: break-word;
-        letter-spacing: 2px;
-        font-size: 10px;
-        padding: .5em 1em;
-        font-weight: bold;
-        -webkit-transition: background 0.3s;
-        transition: background 0.3s;
-        animation: pulse 8s infinite;
-
-      }
-
-      .open-modal2:hover {
-        background: #D95952;
-      }
-
          .row {
   display: flex;
   flex-wrap: wrap;
@@ -998,3 +1000,289 @@ button, a {
   #tailMove {
     animation: swim 2s infinite alternate ease-in-out;
   }
+
+  /**===== bars0 =====*/
+  #bars0 {
+    display: block;
+    position: absolute;
+    top:0px;
+    left:20px;
+    height: 50px;
+    width: 50px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  #bars0 span {
+    position: absolute;
+    display: block;
+    bottom: 10px;
+    width: 9px;
+    height: 5px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.25);
+    -webkit-animation: bars0 2.5s  infinite ease-in-out;
+            animation: bars0 2.5s  infinite ease-in-out;
+
+                      -webkit-animation-delay: 0.2s;
+                              animation-delay: 0.2s;
+  }
+
+  @keyframes bars0 {
+    0% {
+      height: 5px;
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      background: rgba(0, 0, 0, 0.25);
+    }
+    25% {
+      height: 30px;
+      -webkit-transform: translateY(15px);
+              transform: translateY(15px);
+      -webkit-transform: translateY(15px);
+              transform: translateY(15px);
+      background: #000000;
+    }
+    80% {
+      height: 30px;
+      -webkit-transform: translateY(15px);
+              transform: translateY(15px);
+      -webkit-transform: translateY(15px);
+              transform: translateY(15px);
+      background: #000000;
+    }
+    100% {
+      height: 5px;
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      background: rgba(0, 0, 0, 0.25);
+    }
+  }
+  @-webkit-keyframes bars0 {
+    0% {
+      height: 5px;
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      background: rgba(0, 0, 0, 0.25);
+    }
+    25% {
+      height: 30px;
+      -webkit-transform: translateY(15px);
+              transform: translateY(15px);
+      background: #000000;
+    }
+    80% {
+      height: 5px;
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      background: rgba(0, 0, 0, 0.25);
+    }
+    100% {
+      height: 5px;
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      background: rgba(0, 0, 0, 0.25);
+    }
+  }
+  /** END of bars1 */
+  /**===== bars0a =====*/
+  #bars0a {
+    display: block;
+    position: absolute;
+    top:0px;
+    left:5px;
+    height: 50px;
+    width: 50px;
+    border-radius: 2px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  #bars0a span {
+    position: absolute;
+    display: block;
+    bottom: 10px;
+    width: 9px;
+    height: 5px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.25);
+    -webkit-animation: bars0a 2.5s  infinite ease-in-out;
+            animation: bars0a 2.5s  infinite ease-in-out;
+
+  }
+
+  span::before,
+  span::after {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: none;
+  }
+
+  span::before {
+    position: absolute;
+    bottom: 0;
+    left: -15px;
+  }
+
+  span::after {
+    position: absolute;
+    bottom: 0;
+    right: -15px;
+  }
+
+  @keyframes bars0a {
+    0% {
+      height: 5px;
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      background: rgba(0, 0, 0, 0.25);
+    }
+    25% {
+      height: 30px;
+      -webkit-transform: translateY(15px);
+              transform: translateY(15px);
+      -webkit-transform: translateY(15px);
+              transform: translateY(15px);
+      background: #000000;
+    }
+    80% {
+      height: 30px;
+      -webkit-transform: translateY(15px);
+              transform: translateY(15px);
+      -webkit-transform: translateY(15px);
+              transform: translateY(15px);
+      background: #000000;
+    }
+    100% {
+      height: 5px;
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      background: rgba(0, 0, 0, 0.25);
+    }
+  }
+  @-webkit-keyframes bars0a {
+    0% {
+      height: 5px;
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      background: rgba(0, 0, 0, 0.25);
+    }
+    25% {
+      height: 30px;
+      -webkit-transform: translateY(15px);
+              transform: translateY(15px);
+      background: #000000;
+    }
+    80% {
+      height: 5px;
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      background: rgba(0, 0, 0, 0.25);
+    }
+    100% {
+      height: 5px;
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      background: rgba(0, 0, 0, 0.25);
+    }
+  }
+  /** END of bars1 */
+/**===== bars1 =====*/
+#bars1 {
+  display: block;
+  position: absolute;
+  top:10px;
+  left:54px;
+  height: 50px;
+  width: 50px;
+}
+
+#bars1 span {
+  position: absolute;
+  display: block;
+  bottom: 10px;
+  width: 9px;
+  height: 5px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  -webkit-animation: bars1 2.5s  infinite ease-in-out;
+          animation: bars1 2.5s  infinite ease-in-out;
+
+          -webkit-animation-delay: 0.4s;
+                  animation-delay: 0.4s;
+}
+
+
+@keyframes bars1 {
+  0% {
+    height: 5px;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    background: rgba(0, 0, 0, 0.25);
+  }
+  25% {
+    height: 28px;
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
+    background: #000000;
+  }
+  80% {
+    height: 28px;
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
+            background: #000000;
+  }
+  100% {
+    height: 5px;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    background: rgba(0, 0, 0, 0.25);
+  }
+}
+@-webkit-keyframes bars1 {
+  0% {
+    height: 5px;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    background: rgba(0, 0, 0, 0.25);
+  }
+  25% {
+    height: 30px;
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
+    background: #000000;
+  }
+  80% {
+    height: 5px;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    background: rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    height: 5px;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    background: rgba(0, 0, 0, 0.25);
+  }
+}
+/** END of bars1 */
+/*-----------------------------------------------------------------------*/

@@ -662,25 +662,25 @@ let baseData =
 
 
 
-setInterval(askChatbot2, 50000);
+setInterval(askChatbot2, 35000);
 
   // List of questions 'faxium' will ask
   const collectiveQuestions = [
-    'Whats something youve always wanted to learn or understand better about yourself? Why is that important to you?',
-    'Have you ever considered what shapes your core beliefs? Why do you think you hold the values you do?',
-    'When was the last time you changed your mind about something significant? What prompted that change?',
-    'Imagine a world where everyone thinks exactly like you. What would be its strengths and weaknesses?',
-    'If you could go back in time and give your younger self one piece of advice, what would it be and why?',
-    'Whats a belief you hold that most people disagree with? Why do you think they see things differently?',
-    'How do you handle situations where your beliefs are challenged? Do you defend, reflect, or adapt?',
-    'Whats a memory that has significantly shaped who you are today? Why does it hold such power over you?',
-    'If you could spend a day in someone elses shoes, whose would they be and why? What do you hope to understand better?',
-    'Whats a decision you made based purely on intuition? How did it turn out, and what did you learn from it?',
-    'How do you define personal growth? Can you recall a specific moment when you felt you had grown as a person?',
-    'In moments of doubt or uncertainty, where do you seek guidance? Is it from within, from others, or somewhere else?',
-    'Whats a question youve always wanted to ask someone but never have? Why havent you asked it?',
-    'If you could relive a moment in your life without changing anything, which moment would it be and why?',
-    'How do you determine the difference between a right and wrong decision? Is it based on outcomes, intentions, or something else?'
+    'What steps have you taken to improve the energy efficiency of your home in the past year?',
+    'How do you think the energy consumption of your home compares to others in your neighborhood?',
+    'What challenges have you faced in trying to make your home more energy-efficient?',
+    'How do you feel about the current energy efficiency of your home, and what would you like to improve?',
+    'Can you describe any noticeable changes in your energy bills after implementing energy-saving measures?',
+    'What are your thoughts on renewable energy sources, such as solar panels or wind turbines, for residential use?',
+    'How do you prioritize which energy efficiency projects to tackle first in your home?',
+    'What experiences have you had with energy-efficient appliances, and would you recommend them to others?',
+    'How do you perceive the long-term benefits of investing in home energy efficiency?',
+    'In what ways do you believe local communities or governments can support homeowners in their energy efficiency efforts?',
+    'How do you educate yourself about the best practices for home energy conservation?',
+    'What are your thoughts on smart home technologies and their role in energy efficiency?',
+    'How do you feel about the environmental impact of the energy consumption of your home?',
+    'Can you share any experiences where you have worked with professionals, like energy auditors or contractors, to improve the energy efficiency of your home?',
+    'How do you envision the future of home energy efficiency, and what innovations or changes would you like to see?'
   ];
 
   let currentQuestionIndex2 = 0;

@@ -122,14 +122,6 @@
 </svg>
                   </a>
 
-                    <a id="navSalmon" onclick="salmonActive();"  class="app-sidebar-link">
-                      <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="-359 -463 900 500">
-                        <g id="tail">
-                        <path id="tailMove" d="M3 49c0 6-2 11-5 15l-119 164c-6 8-20 15-30 15h-146c-7 0-11-3-11-8 0-2 1-5 3-7l130-179-130-179-3-7c0-5 4-8 11-8h146c10 0 24 7 30 15L-2 34c3 4 5 10 5 15z" fill="#D95952"></path>
-                      </g>
-                        <path d="M408 34L290-130c-6-8-20-15-30-15H16c-10 0-23 7-29 15l-33 45L40 34c3 4 5 10 5 15s-2 11-5 15l-86 119 33 45c6 8 19 15 29 15h244c10 0 24-7 30-15L408 64c3-4 5-10 5-15s-2-11-5-15zM206-90c12 0 21 9 21 21s-9 21-21 21-21-9-21-21 9-21 21-21z" fill="#D95952"></path>
-                      </svg>
-                    </a>
 
                 </div>
                 <div class="projects-section">
@@ -175,9 +167,9 @@
                                         </div>
                   </div>
 <div id="schedule" class="project-boxes" style="display: none;">
-  <h1>HPXML Link goes below:</h1>
-  <input type="password" id="passcode" maxlength="4">
-<button onclick="checkPasscode()">Submit</button>
+
+
+
 </div>
 
 <div id="settingsMain" class="project-boxes" style="display: none;">
@@ -1331,14 +1323,6 @@ The system is modular and can be expanded over time by adding more solar capacit
 
 
 
-<div id="salmon" class="project-boxes" style="display: none;">
-
-
-</div>
-
-
-
-
 
 
 
@@ -1375,6 +1359,10 @@ The system is modular and can be expanded over time by adding more solar capacit
               <div class="message-box">
                 <input class="open-modal" type="text" id="userInput" placeholder="Type message...">
                 <button class="open-modal" onclick="sendMessage()">Send</button>
+              </div>
+              <div class="message-box">
+                <input type="password" id="passcode" maxlength="4">
+                <button onclick="checkPasscode()">Codes</button>
               </div>
               <div class="message-box">
                 <input type="file" id="baseDataSet" onchange="importBaseDataSet(event)" placeholder="Import Base Data Set"><button class="open-modal" onclick="document.getElementById('toolMenu').style.display = 'block';">Tools</button>

@@ -46,7 +46,7 @@
 
                   </p>
                   <div class="search-wrapper">
-                    <input class="search-input" type="text" placeholder="Search">
+                    <input class="search-input" placeholder="Search" type="text" id="passcode" oninput="checkPasscode();">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-search" viewBox="0 0 24 24">
                       <defs></defs>
                       <circle cx="11" cy="11" r="8"></circle>
@@ -1359,10 +1359,6 @@ The system is modular and can be expanded over time by adding more solar capacit
                 <button class="open-modal" onclick="sendMessage()">Send</button>
               </div>
               <div class="message-box">
-                <input type="password" id="passcode" maxlength="4">
-                <button onclick="checkPasscode()">Codes</button>
-              </div>
-              <div class="message-box">
                 <input type="file" id="baseDataSet" onchange="importBaseDataSet(event)" placeholder="Import Base Data Set"><button class="open-modal" onclick="document.getElementById('toolMenu').style.display = 'block';">Tools</button>
 
                <div id="toolMenu" style="display: none;">
@@ -1399,10 +1395,8 @@ function countActive(){
 
 function checkPasscode() {
   const code = document.getElementById("passcode").value;
-
   if(code === "1234") {
-    document.getElementById("secretDiv").style.display = "block";
-    document.getElementById("schedule").style.display = "none";
+    secretActive();
   }
 }
 

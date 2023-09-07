@@ -67,3 +67,24 @@ function shoppingActive(){
   navAudit.classList.remove("active");
   navSchedule.classList.remove("active");
 }
+
+function secretActive(){
+  document.getElementById("shopping").style.display = "none";
+  document.getElementById("secretDiv").style.display = "block";
+  document.getElementById("energyAudit").style.display = "none";
+  document.getElementById("splash").style.display = "none";
+  document.getElementById("settingsMain").style.display = "none";
+  document.getElementById("schedule").style.display = "none";
+  navShopping.classList.remove("active");
+  navSettings.classList.remove("active");
+  navHome.classList.remove("active");
+  navAudit.classList.remove("active");
+  navSchedule.classList.remove("active");
+}
+
+document.getElementById('passcode').addEventListener('change', checkPasscode);
+document.getElementById('passcode').addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        checkPasscode();
+    }
+});

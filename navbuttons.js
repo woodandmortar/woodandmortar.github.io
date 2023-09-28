@@ -81,10 +81,3 @@ function secretActive(){
   navAudit.classList.remove("active");
   navSchedule.classList.remove("active");
 }
-
-document.getElementById('passcode').addEventListener('change', checkPasscode);
-document.getElementById('passcode').addEventListener('keyup', function(event) {
-    if (event.key === 'Enter') {
-        checkPasscode();
-    }
-});

@@ -648,7 +648,7 @@ let baseData =
   function postMessageToParent(value, category) {
     const message = {};
     message[category] = value;
-    window.parent.postMessage(message, '*');
+    window.parent.postMessage(message, 'https://woodandmortar.com/');
   }
 
   // Usage:
@@ -659,62 +659,22 @@ let baseData =
 
 
 
+let website1 = 'https://www.getgptlaw.com/';
+let website2 = 'https://www.getgptlaw.com/';
 
-
-
-setInterval(askChatbot2, 35000);
 
   // List of questions 'faxium' will ask
   const collectiveQuestions = [
-    'What steps have you taken to improve the energy efficiency of your home in the past year?',
-    'How do you think the energy consumption of your home compares to others in your neighborhood?',
-    'What challenges have you faced in trying to make your home more energy-efficient?',
-    'How do you feel about the current energy efficiency of your home, and what would you like to improve?',
-    'Can you describe any noticeable changes in your energy bills after implementing energy-saving measures?',
-    'What are your thoughts on renewable energy sources, such as solar panels or wind turbines, for residential use?',
-    'How do you prioritize which energy efficiency projects to tackle first in your home?',
-    'What experiences have you had with energy-efficient appliances, and would you recommend them to others?',
-    'How do you perceive the long-term benefits of investing in home energy efficiency?',
-    'In what ways do you believe local communities or governments can support homeowners in their energy efficiency efforts?',
-    'How do you educate yourself about the best practices for home energy conservation?',
-    'What are your thoughts on smart home technologies and their role in energy efficiency?',
-    'How do you feel about the environmental impact of the energy consumption of your home?',
-    'Can you share any experiences where you have worked with professionals, like energy auditors or contractors, to improve the energy efficiency of your home?',
-    'How do you envision the future of home energy efficiency, and what innovations or changes would you like to see?'
+    'What do you need to improve your housing situation? <button class="open-modal" onclick="window.open(website1)">lease agreements</button><button class="open-modal" onclick="window.open(website2)>find a contractor</button><button class="open-modal" onclick="window.open(website1)>legal aid</button><button class="open-modal" onclick="shoppingActive()">new property</button> ',
   ];
 
-  let currentQuestionIndex2 = 0;
-
-
-
-  // Function to get a random question index
-  function getRandomQuestionIndex() {
-    return Math.floor(Math.random() * collectiveQuestions.length);
-  }
-
-  // Function for 'faxium' to ask questions
-  function askChatbot2() {
+  function askChatbotOnce() {
     chatWindow.scrollTop = chatWindow.scrollHeight;
-
-    // Add thinking animation
-    const thinkingElem = document.createElement('p');
-    thinkingElem.classList.add('thinking');
-    thinkingElem.innerHTML = 'Collective';
-    chatWindow.appendChild(thinkingElem);
-
-    setTimeout(() => {
-      // Remove thinking animation
-      chatWindow.removeChild(thinkingElem);
-
-      // Get a random question index
-      const randomIndex = getRandomQuestionIndex();
-
-      // Send the random question to the chatbot as 'faxium'
-      chatWindow.innerHTML += '<p>Collective: ' + collectiveQuestions[randomIndex] + '</p>';
-      chatWindow.scrollTop = chatWindow.scrollHeight;
-
-    }, 1000); // One-second delay
+    chatWindow.innerHTML += '<p>Collective: ' + collectiveQuestions[0] + '</p>';
+    chatWindow.scrollTop = chatWindow.scrollHeight;
   }
+
+  setTimeout(askChatbotOnce, 1000);
 
 
 

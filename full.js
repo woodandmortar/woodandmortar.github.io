@@ -1,4 +1,5 @@
 let renderer,
+rotationSpeed2,
 scene,
 camera,
 sphereBg,
@@ -59,7 +60,6 @@ function init() {
     const texturenucleus9 = loader.load('https://woodandmortar.com/salmonballot/pics/webLayer.png');
     const texturenucleus10 = loader.load('https://woodandmortar.com/salmonballot/pics/cloudLayer.png');
     const texturenucleus11 = loader.load('https://woodandmortar.com/salmonballot/pics/textLayer.png');
-    const texturenucleus12 = loader.load('https://woodandmortar.com/salmonballot/pics/lightLayer.png');
     const texturenucleus13 = loader.load('https://woodandmortar.com/salmonballot/pics/mercatoLayer.png');
     const textureStar = loader.load("https://woodandmortar.com/salmonballot/pics/jelly.png");
 
@@ -362,22 +362,18 @@ const nucleus13 = new THREE.Mesh(icosahedronGeometry13, lambertMaterial13);
 nucleus13.rotation.copy(nucleus.rotation); // Copy rotation from the first nucleus
 scene.add(nucleus13);
 
-// End of Copy layer
+// Function to rotate the nucleus10 counterclockwise by a certain angle
+function rotateNucleus13() {
+    rotationSpeed2 = 0.0000000001;
+    nucleus13.rotation.y -= rotationSpeed;
+}
 
-// Copy Layer
-texturenucleus12.anisotropy = 0;
-const nucleus12Radius = 819 * blobScale; // 10 units larger than the first nucleus
-const icosahedronGeometry12 = new THREE.IcosahedronGeometry(nucleus12Radius, 10);
-const lambertMaterial12 = new THREE.MeshPhongMaterial({
-map: texturenucleus12,
-transparent: true,
-opacity: 0.5,
-});
-const nucleus12 = new THREE.Mesh(icosahedronGeometry12, lambertMaterial12);
-nucleus12.rotation.copy(nucleus.rotation); // Copy rotation from the first nucleus
-scene.add(nucleus12);
+// Call the rotateNucleus10 function every 1000 milliseconds (1 second)
+setInterval(rotateNucleus13, 5);
+
 
 // End of Copy layer
+
 
 // Copy Layer
 texturenucleus11.anisotropy = 0;

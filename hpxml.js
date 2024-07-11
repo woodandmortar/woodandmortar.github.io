@@ -1,73 +1,63 @@
 
                           const descriptAll = [
-                            "<h1>Pumice</h1><br> - The porous, lightweight nature of pumice represents the low cost but inefficient materials used in old appliances and electronics. Cheap to produce but outdated technologies.",
-                            "<h1>Chalk</h1><br> - The soft, dusty chalk represents affordable materials that may not withstand wear and tear over time. Initial cost savings but prone to breakdowns.",
-                            "<h1>Limestone</h1><br> - As a common sedimentary rock, limestone represents the moderate energy efficiency of mass-produced consumer goods for the average consumer.",
-                            "<h1>Sandstone</h1><br> - Abundant like sand, sandstone materials are accessible and routinely used but not optimized for energy efficiency.",
-                            "<h1>Shale</h1><br> - The laminated structure of shale represents the incremental improvements made to existing technologies that yield moderate efficiency gains.",
-                            "<h1>Slate</h1><br> - Slate's use in roofing ties to insulation needs for housing. Slate materials provide improvements but at increased costs.",
-                            "<h1>Granite</h1><br> - As an igneous rock, granite represents technological advancements that require intensive processes but yield meaningful efficiency gains.",
-                            "<h1>Marble</h1><br> - The metamorphic quality of marble symbolizes the transformative innovations that produce materials and products optimized for sustainability.",
-                            "<h1>Quartz</h1><br> - The high hardness and piezoelectricity of quartz parallels the significant energy required for next-generation technologies and materials.",
+                            "<h1>United Islands of Ventura</h1><br> -  Open to new ideas and pushing boundaries to discover innovative solutions. Having a wide distribution of wealth ranging from the very impoverished to the very wealthy, they are generally slow to change but verbally express a desire to do better by their citizens.",
+                            "<h1>Commonwealth of Trantum</h1><br> - Values tradition and gradual change through experiencing different cultures. A nation geared around doing the best for themselves with active disregard to most of the rest of the world.",
+                            "<h1>The Collective</h1><br> - a purely socialist AI with a singular directive - protect all humanity.",
+                            "<h1>Free Markets of Mercado</h1><br> - Driven by profits and market forces, Mercado is a mobile island with an economist governing body. Having trade regions set up all over the globe, Mercatians believe that - Gold is King",
+                            "<h1>Faxium </h1><br> - A nation who believes at their core that creative science can solve most problems. Faxium exports genetically modified, organic bioluminescent plants to most of the other nations.",
+                            "<h1>Iron Coast</h1><br> - Grounded and resilient, respects nature's harsh realities the Iron Coast is a low resource region with a realist governing body. They are reliant on natural resources as they are the most isolated nation.",
+                            "<h1>Eventus</h1><br> - A nation geared around spreading quality healthcare to the world. People from the rest of the world travel to Eventus to treat healthcare problems that cannot be solved in their own nations.",
+                            "<h1>Abzimuth</h1><br> - A nation who would ignore the world if it meant the prosperity of their people. Abzimuth exports precious gems and metals, upholds law and protocol to maintain order and traditions. Stern yet fair, values duty over glory.",
+                            "<h1>Ocidentica</h1><br> - Represents the working class, used to fight for better conditions but self-serving when push comes to shove. A nation composed primarily of low income people, Ocidentica exports readily available but generally low quality fish.",
                           ];
 
+                          const subcategories2 = {
+                            "progressive ": ["Ventura "],
+                            "conservative": ["Trantum"],
+                            "socialist": ["Collective"],
+                            "economist": ["Mercado"],
+                            "idealist": ["Faxium "],
+                            "realist": ["Iron Coast"],
+                            "globalist": ["Eventus"],
+                            "nationalist": ["Abzimuth"],
+                            "populist": ["Ocidentica"],
+                          };
+
                           const descriptAll2 = [
-                            "<h1>Balsa</h1><br> - The ultra-lightweight balsa represents highly optimized renewable materials that maximize efficiency with minimal environmental impact.",
-                            "<h1>Basswood</h1><br> - As a fast-growing softwood, basswood represents sustainable materials that balance efficiency, cost, and responsible sourcing.",
-                            "<h1>Aspen</h1><br> - Aspen grows rapidly in groves, similar to how scalable technologies can be propagated widely to increase efficiency.",
-                            "<h1>Pine</h1><br> - As a widespread softwood, pine represents the incremental efficiency gains from broadly adopted improvements to traditional materials.",
-                            "<h1>Oak</h1><br> - With its hard, durable characteristics, oak symbolizes conventional materials enhanced through treatment and processing for better efficiency.",
-                            "<h1>Ash</h1><br> - The straight grain and high strength of ash parallels materials engineered specifically for performance improvements.",
-                            "<h1>Maple</h1><br> - Maple's hardness indicates more intensive processing and engineering required to create more efficient but still mainstream materials.",
-                            "<h1>Mahogany</h1><br> - As a luxury wood, mahogany represents exotic materials with marginal efficiency gains but used primarily for aesthetic appeal.",
-                            "<h1>Teak</h1><br> - The weather resistance of teak points to niche materials focused on durability rather than broad sustainability or efficiency.",
+                            "<h1>Explorer</h1><br> - An Explorer is driven by an insatiable curiosity to uncover the unknown. They thrive in uncharted territories, seeking hidden truths and unexplored frontiers. This subtrait embodies the spirit of adventure and the thrill of discovery.",
+                            "<h1>Voyager</h1><br> -  The Voyager possesses an unyielding desire for exploration and a sense of wanderlust that knows no bounds. They journey far and wide, embracing diverse cultures and embracing the richness of experiences that come with each new horizon.",
+                            "<h1>Captain</h1><br> -  A Captain is a natural leader who commands respect and authority. They are skilled at navigating the complexities of situations and guiding their crew towards success. This subtrait embodies strong leadership, strategic thinking, and a sense of responsibility.",
+                            "<h1>Merchant</h1><br> - The Merchant is astute in the art of trade and commerce. They possess a shrewd business mind and excel in negotiations, always seeking opportunities to maximize profits while balancing ethical considerations.",
+                            "<h1>Shipwright</h1><br> - A Shipwright is a master craftsman, skilled in designing and constructing the vessels that facilitate the journey. They pay meticulous attention to detail, creating vessels that are both functional and beautifully crafted.",
+                            "<h1>Fisherman</h1><br> -  The Fisherman embraces patience and persistence in their pursuit of life's rewards. They understand the ebb and flow of resources, working diligently to provide sustenance and prosperity to themselves and their community.",
+                            "<h1>Smuggler</h1><br> -  A Smuggler operates on the fringes of legality, using cunning and resourcefulness to navigate challenging situations. They possess a knack for finding unconventional solutions to problems and thrive in the shadows.",
+                            "<h1>Arbiter</h1><br> - The Arbiter is a mediator and diplomat, adept at resolving conflicts and maintaining harmony. They possess a keen sense of justice and fairness, striving to bring equilibrium to even the most contentious situations.",
+                            "<h1>Sailor</h1><br> - The Sailor is the backbone of the crew, steadfast and reliable even in the face of adversity. They embody resilience, adaptability, and a deep understanding of the rhythms of life on the journey.",
                           ];
 
 
                           const subcategories = {
-                            "balsa": ["Balsa"],
-                            "basswood": ["Basswood"],
-                            "aspen": ["Aspen"],
-                            "pine": ["Pine"],
-                            "oak": ["Oak"],
-                            "ash": ["Ash"],
-                            "maple": ["Maple"],
-                            "mahogany": ["Mahogany"],
-                            "teak": ["Teak"],
+                            "explorer": ["Explorer"],
+                            "voyager": ["Voyager"],
+                            "captain": ["Captain"],
+                            "merchant": ["Merchant"],
+                            "shipwright": ["Shipwright"],
+                            "fisherman": ["Fisherman"],
+                            "smuggler": ["Smuggler"],
+                            "arbiter": ["Arbiter"],
+                            "sailor": ["Sailor"],
                           };
 
-                          const subcategories2 = {
-                            "pumice": ["Pumice"],
-                            "chalk": ["Chalk"],
-                            "limestone": ["Limestone"],
-                            "sandstone": ["Sandstone"],
-                            "shale": ["Shale"],
-                            "slate": ["Slate"],
-                            "granite": ["Granite"],
-                            "marble": ["Marble"],
-                            "quartz": ["Quartz"],
-                          };
 
 
 
                           let result = '';
-                          let auditNum = 0;
                           var xaxis = 50;
                           var yaxis = 50;
                           var newRotation = 0;
-                          let clicksRed = -3;
-                          let clicksBlack = -3;
-                          let clicksBlue = 5;
-                          let clicksGold = 5;
                           let nextPho = 0;
-                          let subcat = '';
-                          let subcat2 = '';
 
 
-                          function addAudit()
-                          {
-                            auditNum += 1;
-                          }
 
                           function nextPhoto(){
                             if (nextPho != 9) {
@@ -84,117 +74,155 @@
                           window.onload = function() {
                             document.getElementById("descriptAll").innerHTML = descriptAll[0];
                             document.getElementById("descriptAll2").innerHTML = descriptAll2[0];
-                            clicksRed -= 1;
-                            clicksBlack -= 1;
-                            clicksBlue -= 1;
-                            clicksGold -= 1;
-                            document.getElementById("clicksRed").innerHTML = clicksRed;
-                            document.getElementById("clicksBlack").innerHTML = clicksBlack;
-                            document.getElementById("clicksBlue").innerHTML = clicksBlue;
-                            document.getElementById("clicksGold").innerHTML = clicksGold;
                                     };
 
 
                           function changeRed() {
-                              clicksRed -= 1;
-                              document.getElementById("clicksRed").innerHTML = clicksRed;
                               xaxis += 4;
                               redCircle.setAttribute('cx', xaxis);
                                newRotation += 10;
                                needleMove.setAttribute('transform', `rotate(${newRotation})`);
+                               populations.conservative += 250000;
+                               populations.realist -= 100000;
+                               populations.populist -= 100000;
+                               populations.socialist -= 100000;
                           }
                           function changeBlue() {
-                              clicksBlue += 1;
-                              document.getElementById("clicksBlue").innerHTML = clicksBlue;
                               xaxis -= 4;
                               blueCircle.setAttribute('cx', xaxis);
                               newRotation -= 10;
                               needleMove.setAttribute('transform', `rotate(${newRotation})`);
+                              populations.progressive += 200000;
+                              populations.globalist += 100000;
+                              populations.conservative -= 150000;
+                              populations.nationalist -= 100000;
                           }
-                          function changeBlack() {
-                              clicksBlack -= 1;
-                              document.getElementById("clicksBlack").innerHTML = clicksBlack;
-                              yaxis += 4;
-                              blackCircle.setAttribute('cy', yaxis);
+                          function changeGreen() {
+                              yaxis -= 3;
+                              xaxis += 3;
+                              greenCircle.setAttribute('cy', yaxis);
+                              greenCircle.setAttribute('cx', xaxis);
                               newRotation += 10;
                               needleMove.setAttribute('transform', `rotate(${newRotation})`);
+                              populations.idealist += 200000;
+                              populations.populist += 100000;
+                              populations.socialist -= 150000;
+                              populations.nationalist -= 100000;
+                              populations.conservative -= 50000;
                           }
                           function changeGold() {
-                              clicksGold += 1;
-                              document.getElementById("clicksGold").innerHTML = clicksGold;
-                              yaxis -= 4;
+                              yaxis += 4;
                               goldCircle.setAttribute('cy', yaxis);
+                              newRotation += 10;
+                              needleMove.setAttribute('transform', `rotate(${newRotation})`);
+                              populations.economist += 60000;
+                              populations.populist -= 60000;
+                              populations.socialist += 20000;
+                              populations.idealist += 20000;
+                              populations.nationalist += 20000;
+                              populations.conservative += 20000;
+                              populations.globalist += 20000;
+                              populations.progressive += 20000;
+                              populations.realist += 20000;
+                          }
+                          function changeBrown() {
+                              yaxis -= 3;
+                              xaxis -= 3;
+                              brownCircle.setAttribute('cx', xaxis);
+                              brownCircle.setAttribute('cy', yaxis);
+                              newRotation += 10;
+                              needleMove.setAttribute('transform', `rotate(${newRotation})`);
+                              populations.globalist += 200000;
+                              populations.nationalist -= 150000;
+                              populations.realist += 100000;
+                              populations.conservative -= 150000;
+                          }
+
+                          function changeGrey() {
+                              yaxis -= 4;
+                              greyCircle.setAttribute('cy', yaxis);
+                              newRotation += 10;
+                              needleMove.setAttribute('transform', `rotate(${newRotation})`);
+                              populations.realist += 200000;
+                              populations.nationalist -= 50000;
+                              populations.economist += 20000;
+                              populations.idealist -= 150000;
+                          }
+
+                          function changeTeal() {
+                              yaxis += 3;
+                              xaxis += 3;
+                              tealCircle.setAttribute('cy', yaxis);
+                              tealCircle.setAttribute('cx', xaxis);
+                              newRotation += 10;
+                              needleMove.setAttribute('transform', `rotate(${newRotation})`);
+                              populations.globalist -= 100000;
+                              populations.nationalist += 200000;
+                              populations.economist += 20000;
+                              populations.populist -= 150000;
+                          }
+
+                          function changeTaupe() {
+                              xaxis -= 3;
+                              yaxis += 3;
+                              taupeCircle.setAttribute('cy', yaxis);
+                              taupeCircle.setAttribute('cx', xaxis);
                               newRotation -= 10;
                               needleMove.setAttribute('transform', `rotate(${newRotation})`);
+                              populations.populist += 200000;
+                              populations.realist += 100000;
+                              populations.economist -= 20000;
+                              populations.progressive -= 150000;
                           }
 
-                          function pushScore(){
-                            countActive();
-                            xaxis = Math.max(0, Math.min(xaxis, 100));
-                            redCircle.setAttribute('cx', xaxis);
-                            blueCircle.setAttribute('cx', xaxis);
-                            yaxis = Math.max(0, Math.min(yaxis, 100));
-                            blackCircle.setAttribute('cx', yaxis);
-                            goldCircle.setAttribute('cx', yaxis);
-
-                            document.getElementById('insurance').scrollIntoView({behavior: 'smooth'});
-                            const emailBody = encodeURIComponent(result);
-                            window.location.href = `mailto:woodmortar@gmail.com?subject=EnergyAudit&body=` + emailBody + 'Rating:' + subcat + subcat2;
+                          function changeBeige() {
+                              populations.socialist += 200000;
                           }
 
 
+                          function testData() {
+    // Get all the span elements
+    const spans = [
+      document.getElementById("progressive"),
+      document.getElementById("conservative"),
+      document.getElementById("socialist"),
+      document.getElementById("economist"),
+      document.getElementById("idealist"),
+      document.getElementById("realist"),
+      document.getElementById("globalist"),
+      document.getElementById("nationalist"),
+      document.getElementById("populist")
+    ];
 
+    const spans2 = [
+      "Ventura",
+      "Trantum",
+      "Collective",
+      "Mercado",
+      "Faxium",
+      "Iron Coast",
+      "Eventus",
+      "Abzimuth",
+      "Ocidentica"
+    ];
 
+    // Initialize variables to store the largest number and its corresponding element ID
+    var largestNumber = -Infinity;
+    var largestElementId = "";
+    var pHeading = "";
+    // Loop through each span element and extract the number from its content
+    for (var i = 0; i < spans.length; i++) {
+      var spanContent = spans[i].textContent; // Get the content of the span
+      var number = parseInt(spanContent); // Convert the content to an integer
 
+      if (!isNaN(number) && number > largestNumber) {
+        largestNumber = number; // Update the largest number and its corresponding element ID
+        largestElementId = spans[i].id;
+        pHeading = spans2[i];
+      }
+    }
 
-                function testData() {
-
-                  countActive();
-                  let woodMath2 = Math.round(clicksBlack + clicksGold);
-                  let stoneMath2 = Math.round(clicksRed + clicksBlue);
-
-                  woodMath2 = Math.max(0, Math.min(woodMath2, 8));
-                  stoneMath2 = Math.max(0, Math.min(stoneMath2, 8));
-
-                  // Get current circle coords
-                  var cxRed = redCircle.getAttribute('cx');
-                  var cyRed = redCircle.getAttribute('cy');
-
-                  var cxBlue = blueCircle.getAttribute('cx');
-                  var cyBlue = blueCircle.getAttribute('cy');
-
-                  var cxBlack = blackCircle.getAttribute('cx');
-                  var cyBlack = blackCircle.getAttribute('cy');
-
-                  var cxGold = goldCircle.getAttribute('cx');
-                  var cyGold = goldCircle.getAttribute('cy');
-
-
-                  let finalMessage = cxRed + cyRed + ' : ' + cxBlue + cyBlue + ' : ' + cxBlack + cyBlack + ' : ' + cxGold + cyGold;
-
-                  if (woodMath2 <= 0) {subcat = subcategories.balsa;}
-                  else if (woodMath2 == 1) {subcat = subcategories.basswood;}
-                  else if (woodMath2 == 2) {subcat = subcategories.aspen;}
-                  else if (woodMath2 == 3) {subcat = subcategories.pine;}
-                  else if (woodMath2 == 4) {subcat = subcategories.oak;}
-                  else if (woodMath2 == 5) {subcat = subcategories.ash;}
-                  else if (woodMath2 == 6) {subcat = subcategories.maple;}
-                  else if (woodMath2 == 7) {subcat = subcategories.mahogany;}
-                  else if (woodMath2 > 7) {subcat = subcategories.teak;}
-
-                  if (stoneMath2 <= 0) {subcat2 = subcategories2.pumice;}
-                  else if (stoneMath2 == 1) {subcat2 = subcategories2.chalk;}
-                  else if (stoneMath2 == 2) {subcat2 = subcategories2.limestone;}
-                  else if (stoneMath2 == 3) {subcat2 = subcategories2.sandstone;}
-                  else if (stoneMath2 == 4) {subcat2 = subcategories2.shale;}
-                  else if (stoneMath2 == 5) {subcat2 = subcategories2.slate;}
-                  else if (stoneMath2 == 6) {subcat2 = subcategories2.granite;}
-                  else if (stoneMath2 == 7) {subcat2 = subcategories2.marble;}
-                  else if (stoneMath2 > 7) {stoneMath2 == 8; subcat2 = subcategories2.quartz;}
-
-                  document.getElementById("titleChange").innerHTML = subcat;
-                  document.getElementById("titleChange2").innerHTML = subcat2;
-                  document.getElementById("descriptAll").innerHTML = descriptAll[stoneMath2];
-                  document.getElementById("descriptAll2").innerHTML = descriptAll2[woodMath2];
-
-                }
+    // alert("The largest number is: " + largestNumber + "\nSpan ID: " + largestElementId);
+    document.getElementById("titleChange").innerHTML = largestElementId;
+    document.getElementById("titleChange2").innerHTML = pHeading;
+  }

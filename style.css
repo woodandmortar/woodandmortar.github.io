@@ -1,103 +1,234 @@
-:root {
-  --eye-size:20vmin;
-  --eye-gap:14vmin;
-  --eye-color:white;
-  --background:#EC87C0;
-  --user-button-main:#D770AD;
+body {
+    margin: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://woodandmortar.com/salmonballot/pics/background2.png");
+    background-size: cover;
+    backdrop-filter:  brightness(70%);
 }
 
-body {
-  min-height: 100vh;
-  perspective: 25rem;
-  overflow: hidden;
+canvas {
+    display: block;
 }
-body .face-container {
+
+#canvas_container {
+    width: 100%;
+    height: 100vh;
+}
+
+
+
+h1
+{
+  width: 80%;
+  left: 0px;
+  top: 0px;
+  text-align: center;
+  justify-content: center;
+  color: rgba(125,240,250, 0.8);
+  position: absolute;
+  /* color: white; */
+  font-size:2em;
+  font-family: "Crimson Text";
+  opacity: .7;
+}
+
+
+p
+{
+  font-family: "Crimson Text";
+  color: rgba(125,240,250, 0.8);
+  text-align: center;
+  font-size: 1.4em;
+  position: block;
+  word-wrap: break-word;
+}
+
+
+.mainPerspective
+{
+  perspective: 100vw;
+  transform-style: preserve-3d;
+}
+
+.animated
+{
+	transition: all 0.5s linear 0s;
+}
+.jitterAnimated
+{
+	transition: all 5s ease 0s;
+}
+
+.bordered
+{
+  border-radius: 2vw;
+  border: 0.3vw solid rgba(125, 240, 250, 0.8);
+}
+
+#firstImage
+{
+  position: absolute;
+  top:0
+}
+
+#backgroundImage
+{
   width: 100vw;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  background: var(--background);
+  margin: 0;
+  position: absolute;
+  top:0;
+  opacity: 0.5;
 }
-@keyframes float {
-  0%, 100% {
-    transform: translateY(-5%);
+
+#thatDiv {
+  position: absolute;
+  top: 30%;
+  right: 30%;
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  position: absolute;
+}
+
+
+#thoseDiv {
+  position: absolute;
+  background-color: rgba(125, 240, 250, 0.1);
+  width: 50px;
+  height: 50px;
+  top: -100px;
+  Left: 0px;
+}
+#thoseDiv:hover {
+  background-color: rgba(125, 240, 250, 0.5);
+  cursor: pointer;
+}
+#thoseDiv1 {
+  position: absolute;
+  background-color: rgba(125, 240, 250, 0.1);
+  width: 50px;
+  height: 50px;
+  bottom: -120px;
+  Left: 0px;
+}
+#thoseDiv1:hover {
+  background-color: rgba(125, 240, 250, 0.3);
+  cursor: pointer;
+}
+#thoseDiv2 {
+  position: absolute;
+  background-color: rgba(125, 240, 250, 0.1);
+  width: 50px;
+  height: 50px;
+  top: 0px;
+  Left: -100px;
+}
+#thoseDiv2:hover {
+  background-color: rgba(125, 240, 250, 0.3);
+  cursor: pointer;
+}
+#thoseDiv3 {
+  position: absolute;
+  background-color: rgba(125, 240, 250, 0.1);
+  width: 50px;
+  height: 50px;
+  top: 0px;
+  right: -130px;
+}
+#thoseDiv3:hover {
+  background-color: rgba(125, 240, 250, 0.3);
+  cursor: pointer;
+}
+#updateCameraButton {
+  flex: 0 0 auto; /* Don't grow or shrink, maintain original size */
+  width: 50px;
+  margin: 5px; /* Add some space between items */
+}
+#updateCameraButton:hover {
+  background-color: rgba(125, 240, 250, 0.3);
+  cursor: pointer;
+}
+
+
+
+@keyframes spin
+{
+  0% { transform: rotate(0deg) translateZ(1vw);}
+  100% { transform: rotate(360deg) translateZ(1vw);}
+}
+
+/* CSS for the typing animation */
+.typing-animation {
+  overflow: auto;
+  border-right: .15em solid rgba(125, 240, 250, 0.8); /* Change the color as needed */
+  margin: auto;
+  padding: auto;
+  width: 95%;
+  text-wrap: auto;
+  animation: typing 2s steps(40, end), blink-caret 1.75s step-end infinite;
+}
+
+/* Keyframes for the typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Keyframes for the blinking cursor */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
   }
   50% {
-    transform: translateY(5%);
+    border-color: rgba(125, 240, 250, 0.8); /* Change the color as needed */
   }
 }
-body .face {
-  --left-lower-rotation:0deg;
-  --left-lower-position:0%;
-  --left-upper-rotation:0deg;
-  --left-upper-position:0%;
-  --right-lower-rotation:0deg;
-  --right-lower-position:0%;
-  --right-upper-rotation:0deg;
-  --right-upper-position:0%;
-  --face-rotation-x:0deg;
-  --face-rotation-y:0deg;
-  --face-rotation-z:0deg;
-  display: grid;
-  grid-template-columns: var(--eye-size) var(--eye-gap) var(--eye-size);
-  grid-template-rows: var(--eye-size);
-  grid-template-areas: "left . right";
-  filter: blur(1vmin) contrast(8);
-  transform: translateZ(8vmin) rotateX(var(--face-rotation-x)) rotateY(var(--face-rotation-y)) rotateZ(var(--face-rotation-z));
-  transition: 0.75s cubic-bezier(0.25, 0.5, 0.5, 1);
-  mix-blend-mode: lighten;
+
+
+#popupContainer {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
-body .face .eye {
-  position: relative;
-  background: white;
-  border-radius: 100%;
-  overflow: hidden;
-  box-shadow: 0 0 0 2vmin black;
+
+#popupContainer button {
+    margin-top: 10px;
 }
-body .face .eye, body .face .eye * {
-  transition: 0.5s cubic-bezier(0.75, 0.25, 0.25, 0.75);
+
+#popupContainer.active {
+    display: block;
 }
-body .face .eye > div {
-  --rotation:0deg;
-  --position:0%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: rotate(var(--rotation));
+
+
+
+.modal-bg {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 90%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 99999999;
 }
-body .face .eye > div .lid {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: black;
-}
-body .face .eye > div.lower .lid {
-  top: calc(100% - var(--position));
-}
-body .face .eye > div.upper .lid {
-  bottom: calc(100% - var(--position));
-}
-body .face .eye.left {
-  grid-area: left;
-}
-body .face .eye.left .lower {
-  --rotation:var(--left-lower-rotation);
-  --position:var(--left-lower-position);
-}
-body .face .eye.left .upper {
-  --rotation:var(--left-upper-rotation);
-  --position:var(--left-upper-position);
-}
-body .face .eye.right {
-  grid-area: right;
-}
-body .face .eye.right .lower {
-  --rotation:var(--right-lower-rotation);
-  --position:var(--right-lower-position);
-}
-body .face .eye.right .upper {
-  --rotation:var(--right-upper-rotation);
-  --position:var(--right-upper-position);
+
+.modal-content {
+    display: block;
+    width: 90%;
+    height: 90%;
+    border: none;
+    background-color: white;
 }

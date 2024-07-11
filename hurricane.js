@@ -1,4 +1,5 @@
 let renderer,
+rotationSpeed2,
 scene,
 camera,
 sphereBg,
@@ -43,7 +44,7 @@ function init() {
     controls.autoRotate = true;
     controls.autoRotateSpeed = .15;
     controls.maxDistance = 1500;
-    controls.minDistance = 1100;
+    controls.minDistance = 30;
     controls.enablePan = false;
 
     const loader = new THREE.TextureLoader();
@@ -59,7 +60,6 @@ function init() {
     const texturenucleus9 = loader.load('https://woodandmortar.com/salmonballot/pics/webLayer.png');
     const texturenucleus10 = loader.load('https://woodandmortar.com/salmonballot/pics/cloudLayer.png');
     const texturenucleus11 = loader.load('https://woodandmortar.com/salmonballot/pics/textLayer.png');
-    const texturenucleus12 = loader.load('https://woodandmortar.com/salmonballot/pics/lightLayer.png');
     const texturenucleus13 = loader.load('https://woodandmortar.com/salmonballot/pics/mercatoLayer.png');
     const textureStar = loader.load("https://woodandmortar.com/salmonballot/pics/jelly.png");
 
@@ -362,22 +362,18 @@ const nucleus13 = new THREE.Mesh(icosahedronGeometry13, lambertMaterial13);
 nucleus13.rotation.copy(nucleus.rotation); // Copy rotation from the first nucleus
 scene.add(nucleus13);
 
-// End of Copy layer
+// Function to rotate the nucleus10 counterclockwise by a certain angle
+function rotateNucleus13() {
+    rotationSpeed2 = 0.0000000001;
+    nucleus13.rotation.y -= rotationSpeed2;
+}
 
-// Copy Layer
-texturenucleus12.anisotropy = 0;
-const nucleus12Radius = 819 * blobScale; // 10 units larger than the first nucleus
-const icosahedronGeometry12 = new THREE.IcosahedronGeometry(nucleus12Radius, 10);
-const lambertMaterial12 = new THREE.MeshPhongMaterial({
-map: texturenucleus12,
-transparent: true,
-opacity: 0.5,
-});
-const nucleus12 = new THREE.Mesh(icosahedronGeometry12, lambertMaterial12);
-nucleus12.rotation.copy(nucleus.rotation); // Copy rotation from the first nucleus
-scene.add(nucleus12);
+// Call the rotateNucleus10 function every 1000 milliseconds (1 second)
+setInterval(rotateNucleus13, 5);
+
 
 // End of Copy layer
+
 
 // Copy Layer
 texturenucleus11.anisotropy = 0;
@@ -569,7 +565,7 @@ function animate() {
 
 }
 
-
+const maxDistance = 1150; // Change this to your desired value
 
 /*     Resize     */
 window.addEventListener("resize", () => {
@@ -580,4 +576,61 @@ function onWindowResize() {
     camera.aspect = container.clientWidth / container.clientHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(container.clientWidth, container.clientHeight);
+}
+
+const sphereMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const spheres = [];
+const sphereRadius = 20;
+
+for (let i = 0; i < 20; i++) {
+    const sphere = new THREE.Mesh(new THREE.SphereGeometry(sphereRadius, 32, 32), sphereMaterial);
+    sphere.position.set(Math.random() * 200 - 100, Math.random() * 200 - 100, Math.random() * 200 - 100);
+    sphere.velocity = new THREE.Vector3(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5);
+    sphere.velocity.normalize().multiplyScalar(2); // Speed
+    spheres.push(sphere);
+    scene.add(sphere);
+}
+
+function animate2() {
+    requestAnimationFrame(animate2);
+
+    for (let sphere of spheres) {
+        sphere.position.add(sphere.velocity);
+        if (sphere.position.length() > maxDistance) {
+                sphere.velocity.negate(); // This reverses the direction of the velocity vector
+                sphere.position.setLength(maxDistance); // This ensures the sphere remains just within the boundary
+            }
+        // Collision with other spheres
+        for (let otherSphere of spheres) {
+            if (otherSphere === sphere) continue;
+            let distance = sphere.position.distanceTo(otherSphere.position);
+            if (distance < 2 * sphereRadius) {
+                sphere.velocity.negate();
+            }
+        }
+
+        // Simple elliptical movement logic
+        sphere.position.x += Math.sin(Date.now() * 0.001) * 2;
+        sphere.position.y += Math.cos(Date.now() * 0.001) * 2;
+    }
+constrainDistance(object);
+    renderer.render(scene, camera);
+}
+function constrainDistance(obj) {
+    let distanceFromOrigin = obj.position.length();
+
+    if (distanceFromOrigin < 700) {
+        let scaleFactor = 700 / distanceFromOrigin;
+        obj.position.multiplyScalar(scaleFactor);
+    } else if (distanceFromOrigin > 800) {
+        let scaleFactor = 800 / distanceFromOrigin;
+        obj.position.multiplyScalar(scaleFactor);
+    }
+}
+animate2();
+
+function moveSpheres(axis, direction) {
+    for (let sphere of spheres) {
+        sphere.position[axis] += direction * 10;
+    }
 }
